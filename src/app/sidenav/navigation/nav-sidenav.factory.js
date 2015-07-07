@@ -8,19 +8,17 @@
     function navigation($rootScope, $location) {
         var self = this;
 
-        $rootScope.$on('$routeChangeStart', function () {
+        $rootScope.$on('$stateChange', function () {
             $rootScope.loadingProgress = true;
         });
 
-        $rootScope.$on('$routeChangeSuccess', function (event, current) {
-            console.log(current);
+        $rootScope.$on('$stateChangeSuccess', function () {
             $rootScope.loadingProgress = false;
         });
 
         self = {
             selectSection: function (section) {
-                console.log(section);
-                self.openedSection = section;
+                    self.openedSection = section;
             },
             toggleSelectSection: function (section) {
                 self.openedSection = (self.openedSection === section ? null : section);

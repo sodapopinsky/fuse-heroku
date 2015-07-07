@@ -13,16 +13,15 @@
                 editable: true,
                 eventLimit: true,
                 header: '',
-                viewRender: function (view, element) {
+                viewRender: function (view) {
                     vm.calendarView = view;
                     vm.calendar = vm.calendarView.calendar;
                     vm.currentMonthShort = vm.calendar.getDate().format('MMM');
-                    console.log(vm.calendarView);
                 },
                 columnFormat: {
                     month: 'ddd',
                     week: 'ddd M',
-                    day: 'ddd M',
+                    day: 'ddd M'
                 },
                 //dayClick: $scope.alertEventOnClick,
                 //eventDrop: $scope.alertOnDrop,

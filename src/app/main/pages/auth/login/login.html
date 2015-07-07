@@ -2,6 +2,23 @@
     <md-whiteframe class="md-whiteframe-z1" layout layout-align="center center">
         <div class="logo">Logo</div>
         <div class="title">Sign into your account</div>
+        <md-input-container flex>
+            <label>Username</label>
+            <input ng-model="vm.form.username">
+        </md-input-container>
+        <md-input-container flex>
+            <label>Password</label>
+            <input ng-model="vm.form.password" type="password">
+        </md-input-container>
+        <div layout="row">
+            <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
+                Remember Me
+            </md-checkbox>
+            <a>Forget Password</a>
+        </div>
+        <md-button class="md-raised md-accent">
+            SIGN IN
+        </md-button>
         <span>.md-whiteframe-z1</span>
     </md-whiteframe>
 </div>
