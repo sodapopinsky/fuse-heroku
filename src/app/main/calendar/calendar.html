@@ -1,0 +1,62 @@
+<div id="calendar" class="" layout="column" layout-fill>
+    <md-toolbar class="md-tall " layout="column" layout-align="space-between start" ng-class="vm.currentMonthShort">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Calendar">
+                <md-icon md-font-icon="icon-today"></md-icon>
+            </md-button>
+            <h2>
+                <span>Calendar</span>
+            </h2>
+            <span flex></span>
+            <md-button class="md-icon-button" aria-label="Search">
+                <md-icon md-font-icon="icon-search"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Today" ng-click="vm.calendar.today()">
+                <md-icon md-font-icon="icon-today"></md-icon>
+                <md-tooltip>
+                    Today
+                </md-tooltip>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Day" ng-click="vm.calendar.changeView('agendaDay')">
+                <md-icon md-font-icon="icon-view_headline"></md-icon>
+                <md-tooltip>
+                    Day
+                </md-tooltip>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Week" ng-click="vm.calendar.changeView('agendaWeek')">
+                <md-icon md-font-icon="icon-view_week"></md-icon>
+                <md-tooltip>
+                    Week
+                </md-tooltip>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Month" ng-click="vm.calendar.changeView('month')">
+                <md-icon md-font-icon="icon-view_module"></md-icon>
+                <md-tooltip>
+                    Month
+                </md-tooltip>
+            </md-button>
+        </div>
+        <div class="flex"></div>
+        <div layout="row" layout-fill layout-align="space-between center">
+            <div layout="row" layout-align="start center">
+                <md-button class="md-icon-button arrow" aria-label="previous" ng-click="vm.calendar.prev()">
+                    <md-icon md-font-icon="icon-keyboard_arrow_left"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button arrow" aria-label="next">
+                    <md-icon md-font-icon="icon-keyboard_arrow_right" ng-click=" vm.calendar.next()"></md-icon>
+                </md-button>
+                <div>
+                    {{vm.calendarView.title}}
+                </div>
+            </div>
+            <md-button class="add-event-button md-fab md-warn" aria-label="Add event" ng-click="vm.eventDialog('add',$event)">
+                <md-icon md-font-icon="icon-add" class="s20"></md-icon>
+            </md-button>
+        </div>
+
+    </md-toolbar>
+    <md-content flex>
+        <div id="calendarView" ui-calendar="vm.calendarUiConfig.calendar" ng-model="vm.events"
+             calendar="main"></div>
+    </md-content>
+</div>

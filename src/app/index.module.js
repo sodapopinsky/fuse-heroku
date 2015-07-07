@@ -11,7 +11,10 @@
      */
     angular
         .module('fuse', [
-            'app.core'
+            'app.core',
+            'app.mail',
+            'app.calendar',
+            'app.todo'
         ]);
 
 })();

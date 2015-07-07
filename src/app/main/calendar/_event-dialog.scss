@@ -1,0 +1,54 @@
+#event-dialog {
+    form {
+        overflow: hidden;
+        md-toolbar {
+            .title {
+                font-size: 17px;
+            }
+        }
+        md-dialog-content {
+            font-size: 15px;
+            min-width: 560px;
+            width: 560px;
+            padding: 24px 24px 16px 24px;
+            md-input-container {
+                padding: 4px 0;
+                &.textarea-container {
+                    padding: 2px;
+                    padding-bottom: 26px;
+                    textarea {
+                        min-height: 150px;
+                    }
+                }
+            }
+            .all-day {
+                margin: 16px 0 0 0;
+                md-switch {
+                    margin: 0;
+                }
+            }
+            .date-row {
+                > md-input-container {
+                    margin: 0 16px;
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+            .notifications {
+                margin: 16px 0;
+                > .md-button {
+                    margin: 0;
+                }
+            }
+        }
+        .md-actions {
+            justify-content: space-between;
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+        }
+    }
+}
+

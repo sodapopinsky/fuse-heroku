@@ -23,6 +23,10 @@
               templateUrl: 'app/main/mail/mail.html',
               controller: 'mailController as vm'
           })
+          .when('/calendar', {
+              templateUrl: 'app/main/calendar/calendar.html',
+              controller: 'calendarController as vm'
+          })
           .when('/todo', {
               templateUrl: 'app/main/todo/todo.html',
               controller: 'todoController as vm'

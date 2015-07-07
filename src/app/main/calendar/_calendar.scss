@@ -1,0 +1,185 @@
+#calendar {
+    md-toolbar {
+        height: 180px;
+        min-height: 180px;
+        max-height: 180px;
+        background-size: 100% auto;
+        background-position: 0 50%;
+        background-repeat: no-repeat;
+        background-color: #fafafa;
+        &.Jul {
+            background-image: url('/assets/images/backgrounds/july.jpg');
+            color: rgba(0, 0, 0, 0.87);
+            background-position: 0 5%;
+            md-icon {
+                color: rgba(0, 0, 0, 0.87);
+            }
+        }
+        &.Aug {
+            background-image: url('/assets/images/backgrounds/august.jpg');
+            color: rgba(0, 0, 0, 0.87);
+            background-position: 0 48%;
+            md-icon {
+                color: rgba(0, 0, 0, 0.87);
+            }
+        }
+        &.Sep {
+            background-image: url('/assets/images/backgrounds/september.jpg');
+            color: rgba(0, 0, 0, 0.87);
+            background-position: 0 48%;
+            md-icon {
+                color: rgba(0, 0, 0, 0.87);
+            }
+        }
+        &.Oct {
+            background-image: url('/assets/images/backgrounds/october.jpg');
+            color: rgba(0, 0, 0, 0.87);
+            background-position: 0 50%;
+            md-icon {
+                color: rgba(0, 0, 0, 0.87);
+            }
+        }
+        &.Nov {
+            background-image: url('/assets/images/backgrounds/november.jpg');
+            color: rgba(255, 255, 255, 1);
+            md-icon {
+                color: rgba(255, 255, 255, 1);
+            }
+        }
+        &.Dec {
+            background-image: url('/assets/images/backgrounds/december.jpg');
+            color: rgba(0, 0, 0, 0.87);
+            background-position: 0 45%;
+            md-icon {
+                color: rgba(0, 0, 0, 0.87);
+            }
+        }
+        &.Jan {
+            background-image: url('/assets/images/backgrounds/january.jpg');
+            color: rgba(255, 255, 255, 1);
+            background-position: 0 50%;
+            md-icon {
+                color: rgba(255, 255, 255, 1);
+            }
+        }
+        &.Feb {
+            background-image: url('/assets/images/backgrounds/february.jpg');
+            color: rgba(0, 0, 0, 0.87);
+            background-position: 0 50%;
+            md-icon {
+                color: rgba(0, 0, 0, 0.87);
+            }
+        }
+        &.Mar {
+            background-image: url('/assets/images/backgrounds/march.jpg');
+            color: rgba(0, 0, 0, 0.87);
+            background-position: 0 45%;
+            md-icon {
+                color: rgba(0, 0, 0, 0.87);
+            }
+        }
+        &.Apr {
+            background-image: url('/assets/images/backgrounds/april.jpg');
+            color: rgba(0, 0, 0, 0.87);
+            background-position: 0 60%;
+            md-icon {
+                color: rgba(0, 0, 0, 0.87);
+            }
+        }
+        &.May {
+            background-image: url('/assets/images/backgrounds/may.jpg');
+            color: rgba(0, 0, 0, 0.87);
+            background-position: 0 45%;
+            md-icon {
+                color: rgba(0, 0, 0, 0.87);
+            }
+        }
+        &.Jun {
+            background-image: url('/assets/images/backgrounds/june.jpg');
+            color: rgba(0, 0, 0, 0.87);
+            background-position: 0 48%;
+            md-icon {
+                color: rgba(0, 0, 0, 0.87);
+            }
+        }
+        .add-event-button {
+            width: 48px;
+            height: 48px;
+            margin: 0 24px -48px 0;
+            md-icon {
+                color: white;
+            }
+        }
+    }
+    md-content {
+        #calendarView {
+            &.fc {
+
+                .fc-widget-header {
+                    border: none;
+                    color: rgba(0, 0, 0, 0.54);
+                    .fc-day-header {
+                        text-align: left;
+                        border: none;
+                        font-weight: 500;
+                        font-size: 13px;
+                        padding: 8px;
+                    }
+                }
+                .fc-widget-content {
+                    color: rgba(0, 0, 0, 0.54);
+                    .fc-day-grid-container {
+                        .fc-day-grid {
+                            .fc-day-number {
+                                text-align: left;
+                                padding: 8px 8px 0 8px;
+                            }
+                        }
+                    }
+                    .fc-time-grid-container {
+                        overflow: hidden;
+                        height: auto !important;
+                        .fc-axis {
+                            font-size: 13px;
+                            font-weight: 500;
+                            border: none;
+                        }
+                    }
+                }
+                .fc-day-grid-event {
+                    margin: 4px 8px 0 8px;
+                    font-size: 13px;
+                    padding: 2px 4px;
+                }
+                .fc-month-view {
+                    padding: 24px;
+                }
+
+                .fc-agenda-view {
+                    .fc-widget-header{
+                        .fc-day-header{
+                            border: 1px solid #ddd;
+                            line-height: 50px;
+                            font-size: 17px;
+                        }
+                    }
+                    > table > tbody > tr > td.fc-widget-content {
+                        border: none;
+                    }
+                    .fc-minor .fc-widget-content {
+                        border-top: none;
+                    }
+                    .fc-week, .fc-day {
+                        height: 100px!important;
+                    }
+                    .fc-widget-content {
+                        height: 50px;
+                    }
+                    .fc-axis{
+                        padding-left: 24px;
+                    }
+                }
+            }
+        }
+    }
+}

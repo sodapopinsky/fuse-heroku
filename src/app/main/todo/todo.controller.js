@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('fuse')
+    angular.module('app.todo')
         .controller('todoController', todoController);
 
     /** @ngInject */
