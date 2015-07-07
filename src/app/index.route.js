@@ -28,17 +28,17 @@
                     'app@'                          : {
                         templateUrl: 'app/layout/default.html'
                     },
-                    'toolbar@layouts.default'       : {
+                    'toolbar@app.default-layout'       : {
                         templateUrl: 'app/toolbar/toolbar.html',
                         controller : 'toolbarController as vm'
                     },
-                    'sidenavLeft@layouts.default'   : {
+                    'sidenavLeft@app.default-layout'   : {
                         templateUrl: 'app/sidenav/navigation/nav-sidenav.html',
                         controller : 'navSidenavController as vm'
                     },
-                    'themeCustomize@layouts.default': {
-                        templateUrl: 'app/components/theme-change/theme-change.html',
-                        controller : 'ThemeChangeController as vm'
+                    'themeChanger@app.default-layout': {
+                        templateUrl: 'app/components/theme-changer/theme-changer.html',
+                        controller : 'ThemeChangerController as vm'
                     }
                 }
             })

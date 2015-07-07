@@ -2,10 +2,10 @@
     'use strict';
 
     angular.module('app.core')
-        .controller('ThemeChangeController', ThemeChangeController);
+        .controller('ThemeChangerController', ThemeChangerController);
 
     /** @ngInject */
-    function ThemeChangeController($rootScope, $route, palettes, wipThemes, themeService) {
+    function ThemeChangerController($rootScope, $route, palettes, wipThemes, themeService) {
         var vm = this;
         vm.isOpen = false;
         vm.setTheme = setTheme;
