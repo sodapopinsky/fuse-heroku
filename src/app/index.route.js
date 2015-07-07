@@ -36,6 +36,10 @@
                         templateUrl: 'app/sidenav/navigation/nav-sidenav.html',
                         controller : 'navSidenavController as vm'
                     },
+                    'sidenavRight@app.default-layout'   : {
+                        templateUrl: 'app/sidenav/notification/notification-sidenav.html',
+                        controller : 'notificationSidenavController as vm'
+                    },
                     'themeChanger@app.default-layout': {
                         templateUrl: 'app/components/theme-changer/theme-changer.html',
                         controller : 'ThemeChangerController as vm'
