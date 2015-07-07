@@ -1,23 +1,20 @@
-
 <md-sidenav md-is-locked-open="$mdMedia('gt-md')"
-            class="md-whiteframe-z2 site-sidenav md-primary-bg"
+            class="md-whiteframe-z2 site-sidenav md-locked-open md-primary-bg"
             md-component-id="nav-sidenav"
-            layout-fill ui-view="sideNav">
+            layout-fill ui-view="sidenavLeft">
 </md-sidenav>
 
 <main layout="column" role="main" flex>
-    <md-toolbar id="main-toolbar" class="md-whiteframe-glow-z1 md-background-bg"
-                ng-include="'app/toolbar/toolbar.html'" ng-controller="toolbarController as vm">
-    </md-toolbar>
-    <md-content flex class="md-background md-hue-1">
-        <div ui-view="main" class="animate slide-up">
-        </div>
+    <md-toolbar id="main-toolbar" class="md-whiteframe-glow-z1 md-background-bg" ui-view="toolbar"></md-toolbar>
 
+    <md-content flex class="md-background md-hue-1">
+        <div ui-view="main" class="animate slide-up"></div>
     </md-content>
-    <div id="theme-customizer" ng-controller="ThemeChangeController as vm"
-         ng-include="'app/components/theme-change/theme-change.html'">
+
+    <div id="theme-customizer" ui-view="themeCustomize">
     </div>
 </main>
+
 <md-sidenav id="notification-sidenav" class="md-sidenav-right md-whiteframe-z2"
             md-component-id="notification-sidenav"
             layout-fill ng-include="'app/sidenav/notification/notification-sidenav.html'"
