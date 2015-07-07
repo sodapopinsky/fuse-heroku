@@ -12,12 +12,14 @@
             $rootScope.loadingProgress = true;
         });
 
-        $rootScope.$on('$routeChangeSuccess', function () {
+        $rootScope.$on('$routeChangeSuccess', function (event, current) {
+            console.log(current);
             $rootScope.loadingProgress = false;
         });
 
         self = {
             selectSection: function (section) {
+                console.log(section);
                 self.openedSection = section;
             },
             toggleSelectSection: function (section) {
@@ -42,7 +44,6 @@
                     url: "/",
                     type: "link"
                 };
-
                 if (path === '/') {
                     self.selectSection(introLink);
                     self.selectPage(introLink, introLink);
@@ -189,12 +190,12 @@
                             "pages": [
                                 {
                                     "name": "Login",
-                                    "id": "button",
+                                    "id": "login",
                                     "url": "/login"
                                 },
                                 {
                                     "name": "Register",
-                                    "id": "button",
+                                    "id": "register",
                                     "url": "/register"
                                 }
                             ]

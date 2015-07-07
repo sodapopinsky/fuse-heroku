@@ -25,7 +25,9 @@ $navSidabarWidth: 240px;
     md-content {
         background: transparent;
     }
-
+    width: $navSidabarWidth;
+    min-width: $navSidabarWidth;
+    max-width: $navSidabarWidth;
     &.md-locked-open-add-active,
     &.md-locked-open {
         width: $navSidabarWidth;

@@ -13,7 +13,8 @@
             'ngSanitize',
             'ngTouch',
             'ngMaterial',
-            'angularChart'
+            'angularChart',
+            'ui.router'
             //'chart.js'
         ]);
 

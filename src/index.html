@@ -29,33 +29,9 @@
     <![endif]-->
 
   <body md-theme="{{ $root.appTheme }}" md-theme-watch>
-  <div id="app-wrapper" layout="row" flex layout-fill ng-controller="mainController">
-      <md-sidenav md-is-locked-open="$mdMedia('gt-md')"
-                  class="md-whiteframe-z2 site-sidenav md-primary-bg"
-                  md-component-id="nav-sidenav"
-                  layout-fill ng-include="'app/components/sidenav/navigation/nav-sidenav.html'"
-                  ng-controller="navSidenavController as vm">
-      </md-sidenav>
 
-      <main layout="column" role="main" flex>
-          <md-toolbar id="main-toolbar" class="md-whiteframe-glow-z1 md-background-bg"
-                      ng-include="'app/components/toolbar/toolbar.html'" ng-controller="toolbarController as vm">
-          </md-toolbar>
-          <md-content flex class="md-background md-hue-1">
-              <div layout-fill flex ng-view class="animate slide-up">
-              </div>
+  <div id="app-wrapper" layout="row" flex layout-fill ng-controller="mainController"  ui-view="app"></div>
 
-          </md-content>
-          <div id="theme-customizer" ng-controller="ThemeChangeController as vm"
-               ng-include="'app/components/theme-change/theme-change.html'">
-          </div>
-      </main>
-      <md-sidenav id="notification-sidenav" class="md-sidenav-right md-whiteframe-z2"
-                  md-component-id="notification-sidenav"
-                  layout-fill ng-include="'app/components/sidenav/notification/notification-sidenav.html'"
-                  ng-controller="notificationSidenavController as vm">
-      </md-sidenav>
-  </div>
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->
     <!-- run `gulp inject` to automatically populate bower script dependencies -->

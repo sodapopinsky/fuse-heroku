@@ -17,6 +17,12 @@
                     vm.calendarView = view;
                     vm.calendar = vm.calendarView.calendar;
                     vm.currentMonthShort = vm.calendar.getDate().format('MMM');
+                    console.log(vm.calendarView);
+                },
+                columnFormat: {
+                    month: 'ddd',
+                    week: 'ddd M',
+                    day: 'ddd M',
                 },
                 //dayClick: $scope.alertEventOnClick,
                 //eventDrop: $scope.alertOnDrop,
@@ -138,7 +144,7 @@
                 clickOutsideToClose: true,
                 locals: {
                     event: event,
-                    eventDialog :eventDialog
+                    eventDialog: eventDialog
                 }
             });
         }

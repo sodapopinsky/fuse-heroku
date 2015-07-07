@@ -134,7 +134,7 @@
             }],
             chart: {
                 size: {
-                    height: 200
+                    height: 200,
                 },
                 axis: {
                     y: {}

@@ -11,7 +11,7 @@
             scope: {
                 section: '='
             },
-            templateUrl: 'app/components/sidenav/navigation/menu/menu-link.tmpl.html',
+            templateUrl: 'app/sidenav/navigation/menu/menu-link.tmpl.html',
             link: function ($scope, $element) {
                 var controller = $element.parent().controller();
                 $scope.isSelected = function () {
@@ -32,7 +32,7 @@
             scope: {
                 section: '='
             },
-            templateUrl: 'app/components/sidenav/navigation/menu/menu-toggle.tmpl.html',
+            templateUrl: 'app/sidenav/navigation/menu/menu-toggle.tmpl.html',
             link: function ($scope, $element) {
                 //var controller = $element.parent().controller();
                 //var $ul = $element.find('ul');
