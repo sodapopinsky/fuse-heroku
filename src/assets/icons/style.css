@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot?-hu4fur');
-	src:url('fonts/icomoon.eot?#iefix-hu4fur') format('embedded-opentype'),
-		url('fonts/icomoon.ttf?-hu4fur') format('truetype'),
-		url('fonts/icomoon.woff?-hu4fur') format('woff'),
-		url('fonts/icomoon.svg?-hu4fur#icomoon') format('svg');
+	src:url('fonts/icomoon.eot?-byfa8a');
+	src:url('fonts/icomoon.eot?#iefix-byfa8a') format('embedded-opentype'),
+		url('fonts/icomoon.ttf?-byfa8a') format('truetype'),
+		url('fonts/icomoon.woff?-byfa8a') format('woff'),
+		url('fonts/icomoon.svg?-byfa8a#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,6 +23,90 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-twitter-square:before {
+	content: "\f081";
+}
+.icon-facebook-square:before {
+	content: "\f082";
+}
+.icon-github-square:before {
+	content: "\f092";
+}
+.icon-twitter:before {
+	content: "\f099";
+}
+.icon-facebook:before {
+	content: "\f09a";
+}
+.icon-facebook-f:before {
+	content: "\f09a";
+}
+.icon-github:before {
+	content: "\f09b";
+}
+.icon-pinterest:before {
+	content: "\f0d2";
+}
+.icon-pinterest-square:before {
+	content: "\f0d3";
+}
+.icon-google-plus-square:before {
+	content: "\f0d4";
+}
+.icon-google-plus:before {
+	content: "\f0d5";
+}
+.icon-youtube-square:before {
+	content: "\f166";
+}
+.icon-youtube:before {
+	content: "\f167";
+}
+.icon-youtube-play:before {
+	content: "\f16a";
+}
+.icon-instagram:before {
+	content: "\f16d";
+}
+.icon-skype:before {
+	content: "\f17e";
+}
+.icon-vimeo-square:before {
+	content: "\f194";
+}
+.icon-google:before {
+	content: "\f1a0";
+}
+.icon-reddit:before {
+	content: "\f1a1";
+}
+.icon-reddit-square:before {
+	content: "\f1a2";
+}
+.icon-paypal:before {
+	content: "\f1ed";
+}
+.icon-google-wallet:before {
+	content: "\f1ee";
+}
+.icon-cc-visa:before {
+	content: "\f1f0";
+}
+.icon-cc-mastercard:before {
+	content: "\f1f1";
+}
+.icon-cc-discover:before {
+	content: "\f1f2";
+}
+.icon-cc-amex:before {
+	content: "\f1f3";
+}
+.icon-cc-paypal:before {
+	content: "\f1f4";
+}
+.icon-cc-stripe:before {
+	content: "\f1f5";
+}
 .icon-sunrise:before {
 	content: "\e600";
 }

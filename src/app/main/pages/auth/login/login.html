@@ -1,24 +1,48 @@
 <div id="login" layout="column" layout-fill layout-align="center center">
-    <md-whiteframe class="md-whiteframe-z1" layout layout-align="center center">
-        <div class="logo">Logo</div>
-        <div class="title">Sign into your account</div>
-        <md-input-container flex>
-            <label>Username</label>
-            <input ng-model="vm.form.username">
-        </md-input-container>
-        <md-input-container flex>
-            <label>Password</label>
-            <input ng-model="vm.form.password" type="password">
-        </md-input-container>
-        <div layout="row">
-            <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
-                Remember Me
-            </md-checkbox>
-            <a>Forget Password</a>
+    <md-whiteframe class="md-whiteframe-z1 md-background-bg" layout="column" layout-align="center center">
+        <div class="logo md-accent-bg" layout="column" layout-align="center center">
+            <small>F</small>
         </div>
-        <md-button class="md-raised md-accent">
-            SIGN IN
+        <div class="title">Sign into your account</div>
+        <form layout="column">
+            <md-input-container flex>
+                <label>Username</label>
+                <input ng-model="vm.form.username">
+            </md-input-container>
+            <md-input-container flex>
+                <label>Password</label>
+                <input ng-model="vm.form.password" type="password">
+            </md-input-container>
+            <div class="remember-forget" layout="row" layout-align="space-between center">
+                <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
+                    Remember Me
+                </md-checkbox>
+                <a>Forget Password?</a>
+            </div>
+            <md-button class="md-raised md-accent">
+                SIGN IN
+            </md-button>
+        </form>
+        <div class="seperator"><span>OR</span></div>
+        <md-button class="md-raised google">
+            <div layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-google-plus-square" flex></md-icon>
+               <span>
+                Sign in with Google
+               </span>
+            </div>
         </md-button>
-        <span>.md-whiteframe-z1</span>
+        <md-button class="md-raised facebook">
+            <div layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-facebook-square" flex></md-icon>
+               <span>
+                   Login with Facebook
+               </span>
+            </div>
+        </md-button>
+        <div class="create-account" layout="row" layout-align="space-between center">
+            <span>Don't have an account?</span>
+            <a class="md-accent-font">Create an account</a>
+        </div>
     </md-whiteframe>
 </div>
