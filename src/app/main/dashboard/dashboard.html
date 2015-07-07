@@ -1,0 +1,330 @@
+<div id="dashboard" layout="row">
+    <div class="widgets" flex layout="row" layout-wrap>
+        <div flex="25">
+            <div layout="column" layout-align="space-between center"
+                 class="widget contrast blue r7 md-whiteframe-z1 ">
+                <header layout="row" layout-fill layout-align="space-between start">
+                    <span class="title">WEEKLY TRANSACTIONS</span>
+                    <md-icon md-font-icon="icon-refresh" class="s20"></md-icon>
+                </header>
+                <div class="content" layout="row" layout-fill>
+                    <div layout="column" layout-fill>
+                        <div class="value">
+                            30,342
+                        </div>
+                        <div class="detail" layout="row" layout-align="start center">
+                            <span>Last week: 30,002</span>
+                            <span class="box">+ 1,12%</span>
+                        </div>
+                    </div>
+                    <div flex></div>
+                </div>
+            </div>
+        </div>
+        <div flex="25">
+            <div layout="column" layout-align="space-between center"
+                 class="widget contrast green r7 md-whiteframe-z1 ">
+                <header layout="row" layout-fill layout-align="space-between start">
+                    <span class="title">DAILY VISITORS</span>
+                    <md-icon md-font-icon="icon-refresh" class="s20"></md-icon>
+                </header>
+                <div class="content" layout="row" layout-fill>
+                    <div layout="column" layout-align="space-between start">
+                        <div class="value" layout="row" layout-align="start center">
+                            <span>800</span>
+                            <md-icon md-font-icon="icon-trending_up" class="s36"></md-icon>
+                            <span flex></span>
+                        </div>
+                        <div class="detail" layout="row" layout-align="start center">
+                            <span>See more details</span>
+                        </div>
+                    </div>
+                    <div flex>
+                        <angular-chart class="stroke-3" options="vm.dailyMiniChart"></angular-chart>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div flex="25">
+            <div layout="column" layout-align="space-between center"
+                 class="widget contrast blue-grey r7 md-whiteframe-z1 ">
+                <header layout="row" layout-fill layout-align="space-between start">
+                    <span class="title">WEEKLY TRANSACTIONS</span>
+                    <md-icon md-font-icon="icon-refresh" class="s20"></md-icon>
+                </header>
+                <div class="content" layout="row" layout-fill>
+                    <div layout="column" layout-fill>
+                        <div class="value" layout="row" layout-align="start center">
+                            <span>65%</span>
+                            <md-icon md-font-icon="icon-trending_down" class="s36"></md-icon>
+                            <span flex></span>
+                        </div>
+                        <div class="detail" layout="row" layout-align="start center">
+                            <span>Last week: 70%</span>
+                            <span class="box">- 5%</span>
+                        </div>
+                    </div>
+                    <div flex></div>
+                </div>
+            </div>
+        </div>
+        <div flex="25">
+            <div layout="column" layout-align="space-between center"
+                 class="widget contrast purple r7 md-whiteframe-z1 ">
+                <header layout="row" layout-fill layout-align="space-between start">
+                    <span class="title">STOCK COUNT</span>
+                    <md-icon md-font-icon="icon-refresh" class="s20"></md-icon>
+                </header>
+                <div class="content" layout="row" layout-fill layout-align="space-beetween center">
+                    <div layout="column">
+                        <div class="value" layout="row" layout-align="start center">
+                            <span>5583</span>
+                            <md-icon md-font-icon="icon-trending_neutral" class="s36"></md-icon>
+                            <span flex></span>
+                        </div>
+                        <div class="detail" layout="row" layout-align="start center">
+                            <span>Last week: 5583</span>
+                            <span class="box">0%</span>
+                        </div>
+                    </div>
+                    <div flex>
+                        <angular-chart class="stroke-3" options="vm.stockMiniChart"></angular-chart>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div flex="25">
+            <div layout="column" layout-align="space-between center"
+                 class="widget  r7 md-whiteframe-z1 ">
+                <header layout="row" layout-fill layout-align="space-between start">
+                    <span class="title">NASDAQ: MSFT - Jun 26 4:03 PM EDT</span>
+                    <md-icon md-font-icon="icon-refresh" class="s20"></md-icon>
+                </header>
+                <div class="content" layout="row" layout-fill>
+                    <div layout="column" layout-fill>
+                        <div class="value">
+                            45.26
+                        </div>
+                        <div class="detail" layout="row" layout-align="start center">
+                            <md-icon md-font-icon="icon-trending_down" class="md-warn s18"></md-icon>
+                            <span class="md-warn-font">0.39 (0.85%)</span>
+                            <span class="box">1 Day</span>
+                        </div>
+                    </div>
+                    <div flex>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div flex="75">
+            <div layout="column" layout-align="space-between center"
+                 class="widget r16 md-whiteframe-z1 ">
+                <header layout="row" layout-fill layout-align="space-between start">
+                    <span class="title">WEEKLY VISITORS</span>
+                    <md-icon md-font-icon="icon-refresh" class="s20"></md-icon>
+                </header>
+                <div flex class="content" layout="row" layout-fill layout-align="space-beetween center">
+                    <div layout="column">
+                        <div class="value" layout="row" layout-align="start center">
+                            <span>30,342</span>
+                            <md-icon md-font-icon="icon-trending_neutral" class="s36"></md-icon>
+                            <span flex></span>
+                        </div>
+                        <div class="detail" layout="row" layout-align="start center">
+                            <span>LW: 30,002</span>
+                            <span class="box">+ 1.12%</span>
+                        </div>
+                    </div>
+                    <div flex>
+                        <angular-chart options="vm.lineChart"></angular-chart>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div flex="25">
+            <div layout="column" layout-align="space-between center"
+                 class="widget r18 md-whiteframe-z1 ">
+                <header layout="row" layout-fill layout-align="space-between start">
+                    <span class="title">NASDAQ: GOOG - Jun 26 4:03 PM EDT</span>
+                    <md-icon md-font-icon="icon-refresh" class="s20"></md-icon>
+                </header>
+                <div flex class="content" layout="column" layout-fill layout-align="space-between start">
+                    <div class="value">
+                        531.69
+                    </div>
+                    <div layout-fill class="chart">
+                        <angular-chart class="stroke-3" options="vm.nasdaqMiniChart"></angular-chart>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div flex="25">
+            <div layout="column" layout-align="space-between center"
+                 class="widget orange contrast r18 md-whiteframe-z1 ">
+                <header layout="row" layout-fill layout-align="space-between start">
+                    <span class="title">NASDAQ: GOOG - Jun 26 4:03 PM EDT</span>
+                    <md-icon md-font-icon="icon-refresh" class="s20"></md-icon>
+                </header>
+                <div flex class="content" layout="column" layout-fill layout-align="space-between start">
+                    <div class="value">
+                        531.69
+                    </div>
+                    <div layout-fill class="chart">
+                        <angular-chart class="stroke-3" options="vm.nasdaqMiniChart"></angular-chart>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div flex="25">
+            <div layout="column" layout-align="space-between start"
+                 class="widget weather blue contrast r18 md-whiteframe-z1 ">
+                <header layout="row" layout-fill layout-align="space-between start">
+                    <div class="title" layout="row" layout-align="start center">
+                        <md-icon md-font-icon="icon-arrow_back" class="s20"></md-icon>
+                        <div class="date"> {{vm.date | date:'MMM MM,EEEE'}}</div>
+                        <md-icon md-font-icon="icon-arrow_forward" class="s20"></md-icon>
+                    </div>
+                    <div>
+                        <md-icon md-font-icon="icon-location_on" class="s20"></md-icon>
+                        <md-icon md-font-icon="icon-refresh" class="s20"></md-icon>
+                    </div>
+                </header>
+                <div flex class="content" layout="column" layout-fill layout-align="center center">
+                    <md-icon md-font-icon="icon-cloudy" class="weather-icon s96"></md-icon>
+                    <div class="detail" layout="row">
+                        <div class="degree">
+                            <span>22</span>&deg
+                        </div>
+                        <div layout="column" layout-align="space-between start">
+                            <div class="condition">
+                                Cloudy
+                            </div>
+                            <div class="location">
+                                New York, NY
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer layout="row" layout-fill layout-align="center center">
+                    <div layout="row" layout-align="center center">
+                        <md-icon md-font-icon="icon-wind" class="s18"></md-icon>
+                        <span>
+                        12km/h
+                        </span>
+                    </div>
+                    <div layout="row" layout-align="center center">
+                        <md-icon md-font-icon="icon-compass" class="s16"></md-icon>
+                        <span>
+                        NW
+                        </span>
+                    </div>
+                    <div layout="row" layout-align="center center">
+                        <md-icon md-font-icon="icon-rainy2" class="s16"></md-icon>
+                        <span>
+                       17%
+                        </span>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <div flex="25">
+            <div layout="column" layout-align="space-between start"
+                 class="widget weather r18 md-whiteframe-z1 ">
+                <header layout="row" layout-fill layout-align="space-between start">
+                    <div class="title" layout="row" layout-align="start center">
+                        <md-icon md-font-icon="icon-arrow_back" class="s20"></md-icon>
+                        <div class="date"> {{vm.date | date:'MMM MM,EEEE'}}</div>
+                        <md-icon md-font-icon="icon-arrow_forward" class="s20"></md-icon>
+                    </div>
+                    <div>
+                        <md-icon md-font-icon="icon-location_on" class="s20"></md-icon>
+                        <md-icon md-font-icon="icon-refresh" class="s20"></md-icon>
+                    </div>
+                </header>
+                <div flex class="content" layout="column" layout-fill layout-align="center center">
+                    <md-icon md-font-icon="icon-cloud2" class="weather-icon s96"></md-icon>
+                    <div class="detail" layout="row">
+                        <div class="degree">
+                            <span>22</span>&deg
+                        </div>
+                        <div layout="column" layout-align="space-between start">
+                            <div class="condition">
+                                Cloudy
+                            </div>
+                            <div class="location">
+                                New York, NY
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer layout="row" layout-fill layout-align="center center">
+                    <div layout="row" layout-align="center center">
+                        <md-icon md-font-icon="icon-wind" class="s18"></md-icon>
+                        <span>
+                        12km/h
+                        </span>
+                    </div>
+                    <div layout="row" layout-align="center center">
+                        <md-icon md-font-icon="icon-compass" class="s16"></md-icon>
+                        <span>
+                        NW
+                        </span>
+                    </div>
+                    <div layout="row" layout-align="center center">
+                        <md-icon md-font-icon="icon-rainy2" class="s16"></md-icon>
+                        <span>
+                       17%
+                        </span>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <div flex="33">
+            <md-card class="widget post r24 md-whiteframe-z1">
+                <img src="assets/images/photos/early_sunrise-2560x1440.jpg" class="md-card-image" alt="Washed Out">
+                <md-card-content>
+                    <h2 class="md-title">Nature<br><span class="md-caption">Mountain view from lake side</span></h2>
+
+                    <p class="md-body-1">
+                        Look deep into nature, and then you will understand
+                        everything better.<br>
+                        Albert Einstein
+                    </p>
+                </md-card-content>
+            </md-card>
+        </div>
+        <div flex="33">
+            <md-card class="widget post r24 md-whiteframe-z1">
+                <header layout="row" layout-align="start center">
+                    <img src="assets/images/avatars/alice.jpg" class="avatar" alt="Alice"/>
+
+                    <div layout="column">
+                        <span class="title">Alice Freeman posted on Nature</span>
+                        <span class="time">32 minutes ago</span>
+                    </div>
+
+                </header>
+                <img src="assets/images/photos/early_sunrise-2560x1440.jpg" class="md-card-image" alt="Washed Out">
+                <md-card-content>
+                    <p class="md-body-1">
+                        Look deep into nature, and then you will understand
+                        everything better.<br>
+                        Albert Einstein
+                    </p>
+                </md-card-content>
+            </md-card>
+        </div>
+        <div flex="33">
+            <div layout-padding layout="column" class="widget r24 md-whiteframe-z1 md-background-bg">
+                <header layout="row" layout-fill layout-align="space-between start">
+                    <span class="title">Referrals</span>
+                    <span class="md-background-font black o-33"> - Weekly Overview</span>
+                </header>
+                <div flex>
+                    <angular-chart options="vm.pieChart"></angular-chart>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

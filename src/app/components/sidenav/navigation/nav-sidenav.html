@@ -1,0 +1,30 @@
+<md-toolbar class="nav-header md-whiteframe-glow-z1" layout="row" layout-align="start center"
+            layout-padding>
+    <div class="logo md-accent-bg" layout="column" layout-align="center center">
+        <small>F</small>
+    </div>
+    <span class="logo-text ">FUSE</span>
+</md-toolbar>
+<md-content flex role="navigation">
+    <ul class="docs-menu">
+        <li ng-repeat="section in vm.navigation.sections" class="parent-list-item {{section.className || ''}}"
+            ng-class="{'parentActive' : isSectionSelected(section)}">
+            <h2 class="menu-heading md-subhead" ng-if="section.type === 'heading'"
+                id="heading_{{ section.name | nospace }}">
+                {{section.name}}
+            </h2>
+            <menu-link section="section" ng-if="section.type === 'link'"></menu-link>
+
+            <menu-toggle section="section" ng-if="section.type === 'toggle'"></menu-toggle>
+
+            <ul ng-if="section.children" class="menu-nested-list">
+                <li ng-repeat="child in section.children" ng-class="{'childActive' : isSectionSelected(child)}">
+                    <menu-link section="child" ng-if="child.type === 'link'"></menu-link>
+
+                    <menu-toggle section="child" ng-if="child.type === 'toggle'"></menu-toggle>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</md-content>
+

@@ -1,0 +1,240 @@
+#todo {
+    overflow: hidden;
+    min-height: 100%;
+    background-color: rgba(244, 244, 244, 1) !important;
+    > header {
+        background-image: url('/assets/images/backgrounds/mail-bg.png');
+        background-size: cover;
+        height: 185px;
+        > .side-header {
+            padding: 32px 24px 16px 24px;
+            width: 220px;
+            .logo {
+                width: 100%;
+                height: 56px;
+                > md-icon {
+                    color: white;
+                    margin: 0 16px 0 0;
+                }
+                > span {
+                    font-size: 21px;
+                    font-weight: 300;
+                }
+            }
+            .project-selection {
+                font-size: 13px;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                .md-select-label {
+                    width: 100%;
+                }
+                .md-select-value {
+                    padding-left: 0;
+                }
+            }
+        }
+        > .main-header {
+            padding: 32px 0;
+            .search {
+                margin: 0 32px 0 0;
+                height: 56px;
+                line-height: 56px;
+                font-size: 13px;
+                padding: 18px;
+                md-icon {
+                    min-width: 20px;
+                    max-width: 20px;
+                    margin: 0;
+                    top: 0;
+                    bottom: 0;
+                    left: 16px;
+                    color: rgba(0, 0, 0, 0.54);
+                }
+                input {
+                    padding: 0 0 0 18px;
+                    border: none;
+                    height: 56px;
+                    color: rgba(0, 0, 0, 0.54);
+                    outline: none;
+                }
+
+            }
+        }
+    }
+    > .content {
+        > .content-side {
+            width: 220px;
+            min-width: 220px;
+            > * {
+                max-width: 220px;
+            }
+            .add-task-button {
+                padding: 24px;
+                font-size: 13px;
+                .md-button {
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+            .menu {
+                .item {
+                    align-items: inherit;
+                    text-align: left;
+                    text-transform: inherit;
+                    margin: 0;
+                    padding: 0 24px;
+                    outline: 0;
+                    width: 100%;
+                    .context {
+                        line-height: 50px;
+                        max-height: 50px;
+                        height: 50px;
+                        md-icon {
+                            margin: 0 22px 0 0;
+                        }
+                        .title {
+                            font-size: 13px;
+                            line-height: 13px;
+                        }
+                    }
+                }
+                .subhead {
+                    font-size: 13px;
+                    padding: 16px 24px;
+                    font-weight: 500;
+                }
+            }
+        }
+        > .content-main {
+            overflow: hidden;
+            margin-top: -64px;
+            margin-right: 32px;
+            align-content: flex-start;
+            md-checkbox {
+                margin: 0;
+            }
+            > .actions {
+                max-height: 64px;
+                min-height: 64px;
+                height: 64px;
+                padding: 24px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                font-size: 13px;
+                .list-info {
+                    font-size: 13px;
+                    font-weight: 500;
+                    margin: 0 8px;
+                }
+                .md-button {
+                    margin: 0;
+                    &.arrow {
+                        width: 30px;
+                    }
+                }
+                md-input-container {
+                    padding: 0;
+                    margin: 0 8px;
+                    md-select {
+                        padding: 0;
+                        margin: 0;
+                        md-select-label,
+                        md-select-value {
+                            padding: 0;
+                            border: none;
+                            color: inherit;
+                        }
+                    }
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+            .task-list {
+                border-right: 1px solid rgba(0, 0, 0, 0.12);
+                > .task {
+                    display: flex;
+                    box-sizing: border-box;
+                    padding: 20px 24px;
+                    position: relative;
+                    text-align: left;
+                    min-width: 100%;
+                    margin: 0;
+                    border-radius: 0;
+                    text-transform: inherit;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                    cursor: pointer;
+                    outline: 0;
+                    background: #FAFAFA;
+                    .tags {
+                        font-size: 11px;
+                        margin-right: 12px;
+                        .tag {
+                            border-radius: 2px;
+                            margin: 0 4px;
+                            padding: 4px 6px;
+                            color: rgba(255, 255, 255, 1);
+                            font-weight: 500;
+                        }
+                    }
+                    &.checked {
+                        background: #EEEEEE;
+                        color: rgba(0, 0, 0, 0.54);
+                        .info {
+                            text-decoration: line-through;
+                        }
+                    }
+                    &.selected {
+                        background: #FFF8E1;
+                    }
+                    > .context {
+                        min-width: 100%;
+                        .info {
+                            overflow: hidden;
+                            margin: 0 12px 0 24px;
+                            .title {
+                                white-space: nowrap;
+                                font-size: 15px;
+                                font-weight: 500;
+                            }
+                            .notes {
+                                white-space: nowrap;
+                                font-size: 13px;
+                            }
+                        }
+                        .md-button, > .md-menu {
+                            margin: 0;
+                            padding: 0;
+                            width: 36px;
+                            height: 36px;
+                            line-height: 36px;
+                        }
+                        > .md-menu {
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .task-form-actions {
+        padding: 8px;
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+        background-color: rgba(0, 0, 0, 0.03);
+        .md-button {
+            min-height: 32px;
+            height: 32px;
+            line-height: 32px;
+            width: 32px;
+        }
+        .send-button {
+            margin: 0;
+            width: 64px;
+            min-width: 64px;
+            height: 30px;
+            line-height: 30px;
+            min-height: 30px;
+            font-size: 13px;
+        }
+    }
+}

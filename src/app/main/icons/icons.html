@@ -1,0 +1,28 @@
+<div id="icons">
+    <div layout-margin layout="row" layout-align="space-between center">
+        <md-input-container>
+            <label>Search</label>
+            <input ng-model="vm.tagFilter">
+        </md-input-container>
+        <div layout="row" layout-align="center center">
+             <span>
+                 Icon Size:
+             </span>
+            <md-select placeholder="Sizes" ng-model="vm.iconSize">
+                <md-option ng-repeat="size in vm.iconSizes" value="{{size}}">{{size}}</md-option>
+            </md-select>
+        </div>
+    </div>
+    <div id="icons-list" layout="row" layout-padding layout-wrap class="md-padding {{'s'+vm.iconSize}}">
+        <div class="item" flex="10" ng-repeat="icon in vm.icons | filter:vm.tag">
+            <md-button
+                    class="r1 md-whiteframe-z1 md-background-bg"
+                    ng-click="vm.iconDetail($event, icon)"
+                    aria-label="{{icon.properties.name}}">
+                <div layout="column" layout-align="center center" layout-padding>
+                    <md-icon layout-margin md-font-icon="icon-{{icon.properties.name}}"></md-icon>
+                </div>
+            </md-button>
+        </div>
+    </div>
+</div>

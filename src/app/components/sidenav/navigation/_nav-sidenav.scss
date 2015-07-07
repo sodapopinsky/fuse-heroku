@@ -1,0 +1,178 @@
+/************
+* Navigation SideNav
+************/
+$navSidabarWidth: 240px;
+
+.site-sidenav {
+    //  background: #106CC8;
+    .nav-header {
+        height: 64px;
+        min-height: 64px;
+        //    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+        background-color: rgba(255, 255, 255, 0.08);
+        padding-left: 32px;
+        .logo {
+            border-radius: 2px;
+            width: 32px;
+            height: 32px;
+            margin-right: 16px;
+            font-size: 14px
+        }
+        .logo-text {
+            font-size: 16px
+        }
+    }
+    md-content {
+        background: transparent;
+    }
+
+    &.md-locked-open-add-active,
+    &.md-locked-open {
+        width: $navSidabarWidth;
+        min-width: $navSidabarWidth;
+        max-width: $navSidabarWidth;
+    }
+    & > * {
+        min-width: $navSidabarWidth;
+    }
+
+    .docs-menu {
+        &, ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin: 0;
+        }
+
+        & > li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+            &:nth-child(1) {
+                border-top: none;
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        .md-button {
+            border-radius: 0;
+            cursor: pointer;
+            display: block;
+            align-items: inherit;
+
+            margin: 0;
+            overflow: hidden;
+            padding: 0px 32px;
+            text-align: left;
+            text-decoration: none;
+            text-transform: inherit;
+            white-space: normal;
+            width: 100%;
+            &:hover,
+            &:focus {
+                background: rgba(255, 255, 255, 0.13);
+                //        background: #267ED5 !important;
+            }
+            &::-moz-focus-inner {
+                padding: 0;
+            }
+            &.active {
+                background: rgba(255, 255, 255, 0.13);
+                //        background: #267ED5;
+            }
+            .context {
+                line-height: 50px;
+                max-height: 50px;
+                height: 50px;
+                md-icon {
+                    color: inherit;
+                    &.item-icon {
+                        margin: 0 22px 0 0;
+                        //          vertical-align: inherit;
+                        //          margin-right: 8px;
+                    }
+                }
+                .title {
+                    font-size: 13px;
+                    line-height: 13px;
+                }
+            }
+
+        }
+        md-select {
+            /* Override md-select margins.  With margins the menu will look incorrect and causes mobile list
+               to not be scrollable.
+             */
+            margin: 0;
+            width: 100%;
+            md-select-label {
+                justify-content: flex-end;
+                padding-top: 10px;
+                span {
+                    margin-right: auto;
+                    padding-left: 13px;
+                }
+            }
+            .md-select-icon {
+                margin-right: 28px;
+            }
+        }
+    }
+    .menu-heading {
+        display: block;
+        line-height: 32px;
+        margin: 0;
+        padding: 8px 8px 0 32px;
+        text-align: left;
+        width: 100%;
+        color: rgba(255, 255, 255, 0.54);
+        font-size: 12px;
+    }
+    .menu-toggle-list {
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        -webkit-transition: 0.75s cubic-bezier(0.35, 0, 0.25, 1);
+        -webkit-transition-property: height;
+        -moz-transition: 0.75s cubic-bezier(0.35, 0, 0.25, 1);
+        -moz-transition-property: height;
+        transition: 0.75s cubic-bezier(0.35, 0, 0.25, 1);
+        transition-property: height;
+        a.md-button {
+            display: block;
+            padding: 0 8px 0 74px;
+            text-transform: none;
+            text-rendering: optimizeLegibility;
+            font-weight: 500;
+        }
+    }
+
+    ul#docs-menu-Directives {
+        margin-bottom: 20px;
+    }
+    .md-button-toggle {
+        .md-toggle-icon {
+            display: block;
+            margin-left: auto;
+            speak: none;
+            vertical-align: middle;
+            transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+            transition: transform 0.3s ease-in-out;
+            -webkit-transition: -webkit-transform 0.3s ease-in-out;
+        }
+        .md-toggle-icon.toggled {
+            transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+        }
+        .md-whiteframe-glow-z1 {
+            box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.14),
+            0px 0px 2px 2px rgba(0, 0, 0, 0.098),
+            0px 0px 5px 1px rgba(0, 0, 0, 0.084);
+        }
+    }
+}
+

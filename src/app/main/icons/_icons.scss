@@ -1,0 +1,29 @@
+$iconSizes: (16, 18, 20, 24, 32);
+#icons {
+  #icons-list {
+    @each $size in $iconSizes {
+      &.s#{$size} .item .md-button md-icon {
+        font-size: #{$size}px;
+      }
+    }
+
+    &.hide-classes {
+      .item {
+        .item-class {
+          display: none;
+        }
+      }
+    }
+    .item {
+      .md-button {
+        padding: 8px;
+        width: 100%;
+        margin: 0;
+        md-icon{
+          font-size:24px;
+        }
+      }
+
+    }
+  }
+}

@@ -1,0 +1,67 @@
+$toolbarHeight: 64px;
+#main-toolbar {
+    height: $toolbarHeight;
+    min-height: $toolbarHeight;
+    .search {
+        margin: 0 0 0 24px;
+        padding: 0;
+        font-size: 13px;
+        md-icon {
+            min-width: 20px;
+            max-width: 20px;
+            position: initial;
+            color: rgba(0, 0, 0, 0.54);
+            line-height: $toolbarHeight;
+            height: $toolbarHeight;
+        }
+        input {
+            border: none;
+            padding: 0;
+            margin-left: 16px;
+            height: $toolbarHeight;
+            color: rgba(0, 0, 0, 0.54);
+            outline: none;
+            background: none;
+        }
+    }
+    .user {
+        .notifications.md-button {
+            margin: 0;
+            min-width: 64px;
+            border-left: 1px solid rgba(0, 0, 0, 0.13);
+            height: 64px;
+            border-radius: 0;
+            color: rgba(0, 0, 0, 0.54);
+            md-icon {
+                color: rgba(0, 0, 0, 0.54);
+
+            }
+            //      overflow: visible;
+            .badge {
+                position: absolute;
+                top: 24px;
+                left: 20px;
+                width: 8px;
+                height: 8px;
+                min-height: 8px;
+                border-radius: 50%;
+                padding: 0;
+            }
+        }
+        .md-menu {
+            padding: 0;
+            #user-button {
+                padding: 8px;
+                text-transform: inherit;
+                img {
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                }
+                .username {
+                    margin: 0 14px;
+                }
+            }
+        }
+    }
+}

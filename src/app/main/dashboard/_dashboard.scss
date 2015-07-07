@@ -1,0 +1,200 @@
+$rowHeight: 20px;
+$rowSizes: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24);
+#dashboard {
+    padding: 8px;
+    .widgets {
+        align-content: flex-start;
+        > div {
+            padding: 8px;
+        }
+        .widget {
+            margin: 0;
+            box-sizing: border-box;
+            border-radius: 2px;
+            background: white;
+            @each $size in $rowSizes {
+                &.r#{$size} {
+                    min-height: $size*$rowHeight;
+                    max-height: $size*$rowHeight;
+                    height: $size*$rowHeight;
+                }
+            }
+
+            > header {
+                padding: 15px 15px 0 20px;
+                font-size: 14px;
+                font-weight: 500;
+                color: rgba(0, 0, 0, 0.54);
+                .title {
+                    margin-top: 4px;
+                }
+                md-icon {
+                    margin: 0;
+                }
+            }
+            > .content {
+                padding: 0 15px 12px 20px;
+                color: rgba(0, 0, 0, 0.87);
+
+                .value {
+                    padding: 8px 0 20px 0;
+                    font-size: 36px;
+                    font-weight: 300;
+                    line-height: 1;
+                    md-icon {
+                        margin-left: 16px;
+                        color: rgba(0, 0, 0, 0.30);
+                    }
+                }
+                .detail {
+                    color: rgba(0, 0, 0, 0.70);
+                    font-size: 13px;
+                    md-icon {
+                        margin: 0 8px 0 0;
+                    }
+                    .box {
+                        border-radius: 2px;
+                        padding: 4px 8px;
+                        margin: 0 8px;
+                        font-size: 11px;
+                        font-weight: 800;
+                        color: rgba(0, 0, 0, 0.54);
+                        background-color: rgba(0, 0, 0, 0.13);
+                        white-space: nowrap;
+                    }
+                }
+            }
+            > footer {
+                padding: 12px 15px 12px 20px;
+                border-top: 1px solid rgba(0, 0, 0, 0.13);
+            }
+
+            &.contrast {
+                .content {
+                    color: white;
+                    .value {
+                        md-icon {
+                            color: rgba(255, 255, 255, 0.3);
+                        }
+                    }
+                    md-icon {
+                        color: rgba(255, 255, 255, 1);
+                    }
+                    .detail {
+                        color: rgba(255, 255, 255, 0.70);
+                        .box {
+                            color: rgba(0, 0, 0, 0.54);
+                            background-color: rgba(255, 255, 255, 0.70);
+                        }
+                    }
+                }
+                footer {
+                    color: white;
+                    border-top: 1px solid rgba(255, 255, 255, 0.18);
+                    md-icon {
+                        color: white;
+                    }
+                }
+            }
+            &.blue {
+                background-color: #24acd8;
+            }
+            &.blue-grey {
+                background-color: #648ca0;
+            }
+            &.green {
+                background-color: #66b969;
+            }
+            &.orange {
+                background-color: #ffab40;
+            }
+            &.purple {
+                background-color: #7362b2;
+            }
+
+            &.weather {
+                > header {
+                    .title {
+                        .date {
+                            margin: 0 8px;
+                        }
+                    }
+                }
+                > .content {
+                    //                    padding: 48px 15px 48px 20px;
+                    .weather-icon {
+                        margin: 0 0 40px 0;
+                    }
+                    .detail {
+                        .degree {
+                            font-size: 42px;
+                            font-weight: 300;
+                            line-height: 32px;
+                            padding-right: 8px;
+                        }
+                        .condition {
+                            font-size: 16px;
+                        }
+                        .location {
+                            font-size: 13px;
+                        }
+                    }
+                }
+                > footer {
+                    font-size: 13px;
+                    > div {
+                        margin-right: 32px;
+                        md-icon {
+                            margin-right: 4px;
+                        }
+                    }
+
+                }
+                &.contrast {
+                    > .content {
+                        .weather-icon {
+                        }
+                        .detail {
+                            .degree {
+                                color: white;
+                            }
+                            .condition {
+                                color: white;
+                            }
+                            .location {
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.post {
+                > header {
+                    padding: 16px 16px 8px 16px;
+                    font-size: 13px;
+                    .title {
+                        font-weight: 600;
+                        color: rgba(0, 0, 0, 0.87);
+                    }
+                    .avatar {
+                        width: 40px;
+                        height: 40px;
+                        margin-top: 8px;
+                        margin-bottom: 8px;
+                        margin-right: 16px;
+                        border-radius: 50%;
+                        box-sizing: content-box;
+                    }
+                }
+                md-card-content {
+                    .md-title {
+                        .md-caption {
+                            color: rgba(0, 0, 0, 0.54);
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

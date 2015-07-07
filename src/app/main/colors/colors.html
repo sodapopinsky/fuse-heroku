@@ -1,0 +1,32 @@
+<div class="md-padding">
+    <div layout-padding id="theme-colors" class="">
+        <div flex="50" class="">
+            <div class="md-headline">Theme Palette</div>
+            <div ng-repeat="(colorType, color ) in vm.theme"
+                 ng-include="'colorListItem'">
+            </div>
+        </div>
+        <!--<md-list flex="50" class="md-padding">
+            <md-subheader class="md-no-sticky">Theme Palette</md-subheader>
+            <md-list-item ng-repeat="(class, value) in vm.theme" ng-style="{'background-color':value}">
+                <p> {{ class }} </p>
+                <div class="md-secondary" >{{value}}</div>
+            </md-list-item>
+        </md-list>-->
+        <script type="text/ng-template" id="colorListItem">
+            <div class="md-whiteframe-z1" layout-margin layout="row" layout-align="center center" layout-padding
+                 ng-class="color.classes['background-color']">
+                <div flex> {{colorType}}</div>
+                <div flex class="">{{color.value}}</div>
+                <div flex>
+                    <div class="" ng-repeat="class in color.classes">{{class}}</div>
+                </div>
+            </div>
+            <div>
+                <div ng-repeat="(colorType, color) in color.hues"
+                     ng-include="'colorListItem'">
+                </div>
+            </div>
+        </script>
+    </div>
+</div>

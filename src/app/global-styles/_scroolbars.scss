@@ -1,0 +1,45 @@
+/*----------------------------------------------------------------*/
+/*  @ Scrollbars
+/*----------------------------------------------------------------*/
+::-webkit-scrollbar {
+    width: 15px;
+    height: 17px;
+    margin-left: 10px;
+}
+
+/* Background */
+::-webkit-scrollbar-track-piece {
+    background: transparent none;
+    border: solid 0 transparent;
+    border-right-width: 0;
+    margin: 0;
+}
+
+/* Bottom bar background */
+::-webkit-scrollbar-track-piece:horizontal {
+    border-right-width: 4px;
+    border-bottom-width: 8px;
+}
+
+/* Bar element (thumb) */
+::-webkit-scrollbar-thumb {
+    border: solid 0 rgba(0, 0, 0, 0);
+    border-right-width: 5px;
+    border-left-width: 5px;
+    -webkit-border-radius: 9px 6px;
+    -webkit-box-shadow: inset 0 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Darken rollover */
+::-webkit-scrollbar-thumb:hover {
+    -webkit-box-shadow: inset 0 0 0 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Horizontal thumb */
+::-webkit-scrollbar-thumb:horizontal {
+    border-right-width: 0;
+    border-left-width: 0;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    -webkit-border-radius: 6px 9px;
+}

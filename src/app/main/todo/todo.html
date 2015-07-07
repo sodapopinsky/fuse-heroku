@@ -1,0 +1,182 @@
+<div id="todo" class="" layout="column">
+    <header layout="row" layout-fill class="md-accent-bg">
+        <div class="side-header" layout="column" layout-align="space-between center" layout-fill>
+            <div class="logo" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-check_box" class="s24"></md-icon>
+                <span>To-Do</span>
+            </div>
+            <md-select class="project-selection" placeholder="Project Selection" ng-model="vm.selectedProject">
+                <md-option ng-repeat="(project, title) in vm.projects" value="{{project}}">{{title}}
+                </md-option>
+            </md-select>
+        </div>
+        <div class="main-header" flex>
+            <div class="search md-whiteframe-z2 md-background-bg" layout="row"
+                 layout-align="start center">
+                <md-icon md-font-icon="icon-search" class="name md-background-bg s24"></md-icon>
+                <input flex ng-model="vm.search" type="text" placeholder="Search for an e-mail or contact">
+            </div>
+        </div>
+    </header>
+    <div class="content" layout="row">
+        <div class="content-side" class="md-background-bg md-hue-1" layout="column">
+            <div class="add-task-button">
+                <md-button class="md-accent md-raised" aria-label="add task"
+                           ng-click="vm.openTaskDialog($event)">ADD TASK
+                </md-button>
+            </div>
+            <div class="menu" layout="column" layout-fill>
+                <md-button class="item" ng-click="" aria-label="all tasks">
+                    <div class="context" layout="row" layout-align="start center">
+                        <md-icon md-font-icon="icon-list" class="s18"></md-icon>
+                        <div class="title" flex>
+                            All Tasks
+                        </div>
+                    </div>
+                </md-button>
+                <md-button class="item" ng-click="" aria-label="starred">
+                    <div class="context" layout="row" layout-align="start center">
+                        <md-icon md-font-icon="icon-star" class="s18"></md-icon>
+                        <div class="title" flex>
+                            Starred
+                        </div>
+                    </div>
+                </md-button>
+                <md-button class="item" ng-click="" aria-label="priority">
+                    <div class="context" layout="row" layout-align="start center">
+                        <md-icon md-font-icon="icon-info" class="s18"></md-icon>
+                        <div class="title" flex>
+                            Priority
+                        </div>
+                    </div>
+                </md-button>
+                <md-button class="item" ng-click="" aria-label="scheduled">
+                    <div class="context" layout="row" layout-align="start center">
+                        <md-icon md-font-icon="icon-access_time" class="s18"></md-icon>
+                        <div class="title" flex>
+                            Scheduled
+                        </div>
+                    </div>
+                </md-button>
+                <md-button class="item" ng-click="" aria-label="today">
+                    <div class="context" layout="row" layout-align="start center">
+                        <md-icon md-font-icon="icon-today" class="s18"></md-icon>
+                        <div class="title" flex>
+                            Today
+                        </div>
+                    </div>
+                </md-button>
+                <md-button class="item" ng-click="" aria-label="done">
+                    <div class="context" layout="row" layout-align="start center">
+                        <md-icon md-font-icon="icon-check" class="s18"></md-icon>
+                        <div class="title" flex>
+                            Done
+                        </div>
+                    </div>
+                </md-button>
+                <md-button class="item" ng-click="" aria-label="deleted">
+                    <div class="context" layout="row" layout-align="start center">
+                        <md-icon md-font-icon="icon-delete" class="s18"></md-icon>
+                        <div class="title" flex>
+                            Deleted
+                        </div>
+                    </div>
+                </md-button>
+                <md-divider></md-divider>
+                <div class="subhead">
+                    Tags
+                </div>
+                <md-button class="item" ng-click="" aria-label="tag {{tag.title}}" ng-repeat="tag in vm.tags">
+                    <div class="context" layout="row" layout-align="start center">
+                        <md-icon md-font-icon="icon-label" class="s18" ng-style="{'color' : tag.color}"></md-icon>
+                        <div class="title" flex>
+                            {{tag.title}}
+                        </div>
+                    </div>
+                </md-button>
+            </div>
+        </div>
+        <div class="content-main md-background-bg md-whiteframe-z3" flex layout="column">
+            <div class="actions" flex="100" layout="row" layout-align="space-between center">
+                <div layout="row" layout-align="start center">
+                    <md-input-container>
+                        <md-select ng-model="vm.selectedFilter.filter" placeholder="Filter">
+                            <md-option ng-repeat="filter in vm.filters.filter" value="{{filter}}">{{filter}}</md-option>
+                        </md-select>
+                    </md-input-container>
+                    <div class="vert-divider"></div>
+                    <md-input-container>
+                        <md-select ng-model="vm.selectedFilter.order" placeholder="Order">
+                            <md-option ng-repeat="order in vm.filters.order" value="{{order}}">{{order}}</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-align="end center">
+                    <md-input-container>
+                        <md-select ng-model="vm.selectedFilter.next" placeholder="Next..">
+                            <md-option ng-repeat="next in vm.filters.next" value="{{next}}">{{next}}</md-option>
+                        </md-select>
+                    </md-input-container>
+                        <span class="list-info">
+                            1 - 100 of 980
+                        </span>
+                    <md-button class="md-icon-button arrow" aria-label="previous">
+                        <md-icon md-font-icon="icon-keyboard_arrow_left"></md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button arrow" aria-label="next">
+                        <md-icon md-font-icon="icon-keyboard_arrow_right"></md-icon>
+                    </md-button>
+                </div>
+            </div>
+            <div layout="column" layout-fill class="task-list">
+                <div class="task"
+                     ng-repeat="task in vm.tasks" md-ink-ripple  ng-click="vm.openTaskDialog($event, task)"
+                     ng-class="{'starred': task.starred, 'selected': task.selected, 'checked': task.checked}">
+                    <div class="context" layout-fill layout="row" layout-align="start center">
+                        <md-checkbox aria-label="{{$index}}"
+                                     class="checkbox"
+                                     ng-checked="task.checked"
+                                     ng-click="vm.toggleCheck($event,task)">
+                        </md-checkbox>
+                        <div layout="column" class="info" flex>
+                            <div class="title">{{task.title}}</div>
+                            <div class="notes">{{task.notes | limitTo:50}}{{task.notes.length > 50 ?'...' : ''}}
+                            </div>
+                        </div>
+                        <div class="tags" layout="row">
+                            <div class="tag" data-ng-repeat="tag in task.tags"
+                                 ng-style="{'background-color': tag.color}">{{tag.title}}
+                            </div>
+                        </div>
+                        <md-button class="md-icon-button" ng-click="vm.starredToggle(task,$event)"
+                                   aria-label="starred">
+                            <md-icon ng-if="task.starred" md-font-icon="icon-star"
+                                     class="md-color-font yellow"></md-icon>
+                            <md-icon ng-if="!task.starred" md-font-icon="icon-star_outline"></md-icon>
+
+                        </md-button>
+                        <md-menu>
+                            <md-button aria-label="more" class="md-icon-button"
+                                      >
+                                <md-icon md-font-icon="icon-more_vert"  ng-click="$mdOpenMenu($event)"></md-icon>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item>
+                                    <md-button ng-click="" aria-label="all">Mark as done</md-button>
+                                </md-menu-item>
+                                <md-menu-item>
+                                    <md-button ng-click="" aria-label="none">Mark as important</md-button>
+                                </md-menu-item>
+                                <md-menu-item>
+                                    <md-button ng-click="" aria-label="read">Add star</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
