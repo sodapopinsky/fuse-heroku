@@ -116,7 +116,7 @@
                     ]
                 },
                 {
-                    "name": "UI",
+                    "name": "User Interface",
                     "type": "heading",
                     "children": [
                         {
