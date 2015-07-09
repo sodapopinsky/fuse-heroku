@@ -1,6 +1,6 @@
 <md-button
         ng-class="{'active' : isSelected()}"
-        ng-href="{{(section.type === 'version' ? '' : '#') + section.url}}"
+        href="{{section.url}}"
         ng-click="focusSection()">
     <span class="context" layout="row" layout-align="start center">
     <md-icon ng-if="section.icon" md-font-icon="{{ section.icon }}" class="item-icon s18"></md-icon>
