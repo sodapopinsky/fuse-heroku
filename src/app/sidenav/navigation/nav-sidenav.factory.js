@@ -195,6 +195,11 @@
                                     "name": "Register",
                                     "id": "register",
                                     "url": "/register"
+                                },
+                                {
+                                    "name": "Forget Password",
+                                    "id": "forget-password",
+                                    "url": "/forget-password"
                                 }
                             ]
                         },

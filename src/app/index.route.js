@@ -117,6 +117,14 @@
                         templateUrl: 'app/main/pages/auth/register/register.html'
                     }
                 }
+            })
+            .state('layout.basic.forget-password', {
+                url: '/forget-password',
+                views: {
+                    'main': {
+                        templateUrl: 'app/main/pages/auth/forget-password/forget-password.html'
+                    }
+                }
             });
 
     }
