@@ -5,13 +5,11 @@
         </div>
         <div class="title">Sign into your account</div>
         <form layout="column">
-            <md-input-container flex>
-                <label>Username</label>
-                <input ng-model="vm.form.username">
+            <md-input-container flex md-no-float>
+                <input placeholder="Username" ng-model="vm.form.username">
             </md-input-container>
-            <md-input-container flex>
-                <label>Password</label>
-                <input ng-model="vm.form.password" type="password">
+            <md-input-container flex md-no-float>
+                <input placeholder="Password" ng-model="vm.form.password" type="password">
             </md-input-container>
             <div class="remember-forget" layout="row" layout-align="space-between center">
                 <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
@@ -42,7 +40,7 @@
         </md-button>
         <div class="create-account" layout="row" layout-align="space-between center">
             <span>Don't have an account?</span>
-            <a class="md-accent-font">Create an account</a>
+            <a ui-sref="layout.basic.register" class="md-accent-font">Create an account</a>
         </div>
     </md-whiteframe>
 </div>

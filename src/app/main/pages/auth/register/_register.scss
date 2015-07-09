@@ -1,0 +1,48 @@
+#register {
+    background-image: url('/assets/images/backgrounds/march.jpg');
+    background-size: 100% auto;
+    > md-whiteframe {
+        padding: 32px;
+        .logo {
+            border-radius: 2px;
+            width: 128px;
+            height: 128px;
+            font-size: 86px;
+            margin: 32px;
+            font-weight: 500;
+        }
+        .title {
+            margin: 16px 0 32px 0;
+        }
+        form {
+            font-size: 15px;
+            md-input-container {
+                padding: 12px 0;
+                min-width: 320px;
+                width: 320px;
+            }
+            md-checkbox {
+                margin: 0 8px 0 0;
+            }
+            .terms {
+                font-size: 13px;
+                margin: 16px 0;
+            }
+            .md-button {
+                width: 220px;
+                margin: 16px auto;
+            }
+        }
+        .have-account {
+            text-align: center;
+            font-size: 13px;
+            margin: 32px 0 24px 0;
+            width: 250px;
+            font-weight: 500;
+            > span {
+                margin-right: 8px;
+            }
+        }
+    }
+}
+

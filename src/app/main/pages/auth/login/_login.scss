@@ -9,16 +9,20 @@
             height: 128px;
             font-size: 86px;
             margin: 32px;
+            font-weight: 500;
         }
         .title {
-            margin: 16px 0;
+            margin: 16px 0 32px 0;
         }
         form {
             font-size: 15px;
             md-input-container {
-                padding-bottom: 2px;
+                padding: 12px 0;
                 min-width: 320px;
                 width: 320px;
+            }
+            md-checkbox{
+                margin: 0;
             }
             .remember-forget {
                 font-size: 13px;
@@ -30,7 +34,7 @@
             }
         }
         .md-button {
-            width: 220px;
+            width: 192px;
             &.google, &.facebook {
                 text-transform: none;
                 color: white;
