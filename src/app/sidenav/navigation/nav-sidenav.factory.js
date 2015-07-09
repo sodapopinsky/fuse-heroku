@@ -197,9 +197,9 @@
                                     "url": "/register"
                                 },
                                 {
-                                    "name": "Forget Password",
-                                    "id": "forget-password",
-                                    "url": "/forget-password"
+                                    "name": "Forgot Password",
+                                    "id": "forgot-password",
+                                    "url": "/forgot-password"
                                 }
                             ]
                         },

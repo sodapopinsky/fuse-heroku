@@ -118,11 +118,11 @@
                     }
                 }
             })
-            .state('layout.basic.forget-password', {
-                url: '/forget-password',
+            .state('layout.basic.forgot-password', {
+                url: '/forgot-password',
                 views: {
                     'main': {
-                        templateUrl: 'app/main/pages/auth/forget-password/forget-password.html'
+                        templateUrl: 'app/main/pages/auth/forgot-password/forgot-password.html'
                     }
                 }
             });
