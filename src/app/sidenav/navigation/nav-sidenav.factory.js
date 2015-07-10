@@ -102,6 +102,12 @@
                             "icon": "icon-today"
                         },
                         {
+                            "name": "E-commerce",
+                            "url": "/ecommerce",
+                            "type": "link",
+                            "icon": "icon-shopping_cart"
+                        },
+                        {
                             "name": "Email",
                             "url": "/mail",
                             "type": "link",
