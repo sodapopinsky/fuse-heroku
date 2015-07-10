@@ -14,7 +14,8 @@
             'ngTouch',
             'ngMaterial',
             'angularChart',
-            'ui.router'
+            'ui.router',
+            'timer'
             //'chart.js'
         ]);
 

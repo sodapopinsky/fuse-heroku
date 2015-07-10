@@ -1,0 +1,68 @@
+#coming-soon {
+    background-image: url('/assets/images/backgrounds/march.jpg');
+    background-size: 100% auto;
+    > md-whiteframe {
+        padding-top: 32px;
+        > * {
+            padding: 0 64px;
+        }
+        .logo {
+            border-radius: 2px;
+            width: 128px;
+            height: 128px;
+            font-size: 86px;
+            margin: 32px;
+            font-weight: 500;
+        }
+        .title {
+            margin: 16px 0 0 0;
+            text-align: center;
+            font-size: 20px;
+        }
+        .sub-title {
+            margin: 16px 0 0 0;
+            text-align: center;
+            max-width: 350px;
+            color: rgba(0, 0, 0, 0.54);
+            font-size: 17px;
+        }
+        timer {
+            margin: 48px 0;
+            > div {
+                margin: 0 16px;
+                .value {
+                    font-size: 45px;
+                }
+                .type {
+                    font-size: 13px;
+                    color: rgba(0, 0, 0, 0.54);
+                }
+            }
+
+        }
+        form {
+            background-color: rgba(0, 0, 0, 0.03);
+            font-size: 15px;
+            width: 100%;
+            padding: 32px;
+            .message {
+                max-width: 350px;
+                font-weight: 500;
+                margin: 8px auto;
+            }
+            md-input-container {
+                padding: 12px 0;
+                min-width: 320px;
+                width: 350px;
+                margin: 8px auto 16px auto;
+
+            }
+            .md-button {
+                width: 220px;
+                margin: 16px auto;
+            }
+        }
+
+    }
+}
+

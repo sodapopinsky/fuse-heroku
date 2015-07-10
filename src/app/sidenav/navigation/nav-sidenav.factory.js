@@ -200,8 +200,19 @@
                                     "name": "Forgot Password",
                                     "id": "forgot-password",
                                     "url": "/forgot-password"
+                                },
+                                {
+                                    "name": "Lock",
+                                    "id": "lock",
+                                    "url": "/lock"
                                 }
                             ]
+                        },
+                        {
+                            "name": "Coming Soon",
+                            "url": "/coming-soon",
+                            "type": "link",
+                            "icon": "icon-timer"
                         },
                         {
                             "name": "Search",

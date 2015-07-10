@@ -1,0 +1,56 @@
+#lock {
+    background-image: url('/assets/images/backgrounds/march.jpg');
+    background-size: 100% auto;
+    > md-whiteframe {
+        padding: 48px 32px 32px 32px;
+        max-width: 390px;
+        .title {
+            margin: 0 0 8px 0;
+            font-size: 17px;
+            font-weight: 500;
+        }
+        .sub-title {
+            font-size: 13px;
+            color: rgba(0, 0, 0, 0.54);
+        }
+        .profile {
+            position: relative;
+            width: 72px;
+            min-width: 72px;
+            height: 72px;
+            margin-right: 24px;
+            .md-avatar {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                box-sizing: content-box;
+            }
+            md-icon {
+                position: absolute;
+                bottom: -8px;
+                right: -8px;
+            }
+        }
+
+        form {
+            font-size: 15px;
+            margin: 32px 0 0 0;
+            md-input-container {
+                padding: 12px 0;
+                min-width: 320px;
+                width: 320px;
+            }
+            .md-button {
+                width: 220px;
+                margin: 32px auto;
+            }
+        }
+
+        .message {
+            font-size: 13px;
+            cursor: pointer;
+            margin: 16px 0;
+        }
+
+    }
+}

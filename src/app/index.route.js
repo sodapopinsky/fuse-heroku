@@ -125,6 +125,22 @@
                         templateUrl: 'app/main/pages/auth/forgot-password/forgot-password.html'
                     }
                 }
+            })
+            .state('layout.basic.lock', {
+                url: '/lock',
+                views: {
+                    'main': {
+                        templateUrl: 'app/main/pages/auth/lock/lock.html'
+                    }
+                }
+            })
+            .state('layout.basic.coming-soon', {
+                url: '/coming-soon',
+                views: {
+                    'main': {
+                        templateUrl: 'app/main/pages/coming-soon/coming-soon.html'
+                    }
+                }
             });
 
     }

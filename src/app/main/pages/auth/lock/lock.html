@@ -1,0 +1,26 @@
+<div id="lock" layout="column" layout-fill layout-align="center center">
+    <md-whiteframe class="md-whiteframe-z1 md-background-bg" layout="column" layout-align="center center">
+        <div layout="row">
+            <div class="profile">
+                <img class="md-avatar" src="assets/images/avatars/sercan.jpg">
+                <md-icon md-font-icon="icon-lock" class="md-warn-font s36 md-hue-2"></md-icon>
+            </div>
+            <div>
+                <div class="title">Your session locked</div>
+                <div class="sub-title">Due to inactivity, your session is locked. Enter your password to continue.</div>
+            </div>
+        </div>
+        <form layout="column">
+            <md-input-container flex md-no-float>
+                <input placeholder="User Name" ng-model="vm.form.userName">
+            </md-input-container>
+            <md-input-container flex md-no-float>
+                <input placeholder="Password" ng-model="vm.form.password" type="password">
+            </md-input-container>
+            <md-button class="md-raised md-accent">
+                UNLOCK
+            </md-button>
+        </form>
+        <div class="message">Are you not Sercan Yemen?</div>
+    </md-whiteframe>
+</div>
