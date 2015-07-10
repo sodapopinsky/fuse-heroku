@@ -7,6 +7,7 @@
         background-position: 0 50%;
         background-repeat: no-repeat;
         background-color: #fafafa;
+        z-index: 1;
         &.Jul {
             background-image: url('/assets/images/backgrounds/july.jpg');
             color: rgba(0, 0, 0, 0.87);
