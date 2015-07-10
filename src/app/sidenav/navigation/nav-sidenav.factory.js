@@ -266,6 +266,12 @@
                             "icon": "icon-image"
                         },
                         {
+                            "name": "Invoice",
+                            "url": "/invoice",
+                            "type": "link",
+                            "icon": "icon-receipt"
+                        },
+                        {
                             "name": "Profile",
                             "url": "/profile",
                             "type": "link",
