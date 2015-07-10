@@ -96,16 +96,16 @@
                     "type": "heading",
                     "children": [
                         {
-                            "name": "Email",
-                            "url": "/mail",
-                            "type": "link",
-                            "icon": "icon-email"
-                        },
-                        {
                             "name": "Calendar",
                             "url": "/calendar",
                             "type": "link",
                             "icon": "icon-today"
+                        },
+                        {
+                            "name": "Email",
+                            "url": "/mail",
+                            "type": "link",
+                            "icon": "icon-email"
                         },
                         {
                             "name": "To-do",
@@ -119,6 +119,30 @@
                     "name": "User Interface",
                     "type": "heading",
                     "children": [
+                        {
+                            "name": "Typography",
+                            "url": "/typography",
+                            "type": "link",
+                            "icon": "icon-format_size"
+                        },
+                        {
+                            "name": "Colors",
+                            "url": "/colors",
+                            "type": "link",
+                            "icon": "icon-palette"
+                        },
+                        {
+                            "name": "Icons",
+                            "url": "/icons",
+                            "type": "link",
+                            "icon": "icon-info_outline"
+                        },
+                        {
+                            "name": "Layouts",
+                            "url": "/layouts",
+                            "type": "link",
+                            "icon": "icon-view_compact"
+                        },
                         {
                             "name": "Elements",
                             "type": "toggle",
@@ -142,7 +166,7 @@
                             ]
                         },
                         {
-                            "name": "Table",
+                            "name": "Tables",
                             "type": "toggle",
                             "icon": "icon-grid_on",
                             "pages": [
@@ -159,21 +183,19 @@
                             ]
                         },
                         {
-                            "name": "Chart",
+                            "name": "Charts",
                             "type": "link",
                             "icon": "icon-equalizer"
                         },
                         {
-                            "name": "Icons",
-                            "url": "/icons",
+                            "name": "Maps",
                             "type": "link",
-                            "icon": "icon-info_outline"
+                            "icon": "icon-place"
                         },
                         {
-                            "name": "Typography",
-                            "url": "/typography",
+                            "name": "Widgets",
                             "type": "link",
-                            "icon": "icon-format_size"
+                            "icon": "icon-layers"
                         }
                     ]
                 },
@@ -215,33 +237,45 @@
                             "icon": "icon-timer"
                         },
                         {
+                            "name" : "Error",
+                            "type": "toggle",
+                            "icon": "icon-error_outline",
+                            "pages" : [
+                                {
+                                    "name": "404",
+                                    "url": "/error-404",
+                                    "type": "link"
+                                },
+                                {
+                                    "name": "500",
+                                    "url": "/error-500",
+                                    "type": "link"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Gallery",
+                            "url": "/gallery",
+                            "type": "link",
+                            "icon": "icon-image"
+                        },
+                        {
+                            "name": "Profile",
+                            "url": "/profile",
+                            "type": "link",
+                            "icon": "icon-person"
+                        },
+                        {
                             "name": "Search",
                             "url": "/search",
                             "type": "link",
                             "icon": "icon-search"
                         },
                         {
-                            "name": "404",
-                            "url": "/email",
+                            "name": "Timeline",
+                            "url": "/timeline",
                             "type": "link",
-                            "icon": "icon-error_outline"
-                        }
-                    ]
-                },
-                {
-                    "name": "Customization",
-                    "type": "heading",
-                    "children": [
-                        {
-                            "name": "Layout",
-                            "type": "link",
-                            "icon": "icon-view_compact"
-                        },
-                        {
-                            "name": "Colors",
-                            "url": "/colors",
-                            "type": "link",
-                            "icon": "icon-palette"
+                            "icon": "icon-view_day"
                         }
                     ]
                 }
