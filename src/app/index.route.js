@@ -141,6 +141,22 @@
                         templateUrl: 'app/main/pages/coming-soon/coming-soon.html'
                     }
                 }
+            })
+            .state('layout.basic.404', {
+                url: '/error-404',
+                views: {
+                    'main': {
+                        templateUrl: 'app/main/pages/error/error-404.html'
+                    }
+                }
+            })
+            .state('layout.basic.500', {
+                url: '/error-500',
+                views: {
+                    'main': {
+                        templateUrl: 'app/main/pages/error/error-500.html'
+                    }
+                }
             });
 
     }
