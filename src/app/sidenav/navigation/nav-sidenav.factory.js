@@ -284,6 +284,12 @@
                             "icon": "icon-search"
                         },
                         {
+                            "name": "Price Tables",
+                            "url": "/price-tables",
+                            "type": "link",
+                            "icon": "icon-view_comfortable"
+                        },
+                        {
                             "name": "Timeline",
                             "url": "/timeline",
                             "type": "link",

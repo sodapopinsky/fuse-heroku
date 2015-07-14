@@ -157,6 +157,14 @@
                         templateUrl: 'app/main/pages/error/error-500.html'
                     }
                 }
+            })
+            .state('layout.default.price-tables', {
+                url: '/price-tables',
+                views: {
+                    'main': {
+                        templateUrl: 'app/main/pages/price-tables/price-tables.html'
+                    }
+                }
             });
 
     }
