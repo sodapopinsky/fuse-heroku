@@ -1,0 +1,34 @@
+<div id="profile" layout="column" layout-fill >
+    <header layout="column" layout-align="end start">
+        <div layout="row" layout-align="space-between end" layout-fill>
+            <div layout="row" layout-align="start center">
+                <img src="assets/images/avatars/katherine.png" class="profile-img"/>
+
+                <div class="username">Katherine Wilson</div>
+            </div>
+            <div layout="row" layout-align="end center">
+                <md-button class="md-raised md-accent">Follow</md-button>
+                <md-button class="md-raised md-primary">Send Message</md-button>
+            </div>
+        </div>
+    </header>
+    <div class="content" flex>
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Timeline">
+                <md-content  class="timeline-tab"
+                            ng-include="'app/main/pages/profile/tabs/timeline/timeline.html'">
+                </md-content>
+            </md-tab>
+            <md-tab label="About">
+                <md-content class="about-tab"
+                            ng-include="'app/main/pages/profile/tabs/about/about.html'">
+                </md-content>
+            </md-tab>
+            <md-tab label="Photos & Videos">
+                <md-content class="photos-videos-tab"
+                            ng-include="'app/main/pages/profile/tabs/photos-videos/photos-videos.html'">
+                </md-content>
+            </md-tab>
+        </md-tabs>
+    </div>
+</div>

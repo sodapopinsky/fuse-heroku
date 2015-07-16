@@ -1,0 +1,132 @@
+{
+  "data": [
+    {
+      "date": "June 2015",
+      "context": "5 Photos",
+      "media": [
+        {
+          "type": "photo",
+          "title": "Mountain Sunset",
+          "preview": "assets/images/photos/mountain-sunset.png"
+        },
+        {
+          "type": "photo",
+          "title": "Mountain Lake",
+          "preview": "assets/images/photos/mountain-lake.png"
+        },
+        {
+          "type": "photo",
+          "title": "Hot air balloons",
+          "preview": "assets/images/photos/air-balloons.png"
+        },
+        {
+          "type": "photo",
+          "title": "Cactus",
+          "preview": "assets/images/photos/cactus.png"
+        },
+        {
+          "type": "photo",
+          "title": "Road Trip",
+          "preview": "assets/images/photos/road-trip.png"
+        }
+      ]
+    },
+    {
+      "date": "May 2015",
+      "context": "7 Photos, 3 Videos",
+      "media": [
+        {
+          "type": "photo",
+          "title": "Mountain Sunset",
+          "preview": "assets/images/photos/mountain-sunset.png"
+        },
+        {
+          "type": "photo",
+          "title": "Mountain Lake",
+          "preview": "assets/images/photos/mountain-lake.png"
+        },
+        {
+          "type": "photo",
+          "title": "Hot air balloons",
+          "preview": "assets/images/photos/air-balloons.png"
+        },
+        {
+          "type": "photo",
+          "title": "Cactus",
+          "preview": "assets/images/photos/cactus.png"
+        },
+        {
+          "type": "photo",
+          "title": "Road Trip",
+          "preview": "assets/images/photos/road-trip.png"
+        },
+        {
+          "type": "photo",
+          "title": "Mountain Sunset",
+          "preview": "assets/images/photos/mountain-sunset.png"
+        },
+        {
+          "type": "photo",
+          "title": "Mountain Lake",
+          "preview": "assets/images/photos/mountain-lake.png"
+        },
+        {
+          "type": "photo",
+          "title": "Hot air balloons",
+          "preview": "assets/images/photos/air-balloons.png"
+        },
+        {
+          "type": "photo",
+          "title": "Cactus",
+          "preview": "assets/images/photos/cactus.png"
+        },
+        {
+          "type": "photo",
+          "title": "Road Trip",
+          "preview": "assets/images/photos/road-trip.png"
+        }
+      ]
+    },
+    {
+      "date": "April 2015",
+      "context": "5 Photos",
+      "media": [
+        {
+          "type": "photo",
+          "title": "Mountain Sunset",
+          "preview": "assets/images/photos/mountain-sunset.png"
+        },
+        {
+          "type": "photo",
+          "title": "Mountain Lake",
+          "preview": "assets/images/photos/mountain-lake.png"
+        },
+        {
+          "type": "photo",
+          "title": "Hot air balloons",
+          "preview": "assets/images/photos/air-balloons.png"
+        },
+        {
+          "type": "photo",
+          "title": "Cactus",
+          "preview": "assets/images/photos/cactus.png"
+        },
+        {
+          "type": "photo",
+          "title": "Road Trip",
+          "preview": "assets/images/photos/road-trip.png"
+        },
+        {
+          "type": "photo",
+          "title": "Mountain Sunset",
+          "preview": "assets/images/photos/mountain-sunset.png"
+        },
+        {
+          "type": "photo",
+          "title": "Mountain Lake",
+          "preview": "assets/images/photos/mountain-lake.png"
+        }
+      ]
+    }
+  ]
+}

@@ -15,7 +15,8 @@
             'ngMaterial',
             'angularChart',
             'ui.router',
-            'timer'
+            'timer',
+            //'wu.masonry'
             //'chart.js'
         ]);
 

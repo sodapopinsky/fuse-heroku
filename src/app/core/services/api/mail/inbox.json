@@ -3,7 +3,7 @@
     {
       "from": {
         "name": "Alice Freeman",
-        "avatar": "assets/images/avatars/alice.jpg",
+        "avatar": "assets/images/avatars/alice.png",
         "email": "alicefreeman@creapond.com"
       },
       "to": [
@@ -44,7 +44,7 @@
     {
       "from": {
         "name": "Lawrence Collins",
-        "avatar": "assets/images/avatars/vincent.jpg",
+        "avatar": "assets/images/avatars/vincent.png",
         "email": "lawrencecollins@creapond.com"
       },
       "to": [
@@ -62,7 +62,7 @@
     {
       "from": {
         "name": "Judith Burton",
-        "avatar": "assets/images/avatars/joyce.jpg",
+        "avatar": "assets/images/avatars/joyce.png",
         "email": "lawrencecollins@creapond.com"
       },
       "to": [
@@ -116,7 +116,7 @@
     {
       "from": {
         "name": "Charles Kim",
-        "avatar": "assets/images/avatars/garry.jpg",
+        "avatar": "assets/images/avatars/garry.png",
         "email": "danielleobrien@creapond.com"
       },
       "to": [
@@ -152,7 +152,7 @@
     {
       "from": {
         "name": "Juan Carpenter",
-        "avatar": "assets/images/avatars/james.jpg",
+        "avatar": "assets/images/avatars/james.png",
         "email": "danielleobrien@creapond.com"
       },
       "to": [

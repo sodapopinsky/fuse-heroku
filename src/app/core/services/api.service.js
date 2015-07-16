@@ -52,6 +52,27 @@
                 })
         };
 
+        api.profile = {
+            timeline: {
+                posts: $resource(api.url + 'profile/timeline/posts.json', null,
+                    {
+                        'get': {method: 'get'}
+                    }),
+
+                activities: $resource(api.url + 'profile/timeline/activities.json', null,
+                    {
+                        'get': {method: 'get'}
+                    })
+            },
+            about: $resource(api.url + 'profile/about/about.json', null,
+                {
+                    'get': {method: 'get'}
+                }),
+            photosVideos: $resource(api.url + 'profile/photos-videos/photos-videos.json', null,
+                {
+                    'get': {method: 'get'}
+                })
+        };
         return api;
     }
 })();

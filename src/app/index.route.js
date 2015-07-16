@@ -165,6 +165,15 @@
                         templateUrl: 'app/main/pages/price-tables/price-tables.html'
                     }
                 }
+            })
+            .state('layout.default.profile', {
+                url: '/profile',
+                views: {
+                    'main': {
+                        templateUrl: 'app/main/pages/profile/profile.html',
+                        controller: 'profileController as vm'
+                    }
+                }
             });
 
     }

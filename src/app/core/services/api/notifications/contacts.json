@@ -3,19 +3,19 @@
     "recent": [
       {
         "name": "Alice Freeman",
-        "avatar": "assets/images/avatars/alice.jpg",
+        "avatar": "assets/images/avatars/alice.png",
         "lastMessage": "Are you going to commit latest...",
         "status": "online"
       },
       {
         "name": "Joyce Walters",
-        "avatar": "assets/images/avatars/joyce.jpg",
+        "avatar": "assets/images/avatars/joyce.png",
         "lastMessage": "Something wrong with our servers...",
         "status": "away"
       },
       {
         "name": "Vincent Munoz",
-        "avatar": "assets/images/avatars/vincent.jpg",
+        "avatar": "assets/images/avatars/vincent.png",
         "lastMessage": "Everybody, quickly gather in the...",
         "status": "online",
         "unread": 3
@@ -24,7 +24,7 @@
     "all": [
       {
         "name": "Alice Freeman",
-        "avatar": "assets/images/avatars/alice.jpg",
+        "avatar": "assets/images/avatars/alice.png",
         "status": "online"
       },
       {
@@ -34,22 +34,22 @@
       },
       {
         "name": "Garry Arnold",
-        "avatar": "assets/images/avatars/garry.jpg",
+        "avatar": "assets/images/avatars/garry.png",
         "status": "offline"
       },
       {
         "name": "James Lewis",
-        "avatar": "assets/images/avatars/james.jpg",
+        "avatar": "assets/images/avatars/james.png",
         "status": "offline"
       },
       {
         "name": "Joyce Walters",
-        "avatar": "assets/images/avatars/joyce.jpg",
+        "avatar": "assets/images/avatars/joyce.png",
         "status": "away"
       },
       {
         "name": "Vincent Munoz",
-        "avatar": "assets/images/avatars/vincent.jpg",
+        "avatar": "assets/images/avatars/vincent.png",
         "status": "online"
       }
     ]

@@ -2,9 +2,17 @@
     'use strict';
 
     angular.module('fuse')
+        .filter('toTrusted', toTrusted)
         .filter('htmlToPlaintext', htmlToPlaintext)
         .filter('nospace', nospace)
         .filter('humanizeDoc', humanizeDoc);
+
+    /** @ngInject */
+    function toTrusted($sce) {
+        return function (value) {
+            return $sce.trustAsHtml(value);
+        };
+    }
 
     /** @ngInject */
     function htmlToPlaintext() {

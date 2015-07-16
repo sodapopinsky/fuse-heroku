@@ -14,7 +14,8 @@
             'app.core',
             'app.mail',
             'app.calendar',
-            'app.todo'
+            'app.todo',
+            'app.profile'
         ]);
 
 })();

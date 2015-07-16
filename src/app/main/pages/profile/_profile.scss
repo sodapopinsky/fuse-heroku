@@ -1,0 +1,58 @@
+#profile {
+    > header {
+        height: 320px;
+        padding: 32px;
+        background-image: url('/assets/images/backgrounds/march.jpg');
+        background-position: 0 45%;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        .profile-img {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            margin-right: 16px;
+        }
+        .username {
+            font-size: 34px;
+            color: white;
+        }
+        .md-button {
+            text-transform: inherit;
+            padding: 0 14px;
+            font-size: 13px;
+            height: 32px;
+            line-height: 32px;
+            margin: 0 0 0 8px;
+        }
+    }
+    > .content {
+        md-tabs {
+            md-tabs-wrapper {
+                height: 56px;
+                padding: 0 32px;
+                background-color: white;
+                border-color: rgba(0, 0, 0, 0.22);
+                md-tabs-canvas {
+                    height: 56px;
+                    md-pagination-wrapper {
+                        height: 56px;
+                        .md-tab {
+                            padding: 16px 24px;
+                            font-size: 15px;
+                            text-transform: inherit;
+                        }
+                    }
+                }
+            }
+            md-tabs-content-wrapper {
+                md-tab-content {
+                    md-content {
+                        background-color: transparent;
+                        padding: 24px;
+                    }
+                }
+            }
+        }
+
+    }
+}
