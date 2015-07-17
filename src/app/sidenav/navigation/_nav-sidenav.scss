@@ -37,18 +37,15 @@ $navSidabarWidth: 240px;
         max-width: $navSidabarWidth;
     }
 
-    & > * {
-        min-width: $navSidabarWidth;
-    }
-
     .navigation {
+        color: rgba(255, 255, 255, 1);
 
         .menu-heading {
             line-height: 32px;
             padding: 0 24px;
             margin: 0;
             width: 100%;
-            color: rgba(255, 255, 255, 0.26);
+            color: rgba(255, 255, 255, 0.30);
             font-size: 12px;
             font-weight: 500;
             text-transform: uppercase;
