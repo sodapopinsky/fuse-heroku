@@ -1,7 +1,7 @@
 <div class="timeline" layout="row" layout-wrap>
 <!--<div class="timeline" masonry preserve-order load-images="true">-->
     <div flex="33" class="masonry-brick">
-        <div class="post add-post md-whiteframe-z2" layout="column">
+        <div class="post add-post md-whiteframe-z1" layout="column">
             <div class="form" flex>
                 <textarea placeholder="Write something.."></textarea>
 
@@ -26,7 +26,7 @@
         <md-divider></md-divider>
     </div>
     <div flex="33" class="masonry-brick" ng-repeat="post in vm.posts">
-        <div class="post md-whiteframe-z2" layout="column">
+        <div class="post md-whiteframe-z1" layout="column">
             <header layout="row" layout-align="space-between start">
                 <div class="user" layout="row" layout-align="start center">
                     <img class="avatar" ng-src="{{post.user.avatar}}">
@@ -116,7 +116,7 @@
     </div>
 
     <div flex="33" class="masonry-brick">
-        <div class="box latest-activity md-whiteframe-z2" layout="column">
+        <div class="box latest-activity md-whiteframe-z1" layout="column">
             <header class="md-accent-bg" layout="row" layout-align="space-between center">
                 <div class="title">Latest Activity</div>
                 <div class="more">See All</div>
