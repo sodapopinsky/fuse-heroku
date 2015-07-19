@@ -33,7 +33,7 @@
 
                     <div layout="column">
                         <div class="title">
-                            <span class="username md-accent-font">{{post.user.name}}</span>
+                            <span class="username md-accent-color">{{post.user.name}}</span>
                             <span ng-if="post.type == 'post'">posted on your timeline</span>
                             <span ng-if="post.type == 'something'">shared something with you</span>
                             <span ng-if="post.type == 'video'">shared a video with you</span>
@@ -96,7 +96,7 @@
                             {{comment.message}}
                         </div>
                         <div class="actions" layout="row" layout-align="start center">
-                            <span class="md-accent-font reply-button">Reply</span>
+                            <span class="md-accent-color reply-button">Reply</span>
                             <md-icon flex md-font-icon="icon-flag" class="s16 report-button"></md-icon>
                         </div>
                     </div>
@@ -127,7 +127,7 @@
                         <img ng-src="{{activity.user.avatar}}" class="md-avatar" alt="{{activity.user.name}}"/>
 
                         <div class="md-list-item-text">
-                            <span class="username md-accent-font">{{activity.user.name}}</span>
+                            <span class="username md-accent-color">{{activity.user.name}}</span>
                             <span class="message">{{ activity.message}}</span>
 
                             <p class="time">{{ activity.time}}</p>

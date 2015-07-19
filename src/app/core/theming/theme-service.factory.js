@@ -77,7 +77,7 @@
                     option: 'background-color'
                 },
                 {
-                    class: '-font',
+                    class: '-color',
                     option: 'color'
                 }
             ];
