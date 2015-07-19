@@ -22,7 +22,15 @@
                 }
             },
             warn: {name: 'red'},
-            background: {name: 'grey'}
+            background: {
+                name: 'grey',
+                options: {
+                    'default': 'A100',
+                    'hue-1': '100',
+                    'hue-2': '50',
+                    'hue-3': '300'
+                }
+            }
         },
         'indigo': {
             primary: {name: 'indigo'},
