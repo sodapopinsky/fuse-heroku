@@ -13,7 +13,7 @@
                 }
             },
             accent: {
-                name: 'wip-blue',
+                name: 'light-blue',
                 options: {
                     'default': '500',
                     'hue-1': '400',
