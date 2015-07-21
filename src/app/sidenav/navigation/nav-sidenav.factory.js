@@ -249,7 +249,7 @@
                             "icon": "icon-timer"
                         },
                         {
-                            "name" : "Error",
+                            "name" : "Errors",
                             "type": "toggle",
                             "icon": "icon-error_outline",
                             "pages" : [
@@ -272,6 +272,12 @@
                             "icon": "icon-receipt"
                         },
                         {
+                            "name": "Price Tables",
+                            "url": "/price-tables",
+                            "type": "link",
+                            "icon": "icon-view_comfortable"
+                        },
+                        {
                             "name": "Profile",
                             "url": "/profile",
                             "type": "link",
@@ -282,12 +288,6 @@
                             "url": "/search",
                             "type": "link",
                             "icon": "icon-search"
-                        },
-                        {
-                            "name": "Price Tables",
-                            "url": "/price-tables",
-                            "type": "link",
-                            "icon": "icon-view_comfortable"
                         },
                         {
                             "name": "Timeline",
