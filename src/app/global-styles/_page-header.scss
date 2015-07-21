@@ -1,0 +1,22 @@
+.page-header {
+    background-image: url('/assets/images/backgrounds/mail-bg.png');
+    background-size: cover;
+//    height: 144px;
+    padding: 32px;
+    .breadcrumb {
+        font-size: 13px;
+        margin-bottom: 24px;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.54);
+        md-icon {
+            margin: 0;
+        }
+        .separator{
+            margin: 0 8px;
+        }
+    }
+    .title {
+        font-size: 35px;
+    }
+
+}
