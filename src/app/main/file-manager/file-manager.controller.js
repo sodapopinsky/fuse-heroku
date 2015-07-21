@@ -8,7 +8,9 @@
     function fileManagerController(api, $mdSidenav) {
         var vm = this;
         vm.sideNavToggle = sideNavToggle;
+        vm.detailsToggle = detailsToggle;
         vm.toggleView = toggleView;
+        vm.select = select;
         vm.selectedView = 'list';
         vm.viewTemplate = viewTemplate;
         vm.selectedAccount = 'creapond';
@@ -22,8 +24,27 @@
             vm.selected = vm.documents[0];
         });
 
+        function select(file) {
+            vm.selected = file;
+            if (vm.showDetails) {
+                $mdSidenav('fileManager-details-sidenav').open();
+            } else {
+                $mdSidenav('fileManager-details-sidenav').close();
+            }
+        }
+
         function sideNavToggle() {
             $mdSidenav('fileManager-main-sidenav').toggle();
+        }
+
+        function detailsToggle() {
+            vm.showDetails = !vm.showDetails;
+
+            if (vm.showDetails) {
+                $mdSidenav('fileManager-details-sidenav').open();
+            } else {
+                $mdSidenav('fileManager-details-sidenav').close();
+            }
         }
 
         function toggleView() {

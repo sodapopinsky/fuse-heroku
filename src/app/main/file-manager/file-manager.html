@@ -27,10 +27,14 @@
                             List View
                         </md-tooltip>
                     </md-button>
-                    <md-button class="md-icon-button" aria-label="Info">
-                        <md-icon md-font-icon="icon-info"></md-icon>
-                        <md-tooltip>
-                            Info
+                    <md-button class="md-icon-button" aria-label="details" ng-click="vm.detailsToggle()">
+                        <md-icon ng-if="vm.showDetails" md-font-icon="icon-info"></md-icon>
+                        <md-tooltip ng-if="vm.showDetails">
+                            Hide Details
+                        </md-tooltip>
+                        <md-icon ng-if="!vm.showDetails" md-font-icon="icon-info_outline"></md-icon>
+                        <md-tooltip ng-if="!vm.showDetails">
+                            Show Details
                         </md-tooltip>
                     </md-button>
                 </div>
@@ -52,8 +56,8 @@
             </md-content>
 
         </md-content>
-        <md-sidenav ng-if="vm.selectedView === 'list'" class="md-sidenav-right detail-sidenav md-whiteframe-z2"
-                    md-component-id="details"
+        <md-sidenav ng-show="vm.showDetails" class="md-sidenav-right detail-sidenav md-whiteframe-z2"
+                    md-component-id="fileManager-details-sidenav"
                     md-is-locked-open="$mdMedia('gt-md')"
                     ng-include="'app/main/file-manager/sidenavs/detail-sidenav.html'">
         </md-sidenav>
