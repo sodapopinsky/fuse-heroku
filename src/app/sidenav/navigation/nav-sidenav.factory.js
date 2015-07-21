@@ -266,12 +266,6 @@
                             ]
                         },
                         {
-                            "name": "Gallery",
-                            "url": "/gallery",
-                            "type": "link",
-                            "icon": "icon-image"
-                        },
-                        {
                             "name": "Invoice",
                             "url": "/invoice",
                             "type": "link",
