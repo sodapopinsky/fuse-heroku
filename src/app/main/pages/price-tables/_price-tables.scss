@@ -1,12 +1,17 @@
-#price-tables {
-    .content {
-        max-width: 912px;
+#price-tables.content {
+    padding: 32px;
+    .table-style-title {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 16px;
+    }
+    .price-tables {
         align-items: flex-start;
         .price-table {
             background-color: white;
             width: 280px;
             border-radius: 2px;
-            margin: 32px 12px;
+            margin: 0 24px 48px 0;
             overflow: hidden;
             &.style-1 {
                 .header {
@@ -125,7 +130,7 @@
 
                     background-color: rgba(0, 0, 0, 0.03);
                     margin: 0 0 24px 0;
-                    > div{
+                    > div {
                         padding: 12px;
                     }
                     border: 1px solid rgba(0, 0, 0, 0.06);
@@ -149,7 +154,7 @@
                 }
 
                 .terms {
-                    margin:0;
+                    margin: 0;
                     font-size: 15px;
                     .term {
                         margin: 8px 0;
