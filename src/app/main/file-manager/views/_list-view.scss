@@ -7,7 +7,7 @@
         border-spacing: 0;
         tr {
             th, td {
-                //                border: none;
+                border: none;
             }
         }
         > thead {
@@ -15,10 +15,8 @@
             font-weight: 500;
             tr {
                 th {
-                    border-bottom: 1px solid rgba(0, 0, 0, 0.13);
-                    border-right: none;
-                    border-left: none;
-                    padding: 0 0 24px 0;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                    padding: 0 8px 24px 8px;
                     &:first-child {
                         border-bottom: none;
                     }
@@ -29,20 +27,11 @@
             tr {
                 cursor: pointer;
                 outline: none;
-                box-sizing: border-box;
                 &.selected {
                     background: #e3f2fd;
-                    box-sizing: border-box;
-                    td {
-                        box-sizing: border-box;
-                        border-color: rgba(0, 0, 0, 0.13);
-                    }
                 }
                 td {
-                    padding: 24px 0;
-                    border-width: 1px 0 1px 0;
-                    border-color: transparent;
-                    border-style: solid;
+                    padding: 24px 8px;
                     &.name {
                         font-weight: 500;
                     }
