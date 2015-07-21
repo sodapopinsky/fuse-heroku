@@ -14,6 +14,7 @@
         vm.selectedView = 'list';
         vm.viewTemplate = viewTemplate;
         vm.selectedAccount = 'creapond';
+        vm.showDetails = true;
         vm.accounts = {
             'creapond': 'sercanyemen@creapond.com',
             'withinpixels': 'sercanyemen@withinpixels.com'
