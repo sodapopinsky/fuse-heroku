@@ -118,6 +118,12 @@
                             "url": "/todo",
                             "type": "link",
                             "icon": "icon-check_box"
+                        },
+                        {
+                            "name": "File Manager",
+                            "url": "/file-manager",
+                            "type": "link",
+                            "icon": "icon-folder"
                         }
                     ]
                 },

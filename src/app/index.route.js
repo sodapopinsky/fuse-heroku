@@ -174,6 +174,15 @@
                         controller: 'profileController as vm'
                     }
                 }
+            })
+            .state('layout.default.fileManager', {
+                url: '/file-manager',
+                views: {
+                    'main': {
+                        templateUrl: 'app/main/file-manager/file-manager.html',
+                        controller: 'fileManagerController as vm'
+                    }
+                }
             });
 
     }

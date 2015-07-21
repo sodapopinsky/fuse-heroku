@@ -1,0 +1,54 @@
+<md-toolbar class="md-background-bg">
+    <div class="account">
+        <div class="title">Sercan Yemen</div>
+        <md-select class="account-selection" placeholder="Mail Selection" ng-model="vm.selectedAccount">
+            <md-option ng-repeat="(provider, address) in vm.accounts" value="{{provider}}">{{address}}
+            </md-option>
+        </md-select>
+    </div>
+</md-toolbar>
+<md-content>
+    <div class="menu" layout="column" layout-fill>
+        <md-button class="item" ng-click="" aria-label="inbox">
+            <div class="context" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-folder" class="s18"></md-icon>
+                <div class="title" flex>
+                    My Files
+                </div>
+            </div>
+        </md-button>
+        <md-button class="item" ng-click="" aria-label="starred">
+            <div class="context" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-star" class="s18"></md-icon>
+                <div class="title" flex>
+                    Starred
+                </div>
+            </div>
+        </md-button>
+        <md-button class="item" ng-click="" aria-label="starred">
+            <div class="context" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-folder_shared" class="s18"></md-icon>
+                <div class="title" flex>
+                    Sharred with me
+                </div>
+            </div>
+        </md-button>
+        <md-button class="item" ng-click="" aria-label="starred">
+            <div class="context" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-access_time" class="s18"></md-icon>
+                <div class="title" flex>
+                    Recent
+                </div>
+            </div>
+        </md-button>
+        <md-button class="item" ng-click="" aria-label="starred">
+            <div class="context" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-offline_pin" class="s18"></md-icon>
+                <div class="title" flex>
+                    Offline
+                </div>
+            </div>
+        </md-button>
+    </div>
+
+</md-content>

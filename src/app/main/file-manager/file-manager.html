@@ -1,0 +1,62 @@
+<div id="file-manager" layout="column" layout-fill>
+    <section layout="row" flex>
+        <md-sidenav class="md-sidenav-left main-sidenav md-whiteframe-z2" md-component-id="fileManager-main-sidenav"
+                    ng-include="'app/main/file-manager/sidenavs/main-sidenav.html'">
+        </md-sidenav>
+        <md-content flex layout="column" class="main-content md-whiteframe-z3">
+            <md-toolbar class="md-accent md-tall" layout="column" layout-align="space-between start">
+                <div class="md-toolbar-tools">
+                    <md-button class="md-icon-button" aria-label="Menu" ng-click="vm.sideNavToggle()">
+                        <md-icon md-font-icon="icon-menu"></md-icon>
+                    </md-button>
+                    <span flex></span>
+                    <md-button class="md-icon-button" aria-label="Search">
+                        <md-icon md-font-icon="icon-search"></md-icon>
+                    </md-button>
+                    <md-button ng-if="vm.selectedView === 'list'" class="md-icon-button" aria-label="view type"
+                               ng-click="vm.toggleView()">
+                        <md-icon md-font-icon="icon-view_comfortable"></md-icon>
+                        <md-tooltip>
+                            Grid View
+                        </md-tooltip>
+                    </md-button>
+                    <md-button ng-if="vm.selectedView === 'grid'" class="md-icon-button" aria-label="view type"
+                               ng-click="vm.toggleView()">
+                        <md-icon md-font-icon="icon-list"></md-icon>
+                        <md-tooltip>
+                            List View
+                        </md-tooltip>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="Info">
+                        <md-icon md-font-icon="icon-info"></md-icon>
+                        <md-tooltip>
+                            Info
+                        </md-tooltip>
+                    </md-button>
+                </div>
+                <div class="flex"></div>
+                <div layout="row" layout-fill layout-align="start center">
+                    <md-button class="add-file-button md-fab md-warn" aria-label="Add file"
+                               ng-click="vm.addFile($event)">
+                        <md-icon md-font-icon="icon-add" class="s20"></md-icon>
+                    </md-button>
+                    <div class="breadcrumb">
+                        <span>My Files</span>
+                        <md-icon class="separator" md-font-icon="icon-keyboard_arrow_right"></md-icon>
+                        <span>Documents</span>
+                    </div>
+                </div>
+
+            </md-toolbar>
+            <md-content flex ng-include="vm.viewTemplate()" class="md-background-bg md-hue-2">
+            </md-content>
+
+        </md-content>
+        <md-sidenav ng-if="vm.selectedView === 'list'" class="md-sidenav-right detail-sidenav md-whiteframe-z2"
+                    md-component-id="details"
+                    md-is-locked-open="$mdMedia('gt-md')"
+                    ng-include="'app/main/file-manager/sidenavs/detail-sidenav.html'">
+        </md-sidenav>
+
+    </section>
+</div>

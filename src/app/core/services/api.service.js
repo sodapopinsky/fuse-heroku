@@ -73,6 +73,15 @@
                     'get': {method: 'get'}
                 })
         };
+
+
+        api.fileManager = {
+            documents: $resource(api.url + 'file-manager/documents.json', null,
+                {
+                    'get': {method: 'get'}
+                })
+        };
+
         return api;
     }
 })();

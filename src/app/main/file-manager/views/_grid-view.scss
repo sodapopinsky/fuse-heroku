@@ -1,0 +1,35 @@
+#file-manager {
+    .grid-view {
+        padding: 48px 24px 24px 24px;
+        .item {
+            background: white;
+            margin: 8px;
+            width: 222px;
+            min-height: 64px;
+            border-radius: 2px;
+            overflow: hidden;
+            cursor: pointer;
+            .preview {
+                padding: 18px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+                width: 100%;
+                > img {
+                    max-width: 100%;
+                }
+            }
+            .title {
+                padding: 18px;
+                i {
+                    margin-right: 16px;
+                }
+                span {
+                    font-size: 15px;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    max-width: 160px;
+                }
+            }
+        }
+    }
+}

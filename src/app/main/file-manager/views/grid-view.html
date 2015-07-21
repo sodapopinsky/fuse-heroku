@@ -1,0 +1,11 @@
+<div class="grid-view" layout-wrap layout="row">
+    <div class="md-whiteframe-z1 item" ng-repeat="file in vm.documents" layout="column" layout-align="center start">
+        <div ng-if="file.preview" class="preview">
+            <img ng-src="{{file.preview}}">
+        </div>
+        <div layout="row" class="title" layout-align="start center">
+            <i class="icon- s18" ng-class="file.type"></i>
+            <span>{{file.name}}</span>
+        </div>
+    </div>
+</div>

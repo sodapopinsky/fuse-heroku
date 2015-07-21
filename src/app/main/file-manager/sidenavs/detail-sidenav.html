@@ -1,0 +1,62 @@
+<md-toolbar class="md-accent md-tall" layout="column" layout-align="space-between start">
+    <div class="md-toolbar-tools">
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Delete" ng-click="vm.delete()">
+            <md-icon md-font-icon="icon-delete"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Download">
+            <md-icon md-font-icon="icon-file_download"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+            <md-icon md-font-icon="icon-more_vert"></md-icon>
+        </md-button>
+    </div>
+    <div class="flex"></div>
+    <div>
+        <div class="title">{{vm.selected.name}}</div>
+        <div class="subtitle">Edited: {{vm.selected.modified}}</div>
+    </div>
+
+</md-toolbar>
+<md-content flex class="md-background md-hue-1" layout-padding>
+    <div class="preview " layout="row" layout-align="center center">
+        <i class="icon- s48" ng-class="vm.selected.type"></i>
+    </div>
+    <div class="offline-switch" layout="row" layout-align="space-between center">
+        Available Offline
+        <md-switch ng-model="vm.selected.offline" aria-label="offline switch">
+        </md-switch>
+    </div>
+    <div class="title">Info</div>
+    <table>
+        <tr class="type">
+            <th>Type</th>
+            <td>{{vm.selected.type}}</td>
+        </tr>
+        <tr class="size">
+            <th>Size</th>
+            <td>{{vm.selected.size === '' ? '-': vm.selected.size}}</td>
+        </tr>
+        <tr class="location">
+            <th>Location</th>
+            <td>{{vm.selected.location}}</td>
+        </tr>
+        <tr class="owner">
+            <th>Owner</th>
+            <td>{{vm.selected.owner}}</td>
+        </tr>
+        <tr class="modified">
+            <th>Modified</th>
+            <td>{{vm.selected.modified}}</td>
+        </tr>
+        <tr class="opened">
+            <th>Opened</th>
+            <td>{{vm.selected.opened}}</td>
+        </tr>
+        <tr class="created">
+            <th>Created</th>
+            <td>{{vm.selected.created}}</td>
+        </tr>
+    </table>
+</md-content>
+        

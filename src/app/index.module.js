@@ -15,7 +15,8 @@
             'app.mail',
             'app.calendar',
             'app.todo',
-            'app.profile'
+            'app.profile',
+            'app.fileManager'
         ]);
 
 })();
