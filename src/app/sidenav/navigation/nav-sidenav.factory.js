@@ -102,28 +102,28 @@
                             "icon": "icon-today"
                         },
                         {
-                            "name": "E-commerce",
+                            "name": "E-Commerce",
                             "url": "/ecommerce",
                             "type": "link",
                             "icon": "icon-shopping_cart"
                         },
                         {
-                            "name": "Email",
+                            "name": "E-Mail",
                             "url": "/mail",
                             "type": "link",
                             "icon": "icon-email"
-                        },
-                        {
-                            "name": "To-do",
-                            "url": "/todo",
-                            "type": "link",
-                            "icon": "icon-check_box"
                         },
                         {
                             "name": "File Manager",
                             "url": "/file-manager",
                             "type": "link",
                             "icon": "icon-folder"
+                        },
+                        {
+                            "name": "To-do",
+                            "url": "/todo",
+                            "type": "link",
+                            "icon": "icon-check_box"
                         }
                     ]
                 },
