@@ -1,0 +1,100 @@
+<div id="standart-table">
+    <header class="page-header md-accent-bg" layout="column">
+        <div class="breadcrumb" layout="row" layout-align="start center">
+            <md-icon md-font-icon="icon-home" class="s18"></md-icon>
+            <md-icon md-font-icon="icon-keyboard_arrow_right" class="s18 separator"></md-icon>
+            <span class="parent">Tables</span>
+        </div>
+        <div class="title">Standart Tables</div>
+    </header>
+    <div class="content">
+            Tables are used to present raw data sets, and usually appear in desktop enterprise products.
+        <p>
+            Data sets may include:
+        </p>
+
+        <p>
+        <ul>
+            <li>Three or more columns of data</li>
+            <li>A corresponding visualization</li>
+            <li>The ability for users to query and manipulate data at scale</li>
+        </ul>
+        </p>
+        <div class="md-title">Classic</div>
+        <div class="card classic md-background-bg md-whiteframe-z2">
+            <div class="table-title">
+                Employees
+            </div>
+            <table class="table-simple" layout-fill>
+                <thead>
+                    <tr>
+                        <th  class="checkbox">
+                            <md-checkbox aria-label="Check All" ng-click="vm.checkAll()"></md-checkbox>
+                        </th>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Age</th>
+                        <th>Start Date</th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="person in vm.employees">
+                        <td  class="checkbox">
+                            <md-checkbox aria-label="{{person.name}}"
+                                         class="checkbox"
+                                         ng-checked="vm.checkExists(person, vm.checked)"
+                                         ng-click="vm.checkToggle(person, vm.checked,$event)"
+                                    ></md-checkbox>
+                        </td>
+                        <td class="name">{{person.name}}</td>
+                        <td class="position">{{person.position}}</td>
+                        <td class="office">{{person.office}}</td>
+                        <td class="age">{{person.age}}</td>
+                        <td class="start-date">{{person.startDate}}</td>
+                        <td class="salary">{{person.salary | currency}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="md-title">Full Width</div>
+        <div class="card full-width md-background-bg md-whiteframe-z2">
+            <div class="table-title">
+                Employees
+            </div>
+            <table class="table-simple" layout-fill>
+                <thead>
+                    <tr>
+                        <th class="checkbox">
+                            <md-checkbox aria-label="Check All" ng-click="vm.checkAll()"></md-checkbox>
+                        </th>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Age</th>
+                        <th>Start Date</th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="person in vm.employees">
+                        <td  class="checkbox">
+                            <md-checkbox aria-label="{{person.name}}"
+                                         class="checkbox"
+                                         ng-checked="vm.checkExists(person, vm.checked)"
+                                         ng-click="vm.checkToggle(person, vm.checked,$event)"
+                                    ></md-checkbox>
+                        </td>
+                        <td class="name">{{person.name}}</td>
+                        <td class="position">{{person.position}}</td>
+                        <td class="office">{{person.office}}</td>
+                        <td class="age">{{person.age}}</td>
+                        <td class="start-date">{{person.startDate}}</td>
+                        <td class="salary">{{person.salary | currency}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

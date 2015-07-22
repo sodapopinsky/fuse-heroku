@@ -102,6 +102,15 @@
                     }
                 }
             })
+            .state('layout.default.standartTable', {
+                url: '/standart-table',
+                views: {
+                    'main': {
+                        templateUrl: 'app/main/tables/standart-table/standart-table.html',
+                        controller: 'standartTableController as vm'
+                    }
+                }
+            })
             .state('layout.basic.login', {
                 url: '/login',
                 views: {

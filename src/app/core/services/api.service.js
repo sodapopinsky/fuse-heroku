@@ -86,7 +86,14 @@
             {
                 'get': {method: 'get'}
             });
-        
+
+        api.tables = {
+            employees: $resource(api.url + 'tables/employees.json', null,
+                {
+                    'get': {method: 'get'}
+                })
+        };
+
         return api;
     }
 })();

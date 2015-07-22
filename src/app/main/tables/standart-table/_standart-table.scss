@@ -1,0 +1,24 @@
+#standart-table {
+    .content {
+        padding: 32px;
+        .card {
+            margin: 16px 0 48px 0;
+            overflow: hidden;
+            &.classic {
+                max-width: 1000px;
+            }
+            &.full-width {
+                width: 100%;
+            }
+            .table-title {
+                font-size: 20px;
+                margin: 24px 24px 32px 24px;
+            }
+            table{
+                td{
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
