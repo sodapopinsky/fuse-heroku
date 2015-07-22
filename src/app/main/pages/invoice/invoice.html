@@ -54,9 +54,9 @@
                 <thead>
                 <th>SERVICE</th>
                 <th>UNIT</th>
-                <th>UNIT PRICE</th>
-                <th>QUANTITY</th>
-                <th>TOTAL</th>
+                <th class="text-right">UNIT PRICE</th>
+                <th class="text-right">QUANTITY</th>
+                <th class="text-right">TOTAL</th>
                 </thead>
                 <tbody>
                 <tr ng-repeat="service in vm.invoice.services">
@@ -67,13 +67,13 @@
                     <td>
                         {{service.unit}}
                     </td>
-                    <td>
+                    <td class="text-right">
                         {{service.unitPrice | currency}}
                     </td>
-                    <td>
+                    <td class="text-right">
                         {{service.quantity}}
                     </td>
-                    <td>
+                    <td class="text-right">
                         {{service.total | currency}}
                     </td>
                 </tr>
