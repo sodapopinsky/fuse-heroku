@@ -166,6 +166,15 @@
                     }
                 }
             })
+            .state('layout.default.invoice', {
+                url: '/invoice',
+                views: {
+                    'main': {
+                        templateUrl: 'app/main/pages/invoice/invoice.html',
+                        controller: 'invoiceController as vm'
+                    }
+                }
+            })
             .state('layout.default.profile', {
                 url: '/profile',
                 views: {

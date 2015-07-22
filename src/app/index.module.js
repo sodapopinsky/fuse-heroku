@@ -16,7 +16,8 @@
             'app.calendar',
             'app.todo',
             'app.profile',
-            'app.fileManager'
+            'app.fileManager',
+            'app.invoice'
         ]);
 
 })();

@@ -82,6 +82,11 @@
                 })
         };
 
+        api.invoice = $resource(api.url + 'invoice/invoice.json', null,
+            {
+                'get': {method: 'get'}
+            });
+        
         return api;
     }
 })();
