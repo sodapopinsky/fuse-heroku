@@ -1,22 +1,14 @@
 #file-manager {
     .list-view {
         padding: 32px 0;
-        text-align: left;
-        font-size: 13px;
-        border: none;
-        border-spacing: 0;
         tr {
             th, td {
-                border: none;
+
             }
         }
         > thead {
-            color: rgba(0, 0, 0, 0.54);
-            font-weight: 500;
             tr {
                 th {
-                    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-                    padding: 0 8px 24px 8px;
                     &:first-child {
                         border-bottom: none;
                     }
@@ -32,6 +24,7 @@
                 }
                 td {
                     padding: 24px 8px;
+                    border-bottom: none;
                     &.name {
                         font-weight: 500;
                     }
