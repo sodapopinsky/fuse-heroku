@@ -10,7 +10,7 @@
     <div ms-nav class="navigation">
 
         <ul class="ms-nav-group">
-            <li class="ms-nav-item group-title">
+            <li class="ms-nav-item">
                 <span class="group-title">FUSE</span>
             </li>
 
@@ -57,14 +57,18 @@
             </li>
 
             <li class="ms-nav-item">
-                <a ui-sref="app.to-do" ui-sref-active="active" md-ink-ripple="">
+                <a ui-sref="app.to-do" ui-sref-active="active" md-ink-ripple>
                     <md-icon md-font-icon="icon-check_box" class="s18 ms-nav-icon md-font md-default-theme"></md-icon>
                     <span>To-Do</span>
                 </a>
             </li>
 
             <li class="ms-nav-item" ms-nav-toggle>
-                <div class="ms-nav-toggle-button">Pages</div>
+                <div class="ms-nav-toggle-button" md-ink-ripple>
+                    <md-icon md-font-icon="icon-pages" class="s18 ms-nav-icon md-font md-default-theme"></md-icon>
+                    <span>Pages</span>
+                    <md-icon md-svg-src="md-toggle-arrow" class="ms-nav-icon md-default-theme"></md-icon>
+                </div>
                 <ul>
                     <li class="ms-nav-item">
                         <a ui-sref="app.pages.coming-soon">
@@ -85,7 +89,7 @@
                     </li>
 
                     <li class="ms-nav-item" ms-nav-toggle>
-                        <div class="ms-nav-toggle-button">Authentication</div>
+                        <div class="ms-nav-toggle-button" md-ink-ripple>Authentication</div>
                         <ul>
                             <li class="ms-nav-item">
                                 <a ui-sref="app.pages.auth.login">

@@ -39,18 +39,22 @@ $navSidabarWidth: 240px;
     }
 
     .navigation {
+        font-size: 13px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 1);
 
         .ms-nav-group {
+            padding-top: 16px;
 
             .group-title {
                 line-height: 32px;
-                padding: 0 24px;
                 margin: 0;
                 width: 100%;
                 color: rgba(255, 255, 255, 0.30);
                 font-size: 12px;
                 font-weight: 500;
                 text-transform: uppercase;
+                padding-left: 24px;
             }
 
             .ms-nav-toggle {
@@ -59,7 +63,7 @@ $navSidabarWidth: 240px;
                     overflow: hidden;
                     height: 0;
                     transition: height 0.75s cubic-bezier(0.35, 0, 0.25, 1);
-
+                    padding-left: 34px;
                 }
 
                 &.active {
@@ -68,19 +72,27 @@ $navSidabarWidth: 240px;
                         height: auto;
                     }
                 }
+
+                .ms-nav-toggle-button {
+                    display: flex;
+                    align-self: flex-start;
+                    align-items: center;
+                    position: relative;
+                    padding: 0 24px;
+                    cursor: pointer;
+                }
             }
 
             .ms-nav-item {
-                padding: 0 24px;
+                position: relative;
                 line-height: 48px;
 
                 a {
                     display: flex;
                     align-self: flex-start;
                     align-items: center;
+                    padding: 0 24px;
                     text-decoration: none;
-                    font-size: 13px;
-                    font-weight: 500;
                     color: rgba(255, 255, 255, 1);
                 }
 
@@ -91,6 +103,10 @@ $navSidabarWidth: 240px;
 
                 .ms-nav-title {
                     display: flex;
+                }
+
+                .ms-nav-toggle-button {
+
                 }
             }
 
