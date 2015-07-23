@@ -356,7 +356,7 @@
             })
 
             // Standard Table
-            .state('app.components.tables.standartTable', {
+            .state('app.components.tables.standart-table', {
                 url  : '/standard-table',
                 views: {
                     'main@app': {
@@ -367,11 +367,11 @@
             })
 
             // DataTable
-            .state('app.components.tables.dataTable', {
+            .state('app.components.tables.data-table', {
                 url  : '/datatable',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/tables/datatable/datatable.html',
+                        templateUrl: 'app/main/tables/data-table/data-table.html',
                         controller : 'dataTableController as vm'
                     }
                 }

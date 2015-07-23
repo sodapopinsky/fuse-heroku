@@ -67,7 +67,11 @@ $navSidabarWidth: 240px;
                 }
 
                 &.active {
-
+                    > .ms-nav-toggle-button {
+                        > [class^="icon-keyboard_arrow"], > [class*=" icon-keyboard_arrow"] {
+                            transform: rotate(180deg);
+                        }
+                    }
                     & > ul {
                         height: auto;
                     }
@@ -78,8 +82,18 @@ $navSidabarWidth: 240px;
                     align-self: flex-start;
                     align-items: center;
                     position: relative;
-                    padding: 0 24px;
+                    padding: 0 16px 0 24px;
                     cursor: pointer;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    > span {
+                        display: flex;
+                        flex: 1;
+                    }
+                    > [class^="icon-keyboard_arrow"], > [class*=" icon-keyboard_arrow"] {
+                        transition: transform 0.3s ease-in-out;
+                        margin: 0;
+                    }
                 }
             }
 
