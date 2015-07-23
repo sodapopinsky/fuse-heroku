@@ -28,32 +28,22 @@
             <table class="table-simple" layout-fill>
                 <thead>
                     <tr>
-                        <th  class="checkbox">
-                            <md-checkbox aria-label="Check All" ng-click="vm.checkAll()"></md-checkbox>
-                        </th>
                         <th>Name</th>
                         <th>Position</th>
                         <th>Office</th>
-                        <th>Age</th>
-                        <th>Start Date</th>
-                        <th>Salary</th>
+                        <th class="text-right">Age</th>
+                        <th class="text-right">Start Date</th>
+                        <th class="text-right">Salary</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="person in vm.employees">
-                        <td  class="checkbox">
-                            <md-checkbox aria-label="{{person.name}}"
-                                         class="checkbox"
-                                         ng-checked="vm.checkExists(person, vm.checked)"
-                                         ng-click="vm.checkToggle(person, vm.checked,$event)"
-                                    ></md-checkbox>
-                        </td>
                         <td class="name">{{person.name}}</td>
                         <td class="position">{{person.position}}</td>
                         <td class="office">{{person.office}}</td>
-                        <td class="age">{{person.age}}</td>
-                        <td class="start-date">{{person.startDate}}</td>
-                        <td class="salary">{{person.salary | currency}}</td>
+                        <td class="age text-right">{{person.age}}</td>
+                        <td class="start-date text-right">{{person.startDate}}</td>
+                        <td class="salary text-right">{{person.salary | currency}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -66,32 +56,22 @@
             <table class="table-simple" layout-fill>
                 <thead>
                     <tr>
-                        <th class="checkbox">
-                            <md-checkbox aria-label="Check All" ng-click="vm.checkAll()"></md-checkbox>
-                        </th>
                         <th>Name</th>
                         <th>Position</th>
                         <th>Office</th>
-                        <th>Age</th>
-                        <th>Start Date</th>
-                        <th>Salary</th>
+                        <th class="text-right">Age</th>
+                        <th class="text-right">Start Date</th>
+                        <th class="text-right">Salary</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="person in vm.employees">
-                        <td  class="checkbox">
-                            <md-checkbox aria-label="{{person.name}}"
-                                         class="checkbox"
-                                         ng-checked="vm.checkExists(person, vm.checked)"
-                                         ng-click="vm.checkToggle(person, vm.checked,$event)"
-                                    ></md-checkbox>
-                        </td>
                         <td class="name">{{person.name}}</td>
                         <td class="position">{{person.position}}</td>
                         <td class="office">{{person.office}}</td>
-                        <td class="age">{{person.age}}</td>
-                        <td class="start-date">{{person.startDate}}</td>
-                        <td class="salary">{{person.salary | currency}}</td>
+                        <td class="age text-right">{{person.age}}</td>
+                        <td class="start-date text-right">{{person.startDate}}</td>
+                        <td class="salary text-right">{{person.salary | currency}}</td>
                     </tr>
                 </tbody>
             </table>
