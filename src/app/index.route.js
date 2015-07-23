@@ -1,151 +1,186 @@
-(function () {
+(function ()
+{
     'use strict';
 
     angular
         .module('fuse')
         .config(routeConfig);
+
     /** @ngInject */
-    function routeConfig($routeProvider, $stateProvider, $urlRouterProvider, $locationProvider) {
+    function routeConfig($stateProvider, $urlRouterProvider, $locationProvider)
+    {
         $urlRouterProvider.otherwise('/');
         $locationProvider.html5Mode(true);
+
         $stateProvider
+
+        /**
+         * App
+         */
             .state('app', {
                 abstract: true,
-                views: {
-                    'app@': {
+                views   : {
+                    'app@'            : {
                         templateUrl: 'app/layout/default.html'
                     },
-                    'toolbar@app': {
+                    'toolbar@app'     : {
                         templateUrl: 'app/toolbar/toolbar.html',
-                        controller: 'toolbarController as vm'
+                        controller : 'toolbarController as vm'
                     },
-                    'sidenavLeft@app': {
+                    'sidenavLeft@app' : {
                         templateUrl: 'app/sidenav/navigation/nav-sidenav.html',
-                        controller: 'navSidenavController as vm'
+                        controller : 'navSidenavController as vm'
                     },
                     'sidenavRight@app': {
                         templateUrl: 'app/sidenav/notification/notification-sidenav.html',
-                        controller: 'notificationSidenavController as vm'
+                        controller : 'notificationSidenavController as vm'
                     },
                     'themeChanger@app': {
                         templateUrl: 'app/components/theme-changer/theme-changer.html',
-                        controller: 'ThemeChangerController as vm'
+                        controller : 'ThemeChangerController as vm'
                     }
                 }
             })
-            
-            .state('app.dashboard', {
-                url: '/',
-                views: {
-                    'main': {
-                        templateUrl: 'app/main/dashboard/dashboard.html',
-                        controller: 'dashboardController as vm'
-                    }
-                }
-            })
-            .state('app.mail', {
-                url: '/mail',
-                views: {
-                    'main': {
-                        templateUrl: 'app/main/mail/mail.html',
-                        controller: 'mailController as vm'
-                    }
-                }
-            })
-            .state('app.calendar', {
-                url: '/calendar',
-                views: {
-                    'main': {
-                        templateUrl: 'app/main/calendar/calendar.html',
-                        controller: 'calendarController as vm'
-                    }
-                }
-            })
-            .state('app.todo', {
-                url: '/todo',
-                views: {
-                    'main': {
-                        templateUrl: 'app/main/todo/todo.html',
-                        controller: 'todoController as vm'
-                    }
-                }
-            })
-            .state('app.colors', {
-                url: '/colors',
-                views: {
-                    'main': {
-                        templateUrl: 'app/main/colors/colors.html',
-                        controller: 'colorsController as vm'
-                    }
-                }
 
-            })
-            .state('app.icons', {
-                url: '/icons',
+            // Dashboard
+            .state('app.dashboard', {
+                url  : '/',
                 views: {
-                    'main': {
-                        templateUrl: 'app/main/icons/icons.html',
-                        controller: 'iconsController as vm'
+                    'main@app': {
+                        templateUrl: 'app/main/dashboard/dashboard.html',
+                        controller : 'dashboardController as vm'
                     }
                 }
             })
-            .state('app.standartTable', {
-                url: '/standart-table',
+
+            // Calendar
+            .state('app.calendar', {
+                url  : '/calendar',
                 views: {
-                    'main': {
-                        templateUrl: 'app/main/tables/standart-table/standart-table.html',
-                        controller: 'standartTableController as vm'
+                    'main@app': {
+                        templateUrl: 'app/main/calendar/calendar.html',
+                        controller : 'calendarController as vm'
                     }
                 }
             })
-            .state('app.login', {
-                url: '/login',
+
+            // E-Commerce
+            .state('app.e-commerce', {
+                url  : '/e-commerce',
                 views: {
-                    'app@': {
+                    'main@app': {
+                        templateUrl: 'app/main/calendar/calendar.html',
+                        controller : 'calendarController as vm'
+                    }
+                }
+            })
+
+            // E-Mail
+            .state('app.e-mail', {
+                url  : '/email',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/mail/mail.html',
+                        controller : 'mailController as vm'
+                    }
+                }
+            })
+
+            // File Manager
+            .state('app.file-manager', {
+                url  : '/file-manager',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/file-manager/file-manager.html',
+                        controller : 'fileManagerController as vm'
+                    }
+                }
+            })
+
+            // To-Do
+            .state('app.to-do', {
+                url  : '/to-do',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/todo/todo.html',
+                        controller : 'todoController as vm'
+                    }
+                }
+            })
+
+        /**
+         * Pages
+         */
+            .state('app.pages', {
+                abstract: true,
+                url     : '/pages'
+            })
+
+        /**
+         * Authentication
+         */
+            .state('app.pages.auth', {
+                abstract: true,
+                url     : '/auth'
+            })
+
+            // Login
+            .state('app.pages.auth.login', {
+                url  : '/login',
+                views: {
+                    'app@'          : {
                         templateUrl: 'app/layout/basic.html'
                     },
-                    'main@app.login': {
+                    'main@app.pages.auth.login': {
                         templateUrl: 'app/main/pages/auth/login/login.html'
                     }
                 }
             })
-            .state('app.register', {
-                url: '/register',
+
+            // Register
+            .state('app.pages.auth.register', {
+                url  : '/register',
                 views: {
-                    'app@': {
+                    'app@'             : {
                         templateUrl: 'app/layout/basic.html'
                     },
-                    'main@app.register': {
+                    'main@app.pages.auth.register': {
                         templateUrl: 'app/main/pages/auth/register/register.html'
                     }
                 }
             })
-            .state('app.forgot-password', {
-                url: '/forgot-password',
+
+            // Forgot Password
+            .state('app.pages.auth.forgot-password', {
+                url  : '/forgot-password',
                 views: {
-                    'app@': {
+                    'app@'                    : {
                         templateUrl: 'app/layout/basic.html'
                     },
-                    'main@app.forgot-password': {
+                    'main@app.pages.auth.forgot-password': {
                         templateUrl: 'app/main/pages/auth/forgot-password/forgot-password.html'
                     }
                 }
             })
-            .state('app.lock', {
-                url: '/lock',
+
+            // Lock
+            .state('app.pages.auth.lock', {
+                url  : '/lock',
                 views: {
-                    'app@': {
+                    'app@'         : {
                         templateUrl: 'app/layout/basic.html'
                     },
-                    'main@app.lock': {
+                    'main@app.pages.auth.lock': {
                         templateUrl: 'app/main/pages/auth/lock/lock.html'
                     }
                 }
             })
-            .state('app.coming-soon', {
-                url: '/coming-soon',
+
+            // Coming Soon
+            .state('app.pages.coming-soon', {
+                url  : '/coming-soon',
                 views: {
-                    'app@': {
+                    'app@'                : {
                         templateUrl: 'app/layout/basic.html'
                     },
                     'main@app.coming-soon': {
@@ -153,10 +188,20 @@
                     }
                 }
             })
-            .state('app.404', {
-                url: '/error-404',
+
+            /*
+             * Errors
+             */
+            .state('app.pages.errors', {
+                abstract: true,
+                url     : '/errors'
+            })
+
+            // 404
+            .state('app.pages.errors.error-404', {
+                url  : '/error-404',
                 views: {
-                    'app@': {
+                    'app@'        : {
                         templateUrl: 'app/layout/basic.html'
                     },
                     'main@app.404': {
@@ -164,10 +209,12 @@
                     }
                 }
             })
-            .state('app.500', {
-                url: '/error-500',
+
+            // 500
+            .state('app.pages.errors.error-500', {
+                url  : '/error-500',
                 views: {
-                    'app@': {
+                    'app@'        : {
                         templateUrl: 'app/layout/basic.html'
                     },
                     'main@app.500': {
@@ -175,38 +222,201 @@
                     }
                 }
             })
-            .state('app.price-tables', {
-                url: '/price-tables',
+
+            // Invoice
+            .state('app.pages.invoice', {
+                url  : '/invoice',
                 views: {
-                    'main': {
-                        templateUrl: 'app/main/pages/price-tables/price-tables.html'
-                    }
-                }
-            })
-            .state('app.invoice', {
-                url: '/invoice',
-                views: {
-                    'main': {
+                    'main@app': {
                         templateUrl: 'app/main/pages/invoice/invoice.html',
-                        controller: 'invoiceController as vm'
+                        controller : 'invoiceController as vm'
                     }
                 }
             })
-            .state('app.profile', {
-                url: '/profile',
+
+            // Profile
+            .state('app.pages.profile', {
+                url  : '/profile',
                 views: {
-                    'main': {
+                    'main@app': {
                         templateUrl: 'app/main/pages/profile/profile.html',
-                        controller: 'profileController as vm'
+                        controller : 'profileController as vm'
                     }
                 }
             })
-            .state('app.fileManager', {
-                url: '/file-manager',
+
+            // Search
+            .state('app.pages.search', {
+                url  : '/search',
                 views: {
-                    'main': {
-                        templateUrl: 'app/main/file-manager/file-manager.html',
-                        controller: 'fileManagerController as vm'
+                    'main@app': {
+                        templateUrl: 'app/main/pages/search/search.html',
+                        controller : 'searchController as vm'
+                    }
+                }
+            })
+
+            // Timeline
+            .state('app.pages.timeline', {
+                url  : '/timeline',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/pages/timeline/timeline.html',
+                        controller : 'timelineController as vm'
+                    }
+                }
+            })
+
+        /**
+         * User Interface
+         */
+            .state('app.ui', {
+                abstract: true,
+                url     : '/ui'
+            })
+
+            // Typography
+            .state('app.ui.typography', {
+                url  : '/typography',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/typography/typography.html',
+                        controller : 'typographyController as vm'
+                    }
+                }
+            })
+
+            // Colors
+            .state('app.ui.colors', {
+                url  : '/colors',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/colors/colors.html',
+                        controller : 'colorsController as vm'
+                    }
+                }
+
+            })
+
+            // Icons
+            .state('app.ui.icons', {
+                url  : '/icons',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/icons/icons.html',
+                        controller : 'iconsController as vm'
+                    }
+                }
+            })
+
+            // Layouts
+            .state('app.ui.layouts', {
+                url  : '/layouts',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/layouts/layouts.html',
+                        controller : 'layoutsController as vm'
+                    }
+                }
+            })
+
+        /**
+         * Components
+         */
+            .state('app.components', {
+                abstract: true,
+                url     : '/components'
+            })
+
+        /**
+         * Elements
+         */
+            .state('app.components.elements', {
+                abstract: true,
+                url     : '/elements'
+            })
+
+            // Buttons
+            .state('app.components.elements.buttons', {
+                url  : '/buttons',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/elements/buttons/buttons.html',
+                        controller : 'buttonsController as vm'
+                    }
+                }
+            })
+
+        /**
+         * Tables
+         */
+            .state('app.components.tables', {
+                abstract: true,
+                url     : '/tables'
+            })
+
+            // Standard Table
+            .state('app.components.tables.standartTable', {
+                url  : '/standard-table',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/tables/standart-table/standart-table.html',
+                        controller : 'standartTableController as vm'
+                    }
+                }
+            })
+
+            // DataTable
+            .state('app.components.tables.dataTable', {
+                url  : '/datatable',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/tables/datatable/datatable.html',
+                        controller : 'dataTableController as vm'
+                    }
+                }
+            })
+
+            // Price Tables
+            .state('app.components.price-tables', {
+                url  : '/price-tables',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/pages/price-tables/price-tables.html',
+                        controller : 'priceTablesController as vm'
+                    }
+                }
+            })
+
+            // Charts
+            .state('app.components.charts', {
+                url  : '/charts',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/pages/charts/charts.html',
+                        controller : 'chartsController as vm'
+                    }
+                }
+            })
+
+            // Maps
+            .state('app.components.maps', {
+                url  : '/maps',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/pages/maps/maps.html',
+                        controller : 'mapsController as vm'
+                    }
+                }
+            })
+
+            // Widgets
+            .state('app.components.widgets', {
+                url  : '/widgets',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/pages/maps/maps.html',
+                        controller : 'widgetsController as vm'
                     }
                 }
             });

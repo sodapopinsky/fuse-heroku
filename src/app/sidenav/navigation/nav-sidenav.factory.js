@@ -279,7 +279,7 @@
                         },
                         {
                             "name": "Profile",
-                            "url": "/profile",
+                            "url": "/pages/profile",
                             "type": "link",
                             "icon": "icon-person"
                         },

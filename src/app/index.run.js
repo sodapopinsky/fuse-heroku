@@ -1,13 +1,20 @@
-(function() {
-  'use strict';
+(function ()
+{
+    'use strict';
 
-  angular
-    .module('fuse')
-    .run(runBlock);
+    angular
+        .module('fuse')
+        .run(runBlock);
 
-  /** @ngInject */
-  function runBlock() {
-    //$log.debug('runBlock end');
-  }
+    /** @ngInject */
+    function runBlock($rootScope, msNavService)
+    {
+
+        $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams)
+        {
+            // Update navigation toggle
+            msNavService.updateToggle();
+        });
+    }
 
 })();
