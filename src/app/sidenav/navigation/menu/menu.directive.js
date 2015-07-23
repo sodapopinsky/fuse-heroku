@@ -35,6 +35,7 @@
 
         function updateToggle()
         {
+            // If there are no active toggles, bail
             if ( !togglePaths.length )
             {
                 return;
@@ -47,7 +48,7 @@
 
             angular.forEach(togglePaths, function (toggle)
             {
-                console.log(toggle);
+                //console.log(toggle);
 
                 angular.forEach(toggle.paths, function (path)
                 {
@@ -92,7 +93,7 @@
     {
         return {
             require: '^msNav',
-            scope  : {},
+            scope  : true,
             compile: function (element, attrs)
             {
                 element.addClass('ms-nav-toggle');
@@ -109,9 +110,10 @@
                         paths.push(angular.element(link).attr('ui-sref'));
                     });
 
+                    // Save toggle paths
                     msNavService.saveTogglePaths($scope, paths);
 
-                    // Open - close functionality
+                    // Internal functions
                     var open = function ()
                     {
                         element.addClass('active');
@@ -120,11 +122,6 @@
                     var close = function ()
                     {
                         element.removeClass('active');
-
-                        //element.find('.ms-nav-toggle').scope().close();
-
-                        console.log(element.find('.ms-nav-toggle'));
-                        console.log(angular.element(element.find('.ms-nav-toggle')).scope());
                     };
 
                     var isOpen = function ()
@@ -136,6 +133,7 @@
                     {
                         if ( isOpen() )
                         {
+                            $scope.$broadcast('MSNav::ParentToggleClosed');
                             close();
                         }
                         else
@@ -144,10 +142,14 @@
                         }
                     };
 
+                    // Catch broadcasted event
+                    $scope.$on('MSNav::ParentToggleClosed', close);
+
+                    // Toggle button functionality
                     var toggleButton = element.children('.ms-nav-toggle-button');
                     toggleButton.on('click', toggle);
 
-                    // Expose the toggle functions
+                    // Expose the toggle functions so we can access them from outside
                     $scope.toggle = toggle;
                     $scope.open = open;
                     $scope.close = close;
