@@ -9,45 +9,32 @@
         $urlRouterProvider.otherwise('/');
         $locationProvider.html5Mode(true);
         $stateProvider
-            .state('layout', {
-                abstract: true
-            })
-
-            .state('layout.basic', {
-                abstract: true,
-                views: {
-                    'app@': {
-                        templateUrl: 'app/layout/basic.html'
-                    }
-                }
-            })
-
-            .state('layout.default', {
+            .state('app', {
                 abstract: true,
                 views: {
                     'app@': {
                         templateUrl: 'app/layout/default.html'
                     },
-                    'toolbar@layout.default': {
+                    'toolbar@app': {
                         templateUrl: 'app/toolbar/toolbar.html',
                         controller: 'toolbarController as vm'
                     },
-                    'sidenavLeft@layout.default': {
+                    'sidenavLeft@app': {
                         templateUrl: 'app/sidenav/navigation/nav-sidenav.html',
                         controller: 'navSidenavController as vm'
                     },
-                    'sidenavRight@layout.default': {
+                    'sidenavRight@app': {
                         templateUrl: 'app/sidenav/notification/notification-sidenav.html',
                         controller: 'notificationSidenavController as vm'
                     },
-                    'themeChanger@layout.default': {
+                    'themeChanger@app': {
                         templateUrl: 'app/components/theme-changer/theme-changer.html',
                         controller: 'ThemeChangerController as vm'
                     }
                 }
             })
-
-            .state('layout.default.dashboard', {
+            
+            .state('app.dashboard', {
                 url: '/',
                 views: {
                     'main': {
@@ -56,7 +43,7 @@
                     }
                 }
             })
-            .state('layout.default.mail', {
+            .state('app.mail', {
                 url: '/mail',
                 views: {
                     'main': {
@@ -65,7 +52,7 @@
                     }
                 }
             })
-            .state('layout.default.calendar', {
+            .state('app.calendar', {
                 url: '/calendar',
                 views: {
                     'main': {
@@ -74,7 +61,7 @@
                     }
                 }
             })
-            .state('layout.default.todo', {
+            .state('app.todo', {
                 url: '/todo',
                 views: {
                     'main': {
@@ -83,7 +70,7 @@
                     }
                 }
             })
-            .state('layout.default.colors', {
+            .state('app.colors', {
                 url: '/colors',
                 views: {
                     'main': {
@@ -93,7 +80,7 @@
                 }
 
             })
-            .state('layout.default.icons', {
+            .state('app.icons', {
                 url: '/icons',
                 views: {
                     'main': {
@@ -102,7 +89,7 @@
                     }
                 }
             })
-            .state('layout.default.standartTable', {
+            .state('app.standartTable', {
                 url: '/standart-table',
                 views: {
                     'main': {
@@ -111,63 +98,84 @@
                     }
                 }
             })
-            .state('layout.basic.login', {
+            .state('app.login', {
                 url: '/login',
                 views: {
-                    'main': {
+                    'app@': {
+                        templateUrl: 'app/layout/basic.html'
+                    },
+                    'main@app.login': {
                         templateUrl: 'app/main/pages/auth/login/login.html'
                     }
                 }
             })
-            .state('layout.basic.register', {
+            .state('app.register', {
                 url: '/register',
                 views: {
-                    'main': {
+                    'app@': {
+                        templateUrl: 'app/layout/basic.html'
+                    },
+                    'main@app.register': {
                         templateUrl: 'app/main/pages/auth/register/register.html'
                     }
                 }
             })
-            .state('layout.basic.forgot-password', {
+            .state('app.forgot-password', {
                 url: '/forgot-password',
                 views: {
-                    'main': {
+                    'app@': {
+                        templateUrl: 'app/layout/basic.html'
+                    },
+                    'main@app.forgot-password': {
                         templateUrl: 'app/main/pages/auth/forgot-password/forgot-password.html'
                     }
                 }
             })
-            .state('layout.basic.lock', {
+            .state('app.lock', {
                 url: '/lock',
                 views: {
-                    'main': {
+                    'app@': {
+                        templateUrl: 'app/layout/basic.html'
+                    },
+                    'main@app.lock': {
                         templateUrl: 'app/main/pages/auth/lock/lock.html'
                     }
                 }
             })
-            .state('layout.basic.coming-soon', {
+            .state('app.coming-soon', {
                 url: '/coming-soon',
                 views: {
-                    'main': {
+                    'app@': {
+                        templateUrl: 'app/layout/basic.html'
+                    },
+                    'main@app.coming-soon': {
                         templateUrl: 'app/main/pages/coming-soon/coming-soon.html'
                     }
                 }
             })
-            .state('layout.basic.404', {
+            .state('app.404', {
                 url: '/error-404',
                 views: {
-                    'main': {
+                    'app@': {
+                        templateUrl: 'app/layout/basic.html'
+                    },
+                    'main@app.404': {
                         templateUrl: 'app/main/pages/error/error-404.html'
                     }
                 }
             })
-            .state('layout.basic.500', {
+            .state('app.500', {
                 url: '/error-500',
                 views: {
-                    'main': {
+                    'app@': {
+                        templateUrl: 'app/layout/basic.html'
+                    },
+                    'main@app.500': {
                         templateUrl: 'app/main/pages/error/error-500.html'
                     }
                 }
             })
-            .state('layout.default.price-tables', {
+            .state('app.price-tables', {
                 url: '/price-tables',
                 views: {
                     'main': {
@@ -175,7 +183,7 @@
                     }
                 }
             })
-            .state('layout.default.invoice', {
+            .state('app.invoice', {
                 url: '/invoice',
                 views: {
                     'main': {
@@ -184,7 +192,7 @@
                     }
                 }
             })
-            .state('layout.default.profile', {
+            .state('app.profile', {
                 url: '/profile',
                 views: {
                     'main': {
@@ -193,7 +201,7 @@
                     }
                 }
             })
-            .state('layout.default.fileManager', {
+            .state('app.fileManager', {
                 url: '/file-manager',
                 views: {
                     'main': {
