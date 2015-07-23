@@ -40,38 +40,60 @@ $navSidabarWidth: 240px;
 
     .navigation {
 
-        .ms-nav-toggle {
+        .ms-nav-group {
 
-            & > ul {
-                overflow: hidden;
-                height: 0;
-                transition: height 0.75s cubic-bezier(0.35, 0, 0.25, 1);
-
+            .group-title {
+                line-height: 32px;
+                padding: 0 24px;
+                margin: 0;
+                width: 100%;
+                color: rgba(255, 255, 255, 0.30);
+                font-size: 12px;
+                font-weight: 500;
+                text-transform: uppercase;
             }
 
-            &.active {
+            .ms-nav-toggle {
 
                 & > ul {
-                    height: auto;
+                    overflow: hidden;
+                    height: 0;
+                    transition: height 0.75s cubic-bezier(0.35, 0, 0.25, 1);
+
+                }
+
+                &.active {
+
+                    & > ul {
+                        height: auto;
+                    }
                 }
             }
-        }
 
+            .ms-nav-item {
+                padding: 0 24px;
+                line-height: 48px;
 
+                a {
+                    display: flex;
+                    align-self: flex-start;
+                    align-items: center;
+                    text-decoration: none;
+                    font-size: 13px;
+                    font-weight: 500;
+                    color: rgba(255, 255, 255, 1);
+                }
 
+                .ms-nav-icon {
+                    color: rgba(255, 255, 255, 1);
+                    margin: 0 16px 0 0;
+                }
 
+                .ms-nav-title {
+                    display: flex;
+                }
+            }
 
-        color: rgba(255, 255, 255, 1);
-
-        .menu-heading {
-            line-height: 32px;
-            padding: 0 24px;
-            margin: 0;
-            width: 100%;
-            color: rgba(255, 255, 255, 0.30);
-            font-size: 12px;
-            font-weight: 500;
-            text-transform: uppercase;
         }
 
         .menu-toggle-list {
