@@ -42,7 +42,6 @@ $navSidabarWidth: 240px;
     .navigation {
         color: rgba(255, 255, 255, 0.70);
         font-size: 13px;
-        font-weight: 500;
 
         .ms-nav-group {
             padding: 16px 0 0 0;
@@ -101,7 +100,7 @@ $navSidabarWidth: 240px;
                     cursor: pointer;
                     flex-direction: row;
                     justify-content: space-between;
-
+                    position: relative;
                     > span {
                         display: flex;
                         flex: 1;
@@ -114,13 +113,23 @@ $navSidabarWidth: 240px;
                 }
             }
 
-            & > .ms-nav-toggle {
+            & .ms-nav-toggle {
 
                 &.active {
+                    background-color: rgba(0, 0, 0, 0.08);
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                    border-top: 1px solid rgba(0, 0, 0, 0.05);
 
+                    ul {
+
+                        //                        background-color: rgba(0, 0, 0, 0.08);
+                    }
                     & > ul {
-                        background-color: rgba(0, 0, 0, 0.12);
-                        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                        //                        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                        //                        border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+                        //                        background-color: rgba(0, 0, 0, 0.12);
+                        //                        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
                     }
                 }
             }
