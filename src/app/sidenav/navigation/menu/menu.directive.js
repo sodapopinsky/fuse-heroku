@@ -16,7 +16,7 @@
         var service = {
             saveToggleables  : saveToggleables,
             updateToggleables: updateToggleables,
-            closeAll: closeAll
+            closeAll         : closeAll
         };
 
         function saveToggleables(scope, states)
@@ -35,9 +35,6 @@
                 return;
             }
 
-            // First, close all toggles
-            closeAll();
-
             // Iterate through all toggleables and open the ones that have matching state names
             var currentState = $state.current.name;
             angular.forEach(toggleables, function (toggleable)
@@ -55,10 +52,15 @@
         /**
          * Close all
          */
-        function closeAll()
+        function closeAll(exception)
         {
             angular.forEach(toggleables, function (toggleable)
             {
+                if ( exception && angular.equals(exception, toggleable.scope) )
+                {
+                    return;
+                }
+
                 toggleable.scope.close();
             });
         }
@@ -92,7 +94,7 @@
             {
                 element.addClass('ms-nav-toggle');
 
-                return function postLink($scope, $element, attrs, MsNavController)
+                return function postLink($scope, $element, attrs)
                 {
                     var toggleOpened = false;
                     var toggleItems = $element.children('ul');
@@ -151,7 +153,12 @@
                         }
                         else
                         {
-                            if ( !$element.parents('.ms-nav-toggle.open').length )
+                            if ( $element.parents('.ms-nav-toggle.open').length )
+                            {
+                                var exception = $element.parents('.ms-nav-toggle.open').scope();
+                                msNavService.closeAll(exception)
+                            }
+                            else
                             {
                                 msNavService.closeAll();
                             }
