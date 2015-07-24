@@ -28,12 +28,12 @@
                         controller : 'toolbarController as vm'
                     },
                     'sidenavLeft@app' : {
-                        templateUrl: 'app/sidenav/navigation/nav-sidenav.html',
-                        controller : 'navSidenavController as vm'
+                        templateUrl: 'app/sidenav/navigation/navigation.html',
+                        controller : 'NavigationController as vm'
                     },
                     'sidenavRight@app': {
-                        templateUrl: 'app/sidenav/notification/notification-sidenav.html',
-                        controller : 'notificationSidenavController as vm'
+                        templateUrl: 'app/sidenav/quick-panel/quick-panel.html',
+                        controller : 'QuickPanelController as vm'
                     },
                     'themeChanger@app': {
                         templateUrl: 'app/components/theme-changer/theme-changer.html',

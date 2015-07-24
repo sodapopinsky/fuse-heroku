@@ -3,10 +3,10 @@
 ************/
 $navSidabarWidth: 240px;
 
-.site-sidenav {
+.navigation {
     z-index: 70;
 
-    .nav-header {
+    .navigation-header {
         height: 64px;
         min-height: 64px;
         background-color: rgba(255, 255, 255, 0.08);
@@ -39,7 +39,7 @@ $navSidabarWidth: 240px;
         max-width: $navSidabarWidth;
     }
 
-    .navigation {
+    .ms-nav {
         color: rgba(255, 255, 255, 0.70);
         font-size: 13px;
 

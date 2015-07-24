@@ -10,7 +10,7 @@
         vm.notifySideNavToggle = notifySideNavToggle;
 
         function notifySideNavToggle() {
-            $mdSidenav('notification-sidenav').toggle();
+            $mdSidenav('quick-panel').toggle();
         }
     }
 

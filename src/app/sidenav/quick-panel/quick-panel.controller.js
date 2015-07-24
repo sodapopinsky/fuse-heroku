@@ -2,10 +2,10 @@
     'use strict';
 
     angular.module('fuse')
-        .controller('notificationSidenavController', notificationSidenavController);
+        .controller('QuickPanelController', QuickPanelController);
 
     /** @ngInject */
-    function notificationSidenavController(api) {
+    function QuickPanelController(api) {
         var vm = this;
         vm.date = new Date();
         vm.settings = {
