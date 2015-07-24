@@ -13,7 +13,7 @@
         $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams)
         {
             // Update navigation toggle
-            msNavService.updateToggle();
+            msNavService.updateToggleables();
         });
     }
 

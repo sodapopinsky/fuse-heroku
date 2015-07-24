@@ -70,6 +70,16 @@ $navSidabarWidth: 240px;
                     padding: 0 24px;
                     color: rgba(255, 255, 255, 0.70);
 
+                    > span {
+                        display: flex;
+                        flex: 1;
+                    }
+
+                    .arrow {
+                        transition: transform 0.3s ease-in-out;
+                        margin: 0;
+                    }
+
                     &.active {
                         background: rgba(0, 0, 0, 0.12);
                         color: rgba(255, 255, 255, 1);
@@ -94,8 +104,7 @@ $navSidabarWidth: 240px;
 
                 ul {
                     overflow: hidden;
-                    height: 0;
-                    transition: height 0.75s cubic-bezier(0.35, 0, 0.25, 1);
+                    display: none;
 
                     li {
                         /* Level 1 */
@@ -145,35 +154,23 @@ $navSidabarWidth: 240px;
                         a, md-icon {
                             color: rgba(255, 255, 255, 1);
                         }
-
-                        > [class^="icon-keyboard_arrow"],
-                        > [class*=" icon-keyboard_arrow"] {
-                            transform: rotate(180deg);
-                        }
-                    }
-
-                    & > ul {
-                        height: auto;
                     }
                 }
 
-                .ms-nav-button {
+                &.open {
 
-                    > span {
-                        display: flex;
-                        flex: 1;
-                    }
+                    & > .ms-nav-button {
 
-                    > [class^="icon-keyboard_arrow"], > [class*=" icon-keyboard_arrow"] {
-                        transition: transform 0.3s ease-in-out;
-                        margin: 0;
+                        & > .arrow {
+                            transform: rotate(180deg);
+                        }
                     }
                 }
             }
 
             & > .ms-nav-toggle {
 
-                &.active {
+                &.open {
                     background-color: rgba(0, 0, 0, 0.08);
                 }
             }

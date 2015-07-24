@@ -14,58 +14,55 @@
     /** @ngInject */
     function msNavService($state)
     {
-        var togglePaths = [];
+        var toggleables = [];
 
         var service = {
-            saveTogglePaths: saveTogglePaths,
-            updateToggle   : updateToggle
+            saveToggleables  : saveToggleables,
+            updateToggleables: updateToggleables,
+            closeAll: closeAll
         };
 
-        function saveTogglePaths(scope, paths)
+        function saveToggleables(scope, states)
         {
-            togglePaths.push({
-                'scope': scope,
-                'paths': paths
+            toggleables.push({
+                'scope' : scope,
+                'states': states
             });
-
-            //console.log(togglePaths);
-
-            //updateToggle();
         }
 
-        function updateToggle()
+        function updateToggleables()
         {
             // If there are no active toggles, bail
-            if ( !togglePaths.length )
+            if ( !toggleables.length )
             {
                 return;
             }
 
-            // Close all
+            // First, close all toggles
             closeAll();
 
-            var stateName = $state.current.name;
-
-            angular.forEach(togglePaths, function (toggle)
+            // Iterate through all toggleables and open the ones that have matching state names
+            var currentState = $state.current.name;
+            angular.forEach(toggleables, function (toggleable)
             {
-                //console.log(toggle);
-
-                angular.forEach(toggle.paths, function (path)
+                angular.forEach(toggleable.states, function (state)
                 {
-                    if ( stateName === path )
+                    if ( currentState === state )
                     {
-                        toggle.scope.toggle();
+                        toggleable.scope.open();
                     }
                 });
             });
-
         }
 
+        /**
+         * Close all
+         */
         function closeAll()
         {
-            angular.forEach(togglePaths, function (toggle)
+            angular.forEach(toggleables, function (toggleable)
             {
-                toggle.scope.close();
+                toggleable.scope.close();
             });
         }
 
@@ -84,7 +81,7 @@
             controller: 'MsNavController',
             link      : function ($scope, element, attrs)
             {
-                msNavService.updateToggle();
+                msNavService.updateToggleables();
             }
         }
     }
@@ -98,37 +95,56 @@
             {
                 element.addClass('ms-nav-toggle');
 
-                return function postLink($scope, element, attrs, MsNavController)
+                return function postLink($scope, $element, attrs, MsNavController)
                 {
-                    // Iterate through all the ui-sref attributes and store them
-                    // with the scope of this toggle
-                    var linkEl = element.find('a');
-                    var paths = [];
+                    var toggleOpened = false;
+                    var toggleItems = $element.children('ul');
+
+                    // Iterate through all the ui-sref attributes and
+                    // store them along with the scope of this toggle
+                    var linkEl = $element.find('a');
+                    var states = [];
 
                     angular.forEach(linkEl, function (link)
                     {
-                        paths.push(angular.element(link).attr('ui-sref'));
+                        states.push(angular.element(link).attr('ui-sref'));
                     });
 
                     // Save toggle paths
-                    msNavService.saveTogglePaths($scope, paths);
+                    msNavService.saveToggleables($scope, states);
 
-                    // Internal functions
-                    var open = function ()
-                    {
-                        element.addClass('active');
-                    };
-
-                    var close = function ()
-                    {
-                        element.removeClass('active');
-                    };
-
+                    /**
+                     * Return if toggle is open
+                     */
                     var isOpen = function ()
                     {
-                        return element.hasClass('active');
+                        return toggleOpened;
                     };
 
+
+                    /**
+                     * Open the toggle
+                     */
+                    var open = function ()
+                    {
+                        $element.addClass('open');
+                        toggleOpened = true;
+                        toggleItems.slideDown();
+                    };
+
+                    /**
+                     * Close the toggle
+                     */
+                    var close = function ()
+                    {
+                        $element.removeClass('open');
+                        toggleOpened = false;
+                        toggleItems.slideUp();
+                    };
+
+                    /**
+                     * Toggle
+                     */
                     var toggle = function ()
                     {
                         if ( isOpen() )
@@ -138,6 +154,11 @@
                         }
                         else
                         {
+                            if ( !$element.parents('.ms-nav-toggle.open').length )
+                            {
+                                msNavService.closeAll();
+                            }
+
                             open();
                         }
                     };
@@ -146,99 +167,15 @@
                     $scope.$on('MSNav::ParentToggleClosed', close);
 
                     // Toggle button functionality
-                    var toggleButton = element.children('.ms-nav-button');
+                    var toggleButton = $element.children('.ms-nav-button');
                     toggleButton.on('click', toggle);
 
                     // Expose the toggle functions so we can access them from outside
-                    $scope.toggle = toggle;
                     $scope.open = open;
                     $scope.close = close;
                 }
             }
         }
     }
-
-
-    function menuLink(navigation)
-    {
-        return {
-            scope      : {
-                section: '='
-            },
-            templateUrl: 'app/sidenav/navigation/menu/menu-link.tmpl.html',
-            link       : function ($scope, $element)
-            {
-                var controller = $element.parent().controller();
-                $scope.isSelected = function ()
-                {
-                    return navigation.isPageSelected($scope.section);
-                };
-
-                $scope.focusSection = function ()
-                {
-                    // set flag to be used later when
-                    // $locationChangeSuccess calls openPage()
-                    controller.autoFocusContent = true;
-                };
-            }
-        };
-    }
-
-    function menuToggle($timeout, navigation)
-    {
-        return {
-            scope      : {
-                section: '='
-            },
-            templateUrl: 'app/sidenav/navigation/menu/menu-toggle.tmpl.html',
-            link       : function ($scope, $element)
-            {
-                //var controller = $element.parent().controller();
-                //var $ul = $element.find('ul');
-                //var originalHeight;
-
-                $scope.isOpen = function ()
-                {
-                    return navigation.isSectionSelected($scope.section);
-                };
-                $scope.toggle = function ()
-                {
-                    navigation.toggleSelectSection($scope.section);
-                };
-                $scope.$watch(
-                    function ()
-                    {
-                        return navigation.isSectionSelected($scope.section);
-                    },
-                    function (open)
-                    {
-                        var $ul = $element.find('ul');
-                        var targetHeight = open ? getTargetHeight() : 0;
-                        $timeout(function ()
-                        {
-                            $ul.css({height: targetHeight + 'px'});
-                        }, 0, false);
-
-                        function getTargetHeight()
-                        {
-                            var targetHeight;
-                            $ul.addClass('no-transition');
-                            $ul.css('height', '');
-                            targetHeight = $ul.prop('clientHeight');
-                            $ul.css('height', 0);
-                            $ul.removeClass('no-transition');
-                            return targetHeight;
-                        }
-                    }
-                );
-
-                var parentNode = $element[0].parentNode.parentNode.parentNode;
-                if ( parentNode.classList.contains('parent-list-item') )
-                {
-                    var heading = parentNode.querySelector('h2');
-                    $element[0].firstChild.setAttribute('aria-describedby', heading.id);
-                }
-            }
-        };
-    }
+    
 })();
