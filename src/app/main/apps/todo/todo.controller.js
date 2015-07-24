@@ -45,7 +45,7 @@
             $mdDialog.show({
                 controller: 'taskDialogController',
                 controllerAs: 'vm',
-                templateUrl: 'app/main/todo/task-dialog.html',
+                templateUrl: 'app/main/apps/todo/task-dialog.html',
                 parent: angular.element($document.body),
                 targetEvent: ev,
                 clickOutsideToClose: true,

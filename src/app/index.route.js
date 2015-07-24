@@ -47,7 +47,7 @@
                 url  : '/',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/dashboard/dashboard.html',
+                        templateUrl: 'app/main/apps/dashboard/dashboard.html',
                         controller : 'dashboardController as vm'
                     }
                 }
@@ -58,7 +58,7 @@
                 url  : '/calendar',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/calendar/calendar.html',
+                        templateUrl: 'app/main/apps/calendar/calendar.html',
                         controller : 'calendarController as vm'
                     }
                 }
@@ -69,7 +69,7 @@
                 url  : '/e-commerce',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/calendar/calendar.html',
+                        templateUrl: 'app/main/app/e-commerce/e-commerce.html',
                         controller : 'calendarController as vm'
                     }
                 }
@@ -80,7 +80,7 @@
                 url  : '/email',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/mail/mail.html',
+                        templateUrl: 'app/main/apps/mail/mail.html',
                         controller : 'mailController as vm'
                     }
                 }
@@ -91,7 +91,7 @@
                 url  : '/file-manager',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/file-manager/file-manager.html',
+                        templateUrl: 'app/main/apps/file-manager/file-manager.html',
                         controller : 'fileManagerController as vm'
                     }
                 }
@@ -102,7 +102,7 @@
                 url  : '/to-do',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/todo/todo.html',
+                        templateUrl: 'app/main/apps/todo/todo.html',
                         controller : 'todoController as vm'
                     }
                 }
@@ -183,7 +183,7 @@
                     'app@'                : {
                         templateUrl: 'app/layout/basic.html'
                     },
-                    'main@app.coming-soon': {
+                    'main@app.pages.coming-soon': {
                         templateUrl: 'app/main/pages/coming-soon/coming-soon.html'
                     }
                 }
@@ -204,8 +204,8 @@
                     'app@'        : {
                         templateUrl: 'app/layout/basic.html'
                     },
-                    'main@app.404': {
-                        templateUrl: 'app/main/pages/error/error-404.html'
+                    'main@app.pages.errors.error-404': {
+                        templateUrl: 'app/main/pages/errors/error-404.html'
                     }
                 }
             })
@@ -217,8 +217,8 @@
                     'app@'        : {
                         templateUrl: 'app/layout/basic.html'
                     },
-                    'main@app.500': {
-                        templateUrl: 'app/main/pages/error/error-500.html'
+                    'main@app.pages.errors.error-500': {
+                        templateUrl: 'app/main/pages/errors/error-500.html'
                     }
                 }
             })
@@ -280,7 +280,7 @@
                 url  : '/typography',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/typography/typography.html',
+                        templateUrl: 'app/main/ui/typography/typography.html',
                         controller : 'typographyController as vm'
                     }
                 }
@@ -291,7 +291,7 @@
                 url  : '/colors',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/colors/colors.html',
+                        templateUrl: 'app/main/ui/colors/colors.html',
                         controller : 'colorsController as vm'
                     }
                 }
@@ -303,7 +303,7 @@
                 url  : '/icons',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/icons/icons.html',
+                        templateUrl: 'app/main/ui/icons/icons.html',
                         controller : 'iconsController as vm'
                     }
                 }
@@ -314,7 +314,7 @@
                 url  : '/layouts',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/layouts/layouts.html',
+                        templateUrl: 'app/main/ui/layouts/layouts.html',
                         controller : 'layoutsController as vm'
                     }
                 }
@@ -341,7 +341,7 @@
                 url  : '/buttons',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/elements/buttons/buttons.html',
+                        templateUrl: 'app/main/components/elements/buttons/buttons.html',
                         controller : 'buttonsController as vm'
                     }
                 }
@@ -360,7 +360,7 @@
                 url  : '/standard-table',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/tables/standart-table/standart-table.html',
+                        templateUrl: 'app/main/components/tables/standart-table/standart-table.html',
                         controller : 'standartTableController as vm'
                     }
                 }
@@ -371,7 +371,7 @@
                 url  : '/datatable',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/tables/data-table/data-table.html',
+                        templateUrl: 'app/main/components/tables/data-table/data-table.html',
                         controller : 'dataTableController as vm'
                     }
                 }
@@ -382,8 +382,7 @@
                 url  : '/price-tables',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/pages/price-tables/price-tables.html',
-                        controller : 'priceTablesController as vm'
+                        templateUrl: 'app/main/components/price-tables/price-tables.html',
                     }
                 }
             })
@@ -393,7 +392,7 @@
                 url  : '/charts',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/pages/charts/charts.html',
+                        templateUrl: 'app/main/components/charts/charts.html',
                         controller : 'chartsController as vm'
                     }
                 }
@@ -404,7 +403,7 @@
                 url  : '/maps',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/pages/maps/maps.html',
+                        templateUrl: 'app/main/components/maps/maps.html',
                         controller : 'mapsController as vm'
                     }
                 }
@@ -415,7 +414,7 @@
                 url  : '/widgets',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/pages/maps/maps.html',
+                        templateUrl: 'app/main/components/maps/maps.html',
                         controller : 'widgetsController as vm'
                     }
                 }

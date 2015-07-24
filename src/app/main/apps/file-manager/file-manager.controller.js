@@ -53,7 +53,7 @@
         }
 
         function viewTemplate() {
-            var template = vm.selectedView === 'list' ? 'app/main/file-manager/views/list-view.html' : 'app/main/file-manager/views/grid-view.html';
+            var template = vm.selectedView === 'list' ? 'app/main/apps/file-manager/views/list-view.html' : 'app/main/apps/file-manager/views/grid-view.html';
             return template;
         }
 

@@ -1,7 +1,7 @@
 <div id="file-manager" layout="column" layout-fill>
     <section layout="row" flex>
         <md-sidenav class="md-sidenav-left main-sidenav md-whiteframe-z2" md-component-id="fileManager-main-sidenav"
-                    ng-include="'app/main/file-manager/sidenavs/main-sidenav.html'">
+                    ng-include="'app/main/apps/file-manager/sidenavs/main-sidenav.html'">
         </md-sidenav>
         <md-content flex layout="column" class="main-content md-whiteframe-z3">
             <md-toolbar class="md-accent md-tall" layout="column" layout-align="space-between start">
@@ -59,7 +59,7 @@
         <md-sidenav ng-show="vm.showDetails" class="md-sidenav-right detail-sidenav md-whiteframe-z2"
                     md-component-id="fileManager-details-sidenav"
                     md-is-locked-open="$mdMedia('gt-md')"
-                    ng-include="'app/main/file-manager/sidenavs/detail-sidenav.html'">
+                    ng-include="'app/main/apps/file-manager/sidenavs/detail-sidenav.html'">
         </md-sidenav>
 
     </section>
