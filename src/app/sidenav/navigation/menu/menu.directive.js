@@ -6,10 +6,7 @@
         .factory('msNavService', msNavService)
         .controller('MsNavController', MsNavController)
         .directive('msNav', msNav)
-        .directive('msNavToggle', msNavToggle)
-
-        .directive('menuLink', menuLink)
-        .directive('menuToggle', menuToggle);
+        .directive('msNavToggle', msNavToggle);
 
     /** @ngInject */
     function msNavService($state)
@@ -177,5 +174,5 @@
             }
         }
     }
-    
+
 })();
