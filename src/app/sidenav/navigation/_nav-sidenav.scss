@@ -63,16 +63,15 @@ $navSidabarWidth: 240px;
                     overflow: hidden;
                     height: 0;
                     transition: height 0.75s cubic-bezier(0.35, 0, 0.25, 1);
-                    & > li > .ms-nav-toggle-button {
-                        padding-left: 56px;
-                    }
-                    & > li:not(.ms-nav-toggle) {
-                        padding-left: 48px;
 
-//                        & > ul > li {
-//                            padding-left: 0px;
-//                        }
+                    & > li {
+                        padding-left: 34px;
+
+                        & > ul > li {
+                            padding-left: 20px;
+                        }
                     }
+
                 }
 
                 &.active {
@@ -84,7 +83,8 @@ $navSidabarWidth: 240px;
                             color: rgba(255, 255, 255, 1);
                         }
 
-                        > [class^="icon-keyboard_arrow"], > [class*=" icon-keyboard_arrow"] {
+                        > [class^="icon-keyboard_arrow"],
+                        > [class*=" icon-keyboard_arrow"] {
                             transform: rotate(180deg);
                         }
                     }
@@ -103,6 +103,7 @@ $navSidabarWidth: 240px;
                     flex-direction: row;
                     justify-content: space-between;
                     position: relative;
+
                     > span {
                         display: flex;
                         flex: 1;
@@ -115,24 +116,10 @@ $navSidabarWidth: 240px;
                 }
             }
 
-            & .ms-nav-toggle {
+            & > .ms-nav-toggle {
 
                 &.active {
                     background-color: rgba(0, 0, 0, 0.08);
-                    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-                    border-top: 1px solid rgba(0, 0, 0, 0.05);
-
-                    ul {
-
-                        //                        background-color: rgba(0, 0, 0, 0.08);
-                    }
-                    & > ul {
-                        //                        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-                        //                        border-top: 1px solid rgba(0, 0, 0, 0.1);
-
-                        //                        background-color: rgba(0, 0, 0, 0.12);
-                        //                        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-                    }
                 }
             }
 
@@ -141,6 +128,7 @@ $navSidabarWidth: 240px;
                 line-height: 48px;
 
                 a {
+                    position: relative;
                     display: flex;
                     align-self: flex-start;
                     align-items: center;
