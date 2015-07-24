@@ -44,7 +44,7 @@ $navSidabarWidth: 240px;
         color: rgba(255, 255, 255, 1);
 
         .ms-nav-group {
-            padding-top: 16px;
+            padding: 16px 0 0 0;
 
             .group-title {
                 line-height: 32px;
@@ -63,15 +63,25 @@ $navSidabarWidth: 240px;
                     overflow: hidden;
                     height: 0;
                     transition: height 0.75s cubic-bezier(0.35, 0, 0.25, 1);
-                    padding-left: 34px;
+
+                    /*& > li {
+                        padding-left: 34px;
+
+                        & > ul > li {
+                            padding-left: 0;
+                        }
+                    }*/
                 }
 
                 &.active {
+
                     > .ms-nav-toggle-button {
+
                         > [class^="icon-keyboard_arrow"], > [class*=" icon-keyboard_arrow"] {
                             transform: rotate(180deg);
                         }
                     }
+
                     & > ul {
                         height: auto;
                     }
@@ -86,10 +96,12 @@ $navSidabarWidth: 240px;
                     cursor: pointer;
                     flex-direction: row;
                     justify-content: space-between;
+
                     > span {
                         display: flex;
                         flex: 1;
                     }
+
                     > [class^="icon-keyboard_arrow"], > [class*=" icon-keyboard_arrow"] {
                         transition: transform 0.3s ease-in-out;
                         margin: 0;
@@ -106,7 +118,6 @@ $navSidabarWidth: 240px;
                     align-self: flex-start;
                     align-items: center;
                     padding: 0 24px;
-                    text-decoration: none;
                     color: rgba(255, 255, 255, 1);
                 }
 
@@ -124,138 +135,20 @@ $navSidabarWidth: 240px;
                 }
             }
 
-        }
+            .ms-nav-toggle {
 
-        .menu-toggle-list {
-            overflow: hidden;
-            position: relative;
-            z-index: 1;
-            -webkit-transition: 0.75s cubic-bezier(0.35, 0, 0.25, 1);
-            -webkit-transition-property: height;
-            -moz-transition: 0.75s cubic-bezier(0.35, 0, 0.25, 1);
-            -moz-transition-property: height;
-            transition: 0.75s cubic-bezier(0.35, 0, 0.25, 1);
-            transition-property: height;
+                ul {
 
-            a.md-button {
-                display: block;
-                padding: 0 16px 0 58px;
-                font-weight: 500;
-            }
-        }
-
-        &, ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        li {
-            margin: 0;
-        }
-
-        & > li {
-            margin-top: 24px;
-        }
-
-        .md-button {
-            border-radius: 0;
-            cursor: pointer;
-            display: block;
-            align-items: inherit;
-            margin: 0;
-            overflow: hidden;
-            padding: 0px 24px;
-            text-align: left;
-            text-decoration: none;
-            text-transform: none;
-            white-space: normal;
-            width: 100%;
-
-            &:hover,
-            &:focus {
-                background: rgba(0, 0, 0, 0.26);
-            }
-
-            &::-moz-focus-inner {
-                padding: 0;
-            }
-
-            &.active {
-                background: rgba(0, 0, 0, 0.26);
-            }
-
-            .context {
-                line-height: 48px;
-                max-height: 48px;
-                height: 48px;
-
-                md-icon {
-                    color: inherit;
-                    width: 18px;
-                    height: 18px;
-
-                    &.item-icon {
-                        margin: 0 16px 0 0;
+                    .ms-nav-item > a,
+                    .ms-nav-toggle > .ms-nav-toggle-button {
+                        padding-left: 54px;
                     }
                 }
 
-                .title {
-                    font-size: 13px;
-                    line-height: 18px;
-                }
+
             }
 
         }
 
-        md-select {
-            /* Override md-select margins.  With margins the menu will look incorrect and causes mobile list
-               to not be scrollable.
-             */
-            margin: 0;
-            width: 100%;
-
-            md-select-label {
-                justify-content: flex-end;
-                padding-top: 10px;
-
-                span {
-                    margin-right: auto;
-                    padding-left: 13px;
-                }
-            }
-
-            .md-select-icon {
-                margin-right: 28px;
-            }
-        }
-    }
-
-    ul#navigation-Directives {
-        margin-bottom: 20px;
-    }
-
-    .md-button-toggle {
-
-        .md-toggle-icon {
-            speak: none;
-            vertical-align: middle;
-            transform: rotate(180deg);
-            -webkit-transform: rotate(180deg);
-            transition: transform 0.3s ease-in-out;
-            -webkit-transition: -webkit-transform 0.3s ease-in-out;
-        }
-
-        .md-toggle-icon.toggled {
-            transform: rotate(0deg);
-            -webkit-transform: rotate(0deg);
-        }
-
-        .md-whiteframe-glow-z1 {
-            box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.14),
-            0px 0px 2px 2px rgba(0, 0, 0, 0.098),
-            0px 0px 5px 1px rgba(0, 0, 0, 0.084);
-        }
     }
 }
-

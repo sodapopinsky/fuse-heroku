@@ -71,41 +71,43 @@
                         </div>
                         <ul>
                             <li class="ms-nav-item">
-                                <a ui-sref="app.pages.auth.login">
+                                <a ui-sref="app.pages.auth.login" md-ink-ripple>
                                     <span>Login</span>
                                 </a>
                             </li>
 
                             <li class="ms-nav-item">
-                                <a ui-sref="app.pages.auth.register">
+                                <a ui-sref="app.pages.auth.register" md-ink-ripple>
                                     <span>Register</span>
                                 </a>
                             </li>
 
                             <li class="ms-nav-item">
-                                <a ui-sref="app.pages.auth.forgot-password">
+                                <a ui-sref="app.pages.auth.forgot-password" md-ink-ripple>
                                     <span>Forgot Password</span>
                                 </a>
                             </li>
 
                             <li class="ms-nav-item">
-                                <a ui-sref="app.pages.auth.lock">
+                                <a ui-sref="app.pages.auth.lock" md-ink-ripple>
                                     <span>Lock Screen</span>
                                 </a>
                             </li>
 
                             <li class="ms-nav-item">
-                                <a ui-sref="app.pages.profile">
+                                <a ui-sref="app.pages.profile" md-ink-ripple>
                                     <span>Profile</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
+
                     <li class="ms-nav-item">
-                        <a ui-sref="app.pages.coming-soon">
+                        <a ui-sref="app.pages.coming-soon" md-ink-ripple>
                             <span>Coming Soon</span>
                         </a>
                     </li>
+
                     <li class="ms-nav-item" ms-nav-toggle>
                         <div class="ms-nav-toggle-button" md-ink-ripple>
                             <span>Errors</span>
@@ -113,12 +115,12 @@
                         </div>
                         <ul>
                             <li class="ms-nav-item">
-                                <a ui-sref="app.pages.errors.error-404">
+                                <a ui-sref="app.pages.errors.error-404" md-ink-ripple>
                                     <span>404</span>
                                 </a>
                             </li>
                             <li class="ms-nav-item">
-                                <a ui-sref="app.pages.errors.error-500">
+                                <a ui-sref="app.pages.errors.error-500" md-ink-ripple>
                                     <span>500</span>
                                 </a>
                             </li>
@@ -126,149 +128,130 @@
                     </li>
 
                     <li class="ms-nav-item">
-                        <a ui-sref="app.pages.invoice">
+                        <a ui-sref="app.pages.invoice" md-ink-ripple>
                             <span>Invoice</span>
                         </a>
                     </li>
 
                     <li class="ms-nav-item">
-                        <a ui-sref="app.pages.search">
+                        <a ui-sref="app.pages.search" md-ink-ripple>
                             <span>Search</span>
                         </a>
                     </li>
 
                     <li class="ms-nav-item">
-                        <a ui-sref="app.pages.timeline">
+                        <a ui-sref="app.pages.timeline" md-ink-ripple>
                             <span>Timeline</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="ms-nav-group">
+            <li class="ms-nav-item">
+                <span class="group-title">User Interface</span>
+            </li>
+
+            <li class="ms-nav-item">
+                <a ui-sref="app.ui.typography" md-ink-ripple>
+                    <span>Typography</span>
+                </a>
+            </li>
+
+            <li class="ms-nav-item">
+                <a ui-sref="app.ui.colors" md-ink-ripple>
+                    <span>Colors</span>
+                </a>
+            </li>
+
+            <li class="ms-nav-item">
+                <a ui-sref="app.ui.icons" md-ink-ripple>
+                    <span>Icons</span>
+                </a>
+            </li>
+
+            <li class="ms-nav-item">
+                <a ui-sref="app.ui.layouts" md-ink-ripple>
+                    <span>Layouts</span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="ms-nav-group">
+            <li class="ms-nav-item">
+                <span class="group-title">Components</span>
+            </li>
+
+            <li class="ms-nav-item" ms-nav-toggle>
+                <div class="ms-nav-toggle-button" md-ink-ripple>
+                    <span>Elements</span>
+                    <md-icon md-font-icon="icon-keyboard_arrow_down" class="ms-nav-icon"></md-icon>
+                </div>
+
+                <ul>
+                    <li class="ms-nav-item">
+                        <a ui-sref="app.components.elements.buttons" md-ink-ripple>
+                            <span>Buttons</span>
+                        </a>
+                    </li>
+                    <li class="ms-nav-item">
+                        <a ui-sref="app.components.elements.card" md-ink-ripple>
+                            <span>Card</span>
+                        </a>
+                    </li>
+                    <li class="ms-nav-item">
+                        <a ui-sref="app.components.elements.dialog" md-ink-ripple>
+                            <span>Dialog</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="ms-nav-item" ms-nav-toggle>
+                <div class="ms-nav-toggle-button" md-ink-ripple>
+                    <span>Tables</span>
+                    <md-icon md-font-icon="icon-keyboard_arrow_down" class="ms-nav-icon"></md-icon>
+                </div>
+
+                <ul>
+                    <li class="ms-nav-item">
+                        <a ui-sref="app.components.tables.standart-table" md-ink-ripple>
+                            <span>Standart Table</span>
+                        </a>
+                    </li>
+                    <li class="ms-nav-item">
+                        <a ui-sref="app.components.tables.data-table" md-ink-ripple>
+                            <span>Data Table</span>
                         </a>
                     </li>
                 </ul>
             </li>
 
             <li class="ms-nav-item">
-                <span class="group-title">User Interface</span>
-            </li>
-
-            <li class="ms-nav-item">
-                <a ui-sref="app.ui.typography">
-                    <span>Typography</span>
+                <a ui-sref="app.components.price-tables" md-ink-ripple>
+                    <span>Price Tables</span>
                 </a>
             </li>
 
             <li class="ms-nav-item">
-                <a ui-sref="app.ui.colors">
-                    <span>Colors</span>
+                <a ui-sref="app.components.charts" md-ink-ripple>
+                    <span>Charts</span>
                 </a>
             </li>
 
             <li class="ms-nav-item">
-                <a ui-sref="app.ui.icons">
-                    <span>Icons</span>
+                <a ui-sref="app.components.maps" md-ink-ripple>
+                    <span>Maps</span>
                 </a>
             </li>
 
             <li class="ms-nav-item">
-                <a ui-sref="app.ui.layouts">
-                    <span>Layouts</span>
+                <a ui-sref="app.components.widgets" md-ink-ripple>
+                    <span>Widgets</span>
                 </a>
             </li>
-
-            <li class="ms-nav-item">
-                <span class="group-title">Components</span>
-            </li>
-
-            <ul>
-                <li class="ms-nav-item" ms-nav-toggle>
-                    <div class="ms-nav-toggle-button" md-ink-ripple>
-                        <span>Elements</span>
-                        <md-icon md-font-icon="icon-keyboard_arrow_down" class="ms-nav-icon"></md-icon>
-                    </div>
-
-                    <ul>
-                        <li class="ms-nav-item">
-                            <a ui-sref="app.components.elements.buttons">
-                                <span>Buttons</span>
-                            </a>
-                        </li>
-                        <li class="ms-nav-item">
-                            <a ui-sref="app.components.elements.card">
-                                <span>Card</span>
-                            </a>
-                        </li>
-                        <li class="ms-nav-item">
-                            <a ui-sref="app.components.elements.dialog">
-                                <span>Dialog</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="ms-nav-item" ms-nav-toggle>
-                    <div class="ms-nav-toggle-button" md-ink-ripple>
-                        <span>Tables</span>
-                        <md-icon md-font-icon="icon-keyboard_arrow_down" class="ms-nav-icon"></md-icon>
-                    </div>
-
-                    <ul>
-                        <li class="ms-nav-item">
-                            <a ui-sref="app.components.tables.standart-table">
-                                <span>Standart Table</span>
-                            </a>
-                        </li>
-                        <li class="ms-nav-item">
-                            <a ui-sref="app.components.tables.data-table">
-                                <span>Data Table</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="ms-nav-item">
-                    <a ui-sref="app.components.price-tables">
-                        <span>Price Tables</span>
-                    </a>
-                </li>
-
-                <li class="ms-nav-item">
-                    <a ui-sref="app.components.charts">
-                        <span>Charts</span>
-                    </a>
-                </li>
-
-                <li class="ms-nav-item">
-                    <a ui-sref="app.components.maps">
-                        <span>Maps</span>
-                    </a>
-                </li>
-
-                <li class="ms-nav-item">
-                    <a ui-sref="app.components.widgets">
-                        <span>Widgets</span>
-                    </a>
-                </li>
-            </ul>
         </ul>
     </div>
-    <!--
-        <ul class="navigation">
-            <li ng-repeat="section in vm.navigation.sections" class="parent-list-item {{section.className || ''}}"
-                ng-class="{'parentActive' : isSectionSelected(section)}">
-                <h2 class="menu-heading md-subhead" ng-if="section.type === 'heading'"
-                    id="heading_{{ section.name | nospace }}">
-                    {{section.name}}
-                </h2>
-                <menu-link section="section" ng-if="section.type === 'link'"></menu-link>
-
-                <menu-toggle section="section" ng-if="section.type === 'toggle'"></menu-toggle>
-
-                <ul ng-if="section.children" class="menu-nested-list">
-                    <li ng-repeat="child in section.children" ng-class="{'childActive' : isSectionSelected(child)}">
-                        <menu-link section="child" ng-if="child.type === 'link'"></menu-link>
-
-                        <menu-toggle section="child" ng-if="child.type === 'toggle'"></menu-toggle>
-                    </li>
-                </ul>
-            </li>
-        </ul>-->
 </md-content>
 

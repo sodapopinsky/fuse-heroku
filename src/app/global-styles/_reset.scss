@@ -1,0 +1,12 @@
+a {
+    text-decoration: none;
+
+    &:hover, &:active {
+        text-decoration: none;
+    }
+}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+}
