@@ -146,7 +146,7 @@
                     $scope.$on('MSNav::ParentToggleClosed', close);
 
                     // Toggle button functionality
-                    var toggleButton = element.children('.ms-nav-toggle-button');
+                    var toggleButton = element.children('.ms-nav-button');
                     toggleButton.on('click', toggle);
 
                     // Expose the toggle functions so we can access them from outside

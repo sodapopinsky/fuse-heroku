@@ -57,81 +57,16 @@ $navSidabarWidth: 240px;
                 padding-left: 24px;
             }
 
-            .ms-nav-toggle {
-
-                & > ul {
-                    overflow: hidden;
-                    height: 0;
-                    transition: height 0.75s cubic-bezier(0.35, 0, 0.25, 1);
-
-                    & > li {
-                        padding-left: 34px;
-
-                        & > ul > li {
-                            padding-left: 20px;
-                        }
-                    }
-
-                }
-
-                &.active {
-
-                    > .ms-nav-toggle-button {
-                        color: rgba(255, 255, 255, 1);
-
-                        a, md-icon {
-                            color: rgba(255, 255, 255, 1);
-                        }
-
-                        > [class^="icon-keyboard_arrow"],
-                        > [class*=" icon-keyboard_arrow"] {
-                            transform: rotate(180deg);
-                        }
-                    }
-
-                    & > ul {
-                        height: auto;
-                    }
-                }
-
-                .ms-nav-toggle-button {
-                    display: flex;
-                    align-self: flex-start;
-                    align-items: center;
-                    padding: 0 16px 0 24px;
-                    cursor: pointer;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    position: relative;
-
-                    > span {
-                        display: flex;
-                        flex: 1;
-                    }
-
-                    > [class^="icon-keyboard_arrow"], > [class*=" icon-keyboard_arrow"] {
-                        transition: transform 0.3s ease-in-out;
-                        margin: 0;
-                    }
-                }
-            }
-
-            & > .ms-nav-toggle {
-
-                &.active {
-                    background-color: rgba(0, 0, 0, 0.08);
-                }
-            }
-
             .ms-nav-item {
                 position: relative;
                 line-height: 48px;
 
-                a {
+                .ms-nav-button {
                     position: relative;
                     display: flex;
                     align-self: flex-start;
                     align-items: center;
+                    cursor: pointer;
                     padding: 0 24px;
                     color: rgba(255, 255, 255, 0.70);
 
@@ -152,6 +87,94 @@ $navSidabarWidth: 240px;
 
                 .ms-nav-title {
                     display: flex;
+                }
+            }
+
+            .ms-nav-toggle {
+
+                ul {
+                    overflow: hidden;
+                    height: 0;
+                    transition: height 0.75s cubic-bezier(0.35, 0, 0.25, 1);
+
+                    li {
+                        /* Level 1 */
+                        .ms-nav-button {
+                            padding-left: 58px;
+                        }
+
+                        /* Level 2 */
+                        ul li {
+
+                            .ms-nav-button {
+                                padding-left: 68px;
+                            }
+
+                            /* Level 3 */
+                            ul li {
+
+                                .ms-nav-button {
+                                    padding-left: 78px;
+                                }
+
+                                /* Level 4 */
+                                ul li {
+
+                                    .ms-nav-button {
+                                        padding-left: 88px;
+                                    }
+
+                                    /* Level 5 */
+                                    ul li {
+
+                                        .ms-nav-button {
+                                            padding-left: 98px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.active {
+
+                    > .ms-nav-button {
+                        color: rgba(255, 255, 255, 1);
+
+                        a, md-icon {
+                            color: rgba(255, 255, 255, 1);
+                        }
+
+                        > [class^="icon-keyboard_arrow"],
+                        > [class*=" icon-keyboard_arrow"] {
+                            transform: rotate(180deg);
+                        }
+                    }
+
+                    & > ul {
+                        height: auto;
+                    }
+                }
+
+                .ms-nav-button {
+
+                    > span {
+                        display: flex;
+                        flex: 1;
+                    }
+
+                    > [class^="icon-keyboard_arrow"], > [class*=" icon-keyboard_arrow"] {
+                        transition: transform 0.3s ease-in-out;
+                        margin: 0;
+                    }
+                }
+            }
+
+            & > .ms-nav-toggle {
+
+                &.active {
+                    background-color: rgba(0, 0, 0, 0.08);
                 }
             }
         }
