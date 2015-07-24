@@ -342,7 +342,6 @@
                 views: {
                     'main@app': {
                         templateUrl: 'app/main/components/elements/buttons/buttons.html',
-                        controller : 'buttonsController as vm'
                     }
                 }
             })
