@@ -262,7 +262,7 @@
                 views: {
                     'main@app': {
                         templateUrl: 'app/main/pages/timeline/timeline.html',
-                        controller : 'timelineController as vm'
+                        controller : 'TimelineController as vm'
                     }
                 }
             })
@@ -341,7 +341,7 @@
                 url  : '/buttons',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/components/elements/buttons/buttons.html',
+                        templateUrl: 'app/main/components/elements/buttons/buttons.html'
                     }
                 }
             })

@@ -1,0 +1,22 @@
+#timeline {
+    .timeline-item {
+        margin: 0 auto;
+        max-width: 1000px;
+        .timeline-item-point {
+            position: absolute;
+            left: 50%;
+            margin-left: -28px;
+            margin-top: 80px;
+        }
+        .timeline-item-row {
+            min-height: 500px;
+
+            .timeline-item-column {
+                padding: 64px;
+                &:first-child {
+                    border-right: 3px solid rgba(0, 0, 0, 0.08);
+                }
+            }
+        }
+    }
+}

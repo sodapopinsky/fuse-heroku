@@ -94,6 +94,11 @@
                 })
         };
 
+        api.timeline = $resource(api.url + 'timeline/timeline.json', null,
+            {
+                'get': {method: 'get'}
+            });
+
         return api;
     }
 })();
