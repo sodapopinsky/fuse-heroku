@@ -10,21 +10,26 @@
                         <md-button class="md-icon-button" aria-label="insert photo">
                             <md-icon md-font-icon="icon-insert_photo"></md-icon>
                         </md-button>
+
                         <md-button class="md-icon-button" aria-label="add person">
                             <md-icon md-font-icon="icon-person_add"></md-icon>
                         </md-button>
+
                         <md-button class="md-icon-button" aria-label="location">
                             <md-icon md-font-icon="icon-location_on"></md-icon>
                         </md-button>
                     </div>
+
                     <md-button ng-click="" ng-aria="post" class="post-button md-accent md-raised">
                         POST
                     </md-button>
                 </footer>
             </div>
         </div>
+
         <md-divider></md-divider>
     </div>
+
     <div flex="33" class="masonry-brick" ng-repeat="post in vm.posts">
         <div class="post md-whiteframe-z1" layout="column">
             <header layout="row" layout-align="space-between start">
@@ -42,20 +47,23 @@
                         <div class="time">{{post.time}}</div>
                     </div>
                 </div>
+
                 <md-button class="md-icon-button" aria-label="more">
                     <md-icon md-font-icon="icon-more_vert"></md-icon>
                 </md-button>
             </header>
+
             <div class="content">
                 <div ng-if="post.message" class="message">
                     {{post.message}}
                 </div>
+
                 <div ng-if="post.media" class="media">
                     <img ng-if="post.media.type === 'image'" ng-src="{{post.media.preview}}">
-
                     <div ng-if="post.media.type === 'video'" ng-bind-html="post.media.embed | toTrusted">
                     </div>
                 </div>
+
                 <div ng-if="post.article" layout="column" class="article">
                     <div class="media">
                         <img ng-src="{{post.article.media.preview}}">
@@ -80,13 +88,14 @@
                     </md-button>
                 </div>
             </div>
+
             <footer class="" layout="column" layout-align="start start">
                 <div ng-if="post.comments" class="comment-count">{{post.comments.length}} comments
                     <md-icon md-font-icon="icon-keyboard_arrow_down"></md-icon>
                 </div>
+
                 <div class="comment" layout="row" layout-fill ng-repeat="comment in post.comments">
                     <img ng-src="{{comment.user.avatar}}" class="avatar"/>
-
                     <div flex layout="column">
                         <div>
                             <span class="username">{{comment.user.name}}</span>
@@ -101,6 +110,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="reply" layout="row" layout-fill>
                     <img src="assets/images/avatars/profile-img.jpeg" class="avatar"/>
 
@@ -121,15 +131,14 @@
                 <div class="title">Latest Activity</div>
                 <div class="more">See All</div>
             </header>
+
             <div class="content" layout="row" layout-wrap>
                 <md-list class="activities">
                     <md-list-item class="activity md-2-line" ng-repeat="activity in vm.activities">
                         <img ng-src="{{activity.user.avatar}}" class="md-avatar" alt="{{activity.user.name}}"/>
-
                         <div class="md-list-item-text">
                             <span class="username md-accent-color">{{activity.user.name}}</span>
                             <span class="message">{{ activity.message}}</span>
-
                             <p class="time">{{ activity.time}}</p>
                         </div>
                     </md-list-item>
