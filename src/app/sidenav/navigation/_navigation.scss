@@ -104,8 +104,9 @@ $navSidabarWidth: 240px;
             .ms-nav-toggle {
 
                 ul {
-                    overflow: hidden;
                     display: none;
+                    overflow: hidden;
+                    margin-bottom: 8px;
 
                     li {
                         /* Level 1 */

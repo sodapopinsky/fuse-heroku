@@ -19,8 +19,13 @@ ul, ol {
     padding: 0;
 }
 
-code {
+code, pre {
+    font-family: 'Monaco', 'Consolas', monospace;
     font-size: 13px;
+}
+
+code {
+    
 }
 
 pre {
