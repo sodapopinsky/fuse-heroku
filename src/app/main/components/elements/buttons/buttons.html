@@ -20,16 +20,20 @@
 
     </header>
     <div class="content">
-        <code>&lt;md-button&gt;</code> is a button directive with optional ink ripples (default enabled).
 
-        <p>
-            If you supply a href or ng-href attribute, it will become an <code>&lt;a&gt;</code> element. Otherwise, it
-            will become a
-            <code>&lt;button&gt;</code> element.
-            As per the Material Design specifications the FAB button background is filled with the accent color [by
-            default].
-            The primary color palette may be used with the md-primary class.
-        </p>
+        <div class="description">
+            <code>&lt;md-button&gt;</code> is a button directive with optional ink ripples (default enabled).
+
+            <p>
+                If you supply a href or ng-href attribute, it will become an <code>&lt;a&gt;</code> element. Otherwise,
+                it
+                will become a
+                <code>&lt;button&gt;</code> element.
+                As per the Material Design specifications the FAB button background is filled with the accent color [by
+                default].
+                The primary color palette may be used with the md-primary class.
+            </p>
+        </div>
 
         <div class="md-title">FLAT</div>
         <div class="card classic md-background-bg md-whiteframe-z2" layout="column">
@@ -315,5 +319,78 @@
                 </div>
             </div>
         </div>
+
+        <div class="md-title">Attributes</div>
+        <div class="card md-background-bg md-whiteframe-z2" layout="column">
+            <table class="table-simple">
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="api-params-item">
+                        <td style="white-space: nowrap;">
+                            md-no-ink
+                            <span hide="" show-sm="">
+                                <code class="api-type label type-hint type-hint-boolean">boolean</code></span>
+                        </td>
+                        <td style="white-space: nowrap;">
+                            <code class="api-type label type-hint type-hint-boolean">boolean</code></td>
+                        <td class="description">
+                            <p>If present, disable ripple ink effects.</p>
+                        </td>
+                    </tr>
+
+                    <tr class="api-params-item">
+                        <td style="white-space: nowrap;">
+                            ng-disabled
+                            <span hide="" show-sm="">
+                                <code class="api-type label type-hint type-hint-expression">expression</code></span>
+                        </td>
+                        <td style="white-space: nowrap;">
+                            <code class="api-type label type-hint type-hint-expression">expression</code></td>
+                        <td class="description">
+                            <p>En/Disable based on the expression</p>
+                        </td>
+                    </tr>
+
+                    <tr class="api-params-item">
+                        <td style="white-space: nowrap;">
+                            md-ripple-size
+                            <span hide="" show-sm="">
+                                <code class="api-type label type-hint type-hint-string">string</code></span>
+                        </td>
+                        <td style="white-space: nowrap;">
+                            <code class="api-type label type-hint type-hint-string">string</code></td>
+                        <td class="description">
+                            <p>Overrides the default ripple size logic. Options: <code>full</code>,
+                                <code>partial</code>,
+                                <code>auto</code></p>
+                        </td>
+                    </tr>
+
+                    <tr class="api-params-item">
+                        <td style="white-space: nowrap;">
+                            aria-label
+
+                            <span hide="" show-sm="">
+                                <code class="api-type label type-hint type-hint-string">string</code></span>
+                        </td>
+                        <td style="white-space: nowrap;">
+                            <code class="api-type label type-hint type-hint-string">string</code></td>
+                        <td class="description">
+                            <p>Adds alternative text to button for accessibility, useful for icon buttons.
+                                If no default text is found, a warning will be logged.</p>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
     </div>
 </div>
