@@ -1,13 +1,23 @@
 <div id="buttons">
-    <header class="page-header md-accent-bg" layout="column">
-        <div class="breadcrumb" layout="row" layout-align="start center">
-            <md-icon md-font-icon="icon-home" class="s18"></md-icon>
-            <md-icon md-font-icon="icon-keyboard_arrow_right" class="s18 separator"></md-icon>
-            <span class="parent">COMPONENTS</span>
-            <md-icon md-font-icon="icon-keyboard_arrow_right" class="s18 separator"></md-icon>
-            <span class="parent">ELEMENTS</span>
+    <header class="page-header md-accent-bg" layout="row" layout-align="space-between center">
+        <div layout="column">
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-home" class="s18"></md-icon>
+                <md-icon md-font-icon="icon-keyboard_arrow_right" class="s18 separator"></md-icon>
+                <span class="parent">COMPONENTS</span>
+                <md-icon md-font-icon="icon-keyboard_arrow_right" class="s18 separator"></md-icon>
+                <span class="parent">ELEMENTS</span>
+            </div>
+            <div class="title">Buttons</div>
         </div>
-        <div class="title">Buttons</div>
+        <a href="https://material.angularjs.org/latest/#/api/material.components.button/directive/mdButton"
+           target="_blank">
+            <md-button class="md-raised reference-button">
+                <md-icon md-font-icon="icon-link"></md-icon>
+                Reference
+            </md-button>
+        </a>
+
     </header>
     <div class="content">
         <code>&lt;md-button&gt;</code> is a button directive with optional ink ripples (default enabled).
@@ -21,19 +31,289 @@
             The primary color palette may be used with the md-primary class.
         </p>
 
-        <div class="md-title">FAB</div>
+        <div class="md-title">FLAT</div>
         <div class="card classic md-background-bg md-whiteframe-z2" layout="column">
             <div layout="row" layout-fill layout-margin layout-padding>
-                <div flex class="md-background-bg md-hue-2">Flex</div>
+                <div flex class="md-background-bg md-hue-2">
+                    <div class="md-caption">Accent Colored</div>
+                    <div layout="row" layout-align="center center">
+                        <md-button class="md-accent" aria-label="Use Android">
+                            ACCENT
+                        </md-button>
+                    </div>
+                </div>
                 <div flex class="md-background-bg md-hue-1">
                     <hljs lang="html">
-                            <md-button class="md-fab md-primary" aria-label="Use Android">
-                                <md-icon md-svg-src="img/icons/android.svg"></md-icon>
-                            </md-button>
+                        <md-button class="md-accent" aria-label="Use Android">
+                            ACCENT
+                        </md-button>
+                    </hljs>
+                </div>
+            </div>
+            <div layout="row" layout-fill layout-margin layout-padding>
+                <div flex class="md-background-bg md-hue-2">
+                    <div class="md-caption">Primary Colored</div>
+                    <div layout="row" layout-align="center center">
+                        <md-button class="md-primary" aria-label="Use Android">
+                            PRIMARY
+                        </md-button>
+                    </div>
+                </div>
+                <div flex class="md-background-bg md-hue-1">
+                    <hljs lang="html">
+                        <md-button class="md-primary" aria-label="Use Android">
+                            PRIMARY
+                        </md-button>
+                    </hljs>
+                </div>
+            </div>
+            <div layout="row" layout-fill layout-margin layout-padding>
+                <div flex class="md-background-bg md-hue-2">
+                    <div class="md-caption">Warn Colored</div>
+                    <div layout="row" layout-align="center center">
+                        <md-button class="md-warn" aria-label="Use Android">
+                            WARN
+                        </md-button>
+                    </div>
+                </div>
+                <div flex class="md-background-bg md-hue-1">
+                    <hljs lang="html">
+                        <md-button class="md-warn" aria-label="Use Android">
+                            WARN
+                        </md-button>
+                    </hljs>
+                </div>
+            </div>
+            <div layout="row" layout-fill layout-margin layout-padding>
+                <div flex class="md-background-bg md-hue-2">
+                    <div class="md-caption">Disabled</div>
+                    <div layout="row" layout-align="center center">
+                        <md-button class="md-primary" aria-label="Use Android" ng-disabled="true">
+                            DISABLED
+                        </md-button>
+                    </div>
+                </div>
+                <div flex class="md-background-bg md-hue-1">
+                    <hljs lang="html">
+                        <md-button class="md-primary" aria-label="Use Android" ng-disabled="true">
+                            DISABLED
+                        </md-button>
                     </hljs>
                 </div>
             </div>
         </div>
-
+        <div class="md-title">RAISED</div>
+        <div class="card classic md-background-bg md-whiteframe-z2" layout="column">
+            <div layout="row" layout-fill layout-margin layout-padding>
+                <div flex class="md-background-bg md-hue-2">
+                    <div class="md-caption">Accent Colored</div>
+                    <div layout="row" layout-align="center center">
+                        <md-button class="md-raised md-accent" aria-label="Use Android">
+                            ACCENT
+                        </md-button>
+                    </div>
+                </div>
+                <div flex class="md-background-bg md-hue-1">
+                    <hljs lang="html">
+                        <md-button class="md-raised md-accent" aria-label="Use Android">
+                            ACCENT
+                        </md-button>
+                    </hljs>
+                </div>
+            </div>
+            <div layout="row" layout-fill layout-margin layout-padding>
+                <div flex class="md-background-bg md-hue-2">
+                    <div class="md-caption">Primary Colored</div>
+                    <div layout="row" layout-align="center center">
+                        <md-button class="md-raised md-primary" aria-label="Use Android">
+                            PRIMARY
+                        </md-button>
+                    </div>
+                </div>
+                <div flex class="md-background-bg md-hue-1">
+                    <hljs lang="html">
+                        <md-button class="md-raised md-primary" aria-label="Use Android">
+                            PRIMARY
+                        </md-button>
+                    </hljs>
+                </div>
+            </div>
+            <div layout="row" layout-fill layout-margin layout-padding>
+                <div flex class="md-background-bg md-hue-2">
+                    <div class="md-caption">Warn Colored</div>
+                    <div layout="row" layout-align="center center">
+                        <md-button class="md-raised md-warn" aria-label="Use Android">
+                            WARN
+                        </md-button>
+                    </div>
+                </div>
+                <div flex class="md-background-bg md-hue-1">
+                    <hljs lang="html">
+                        <md-button class="md-raised md-warn" aria-label="Use Android">
+                            WARN
+                        </md-button>
+                    </hljs>
+                </div>
+            </div>
+            <div layout="row" layout-fill layout-margin layout-padding>
+                <div flex class="md-background-bg md-hue-2">
+                    <div class="md-caption">Disabled</div>
+                    <div layout="row" layout-align="center center">
+                        <md-button class="md-raised md-primary" aria-label="Use Android" ng-disabled="true">
+                            DISABLED
+                        </md-button>
+                    </div>
+                </div>
+                <div flex class="md-background-bg md-hue-1">
+                    <hljs lang="html">
+                        <md-button class="md-raised md-primary" aria-label="Use Android" ng-disabled="true">
+                            DISABLED
+                        </md-button>
+                    </hljs>
+                </div>
+            </div>
+        </div>
+        <div class="md-title">FAB</div>
+        <div class="card classic md-background-bg md-whiteframe-z2" layout="column">
+            <div layout="row" layout-fill layout-margin layout-padding>
+                <div flex class="md-background-bg md-hue-2">
+                    <div class="md-caption">Accent Colored</div>
+                    <div layout="row" layout-align="center center">
+                        <md-button class="md-fab md-accent" aria-label="Use Android">
+                            <md-icon md-font-icon="icon-android"></md-icon>
+                        </md-button>
+                    </div>
+                </div>
+                <div flex class="md-background-bg md-hue-1">
+                    <hljs lang="html">
+                        <md-button class="md-fab md-accent" aria-label="Use Android">
+                            <md-icon md-font-icon="icon-android"></md-icon>
+                        </md-button>
+                    </hljs>
+                </div>
+            </div>
+            <div layout="row" layout-fill layout-margin layout-padding>
+                <div flex class="md-background-bg md-hue-2">
+                    <div class="md-caption">Primary Colored</div>
+                    <div layout="row" layout-align="center center">
+                        <md-button class="md-fab md-primary" aria-label="Use Android">
+                            <md-icon md-font-icon="icon-android"></md-icon>
+                        </md-button>
+                    </div>
+                </div>
+                <div flex class="md-background-bg md-hue-1">
+                    <hljs lang="html">
+                        <md-button class="md-fab md-primary" aria-label="Use Android">
+                            <md-icon md-font-icon="icon-android"></md-icon>
+                        </md-button>
+                    </hljs>
+                </div>
+            </div>
+            <div layout="row" layout-fill layout-margin layout-padding>
+                <div flex class="md-background-bg md-hue-2">
+                    <div class="md-caption">Warn Colored</div>
+                    <div layout="row" layout-align="center center">
+                        <md-button class="md-fab md-warn" aria-label="Use Android">
+                            <md-icon md-font-icon="icon-android"></md-icon>
+                        </md-button>
+                    </div>
+                </div>
+                <div flex class="md-background-bg md-hue-1">
+                    <hljs lang="html">
+                        <md-button class="md-fab md-warn" aria-label="Use Android">
+                            <md-icon md-font-icon="icon-android"></md-icon>
+                        </md-button>
+                    </hljs>
+                </div>
+            </div>
+            <div layout="row" layout-fill layout-margin layout-padding>
+                <div flex class="md-background-bg md-hue-2">
+                    <div class="md-caption">Disabled</div>
+                    <div layout="row" layout-align="center center">
+                        <md-button class="md-fab md-primary" aria-label="Use Android" ng-disabled="true">
+                            <md-icon md-font-icon="icon-android"></md-icon>
+                        </md-button>
+                    </div>
+                </div>
+                <div flex class="md-background-bg md-hue-1">
+                    <hljs lang="html">
+                        <md-button class="md-fab md-primary" aria-label="Use Android" ng-disabled="true">
+                            <md-icon md-font-icon="icon-android"></md-icon>
+                        </md-button>
+                    </hljs>
+                </div>
+            </div>
+        </div>
+        <div class="md-title">ICON BUTTON</div>
+        <div class="card classic md-background-bg md-whiteframe-z2" layout="column">
+            <div layout="row" layout-fill layout-margin layout-padding>
+                <div flex class="md-background-bg md-hue-2">
+                    <div class="md-caption">Accent Colored</div>
+                    <div layout="row" layout-align="center center">
+                        <md-button class="md-icon-button md-accent" aria-label="Use Android">
+                            <md-icon md-font-icon="icon-android"></md-icon>
+                        </md-button>
+                    </div>
+                </div>
+                <div flex class="md-background-bg md-hue-1">
+                    <hljs lang="html">
+                        <md-button class="md-icon-button md-accent" aria-label="Use Android">
+                            <md-icon md-font-icon="icon-android"></md-icon>
+                        </md-button>
+                    </hljs>
+                </div>
+            </div>
+            <div layout="row" layout-fill layout-margin layout-padding>
+                <div flex class="md-background-bg md-hue-2">
+                    <div class="md-caption">Primary Colored</div>
+                    <div layout="row" layout-align="center center">
+                        <md-button class="md-icon-button md-primary" aria-label="Use Android">
+                            <md-icon md-font-icon="icon-android"></md-icon>
+                        </md-button>
+                    </div>
+                </div>
+                <div flex class="md-background-bg md-hue-1">
+                    <hljs lang="html">
+                        <md-button class="md-icon-button md-primary" aria-label="Use Android">
+                            <md-icon md-font-icon="icon-android"></md-icon>
+                        </md-button>
+                    </hljs>
+                </div>
+            </div>
+            <div layout="row" layout-fill layout-margin layout-padding>
+                <div flex class="md-background-bg md-hue-2">
+                    <div class="md-caption">Warn Colored</div>
+                    <div layout="row" layout-align="center center">
+                        <md-button class="md-icon-button md-warn" aria-label="Use Android">
+                            <md-icon md-font-icon="icon-android"></md-icon>
+                        </md-button>
+                    </div>
+                </div>
+                <div flex class="md-background-bg md-hue-1">
+                    <hljs lang="html">
+                        <md-button class="md-icon-button md-warn" aria-label="Use Android">
+                            <md-icon md-font-icon="icon-android"></md-icon>
+                        </md-button>
+                    </hljs>
+                </div>
+            </div>
+            <div layout="row" layout-fill layout-margin layout-padding>
+                <div flex class="md-background-bg md-hue-2">
+                    <div class="md-caption">Disabled</div>
+                    <div layout="row" layout-align="center center">
+                        <md-button class="md-icon-button md-primary" aria-label="Use Android" ng-disabled="true">
+                            <md-icon md-font-icon="icon-android"></md-icon>
+                        </md-button>
+                    </div>
+                </div>
+                <div flex class="md-background-bg md-hue-1">
+                    <hljs lang="html">
+                        <md-button class="md-icon-button md-primary" aria-label="Use Android" ng-disabled="true">
+                            <md-icon md-font-icon="icon-android"></md-icon>
+                        </md-button>
+                    </hljs>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
