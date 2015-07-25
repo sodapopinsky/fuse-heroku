@@ -346,6 +346,16 @@
                 }
             })
 
+            // Card
+            .state('app.components.elements.card', {
+                url  : '/card',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/components/elements/card/card.html'
+                    }
+                }
+            })
+
         /**
          * Tables
          */

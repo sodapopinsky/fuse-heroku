@@ -1,17 +1,17 @@
-#buttons {
+#card {
     .content {
         max-width: 1024px;
         padding: 32px;
-        .description{
+        .description {
             margin-bottom: 32px;
         }
         .card {
             margin: 16px 0 48px 0;
+            overflow: hidden;
             .preview {
             }
             .source-code {
                 padding: 0;
-                overflow: hidden;
             }
         }
     }
