@@ -3,33 +3,41 @@
         <div class="logo md-accent-bg" layout="column" layout-align="center center">
             <span>F</span>
         </div>
+
         <div class="title">Create an account</div>
+
         <form layout="column">
             <md-input-container flex md-no-float>
                 <input placeholder="Name" ng-model="vm.form.username">
             </md-input-container>
+
             <md-input-container flex md-no-float>
                 <input placeholder="Email" ng-model="vm.form.email" type="password">
             </md-input-container>
+
             <md-input-container flex md-no-float>
                 <input placeholder="Password" ng-model="vm.form.password" type="password">
             </md-input-container>
+
             <md-input-container flex md-no-float>
                 <input placeholder="Password (Confirm)" ng-model="vm.form.passwordConfirm" type="password">
             </md-input-container>
+
             <div class="terms" layout="row" layout-align="start center">
                 <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
                     I read and accept
                 </md-checkbox>
                 <a class="md-accent-color">Terms and Conditions</a>
             </div>
+
             <md-button class="md-raised md-accent">
                 CREATE MY ACCOUNT
             </md-button>
         </form>
+
         <div class="have-account">
             <span>Already have an account?</span>
-            <a href="/login" class="md-accent-color">Sign in</a>
+            <a ui-sref="app.pages.auth.login" class="md-accent-color">Sign in</a>
         </div>
     </md-whiteframe>
 </div>

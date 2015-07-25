@@ -3,33 +3,43 @@
         <div class="logo md-accent-bg" layout="column" layout-align="center center">
             <span>F</span>
         </div>
+
         <div class="title">Sign into your account</div>
+
         <form layout="column">
             <md-input-container flex md-no-float>
                 <input placeholder="Username" ng-model="vm.form.username">
             </md-input-container>
+
             <md-input-container flex md-no-float>
                 <input placeholder="Password" ng-model="vm.form.password" type="password">
             </md-input-container>
+
             <div class="remember-forget" layout="row" layout-align="space-between center">
                 <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
                     Remember Me
                 </md-checkbox>
-                <a href="/forgot-password" class="md-accent-color">Forget Password?</a>
+                <a ui-sref="app.pages.auth.forgot-password" class="md-accent-color">Forgot Password?</a>
             </div>
+
             <md-button class="md-raised md-accent">
                 SIGN IN
             </md-button>
         </form>
-        <div class="separator"><span>OR</span></div>
+
+        <div class="separator">
+            <span>OR</span>
+        </div>
+
         <md-button class="md-raised google">
             <div layout="row" layout-align="center center">
-               <span>
-                <md-icon md-font-icon="icon-google-plus-square"></md-icon>
-                Sign in with Google
-               </span>
+                <span>
+                    <md-icon md-font-icon="icon-google-plus-square"></md-icon>
+                    Sign in with Google
+                </span>
             </div>
         </md-button>
+
         <md-button class="md-raised facebook">
             <div layout="row" layout-align="center center">
                 <span>
@@ -38,9 +48,10 @@
                 </span>
             </div>
         </md-button>
+
         <div class="create-account" layout="row" layout-align="space-between center">
             <span>Don't have an account?</span>
-            <a href="/register" class="md-accent-color">Create an account</a>
+            <a ui-sref="app.pages.auth.register" class="md-accent-color">Create an account</a>
         </div>
     </md-whiteframe>
 </div>
