@@ -7,12 +7,28 @@
         }
         .card {
             margin: 16px 0 48px 0;
-            .preview {
+            table {
+                table-layout: fixed;
+                width: 100%;
+                border-spacing: 16px;
+                tr {
+                    td {
+                        .preview,
+                        .source-code {
+                            vertical-align: top;
+                            min-height: 100%;
+                        }
+                        .preview {
+                            padding: 8px;
+                        }
+                        .source-code {
+                        }
+                    }
+                }
             }
-            .source-code {
-                padding: 0;
-                overflow: hidden;
-            }
+        }
+        .attributes{
+            margin: 16px 0 48px 0;
         }
     }
 }

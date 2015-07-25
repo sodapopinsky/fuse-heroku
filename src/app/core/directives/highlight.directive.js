@@ -4,7 +4,7 @@
     angular.module('fuse')
         .directive('hljs', ['$timeout', '$q', '$interpolate', function ($timeout, $q, $interpolate) {
             return {
-                restrict: 'E',
+                restrict: 'EA',
                 compile: function (element, attr) {
                     var code;
                     //No attribute? code is the content
