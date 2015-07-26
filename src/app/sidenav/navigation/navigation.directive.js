@@ -68,7 +68,7 @@
         return service;
     }
 
-    function MsNavController($scope)
+    function MsNavController()
     {
         var vm = this;
     }
@@ -78,7 +78,7 @@
         return {
             scope     : {},
             controller: 'MsNavController',
-            link      : function ($scope, element, attrs)
+            link      : function ()
             {
                 msNavService.updateToggleables();
             }
@@ -90,11 +90,11 @@
         return {
             require: '^msNav',
             scope  : true,
-            compile: function (element, attrs)
+            compile: function (element)
             {
                 element.addClass('ms-nav-toggle');
 
-                return function postLink($scope, $element, attrs)
+                return function postLink($scope, $element)
                 {
                     var toggleOpened = false;
                     var toggleItems = $element.children('ul');

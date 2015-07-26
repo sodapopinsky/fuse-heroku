@@ -10,7 +10,7 @@
         .directive('msTimelineDetail', msTimelineDetail);
 
     /** @ngInject */
-    function MsTimelineController($scope, $timeout, $window)
+    function MsTimelineController()
     {
         var vm = this;
     }
@@ -21,7 +21,7 @@
             scope       : true,
             controller  : MsTimelineController,
             controllerAs: 'ms',
-            link        : function ($scope, $element, $attrs, ms)
+            link        : function ($scope, $element)
             {
                 // Set onScreen to true
                 $scope.onScreen = true;
