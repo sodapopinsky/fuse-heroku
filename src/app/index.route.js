@@ -356,6 +356,17 @@
                 }
             })
 
+            // Switch
+            .state('app.components.elements.switch', {
+                url  : '/switch',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/components/elements/switch/switch.html',
+                        controller : 'SwitchController as vm'
+                    }
+                }
+            })
+
         /**
          * Tables
          */
