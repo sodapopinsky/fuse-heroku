@@ -378,6 +378,17 @@
                 }
             })
 
+            // Radio
+            .state('app.components.elements.radio', {
+                url  : '/radio',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/components/elements/radio/radio.html',
+                        controller : 'RadioController as vm'
+                    }
+                }
+            })
+
         /**
          * Tables
          */
