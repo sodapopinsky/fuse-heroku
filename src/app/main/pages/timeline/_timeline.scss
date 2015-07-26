@@ -17,7 +17,7 @@
     .timeline-row {
         position: relative;
         z-index: 20;
-        padding: 64px 16px 0 16px;
+        padding: 32px 16px;
         max-width: 1200px;
 
         .timeline-item {
@@ -62,8 +62,12 @@
             }
         }
 
+        &:first-child {
+            padding-top: 64px;
+        }
+
         &:last-child {
-            padding: 64px 16px;
+            padding-bottom: 64px;
         }
     }
 }
