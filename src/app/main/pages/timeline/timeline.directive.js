@@ -4,10 +4,7 @@
 
     angular.module('fuse')
         .controller('MsTimelineController', MsTimelineController)
-        .directive('msTimeline', msTimeline)
-        .directive('msTimelineItem', msTimelineItem)
-        .directive('msTimelinePoint', msTimelinePoint)
-        .directive('msTimelineDetail', msTimelineDetail);
+        .directive('msTimeline', msTimeline);
 
     /** @ngInject */
     function MsTimelineController()
@@ -54,29 +51,4 @@
             }
         };
     }
-
-    function msTimelineItem()
-    {
-        return {
-            link   : function ($scope, $element, $attrs)
-            {
-
-            }
-        }
-    }
-
-    function msTimelinePoint()
-    {
-        return {
-
-        }
-    }
-
-    function msTimelineDetail()
-    {
-        return {
-
-        }
-    }
-
 })();
