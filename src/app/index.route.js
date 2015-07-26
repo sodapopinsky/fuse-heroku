@@ -389,6 +389,17 @@
                 }
             })
 
+            // Checkbox
+            .state('app.components.elements.checkbox', {
+                url  : '/checkbox',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/components/elements/checkbox/checkbox.html',
+                        controller : 'CheckboxController as vm'
+                    }
+                }
+            })
+
         /**
          * Tables
          */
