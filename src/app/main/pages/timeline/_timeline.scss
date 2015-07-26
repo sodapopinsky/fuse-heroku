@@ -25,7 +25,7 @@
             order: 1;
         }
 
-        .timeline-item-type {
+        .timeline-point {
             position: absolute;
             width: 72px;
             left: 50%;
@@ -34,7 +34,7 @@
             order: 2;
         }
 
-        .timeline-item-detail {
+        .timeline-detail {
             flex: 50% 0 0;
             padding-top: 28px;
             padding-left: 68px;
@@ -58,7 +58,7 @@
                 padding-left: 84px;
             }
 
-            .timeline-item-detail {
+            .timeline-detail {
                 order: 1;
                 padding-left: 0;
                 padding-right: 68px;
@@ -72,6 +72,86 @@
 
         &:last-child {
             padding-bottom: 64px;
+        }
+    }
+
+    /* Animations */
+    .timeline-row {
+
+        .timeline-item {
+            opacity: 0;
+        }
+
+        .timeline-point {
+            opacity: 0;
+        }
+
+        .timeline-detail {
+            opacity: 0;
+        }
+
+        &.animate {
+
+            .timeline-item {
+                transform: translateX(-100%);
+                transition: all 0.375s ease-in-out;
+            }
+
+            .timeline-point {
+                transform: translateY(100px);
+                transition: all 0.25s ease-in-out;
+            }
+
+            .timeline-detail {
+                transform: translateX(100%);
+                transition: all 0.375s ease-in-out;
+            }
+        }
+
+        &:nth-child(2n) {
+
+            &.animate {
+
+                .timeline-item {
+                    transform: translateX(100%);
+
+                }
+
+                .timeline-detail {
+                    transform: translateX(-100%);
+                }
+            }
+
+        }
+
+        &.active {
+
+            .timeline-item {
+                opacity: 100;
+            }
+
+            .timeline-point {
+                opacity: 100;
+            }
+
+            .timeline-detail {
+                opacity: 100;
+            }
+
+            &.animate {
+
+                .timeline-item {
+                    transform: translateX(0);
+                }
+
+                .timeline-point {
+                    transform: translateY(0);
+                }
+
+                .timeline-detail {
+                    transform: translateX(0);
+                }
+            }
         }
     }
 }
