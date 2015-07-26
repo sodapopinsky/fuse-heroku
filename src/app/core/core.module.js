@@ -15,6 +15,7 @@
             'ngMaterial',
             'angularChart',
             'ui.router',
+            'ui.ace',
             'timer',
             //'wu.masonry'
             //'chart.js'

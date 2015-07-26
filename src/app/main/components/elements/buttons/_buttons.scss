@@ -1,34 +1,9 @@
-#buttons {
+#buttons.element-doc-page {
     .content {
-        max-width: 1024px;
-        padding: 32px;
-        .description{
-            margin-bottom: 32px;
-        }
         .card {
-            margin: 16px 0 48px 0;
-            table {
-                table-layout: fixed;
-                width: 100%;
-                border-spacing: 16px;
-                tr {
-                    td {
-                        .preview,
-                        .source-code {
-                            vertical-align: top;
-                            min-height: 100%;
-                        }
-                        .preview {
-                            padding: 8px;
-                        }
-                        .source-code {
-                        }
-                    }
-                }
+            .preview {
+                min-height: 90px;
             }
-        }
-        .attributes{
-            margin: 16px 0 48px 0;
         }
     }
 }

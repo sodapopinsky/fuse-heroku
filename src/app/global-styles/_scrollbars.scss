@@ -43,3 +43,7 @@
     border-bottom-width: 5px;
     -webkit-border-radius: 6px 9px;
 }
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}

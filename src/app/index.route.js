@@ -367,6 +367,17 @@
                 }
             })
 
+            // Select
+            .state('app.components.elements.select', {
+                url  : '/select',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/components/elements/select/select.html',
+                        controller : 'SelectController as vm'
+                    }
+                }
+            })
+
         /**
          * Tables
          */

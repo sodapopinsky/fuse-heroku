@@ -1,4 +1,4 @@
-<div id="switch">
+<div id="switch" class="element-doc-page">
     <header class="page-header md-accent-bg" layout="row" layout-align="space-between center">
         <div layout="column">
             <div class="breadcrumb" layout="row" layout-align="start center">
@@ -17,113 +17,94 @@
                 Reference
             </md-button>
         </a>
-
     </header>
     <div class="content">
         <div class="card classic md-background-bg md-whiteframe-z2" layout="column">
-            <table>
-                <tr>
-                    <td>
-                        <div class="preview md-background-bg md-hue-2">
-                            <div class="md-caption">Accent Colored</div>
-                            <div layout="row" layout-align="center center">
-                                <md-switch ng-model="vm.switch" aria-label="Switch">
-                                    Switch: {{ vm.switch }}
-                                </md-switch>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="source-code" hljs lang="html">
-                            <md-switch ng-model="vm.switch" aria-label="Switch">
-                                Switch: {{ vm.switch }}
-                            </md-switch>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="preview md-background-bg md-hue-2">
-                            <div class="md-caption">Primary Colored</div>
-                            <div layout="row" layout-align="center center">
-                                <md-switch ng-model="vm.switch" class="md-primary" aria-label="Switch">
-                                    Switch: {{ vm.switch }}
-                                </md-switch>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="source-code" hljs lang="html">
-                            <md-switch ng-model="vm.switch" class="md-primary" aria-label="Switch">
-                                Switch: {{ vm.switch }}
-                            </md-switch>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="preview md-background-bg md-hue-2">
-                            <div class="md-caption">Warn Colored</div>
-                            <div layout="row" layout-align="center center">
-                                <md-switch ng-model="vm.switch" class="md-warn" aria-label="Switch">
-                                    Switch: {{ vm.switch }}
-                                </md-switch>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="source-code" hljs lang="html">
-                            <md-switch ng-model="vm.switch" class="md-warn" aria-label="Switch">
-                                Switch: {{ vm.switch }}
-                            </md-switch>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="preview md-background-bg md-hue-2">
-                            <div class="md-caption">Disabled</div>
-                            <div layout="column" layout-align="center center">
-                                <md-switch ng-disabled="true" ng-model="vm.switch" aria-label="Switch">
-                                    Switch: {{ vm.switch }}
-                                </md-switch>
-                                <md-switch ng-disabled="true" ng-model="!vm.switch" aria-label="Switch">
-                                    Switch: {{ !vm.switch }}
-                                </md-switch>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="source-code" hljs lang="html">
-                            <md-switch ng-disabled="true" ng-model="vm.switch" aria-label="Switch">
-                                Switch: {{ vm.switch }}
-                            </md-switch>
-                            <md-switch ng-disabled="true" ng-model="!vm.switch" aria-label="Switch">
-                                Switch: {{ !vm.switch }}
-                            </md-switch>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="preview md-background-bg md-hue-2">
-                            <div class="md-caption">No Ink</div>
-                            <div layout="row" layout-align="center center">
-                                <md-switch md-no-ink ng-model="vm.switch" aria-label="Switch">
-                                    Switch: {{ vm.switch }}
-                                </md-switch>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="source-code" hljs lang="html">
-                            <md-switch md-no-ink ng-model="vm.switch" aria-label="Switch">
-                                Switch: {{ vm.switch }}
-                            </md-switch>
-                        </div>
-                    </td>
-                </tr>
-            </table>
+            <div layout="row">
+                <div flex class="preview md-background-bg md-hue-2">
+                    <div class="md-caption">Accent Colored</div>
+                    <div layout="row" layout-align="center center">
+                        <md-switch ng-model="vm.switch" aria-label="Switch">
+                            Switch: {{ vm.switch }}
+                        </md-switch>
+                    </div>
+                </div>
+                <div flex class="source-code md-background-bg md-hue-1">
+                    <div hljs lang="html">
+                        <md-switch ng-model="vm.switch" aria-label="Switch">
+                            Switch: {{ vm.switch }}
+                        </md-switch>
+                    </div>
+                </div>
+            </div>
+            <div layout="row">
+                <div flex class="preview md-background-bg md-hue-2">
+                    <div class="md-caption">Primary Colored</div>
+                    <div layout="row" layout-align="center center">
+                        <md-switch ng-model="vm.switch" class="md-primary" aria-label="Switch">
+                            Switch: {{ vm.switch }}
+                        </md-switch>
+                    </div>
+                </div>
+                <div flex class="source-code md-background-bg md-hue-1">
+                    <div hljs lang="html">
+                        <md-switch ng-model="vm.switch" class="md-primary" aria-label="Switch">
+                            Switch: {{ vm.switch }}
+                        </md-switch>
+                    </div>
+                </div>
+            </div>
+            <div layout="row">
+                <div flex class="preview md-background-bg md-hue-2">
+                    <div class="md-caption">Warn Colored</div>
+                    <div layout="row" layout-align="center center">
+                        <md-switch ng-model="vm.switch" class="md-warn" aria-label="Switch">
+                            Switch: {{ vm.switch }}
+                        </md-switch>
+                    </div>
+                </div>
+                <div flex class="source-code md-background-bg md-hue-1">
+                    <div hljs lang="html">
+                        <md-switch ng-model="vm.switch" class="md-warn" aria-label="Switch">
+                            Switch: {{ vm.switch }}
+                        </md-switch>
+                    </div>
+                </div>
+            </div>
+            <div layout="row">
+                <div flex class="preview md-background-bg md-hue-2">
+                    <div class="md-caption">Disabled</div>
+                    <div layout="column" layout-align="center center">
+                        <md-switch ng-disabled="true" ng-model="vm.switch" aria-label="Switch">
+                            Switch: {{ vm.switch }}
+                        </md-switch>
+                    </div>
+                </div>
+                <div flex class="source-code md-background-bg md-hue-1">
+                    <div hljs lang="html">
+                        <md-switch ng-disabled="true" ng-model="vm.switch" aria-label="Switch">
+                            Switch: {{ vm.switch }}
+                        </md-switch>
+                    </div>
+                </div>
+            </div>
+            <div layout="row">
+                <div flex class="preview md-background-bg md-hue-2">
+                    <div class="md-caption">No Ink</div>
+                    <div layout="row" layout-align="center center">
+                        <md-switch md-no-ink ng-model="vm.switch" aria-label="Switch">
+                            Switch: {{ vm.switch }}
+                        </md-switch>
+                    </div>
+                </div>
+                <div flex class="source-code md-background-bg md-hue-1">
+                    <div hljs lang="html">
+                        <md-switch md-no-ink ng-model="vm.switch" aria-label="Switch">
+                            Switch: {{ vm.switch }}
+                        </md-switch>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="md-title">Attributes</div>
