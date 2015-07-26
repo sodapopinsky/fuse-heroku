@@ -1,21 +1,64 @@
 #timeline {
-    .timeline-item {
-        margin: 0 auto;
-        max-width: 1000px;
-        .timeline-item-point {
-            position: absolute;
-            left: 50%;
-            margin-left: -28px;
-            margin-top: 80px;
-        }
-        .timeline-item-row {
-            min-height: 500px;
+    position: relative;
 
-            .timeline-item-column {
-                padding: 64px;
-                &:first-child {
-                    border-right: 3px solid rgba(0, 0, 0, 0.08);
-                }
+    &:before {
+        display: block;
+        position: absolute;
+        z-index: 10;
+        content: "";
+        width: 2px;
+        background: rgba(0, 0, 0, 0.08);
+        top: 0;
+        left: 50%;
+        bottom: 0;
+        margin-left: -1px;
+    }
+
+    .timeline-row {
+        position: relative;
+        z-index: 20;
+        padding: 64px 64px 0 64px;
+        max-width: 1200px;
+
+        .timeline-item {
+            padding: 0 84px;
+            order: 1;
+        }
+
+        .timeline-item-type {
+            position: absolute;
+            width: 72px;
+            left: 50%;
+            margin-left: -36px;
+            padding: 16px 0 0 0;
+            order: 2;
+        }
+
+        .timeline-item-detail {
+            flex: 50% 0 0;
+            padding: 28px 8px 0 68px;
+            order: 3;
+
+            .time {
+                font-size: 15px;
+            }
+
+            .event {
+                color: rgba(0, 0, 0, 0.54);
+                font-size: 13px;
+            }
+        }
+
+        &:nth-child(2) {
+
+            .timeline-item {
+                order: 3;
+            }
+
+            .timeline-item-detail {
+                order: 1;
+                padding: 28px 68px 0 8px;
+                text-align: right;
             }
         }
     }
