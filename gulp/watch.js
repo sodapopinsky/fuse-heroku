@@ -34,7 +34,10 @@ gulp.task('watch', ['inject'], function () {
     }
   });
 
-  gulp.watch(path.join(conf.paths.src, '/app/**/*.html'), function(event) {
+  gulp.watch([
+    path.join(conf.paths.src, '/app/**/*.html'),
+    path.join(conf.paths.src, '/app/**/*.json'),
+  ], function(event) {
     browserSync.reload(event.path);
   });
 });
