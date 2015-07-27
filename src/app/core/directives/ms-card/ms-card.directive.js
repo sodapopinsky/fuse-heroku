@@ -12,7 +12,7 @@
             restrict   : 'AE',
             scope      : {
                 template: '@',
-                card    : '=cardData'
+                card    : '=ngModel'
             },
             templateUrl: function (tElement, tAttrs)
             {
