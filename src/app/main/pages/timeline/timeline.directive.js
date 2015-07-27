@@ -12,7 +12,7 @@
         var vm = this;
     }
 
-    function msTimeline($window, $timeout)
+    function msTimeline($document, $window, $timeout)
     {
         return {
             scope       : true,
@@ -30,7 +30,6 @@
                 if ( $element.offset().top > windowEl.scrollTop() + windowEl.height() * 0.70 )
                 {
                     $scope.onScreen = false;
-                    $element.addClass('animate');
                 }
 
                 // On scroll
@@ -43,7 +42,10 @@
 
                     if ( $element.offset().top <= windowEl.scrollTop() + windowEl.height() * 0.70 )
                     {
-                        $timeout(function(){
+                        $element.addClass('animate');
+
+                        $timeout(function ()
+                        {
                             $scope.onScreen = true;
                         });
                     }
