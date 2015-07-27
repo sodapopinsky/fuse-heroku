@@ -336,6 +336,67 @@
                 url     : '/elements'
             })
 
+            // Inputs
+            .state('app.components.elements.inputs', {
+                abstract: true,
+                url     : '/inputs'
+            })
+
+            // Switch
+            .state('app.components.elements.inputs.switch', {
+                url  : '/switch',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/components/elements/inputs/switch/switch.html',
+                        controller : 'SwitchController as vm'
+                    }
+                }
+            })
+
+            // Select
+            .state('app.components.elements.inputs.select', {
+                url  : '/select',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/components/elements/inputs/select/select.html',
+                        controller : 'SelectController as vm'
+                    }
+                }
+            })
+
+            // Radio
+            .state('app.components.elements.inputs.radio', {
+                url  : '/radio',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/components/elements/inputs/radio/radio.html',
+                        controller : 'RadioController as vm'
+                    }
+                }
+            })
+
+            // Checkbox
+            .state('app.components.elements.inputs.checkbox', {
+                url  : '/checkbox',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/components/elements/inputs/checkbox/checkbox.html',
+                        controller : 'CheckboxController as vm'
+                    }
+                }
+            })
+
+            // Input
+            .state('app.components.elements.inputs.input', {
+                url  : '/input',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/components/elements/inputs/input/input.html',
+                        controller : 'InputController as vm'
+                    }
+                }
+            })
+
             // Buttons
             .state('app.components.elements.buttons', {
                 url  : '/buttons',
@@ -356,49 +417,7 @@
                 }
             })
 
-            // Switch
-            .state('app.components.elements.switch', {
-                url  : '/switch',
-                views: {
-                    'main@app': {
-                        templateUrl: 'app/main/components/elements/switch/switch.html',
-                        controller : 'SwitchController as vm'
-                    }
-                }
-            })
 
-            // Select
-            .state('app.components.elements.select', {
-                url  : '/select',
-                views: {
-                    'main@app': {
-                        templateUrl: 'app/main/components/elements/select/select.html',
-                        controller : 'SelectController as vm'
-                    }
-                }
-            })
-
-            // Radio
-            .state('app.components.elements.radio', {
-                url  : '/radio',
-                views: {
-                    'main@app': {
-                        templateUrl: 'app/main/components/elements/radio/radio.html',
-                        controller : 'RadioController as vm'
-                    }
-                }
-            })
-
-            // Checkbox
-            .state('app.components.elements.checkbox', {
-                url  : '/checkbox',
-                views: {
-                    'main@app': {
-                        templateUrl: 'app/main/components/elements/checkbox/checkbox.html',
-                        controller : 'CheckboxController as vm'
-                    }
-                }
-            })
 
         /**
          * Tables
