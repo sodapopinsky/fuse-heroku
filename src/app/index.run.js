@@ -19,10 +19,10 @@
             // Update navigation toggle
             msNavService.updateToggleables();
 
-            $timeout(function(){
+            $timeout(function ()
+            {
                 $rootScope.loadingProgress = false;
             });
         });
     }
-
 })();
