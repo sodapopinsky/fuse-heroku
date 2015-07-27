@@ -354,6 +354,17 @@
             })
 
 
+            // Autocomplete
+            .state('app.components.elements.inputs.autocomplete', {
+                url  : '/autocomplete',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/components/elements/inputs/autocomplete/autocomplete.html',
+                        controller : 'AutocompleteController as vm'
+                    }
+                }
+            })
+
             // Checkbox
             .state('app.components.elements.inputs.checkbox', {
                 url  : '/checkbox',

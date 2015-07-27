@@ -28,9 +28,9 @@
         <div class="md-title">With a placeholder (label and aria-label are added dynamically)</div>
         <div class="card  md-background-bg md-whiteframe-z2" layout="column">
             <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+                <div flex class="preview md-background-bg md-hue-2" layout="column">
                     <div class="md-caption">Placeholder</div>
-                    <div layout="row" layout-align="center center">
+                    <div flex layout="row" layout-align="center center">
                         <md-select placeholder="State" ng-model="vm.userState">
                             <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">
                                 {{state.abbrev}}
@@ -69,9 +69,9 @@
         <div class="md-title">With an explicit label</div>
         <div class="card  md-background-bg md-whiteframe-z2" layout="column">
             <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+                <div flex class="preview md-background-bg md-hue-2" layout="column">
                     <div class="md-caption">Label</div>
-                    <div layout="row" layout-align="center center">
+                    <div flex layout="row" layout-align="center center">
                         <md-select placeholder="State" ng-model="vm.userState">
                             <md-select-label>Select a state</md-select-label>
                             <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">

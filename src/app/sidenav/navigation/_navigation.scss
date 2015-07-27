@@ -43,6 +43,11 @@ $navSidabarWidth: 240px;
         color: rgba(255, 255, 255, 0.70);
         font-size: 13px;
 
+        ul, ol {
+            margin: 0;
+            padding: 0;
+        }
+
         .ms-nav-group {
             padding: 16px 0 0 0;
 
