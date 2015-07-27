@@ -3,22 +3,14 @@
     'use strict';
 
     angular.module('fuse')
-        .controller('MsTimelineController', MsTimelineController)
         .directive('msTimeline', msTimeline);
 
     /** @ngInject */
-    function MsTimelineController()
-    {
-        var vm = this;
-    }
-
-    function msTimeline($document, $window, $timeout)
+    function msTimeline($window, $timeout)
     {
         return {
-            scope       : true,
-            controller  : MsTimelineController,
-            controllerAs: 'ms',
-            link        : function ($scope, $element)
+            scope: true,
+            link : function ($scope, $element)
             {
                 // Set onScreen to true
                 $scope.onScreen = true;
