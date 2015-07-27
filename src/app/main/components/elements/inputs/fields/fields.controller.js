@@ -2,10 +2,10 @@
     'use strict';
 
     angular.module('fuse')
-        .controller('InputController', InputController);
+        .controller('FieldsController', FieldsController);
 
     /** @ngInject */
-    function InputController() {
+    function FieldsController() {
         var vm = this;
         vm.user = {
             title: 'Developer',

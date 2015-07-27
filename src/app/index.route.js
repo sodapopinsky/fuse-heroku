@@ -342,24 +342,25 @@
                 url     : '/inputs'
             })
 
-            // Switch
-            .state('app.components.elements.inputs.switch', {
-                url  : '/switch',
+
+            // Checkbox
+            .state('app.components.elements.inputs.checkbox', {
+                url  : '/checkbox',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/components/elements/inputs/switch/switch.html',
-                        controller : 'SwitchController as vm'
+                        templateUrl: 'app/main/components/elements/inputs/checkbox/checkbox.html',
+                        controller : 'CheckboxController as vm'
                     }
                 }
             })
 
-            // Select
-            .state('app.components.elements.inputs.select', {
-                url  : '/select',
+            // Fields
+            .state('app.components.elements.inputs.fields', {
+                url  : '/fields',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/components/elements/inputs/select/select.html',
-                        controller : 'SelectController as vm'
+                        templateUrl: 'app/main/components/elements/inputs/fields/fields.html',
+                        controller : 'FieldsController as vm'
                     }
                 }
             })
@@ -375,27 +376,40 @@
                 }
             })
 
-            // Checkbox
-            .state('app.components.elements.inputs.checkbox', {
-                url  : '/checkbox',
+            // Select
+            .state('app.components.elements.inputs.select', {
+                url  : '/select',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/components/elements/inputs/checkbox/checkbox.html',
-                        controller : 'CheckboxController as vm'
+                        templateUrl: 'app/main/components/elements/inputs/select/select.html',
+                        controller : 'SelectController as vm'
                     }
                 }
             })
 
-            // Input
-            .state('app.components.elements.inputs.input', {
-                url  : '/input',
+            // Slider
+            .state('app.components.elements.inputs.slider', {
+                url  : '/slider',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/components/elements/inputs/input/input.html',
-                        controller : 'InputController as vm'
+                        templateUrl: 'app/main/components/elements/inputs/slider/slider.html',
+                        controller : 'SliderController as vm'
                     }
                 }
             })
+
+            // Switch
+            .state('app.components.elements.inputs.switch', {
+                url  : '/switch',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/components/elements/inputs/switch/switch.html',
+                        controller : 'SwitchController as vm'
+                    }
+                }
+            })
+
+
 
             // Buttons
             .state('app.components.elements.buttons', {
