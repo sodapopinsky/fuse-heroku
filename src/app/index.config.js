@@ -1,4 +1,5 @@
-(function () {
+(function ()
+{
     'use strict';
 
     angular
@@ -6,7 +7,12 @@
         .config(config);
 
     /** @ngInject */
-    function config($logProvider, toastr) {
+    function config($ariaProvider, $logProvider, toastr)
+    {
+        $ariaProvider.config({
+            tabindex: false
+        });
+
         // Enable log
         $logProvider.debugEnabled(true);
 
