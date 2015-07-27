@@ -1,16 +1,19 @@
-<div class="ms-card content-1">
-    <div class="image">
-        <img ng-src="{{card.image.src}}" alt="{{card.image.alt}}">
-    </div>
-
-    <div class="title">
-        {{card.title}}
-    </div>
-    <div class="subtitle">
-        {{card.subtitle}}
+<div class="content-1">
+    <div class="media">
+        <img class="image" ng-src="{{card.media.image.src}}" alt="{{card.media.image.alt}}" ng-if="card.media.image">
     </div>
 
     <div class="content">
-        {{card.content}}
+        <div class="title" ng-if="card.title">
+            {{card.title}}
+        </div>
+
+        <div class="subtitle" ng-if="card.subtitle">
+            {{card.subtitle}}
+        </div>
+
+        <div class="text" ng-if="card.text">
+            {{card.text}}
+        </div>
     </div>
 </div>

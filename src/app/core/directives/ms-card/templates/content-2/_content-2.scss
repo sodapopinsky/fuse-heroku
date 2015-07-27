@@ -1,0 +1,47 @@
+.ms-card {
+
+    .content-2 {
+        font-size: 13px;
+
+        .header {
+            padding: 16px;
+
+            .avatar {
+                padding-right: 16px;
+
+                .image {
+                    display: block;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 20px;
+                }
+            }
+
+            .info {
+
+                .title {
+
+                }
+
+                .subtitle {
+                    color: rgba(0, 0, 0, 0.54);
+                }
+            }
+        }
+
+        .media {
+
+            .image {
+                display: block;
+                width: 100%;
+                max-width: 100%;
+                border-radius: 2px 2px 0 0;
+            }
+        }
+
+        .text {
+            padding: 16px;
+
+        }
+    }
+}

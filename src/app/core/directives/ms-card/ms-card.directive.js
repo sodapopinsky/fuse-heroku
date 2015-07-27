@@ -12,17 +12,17 @@
             restrict   : 'AE',
             scope      : {
                 template: '@',
-                card : '=ngModel'
+                card    : '=cardData'
             },
             templateUrl: function (tElement, tAttrs)
             {
                 var baseDir = 'app/core/directives/ms-card/templates/';
                 return baseDir + tAttrs.template + '/' + tAttrs.template + '.html';
             },
-            link       : function ($scope, $element)
+            compile    : function (tElement)
             {
-
-                console.log($scope);
+                // Add class
+                tElement.addClass('ms-card');
             }
         };
     }
