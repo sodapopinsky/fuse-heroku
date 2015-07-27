@@ -1,5 +1,13 @@
 {
-  "data": [
-
-  ]
+    "data": {
+        "card1": {
+            "image": {
+                "src": "assets/images/photos/early_sunrise-2560x1440.jpg",
+                "alt": "Early Sunrise"
+            },
+            "title": "Nature",
+            "subtitle": "Mountain view from lake side",
+            "content": "Look deep into nature, then you will understand everything better."
+        }
+    }
 }
