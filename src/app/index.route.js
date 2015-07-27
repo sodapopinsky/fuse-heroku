@@ -376,6 +376,17 @@
                 }
             })
 
+            // Chips / Tags
+            .state('app.components.elements.inputs.chips', {
+                url  : '/chips',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/components/elements/inputs/chips/chips.html',
+                        controller : 'ChipsController as vm'
+                    }
+                }
+            })
+
             // Fields
             .state('app.components.elements.inputs.fields', {
                 url  : '/fields',
