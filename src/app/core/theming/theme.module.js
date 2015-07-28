@@ -68,9 +68,8 @@
     }
 
     /** @ngInject */
-    function runBlock($rootScope, fuseTheming, fuseThemes, themeService, $mdColorPalette)
+    function runBlock($rootScope, fuseTheming, fuseThemes, themeService, $mdColorPalette, themeGenerator)
     {
-        console.log(fuseTheming.palettes);
 
         // Generate custom rules
         generateCustomRules();
@@ -126,5 +125,8 @@
 
             }
         }
+
+        // Generate themes
+        themeGenerator.generate();
     }
 })();
