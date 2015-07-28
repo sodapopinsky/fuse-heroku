@@ -2,63 +2,129 @@
 {
     'use strict';
 
-    var md_theme_css_original =  angular.injector(['ng', 'material.core']).get('$MD_THEME_CSS');
-    var md_theme_css_modified = ".secondary-text { color: '{{foreground-2}}' } #main { background-color: '{{primary-100}}'; } " + md_theme_css_original;
-
     angular
         .module('app.core')
-        .provider('palettes', palettes)
-        .constant('$MD_THEME_CSS', md_theme_css_modified)
-        .config(themeConfiguration);
+        .provider('fuseTheming', fuseTheming)
+        .config(config)
+        .run(runBlock);
 
     /** @ngInject */
-    function palettes()
+    function fuseTheming()
     {
-        var palette;
+        var parser,
+            palettes,
+            themes;
 
         return {
-            set : function (value)
+            setParser  : function (_parser)
             {
-                palette = value;
+                parser = _parser;
             },
-            $get: function ()
+            setPalettes: function (_palettes)
             {
-                return palette;
+                palettes = _palettes
+            },
+            setThemes  : function (_themes)
+            {
+                themes = _themes
+            },
+            $get       : function ()
+            {
+                return {
+                    parser  : parser,
+                    palettes: palettes,
+                    themes  : themes
+                }
             }
-        };
+        }
     }
 
     /** @ngInject */
-    function themeConfiguration($mdThemingProvider, wipThemes, wipPalettes, palettesProvider)
+    function config($mdThemingProvider, fusePalettes, fuseThemes, fuseThemingProvider)
     {
         $mdThemingProvider.alwaysWatchTheme(true);
 
-        angular.forEach(wipPalettes, function (palette)
-        {
-            registerPalette(palette);
-        });
-
-        palettesProvider.set($mdThemingProvider._PALETTES);
-
-        //angular.forEach(wipThemes, function (theme) {
-        for ( var themeName in wipThemes )
-        {
-            registerTheme(themeName, wipThemes[themeName]);
-        }
-
-        function registerPalette(palette)
+        // Define custom palettes
+        angular.forEach(fusePalettes, function (palette)
         {
             $mdThemingProvider.definePalette(palette.name, palette.options);
+        });
+
+        // Register custom themes
+        for ( var themeName in fuseThemes )
+        {
+            var theme = fuseThemes[themeName];
+
+            $mdThemingProvider.theme(themeName)
+                .primaryPalette(theme.primary.name, theme.primary.options)
+                .accentPalette(theme.accent.name, theme.accent.options)
+                .warnPalette(theme.warn.name, theme.warn.options)
+                .backgroundPalette(theme.background.name, theme.background.options);
         }
 
-        function registerTheme(themeName, themePalette)
+        fuseThemingProvider.setParser($mdThemingProvider._parseRules);
+        fuseThemingProvider.setPalettes($mdThemingProvider._PALETTES);
+        fuseThemingProvider.setThemes($mdThemingProvider._THEMES);
+    }
+
+    /** @ngInject */
+    function runBlock($rootScope, fuseTheming, fuseThemes, themeService, $mdColorPalette)
+    {
+        console.log(fuseTheming.palettes);
+
+        // Generate custom rules
+        generateCustomRules();
+
+        // Generate theme palette css
+        themeService.generateThemePaletteCss(fuseThemes.default);
+
+        //console.log($rootScope);
+
+        /**
+         * Generate custom css rules
+         */
+        function generateCustomRules()
         {
-            //console.log(theme);
-            $mdThemingProvider.theme(themeName)
-                .primaryPalette(themePalette.primary.name, themePalette.primary.options)
-                .accentPalette(themePalette.accent.name, themePalette.accent.options)
-                .warnPalette(themePalette.warn.name, themePalette.warn.options)
-                .backgroundPalette(themePalette.background.name, themePalette.background.options);
+            // Get document head
+            var headEl = document.getElementsByTagName('head')[0];
+
+            // Custom rules
+            var customRules = {
+                'primary': ".md-primary-bg.md-THEME_NAME-theme .secondary-text { color: '{{primary-contrast}}' }",
+                //'accent' : ".md-THEME_NAME-theme.md-accent-bg .secondary-text { color: '{{accent-contrast}}' }",
+                //'warn'   : ".md-THEME_NAME-theme.md-warn-bg .secondary-text { color: '{{warn-contrast}}' }"
+                //'background': ".md-THEME_NAME-theme .secondary-text { color: '{{foreground-2}}' }",
+            };
+
+            // Iterate through each theme
+            for ( var themeName in fuseThemes )
+            {
+                // Get the theme
+                var theme = fuseTheming.themes[themeName];
+
+                // Iterate through every color type
+                for ( var colorType in customRules )
+                {
+                    // Generate rules for the selected color type
+                    var generatedRules = fuseTheming.parser(theme, colorType, customRules[colorType]);
+
+                    // Iterate through generated rules
+                    angular.forEach(generatedRules, function (generatedRule)
+                    {
+                        // Create a new style element
+                        var styleEl = document.createElement('style');
+                        styleEl.setAttribute('type', 'text/css');
+
+                        // Insert generated rules to the style element and append the style element to the <head>
+                        styleEl.appendChild(document.createTextNode(generatedRule));
+                        headEl.appendChild(styleEl);
+                    });
+                }
+
+                //console.log(generatedRules);
+                //console.log(fuseTheming.themes[themeName]);
+
+            }
         }
     }
 })();

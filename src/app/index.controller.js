@@ -5,9 +5,9 @@
         .controller('mainController', mainController);
 
     /** @ngInject */
-    function mainController($rootScope, wipThemes, themeService) {
+    function mainController($rootScope, fuseThemes, themeService) {
         $rootScope.appTheme = 'default';
-        themeService.generateThemePaletteCss(wipThemes.default);
+        //themeService.generateThemePaletteCss(fuseThemes.default);
     }
 
 })();

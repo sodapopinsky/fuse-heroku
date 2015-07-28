@@ -1,9 +1,9 @@
 (function () {
     'use strict';
 
-    var wipPalettes = [
+    var fusePalettes = [
         {
-            name: 'wip-blue',
+            name: 'fuse-blue',
             options: {
                 "50": "#ebf1fa",
                 "100": "#c2d4ef",
@@ -25,7 +25,7 @@
             }
         },
         {
-            name: 'wip-pale-blue',
+            name: 'fuse-pale-blue',
             options: {
                 "50": "#ececee",
                 "100": "#c5c6cb",
@@ -50,5 +50,5 @@
 
     angular
         .module('app.core')
-        .constant('wipPalettes', wipPalettes);
+        .constant('fusePalettes', fusePalettes);
 })();

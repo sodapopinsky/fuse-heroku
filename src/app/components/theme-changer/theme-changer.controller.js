@@ -5,11 +5,11 @@
         .controller('ThemeChangerController', ThemeChangerController);
 
     /** @ngInject */
-    function ThemeChangerController($rootScope, $route, palettes, wipThemes, themeService) {
+    function ThemeChangerController($rootScope, $route, fuseThemes, fuseTheming, themeService) {
         var vm = this;
         vm.isOpen = false;
         vm.setTheme = setTheme;
-        vm.themes = wipThemes;
+        vm.themes = fuseThemes;
         vm.getThemeColor = getThemeColor;
 
         function setTheme(themeName, themePalette) {
@@ -21,7 +21,7 @@
 
         function getThemeColor(paletteColor, level, op) {
             op = op || 1;
-            var rgb = angular.copy(palettes[paletteColor.name][level].value);
+            var rgb = angular.copy(fuseTheming.palettes[paletteColor.name][level].value);
             rgb.push(op);
             //console.log(rgb);
 

@@ -5,7 +5,7 @@
         .factory('themeService', themeService);
 
     /** @ngInject */
-    function themeService($rootScope, palettes) {
+    function themeService($rootScope, fuseTheming) {
         var theme = {
             generateThemePaletteCss: generateThemePaletteCss
         };
@@ -106,7 +106,7 @@
 
                             var contrastColorStyle = '';
                             if (css.option === 'background-color') {
-                                var contrastColor = palettes[themePalette[color.type].name][hueObj.level].contrast;
+                                var contrastColor = fuseTheming.palettes[themePalette[color.type].name][hueObj.level].contrast;
                                 var colorFormat = contrastColor.length === 3 ? 'rgb' : 'rgba';
                                 contrastColor = contrastColor.join(',');
                                 contrastColor = colorFormat + '(' + contrastColor + ')';
@@ -152,7 +152,7 @@
 
         function getThemeColor(paletteColor, level, op) {
             op = op || 1;
-            var rgb = angular.copy(palettes[paletteColor.name][level].value);
+            var rgb = angular.copy(fuseTheming.palettes[paletteColor.name][level].value);
             rgb.push(op);
             return 'rgba(' + rgb.join() + ')';
         }

@@ -1,10 +1,10 @@
 (function () {
     'use strict';
 
-    var wipThemes = {
+    var fuseThemes = {
         'default': {
             primary: {
-                name: 'wip-pale-blue',
+                name: 'fuse-pale-blue',
                 options: {
                     'default': '500',
                     'hue-1': '400',
@@ -41,12 +41,12 @@
         'blue-grey': {
             primary: {name: 'blue-grey'},
             accent: {name: 'blue'},
-            warn: {name: 'red'},
+            warn: {name: 'green'},
             background: {name: 'grey'}
         }
     };
 
     angular
         .module('app.core')
-        .constant('wipThemes', wipThemes);
+        .constant('fuseThemes', fuseThemes);
 })();
