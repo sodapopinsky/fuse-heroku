@@ -96,6 +96,11 @@
         // INTERNAL HELPER FUNCTIONS
         // -------------------------
 
+        /**
+         * Modify and store themes for global use
+         * 
+         * @param themes
+         */
         function storeThemes(themes)
         {
             var t = angular.copy(themes);
@@ -112,7 +117,7 @@
                 });
             });
 
-            // Store themes and selected theme on the rootscope
+            // Store themes and selected theme on the $rootScope
             $rootScope.themes = t;
             $rootScope.selectedTheme = t.default;
         }
