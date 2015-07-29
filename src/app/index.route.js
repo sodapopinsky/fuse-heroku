@@ -490,8 +490,8 @@
                 url  : '/datatable',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/components/tables/data-table/data-table.html',
-                        controller : 'dataTableController as vm'
+                        templateUrl: 'app/main/components/tables/datatable/datatable.html',
+                        controller : 'DatatableController as vm'
                     }
                 }
             })
