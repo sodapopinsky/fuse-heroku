@@ -229,48 +229,6 @@
                 </div>
             </div>
         </div>
-        <script type="text/ng-template" id="dialog1.tmpl.html">
-            <md-dialog aria-label="Sunrise" style="max-width:800px">
-                <form>
-                    <md-toolbar>
-                        <div class="md-toolbar-tools">
-                            <h2>Sunrise</h2>
-                            <span flex></span>
-                            <md-button class="md-icon-button" ng-click="answer('not applicable')">
-                                <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
-                            </md-button>
-                        </div>
-                    </md-toolbar>
-                    <md-dialog-content>
-                        <div>
-                            <img style="max-width:100%" src="assets/images/photos/early_sunrise-2560x1440.jpg"
-                                 alt="Sunrise">
-                            <p>
-                                <b>Sunrise</b> or <b>sun up</b> is the instant at which the upper edge of the Sun
-                                appears over the eastern horizon in the morning.
-                            </p>
-
-                            <p>
-                                The term can also refer to the entire process of the Sun crossing the horizon and its
-                                accompanying atmospheric effects.
-                            </p>
-                        </div>
-                    </md-dialog-content>
-                    <div class="md-actions" layout="row">
-                        <md-button href="https://en.wikipedia.org/wiki/Sunrise" target="_blank">
-                            More on Wikipedia
-                        </md-button>
-                        <span flex></span>
-                        <md-button ng-click="answer('not useful')" class="md-primary">
-                            Not Useful
-                        </md-button>
-                        <md-button ng-click="answer('useful')" class="md-primary">
-                            Useful
-                        </md-button>
-                    </div>
-                </form>
-            </md-dialog>
-        </script>
 
         <div class="md-title">Methods</div>
         <ul class="methods">
@@ -610,4 +568,46 @@
         </ul>
     </div>
 </div>
-</div>
+
+<script type="text/ng-template" id="dialog1.tmpl.html">
+    <md-dialog aria-label="Sunrise" style="max-width:800px">
+        <form>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>Sunrise</h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" ng-click="answer('not applicable')">
+                        <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+            <md-dialog-content>
+                <div>
+                    <img style="max-width:100%" src="assets/images/photos/early_sunrise-2560x1440.jpg"
+                         alt="Sunrise">
+                    <p>
+                        <b>Sunrise</b> or <b>sun up</b> is the instant at which the upper edge of the Sun
+                        appears over the eastern horizon in the morning.
+                    </p>
+
+                    <p>
+                        The term can also refer to the entire process of the Sun crossing the horizon and its
+                        accompanying atmospheric effects.
+                    </p>
+                </div>
+            </md-dialog-content>
+            <div class="md-actions" layout="row">
+                <md-button href="https://en.wikipedia.org/wiki/Sunrise" target="_blank">
+                    More on Wikipedia
+                </md-button>
+                <span flex></span>
+                <md-button ng-click="answer('not useful')" class="md-primary">
+                    Not Useful
+                </md-button>
+                <md-button ng-click="answer('useful')" class="md-primary">
+                    Useful
+                </md-button>
+            </div>
+        </form>
+    </md-dialog>
+</script>

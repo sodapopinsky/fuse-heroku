@@ -451,6 +451,17 @@
                 }
             })
 
+            // Buttons
+            .state('app.components.elements.bottom-sheet', {
+                url: '/bottom-sheet',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/components/elements/bottom-sheet/bottom-sheet.html',
+                        controller: 'BottomSheetController as vm'
+                    }
+                }
+            })
+
             // Card
             .state('app.components.elements.card', {
                 url: '/card',
