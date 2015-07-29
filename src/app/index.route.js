@@ -475,12 +475,12 @@
             })
 
             // Standard Table
-            .state('app.components.tables.standart-table', {
+            .state('app.components.tables.standard-table', {
                 url  : '/standard-table',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/components/tables/standart-table/standart-table.html',
-                        controller : 'standartTableController as vm'
+                        templateUrl: 'app/main/components/tables/standard-table/standard-table.html',
+                        controller : 'StandardTableController as vm'
                     }
                 }
             })
