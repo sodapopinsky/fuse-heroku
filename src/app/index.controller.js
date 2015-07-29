@@ -1,13 +1,13 @@
-(function () {
+(function ()
+{
     'use strict';
 
     angular.module('fuse')
-        .controller('mainController', mainController);
+        .controller('AppController', AppController);
 
     /** @ngInject */
-    function mainController($rootScope, fuseThemes, themeService) {
+    function AppController($rootScope)
+    {
         $rootScope.appTheme = 'default';
-        //themeService.generateThemePaletteCss(fuseThemes.default);
     }
-
 })();
