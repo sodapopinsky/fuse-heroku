@@ -9,7 +9,7 @@
             <md-button ng-repeat="(themeName, themePalette) in vm.themes" aria-label="{{themeName}}"
                        class="md-fab md-raised md-mini md-primary"
                        ng-style="{'background-color': vm.getThemeColor(themePalette.primary, 500)}"
-                       ng-click="vm.setTheme(themeName, themePalette)">
+                       ng-click="vm.setTheme(themeName)">
                 <md-icon md-font-icon="icon-palette" class="s24"></md-icon>
             </md-button>
         </div>
