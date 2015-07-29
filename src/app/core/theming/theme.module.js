@@ -22,11 +22,11 @@
             },
             setPalettes: function (_palettes)
             {
-                palettes = _palettes
+                palettes = _palettes;
             },
             setThemes  : function (_themes)
             {
-                themes = _themes
+                themes = _themes;
             },
             $get       : function ()
             {
@@ -34,9 +34,9 @@
                     parser  : parser,
                     palettes: palettes,
                     themes  : themes
-                }
+                };
             }
-        }
+        };
     }
 
     /** @ngInject */
@@ -72,10 +72,10 @@
     {
 
         // Generate custom rules
-        generateCustomRules();
+        //generateCustomRules();
 
         // Generate theme palette css
-        themeService.generateThemePaletteCss(fuseThemes.default);
+        //themeService.generateThemePaletteCss(fuseThemes.default);
 
         //console.log($rootScope);
 

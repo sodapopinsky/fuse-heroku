@@ -12,6 +12,9 @@
   "globals": {
     "angular": false,
     "inject": false,
-    "module": false
+    "module": false,
+    "less": false,
+    "window": false,
+    "document": false
   }
 }
