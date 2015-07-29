@@ -14,7 +14,8 @@
 
         function setTheme(themeName, themePalette) {
             $rootScope.appTheme = themeName;
-            themeService.generateThemePaletteCss(themePalette);
+            $rootScope.selectedTheme = $rootScope.themes[themeName];
+            //themeService.generateThemePaletteCss(themePalette);
             //for update chart colors
             $route.reload();
         }
