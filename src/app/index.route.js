@@ -463,6 +463,28 @@
                 }
             })
 
+            // Progress Circular
+            .state('app.components.elements.progress-circular', {
+                url  : '/progress-circular',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/components/elements/progress-circular/progress-circular.html',
+                        controller : 'ProgressCircularController as vm'
+                    }
+                }
+            })
+
+            // Progress Linear
+            .state('app.components.elements.progress-linear', {
+                url  : '/progress-linear',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/components/elements/progress-linear/progress-linear.html',
+                        controller : 'ProgressLinearController as vm'
+                    }
+                }
+            })
+
 
         /**
          * Tables
