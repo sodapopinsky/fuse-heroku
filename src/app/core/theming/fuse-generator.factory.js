@@ -6,73 +6,69 @@
         .factory('fuseGenerator', fuseGenerator);
 
     /** @ngInject */
-    function fuseGenerator(fuseTheming, $rootScope)
+    function fuseGenerator($rootScope, fuseTheming)
     {
+        // Storage for simplified themes object
+        var themes = {};
+
         var service = {
-            generate: generate
+            generate     : generate
         };
 
         return service;
 
         /**
-         * Generate less variables
+         * Generate less variables for each theme from theme's
+         * palette by using material color naming conventions
          */
         function generate()
         {
-            var palettes = fuseTheming.palettes;
-            var themeList = {};
+            var registeredThemes = fuseTheming.themes;
+            var registeredPalettes = fuseTheming.palettes;
 
-            // Iterate through themes
-            angular.forEach(fuseTheming.themes, function (theme)
+            // First, create a simplified object that stores
+            // all registered themes and their colors
+
+            // Iterate through registered themes
+            angular.forEach(registeredThemes, function (registeredTheme)
             {
-                themeList[theme.name] = {};
+                themes[registeredTheme.name] = {};
 
                 // Iterate through color types
-                angular.forEach(theme.colors, function (colorType, colorTypeName)
+                angular.forEach(registeredTheme.colors, function (colorType, colorTypeName)
                 {
-                    themeList[theme.name][colorTypeName] = {
+                    themes[registeredTheme.name][colorTypeName] = {
                         'name'  : colorType.name,
                         'levels': {
                             'default': {
-                                'color'   : rgba(palettes[colorType.name][colorType.hues.default].value),
-                                'contrast': rgba(palettes[colorType.name][colorType.hues.default].contrast)
+                                'color'   : rgba(registeredPalettes[colorType.name][colorType.hues.default].value),
+                                'contrast': rgba(registeredPalettes[colorType.name][colorType.hues.default].contrast)
                             },
                             'hue1'   : {
-                                'color'   : rgba(palettes[colorType.name][colorType.hues['hue-1']].value),
-                                'contrast': rgba(palettes[colorType.name][colorType.hues['hue-1']].contrast)
+                                'color'   : rgba(registeredPalettes[colorType.name][colorType.hues['hue-1']].value),
+                                'contrast': rgba(registeredPalettes[colorType.name][colorType.hues['hue-1']].contrast)
                             },
                             'hue2'   : {
-                                'color'   : rgba(palettes[colorType.name][colorType.hues['hue-2']].value),
-                                'contrast': rgba(palettes[colorType.name][colorType.hues['hue-2']].contrast)
+                                'color'   : rgba(registeredPalettes[colorType.name][colorType.hues['hue-2']].value),
+                                'contrast': rgba(registeredPalettes[colorType.name][colorType.hues['hue-2']].contrast)
                             },
                             'hue3'   : {
-                                'color'   : rgba(palettes[colorType.name][colorType.hues['hue-3']].value),
-                                'contrast': rgba(palettes[colorType.name][colorType.hues['hue-3']].contrast)
+                                'color'   : rgba(registeredPalettes[colorType.name][colorType.hues['hue-3']].value),
+                                'contrast': rgba(registeredPalettes[colorType.name][colorType.hues['hue-3']].contrast)
                             }
                         }
                     };
                 });
             });
 
-            $rootScope.themes = angular.copy(themeList);
+            // Store the themes in the service for external use
+            storeThemes(themes);
 
-            // Reformat themes for Object Usage
-            angular.forEach($rootScope.themes, function (theme)
-            {
-                angular.forEach(theme, function (colorType, colorTypeName)
-                {
-                    theme[colorTypeName] = colorType.levels;
-                    theme[colorTypeName].color = colorType.levels.default.color;
-                    theme[colorTypeName].contrast = colorType.levels.default.contrast;
-                    delete theme[colorTypeName].default;
-                });
-            });
-            $rootScope.selectedTheme = $rootScope.themes.default;
-
-            // Iterate through color list and create less variables
+            // Iterate through simplified themes
+            // object and create less variables
             var lessVars = [];
 
-            angular.forEach(themeList, function (theme, themeName)
+            angular.forEach(themes, function (theme, themeName)
             {
                 lessVars = [];
                 lessVars.push('@themeName:' + themeName);
@@ -96,28 +92,31 @@
             });
         }
 
-        /**
-         * Convert color array to rgb/rgba
-         */
-        function rgba(color)
+        // -------------------------
+        // INTERNAL HELPER FUNCTIONS
+        // -------------------------
+
+        function storeThemes(themes)
         {
-            if ( color.length === 3 )
+            var t = angular.copy(themes);
+
+            // Reformat themes for Object Usage
+            angular.forEach(t, function (theme)
             {
-                return 'rgb(' + color.join(',') + ')';
-            }
-            else
-            {
-                return 'rgba(' + color.join(',') + ')';
-            }
+                angular.forEach(theme, function (colorType, colorTypeName)
+                {
+                    theme[colorTypeName] = colorType.levels;
+                    theme[colorTypeName].color = colorType.levels.default.color;
+                    theme[colorTypeName].contrast = colorType.levels.default.contrast;
+                    delete theme[colorTypeName].default;
+                });
+            });
+
+            // Store themes and selected theme on the rootscope
+            $rootScope.themes = t;
+            $rootScope.selectedTheme = t.default;
         }
 
-        /**
-         * Uppercase first
-         */
-        function ucfirst(string)
-        {
-            return string.charAt(0).toUpperCase() + string.slice(1);
-        }
 
         /**
          * Render less files
@@ -141,6 +140,29 @@
                 {
                     console.error(error);
                 });
+        }
+
+        /**
+         * Convert color array to rgb/rgba
+         */
+        function rgba(color)
+        {
+            if ( color.length === 3 )
+            {
+                return 'rgb(' + color.join(',') + ')';
+            }
+            else
+            {
+                return 'rgba(' + color.join(',') + ')';
+            }
+        }
+
+        /**
+         * Uppercase first
+         */
+        function ucfirst(string)
+        {
+            return string.charAt(0).toUpperCase() + string.slice(1);
         }
     }
 
