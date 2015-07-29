@@ -3,10 +3,10 @@
     'use strict';
 
     angular.module('app.core')
-        .factory('themeGenerator', themeGenerator);
+        .factory('fuseGenerator', fuseGenerator);
 
     /** @ngInject */
-    function themeGenerator(fuseTheming, $rootScope)
+    function fuseGenerator(fuseTheming, $rootScope)
     {
         var service = {
             generate: generate
