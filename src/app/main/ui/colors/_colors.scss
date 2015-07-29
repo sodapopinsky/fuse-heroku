@@ -1,0 +1,16 @@
+#theme-colors {
+    .content {
+        padding: 32px;
+        .color-type {
+            margin: 16px 0 32px 0;
+            overflow: hidden;
+            border-radius: 2px;
+            .color {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}

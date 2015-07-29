@@ -1,32 +1,153 @@
-<div class="md-padding">
-    <div layout-padding id="theme-colors" class="">
-        <div flex="50" class="">
-            <div class="md-headline">Theme Palette</div>
-            <div ng-repeat="(colorType, color ) in vm.theme"
-                 ng-include="'colorListItem'">
+<div id="theme-colors">
+    <header class="page-header md-accent-bg" layout="column">
+        <div class="breadcrumb" layout="row" layout-align="start center">
+            <md-icon md-font-icon="icon-home" class="s18"></md-icon>
+            <md-icon md-font-icon="icon-keyboard_arrow_right" class="s18 separator"></md-icon>
+            <span class="parent">USER INTERFACE</span>
+        </div>
+        <div class="title">Theme Colors</div>
+    </header>
+    <div layout-padding id="" class="content">
+        <div class="md-headline">Theme Palette</div>
+        <!-- Primary Color -->
+        <div class="md-whiteframe-z1 md-background-bg color-type">
+            <div class="color" layout="row" layout-align="center center">
+                <div flex class="md-primary-bg" layout="row" layout-padding>
+                    <div flex>Primary Color</div>
+                    <div flex>{{$root.selectedTheme.primary.color}}</div>
+                    <div flex>.md-primary-bg</div>
+                </div>
+                <div flex="25" class="md-primary-fg" layout-padding>.md-primary-fg</div>
+            </div>
+            <div class="color" layout="row" layout-align="center center">
+                <div flex class="md-primary-bg md-hue-1" layout="row" layout-padding>
+                    <div flex>Primary Color - Hue 1</div>
+                    <div flex>{{$root.selectedTheme.primary.hue1.color}}</div>
+                    <div flex>.md-primary-bg .md-hue-1</div>
+                </div>
+                <div flex="25" class="md-primary-fg md-hue-1" layout-padding>.md-primary-fg .md-hue-1</div>
+            </div>
+            <div class="color" layout="row" layout-align="center center">
+                <div flex class="md-primary-bg md-hue-2" layout="row" layout-padding>
+                    <div flex>Primary Color - Hue 2</div>
+                    <div flex>{{$root.selectedTheme.primary.hue2.color}}</div>
+                    <div flex>.md-primary-bg .md-hue-2</div>
+                </div>
+                <div flex="25" class="md-primary-fg md-hue-2" layout-padding>.md-primary-fg .md-hue-2</div>
+            </div>
+            <div class="color" layout="row" layout-align="center center">
+                <div flex class="md-primary-bg md-hue-3" layout="row" layout-padding>
+                    <div flex>Primary Color - Hue 3</div>
+                    <div flex>{{$root.selectedTheme.primary.hue3.color}}</div>
+                    <div flex>.md-primary-bg .md-hue-3</div>
+                </div>
+                <div flex="25" class="md-primary-fg md-hue-3" layout-padding>.md-primary-fg .md-hue-3</div>
             </div>
         </div>
-        <!--<md-list flex="50" class="md-padding">
-            <md-subheader class="md-no-sticky">Theme Palette</md-subheader>
-            <md-list-item ng-repeat="(class, value) in vm.theme" ng-style="{'background-color':value}">
-                <p> {{ class }} </p>
-                <div class="md-secondary" >{{value}}</div>
-            </md-list-item>
-        </md-list>-->
-        <script type="text/ng-template" id="colorListItem">
-            <div class="md-whiteframe-z1" layout-margin layout="row" layout-align="center center" layout-padding
-                 ng-class="color.classes['background-color']">
-                <div flex> {{colorType}}</div>
-                <div flex class="">{{color.value}}</div>
-                <div flex>
-                    <div class="" ng-repeat="class in color.classes">{{class}}</div>
+        <!-- Accent Color -->
+        <div class="md-whiteframe-z1 md-background-bg color-type">
+            <div class="color" layout="row" layout-align="center center">
+                <div flex class="md-accent-bg" layout="row" layout-padding>
+                    <div flex>Accent Color</div>
+                    <div flex>{{$root.selectedTheme.accent.color}}</div>
+                    <div flex>.md-accent-bg</div>
                 </div>
+                <div flex="25" class="md-accent-fg" layout-padding>.md-accent-fg</div>
             </div>
-            <div>
-                <div ng-repeat="(colorType, color) in color.hues"
-                     ng-include="'colorListItem'">
+            <div class="color" layout="row" layout-align="center center">
+                <div flex class="md-accent-bg md-hue-1" layout="row" layout-padding>
+                    <div flex>Accent Color - Hue 1</div>
+                    <div flex>{{$root.selectedTheme.accent.hue1.color}}</div>
+                    <div flex>.md-accent-bg .md-hue-1</div>
                 </div>
+                <div flex="25" class="md-accent-fg md-hue-1" layout-padding>.md-accent-fg .md-hue-1</div>
             </div>
-        </script>
+            <div class="color" layout="row" layout-align="center center">
+                <div flex class="md-accent-bg md-hue-2" layout="row" layout-padding>
+                    <div flex>Accent Color - Hue 2</div>
+                    <div flex>{{$root.selectedTheme.accent.hue2.color}}</div>
+                    <div flex>.md-accent-bg .md-hue-2</div>
+                </div>
+                <div flex="25" class="md-accent-fg md-hue-2" layout-padding>.md-accent-fg .md-hue-2</div>
+            </div>
+            <div class="color" layout="row" layout-align="center center">
+                <div flex class="md-accent-bg md-hue-3" layout="row" layout-padding>
+                    <div flex>Accent Color - Hue 3</div>
+                    <div flex>{{$root.selectedTheme.accent.hue3.color}}</div>
+                    <div flex>.md-accent-bg .md-hue-3</div>
+                </div>
+                <div flex="25" class="md-accent-fg md-hue-3" layout-padding>.md-accent-fg .md-hue-3</div>
+            </div>
+        </div>
+        <!-- Warn Color -->
+        <div class="md-whiteframe-z1 md-background-bg color-type">
+            <div class="color" layout="row" layout-align="center center">
+                <div flex class="md-warn-bg" layout="row" layout-padding>
+                    <div flex>Warn Color</div>
+                    <div flex>{{$root.selectedTheme.warn.color}}</div>
+                    <div flex>.md-warn-bg</div>
+                </div>
+                <div flex="25" class="md-warn-fg" layout-padding>.md-warn-fg</div>
+            </div>
+            <div class="color" layout="row" layout-align="center center">
+                <div flex class="md-warn-bg md-hue-1" layout="row" layout-padding>
+                    <div flex>Warn Color - Hue 1</div>
+                    <div flex>{{$root.selectedTheme.warn.hue1.color}}</div>
+                    <div flex>.md-warn-bg .md-hue-1</div>
+                </div>
+                <div flex="25" class="md-warn-fg md-hue-1" layout-padding>.md-warn-fg .md-hue-1</div>
+            </div>
+            <div class="color" layout="row" layout-align="center center">
+                <div flex class="md-warn-bg md-hue-2" layout="row" layout-padding>
+                    <div flex>Warn Color - Hue 2</div>
+                    <div flex>{{$root.selectedTheme.warn.hue2.color}}</div>
+                    <div flex>.md-warn-bg .md-hue-2</div>
+                </div>
+                <div flex="25" class="md-warn-fg md-hue-2" layout-padding>.md-warn-fg .md-hue-2</div>
+            </div>
+            <div class="color" layout="row" layout-align="center center">
+                <div flex class="md-warn-bg md-hue-3" layout="row" layout-padding>
+                    <div flex>Warn Color - Hue 3</div>
+                    <div flex>{{$root.selectedTheme.warn.hue3.color}}</div>
+                    <div flex>.md-warn-bg .md-hue-3</div>
+                </div>
+                <div flex="25" class="md-warn-fg md-hue-3" layout-padding>.md-warn-fg .md-hue-3</div>
+            </div>
+        </div>
+        <!-- Background Color -->
+        <div class="md-whiteframe-z1 md-background-bg color-type">
+            <div class="color" layout="row" layout-align="center center">
+                <div flex class="md-background-bg" layout="row" layout-padding>
+                    <div flex>Background Color</div>
+                    <div flex>{{$root.selectedTheme.background.color}}</div>
+                    <div flex>.md-background-bg</div>
+                </div>
+                <div flex="25" class="md-background-fg" layout-padding>.md-background-fg</div>
+            </div>
+            <div class="color" layout="row" layout-align="center center">
+                <div flex class="md-background-bg md-hue-1" layout="row" layout-padding>
+                    <div flex>Background Color - Hue 1</div>
+                    <div flex>{{$root.selectedTheme.background.hue1.color}}</div>
+                    <div flex>.md-background-bg .md-hue-1</div>
+                </div>
+                <div flex="25" class="md-background-fg md-hue-1" layout-padding>.md-background-fg .md-hue-1</div>
+            </div>
+            <div class="color" layout="row" layout-align="center center">
+                <div flex class="md-background-bg md-hue-2" layout="row" layout-padding>
+                    <div flex>Background Color - Hue 2</div>
+                    <div flex>{{$root.selectedTheme.background.hue2.color}}</div>
+                    <div flex>.md-background-bg .md-hue-2</div>
+                </div>
+                <div flex="25" class="md-background-fg md-hue-2" layout-padding>.md-background-fg .md-hue-2</div>
+            </div>
+            <div class="color" layout="row" layout-align="center center">
+                <div flex class="md-background-bg md-hue-3" layout="row" layout-padding>
+                    <div flex>Background Color - Hue 3</div>
+                    <div flex>{{$root.selectedTheme.background.hue3.color}}</div>
+                    <div flex>.md-background-bg .md-hue-3</div>
+                </div>
+                <div flex="25" class="md-background-fg md-hue-3" layout-padding>.md-background-fg .md-hue-3</div>
+            </div>
+        </div>
     </div>
 </div>
