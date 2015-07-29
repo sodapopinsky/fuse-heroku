@@ -5,7 +5,7 @@
         .controller('ThemeChangerController', ThemeChangerController);
 
     /** @ngInject */
-    function ThemeChangerController($rootScope, $route, fuseThemes, fuseTheming, themeService) {
+    function ThemeChangerController($rootScope, $route, fuseThemes, fuseTheming) {
         var vm = this;
         vm.isOpen = false;
         vm.setTheme = setTheme;

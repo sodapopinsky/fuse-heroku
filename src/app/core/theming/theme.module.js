@@ -68,7 +68,7 @@
     }
 
     /** @ngInject */
-    function runBlock($rootScope, fuseTheming, fuseThemes, themeService, $mdColorPalette, themeGenerator)
+    function runBlock($rootScope, fuseTheming, fuseThemes, $mdColorPalette, themeGenerator)
     {
 
         // Generate custom rules
