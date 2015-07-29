@@ -1,25 +1,28 @@
-(function () {
+(function ()
+{
     'use strict';
 
     angular.module('fuse')
-        .controller('dashboardController', dashboardController);
+        .controller('DashboardController', DashboardController);
 
     /** @ngInject */
-    function dashboardController($rootScope) {
+    function DashboardController($rootScope)
+    {
         var vm = this;
         vm.date = new Date();
         vm.dailyMiniChart = {
             dimensions: {
                 'count': {
-                    axis: 'y',
-                    type: 'bar',
+                    axis : 'y',
+                    type : 'bar',
                     color: 'rgba(255,255,255,.3)'
                     //label: true
                 }
             },
-            data: [{
-                'count': 694
-            },
+            data      : [
+                {
+                    'count': 694
+                },
 
                 {
                     'count': 712
@@ -56,32 +59,32 @@
                 },
 
             ],
-            chart: {
-                size: {
+            chart     : {
+                size   : {
                     height: 100
                 },
                 padding: {
-                    top: 0,
-                    right: 0,
-                    left: 8,
+                    top   : 0,
+                    right : 0,
+                    left  : 8,
                     bottom: 0
                 },
-                point: {
+                point  : {
                     r: 3
                 },
-                axis: {
+                axis   : {
                     x: {
                         show: false
                     },
                     y: {
-                        min: 680,
+                        min : 680,
                         show: false
                     }
                 },
                 tooltip: {
                     show: false
                 },
-                grid: {
+                grid   : {
                     x: {
                         show: false
                     },
@@ -89,11 +92,11 @@
                         show: false
                     }
                 },
-                zoom: {
+                zoom   : {
                     enabled: false
                 },
-                legend: {
-                    show: false,
+                legend : {
+                    show    : false,
                     position: 'bottom'
                 }
             }
@@ -101,45 +104,47 @@
         vm.nasdaqMiniChart = {
             dimensions: {
                 'value': {
-                    axis: 'y',
-                    type: 'line',
+                    axis : 'y',
+                    type : 'line',
                     color: '#ccc'
                     //label: true
                 },
-                day: {
+                day    : {
                     axis: 'x'
                 }
             },
-            data: [{
-                'value': 510,
-                'day': 'Mon'
-            }, {
-                'value': 535,
-                'day': 'Tue'
-            }, {
-                'value': 560,
-                'day': 'Wed'
-            }, {
-                'value': 525,
-                'day': 'Thu'
-            }, {
-                'value': 547,
-                'day': 'Fri'
-            }, {
-                'value': 570,
-                'day': 'Sat'
-            }, {
-                'value': 531.69,
-                'day': 'Sun'
-            }],
-            chart: {
-                size: {
+            data      : [
+                {
+                    'value': 510,
+                    'day'  : 'Mon'
+                }, {
+                    'value': 535,
+                    'day'  : 'Tue'
+                }, {
+                    'value': 560,
+                    'day'  : 'Wed'
+                }, {
+                    'value': 525,
+                    'day'  : 'Thu'
+                }, {
+                    'value': 547,
+                    'day'  : 'Fri'
+                }, {
+                    'value': 570,
+                    'day'  : 'Sat'
+                }, {
+                    'value': 531.69,
+                    'day'  : 'Sun'
+                }
+            ],
+            chart     : {
+                size   : {
                     height: 200,
                 },
-                axis: {
+                axis   : {
                     y: {}
                 },
-                grid: {
+                grid   : {
                     x: {
                         show: false
                     },
@@ -147,20 +152,20 @@
                         show: false
                     }
                 },
-                zoom: {
+                zoom   : {
                     enabled: false
                 },
-                legend: {
-                    show: false,
+                legend : {
+                    show    : false,
                     position: 'bottom'
                 },
-                point: {
+                point  : {
                     r: 3
                 },
                 padding: {
-                    top: 0,
-                    right: 0,
-                    left: 0,
+                    top   : 0,
+                    right : 0,
+                    left  : 0,
                     bottom: 0
                 }
             }
@@ -168,15 +173,16 @@
         vm.stockMiniChart = {
             dimensions: {
                 'count': {
-                    axis: 'y',
-                    type: 'line',
+                    axis : 'y',
+                    type : 'line',
                     color: 'rgba(255,255,255,.3)'
                     //label: true
                 }
             },
-            data: [{
-                'count': 5320
-            },
+            data      : [
+                {
+                    'count': 5320
+                },
 
                 {
                     'count': 5500
@@ -187,20 +193,20 @@
                 },
 
             ],
-            chart: {
-                size: {
+            chart     : {
+                size   : {
                     height: 90
                 },
                 padding: {
-                    top: 32,
-                    right: 8,
-                    left: 0,
+                    top   : 32,
+                    right : 8,
+                    left  : 0,
                     bottom: 0
                 },
-                point: {
+                point  : {
                     r: 3
                 },
-                axis: {
+                axis   : {
                     x: {
                         show: false
                     },
@@ -211,7 +217,7 @@
                 tooltip: {
                     show: false
                 },
-                grid: {
+                grid   : {
                     x: {
                         show: false
                     },
@@ -219,11 +225,11 @@
                         show: false
                     }
                 },
-                zoom: {
+                zoom   : {
                     enabled: false
                 },
-                legend: {
-                    show: false,
+                legend : {
+                    show    : false,
                     position: 'bottom'
                 }
             }
@@ -235,65 +241,66 @@
          */
         vm.lineChart = {
             dimensions: {
-                'Last Week': {
-                    axis: 'y',
-                    type: 'line',
+                'Last Week'    : {
+                    axis : 'y',
+                    type : 'line',
                     color: $rootScope.selectedTheme.accent.color,
                     label: true
                 },
                 'A Week Before': {
-                    axis: 'y',
-                    type: 'line',
+                    axis : 'y',
+                    type : 'line',
                     color: $rootScope.selectedTheme.primary.color
                     //label: true
 
                 },
-                day: {
+                day            : {
                     axis: 'x'
 
                 }
             },
-            data: [{
-                'Last Week': 440,
-                'A Week Before': 514,
-                'day': 'Monday'
-            }, {
-                'Last Week': 470,
-                'A Week Before': 483,
-                'day': 'Tuesday'
-            }, {
-                'Last Week': 480,
-                'A Week Before': 490,
-                'day': 'Wednesday'
-            }, {
-                'Last Week': 510,
-                'A Week Before': 455,
-                'day': 'Thursday'
-            }, {
-                'Last Week': 503,
-                'A Week Before': 420,
-                'day': 'Friday'
-            }, {
-                'Last Week': 525,
-                'A Week Before': 435,
-                'day': 'Saturday'
-            }, {
-                'Last Week': 525,
-                'A Week Before': 435,
-                'day': 'Sunday'
-            },
+            data      : [
+                {
+                    'Last Week'    : 440,
+                    'A Week Before': 514,
+                    'day'          : 'Monday'
+                }, {
+                    'Last Week'    : 470,
+                    'A Week Before': 483,
+                    'day'          : 'Tuesday'
+                }, {
+                    'Last Week'    : 480,
+                    'A Week Before': 490,
+                    'day'          : 'Wednesday'
+                }, {
+                    'Last Week'    : 510,
+                    'A Week Before': 455,
+                    'day'          : 'Thursday'
+                }, {
+                    'Last Week'    : 503,
+                    'A Week Before': 420,
+                    'day'          : 'Friday'
+                }, {
+                    'Last Week'    : 525,
+                    'A Week Before': 435,
+                    'day'          : 'Saturday'
+                }, {
+                    'Last Week'    : 525,
+                    'A Week Before': 435,
+                    'day'          : 'Sunday'
+                },
 
             ],
-            chart: {
-                size: {
+            chart     : {
+                size   : {
                     height: 300
                 },
-                axis: {
+                axis   : {
                     y: {
                         min: 400
                     }
                 },
-                grid: {
+                grid   : {
                     x: {
                         show: false
                     },
@@ -301,20 +308,20 @@
                         show: true
                     }
                 },
-                zoom: {
+                zoom   : {
                     enabled: true
                 },
-                legend: {
-                    show: false,
+                legend : {
+                    show    : false,
                     position: 'bottom'
                 },
-                point: {
+                point  : {
                     r: 0
                 },
                 padding: {
-                    top: 8,
-                    right: 8,
-                    left: 32,
+                    top   : 8,
+                    right : 8,
+                    left  : 32,
                     bottom: 16
                 }
             }
@@ -327,33 +334,35 @@
          */
         vm.pieChart = {
             dimensions: {
-                'Direct': {
-                    type: 'pie',
+                'Direct'        : {
+                    type : 'pie',
                     color: $rootScope.selectedTheme.accent.hue3.color
                 },
                 'Search Engines': {
-                    type: 'pie',
+                    type : 'pie',
                     color: $rootScope.selectedTheme.accent.hue2.color
                 },
-                'Social': {
-                    type: 'pie',
+                'Social'        : {
+                    type : 'pie',
                     color: $rootScope.selectedTheme.accent.color
                 },
-                'others': {
-                    type: 'pie',
+                'others'        : {
+                    type : 'pie',
                     color: $rootScope.selectedTheme.accent.hue1.color
                 }
             },
-            data: [{
-                'Direct': 42
-            }, {
-                'Search Engines': 24
-            }, {
-                'Social': 22
-            }, {
-                'others': 12
-            },],
-            chart: {
+            data      : [
+                {
+                    'Direct': 42
+                }, {
+                    'Search Engines': 24
+                }, {
+                    'Social': 22
+                }, {
+                    'others': 12
+                },
+            ],
+            chart     : {
                 size: {
                     height: 400
                 }

@@ -1,11 +1,13 @@
-(function () {
+(function ()
+{
     'use strict';
 
     angular.module('fuse')
         .controller('ChipsController', ChipsController);
 
     /** @ngInject */
-    function ChipsController() {
+    function ChipsController()
+    {
         var vm = this;
         vm.tags = [];
     }

@@ -1,13 +1,16 @@
-(function () {
+(function ()
+{
     'use strict';
 
     angular.module('app.invoice')
-        .controller('invoiceController', invoiceController);
+        .controller('InvoiceController', InvoiceController);
 
     /** @ngInject */
-    function invoiceController(api) {
+    function InvoiceController(api)
+    {
         var vm = this;
-        api.invoice.get({}, function (response) {
+        api.invoice.get({}, function (response)
+        {
             vm.invoice = response.data;
         });
     }

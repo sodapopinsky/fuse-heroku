@@ -1,11 +1,13 @@
-(function () {
+(function ()
+{
     'use strict';
 
     angular.module('fuse')
         .controller('AutocompleteController', AutocompleteController);
 
     /** @ngInject */
-    function AutocompleteController($timeout, $log) {
+    function AutocompleteController($timeout, $log)
+    {
         var vm = this;
 
         // list of `state` value/display objects
@@ -20,23 +22,27 @@
          * Search for states...
          * remote dataservice call.
          */
-        function querySearch(query) {
+        function querySearch(query)
+        {
             var results = query ? vm.states.filter(createFilterFor(query)) : vm.states;
             return results;
         }
 
-        function searchTextChange(text) {
+        function searchTextChange(text)
+        {
             $log.info('Text changed to ' + text);
         }
 
-        function selectedItemChange(item) {
+        function selectedItemChange(item)
+        {
             $log.info('Item changed to ' + JSON.stringify(item));
         }
 
         /**
          * Build `states` list of key/value pairs
          */
-        function loadAll() {
+        function loadAll()
+        {
             var allStates = 'Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware,\
               Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana,\
               Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana,\
@@ -44,9 +50,10 @@
               North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina,\
               South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia,\
               Wisconsin, Wyoming';
-            return allStates.split(/, +/g).map(function (state) {
+            return allStates.split(/, +/g).map(function (state)
+            {
                 return {
-                    value: state.toLowerCase(),
+                    value  : state.toLowerCase(),
                     display: state
                 };
             });
@@ -55,9 +62,11 @@
         /**
          * Create filter function for a query string
          */
-        function createFilterFor(query) {
+        function createFilterFor(query)
+        {
             var lowercaseQuery = angular.lowercase(query);
-            return function filterFn(state) {
+            return function filterFn(state)
+            {
                 return (state.value.indexOf(lowercaseQuery) === 0);
             };
         }

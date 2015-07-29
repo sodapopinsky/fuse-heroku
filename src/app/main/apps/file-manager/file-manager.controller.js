@@ -1,11 +1,13 @@
-(function () {
+(function ()
+{
     'use strict';
 
     angular.module('app.fileManager')
-        .controller('fileManagerController', fileManagerController);
+        .controller('FileManagerController', FileManagerController);
 
     /** @ngInject */
-    function fileManagerController(api, $mdSidenav) {
+    function FileManagerController(api, $mdSidenav)
+    {
         var vm = this;
         vm.sideNavToggle = sideNavToggle;
         vm.detailsToggle = detailsToggle;
@@ -16,43 +18,55 @@
         vm.selectedAccount = 'creapond';
         vm.showDetails = true;
         vm.accounts = {
-            'creapond': 'sercanyemen@creapond.com',
+            'creapond'    : 'sercanyemen@creapond.com',
             'withinpixels': 'sercanyemen@withinpixels.com'
         };
 
-        api.fileManager.documents.get({}, function (response) {
+        api.fileManager.documents.get({}, function (response)
+        {
             vm.documents = response.data;
             vm.selected = vm.documents[0];
         });
 
-        function select(file) {
+        function select(file)
+        {
             vm.selected = file;
-            if (vm.showDetails) {
+            if ( vm.showDetails )
+            {
                 $mdSidenav('fileManager-details-sidenav').open();
-            } else {
+            }
+            else
+            {
                 $mdSidenav('fileManager-details-sidenav').close();
             }
         }
 
-        function sideNavToggle() {
+        function sideNavToggle()
+        {
             $mdSidenav('fileManager-main-sidenav').toggle();
         }
 
-        function detailsToggle() {
+        function detailsToggle()
+        {
             vm.showDetails = !vm.showDetails;
 
-            if (vm.showDetails) {
+            if ( vm.showDetails )
+            {
                 $mdSidenav('fileManager-details-sidenav').open();
-            } else {
+            }
+            else
+            {
                 $mdSidenav('fileManager-details-sidenav').close();
             }
         }
 
-        function toggleView() {
+        function toggleView()
+        {
             vm.selectedView = vm.selectedView === 'list' ? 'grid' : 'list';
         }
 
-        function viewTemplate() {
+        function viewTemplate()
+        {
             var template = vm.selectedView === 'list' ? 'app/main/apps/file-manager/views/list-view.html' : 'app/main/apps/file-manager/views/grid-view.html';
             return template;
         }

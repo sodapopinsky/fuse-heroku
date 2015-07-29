@@ -1,11 +1,13 @@
-(function () {
+(function ()
+{
     'use strict';
 
     angular.module('fuse')
-        .controller('colorsController', colorsController);
+        .controller('ColorsController', ColorsController);
 
     /** @ngInject */
-    function colorsController($rootScope) {
+    function ColorsController($rootScope)
+    {
         var vm = this;
         vm.theme = $rootScope.selectedTheme;
     }
