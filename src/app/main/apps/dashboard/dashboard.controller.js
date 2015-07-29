@@ -238,13 +238,13 @@
                 'Last Week': {
                     axis: 'y',
                     type: 'line',
-                    color: $rootScope.selectedTheme.accent.value,
+                    color: $rootScope.selectedTheme.accent.color,
                     label: true
                 },
                 'A Week Before': {
                     axis: 'y',
                     type: 'line',
-                    color: $rootScope.selectedTheme.primary.value
+                    color: $rootScope.selectedTheme.primary.color
                     //label: true
 
                 },
@@ -329,19 +329,19 @@
             dimensions: {
                 'Direct': {
                     type: 'pie',
-                    color: $rootScope.selectedTheme.accent.hues.hue3.value
+                    color: $rootScope.selectedTheme.accent.hue3.color
                 },
                 'Search Engines': {
                     type: 'pie',
-                    color: $rootScope.selectedTheme.accent.hues.hue2.value
+                    color: $rootScope.selectedTheme.accent.hue2.color
                 },
                 'Social': {
                     type: 'pie',
-                    color: $rootScope.selectedTheme.accent.value
+                    color: $rootScope.selectedTheme.accent.color
                 },
                 'others': {
                     type: 'pie',
-                    color: $rootScope.selectedTheme.accent.hues.hue1.value
+                    color: $rootScope.selectedTheme.accent.hue1.color
                 }
             },
             data: [{
