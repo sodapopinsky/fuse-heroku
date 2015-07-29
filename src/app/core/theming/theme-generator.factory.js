@@ -5,7 +5,7 @@
         .factory('themeGenerator', themeGenerator);
 
     /** @ngInject */
-    function themeGenerator(fuseTheming) {
+    function themeGenerator(fuseTheming, $rootScope) {
         var service = {
             generate: generate
         };
@@ -52,6 +52,20 @@
                 });
             });
 
+            $rootScope.themes = angular.copy(themeList);
+
+            // Reformat themes for Object Usage
+            angular.forEach($rootScope.themes, function (theme) {
+                angular.forEach(theme, function (colorType, colorTypeName) {
+                    theme[colorTypeName] = colorType.levels;
+                    theme[colorTypeName].color = colorType.levels.default.color;
+                    theme[colorTypeName].contrast = colorType.levels.default.contrast;
+                    delete theme[colorTypeName].default;
+                });
+            });
+            $rootScope.selectedTheme = $rootScope.themes.default;
+
+            console.log($rootScope.selectedTheme);
 
             // Iterate through color list and create less variables
             var lessVars = [];
@@ -103,7 +117,7 @@
          * Render less files
          */
         function render(lessVars) {
-            var lessColorStyles = '[md-theme=@{themeName}] {\n\n  /**\n   primary \n   **/\n\n  .md-primary-bg {\n    background: @primaryDefaultColor;\n    color: @primaryDefaultContrast;\n    &.md-hue-1 {\n      background: @primaryHue1Color;\n      color: @primaryHue1Contrast;\n    }\n    &.md-hue-2 {\n      background: @primaryHue2Color;\n      color: @primaryHue2Contrast;\n    }\n    &.md-hue-3 {\n      background: @primaryHue3Color;\n      color: @primaryHue3Contrast;\n    }\n  }\n\n  .md-primary-fg {\n    color: @primaryDefaultContrast;\n    &.md-hue-1 {\n      color: @primaryHue1Contrast;\n    }\n    &.md-hue-2 {\n      color: @primaryHue2Contrast;\n    }\n    &.md-hue-3 {\n      color: @primaryHue3Contrast;\n    }\n  }\n\n  /**\n   accent \n   **/\n\n  .md-accent-bg {\n    background: @accentDefaultColor;\n    color: @accentDefaultContrast;\n    &.md-hue-1 {\n      background: @accentHue1Color;\n      color: @accentHue1Contrast;\n    }\n    &.md-hue-2 {\n      background: @accentHue2Color;\n      color: @accentHue2Contrast;\n    }\n    &.md-hue-3 {\n      background: @accentHue3Color;\n      color: @accentHue3Contrast;\n    }\n  }\n\n  .md-accent-fg {\n    color: @accentDefaultContrast;\n    &.md-hue-1 {\n      color: @accentHue1Contrast;\n    }\n    &.md-hue-2 {\n      color: @accentHue2Contrast;\n    }\n    &.md-hue-3 {\n      color: @accentHue3Contrast;\n    }\n  }\n\n  /**\n   warn \n   **/\n\n  .md-warn-bg {\n    background: @warnDefaultColor;\n    color: @warnDefaultContrast;\n    &.md-hue-1 {\n      background: @warnHue1Color;\n      color: @warnHue1Contrast;\n    }\n    &.md-hue-2 {\n      background: @warnHue2Color;\n      color: @warnHue2Contrast;\n    }\n    &.md-hue-3 {\n      background: @warnHue3Color;\n      color: @warnHue3Contrast;\n    }\n  }\n\n  .md-warn-fg {\n    color: @warnDefaultContrast;\n    &.md-hue-1 {\n      color: @warnHue1Contrast;\n    }\n    &.md-hue-2 {\n      color: @warnHue2Contrast;\n    }\n    &.md-hue-3 {\n      color: @warnHue3Contrast;\n    }\n  }\n\n  /**\n   background \n   **/\n\n  .md-background-bg {\n    background: @backgroundDefaultColor;\n    color: @backgroundDefaultContrast;\n    &.md-hue-1 {\n      background: @backgroundHue1Color;\n      color: @backgroundHue1Contrast;\n    }\n    &.md-hue-2 {\n      background: @backgroundHue2Color;\n      color: @backgroundHue2Contrast;\n    }\n    &.md-hue-3 {\n      background: @backgroundHue3Color;\n      color: @backgroundHue3Contrast;\n    }\n  }\n\n  .md-background-fg {\n    color: @backgroundDefaultContrast;\n    &.md-hue-1 {\n      color: @backgroundHue1Contrast;\n    }\n    &.md-hue-2 {\n      color: @backgroundHue2Contrast;\n    }\n    &.md-hue-3 {\n      color: @backgroundHue3Contrast;\n    }\n  }\n}\n';
+            var lessColorStyles = '[md-theme=@{themeName}] {\n\n  /**\n   primary \n   **/\n\n  .md-primary-bg {\n    background-color: @primaryDefaultColor;\n    color: @primaryDefaultContrast;\n    &.md-hue-1 {\n      background-color: @primaryHue1Color;\n      color: @primaryHue1Contrast;\n    }\n    &.md-hue-2 {\n      background-color: @primaryHue2Color;\n      color: @primaryHue2Contrast;\n    }\n    &.md-hue-3 {\n      background-color: @primaryHue3Color;\n      color: @primaryHue3Contrast;\n    }\n  }\n\n  .md-primary-fg {\n    color: @primaryDefaultColor;\n    &.md-hue-1 {\n      color: @primaryHue1Color;\n    }\n    &.md-hue-2 {\n      color: @primaryHue2Color;\n    }\n    &.md-hue-3 {\n      color: @primaryHue3Color;\n    }\n  }\n\n  /**\n   accent \n   **/\n\n  .md-accent-bg {\n    background-color: @accentDefaultColor;\n    color: @accentDefaultContrast;\n    &.md-hue-1 {\n      background-color: @accentHue1Color;\n      color: @accentHue1Contrast;\n    }\n    &.md-hue-2 {\n      background-color: @accentHue2Color;\n      color: @accentHue2Contrast;\n    }\n    &.md-hue-3 {\n      background-color: @accentHue3Color;\n      color: @accentHue3Contrast;\n    }\n  }\n\n  .md-accent-fg {\n    color: @accentDefaultColor;\n    &.md-hue-1 {\n      color: @accentHue1Color;\n    }\n    &.md-hue-2 {\n      color: @accentHue2Color;\n    }\n    &.md-hue-3 {\n      color: @accentHue3Color;\n    }\n  }\n\n  /**\n   warn \n   **/\n\n  .md-warn-bg {\n    background-color: @warnDefaultColor;\n    color: @warnDefaultContrast;\n    &.md-hue-1 {\n      background-color: @warnHue1Color;\n      color: @warnHue1Contrast;\n    }\n    &.md-hue-2 {\n      background-color: @warnHue2Color;\n      color: @warnHue2Contrast;\n    }\n    &.md-hue-3 {\n      background-color: @warnHue3Color;\n      color: @warnHue3Contrast;\n    }\n  }\n\n  .md-warn-fg {\n    color: @warnDefaultColor;\n    &.md-hue-1 {\n      color: @warnHue1Color;\n    }\n    &.md-hue-2 {\n      color: @warnHue2Color;\n    }\n    &.md-hue-3 {\n      color: @warnHue3Color;\n    }\n  }\n\n  /**\n   background \n   **/\n\n  .md-background-bg {\n    background-color: @backgroundDefaultColor;\n    color: @backgroundDefaultContrast;\n    &.md-hue-1 {\n      background-color: @backgroundHue1Color;\n      color: @backgroundHue1Contrast;\n    }\n    &.md-hue-2 {\n      background-color: @backgroundHue2Color;\n      color: @backgroundHue2Contrast;\n    }\n    &.md-hue-3 {\n      background-color: @backgroundHue3Color;\n      color: @backgroundHue3Contrast;\n    }\n  }\n\n  .md-background-fg {\n    color: @backgroundDefaultColor;\n    &.md-hue-1 {\n      color: @backgroundHue1Color;\n    }\n    &.md-hue-2 {\n      color: @backgroundHue2Color;\n    }\n    &.md-hue-3 {\n      color: @backgroundHue3Color;\n    }\n  }\n}\n';
             var lessInput = lessVars + lessColorStyles;
 
             console.log(lessInput);
