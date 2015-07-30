@@ -6,10 +6,12 @@
         .controller('ColorsController', ColorsController);
 
     /** @ngInject */
-    function ColorsController($rootScope)
+    function ColorsController(fuseTheming)
     {
         var vm = this;
-        vm.theme = $rootScope.selectedTheme;
+
+        // Data
+        vm.themes = fuseTheming.themes
     }
 })();
 

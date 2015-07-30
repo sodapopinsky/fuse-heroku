@@ -30,8 +30,8 @@
 
         // Store certain generated PALETTES and THEMES objects from
         // $mdThemingProvider so we can inject them into other areas
-        fuseThemingProvider.setPalettes($mdThemingProvider._PALETTES);
-        fuseThemingProvider.setThemes($mdThemingProvider._THEMES);
+        fuseThemingProvider.setRegisteredPalettes($mdThemingProvider._PALETTES);
+        fuseThemingProvider.setRegisteredThemes($mdThemingProvider._THEMES);
     }
 
     /** @ngInject */

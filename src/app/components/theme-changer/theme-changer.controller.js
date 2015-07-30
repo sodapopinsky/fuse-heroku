@@ -6,45 +6,31 @@
         .controller('ThemeChangerController', ThemeChangerController);
 
     /** @ngInject */
-    function ThemeChangerController($rootScope, $route, fuseThemes, fuseTheming)
+    function ThemeChangerController($route, fuseTheming)
     {
         var vm = this;
+
+        // Data
         vm.isOpen = false;
-        vm.setTheme = setTheme;
-        vm.themes = fuseThemes;
-        vm.getThemeColor = getThemeColor;
+        vm.themes = fuseTheming.themes;
+
+        // Methods
+        vm.setActiveTheme = setActiveTheme;
+
+        //////////
 
         /**
-         * Set theme
+         * Set active theme
          *
          * @param themeName
          */
-        function setTheme(themeName)
+        function setActiveTheme(themeName)
         {
-            $rootScope.appTheme = themeName;
-            $rootScope.selectedTheme = $rootScope.themes[themeName];
+            // Set active theme
+            fuseTheming.setActiveTheme(themeName);
+
+            // Reload route to make sure changes are going to apply
             $route.reload();
-        }
-
-        /**
-         * Get certain color from theme
-         *
-         * @param paletteColor
-         * @param level
-         * @returns {string}
-         */
-        function getThemeColor(paletteColor, level)
-        {
-            var color = angular.copy(fuseTheming.palettes[paletteColor.name][level].value);
-
-            if ( color.length === 4 )
-            {
-                return 'rgba(' + color.join() + ')';
-            }
-            else
-            {
-                return 'rgb(' + color.join() + ')';
-            }
         }
     }
 })();

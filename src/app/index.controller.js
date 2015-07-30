@@ -6,8 +6,13 @@
         .controller('AppController', AppController);
 
     /** @ngInject */
-    function AppController($rootScope)
+    function AppController(fuseTheming)
     {
-        $rootScope.appTheme = 'default';
+        var vm = this;
+
+        // Data
+        vm.themes = fuseTheming.themes;
+
+        //////////
     }
 })();

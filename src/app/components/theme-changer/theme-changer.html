@@ -6,10 +6,10 @@
     </md-fab-trigger>
     <md-fab-actions>
         <div layout="column">
-            <md-button ng-repeat="(themeName, themePalette) in vm.themes" aria-label="{{themeName}}"
+            <md-button ng-repeat="(themeName, theme) in vm.themes.list" aria-label="{{themeName}}"
                        class="md-fab md-raised md-mini md-primary"
-                       ng-style="{'background-color': vm.getThemeColor(themePalette.primary, 500)}"
-                       ng-click="vm.setTheme(themeName)">
+                       ng-style="{'background-color': theme.primary.color}"
+                       ng-click="vm.setActiveTheme(themeName)">
                 <md-icon md-font-icon="icon-palette" class="s24"></md-icon>
             </md-button>
         </div>
