@@ -1,219 +1,28 @@
 <div id="timeline" layout="column" layout-align="start center" layout-fill>
 
     <!-- Start Timeline Item -->
-    <div ms-timeline class="timeline-row" layout="row" layout-align="center start" ng-class="{'hidden': !onScreen}">
-        <div ms-timeline-item class="timeline-item" flex="50">
-            <md-card>
-                <img ng-src="assets/images/photos/early_sunrise-2560x1440.jpg" class="md-card-image" alt="Washed Out">
-                <md-card-content>
-                    <h2 class="md-title">Paracosm</h2>
-                    <p>
-                        The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
-                    </p>
-                </md-card-content>
-            </md-card>
+    <div ms-timeline class="timeline-row" layout="row" layout-align="center start" ng-class="{'hidden': !onScreen}" ng-repeat="timelineItem in vm.timeline">
+        <div class="timeline-item" flex="50">
+            <!-- Start ms-card -->
+            <ms-card template="timelineItem.template" ng-model="timelineItem"></ms-card>
+            <!-- End ms-card -->
         </div>
 
-        <div ms-timeline-point class="timeline-point">
+        <div class="timeline-point">
             <md-button class="md-fab" aria-label="timeline item icon">
                 <md-icon md-font-icon="icon-mail"></md-icon>
             </md-button>
         </div>
 
-        <div ms-timeline-detail class="timeline-detail" flex="50">
+        <div class="timeline-detail" flex="50">
             <div class="time">
-                July 22, 2015, 12:33AM
+                {{timelineItem.time}}
             </div>
             <div class="event">
-                You posted a blog
+                {{timelineItem.event}}
             </div>
         </div>
     </div>
     <!-- End Timeline Item -->
 
-    <!-- Start Timeline Item -->
-    <div ms-timeline class="timeline-row" layout="row" layout-align="center start" ng-class="{'hidden': !onScreen}">
-        <div ms-timeline-item class="timeline-item" flex="50">
-            <md-card>
-                <img ng-src="assets/images/photos/early_sunrise-2560x1440.jpg" class="md-card-image" alt="Washed Out">
-                <md-card-content>
-                    <h2 class="md-title">Paracosm</h2>
-                    <p>
-                        The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
-                    </p>
-                </md-card-content>
-            </md-card>
-        </div>
-
-        <div ms-timeline-point class="timeline-point">
-            <md-button class="md-fab" aria-label="timeline item icon">
-                <md-icon md-font-icon="icon-mail"></md-icon>
-            </md-button>
-        </div>
-
-        <div ms-timeline-detail class="timeline-detail" flex="50">
-            <div class="time">
-                July 22, 2015, 12:33AM
-            </div>
-            <div class="event">
-                You posted a blog
-            </div>
-        </div>
-    </div>
-    <!-- End Timeline Item -->
-
-    <!-- Start Timeline Item -->
-    <div ms-timeline class="timeline-row" layout="row" layout-align="center start" ng-class="{'hidden': !onScreen}">
-        <div ms-timeline-item class="timeline-item" flex="50">
-            <md-card>
-                <img ng-src="assets/images/photos/early_sunrise-2560x1440.jpg" class="md-card-image" alt="Washed Out">
-                <md-card-content>
-                    <h2 class="md-title">Paracosm</h2>
-                    <p>
-                        The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
-                    </p>
-                </md-card-content>
-            </md-card>
-        </div>
-
-        <div ms-timeline-point class="timeline-point">
-            <md-button class="md-fab" aria-label="timeline item icon">
-                <md-icon md-font-icon="icon-mail"></md-icon>
-            </md-button>
-        </div>
-
-        <div ms-timeline-detail class="timeline-detail" flex="50">
-            <div class="time">
-                July 22, 2015, 12:33AM
-            </div>
-            <div class="event">
-                You posted a blog
-            </div>
-        </div>
-    </div>
-    <!-- End Timeline Item -->
-
-    <!-- Start Timeline Item -->
-    <div ms-timeline class="timeline-row" layout="row" layout-align="center start" ng-class="{'hidden': !onScreen}">
-        <div ms-timeline-item class="timeline-item" flex="50">
-            <md-card>
-                <img ng-src="assets/images/photos/early_sunrise-2560x1440.jpg" class="md-card-image" alt="Washed Out">
-                <md-card-content>
-                    <h2 class="md-title">Paracosm</h2>
-                    <p>
-                        The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
-                    </p>
-                </md-card-content>
-            </md-card>
-        </div>
-
-        <div ms-timeline-point class="timeline-point">
-            <md-button class="md-fab" aria-label="timeline item icon">
-                <md-icon md-font-icon="icon-mail"></md-icon>
-            </md-button>
-        </div>
-
-        <div ms-timeline-detail class="timeline-detail" flex="50">
-            <div class="time">
-                July 22, 2015, 12:33AM
-            </div>
-            <div class="event">
-                You posted a blog
-            </div>
-        </div>
-    </div>
-    <!-- End Timeline Item -->
-
-    <!-- Start Timeline Item -->
-    <div ms-timeline class="timeline-row" layout="row" layout-align="center start" ng-class="{'hidden': !onScreen}">
-        <div ms-timeline-item class="timeline-item" flex="50">
-            <md-card>
-                <img ng-src="assets/images/photos/early_sunrise-2560x1440.jpg" class="md-card-image" alt="Washed Out">
-                <md-card-content>
-                    <h2 class="md-title">Paracosm</h2>
-                    <p>
-                        The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
-                    </p>
-                </md-card-content>
-            </md-card>
-        </div>
-
-        <div ms-timeline-point class="timeline-point">
-            <md-button class="md-fab" aria-label="timeline item icon">
-                <md-icon md-font-icon="icon-mail"></md-icon>
-            </md-button>
-        </div>
-
-        <div ms-timeline-detail class="timeline-detail" flex="50">
-            <div class="time">
-                July 22, 2015, 12:33AM
-            </div>
-            <div class="event">
-                You posted a blog
-            </div>
-        </div>
-    </div>
-    <!-- End Timeline Item -->
-
-    <!-- Start Timeline Item -->
-    <div ms-timeline class="timeline-row" layout="row" layout-align="center start" ng-class="{'hidden': !onScreen}">
-        <div ms-timeline-item class="timeline-item" flex="50">
-            <md-card>
-                <img ng-src="assets/images/photos/early_sunrise-2560x1440.jpg" class="md-card-image" alt="Washed Out">
-                <md-card-content>
-                    <h2 class="md-title">Paracosm</h2>
-                    <p>
-                        The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
-                    </p>
-                </md-card-content>
-            </md-card>
-        </div>
-
-        <div ms-timeline-point class="timeline-point">
-            <md-button class="md-fab" aria-label="timeline item icon">
-                <md-icon md-font-icon="icon-mail"></md-icon>
-            </md-button>
-        </div>
-
-        <div ms-timeline-detail class="timeline-detail" flex="50">
-            <div class="time">
-                July 22, 2015, 12:33AM
-            </div>
-            <div class="event">
-                You posted a blog
-            </div>
-        </div>
-    </div>
-    <!-- End Timeline Item -->
-
-    <!-- Start Timeline Item -->
-    <div ms-timeline class="timeline-row" layout="row" layout-align="center start" ng-class="{'hidden': !onScreen}">
-        <div ms-timeline-item class="timeline-item" flex="50">
-            <md-card>
-                <img ng-src="assets/images/photos/early_sunrise-2560x1440.jpg" class="md-card-image" alt="Washed Out">
-                <md-card-content>
-                    <h2 class="md-title">Paracosm</h2>
-                    <p>
-                        The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
-                    </p>
-                </md-card-content>
-            </md-card>
-        </div>
-
-        <div ms-timeline-point class="timeline-point">
-            <md-button class="md-fab" aria-label="timeline item icon">
-                <md-icon md-font-icon="icon-mail"></md-icon>
-            </md-button>
-        </div>
-
-        <div ms-timeline-detail class="timeline-detail" flex="50">
-            <div class="time">
-                July 22, 2015, 12:33AM
-            </div>
-            <div class="event">
-                You posted a blog
-            </div>
-        </div>
-    </div>
-    <!-- End Timeline Item -->
 </div>

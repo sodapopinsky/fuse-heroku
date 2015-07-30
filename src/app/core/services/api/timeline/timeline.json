@@ -1,6 +1,7 @@
 {
-    "data": {
-        "card1": {
+    "data": [
+        {
+            "template": "template-1",
             "media": {
                 "image": {
                     "src": "assets/images/photos/early_sunrise-2560x1440.jpg",
@@ -9,9 +10,12 @@
             },
             "title": "Nature",
             "subtitle": "Mountain view from lake side",
-            "text": "Look deep into nature, then you will understand everything better."
+            "text": "Look deep into nature, then you will understand everything better.",
+            "time" : "July 22, 2015, 12:33AM",
+            "event" : "You posted a blog"
         },
-        "card2": {
+        {
+            "template": "template-2",
             "avatar": {
                 "src": "assets/images/avatars/alice.png",
                 "alt": "Alice Freeman"
@@ -24,7 +28,77 @@
                     "alt": "Early Sunrise"
                 }
             },
-            "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better."
+            "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.",
+            "time" : "July 22, 2015, 12:33AM",
+            "event" : "You posted a blog"
+        },{
+            "template": "template-2",
+            "avatar": {
+                "src": "assets/images/avatars/alice.png",
+                "alt": "Alice Freeman"
+            },
+            "title": "Alice Freeman posted on Nature",
+            "subtitle": "32 minutes ago",
+            "media": {
+                "image": {
+                    "src": "assets/images/photos/early_sunrise-2560x1440.jpg",
+                    "alt": "Early Sunrise"
+                }
+            },
+            "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.",
+            "time" : "July 22, 2015, 12:33AM",
+            "event" : "You posted a blog"
+        },{
+            "template": "template-2",
+            "avatar": {
+                "src": "assets/images/avatars/alice.png",
+                "alt": "Alice Freeman"
+            },
+            "title": "Alice Freeman posted on Nature",
+            "subtitle": "32 minutes ago",
+            "media": {
+                "image": {
+                    "src": "assets/images/photos/early_sunrise-2560x1440.jpg",
+                    "alt": "Early Sunrise"
+                }
+            },
+            "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.",
+            "time" : "July 22, 2015, 12:33AM",
+            "event" : "You posted a blog"
+        },{
+            "template": "template-2",
+            "avatar": {
+                "src": "assets/images/avatars/alice.png",
+                "alt": "Alice Freeman"
+            },
+            "title": "Alice Freeman posted on Nature",
+            "subtitle": "32 minutes ago",
+            "media": {
+                "image": {
+                    "src": "assets/images/photos/early_sunrise-2560x1440.jpg",
+                    "alt": "Early Sunrise"
+                }
+            },
+            "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.",
+            "time" : "July 22, 2015, 12:33AM",
+            "event" : "You posted a blog"
+        },{
+            "template": "template-2",
+            "avatar": {
+                "src": "assets/images/avatars/alice.png",
+                "alt": "Alice Freeman"
+            },
+            "title": "Alice Freeman posted on Nature",
+            "subtitle": "32 minutes ago",
+            "media": {
+                "image": {
+                    "src": "assets/images/photos/early_sunrise-2560x1440.jpg",
+                    "alt": "Early Sunrise"
+                }
+            },
+            "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.",
+            "time" : "July 22, 2015, 12:33AM",
+            "event" : "You posted a blog"
         }
-    }
+    ]
 }
