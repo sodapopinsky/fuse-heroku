@@ -1,15 +1,185 @@
-<div id="theme-colors">
+<div id="colors">
     <header class="page-header md-accent-bg" layout="column">
         <div class="breadcrumb" layout="row" layout-align="start center">
             <md-icon md-font-icon="icon-home" class="s18"></md-icon>
             <md-icon md-font-icon="icon-keyboard_arrow_right" class="s18 separator"></md-icon>
             <span class="parent">USER INTERFACE</span>
         </div>
-        <div class="title">Theme Colors</div>
+        <div class="title">Colors</div>
     </header>
-    <div layout-padding id="" class="content">
-        <div class="md-headline">Theme Palette</div>
-        <!-- Primary Color -->
+
+    <div layout-padding class="content">
+
+
+
+        <!-- Primary Color - Start -->
+        <div class="md-title">Primary Color</div>
+        <div class="color-type">
+            <!-- Default - Start -->
+            <div class="md-whiteframe-z1 color md-primary-bg" layout="row" layout-wrap layout-align="center center">
+                <div flex="100" layout="row" layout-padding>
+                    <div flex>Default</div>
+                    <div flex>{{$root.selectedTheme.primary.color}}</div>
+                    <div flex>.md-primary-bg</div>
+                </div>
+
+                <div flex="100" layout="row" layout-padding>
+                    <div flex>Primary Text</div>
+                    <div flex>{{$root.selectedTheme.primary.contrast1}}</div>
+                    <div flex>.md-primary-bg</div>
+                </div>
+
+                <div flex="100" class="secondary-text" layout="row" layout-padding>
+                    <div flex>Secondary Text / Icon</div>
+                    <div flex>{{$root.selectedTheme.primary.contrast2}}</div>
+                    <div flex>.md-primary-bg .secondary-text</div>
+                </div>
+
+                <div flex="100" class="hint-text" layout="row" layout-padding>
+                    <div flex>Hint Text / Disabled Text</div>
+                    <div flex>{{$root.selectedTheme.primary.contrast3}}</div>
+                    <div flex>.md-primary-bg .hint-text</div>
+                </div>
+
+                <div flex="100" class="divider" layout="row" layout-padding>
+                    <div flex>Divider</div>
+                    <div flex>{{$root.selectedTheme.primary.contrast4}}</div>
+                    <div flex>.md-primary-bg .divider</div>
+                </div>
+
+                <div flex="100" class="md-background-bg md-primary-fg" layout="row" layout-padding>
+                    <div flex>As foreground color</div>
+                    <div flex>{{$root.selectedTheme.primary.color}}</div>
+                    <div flex>.md-primary-fg</div>
+                </div>
+            </div>
+            <!-- Default - End -->
+
+            <!-- Hue-1 - Start -->
+            <div class="md-whiteframe-z1 color md-primary-bg md-hue-1" layout="row" layout-wrap layout-align="center center">
+                <div flex="100" layout="row" layout-padding>
+                    <div flex>Hue 1</div>
+                    <div flex>{{$root.selectedTheme.primary.hue1.color}}</div>
+                    <div flex>.md-primary-bg .md-hue-1</div>
+                </div>
+
+                <div flex="100" layout="row" layout-padding>
+                    <div flex>Primary Text</div>
+                    <div flex>{{$root.selectedTheme.primary.hue1.contrast1}}</div>
+                    <div flex>.md-primary-bg</div>
+                </div>
+
+                <div flex="100" class="secondary-text" layout="row" layout-padding>
+                    <div flex>Secondary Text / Icon</div>
+                    <div flex>{{$root.selectedTheme.primary.hue1.contrast2}}</div>
+                    <div flex>.md-primary-bg .md-hue-1 .secondary-text</div>
+                </div>
+
+                <div flex="100" class="hint-text" layout="row" layout-padding>
+                    <div flex>Hint Text / Disabled Text</div>
+                    <div flex>{{$root.selectedTheme.primary.hue1.contrast3}}</div>
+                    <div flex>.md-primary-bg .md-hue-1 .hint-text</div>
+                </div>
+
+                <div flex="100" class="divider" layout="row" layout-padding>
+                    <div flex>Divider</div>
+                    <div flex>{{$root.selectedTheme.primary.hue1.contrast4}}</div>
+                    <div flex>.md-primary-bg .md-hue-1 .divider</div>
+                </div>
+
+                <div flex="100" class="md-background-bg md-primary-fg" layout="row" layout-padding>
+                    <div flex>As foreground color</div>
+                    <div flex>{{$root.selectedTheme.primary.hue1.color}}</div>
+                    <div flex>.md-primary-fg</div>
+                </div>
+            </div>
+            <!-- Hue-1 - End -->
+
+            <!-- Hue-2 - Start -->
+            <div class="md-whiteframe-z1 color md-primary-bg md-hue-2" layout="row" layout-wrap layout-align="center center">
+                <div flex="100" layout="row" layout-padding>
+                    <div flex>Hue 2</div>
+                    <div flex>{{$root.selectedTheme.primary.hue2.color}}</div>
+                    <div flex>.md-primary-bg .md-hue-2</div>
+                </div>
+
+                <div flex="100" layout="row" layout-padding>
+                    <div flex>Primary Text</div>
+                    <div flex>{{$root.selectedTheme.primary.hue2.contrast1}}</div>
+                    <div flex>.md-primary-bg</div>
+                </div>
+
+                <div flex="100" class="secondary-text" layout="row" layout-padding>
+                    <div flex>Secondary Text / Icon</div>
+                    <div flex>{{$root.selectedTheme.primary.hue2.contrast2}}</div>
+                    <div flex>.md-primary-bg .md-hue-2 .secondary-text</div>
+                </div>
+
+                <div flex="100" class="hint-text" layout="row" layout-padding>
+                    <div flex>Hint Text / Disabled Text</div>
+                    <div flex>{{$root.selectedTheme.primary.hue2.contrast3}}</div>
+                    <div flex>.md-primary-bg .md-hue-2 .hint-text</div>
+                </div>
+
+                <div flex="100" class="divider" layout="row" layout-padding>
+                    <div flex>Divider</div>
+                    <div flex>{{$root.selectedTheme.primary.hue2.contrast4}}</div>
+                    <div flex>.md-primary-bg .md-hue-2 .divider</div>
+                </div>
+
+                <div flex="100" class="md-background-bg md-primary-fg" layout="row" layout-padding>
+                    <div flex>As foreground color</div>
+                    <div flex>{{$root.selectedTheme.primary.hue2.color}}</div>
+                    <div flex>.md-primary-fg</div>
+                </div>
+            </div>
+            <!-- Hue-2 - End -->
+            
+            <!-- Hue-3 - Start -->
+            <div class="md-whiteframe-z1 color md-primary-bg md-hue-3" layout="row" layout-wrap layout-align="center center">
+                <div flex="100" layout="row" layout-padding>
+                    <div flex>Hue 2</div>
+                    <div flex>{{$root.selectedTheme.primary.hue3.color}}</div>
+                    <div flex>.md-primary-bg .md-hue-3</div>
+                </div>
+
+                <div flex="100" layout="row" layout-padding>
+                    <div flex>Primary Text</div>
+                    <div flex>{{$root.selectedTheme.primary.hue3.contrast1}}</div>
+                    <div flex>.md-primary-bg</div>
+                </div>
+
+                <div flex="100" class="secondary-text" layout="row" layout-padding>
+                    <div flex>Secondary Text / Icon</div>
+                    <div flex>{{$root.selectedTheme.primary.hue3.contrast2}}</div>
+                    <div flex>.md-primary-bg .md-hue-3 .secondary-text</div>
+                </div>
+
+                <div flex="100" class="hint-text" layout="row" layout-padding>
+                    <div flex>Hint Text / Disabled Text</div>
+                    <div flex>{{$root.selectedTheme.primary.hue3.contrast3}}</div>
+                    <div flex>.md-primary-bg .md-hue-3 .hint-text</div>
+                </div>
+
+                <div flex="100" class="divider" layout="row" layout-padding>
+                    <div flex>Divider</div>
+                    <div flex>{{$root.selectedTheme.primary.hue3.contrast4}}</div>
+                    <div flex>.md-primary-bg .md-hue-3 .divider</div>
+                </div>
+
+                <div flex="100" class="md-background-bg md-primary-fg" layout="row" layout-padding>
+                    <div flex>As foreground color</div>
+                    <div flex>{{$root.selectedTheme.primary.hue3.color}}</div>
+                    <div flex>.md-primary-fg</div>
+                </div>
+            </div>
+            <!-- Hue-3 - End -->
+        </div>
+        <!-- Primary Color - End -->
+
+
+
+        <!-- Primary Color - Start
         <div class="md-whiteframe-z1 md-background-bg color-type">
             <div class="color" layout="row" layout-align="center center">
                 <div flex class="md-primary-bg" layout="row" layout-padding>
@@ -19,6 +189,7 @@
                 </div>
                 <div flex="25" class="md-primary-fg" layout-padding>.md-primary-fg</div>
             </div>
+
             <div class="color" layout="row" layout-align="center center">
                 <div flex class="md-primary-bg md-hue-1" layout="row" layout-padding>
                     <div flex>Primary Color - Hue 1</div>
@@ -27,6 +198,7 @@
                 </div>
                 <div flex="25" class="md-primary-fg md-hue-1" layout-padding>.md-primary-fg .md-hue-1</div>
             </div>
+
             <div class="color" layout="row" layout-align="center center">
                 <div flex class="md-primary-bg md-hue-2" layout="row" layout-padding>
                     <div flex>Primary Color - Hue 2</div>
@@ -35,6 +207,7 @@
                 </div>
                 <div flex="25" class="md-primary-fg md-hue-2" layout-padding>.md-primary-fg .md-hue-2</div>
             </div>
+
             <div class="color" layout="row" layout-align="center center">
                 <div flex class="md-primary-bg md-hue-3" layout="row" layout-padding>
                     <div flex>Primary Color - Hue 3</div>
@@ -44,7 +217,10 @@
                 <div flex="25" class="md-primary-fg md-hue-3" layout-padding>.md-primary-fg .md-hue-3</div>
             </div>
         </div>
-        <!-- Accent Color -->
+         Primary Color - End -->
+
+        <!-- Accent Color - Start -->
+        <div class="md-title">Accent Color</div>
         <div class="md-whiteframe-z1 md-background-bg color-type">
             <div class="color" layout="row" layout-align="center center">
                 <div flex class="md-accent-bg" layout="row" layout-padding>
@@ -54,6 +230,7 @@
                 </div>
                 <div flex="25" class="md-accent-fg" layout-padding>.md-accent-fg</div>
             </div>
+
             <div class="color" layout="row" layout-align="center center">
                 <div flex class="md-accent-bg md-hue-1" layout="row" layout-padding>
                     <div flex>Accent Color - Hue 1</div>
@@ -62,6 +239,7 @@
                 </div>
                 <div flex="25" class="md-accent-fg md-hue-1" layout-padding>.md-accent-fg .md-hue-1</div>
             </div>
+
             <div class="color" layout="row" layout-align="center center">
                 <div flex class="md-accent-bg md-hue-2" layout="row" layout-padding>
                     <div flex>Accent Color - Hue 2</div>
@@ -70,6 +248,7 @@
                 </div>
                 <div flex="25" class="md-accent-fg md-hue-2" layout-padding>.md-accent-fg .md-hue-2</div>
             </div>
+
             <div class="color" layout="row" layout-align="center center">
                 <div flex class="md-accent-bg md-hue-3" layout="row" layout-padding>
                     <div flex>Accent Color - Hue 3</div>
@@ -79,7 +258,10 @@
                 <div flex="25" class="md-accent-fg md-hue-3" layout-padding>.md-accent-fg .md-hue-3</div>
             </div>
         </div>
-        <!-- Warn Color -->
+        <!-- Accent Color - End -->
+
+        <!-- Warn Color - Start -->
+        <div class="md-title">Warn Color</div>
         <div class="md-whiteframe-z1 md-background-bg color-type">
             <div class="color" layout="row" layout-align="center center">
                 <div flex class="md-warn-bg" layout="row" layout-padding>
@@ -89,6 +271,7 @@
                 </div>
                 <div flex="25" class="md-warn-fg" layout-padding>.md-warn-fg</div>
             </div>
+
             <div class="color" layout="row" layout-align="center center">
                 <div flex class="md-warn-bg md-hue-1" layout="row" layout-padding>
                     <div flex>Warn Color - Hue 1</div>
@@ -97,6 +280,7 @@
                 </div>
                 <div flex="25" class="md-warn-fg md-hue-1" layout-padding>.md-warn-fg .md-hue-1</div>
             </div>
+
             <div class="color" layout="row" layout-align="center center">
                 <div flex class="md-warn-bg md-hue-2" layout="row" layout-padding>
                     <div flex>Warn Color - Hue 2</div>
@@ -105,6 +289,7 @@
                 </div>
                 <div flex="25" class="md-warn-fg md-hue-2" layout-padding>.md-warn-fg .md-hue-2</div>
             </div>
+
             <div class="color" layout="row" layout-align="center center">
                 <div flex class="md-warn-bg md-hue-3" layout="row" layout-padding>
                     <div flex>Warn Color - Hue 3</div>
@@ -114,7 +299,10 @@
                 <div flex="25" class="md-warn-fg md-hue-3" layout-padding>.md-warn-fg .md-hue-3</div>
             </div>
         </div>
-        <!-- Background Color -->
+        <!-- Warn Color - End -->
+
+        <!-- Background Color - Start -->
+        <div class="md-title">Background Color</div>
         <div class="md-whiteframe-z1 md-background-bg color-type">
             <div class="color" layout="row" layout-align="center center">
                 <div flex class="md-background-bg" layout="row" layout-padding>
@@ -124,6 +312,7 @@
                 </div>
                 <div flex="25" class="md-background-fg" layout-padding>.md-background-fg</div>
             </div>
+
             <div class="color" layout="row" layout-align="center center">
                 <div flex class="md-background-bg md-hue-1" layout="row" layout-padding>
                     <div flex>Background Color - Hue 1</div>
@@ -132,6 +321,7 @@
                 </div>
                 <div flex="25" class="md-background-fg md-hue-1" layout-padding>.md-background-fg .md-hue-1</div>
             </div>
+
             <div class="color" layout="row" layout-align="center center">
                 <div flex class="md-background-bg md-hue-2" layout="row" layout-padding>
                     <div flex>Background Color - Hue 2</div>
@@ -140,6 +330,7 @@
                 </div>
                 <div flex="25" class="md-background-fg md-hue-2" layout-padding>.md-background-fg .md-hue-2</div>
             </div>
+
             <div class="color" layout="row" layout-align="center center">
                 <div flex class="md-background-bg md-hue-3" layout="row" layout-padding>
                     <div flex>Background Color - Hue 3</div>
@@ -149,5 +340,6 @@
                 <div flex="25" class="md-background-fg md-hue-3" layout-padding>.md-background-fg .md-hue-3</div>
             </div>
         </div>
+        <!-- Background Color - End -->
     </div>
 </div>
