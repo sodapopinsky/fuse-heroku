@@ -187,7 +187,7 @@
 <glyph unicode="&#xe0b1;" glyph-name="screen_rotation" d="M320 22.667l58 56 162-162-28-2q-200 0-347 136t-163 334h64q12-120 80-216t174-146zM632 34.667l272 272-512 512-272-272zM436 864.667l514-514q20-18 20-44t-20-46l-272-272q-18-20-44-20t-46 20l-514 514q-20 18-20 44t20 46l272 272q18 20 44 20t46-20zM704 830.667l-58-56-162 162 28 2q200 0 347-136t163-334h-64q-12 120-80 216t-174 146z" />
 <glyph unicode="&#xe0b2;" glyph-name="sd_storage" d="M768 596.667v172h-86v-172h86zM640 596.667v172h-86v-172h86zM512 596.667v172h-86v-172h86zM768 852.667q34 0 60-25t26-59v-684q0-34-26-59t-60-25h-512q-34 0-60 25t-26 59l2 512 254 256h342z" />
 <glyph unicode="&#xe0b3;" glyph-name="settings_system_daydream" d="M896 126.667v600h-768v-600h768zM896 810.667q34 0 60-26t26-60v-596q0-34-26-60t-60-26h-768q-34 0-60 26t-26 60v596q0 34 26 60t60 26h768zM384 256.667q-52 0-90 38t-38 90q0 50 33 86t81 40h8q42 86 134 86 56 0 98-37t50-91h2q44 0 75-31t31-75-31-75-75-31h-278z" />
-<glyph unicode="&#xe0b4;" glyph-name="signal_cellularGrid Size: 24_4_bar" d="M86 0.667l852 852v-852h-852z" />
+<glyph unicode="&#xe0b4;" glyph-name="signal_cellular_4_bar" d="M86 0.667l852 852v-852h-852z" />
 <glyph unicode="&#xe0b5;" glyph-name="signal_cellular_connected_no_internet_4_bar" d="M86 0.667l852 852v-256h-170v-596h-682zM854 0.667v84h84v-84h-84zM854 170.667v342h84v-342h-84z" />
 <glyph unicode="&#xe0b6;" glyph-name="signal_cellular_no_sim" d="M156 772.667l746-744-56-56-80 82q-24-12-40-12h-428q-34 0-59 26t-25 60v478l-112 112zM810 724.667v-498l-484 484 100 100h300q34 0 59-26t25-60z" />
 <glyph unicode="&#xe0b7;" glyph-name="signal_cellular_null" d="M938 852.667v-852h-852zM854 646.667l-562-562h562v562z" />

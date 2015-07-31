@@ -119,7 +119,7 @@
 			},
 			"attrs": [],
 			"properties": {
-				"name": "facebook, facebook-f",
+				"name": "facebook",
 				"order": 846,
 				"id": 146,
 				"prevSize": 28,
@@ -7314,7 +7314,7 @@
 				"id": 180,
 				"prevSize": 24,
 				"code": 57524,
-				"name": "signal_cellularGrid Size: 24_4_bar",
+				"name": "signal_cellular_4_bar",
 				"ligatures": "signal_cellular_4_bar"
 			},
 			"setIdx": 2,
