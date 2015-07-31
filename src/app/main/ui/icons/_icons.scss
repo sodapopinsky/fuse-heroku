@@ -35,6 +35,7 @@ $iconSizes: (16, 18, 20, 24, 32);
         }
 
         #icons-list {
+            padding: 16px;
 
             @each $size in $iconSizes {
                 &.s#{$size} .item .md-button md-icon {
