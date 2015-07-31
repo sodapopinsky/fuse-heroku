@@ -19,7 +19,7 @@
          */
         this.setRegisteredPalettes = function (_registeredPalettes)
         {
-            registeredPalettes = _registeredPalettes
+            registeredPalettes = _registeredPalettes;
         };
 
         /**

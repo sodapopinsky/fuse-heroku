@@ -1,30 +1,40 @@
-(function () {
+(function ()
+{
     'use strict';
 
     angular.module('app.calendar')
-        .controller('eventDialogController', eventDialogController);
+        .controller('EventDialogController', EventDialogController);
 
     /** @ngInject */
-    function eventDialogController(api, $mdDialog, title, start, event) {
+    function EventDialogController($mdDialog, title, start, event)
+    {
         var vm = this;
-        vm.closeDialog = closeDialog;
+
+        // Data
         vm.dialogTitle = title;
         vm.notifications = ['15 minutes before', '30 minutes before', 'one hour before'];
 
+        // Methods
+        vm.closeDialog = closeDialog;
+
+        //////////
+
         // Edit Event
-        if (event) {
+        if ( event )
+        {
             vm.event = event;
         }
         // Add New Event
-        else {
+        else
+        {
             vm.event = {
-                start: start ? start : '',
+                start        : start ? start : '',
                 notifications: ['']
             };
         }
-
-
-        function closeDialog() {
+        
+        function closeDialog()
+        {
             $mdDialog.hide();
         }
     }

@@ -2,13 +2,15 @@
 {
     'use strict';
 
-    angular.module('fuse')
+    angular.module('app.components.elements.inputs.fields')
         .controller('FieldsController', FieldsController);
 
     /** @ngInject */
     function FieldsController()
     {
         var vm = this;
+
+        // Data
         vm.user = {
             title    : 'Developer',
             email    : 'ipsum@lorem.com',
@@ -16,6 +18,10 @@
             biography: 'Loves kittens, snowboarding, and can type at 130 WPM.',
             rate     : 20
         };
+
+        // Methods
+
+        //////////
     }
 })();
 

@@ -1,17 +1,27 @@
-(function () {
+(function ()
+{
     'use strict';
 
     angular.module('app.mail')
-        .controller('composeDialogController', composeDialogController);
+        .controller('ComposeDialogController', ComposeDialogController);
 
     /** @ngInject */
-    function composeDialogController(api, $mdDialog) {
+    function ComposeDialogController($mdDialog)
+    {
         var vm = this;
-        vm.closeDialog = closeDialog;
+
+        // Data
         vm.form = {
-            from: 'sercanyemen@creapond.com'
+            from: 'johndoe@creapond.com'
         };
-        function closeDialog() {
+
+        // Methods
+        vm.closeDialog = closeDialog;
+
+        //////////
+
+        function closeDialog()
+        {
             $mdDialog.hide();
         }
     }

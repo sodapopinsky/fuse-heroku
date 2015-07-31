@@ -2,7 +2,7 @@
 {
     'use strict';
 
-    angular.module('app.mail')
+    angular.module('app.pages.profile')
         .controller('ProfileController', ProfileController);
 
     /** @ngInject */
@@ -10,6 +10,7 @@
     {
         var vm = this;
 
+        // Data
         api.profile.timeline.posts.get({}, function (response)
         {
             vm.posts = response.data;
@@ -29,5 +30,9 @@
         {
             vm.photosVideos = response.data;
         });
+
+        // Methods
+
+        //////////
     }
 })();

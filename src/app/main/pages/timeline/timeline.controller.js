@@ -2,7 +2,7 @@
 {
     'use strict';
 
-    angular.module('app.mail')
+    angular.module('app.pages.timeline')
         .controller('TimelineController', TimelineController);
 
     /** @ngInject */
@@ -10,9 +10,14 @@
     {
         var vm = this;
 
+        // Data
         api.timeline.get({}, function (response)
         {
             vm.timeline = response.data;
         });
+
+        // Methods
+
+        //////////
     }
 })();

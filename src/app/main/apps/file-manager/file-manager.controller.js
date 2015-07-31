@@ -2,25 +2,22 @@
 {
     'use strict';
 
-    angular.module('app.fileManager')
+    angular.module('app.file-manager')
         .controller('FileManagerController', FileManagerController);
 
     /** @ngInject */
     function FileManagerController(api, $mdSidenav)
     {
         var vm = this;
-        vm.sideNavToggle = sideNavToggle;
-        vm.detailsToggle = detailsToggle;
-        vm.toggleView = toggleView;
-        vm.select = select;
-        vm.selectedView = 'list';
-        vm.viewTemplate = viewTemplate;
-        vm.selectedAccount = 'creapond';
-        vm.showDetails = true;
+
+        // Data
         vm.accounts = {
-            'creapond'    : 'sercanyemen@creapond.com',
-            'withinpixels': 'sercanyemen@withinpixels.com'
+            'creapond'    : 'johndoe@creapond.com',
+            'withinpixels': 'johndoe@withinpixels.com'
         };
+        vm.selectedAccount = 'creapond';
+        vm.selectedView = 'list';
+        vm.showDetails = true;
 
         api.fileManager.documents.get({}, function (response)
         {
@@ -28,9 +25,19 @@
             vm.selected = vm.documents[0];
         });
 
+        // Methods
+        vm.detailsToggle = detailsToggle;
+        vm.select = select;
+        vm.sideNavToggle = sideNavToggle;
+        vm.toggleView = toggleView;
+        vm.viewTemplate = viewTemplate;
+
+        //////////
+
         function select(file)
         {
             vm.selected = file;
+
             if ( vm.showDetails )
             {
                 $mdSidenav('fileManager-details-sidenav').open();
@@ -67,9 +74,7 @@
 
         function viewTemplate()
         {
-            var template = vm.selectedView === 'list' ? 'app/main/apps/file-manager/views/list-view.html' : 'app/main/apps/file-manager/views/grid-view.html';
-            return template;
+            return vm.selectedView === 'list' ? 'app/main/apps/file-manager/views/list-view.html' : 'app/main/apps/file-manager/views/grid-view.html';
         }
-
     }
 })();

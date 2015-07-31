@@ -7,7 +7,7 @@
         <div class="sub-title">It’s not quite ready yet, but we are working hard
             and it will be ready in approximately:
         </div>
-        <timer start-time="1357020000000" layout="row">
+        <timer start-time="vm.startTime" layout="row">
             <div layout="column" layout-align="center center">
                 <span class="value">{{days}}</span>
                 <span class="type">days</span>
@@ -30,7 +30,7 @@
                 If you would like to be notified when the app is ready, you can subscribe to our e-mail list.
             </span>
             <md-input-container flex md-no-float>
-                <input placeholder="Email address" ng-model="vm.form.email" type="password">
+                <input placeholder="Email address" type="password">
             </md-input-container>
             <md-button class="md-raised md-accent">
                 SUBSCRIBE

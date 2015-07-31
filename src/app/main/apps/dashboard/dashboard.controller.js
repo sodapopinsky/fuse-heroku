@@ -2,21 +2,23 @@
 {
     'use strict';
 
-    angular.module('fuse')
+    angular.module('app.dashboard')
         .controller('DashboardController', DashboardController);
 
     /** @ngInject */
-    function DashboardController($rootScope)
+    function DashboardController(fuseTheming)
     {
         var vm = this;
+
+        // Data
         vm.date = new Date();
+        vm.themes = fuseTheming.themes;
         vm.dailyMiniChart = {
             dimensions: {
                 'count': {
                     axis : 'y',
                     type : 'bar',
                     color: 'rgba(255,255,255,.3)'
-                    //label: true
                 }
             },
             data      : [
@@ -101,13 +103,13 @@
                 }
             }
         };
+
         vm.nasdaqMiniChart = {
             dimensions: {
                 'value': {
                     axis : 'y',
                     type : 'line',
                     color: '#ccc'
-                    //label: true
                 },
                 day    : {
                     axis: 'x'
@@ -170,6 +172,7 @@
                 }
             }
         };
+
         vm.stockMiniChart = {
             dimensions: {
                 'count': {
@@ -244,15 +247,13 @@
                 'Last Week'    : {
                     axis : 'y',
                     type : 'line',
-                    color: $rootScope.selectedTheme.accent.color,
+                    color: vm.themes.active.theme.accent.color,
                     label: true
                 },
                 'A Week Before': {
                     axis : 'y',
                     type : 'line',
-                    color: $rootScope.selectedTheme.primary.color
-                    //label: true
-
+                    color: vm.themes.active.theme.primary.color,
                 },
                 day            : {
                     axis: 'x'
@@ -336,19 +337,19 @@
             dimensions: {
                 'Direct'        : {
                     type : 'pie',
-                    color: $rootScope.selectedTheme.accent.hue3.color
+                    color: vm.themes.active.theme.accent.hue3.color
                 },
                 'Search Engines': {
                     type : 'pie',
-                    color: $rootScope.selectedTheme.accent.hue2.color
+                    color: vm.themes.active.theme.accent.hue2.color
                 },
                 'Social'        : {
                     type : 'pie',
-                    color: $rootScope.selectedTheme.accent.color
+                    color: vm.themes.active.theme.accent.color
                 },
                 'others'        : {
                     type : 'pie',
-                    color: $rootScope.selectedTheme.accent.hue1.color
+                    color: vm.themes.active.theme.accent.hue1.color
                 }
             },
             data      : [
@@ -369,7 +370,7 @@
             }
         };
 
-
+        //////////
     }
 
 })();

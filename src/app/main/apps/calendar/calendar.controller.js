@@ -6,54 +6,34 @@
         .controller('CalendarController', CalendarController);
 
     /** @ngInject */
-    function CalendarController(api, $mdDialog, $document)
+    function CalendarController($mdDialog, $document)
     {
         var vm = this;
-        vm.eventDialog = eventDialog;
-        vm.calendarUiConfig = {
-            calendar: {
-                editable    : true,
-                eventLimit  : true,
-                header      : '',
-                viewRender  : function (view)
-                {
-                    vm.calendarView = view;
-                    vm.calendar = vm.calendarView.calendar;
-                    vm.currentMonthShort = vm.calendar.getDate().format('MMM');
-                },
-                columnFormat: {
-                    month: 'ddd',
-                    week : 'ddd M',
-                    day  : 'ddd M'
-                },
-                //dayClick: $scope.alertEventOnClick,
-                //eventDrop: $scope.alertOnDrop,
-                //eventResize: $scope.alertOnResize
-                eventClick  : eventDetailDialog,
-                selectable  : true,
-                selectHelper: true,
-                select      : dateSelection
-            }
-        };
+
+        // Data
         var date = new Date();
         var d = date.getDate();
         var m = date.getMonth();
         var y = date.getFullYear();
         vm.events = [
             [
-                {title   : 'All Day Event',
+                {
+                    title: 'All Day Event',
                     start: new Date(y, m, 1)
                 },
-                {title   : 'Long Event',
+                {
+                    title: 'Long Event',
                     start: new Date(y, m, d - 5),
                     end  : new Date(y, m, d - 2)
                 },
-                {id       : 999,
+                {
+                    id    : 999,
                     title : 'Repeating Event',
                     start : new Date(y, m, d - 3, 16, 0),
                     allDay: false
                 },
-                {id       : 999,
+                {
+                    id    : 999,
                     title : 'Repeating Event',
                     start : new Date(y, m, d + 4, 16, 0),
                     allDay: false
@@ -110,37 +90,57 @@
                 }
             ]
         ];
-        vm.next = function ()
-        {
-            vm.calendarView.calendar.next();
-        };
-        vm.prev = function ()
-        {
-            vm.calendarView.calendar.prev();
+
+        vm.calendarUiConfig = {
+            calendar: {
+                editable    : true,
+                eventLimit  : true,
+                header      : '',
+                viewRender  : function (view)
+                {
+                    vm.calendarView = view;
+                    vm.calendar = vm.calendarView.calendar;
+                    vm.currentMonthShort = vm.calendar.getDate().format('MMM');
+                },
+                columnFormat: {
+                    month: 'ddd',
+                    week : 'ddd M',
+                    day  : 'ddd M'
+                },
+                eventClick  : eventDetailDialog,
+                selectable  : true,
+                selectHelper: true,
+                select      : dateSelection
+            }
         };
 
+        // Methods
+        vm.eventDialog = eventDialog;
+        vm.next = next;
+        vm.prev = prev;
+
+        //////////
+
+        function next()
+        {
+            vm.calendarView.calendar.next();
+        }
+
+        function prev()
+        {
+            vm.calendarView.calendar.prev();
+        }
 
         function dateSelection(start, end, jsEvent)
         {
             eventDialog('add', jsEvent, start);
-            /* var title = prompt('Event Title:');
-             var eventData;
-             if (title) {
-             eventData = {
-             title: title,
-             start: start,
-             end: end
-             };
-             $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
-             }
-             $('#calendar').fullCalendar('unselect');*/
         }
 
         function eventDialog(type, ev, start, event)
         {
             var title = (type === 'add') ? 'Add Event' : 'Edit Event';
             $mdDialog.show({
-                controller         : 'eventDialogController',
+                controller         : 'EventDialogController',
                 controllerAs       : 'vm',
                 templateUrl        : 'app/main/apps/calendar/event-dialog.html',
                 parent             : angular.element($document.body),
@@ -157,7 +157,7 @@
         function eventDetailDialog(event, jsEvent, view)
         {
             $mdDialog.show({
-                controller         : 'eventDetailDialogController',
+                controller         : 'EventDetailDialogController',
                 controllerAs       : 'vm',
                 templateUrl        : 'app/main/apps/calendar/event-detail-dialog.html',
                 parent             : angular.element($document.body),

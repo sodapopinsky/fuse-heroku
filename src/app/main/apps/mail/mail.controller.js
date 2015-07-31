@@ -9,20 +9,16 @@
     function MailController(api, $mdDialog, $document)
     {
         var vm = this;
-        vm.colors = ['blue', 'blue-grey', 'orange', 'pink', 'purple'];
-        vm.checked = [];
-        vm.composeDialog = composeDialog;
-        vm.starredToggle = starredToggle;
-        vm.checkToggle = checkToggle;
-        vm.checkExists = checkExists;
-        vm.checkAll = checkAll;
-        vm.selectMail = selectMail;
-        vm.selectedMail = {};
-        vm.selectedAccount = 'creapond';
+
+        // Data
         vm.accounts = {
-            'creapond'    : 'sercan@creapond.com',
-            'withinpixels': 'sercan@withinpixels.com'
+            'creapond'    : 'johndoe@creapond.com',
+            'withinpixels': 'johndoe@withinpixels.com'
         };
+        vm.checked = [];
+        vm.colors = ['blue', 'blue-grey', 'orange', 'pink', 'purple'];
+        vm.selectedAccount = 'creapond';
+        vm.selectedMail = {};
 
         api.mail.inbox.get({}, function (response)
         {
@@ -30,13 +26,25 @@
             vm.selectedMail = vm.inbox[0];
         });
 
+        // Methods
+        vm.checkAll = checkAll;
+        vm.checkExists = checkExists;
+        vm.checkToggle = checkToggle;
+        vm.composeDialog = composeDialog;
+        vm.selectMail = selectMail;
+        vm.starredToggle = starredToggle;
+
+        //////////
+
         function selectMail(mail)
         {
             vm.selectedMail = mail;
+
             angular.forEach(vm.inbox, function (mail)
             {
                 delete mail.selected;
             });
+
             mail.selected = true;
         }
 
@@ -52,7 +60,9 @@
             {
                 event.stopPropagation();
             }
+
             var idx = list.indexOf(item);
+
             if ( idx > -1 )
             {
                 list.splice(idx, 1);
@@ -89,7 +99,7 @@
         function composeDialog(ev)
         {
             $mdDialog.show({
-                controller         : 'composeDialogController',
+                controller         : 'ComposeDialogController',
                 controllerAs       : 'vm',
                 templateUrl        : 'app/main/apps/mail/compose-dialog.html',
                 parent             : angular.element($document.body),

@@ -82,7 +82,7 @@
             {
                 msNavService.updateToggleables();
             }
-        }
+        };
     }
 
     function msNavToggle(msNavService)
@@ -156,7 +156,7 @@
                             if ( $element.parents('.ms-nav-toggle.open').length )
                             {
                                 var exception = $element.parents('.ms-nav-toggle.open').scope();
-                                msNavService.closeAll(exception)
+                                msNavService.closeAll(exception);
                             }
                             else
                             {
@@ -177,9 +177,9 @@
                     // Expose the toggle functions so we can access them from outside
                     $scope.open = open;
                     $scope.close = close;
-                }
+                };
             }
-        }
+        };
     }
 
 })();

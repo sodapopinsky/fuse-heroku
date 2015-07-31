@@ -2,13 +2,19 @@
 {
     'use strict';
 
-    angular.module('fuse')
+    angular.module('app.navigation')
         .controller('NavigationController', NavigationController);
 
     /** @ngInject */
     function NavigationController()
     {
         var vm = this;
+
+        // Data
+
+        // Methods
+
+        //////////
     }
 
 })();

@@ -1,11 +1,13 @@
-(function () {
+(function ()
+{
     'use strict';
 
     angular.module('fuse')
         .factory('api', apiService);
 
     /** @ngInject */
-    function apiService($resource) {
+    function apiService($resource)
+    {
         var api = {};
         api.url = 'app/core/services/api/';
 
@@ -46,14 +48,14 @@
                 {
                     'get': {method: 'get'}
                 }),
-            tags: $resource(api.url + 'todo/tags.json', null,
+            tags : $resource(api.url + 'todo/tags.json', null,
                 {
                     'get': {method: 'get'}
                 })
         };
 
         api.profile = {
-            timeline: {
+            timeline    : {
                 posts: $resource(api.url + 'profile/timeline/posts.json', null,
                     {
                         'get': {method: 'get'}
@@ -64,7 +66,7 @@
                         'get': {method: 'get'}
                     })
             },
-            about: $resource(api.url + 'profile/about/about.json', null,
+            about       : $resource(api.url + 'profile/about/about.json', null,
                 {
                     'get': {method: 'get'}
                 }),

@@ -2,41 +2,23 @@
 {
     'use strict';
 
-    angular.module('fuse')
+    angular.module('app.components.elements.inputs.autocomplete')
         .controller('AutocompleteController', AutocompleteController);
 
     /** @ngInject */
-    function AutocompleteController($timeout, $log)
+    function AutocompleteController($log)
     {
         var vm = this;
 
-        // list of `state` value/display objects
+        // Data
         vm.states = loadAll();
+
+        // Methods
         vm.querySearch = querySearch;
         vm.selectedItemChange = selectedItemChange;
         vm.searchTextChange = searchTextChange;
-        // ******************************
-        // Internal methods
-        // ******************************
-        /**
-         * Search for states...
-         * remote dataservice call.
-         */
-        function querySearch(query)
-        {
-            var results = query ? vm.states.filter(createFilterFor(query)) : vm.states;
-            return results;
-        }
 
-        function searchTextChange(text)
-        {
-            $log.info('Text changed to ' + text);
-        }
-
-        function selectedItemChange(item)
-        {
-            $log.info('Item changed to ' + JSON.stringify(item));
-        }
+        //////////
 
         /**
          * Build `states` list of key/value pairs
@@ -57,6 +39,26 @@
                     display: state
                 };
             });
+        }
+
+        /**
+         * Search for states...
+         * remote dataservice call.
+         */
+        function querySearch(query)
+        {
+            var results = query ? vm.states.filter(createFilterFor(query)) : vm.states;
+            return results;
+        }
+
+        function searchTextChange(text)
+        {
+            $log.info('Text changed to ' + text);
+        }
+
+        function selectedItemChange(item)
+        {
+            $log.info('Item changed to ' + JSON.stringify(item));
         }
 
         /**

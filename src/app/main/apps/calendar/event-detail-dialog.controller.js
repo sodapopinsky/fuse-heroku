@@ -1,17 +1,26 @@
-(function () {
+(function ()
+{
     'use strict';
 
     angular.module('app.calendar')
-        .controller('eventDetailDialogController', eventDetailDialogController);
+        .controller('EventDetailDialogController', EventDetailDialogController);
 
     /** @ngInject */
-    function eventDetailDialogController(api, $mdDialog, event, eventDialog) {
+    function EventDetailDialogController($mdDialog, event, eventDialog)
+    {
         var vm = this;
-        vm.closeDialog = closeDialog;
+
+        // Data
         vm.event = event;
         vm.eventDialog = eventDialog;
 
-        function closeDialog() {
+        // Methods
+        vm.closeDialog = closeDialog;
+
+        //////////
+
+        function closeDialog()
+        {
             $mdDialog.hide();
         }
     }

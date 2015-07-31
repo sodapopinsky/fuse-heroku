@@ -2,44 +2,32 @@
 {
     'use strict';
 
-    angular.module('fuse')
+    angular.module('app.ui.icons')
         .controller('IconsController', IconsController);
 
     /** @ngInject */
     function IconsController(api, $mdDialog)
     {
         var vm = this;
+
+        // Data
         vm.iconSize = 24;
         vm.iconSizes = [16, 18, 20, 24, 32];
-        vm.iconDetail = iconDetail;
 
         api.icons.get({}, function (response)
         {
             vm.icons = response.icons;
         });
 
-        vm.tag = function (data)
-        {
-            if ( vm.tagFilter )
-            {
-                return vm.tagFilter.replace(/\s*,\s*/g, ',').split(',').every(function (tag)
-                {
-                    return data.icon.tags.some(function (objTag)
-                    {
-                        return objTag.indexOf(tag) !== -1;
-                    });
-                });
-            }
-            else
-            {
-                return true;
-            }
-        };
+        // Methods
+        vm.iconDetail = iconDetail;
 
-        var iconDetailTemplate = '<md-dialog>\n    <md-dialog-content layout="column" layout-align="center center" layout-padding>\n        <md-icon md-font-icon="{{iconClass}}" class="md-padding s48"></md-icon>\n        <md-input-container>\n            <label>Icon Class</label>\n            <input ng-model="iconClass">\n        </md-input-container>\n    </md-dialog-content>\n</md-dialog>';
+        //////////
 
         function iconDetail(ev, icon)
         {
+            var iconDetailTemplate = '<md-dialog class="icon-preview-dialog">\n    <md-dialog-content layout="column" layout-align="center center">\n        <md-icon md-font-icon="{{iconClass}}" class="s48"></md-icon>\n        <md-input-container>\n            <label>Icon Class</label>\n            <input ng-model="iconClass">\n        </md-input-container>\n    </md-dialog-content>\n</md-dialog>';
+
             $mdDialog.show({
                     template           : iconDetailTemplate,
                     clickOutsideToClose: true,

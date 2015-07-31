@@ -3,6 +3,6 @@
     'use strict';
 
     angular
-        .module('app.invoice', []);
+        .module('app.pages.invoice', []);
 
 })();

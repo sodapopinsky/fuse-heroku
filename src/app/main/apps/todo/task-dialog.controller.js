@@ -1,19 +1,29 @@
-(function () {
+(function ()
+{
     'use strict';
 
     angular.module('app.todo')
-        .controller('taskDialogController', taskDialogController);
+        .controller('TaskDialogController', TaskDialogController);
 
     /** @ngInject */
-    function taskDialogController(api, $mdDialog, task, title) {
+    function TaskDialogController($mdDialog, task, title)
+    {
         var vm = this;
+
+        // Data
         vm.title = title;
         vm.task = task;
-        vm.closeDialog = closeDialog;
         vm.form = {
             from: 'sercanyemen@creapond.com'
         };
-        function closeDialog() {
+
+        // Methods
+        vm.closeDialog = closeDialog;
+
+        //////////
+
+        function closeDialog()
+        {
             $mdDialog.hide();
         }
     }

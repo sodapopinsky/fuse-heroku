@@ -1,14 +1,26 @@
-(function () {
+(function ()
+{
     'use strict';
 
-    angular.module('fuse')
+    angular.module('app.components.elements.dialog')
         .controller('DialogController', DialogController);
 
     /** @ngInject */
-    function DialogController($mdDialog) {
+    function DialogController($mdDialog)
+    {
         var vm = this;
+
+        // Data
         vm.alert = '';
-        vm.showAlert = function (ev) {
+
+        // Methods
+        vm.showAdvanced = showAdvanced;
+        vm.showAlert = showAlert;
+        vm.showConfirm = showConfirm;
+
+        //////////
+        function showAlert(ev)
+        {
             // Appending dialog to document.body to cover sidenav in docs app
             // Modal dialogs should fully cover application
             // to prevent interaction outside of dialog
@@ -22,7 +34,9 @@
                     .targetEvent(ev)
             );
         };
-        vm.showConfirm = function (ev) {
+
+        function showConfirm(ev)
+        {
             // Appending dialog to document.body to cover sidenav in docs app
             var confirm = $mdDialog.confirm()
                 .parent(angular.element(document.body))
@@ -32,37 +46,46 @@
                 .ok('Please do it!')
                 .cancel('Sounds like a scam')
                 .targetEvent(ev);
-            $mdDialog.show(confirm).then(function () {
+            $mdDialog.show(confirm).then(function ()
+            {
                 vm.alert = 'You decided to get rid of your debt.';
-            }, function () {
+            }, function ()
+            {
                 vm.alert = 'You decided to keep your debt.';
             });
         };
-        vm.showAdvanced = function (ev) {
+
+        function showAdvanced(ev)
+        {
             $mdDialog.show({
-                controller: Dialog1Controller,
-                templateUrl: 'dialog1.tmpl.html',
-                parent: angular.element(document.body),
-                targetEvent: ev,
+                controller         : function ($scope, $mdDialog)
+                {
+                    $scope.hide = function ()
+                    {
+                        $mdDialog.hide();
+                    };
+                    $scope.cancel = function ()
+                    {
+                        $mdDialog.cancel();
+                    };
+                    $scope.answer = function (answer)
+                    {
+                        $mdDialog.hide(answer);
+                    };
+                },
+                templateUrl        : 'dialog1.tmpl.html',
+                parent             : angular.element(document.body),
+                targetEvent        : ev,
                 clickOutsideToClose: true
             })
-                .then(function (answer) {
+                .then(function (answer)
+                {
                     vm.alert = 'You said the information was "' + answer + '".';
-                }, function () {
+                }, function ()
+                {
                     vm.alert = 'You cancelled the dialog.';
                 });
         };
-        function Dialog1Controller($scope, $mdDialog) {
-            $scope.hide = function () {
-                $mdDialog.hide();
-            };
-            $scope.cancel = function () {
-                $mdDialog.cancel();
-            };
-            $scope.answer = function (answer) {
-                $mdDialog.hide(answer);
-            };
-        }
     }
 })();
 

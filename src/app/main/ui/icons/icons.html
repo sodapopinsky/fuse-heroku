@@ -1,28 +1,40 @@
 <div id="icons">
-    <div layout-margin layout="row" layout-align="space-between center">
-        <md-input-container>
-            <label>Search</label>
-            <input ng-model="vm.tagFilter">
-        </md-input-container>
-        <div layout="row" layout-align="center center">
-             <span>
-                 Icon Size:
-             </span>
-            <md-select placeholder="Sizes" ng-model="vm.iconSize">
-                <md-option ng-repeat="size in vm.iconSizes" value="{{size}}">{{size}}</md-option>
-            </md-select>
+    <header class="page-header md-accent-bg" layout="column">
+        <div class="breadcrumb" layout="row" layout-align="start center">
+            <md-icon md-font-icon="icon-home" class="s18"></md-icon>
+            <md-icon md-font-icon="icon-keyboard_arrow_right" class="s18 separator"></md-icon>
+            <span class="parent">USER INTERFACE</span>
+        </div>
+        <div class="title">Icons</div>
+    </header>
+
+    <div class="content" layout="column">
+        <div id="icons-toolbar" flex="100" layout="row" layout-align="space-between center">
+            <div flex="50" class="search md-whiteframe-z1 md-background-bg" layout="row" layout-align="start center">
+                <md-icon flex md-font-icon="icon-search" class="name md-background-bg s24"></md-icon>
+                <input flex ng-model="vm.search" type="text" placeholder="Search for an icon">
+            </div>
+
+            <div layout="row" layout-align="center center">
+                 <span>Icon Size: </span>
+                <md-select placeholder="Sizes" ng-model="vm.iconSize">
+                    <md-option ng-repeat="size in vm.iconSizes" value="{{size}}">{{size}}</md-option>
+                </md-select>
+            </div>
+        </div>
+
+        <div id="icons-list" layout="row" layout-wrap class="md-whiteframe-z1 md-background-bg">
+            <div class="item" flex="10" ng-repeat="icon in vm.icons | filter:vm.search">
+                <md-button
+                        class="r1"
+                        ng-click="vm.iconDetail($event, icon)"
+                        aria-label="{{icon.properties.name}}">
+                    <div layout="column" layout-align="center center" layout-padding>
+                        <i class="icon icon-{{icon.properties.name}} {{'s'+vm.iconSize}}"></i>
+                    </div>
+                </md-button>
+            </div>
         </div>
     </div>
-    <div id="icons-list" layout="row" layout-padding layout-wrap class="md-padding {{'s'+vm.iconSize}}">
-        <div class="item" flex="10" ng-repeat="icon in vm.icons | filter:vm.tag">
-            <md-button
-                    class="r1 md-whiteframe-z1 md-background-bg"
-                    ng-click="vm.iconDetail($event, icon)"
-                    aria-label="{{icon.properties.name}}">
-                <div layout="column" layout-align="center center" layout-padding>
-                    <md-icon layout-margin md-font-icon="icon-{{icon.properties.name}}"></md-icon>
-                </div>
-            </md-button>
-        </div>
-    </div>
+
 </div>

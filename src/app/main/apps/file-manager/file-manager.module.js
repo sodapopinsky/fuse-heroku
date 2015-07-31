@@ -2,6 +2,6 @@
     'use strict';
 
     angular
-        .module('app.fileManager', []);
+        .module('app.file-manager', []);
 
 })();

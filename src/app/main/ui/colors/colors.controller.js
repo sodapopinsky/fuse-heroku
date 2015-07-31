@@ -2,7 +2,7 @@
 {
     'use strict';
 
-    angular.module('fuse')
+    angular.module('app.ui.colors')
         .controller('ColorsController', ColorsController);
 
     /** @ngInject */
@@ -12,6 +12,10 @@
 
         // Data
         vm.themes = fuseTheming.themes
+
+        // Methods
+
+        //////////
     }
 })();
 

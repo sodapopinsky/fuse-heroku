@@ -1,19 +1,29 @@
-(function () {
+(function ()
+{
     'use strict';
 
-    angular.module('fuse')
+    angular.module('app.components.elements.progress-linear')
         .controller('ProgressLinearController', ProgressLinearController);
 
     /** @ngInject */
-    function ProgressLinearController($interval) {
+    function ProgressLinearController($interval)
+    {
         var vm = this;
+
+        // Data
         vm.determinateValue = 33;
         vm.determinateValue2 = 33;
 
-        $interval(function () {
+        // Methods
+
+        //////////
+
+        $interval(function ()
+        {
             vm.determinateValue += 1;
             vm.determinateValue2 += 1.5;
-            if (vm.determinateValue > 100) {
+            if ( vm.determinateValue > 100 )
+            {
                 vm.determinateValue = 33;
                 vm.determinateValue2 = 33;
             }
