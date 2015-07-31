@@ -33,7 +33,7 @@
                     .ok('Got it!')
                     .targetEvent(ev)
             );
-        };
+        }
 
         function showConfirm(ev)
         {
@@ -53,7 +53,7 @@
             {
                 vm.alert = 'You decided to keep your debt.';
             });
-        };
+        }
 
         function showAdvanced(ev)
         {
@@ -85,7 +85,7 @@
                 {
                     vm.alert = 'You cancelled the dialog.';
                 });
-        };
+        }
     }
 })();
 

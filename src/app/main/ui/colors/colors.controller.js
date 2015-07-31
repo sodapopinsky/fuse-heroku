@@ -11,7 +11,7 @@
         var vm = this;
 
         // Data
-        vm.themes = fuseTheming.themes
+        vm.themes = fuseTheming.themes;
 
         // Methods
 

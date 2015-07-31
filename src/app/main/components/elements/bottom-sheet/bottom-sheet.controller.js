@@ -31,7 +31,7 @@
             {
                 vm.alert = clickedItem.name + ' clicked!';
             });
-        };
+        }
 
         function showGridBottomSheet($event)
         {
@@ -45,7 +45,7 @@
             {
                 vm.alert2 = clickedItem.name + ' clicked!';
             });
-        };
+        }
 
         function ListBottomSheetCtrl($scope, $mdBottomSheet)
         {
@@ -92,7 +92,7 @@
                 {
                     name: 'Print this page',
                     icon: 'icon-print'
-                },
+                }
             ];
             $scope.listItemClick = function ($index)
             {
@@ -101,7 +101,6 @@
             };
         }
     }
-})
-();
+})();
 
 

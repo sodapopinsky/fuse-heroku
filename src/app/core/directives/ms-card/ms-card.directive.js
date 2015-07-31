@@ -20,11 +20,11 @@
                 // Add class
                 tElement.addClass('ms-card');
 
-                return function postLink($scope, $element, $attrs)
+                return function postLink($scope)
                 {
                     var baseDir = 'app/core/directives/ms-card/templates/';
                     $scope.templateDir = baseDir + $scope.template + '/' + $scope.template + '.html';
-                }
+                };
             }
         };
     }

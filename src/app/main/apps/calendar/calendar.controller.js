@@ -154,7 +154,7 @@
             });
         }
 
-        function eventDetailDialog(event, jsEvent, view)
+        function eventDetailDialog(event, jsEvent)
         {
             $mdDialog.show({
                 controller         : 'EventDetailDialogController',
