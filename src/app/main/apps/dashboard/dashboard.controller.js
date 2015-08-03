@@ -87,14 +87,14 @@
             minColumns       : 1, // the minimum columns the grid must have
             minRows          : 2, // the minimum height of the grid, in rows
             maxRows          : 100,
-            defaultSizeX     : 2, // the default width of a gridster item, if not specifed
-            defaultSizeY     : 1, // the default height of a gridster item, if not specified
+            defaultSizeX     : 3, // the default width of a gridster item, if not specifed
+            defaultSizeY     : 3, // the default height of a gridster item, if not specified
             minSizeX         : 1, // minimum column width of an item
             maxSizeX         : null, // maximum column width of an item
             minSizeY         : 1, // minumum row height of an item
             maxSizeY         : null, // maximum row height of an item
             resizable        : {
-                enabled: true,
+                enabled: false,
                 handles: ['s', 'e', 'n', 'w'],
                 start  : function (event, $element, widget)
                 {
@@ -103,9 +103,9 @@
                 },
                 resize : function (event, $element, widget)
                 {
-                    console.log(event);
-                    console.log($element);
-                    console.log(widget);
+                    //console.log(event);
+                    //console.log($element);
+                    //console.log(widget);
                     //console.log('resizing...');
                     // optional callback fired when item is resized,
                 },
@@ -134,28 +134,49 @@
         };
 
         /*$scope.$on('gridster-resized', function (gridster, sizes)
-        {
-            console.log(sizes);
+         {
+         console.log(sizes);
 
-            if ( sizes[0] > 1200 )
-            {
-                vm.gridsterOptions.columns = 8;
+         if ( sizes[0] > 1200 )
+         {
+         vm.gridsterOptions.columns = 8;
+         }
+         else
+         {
+         vm.gridsterOptions.columns = 6;
+         }
+         });*/
+
+        vm.widgetSizes = {
+            small: {
+                x: 1,
+                y: 1
+            },
+            wide : {
+                x: 2,
+                y: 1
+            },
+            large: {
+                x: 2,
+                y: 2
             }
-            else
-            {
-                vm.gridsterOptions.columns = 6;
-            }
-        });*/
+        };
 
         vm.widget1 = {
-            size    : {
+            defaultSize   : 'small',
+            availableSizes: [
+                'small',
+                'wide',
+                'large'
+            ],
+            size          : {
                 x   : 2,
                 y   : 1,
                 minX: 1,
                 minY: 1
             },
-            position: [0, 0],
-            data    : {
+            position      : [0, 0],
+            data          : {
                 title: 'WEEKLY TRANSACTIONS'
             }
         };
@@ -167,7 +188,33 @@
                 minX: 1,
                 minY: 1
             },
-            position: [2, 0],
+            position: [1, 0],
+            data    : {
+                title: 'DAILY VISITORS'
+            }
+        };
+
+        vm.widget3 = {
+            size    : {
+                x   : 2,
+                y   : 1,
+                minX: 1,
+                minY: 1
+            },
+            position: [3, 0],
+            data    : {
+                title: 'DAILY VISITORS'
+            }
+        };
+
+        vm.widget4 = {
+            size    : {
+                x   : 1,
+                y   : 1,
+                minX: 1,
+                minY: 1
+            },
+            position: [5, 0],
             data    : {
                 title: 'DAILY VISITORS'
             }

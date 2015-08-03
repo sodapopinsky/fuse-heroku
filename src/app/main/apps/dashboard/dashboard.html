@@ -1,7 +1,13 @@
 <div id="dashboard" layout="row">
     <div gridster="vm.gridsterOptions" class="widgets" flex layout="row" layout-wrap>
 
-        <div class="widget md-whiteframe-z1" layout="column" layout-align="start space-between" gridster-item col="vm.widget1.position[0]" row="vm.widget1.position[1]" size-x="vm.widget1.size.x" min-size-x="vm.widget1.size.minX" size-y="vm.widget1.size.y" min-size-y="vm.widget1.size.minY">
+        <div class="widget md-whiteframe-z1" layout="column" layout-align="start space-between" gridster-item
+             col="vm.widget1.position[0]" row="vm.widget1.position[1]" size-x="vm.widgetSizes[vm.widget1.defaultSize].x"
+             size-y="vm.widgetSizes[vm.widget1.defaultSize].y">
+
+            <button ng-click="vm.widget1.defaultSize = 'small'">Small</button>
+            <button ng-click="vm.widget1.defaultSize = 'wide'">Wide</button>
+            <button ng-click="vm.widget1.defaultSize = 'large'">Large</button>
             <header layout="row" layout-align="space-between center">
                 <span class="title">{{vm.widget1.data.title}}</span>
                 <md-icon md-font-icon="icon-refresh" class="s20"></md-icon>
@@ -19,9 +25,65 @@
             </div>
         </div>
 
-        <div class="widget contrast blue md-whiteframe-z1" layout="column" layout-align="start space-between" gridster-item col="vm.widget2.position[0]" row="vm.widget2.position[1]" size-x="vm.widget2.size.x" min-size-x="vm.widget2.size.minX" size-y="vm.widget2.size.y" min-size-y="vm.widget2.size.minY">
+        <div class="widget contrast blue md-whiteframe-z1" layout="column" layout-align="start space-between"
+             gridster-item col="vm.widget2.position[0]" row="vm.widget2.position[1]" size-x="vm.widget2.size.x"
+             min-size-x="vm.widget2.size.minX" size-y="vm.widget2.size.y" min-size-y="vm.widget2.size.minY">
             <header layout="row" layout-align="space-between center">
                 <span class="title">{{vm.widget2.data.title}}</span>
+                <md-icon md-font-icon="icon-refresh" class="s20"></md-icon>
+            </header>
+
+            <div flex class="content" layout="row" layout-align="space-between">
+                <div layout="column" layout-align="space-between start">
+                    <div class="value" layout="row" layout-align="start center">
+                        <span>800</span>
+                        <md-icon md-font-icon="icon-trending_up" class="s36"></md-icon>
+                        <span flex></span>
+                    </div>
+
+                    <div class="detail" layout="row" layout-align="start center">
+                        <span>See more details</span>
+                    </div>
+                </div>
+
+                <div layout="row" layout-align="end end">
+                    <angular-chart class="stroke-3" options="vm.dailyMiniChart"></angular-chart>
+                </div>
+            </div>
+        </div>
+
+        <div class="widget contrast blue md-whiteframe-z1" layout="column" layout-align="start space-between"
+             gridster-item col="vm.widget3.position[0]" row="vm.widget3.position[1]" size-x="vm.widget3.size.x"
+             min-size-x="vm.widget3.size.minX" size-y="vm.widget3.size.y" min-size-y="vm.widget3.size.minY">
+            <header layout="row" layout-align="space-between center">
+                <span class="title">{{vm.widget3.data.title}}</span>
+                <md-icon md-font-icon="icon-refresh" class="s20"></md-icon>
+            </header>
+
+            <div flex class="content" layout="row" layout-align="space-between">
+                <div layout="column" layout-align="space-between start">
+                    <div class="value" layout="row" layout-align="start center">
+                        <span>800</span>
+                        <md-icon md-font-icon="icon-trending_up" class="s36"></md-icon>
+                        <span flex></span>
+                    </div>
+
+                    <div class="detail" layout="row" layout-align="start center">
+                        <span>See more details</span>
+                    </div>
+                </div>
+
+                <div layout="row" layout-align="end end">
+                    <angular-chart class="stroke-3" options="vm.dailyMiniChart"></angular-chart>
+                </div>
+            </div>
+        </div>
+
+        <div class="widget contrast blue md-whiteframe-z1" layout="column" layout-align="start space-between"
+             gridster-item col="vm.widget4.position[0]" row="vm.widget4.position[1]" size-x="vm.widget4.size.x"
+             min-size-x="vm.widget4.size.minX" size-y="vm.widget4.size.y" min-size-y="vm.widget4.size.minY">
+            <header layout="row" layout-align="space-between center">
+                <span class="title">{{vm.widget4.data.title}}</span>
                 <md-icon md-font-icon="icon-refresh" class="s20"></md-icon>
             </header>
 
