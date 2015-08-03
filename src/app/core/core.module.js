@@ -18,7 +18,6 @@
             'ui.ace',
             'timer',
             'gridster'
-            //'wu.masonry'
             //'chart.js'
         ]);
 

@@ -1,7 +1,8 @@
-<div class="timeline" layout="row" layout-wrap>
-<!--<div class="timeline" masonry preserve-order load-images="true">-->
-    <div flex="33" class="masonry-brick">
-        <div class="post add-post md-whiteframe-z1" layout="column">
+<div layout="row">
+
+    <div class="timeline-sidebar" flex="40" layout="column">
+
+        <div class="profile-box add-post md-whiteframe-z1" layout="column">
             <div class="form" flex>
                 <textarea placeholder="Write something.."></textarea>
 
@@ -28,105 +29,8 @@
         </div>
 
         <md-divider></md-divider>
-    </div>
 
-    <div flex="33" class="masonry-brick" ng-repeat="post in vm.posts">
-        <div class="post md-whiteframe-z1" layout="column">
-            <header layout="row" layout-align="space-between start">
-                <div class="user" layout="row" layout-align="start center">
-                    <img class="avatar" ng-src="{{post.user.avatar}}">
-
-                    <div layout="column">
-                        <div class="title">
-                            <span class="username md-accent-color">{{post.user.name}}</span>
-                            <span ng-if="post.type == 'post'">posted on your timeline</span>
-                            <span ng-if="post.type == 'something'">shared something with you</span>
-                            <span ng-if="post.type == 'video'">shared a video with you</span>
-                            <span ng-if="post.type == 'article'">shared an article with you</span>
-                        </div>
-                        <div class="time">{{post.time}}</div>
-                    </div>
-                </div>
-
-                <md-button class="md-icon-button" aria-label="more">
-                    <md-icon md-font-icon="icon-more_vert"></md-icon>
-                </md-button>
-            </header>
-
-            <div class="content">
-                <div ng-if="post.message" class="message">
-                    {{post.message}}
-                </div>
-
-                <div ng-if="post.media" class="media">
-                    <img ng-if="post.media.type === 'image'" ng-src="{{post.media.preview}}">
-                    <div ng-if="post.media.type === 'video'" ng-bind-html="post.media.embed | toTrusted">
-                    </div>
-                </div>
-
-                <div ng-if="post.article" layout="column" class="article">
-                    <div class="media">
-                        <img ng-src="{{post.article.media.preview}}">
-                    </div>
-                    <div class="title">{{post.article.title}}</div>
-                    <div class="subtitle">{{post.article.subtitle}}</div>
-                    <div class="excerpt">{{post.article.excerpt}}</div>
-                </div>
-
-                <div layout="row" layout-align="start center">
-                    <md-button class="like-button">
-                        <div layout="row" layout-align="start center">
-                            <md-icon md-font-icon="icon-favorite_outline" class="s18"></md-icon>
-                            <span>Like ({{post.like}})</span>
-                        </div>
-                    </md-button>
-                    <md-button class="share-button">
-                        <div layout="row" layout-align="start center">
-                            <md-icon md-font-icon="icon-share" class="s18"></md-icon>
-                            <span>Share ({{post.share}})</span>
-                        </div>
-                    </md-button>
-                </div>
-            </div>
-
-            <footer class="" layout="column" layout-align="start start">
-                <div ng-if="post.comments" class="comment-count">{{post.comments.length}} comments
-                    <md-icon md-font-icon="icon-keyboard_arrow_down"></md-icon>
-                </div>
-
-                <div class="comment" layout="row" layout-fill ng-repeat="comment in post.comments">
-                    <img ng-src="{{comment.user.avatar}}" class="avatar"/>
-                    <div flex layout="column">
-                        <div>
-                            <span class="username">{{comment.user.name}}</span>
-                            <span class="time">{{comment.time}}</span>
-                        </div>
-                        <div class="message">
-                            {{comment.message}}
-                        </div>
-                        <div class="actions" layout="row" layout-align="start center">
-                            <span class="md-accent-color reply-button">Reply</span>
-                            <md-icon flex md-font-icon="icon-flag" class="s16 report-button"></md-icon>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="reply" layout="row" layout-fill>
-                    <img src="assets/images/avatars/profile-img.jpeg" class="avatar"/>
-
-                    <form flex>
-                        <textarea placeholder="Add a comment..."></textarea>
-                        <md-button ng-click="" ng-aria="send" class="post-comment-button md-accent md-raised">
-                            Post Comment
-                        </md-button>
-                    </form>
-                </div>
-            </footer>
-        </div>
-    </div>
-
-    <div flex="33" class="masonry-brick">
-        <div class="box latest-activity md-whiteframe-z1" layout="column">
+        <div class="profile-box latest-activity md-whiteframe-z1" layout="column">
             <header class="md-accent-bg" layout="row" layout-align="space-between center">
                 <div class="title">Latest Activity</div>
                 <div class="more">See All</div>
@@ -136,13 +40,114 @@
                 <md-list class="activities">
                     <md-list-item class="activity md-2-line" ng-repeat="activity in vm.activities">
                         <img ng-src="{{activity.user.avatar}}" class="md-avatar" alt="{{activity.user.name}}"/>
+
                         <div class="md-list-item-text">
                             <span class="username md-accent-color">{{activity.user.name}}</span>
                             <span class="message">{{ activity.message}}</span>
+
                             <p class="time">{{ activity.time}}</p>
                         </div>
                     </md-list-item>
                 </md-list>
+            </div>
+        </div>
+    </div>
+
+    <div class="timeline" flex="60" layout="column">
+        <div class="timeline-item" ng-repeat="post in vm.posts">
+            <div class="post md-whiteframe-z1" layout="column">
+                <header layout="row" layout-align="space-between start">
+                    <div class="user" layout="row" layout-align="start center">
+                        <img class="avatar" ng-src="{{post.user.avatar}}">
+
+                        <div layout="column">
+                            <div class="title">
+                                <span class="username md-accent-color">{{post.user.name}}</span>
+                                <span ng-if="post.type == 'post'">posted on your timeline</span>
+                                <span ng-if="post.type == 'something'">shared something with you</span>
+                                <span ng-if="post.type == 'video'">shared a video with you</span>
+                                <span ng-if="post.type == 'article'">shared an article with you</span>
+                            </div>
+                            <div class="time">{{post.time}}</div>
+                        </div>
+                    </div>
+
+                    <md-button class="md-icon-button" aria-label="more">
+                        <md-icon md-font-icon="icon-more_vert"></md-icon>
+                    </md-button>
+                </header>
+
+                <div class="content">
+                    <div ng-if="post.message" class="message">
+                        {{post.message}}
+                    </div>
+
+                    <div ng-if="post.media" class="media">
+                        <img ng-if="post.media.type === 'image'" ng-src="{{post.media.preview}}">
+
+                        <div ng-if="post.media.type === 'video'" ng-bind-html="post.media.embed | toTrusted">
+                        </div>
+                    </div>
+
+                    <div ng-if="post.article" layout="column" class="article">
+                        <div class="media">
+                            <img ng-src="{{post.article.media.preview}}">
+                        </div>
+                        <div class="title">{{post.article.title}}</div>
+                        <div class="subtitle">{{post.article.subtitle}}</div>
+                        <div class="excerpt">{{post.article.excerpt}}</div>
+                    </div>
+
+                    <div layout="row" layout-align="start center">
+                        <md-button class="like-button">
+                            <div layout="row" layout-align="start center">
+                                <md-icon md-font-icon="icon-favorite_outline" class="s18"></md-icon>
+                                <span>Like ({{post.like}})</span>
+                            </div>
+                        </md-button>
+                        <md-button class="share-button">
+                            <div layout="row" layout-align="start center">
+                                <md-icon md-font-icon="icon-share" class="s18"></md-icon>
+                                <span>Share ({{post.share}})</span>
+                            </div>
+                        </md-button>
+                    </div>
+                </div>
+
+                <footer class="" layout="column" layout-align="start start">
+                    <div ng-if="post.comments" class="comment-count">{{post.comments.length}} comments
+                        <md-icon md-font-icon="icon-keyboard_arrow_down"></md-icon>
+                    </div>
+
+                    <div class="comment" layout="row" layout-fill ng-repeat="comment in post.comments">
+                        <img ng-src="{{comment.user.avatar}}" class="avatar"/>
+
+                        <div flex layout="column">
+                            <div>
+                                <span class="username">{{comment.user.name}}</span>
+                                <span class="time">{{comment.time}}</span>
+                            </div>
+                            <div class="message">
+                                {{comment.message}}
+                            </div>
+                            <div class="actions" layout="row" layout-align="start center">
+                                <span class="md-accent-color reply-button">Reply</span>
+                                <md-icon flex md-font-icon="icon-flag" class="s16 report-button"></md-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reply" layout="row" layout-fill>
+                        <img src="assets/images/avatars/profile-img.jpeg" class="avatar"/>
+
+                        <form flex>
+                            <textarea placeholder="Add a comment..."></textarea>
+                            <md-button ng-click="" ng-aria="send" class="post-comment-button md-accent md-raised">
+                                Post Comment
+                            </md-button>
+                        </form>
+                    </div>
+                </footer>
             </div>
         </div>
     </div>

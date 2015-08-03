@@ -1,4 +1,5 @@
 #profile {
+
     > header {
         height: 320px;
         padding: 32px;
@@ -6,16 +7,19 @@
         background-position: 0 45%;
         background-size: 100% auto;
         background-repeat: no-repeat;
+
         .profile-img {
             width: 96px;
             height: 96px;
             border-radius: 50%;
             margin-right: 16px;
         }
+
         .username {
             font-size: 34px;
             color: white;
         }
+
         .md-button {
             text-transform: inherit;
             padding: 0 14px;
@@ -25,17 +29,23 @@
             margin: 0 0 0 8px;
         }
     }
+
     > .content {
+
         md-tabs {
+
             md-tabs-wrapper {
                 height: 56px;
                 padding: 0 32px;
                 background-color: white;
                 border-color: rgba(0, 0, 0, 0.22);
+
                 md-tabs-canvas {
                     height: 56px;
+
                     md-pagination-wrapper {
                         height: 56px;
+
                         .md-tab {
                             padding: 16px 24px;
                             font-size: 15px;
@@ -44,13 +54,47 @@
                     }
                 }
             }
+
             md-tabs-content-wrapper {
+
                 md-tab-content {
+
                     md-content {
                         background-color: transparent;
                         padding: 24px;
                     }
                 }
+            }
+        }
+
+
+        .profile-box {
+            margin-bottom: 16px;
+
+            header {
+                padding: 16px;
+
+                .title {
+                    font-size: 18px;
+                    font-weight: 300;
+                }
+
+                .more {
+                    font-size: 13px;
+                    color: rgba(0, 0, 0, 0.87);
+                    cursor: pointer;
+                }
+            }
+
+            .content {
+                padding: 8px;
+                background-color: #FFF;
+            }
+
+            footer {
+                padding: 8px;
+                border-top: 1px solid rgba(0, 0, 0, 0.08);
+                background-color: rgba(0, 0, 0, 0.06);
             }
         }
 
