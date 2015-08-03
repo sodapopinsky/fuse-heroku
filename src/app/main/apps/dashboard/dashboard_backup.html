@@ -1,54 +1,6 @@
 <div id="dashboard" layout="row">
-    <div gridster="vm.gridsterOptions" class="widgets" flex layout="row" layout-wrap>
-
-        <div class="widget md-whiteframe-z1" layout="column" layout-align="start space-between" gridster-item col="vm.widget1.position[0]" row="vm.widget1.position[1]" size-x="vm.widget1.size.x" min-size-x="vm.widget1.size.minX" size-y="vm.widget1.size.y" min-size-y="vm.widget1.size.minY">
-            <header layout="row" layout-align="space-between center">
-                <span class="title">{{vm.widget1.data.title}}</span>
-                <md-icon md-font-icon="icon-refresh" class="s20"></md-icon>
-            </header>
-
-            <div flex class="content" layout="column" layout-align="space-between">
-                <div class="value">
-                    30,342
-                </div>
-
-                <div class="detail" layout="row" layout-align="start center">
-                    <span>Last week: 30,002</span>
-                    <span class="box">+ 1,12%</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="widget contrast blue md-whiteframe-z1" layout="column" layout-align="start space-between" gridster-item col="vm.widget2.position[0]" row="vm.widget2.position[1]" size-x="vm.widget2.size.x" min-size-x="vm.widget2.size.minX" size-y="vm.widget2.size.y" min-size-y="vm.widget2.size.minY">
-            <header layout="row" layout-align="space-between center">
-                <span class="title">{{vm.widget2.data.title}}</span>
-                <md-icon md-font-icon="icon-refresh" class="s20"></md-icon>
-            </header>
-
-            <div flex class="content" layout="row" layout-align="space-between">
-                <div layout="column" layout-align="space-between start">
-                    <div class="value" layout="row" layout-align="start center">
-                        <span>800</span>
-                        <md-icon md-font-icon="icon-trending_up" class="s36"></md-icon>
-                        <span flex></span>
-                    </div>
-
-                    <div class="detail" layout="row" layout-align="start center">
-                        <span>See more details</span>
-                    </div>
-                </div>
-
-                <div layout="row" layout-align="end end">
-                    <angular-chart class="stroke-3" options="vm.dailyMiniChart"></angular-chart>
-                </div>
-            </div>
-        </div>
-
-        <!--<div class="widget md-whiteframe-z1" gridster-item="item" ng-repeat="item in vm.gridItems">
-            Test
-        </div>-->
-
-        <!--<div flex="25">
+    <div class="widgets" flex layout="row" layout-wrap>
+        <div flex="25">
             <div layout="column" layout-align="space-between center"
                  class="widget contrast blue r7 md-whiteframe-z1 ">
                 <header layout="row" layout-fill layout-align="space-between start">
@@ -373,6 +325,6 @@
                 </div>
 
             </div>
-        </div>-->
+        </div>
     </div>
 </div>

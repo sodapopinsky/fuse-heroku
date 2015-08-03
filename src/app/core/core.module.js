@@ -17,6 +17,7 @@
             'ui.router',
             'ui.ace',
             'timer',
+            'gridster'
             //'wu.masonry'
             //'chart.js'
         ]);
