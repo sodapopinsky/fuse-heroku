@@ -67,7 +67,6 @@
             }
         }
 
-
         .profile-box {
             margin-bottom: 16px;
 
@@ -75,19 +74,17 @@
                 padding: 16px;
 
                 .title {
-                    font-size: 18px;
-                    font-weight: 300;
+                    font-size: 17px;
                 }
 
                 .more {
                     font-size: 13px;
-                    color: rgba(0, 0, 0, 0.87);
                     cursor: pointer;
                 }
             }
 
             .content {
-                padding: 8px;
+                padding: 16px;
                 background-color: #FFF;
             }
 
@@ -95,6 +92,29 @@
                 padding: 8px;
                 border-top: 1px solid rgba(0, 0, 0, 0.08);
                 background-color: rgba(0, 0, 0, 0.06);
+            }
+
+            &.info-box {
+
+                .info-line {
+                    font-size: 13px;
+                    margin-bottom: 24px;
+
+                    .title {
+                        font-size: 15px;
+                        font-weight: 500;
+                        padding-bottom: 4px;
+                    }
+
+                    .info {
+
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
             }
         }
 

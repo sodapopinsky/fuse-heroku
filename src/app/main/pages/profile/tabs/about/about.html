@@ -1,10 +1,101 @@
-<div class="about" masonry preserve-order load-images="true">
-<!--<div class="about" layout="row" layout-wrap>-->
-    <div flex="33" class="masonry-brick">
-        <div class="box friends md-whiteframe-z1" layout="column">
+<div layout="row">
+
+    <div class="about" flex="60" layout="column">
+        <div class="profile-box info-box general md-whiteframe-z1" layout="column">
+            <header class="md-accent-bg">
+                <div class="title">General Information</div>
+            </header>
+
+            <div class="content">
+                <div class="info-line">
+                    <div class="title">Gender</div>
+                    <div class="info">{{vm.about.general.gender}}</div>
+                </div>
+
+                <div class="info-line">
+                    <div class="title">Birthday</div>
+                    <div class="info">{{vm.about.general.birthday}}</div>
+                </div>
+
+                <div class="info-line">
+                    <div class="title">Locations</div>
+                    <div class="info location" ng-repeat="location in vm.about.general.locations">
+                        <span>{{location}}</span>
+                        <md-icon md-font-icon="icon-location_on" class="s16"></md-icon>
+                    </div>
+                </div>
+
+                <div class="info-line">
+                    <div class="title">About Me</div>
+                    <div class="info">{{vm.about.general.about}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-box info-box work md-whiteframe-z1" layout="column">
+            <header class="md-accent-bg">
+                <div class="title">Work</div>
+            </header>
+
+            <div class="content">
+                <div class="info-line">
+                    <div class="title">Occupation</div>
+                    <div class="info">{{vm.about.work.occupation}}</div>
+                </div>
+
+                <div class="info-line">
+                    <div class="title">Skills</div>
+                    <div class="info">{{vm.about.work.skills}}</div>
+                </div>
+
+                <div class="info-line">
+                    <div class="title">Jobs</div>
+                    <table class="info jobs">
+                        <tr class="job" ng-repeat="job in vm.about.work.jobs">
+                            <td class="company">{{job.company}}</td>
+                            <td class="date">{{job.date}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-box info-box contact md-whiteframe-z1" layout="column">
+            <header class="md-accent-bg">
+                <div class="title">Contact</div>
+            </header>
+            <div class="content">
+                <div class="info-line">
+                    <div class="title">Address</div>
+                    <div class="info">{{vm.about.contact.address}}</div>
+                </div>
+                <div class="info-line">
+                    <div class="title">Tel.</div>
+                    <div class="info" ng-repeat="tel in vm.about.contact.tel">
+                        <span>{{tel}}</span>
+                    </div>
+                </div>
+                <div class="info-line">
+                    <div class="title">Website</div>
+                    <div class="info" ng-repeat="website in vm.about.contact.websites">
+                        <span>{{website}}</span>
+                    </div>
+                </div>
+                <div class="info-line">
+                    <div class="title">Emails</div>
+                    <div class="info" ng-repeat="email in vm.about.contact.emails">
+                        <span>{{email}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-sidebar" flex="40" layout="column">
+        <div class="profile-box friends md-whiteframe-z1" layout="column">
             <header class="md-accent-bg" layout="row" layout-align="space-between center">
                 <div class="title">Friends</div>
-                <div class="more">See 454 More</div>
+                <div class="more secondary-text">See 454 More</div>
             </header>
             <div class="content" layout="row" layout-wrap>
                 <div class="friend" flex="20" ng-repeat="friend in vm.about.friends">
@@ -12,12 +103,11 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div flex="33" class="masonry-brick">
-        <div class="box groups md-whiteframe-z1" layout="column">
+
+        <div class="profile-box groups md-whiteframe-z1" layout="column">
             <header class="md-accent-bg" layout="row" layout-align="space-between center">
                 <div class="title">Joined Groups</div>
-                <div class="more">See 6 More</div>
+                <div class="more secondary-text">See 6 More</div>
             </header>
             <div class="content">
                 <div class="group" ng-repeat="group in vm.about.groups" layout="row"
@@ -38,93 +128,6 @@
             </div>
         </div>
     </div>
-    <div flex="33" class="masonry-brick">
-        <div class="box general md-whiteframe-z1" layout="column">
-            <header class="md-accent-bg">
-                <div class="title">General Information</div>
-            </header>
-            <div class="content">
-                <div>
-                    <div class="title">Gender</div>
-                    <div class="content">{{vm.about.general.gender}}</div>
-                </div>
-                <div>
-                    <div class="title">Birthday</div>
-                    <div class="content">{{vm.about.general.birthday}}</div>
-                </div>
 
-                <div class="locations">
-                    <div class="title">Locations</div>
-                    <div class="content location" ng-repeat="location in vm.about.general.locations">
-                        <span>{{location}}</span>
-                        <md-icon md-font-icon="icon-location_on" class="s16"></md-icon>
-                    </div>
-                </div>
-                <div>
-                    <div class="title">About Me</div>
-                    <div class="content">{{vm.about.general.about}}</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div flex="33" class="masonry-brick">
-        <div class="box work md-whiteframe-z1" layout="column">
-            <header class="md-accent-bg">
-                <div class="title">Work</div>
-            </header>
-            <div class="content">
-                <div>
-                    <div class="title">Occupation</div>
-                    <div class="content">{{vm.about.work.occupation}}</div>
-                </div>
-                <div>
-                    <div class="title">Skills</div>
-                    <div class="content">{{vm.about.work.skills}}</div>
-                </div>
-
-                <div>
-                    <div class="title">Jobs</div>
-                    <table class="content jobs">
-                        <tr class="job" ng-repeat="job in vm.about.work.jobs">
-                            <td class="company">{{job.company}}</td>
-                            <td class="date">{{job.date}}</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div flex="33" class="masonry-brick">
-        <div class="box contact md-whiteframe-z1" layout="column">
-            <header class="md-accent-bg">
-                <div class="title">Contact</div>
-            </header>
-            <div class="content">
-                <div>
-                    <div class="title">Address</div>
-                    <div class="content">{{vm.about.contact.address}}</div>
-                </div>
-                <div>
-                    <div class="title">Tel.</div>
-                    <div class="content" ng-repeat="tel in vm.about.contact.tel">
-                        <span>{{tel}}</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="title">Website</div>
-                    <div class="content" ng-repeat="website in vm.about.contact.websites">
-                        <span>{{website}}</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="title">Emails</div>
-                    <div class="content" ng-repeat="email in vm.about.contact.emails">
-                        <span>{{email}}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
