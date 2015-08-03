@@ -2,7 +2,7 @@
 {
     'use strict';
 
-    angular.module('app.components.elements.inputs.select')
+    angular.module('app.components')
         .controller('SelectController', SelectController);
 
     /** @ngInject */

@@ -2,7 +2,7 @@
 {
     'use strict';
 
-    angular.module('app.components.elements.dialog')
+    angular.module('app.components')
         .controller('DialogController', DialogController);
 
     /** @ngInject */

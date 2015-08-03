@@ -2,7 +2,7 @@
 {
     'use strict';
 
-    angular.module('app.components.elements.inputs.chips')
+    angular.module('app.components')
         .controller('ChipsController', ChipsController);
 
     /** @ngInject */

@@ -2,7 +2,7 @@
 {
     'use strict';
 
-    angular.module('app.components.elements.progress-linear')
+    angular.module('app.components')
         .controller('ProgressLinearController', ProgressLinearController);
 
     /** @ngInject */

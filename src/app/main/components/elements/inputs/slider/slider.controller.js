@@ -2,7 +2,7 @@
 {
     'use strict';
 
-    angular.module('app.components.elements.inputs.slider')
+    angular.module('app.components')
         .controller('SliderController', SliderController);
 
     /** @ngInject */

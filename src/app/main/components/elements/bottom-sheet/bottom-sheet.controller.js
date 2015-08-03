@@ -2,7 +2,7 @@
 {
     'use strict';
 
-    angular.module('app.components.elements.bottom-sheet')
+    angular.module('app.components')
         .controller('BottomSheetController', BottomSheetController);
 
     /** @ngInject */

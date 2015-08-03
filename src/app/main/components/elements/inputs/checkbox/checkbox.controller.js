@@ -2,7 +2,7 @@
 {
     'use strict';
 
-    angular.module('app.components.elements.inputs.checkbox')
+    angular.module('app.components')
         .controller('CheckboxController', CheckboxController);
 
     /** @ngInject */

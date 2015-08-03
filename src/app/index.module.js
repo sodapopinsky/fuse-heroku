@@ -46,28 +46,9 @@
             'app.pages.timeline',
 
             // User Interface
-            //'app.ui.typography',
-            'app.ui.colors',
-            'app.ui.icons',
-            //'app.ui.layouts',
+            'app.ui',
 
             // Components
-            'app.components.elements.inputs.autocomplete',
-            'app.components.elements.inputs.checkbox',
-            'app.components.elements.inputs.chips',
-            'app.components.elements.inputs.fields',
-            'app.components.elements.inputs.radio',
-            'app.components.elements.inputs.select',
-            'app.components.elements.inputs.slider',
-            'app.components.elements.inputs.switch',
-            'app.components.elements.bottom-sheet',
-            'app.components.elements.buttons',
-            'app.components.elements.card',
-            'app.components.elements.dialog',
-            'app.components.elements.progress-circular',
-            'app.components.elements.progress-linear',
-            'app.components.tables.standard',
-            //'app.components.tables.datatables',
-            'app.components.price-tables',
+            'app.components'
         ]);
 })();

@@ -2,7 +2,7 @@
 {
     'use strict';
 
-    angular.module('app.components.tables.standard')
+    angular.module('app.components')
         .controller('StandardTableController', StandardTableController);
 
     /** @ngInject */

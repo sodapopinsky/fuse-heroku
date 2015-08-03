@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.components.elements.card')
+        .module('app.components')
         .controller('CardController', CardController);
 
     function CardController()

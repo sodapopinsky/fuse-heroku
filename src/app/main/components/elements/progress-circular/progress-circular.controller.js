@@ -2,7 +2,7 @@
 {
     'use strict';
 
-    angular.module('app.components.elements.progress-circular')
+    angular.module('app.components')
         .controller('ProgressCircularController', ProgressCircularController);
 
     /** @ngInject */

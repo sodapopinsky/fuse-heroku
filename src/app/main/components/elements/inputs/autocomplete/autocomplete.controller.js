@@ -2,7 +2,7 @@
 {
     'use strict';
 
-    angular.module('app.components.elements.inputs.autocomplete')
+    angular.module('app.components')
         .controller('AutocompleteController', AutocompleteController);
 
     /** @ngInject */

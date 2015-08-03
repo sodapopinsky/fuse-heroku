@@ -2,7 +2,7 @@
 {
     'use strict';
 
-    angular.module('app.components.elements.inputs.fields')
+    angular.module('app.components')
         .controller('FieldsController', FieldsController);
 
     /** @ngInject */

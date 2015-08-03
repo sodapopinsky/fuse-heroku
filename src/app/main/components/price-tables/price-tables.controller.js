@@ -2,7 +2,7 @@
 {
     'use strict';
 
-    angular.module('app.components.price-tables')
+    angular.module('app.components')
         .controller('PriceTablesController', PriceTablesController);
 
     /** @ngInject */

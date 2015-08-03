@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.components.elements.buttons')
+        .module('app.components')
         .controller('ButtonsController', ButtonsController);
 
     function ButtonsController()

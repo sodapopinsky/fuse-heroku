@@ -3,6 +3,6 @@
     'use strict';
 
     angular
-        .module('app.ui.colors', []);
+        .module('app.ui', []);
 
 })();
