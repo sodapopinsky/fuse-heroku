@@ -1,0 +1,47 @@
+/*--------------------------------------------------------------------------*/
+/* Contains custom elements and components that follows
+/* Google(TM) Material Design(TM) specs
+/*
+/* https://www.google.com/design/spec/material-design/introduction.html
+/*--------------------------------------------------------------------------*/
+
+// Basic navigation
+.simple-navigation {
+
+    .item {
+        position: relative;
+        cursor: pointer;
+        text-align: left;
+        margin: 0;
+        padding: 0 32px;
+        text-transform: none;
+        line-height: 48px;
+        max-height: 48px;
+        height: 48px;
+
+        md-icon {
+            margin: 0 16px 0 0;
+        }
+
+        .title {
+            font-size: 13px;
+            font-weight: 500;
+        }
+    }
+
+    .subheader {
+        font-size: 13px;
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+        font-weight: 500;
+        margin-top: 8px;
+
+        &.light {
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+        }
+    }
+
+    md-divider {
+        margin: 8px 0;
+    }
+
+}
