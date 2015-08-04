@@ -1,35 +1,16 @@
 #mail {
-    overflow: hidden;
-    min-height: 100%;
-    background-color: rgba(244, 244, 244, 1) !important;
 
-    .avatar {
-        min-width: 40px;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        box-sizing: content-box;
-        text-align: center;
-        line-height: 40px;
-        color: white;
-        font-weight: 500;
-    }
+    // Header
+    header {
 
-    > header {
-        background-image: url('/assets/images/backgrounds/mail-bg.png');
-        background-size: cover;
-        height: 185px;
-
-        > .side-header {
-            padding: 32px 24px 16px 24px;
-            width: 220px;
+        .header-left {
 
             .logo {
                 width: 100%;
                 height: 56px;
 
                 > md-icon {
-                    color: white;
+                    color: #FFFFFF;
                     margin: 0 16px 0 0;
                 }
 
@@ -57,49 +38,45 @@
             }
         }
 
-        > .main-header {
-            padding: 32px 0;
+        .header-right {
 
             .search {
-                margin: 0 32px 0 0;
                 height: 56px;
                 line-height: 56px;
                 font-size: 13px;
                 padding: 18px;
 
-                md-icon {
-                    min-width: 20px;
-                    max-width: 20px;
+                .icon {
                     margin: 0;
-                    top: 0;
-                    bottom: 0;
-                    left: 16px;
-                    color: rgba(0, 0, 0, 0.54);
                 }
 
                 input {
-                    padding: 0 0 0 18px;
-                    border: none;
+                    padding-left: 16px;
                     height: 56px;
                     color: rgba(0, 0, 0, 0.54);
-                    outline: none;
                 }
+            }
+        }
+
+        .header-toolbar {
+            padding: 0 16px;
+
+            .page-info {
+                font-size: 13px;
+                font-weight: 500;
+                margin: 0 8px;
             }
         }
     }
 
-    > .content {
+    // Content
+    .content {
 
-        > .content-side {
-            width: 220px;
-            min-width: 220px;
-
-            > * {
-                max-width: 220px;
-            }
+        .content-left-pane {
+            padding: 32px 0;
 
             .compose-button {
-                padding: 24px;
+                padding: 0 32px 24px 32px;
                 font-size: 13px;
 
                 .md-button {
@@ -107,99 +84,32 @@
                     margin: 0;
                 }
             }
-
-            .menu {
-
-                .item {
-                    align-items: inherit;
-                    text-align: left;
-                    text-transform: inherit;
-                    margin: 0;
-                    padding: 0 24px;
-                    outline: 0;
-                    width: 100%;
-
-                    .context {
-                        line-height: 50px;
-                        max-height: 50px;
-                        height: 50px;
-
-                        md-icon {
-                            margin: 0 22px 0 0;
-                        }
-
-                        .title {
-                            font-size: 13px;
-                            line-height: 13px;
-                        }
-                    }
-                }
-
-                .subhead {
-                    font-size: 13px;
-                    padding: 16px 24px;
-                    font-weight: 500;
-                }
-            }
         }
 
-        > .content-main {
-            margin-top: -64px;
-            margin-right: 32px;
-            overflow: hidden;
-
-            md-checkbox {
-                margin: 0;
-            }
-
-            > .actions {
-                max-height: 64px;
-                min-height: 64px;
-                height: 64px;
-                padding: 0 24px;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-
-                .list-info {
-                    font-size: 13px;
-                    font-weight: 500;
-                    margin: 0 8px;
-                }
-
-                .md-button {
-
-                    &.arrow {
-                        width: 30px;
-                    }
-                }
-            }
+        .content-main {
+            padding: 0;
 
             .mail-list {
                 border-right: 1px solid rgba(0, 0, 0, 0.12);
+                background: #FAFAFA;
 
-                > .mail {
-                    display: flex;
-                    box-sizing: border-box;
-                    padding: 20px 24px;
+                .mail-list-item {
                     position: relative;
-                    text-align: left;
-                    min-width: 100%;
-                    margin: 0;
-                    border-radius: 0;
-                    text-transform: inherit;
+                    padding: 16px;
                     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
                     cursor: pointer;
-                    outline: 0;
 
                     &.read {
-                        background: #FAFAFA;
+
                     }
 
                     &.unread {
-                        background: #FFF;
+                        background: #FFFFFF;
 
                         .info {
 
-                            .subject, .message {
+                            .subject,
+                            .message {
                                 font-weight: 500;
                             }
                         }
@@ -213,46 +123,32 @@
                         background: #FFF8E1;
                     }
 
-                    > .context {
-                        min-width: 100%;
+                    .avatar {
+                        margin: 0 8px;
+                    }
 
-                        .avatar {
-                            margin: 0 12px 0 24px;
-                        }
+                    .info {
+                        overflow: hidden;
+                        margin: 0 12px;
 
-                        .info {
-                            overflow: hidden;
-                            margin: 0 12px;
-
-                            .name {
-                                white-space: nowrap;
-                                font-size: 15px;
-                                font-weight: 500;
-                            }
-
-                            .subject {
-                                white-space: nowrap;
-                                font-size: 13px;
-                            }
-
-                            .message {
-                                white-space: nowrap;
-                                font-size: 13px;
-                            }
-                        }
-
-                        .time {
+                        .name,
+                        .subject,
+                        .message {
+                            white-space: nowrap;
                             font-size: 13px;
-                            margin: 0 12px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
                         }
 
-                        .md-button,
-                        > .md-menu {
-
+                        .name {
+                            font-size: 15px;
+                            font-weight: 500;
                         }
+                    }
 
-                        > .md-menu {
-                        }
+                    .time {
+                        font-size: 13px;
+                        margin: 0 8px;
                     }
                 }
             }
@@ -341,6 +237,18 @@
         }
     }
 
+    .avatar {
+        min-width: 40px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        box-sizing: content-box;
+        text-align: center;
+        line-height: 40px;
+        color: white;
+        font-weight: 500;
+    }
+
     .mail-form-actions {
         padding: 8px 16px;
         border-top: 1px solid rgba(0, 0, 0, 0.12);
@@ -353,7 +261,6 @@
             height: 30px;
             line-height: 30px;
             min-height: 30px;
-            font-size: 13px;
         }
     }
 }
