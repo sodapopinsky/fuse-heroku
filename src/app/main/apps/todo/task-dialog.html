@@ -1,70 +1,82 @@
-<md-dialog aria-label="New Message" id="task-dialog">
+<md-dialog aria-label="New Task" id="task-dialog">
     <form>
         <md-toolbar class="md-accent md-hue-2">
-            <div class="md-toolbar-tools">
+            <div class="md-toolbar-tools" layout="row" layout-align="space-between">
                 <span class="title">{{vm.title}}</span>
-                <span flex></span>
                 <md-button class="md-icon-button" ng-click="vm.closeDialog()">
                     <md-icon md-font-icon="icon-close" aria-label="Close dialog"></md-icon>
                 </md-button>
             </div>
         </md-toolbar>
+
         <md-dialog-content>
             <md-input-container>
                 <label>Title</label>
                 <input ng-model="vm.task.title">
             </md-input-container>
+
             <md-input-container>
                 <label>Tags</label>
                 <input value="{vm.task.tags.join(', ')}">
             </md-input-container>
+
             <div layout="row">
                 <md-input-container flex>
                     <label>Start Date</label>
                     <input ng-model="vm.task.startDate">
                 </md-input-container>
+
                 <md-input-container flex>
                     <label>Due Date</label>
                     <input ng-model="vm.task.dueDate">
                 </md-input-container>
             </div>
+
             <md-input-container flex class="textarea-container">
                 <label>Notes</label>
                 <textarea ng-model="vm.task.notes" md-maxlength="250"></textarea>
             </md-input-container>
+
             <div class="attachment-list">
                 <div class="attachment" layout="row" layout-align="space-between center">
                     <div>
                         <span class="filename">attachment-2.doc</span>
                         <span class="size">(12 Kb)</span>
                     </div>
+
                     <md-button class="md-icon-button">
                         <md-icon md-font-icon="icon-close" aria-label="delete attachment" class="s18"></md-icon>
                     </md-button>
                 </div>
+
                 <div class="attachment" layout="row" layout-align="space-between center">
                     <div>
                         <span class="filename">attachment-1.png</span>
                         <span class="size">(350 Kb)</span>
                     </div>
+
                     <md-button class="md-icon-button">
                         <md-icon md-font-icon="icon-close" aria-label="delete attachment" class="s18"></md-icon>
                     </md-button>
                 </div>
             </div>
         </md-dialog-content>
+
         <div class="md-actions mail-form-actions" layout="row" layout-align="space-between center" layout-fill>
             <div layout="row" layout-align="start center">
                 <md-button ng-click="vm.closeDialog()" ng-aria="send" class="send-button md-accent md-raised">
                     SAVE
                 </md-button>
+
                 <md-button class="md-icon-button" aria-label="archive">
                     <md-icon md-font-icon="icon-attach_file"></md-icon>
                 </md-button>
+
                 <md-button class="md-icon-button" aria-label="archive">
                     <md-icon md-font-icon="icon-insert_photo"></md-icon>
                 </md-button>
             </div>
+
             <md-button class="md-icon-button" aria-label="delete">
                 <md-icon md-font-icon="icon-delete"></md-icon>
             </md-button>
