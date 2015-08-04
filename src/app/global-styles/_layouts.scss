@@ -1,0 +1,106 @@
+.layout-app1 {
+    min-height: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+
+    // Header
+    header {
+        background-image: url('/assets/images/backgrounds/mail-bg.png');
+        background-size: cover;
+        min-height: 184px;
+        height: 184px;
+        padding: 32px 32px 0 32px;
+
+        .header-left {
+            width: 220px;
+        }
+
+        .header-right {
+
+        }
+
+        .header-toolbar {
+            background: #FFFFFF;
+            height: 64px;
+            padding: 0 24px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        }
+    }
+
+    // Content
+    .content {
+        overflow: hidden;
+
+        .content-main {
+            margin: 0 32px;
+            padding: 32px 24px;
+        }
+    }
+
+    // Full width
+    &.full-width {
+
+    }
+
+    // Left pane
+    &.left-pane {
+
+        // Header
+        header {
+            padding: 0;
+
+            .header-left {
+                padding: 32px;
+            }
+
+            .header-right {
+                padding: 32px 32px 0 0;
+            }
+        }
+
+        // Content
+        .content {
+
+            .content-left-pane {
+                width: 220px;
+                padding: 32px;
+            }
+
+            .content-main {
+                margin: 0 32px 0 0;
+            }
+        }
+    }
+
+    // Right pane
+    &.right-pane {
+
+        // Header
+        header {
+            padding: 0;
+
+            .header-left {
+                width: auto;
+                padding: 32px 0 0 32px;
+            }
+
+            .header-right {
+                width: 220px;
+                padding: 32px;
+            }
+        }
+
+        // Content
+        .content {
+
+            .content-main {
+                margin: 0 0 0 32px;
+            }
+
+            .content-right-pane {
+                width: 220px;
+                padding: 32px;
+            }
+        }
+    }
+}
