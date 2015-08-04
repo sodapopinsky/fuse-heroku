@@ -327,13 +327,43 @@
                 }
             })
 
-            // Layouts
+        /**
+         * Layouts
+         */
             .state('app.ui.layouts', {
-                url  : '/layouts',
+                abstract: true,
+                url     : '/layouts'
+            })
+
+            // App 1 - Full Width
+            .state('app.ui.layouts.app1-fullwidth', {
+                url  : '/app1-fullwidth',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/ui/layouts/layouts.html',
-                        controller : 'LayoutsController as vm'
+                        templateUrl: 'app/main/ui/layouts/app1-fullwidth/app1-fullwidth.html',
+                        controller : 'App1FullwidthController as vm'
+                    }
+                }
+            })
+
+            // App 1 - Left Pane
+            .state('app.ui.layouts.app1-leftpane', {
+                url  : '/app1-leftpane',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/ui/layouts/app1-leftpane/app1-leftpane.html',
+                        controller : 'App1LeftpaneController as vm'
+                    }
+                }
+            })
+
+            // App 1 - Right Pane
+            .state('app.ui.layouts.app1-rightpane', {
+                url  : '/app1-rightpane',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/ui/layouts/app1-rightpane/app1-rightpane.html',
+                        controller : 'App1RightpaneController as vm'
                     }
                 }
             })

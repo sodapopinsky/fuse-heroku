@@ -194,11 +194,32 @@
                 </a>
             </li>
 
-            <li class="ms-nav-item">
-                <a class="ms-nav-button" ui-sref="app.ui.layouts" ui-sref-active="active" md-ink-ripple>
-                    <md-icon md-font-icon="icon-view_quilt" class="s18 ms-nav-icon"></md-icon>
+            <li class="ms-nav-item" ms-nav-toggle>
+                <div class="ms-nav-button" md-ink-ripple>
+                    <md-icon md-font-icon="icon-view_quilt" class="s18 ms-nav-icon "></md-icon>
                     <span>Layouts</span>
-                </a>
+                    <md-icon md-font-icon="icon-keyboard_arrow_down" class="s18 ms-nav-icon arrow"></md-icon>
+                </div>
+                <ul>
+                    <li class="ms-nav-item">
+                        <a class="ms-nav-button" ui-sref="app.ui.layouts.app1-fullwidth" ui-sref-active="active" md-ink-ripple>
+                            <span>App 1 - Fullwidth</span>
+                        </a>
+                    </li>
+
+                    <li class="ms-nav-item">
+                        <a class="ms-nav-button" ui-sref="app.ui.layouts.app1-leftpane" ui-sref-active="active" md-ink-ripple>
+                            <span>App 1 - Left Pane</span>
+                        </a>
+                    </li>
+
+                    <li class="ms-nav-item">
+                        <a class="ms-nav-button" ui-sref="app.ui.layouts.app1-rightpane" ui-sref-active="active" md-ink-ripple>
+                            <span>App 1 - Right Pane</span>
+                        </a>
+                    </li>
+                </ul>
+
             </li>
         </ul>
 
