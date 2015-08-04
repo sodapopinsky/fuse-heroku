@@ -1,9 +1,8 @@
 .layout-app1 {
     min-height: 100%;
-    height: 100%;
 
     // Header
-    header {
+    > header {
         background-image: url('/assets/images/backgrounds/mail-bg.png');
         background-size: cover;
         min-height: 184px;
@@ -27,7 +26,7 @@
     }
 
     // Content
-    .content {
+    > .content {
         overflow: hidden;
 
         .content-main {
@@ -45,7 +44,7 @@
     &.left-pane {
 
         // Header
-        header {
+        > header {
             padding: 0;
 
             .header-left {
@@ -58,7 +57,7 @@
         }
 
         // Content
-        .content {
+        > .content {
 
             .content-left-pane {
                 width: 220px;
@@ -75,7 +74,7 @@
     &.right-pane {
 
         // Header
-        header {
+        > header {
             padding: 0;
 
             .header-left {
@@ -90,7 +89,7 @@
         }
 
         // Content
-        .content {
+        > .content {
 
             .content-main {
                 margin: 0 0 0 32px;
