@@ -9,7 +9,7 @@
                 width: 100%;
                 height: 56px;
 
-                > md-icon {
+                .logo-icon {
                     color: #FFFFFF;
                     margin: 0 16px 0 0;
                 }
@@ -154,9 +154,9 @@
             }
 
             .mail-content {
-                padding: 24px 32px;
+                padding: 24px;
 
-                > header {
+                header {
                     padding-bottom: 24px;
                     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
@@ -166,12 +166,12 @@
                     }
                 }
 
-                > .content {
+                .content {
                     padding: 24px 0;
                     font-size: 13px;
                     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
-                    > .info {
+                    .info {
                         padding-bottom: 24px;
 
                         .avatar {
@@ -184,12 +184,12 @@
                     }
                 }
 
-                > .attachments {
+                .attachments {
                     font-size: 13px;
                     padding: 24px 0;
                     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
-                    > .title {
+                    .title {
                         margin-bottom: 16px;
                         font-weight: 500;
                     }
@@ -203,8 +203,7 @@
 
                         .link {
                             text-decoration: underline;
-                            margin-bottom: 4px;
-                            cursor: pointer;
+                            margin-bottom: 2px;
                         }
 
                         .size {
@@ -213,12 +212,8 @@
                     }
                 }
 
-                > .reply {
+                .reply {
                     padding: 24px 0;
-
-                    .avatar {
-
-                    }
 
                     .form {
                         margin-left: 16px;
