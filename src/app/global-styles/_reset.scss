@@ -17,7 +17,6 @@
     }
 }
 
-
 // Links
 a {
     text-decoration: none;
@@ -33,7 +32,7 @@ code, pre {
 }
 
 code {
-    
+
 }
 
 pre {
@@ -55,30 +54,38 @@ img {
     border: none;
 }
 
-// Reset input's default browser/os styles
-input[type="text"],
-input[type="tel"],
-input[type="email"],
-input[type="search"],
-input[type="password"],
-input[type="button"],
-button,
-input[type="submit"],
-input[type="image"],
-textarea {
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    border: none;
-    background: none;
-    padding: 0;
-    margin: 0;
+// Reset non angular-material input's default browser/os styles
+*:not(md-input-container) {
+    > input[type="text"],
+    > input[type="tel"],
+    > input[type="email"],
+    > input[type="search"],
+    > input[type="password"],
+    > input[type="button"],
+    > button,
+    > input[type="submit"],
+    > input[type="image"],
+    > textarea {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        border: none;
+        background: none;
+        padding: 0;
+        margin: 0;
+    }
 }
 
 button {
+    border-radius: 0;
     font-family: inherit;
     font-size: inherit;
+    padding: 0;
+    margin: 0;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
 }
