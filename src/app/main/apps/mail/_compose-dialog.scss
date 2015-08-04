@@ -1,50 +1,60 @@
 #compose-dialog {
+
     md-toolbar {
+
         .title {
             font-size: 17px;
         }
     }
+
     md-dialog-content {
         font-size: 15px;
         min-width: 720px;
         width: 720px;
         padding: 24px 24px 16px 24px;
+
         md-input-container {
             padding: 4px 0;
+
             &.textarea-container {
                 padding: 2px;
                 padding-bottom: 26px;
+
                 textarea {
                     min-height: 150px;
                 }
             }
         }
+
         .attachment-list {
             font-size: 13px;
+
             .attachment {
                 background-color: rgba(0, 0, 0, 0.08);
                 border: 1px solid rgba(0, 0, 0, 0.16);
-                padding: 0 0 0 13px;
+                padding-left: 16px;
                 margin: 8px 0;
                 border-radius: 2px;
+
                 .filename {
                     font-weight: 500;
                 }
+
                 .size {
 
                 }
+
                 .md-button {
                     margin: 0;
-                    height: 32px;
-                    line-height: 32px;
-                    width: 32px;
                 }
+
                 &:last-child {
                     margin-bottom: 0;
                 }
             }
         }
     }
+
     .md-actions {
         justify-content: space-between;
         border-top: 1px solid rgba(0, 0, 0, 0.12);
