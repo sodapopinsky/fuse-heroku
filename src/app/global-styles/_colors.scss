@@ -1,0 +1,83 @@
+.black-text {
+    color: rgba(0, 0, 0, 0.87);
+
+    &.secondary-text,
+    &.icon {
+        color: rgba(0, 0, 0, 0.54);
+    }
+
+    &.hint-text,
+    &.disabled-text {
+        color: rgba(0, 0, 0, 0.26);
+    }
+
+    &.divider {
+        color: rgba(0, 0, 0, 0.12);
+    }
+}
+
+.white-text {
+    color: rgb(255, 255, 255);
+
+    &.secondary-text,
+    &.icon {
+        color: rgba(0, 0, 0, 0.70);
+    }
+
+    &.hint-text,
+    &.disabled-text {
+        color: rgba(0, 0, 0, 0.30);
+    }
+
+    &.divider {
+        color: rgba(0, 0, 0, 0.12);
+    }
+}
+
+.md-color-bg {
+    &.blue {
+        background-color: #24ACD8;
+    }
+    &.blue-grey {
+        background-color: #648CA0;
+    }
+    &.green {
+        background-color: #66B969;
+    }
+    &.yellow {
+        background-color: #FBC02D;
+    }
+    &.orange {
+        background-color: #FFAB40;
+    }
+    &.purple {
+        background-color: #7362B2;
+    }
+    &.pink {
+        background-color: #E91E63;
+    }
+}
+
+.md-color-font {
+    &.blue {
+        color: #24ACD8;
+    }
+    &.blue-grey {
+        color: #648CA0;
+    }
+    &.green {
+        color: #66B969;
+    }
+    &.yellow {
+        color: #FBC02D;
+    }
+    &.orange {
+        color: #FFAB40;
+    }
+    &.purple {
+        color: #7362B2;
+    }
+    &.pink {
+        color: #E91E63;
+    }
+}
