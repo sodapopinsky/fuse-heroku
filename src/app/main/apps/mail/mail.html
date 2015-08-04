@@ -254,7 +254,7 @@
 
             <!-- Mail List -->
             <div flex="50" class="mail-list">
-                <div class="mail-list-item {{mail.status}}" ng-repeat="mail in vm.inbox" md-ink-ripple
+                <div class="mail-list-item {{mail.status}}" ng-repeat="mail in vm.inbox | filter: vm.search" md-ink-ripple
                      ng-click="vm.selectMail(mail)"
                      ng-class="{'starred': mail.starred, 'selected': mail.selected, 'checked': vm.checkExists(mail, vm.checked)}">
 
