@@ -16,3 +16,31 @@ md-dialog {
         padding-bottom: 8px;
     }
 }
+
+.md-menu {
+    padding: 0;
+}
+
+md-select {
+
+    &.simplified {
+
+        .md-select-value {
+            border: none !important;
+            box-sizing: border-box;
+            padding: 0;
+
+            & *:first-child {
+                transform: none;
+            }
+
+            .md-select-icon {
+                transform: none;
+
+                &:after {
+                    top: 1px;
+                }
+            }
+        }
+    }
+}
