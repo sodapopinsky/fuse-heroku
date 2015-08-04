@@ -74,201 +74,199 @@
 
             .timeline-item {
                 margin-bottom: 32px;
+                overflow: hidden;
+                border-radius: 2px;
+                background: white;
 
                 &:last-child {
                     margin-bottom: 0;
                 }
 
-                &.post {
-                    overflow: hidden;
-                    border-radius: 2px;
-                    background: white;
+                header {
+                    padding: 16px 0 8px 16px;
+                    font-size: 13px;
 
-                    header {
-                        padding: 16px 0 8px 16px;
+                    .avatar {
+                        min-width: 40px;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        text-align: center;
+                        line-height: 40px;
+                        color: white;
+                        font-weight: 500;
+                        margin-right: 8px;
+                    }
+
+                    .title {
+                        font-weight: 500;
+
+                        .username {
+                            margin-right: 4px;
+                        }
+                    }
+
+                    .time {
+                        color: rgba(0, 0, 0, 0.54);
+                    }
+
+                    .md-button {
+                        width: 32px;
+                        height: 32px;
+                        line-height: 32px;
+                    }
+                }
+
+                .content {
+                    font-size: 13px;
+
+                    .message {
+                        padding: 8px 16px;
+                    }
+
+                    .media {
+                        padding: 16px 8px;
+
+                        img, iframe {
+                            width: 100%;
+                        }
+
+                        a {
+                            color: inherit;
+                        }
+                    }
+
+                    .like-button,
+                    .share-button {
+                        padding: 4px;
+                        text-transform: inherit;
                         font-size: 13px;
+                        font-weight: normal;
+                        margin: 0 0 16px 8px;
+                        min-width: inherit;
+                        line-height: inherit;
 
-                        .avatar {
-                            min-width: 40px;
-                            width: 40px;
-                            height: 40px;
-                            border-radius: 50%;
-                            text-align: center;
-                            line-height: 40px;
-                            color: white;
-                            font-weight: 500;
-                            margin-right: 8px;
+                        &:hover {
+                            background-color: transparent;
+                        }
+
+                        md-icon {
+                            margin: 0 8px 0 0;
+                        }
+                    }
+
+                    .article {
+                        border: 1px solid rgba(0, 0, 0, 0.12);
+                        margin: 8px;
+
+                        .media {
+                            padding: 0;
+                            overflow: hidden;
+                            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+                            img {
+                                display: block;
+                                padding: 0;
+                            }
+
                         }
 
                         .title {
-                            font-weight: 500;
+                            font-size: 15px;
+                            padding: 16px 16px 4px 16px;
+                        }
 
-                            .username {
-                                margin-right: 4px;
-                            }
+                        .subtitle {
+                            padding: 0 16px;
+                            font-size: 13px;
+                            color: rgba(0, 0, 0, 0.54);
+                        }
+
+                        .excerpt {
+                            padding: 16px 16px;
+                            font-size: 13px;
+                        }
+                    }
+                }
+
+                footer {
+                    font-size: 13px;
+                    border-top: 1px solid rgba(0, 0, 0, 0.08);
+                    background-color: rgba(0, 0, 0, 0.06);
+                    padding: 16px;
+
+                    .comment-count {
+                        margin-bottom: 16px;
+                        cursor: pointer;
+
+                        md-icon {
+                            margin-left: 8px;
+                        }
+                    }
+
+                    .comment {
+                        margin-bottom: 24px;
+
+                        .username {
+                            font-weight: 500;
+                            margin-right: 4px;
+                        }
+
+                        .message {
+                            color: rgba(0, 0, 0, 0.87);
                         }
 
                         .time {
                             color: rgba(0, 0, 0, 0.54);
                         }
 
-                        .md-button {
-                            width: 32px;
-                            height: 32px;
-                            line-height: 32px;
-                        }
-                    }
+                        .actions {
+                            margin-top: 8px;
 
-                    .content {
-                        font-size: 13px;
-
-                        .message {
-                            padding: 8px 16px;
-                        }
-
-                        .media {
-                            padding: 16px 8px;
-
-                            img, iframe {
-                                width: 100%;
+                            .reply-button {
+                                margin-right: 8px;
+                                cursor: pointer;
                             }
 
-                            a {
-                                color: inherit;
-                            }
-                        }
-
-                        .like-button, .share-button {
-                            padding: 4px;
-                            text-transform: inherit;
-                            font-size: 13px;
-                            font-weight: normal;
-                            margin: 0 0 16px 8px;
-                            min-width: inherit;
-                            line-height: inherit;
-
-                            &:hover {
-                                background-color: transparent;
-                            }
-
-                            md-icon {
-                                margin: 0 8px 0 0;
-                            }
-                        }
-
-                        .article {
-                            border: 1px solid rgba(0, 0, 0, 0.12);
-                            margin: 8px;
-
-                            .media {
-                                padding: 0;
-                                overflow: hidden;
-                                border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-
-                                img {
-                                    display: block;
-                                    padding: 0;
-                                }
-
-                            }
-
-                            .title {
-                                font-size: 15px;
-                                padding: 16px 16px 4px 16px;
-                            }
-
-                            .subtitle {
-                                padding: 0 16px;
-                                font-size: 13px;
-                                color: rgba(0, 0, 0, 0.54);
-                            }
-
-                            .excerpt {
-                                padding: 16px 16px;
-                                font-size: 13px;
+                            .report-button {
+                                cursor: pointer;
                             }
                         }
                     }
 
-                    footer {
-                        font-size: 13px;
-                        border-top: 1px solid rgba(0, 0, 0, 0.08);
-                        background-color: rgba(0, 0, 0, 0.06);
-                        padding: 16px;
+                    .reply {
 
-                        .comment-count {
-                            margin-bottom: 16px;
-                            cursor: pointer;
+                        form {
 
-                            md-icon {
-                                margin-left: 8px;
+                            textarea {
+                                border: 1px solid rgba(0, 0, 0, 0.12);
+                                width: 100% !important;
+                                min-height: 72px;
+                                padding: 8px;
+                                margin-bottom: 8px;
+                            }
+
+                            .post-comment-button {
+                                margin: 0;
+                                text-transform: inherit;
+                                font-size: 13px;
+                                font-weight: normal;
+                                padding: 0 12px;
+                                min-height: 30px;
+                                min-width: inherit;
+                                line-height: 30px;
                             }
                         }
+                    }
 
-                        .comment {
-                            margin-bottom: 24px;
-
-                            .username {
-                                font-weight: 500;
-                                margin-right: 4px;
-                            }
-
-                            .message {
-                                color: rgba(0, 0, 0, 0.87);
-                            }
-
-                            .time {
-                                color: rgba(0, 0, 0, 0.54);
-                            }
-
-                            .actions {
-                                margin-top: 8px;
-
-                                .reply-button {
-                                    margin-right: 8px;
-                                    cursor: pointer;
-                                }
-
-                                .report-button {
-                                    cursor: pointer;
-                                }
-                            }
-                        }
-
-                        .reply {
-
-                            form {
-
-                                textarea {
-                                    border: 1px solid rgba(0, 0, 0, 0.12);
-                                    width: 100% !important;
-                                    min-height: 72px;
-                                    padding: 8px;
-                                    margin-bottom: 8px;
-                                }
-
-                                .post-comment-button {
-                                    margin: 0;
-                                    text-transform: inherit;
-                                    font-size: 13px;
-                                    font-weight: normal;
-                                    padding: 0 12px;
-                                    min-height: 30px;
-                                    min-width: inherit;
-                                    line-height: 30px;
-                                }
-                            }
-                        }
-
-                        .avatar {
-                            min-width: 32px;
-                            width: 32px;
-                            height: 32px;
-                            line-height: 32px;
-                            border-radius: 50%;
-                            text-align: center;
-                            margin-right: 8px;
-                        }
+                    .avatar {
+                        min-width: 32px;
+                        width: 32px;
+                        height: 32px;
+                        line-height: 32px;
+                        border-radius: 50%;
+                        text-align: center;
+                        margin-right: 8px;
                     }
                 }
             }

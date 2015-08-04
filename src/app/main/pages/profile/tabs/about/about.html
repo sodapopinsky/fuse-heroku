@@ -1,6 +1,6 @@
 <div layout="row">
 
-    <div class="about" flex="60" layout="column">
+    <div class="about" flex="65" layout="column">
         <div class="profile-box info-box general md-whiteframe-z1" layout="column">
             <header class="md-accent-bg">
                 <div class="title">General Information</div>
@@ -91,7 +91,7 @@
         </div>
     </div>
 
-    <div class="about-sidebar" flex="40" layout="column">
+    <div class="about-sidebar" flex="35" layout="column">
         <div class="profile-box friends md-whiteframe-z1" layout="column">
             <header class="md-accent-bg" layout="row" layout-align="space-between center">
                 <div class="title">Friends</div>
@@ -109,12 +109,12 @@
                 <div class="title">Joined Groups</div>
                 <div class="more secondary-text">See 6 More</div>
             </header>
+
             <div class="content">
                 <div class="group" ng-repeat="group in vm.about.groups" layout="row"
                      layout-align="space-between center">
                     <div layout="row" layout-align="start center">
                         <img ng-src="{{group.logo}}" class="logo" alt="{{group.name}}"/>
-
                         <div>
                             <div class="name">{{group.name}}</div>
                             <div class="category">{{group.category}}</div>
