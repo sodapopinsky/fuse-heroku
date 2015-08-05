@@ -575,6 +575,17 @@
                 }
             })
 
+            // Sidenav
+            .state('app.components.elements.sidenav', {
+                url: '/sidenav',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/components/elements/sidenav/sidenav.html',
+                        controller: 'SidenavController as vm'
+                    }
+                }
+            })
+
             // Toast
             .state('app.components.elements.tabs', {
                 url: '/tabs',
