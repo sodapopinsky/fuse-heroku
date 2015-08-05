@@ -1,3 +1,4 @@
+
 #theme-changer {
   position: absolute;
   bottom: 8px;
@@ -11,10 +12,11 @@
         opacity: 0;
         transform: scale(0);
         visibility: hidden;
-        @for $item from 1 through 40{
-          &:nth-child(#{$item}){
-            //            animation-delay: -#{$item}s;
-            transition: all #{0.4 - (0.3 / $item)}s cubic-bezier(0.55, 0, 0.55, 0.2);
+        .for(40);
+        .-each(@index) {
+          &:nth-child(@{index}) {
+            animation-delay: ~'-@{index}s';
+            transition: all 0.4 - (0.3 / @index) * 1s cubic-bezier(0.55, 0, 0.55, 0.2);
           }
         }
       }
@@ -25,15 +27,15 @@
           opacity: 1;
           transform: scale(1);
           visibility: visible;
-          @for $item from 1 through 40{
-            &:nth-child(#{$item}){
-              //            animation-delay: -#{$item}s;
-              transition: all #{0.3 / $item}s cubic-bezier(0.55, 0, 0.55, 0.2);
+          .for(40);
+          .-each(@index) {
+            &:nth-child(@{index}) {
+              animation-delay: ~'-@{index}s';
+              transition: all (0.3 / @index) * 1s cubic-bezier(0.55, 0, 0.55, 0.2);
             }
           }
         }
       }
     }
   }
-
 }

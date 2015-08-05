@@ -12,13 +12,16 @@ var wiredep = require('wiredep').stream;
 var _ = require('lodash');
 
 gulp.task('styles', function () {
-  var sassOptions = {
-    style: 'expanded'
+  var lessOptions = {
+    options: [
+      'bower_components',
+      path.join(conf.paths.src, '/app')
+    ]
   };
 
   var injectFiles = gulp.src([
-    path.join(conf.paths.src, '/app/**/*.scss'),
-    path.join('!' + conf.paths.src, '/app/index.scss')
+    path.join(conf.paths.src, '/app/**/*.less'),
+    path.join('!' + conf.paths.src, '/app/index.less')
   ], { read: false });
 
   var injectOptions = {
@@ -33,12 +36,12 @@ gulp.task('styles', function () {
 
 
   return gulp.src([
-    path.join(conf.paths.src, '/app/index.scss')
+    path.join(conf.paths.src, '/app/index.less')
   ])
     .pipe($.inject(injectFiles, injectOptions))
     .pipe(wiredep(_.extend({}, conf.wiredep)))
     .pipe($.sourcemaps.init())
-    .pipe($.sass(sassOptions)).on('error', conf.errorHandler('Sass'))
+    .pipe($.less(lessOptions)).on('error', conf.errorHandler('Less'))
     .pipe($.autoprefixer()).on('error', conf.errorHandler('Autoprefixer'))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')))

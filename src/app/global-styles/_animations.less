@@ -2,14 +2,14 @@
 /*  @ Animations
 /*----------------------------------------------------------------*/
 
-@mixin transitionDuration($duration) {
-    transition-duration: $duration;
-    -webkit-transition-duration: $duration;
+.transitionDuration(@duration) {
+    transition-duration: @duration;
+    -webkit-transition-duration: @duration;
     -webkit-backface-visibility: hidden;
     -webkit-perspective: 1000;
 }
 
-@mixin easingTimingFunction() {
+.easingTimingFunction() {
     -webkit-transition: all 0 cubic-bezier(0.250, 0.460, 0.450, 0.940);
     -moz-transition: all 0 cubic-bezier(0.250, 0.460, 0.450, 0.940);
     -ms-transition: all 0 cubic-bezier(0.250, 0.460, 0.450, 0.940);
@@ -23,7 +23,7 @@
     transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
 }
 
-@mixin bouncyTimingFunction() {
+.bouncyTimingFunction() {
     -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
     -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.320, 1.275);
     -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.320, 1.275);
@@ -39,7 +39,7 @@
     transition-timing-function: cubic-bezier(0.175, 0.885, 0.450, 1.595); /* custom */
 }
 
-@mixin easingOutQuadTimingFunction() {
+.easingOutQuadTimingFunction() {
     -webkit-transition: all 0 cubic-bezier(0.250, 0.460, 0.450, 0.940);
     -moz-transition: all 0 cubic-bezier(0.250, 0.460, 0.450, 0.940);
     -ms-transition: all 0 cubic-bezier(0.250, 0.460, 0.450, 0.940);
@@ -53,10 +53,10 @@
     transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
 }
 
-@mixin transform($value) {
-    transform: $value;
-    -ms-transform: $value;
-    -webkit-transform: $value;
+.transform(@value) {
+    transform: @value;
+    -ms-transform: @value;
+    -webkit-transform: @value;
 }
 
 .animate {
@@ -66,10 +66,10 @@
         left: 0;
         right: 0;
         height: 100%;
-        @include easingOutQuadTimingFunction();
+        .easingOutQuadTimingFunction();
         &.ng-enter,
         &.ng-leave {
-            @include transitionDuration(400ms);
+            .transitionDuration(400ms);
         }
         &.ng-enter {
             top: 100%;
@@ -96,25 +96,25 @@
 
 .animate-switch-scale-fade-in {
     > .ng-animate {
-        @include easingOutQuadTimingFunction();
+        .easingOutQuadTimingFunction();
         position: absolute;
         width: 100%;
         overflow: hidden;
         &.ng-enter {
-            @include transform(scale(3));
-            @include transitionDuration(250ms);
+            .transform(scale(3));
+            .transitionDuration(250ms);
             opacity: 0;
             &.ng-enter-active {
-                @include transform(scale(1));
+                .transform(scale(1));
                 opacity: 1;
             }
         }
         &.ng-leave {
-            @include transform(scale(1));
-            @include transitionDuration(250ms);
+            .transform(scale(1));
+            .transitionDuration(250ms);
             opacity: 1;
             &.ng-leave.ng-leave-active {
-                @include transform(scale(3));
+                .transform(scale(3));
                 opacity: 0;
             }
         }
@@ -123,25 +123,25 @@
 
 .animate-switch-slide-up {
     > .ng-animate {
-        @include easingOutQuadTimingFunction();
+        .easingOutQuadTimingFunction();
         position: absolute;
         width: 100%;
         overflow: hidden;
         &.ng-enter {
-            @include transform(translate3d(0, 100%, 0));
-            @include transitionDuration(250ms);
+            .transform(translate3d(0, 100%, 0));
+            .transitionDuration(250ms);
             opacity: 0;
             &.ng-enter-active {
-                @include transform(translate3d(0, 0, 0));
+                .transform(translate3d(0, 0, 0));
                 opacity: 1;
             }
         }
         &.ng-leave {
-            @include transform(translate3d(0, 0, 0));
-            @include transitionDuration(250ms);
+            .transform(translate3d(0, 0, 0));
+            .transitionDuration(250ms);
             opacity: 1;
             &.ng-leave.ng-leave-active {
-                @include transform(translate3d(0, 100%, 0));
+                .transform(translate3d(0, 100%, 0));
                 opacity: 0;
             }
         }
@@ -149,71 +149,71 @@
 }
 
 .animate-slide-up {
-    @include easingOutQuadTimingFunction();
+    .easingOutQuadTimingFunction();
     opacity: 1;
     &.ng-hide {
-        @include transform(translate3d(0, 100%, 0));
-        @include transitionDuration(300ms);
+        .transform(translate3d(0, 100%, 0));
+        .transitionDuration(300ms);
         opacity: 0;
     }
     &.ng-hide-add,
     &.ng-hide-remove {
-        @include transitionDuration(300ms);
+        .transitionDuration(300ms);
     }
 }
 
 .animate-slide-right {
-    @include easingOutQuadTimingFunction();
+    .easingOutQuadTimingFunction();
     opacity: 1;
     &.ng-hide {
-        @include transform(translate3d(-304px, 0, 0));
-        @include transitionDuration(300ms);
+        .transform(translate3d(-304px, 0, 0));
+        .transitionDuration(300ms);
         opacity: 0;
     }
     &.ng-hide-add,
     &.ng-hide-remove {
-        @include transitionDuration(300ms);
+        .transitionDuration(300ms);
     }
 }
 
 .animate-slide-left {
-    @include easingOutQuadTimingFunction();
+    .easingOutQuadTimingFunction();
     opacity: 1;
     &.ng-hide {
-        @include transform(translate3d(304px, 0, 0));
-        @include transitionDuration(300ms);
+        .transform(translate3d(304px, 0, 0));
+        .transitionDuration(300ms);
         opacity: 0;
     }
     &.ng-hide-add,
     &.ng-hide-remove {
-        @include transitionDuration(300ms);
+        .transitionDuration(300ms);
     }
 }
 
 .animate-flipInX {
-    @include easingOutQuadTimingFunction();
+    .easingOutQuadTimingFunction();
     opacity: 1;
     &.ng-hide {
-        @include transform(perspective(100px) rotate3d(1, 0, 0, 90deg));
-        @include transitionDuration(250ms);
+        .transform(perspective(100px) rotate3d(1, 0, 0, 90deg));
+        .transitionDuration(250ms);
         opacity: 0;
     }
     &.ng-hide-add,
     &.ng-hide-remove {
-        @include transitionDuration(250ms);
+        .transitionDuration(250ms);
     }
 }
 
 .animate-fadeIn {
-    @include easingOutQuadTimingFunction();
+    .easingOutQuadTimingFunction();
     opacity: 1;
     &.ng-hide {
-        @include transitionDuration(250ms);
+        .transitionDuration(250ms);
         opacity: 0;
     }
     &.ng-hide-add,
     &.ng-hide-remove {
-        @include transitionDuration(250ms);
+        .transitionDuration(250ms);
     }
 }
 
