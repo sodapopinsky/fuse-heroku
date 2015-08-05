@@ -546,6 +546,17 @@
             })
 
             // Toast
+            .state('app.components.elements.tabs', {
+                url  : '/tabs',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/components/elements/tabs/tabs.html',
+                        controller : 'TabsController as vm'
+                    }
+                }
+            })
+
+            // Toast
             .state('app.components.elements.toast', {
                 url  : '/toast',
                 views: {
