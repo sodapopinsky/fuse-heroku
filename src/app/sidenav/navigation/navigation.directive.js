@@ -5,179 +5,364 @@
     angular.module('fuse')
         .factory('msNavService', msNavService)
         .controller('MsNavController', MsNavController)
+        .controller('MsNavToggleController', MsNavToggleController)
         .directive('msNav', msNav)
-        .directive('msNavToggle', msNavToggle);
+        .directive('msNavItem', msNavItem)
+        .directive('msNavTitle', msNavTitle)
+        .directive('msNavButton', msNavButton)
+        .directive('msNavToggle', msNavToggle)
+        .directive('msNavToggleItems', msNavToggleItems);
 
     /** @ngInject */
-    function msNavService($state)
+    function msNavService()
     {
-        var toggleables = [];
+        var disabled = false;
 
         var service = {
-            saveToggleables  : saveToggleables,
-            updateToggleables: updateToggleables,
-            closeAll         : closeAll
+            isDisabled: isDisabled,
+            disable   : disable,
+            enable    : enable
         };
 
-        function saveToggleables(scope, states)
-        {
-            toggleables.push({
-                'scope' : scope,
-                'states': states
-            });
-        }
+        return service;
 
-        function updateToggleables()
-        {
-            // If there are no active toggles, bail
-            if ( !toggleables.length )
-            {
-                return;
-            }
+        //////////
 
-            // Iterate through all toggleables and open the ones that have matching state names
-            var currentState = $state.current.name;
-            angular.forEach(toggleables, function (toggleable)
-            {
-                angular.forEach(toggleable.states, function (state)
-                {
-                    if ( currentState === state )
-                    {
-                        toggleable.scope.open();
-                    }
-                });
-            });
+        /**
+         * Is navigation disabled
+         * @returns {boolean}
+         */
+        function isDisabled()
+        {
+            return disabled;
         }
 
         /**
-         * Close all
+         * Disable the navigation
          */
-        function closeAll(exception)
+        function disable()
         {
-            angular.forEach(toggleables, function (toggleable)
-            {
-                if ( exception && angular.equals(exception, toggleable.scope) )
-                {
-                    return;
-                }
-
-                toggleable.scope.close();
-            });
+            disabled = true;
         }
 
-        return service;
+        /**
+         * Enable the navigation
+         */
+        function enable()
+        {
+            disabled = false;
+        }
+
     }
 
-    function MsNavController()
+    /** @ngInject */
+    function MsNavController(msNavService)
     {
         var vm = this;
+
+        // Data
+        vm.element = undefined;
+
+        // Methods
+        vm.init = init;
+
+        //////////
+
+        /**
+         * Init the controller by storing the element
+         * @param element
+         */
+        function init(element)
+        {
+            vm.element = element;
+        }
+
     }
 
-    function msNav(msNavService)
+    /** @ngInject */
+    function MsNavToggleController($scope, $animate, msNavService)
+    {
+        var vm = this;
+
+        // Data
+        vm.element = undefined;
+        vm.classes = {
+            expanded         : 'expanded',
+            expandAnimation  : 'expand-animation',
+            collapseAnimation: 'collapse-animation'
+        };
+
+        // Methods
+        vm.init = init;
+        vm.isCollapsed = isCollapsed;
+        vm.isExpanded = isExpanded;
+        vm.expand = expand;
+        vm.collapse = collapse;
+
+        //////////
+
+        /**
+         * Init the controller by storing the element
+         * @param element
+         */
+        function init(element)
+        {
+            vm.element = element;
+        }
+
+        /**
+         * Is element collapsed
+         * @returns {bool}
+         */
+        function isCollapsed()
+        {
+            return vm.element.attr('collapsed') === 'true';
+        }
+
+        /**
+         * Is element expanded
+         * @returns {bool}
+         */
+        function isExpanded()
+        {
+            return !isCollapsed();
+        }
+
+        /**
+         * Expand the element
+         */
+        function expand()
+        {
+            // Disable the navigation to prevent spamming
+            msNavService.disable();
+
+            // Set element attr
+            vm.element.attr('collapsed', false);
+
+            // Grab the element to expand
+            var elementToExpand = angular.element(vm.element.find('ms-nav-toggle-items')[0]);
+
+            // Move the element out of the dom flow and
+            // make it block so we can get its height
+            elementToExpand.css({
+                'position'  : 'absolute',
+                'visibility': 'hidden',
+                'display'   : 'block'
+            });
+
+            // Grab the height
+            var height = elementToExpand[0].offsetHeight;
+
+            // Reset the style modifications
+            elementToExpand.css({
+                'position'  : '',
+                'visibility': '',
+                'display'   : ''
+            });
+
+            // Animate the height
+            $animate.animate(elementToExpand,
+                {
+                    'display': 'block',
+                    'height' : '0px'
+                },
+                {
+                    'height': height + 'px'
+                },
+                vm.classes.expandAnimation
+            ).then(
+                function ()
+                {
+                    // Add expanded class
+                    elementToExpand.addClass(vm.classes.expanded);
+
+                    // Clear the inline styles after animation done
+                    elementToExpand.css({'height': ''});
+
+                    // Enable the navigation
+                    msNavService.enable();
+                }
+            );
+        }
+
+        /**
+         * Collapse the element
+         */
+        function collapse()
+        {
+            // Disable the navigation to prevent spamming
+            msNavService.disable();
+
+            // Set element attr
+            vm.element.attr('collapsed', true);
+
+            // Grab the element to collapse
+            var elementToCollapse = angular.element(vm.element.find('ms-nav-toggle-items')[0]);
+
+            // Grab the height
+            var height = elementToCollapse[0].offsetHeight;
+
+            // Animate the height
+            $animate.animate(elementToCollapse,
+                {
+                    'height': height + 'px'
+                },
+                {
+                    'height': '0px'
+                },
+                vm.classes.collapseAnimation
+            ).then(
+                function ()
+                {
+                    // Remove expanded class
+                    elementToCollapse.removeClass(vm.classes.expanded);
+
+                    // Clear the inline styles after animation done
+                    elementToCollapse.css({
+                        'display': '',
+                        'height' : ''
+                    });
+
+                    // Enable the navigation
+                    msNavService.enable();
+                }
+            );
+        }
+    }
+
+    /** @ngInject */
+    function msNav()
     {
         return {
+            restrict: 'E',
             scope     : {},
             controller: 'MsNavController',
-            link      : function ()
+            compile   : function (tElement, tAttrs)
             {
-                msNavService.updateToggleables();
+                tElement.addClass('ms-nav');
+
+                return function postLink($scope, $element, $attrs, MsNavCtrl)
+                {
+                    // Init the controller with the $element
+                    MsNavCtrl.init($element);
+                }
             }
         };
     }
 
-    function msNavToggle(msNavService)
+    /** @ngInject */
+    function msNavTitle()
     {
         return {
-            require: '^msNav',
-            scope  : true,
-            compile: function (element)
+            restrict: 'A',
+            compile: function (tElement, tAttrs)
             {
-                element.addClass('ms-nav-toggle');
+                tElement.addClass('ms-nav-title');
 
                 return function postLink($scope, $element)
                 {
-                    var toggleOpened = false;
-                    var toggleItems = $element.children('ul');
 
-                    // Iterate through all the ui-sref attributes and
-                    // store them along with the scope of this toggle
-                    var linkEl = $element.find('a');
-                    var states = [];
+                }
+            }
+        };
+    }
 
-                    angular.forEach(linkEl, function (link)
+    /** @ngInject */
+    function msNavItem()
+    {
+        return {
+            restrict: 'E',
+            compile: function (tElement, tAttrs)
+            {
+                return function postLink($scope, $element)
+                {
+
+                }
+            }
+        };
+    }
+
+    /** @ngInject */
+    function msNavButton()
+    {
+        return {
+            restrict: 'AE',
+            compile: function (tElement, tAttrs)
+            {
+                tElement.addClass('ms-nav-button');
+
+                return function postLink($scope, $element)
+                {
+
+                }
+            }
+        };
+    }
+
+    /** @ngInject */
+    function msNavToggle(msNavService)
+    {
+        return {
+            restrict: 'A',
+            require   : ['^msNav', 'msNavToggle'],
+            controller: 'MsNavToggleController',
+            scope     : true,
+            compile   : function (tElement, tAttrs)
+            {
+                tElement.addClass('ms-nav-toggle');
+
+                // Add collapsed attr
+                if ( angular.isUndefined(tAttrs.collapsed) )
+                {
+                    tAttrs.collapsed = true;
+                }
+                tElement.attr('collapsed', tAttrs.collapsed);
+
+                return function postLink($scope, $element, $attrs, ctrls)
+                {
+                    var MsNavCtrl = ctrls[0],
+                        MsNavToggleCtrl = ctrls[1];
+
+                    // Init the controller with the $element
+                    MsNavToggleCtrl.init($element);
+
+                    // Click handler
+                    $element.children('.ms-nav-button').on('click', toggle);
+
+                    // Toggle function
+                    function toggle()
                     {
-                        states.push(angular.element(link).attr('ui-sref'));
-                    });
-
-                    // Save toggle paths
-                    msNavService.saveToggleables($scope, states);
-
-                    /**
-                     * Return if toggle is open
-                     */
-                    var isOpen = function ()
-                    {
-                        return toggleOpened;
-                    };
-
-
-                    /**
-                     * Open the toggle
-                     */
-                    var open = function ()
-                    {
-                        $element.addClass('open');
-                        toggleOpened = true;
-                        toggleItems.slideDown();
-                    };
-
-                    /**
-                     * Close the toggle
-                     */
-                    var close = function ()
-                    {
-                        $element.removeClass('open');
-                        toggleOpened = false;
-                        toggleItems.slideUp();
-                    };
-
-                    /**
-                     * Toggle
-                     */
-                    var toggle = function ()
-                    {
-                        if ( isOpen() )
+                        // If navigation is disabled, do nothing...
+                        if ( msNavService.isDisabled() )
                         {
-                            $scope.$broadcast('MSNav::ParentToggleClosed');
-                            close();
+                            return;
+                        }
+
+                        if ( MsNavToggleCtrl.isCollapsed() )
+                        {
+                            MsNavToggleCtrl.expand();
                         }
                         else
                         {
-                            if ( $element.parents('.ms-nav-toggle.open').length )
-                            {
-                                var exception = $element.parents('.ms-nav-toggle.open').scope();
-                                msNavService.closeAll(exception);
-                            }
-                            else
-                            {
-                                msNavService.closeAll();
-                            }
-
-                            open();
+                            MsNavToggleCtrl.collapse();
                         }
-                    };
-
-                    // Catch broadcasted event
-                    $scope.$on('MSNav::ParentToggleClosed', close);
-
-                    // Toggle button functionality
-                    var toggleButton = $element.children('.ms-nav-button');
-                    toggleButton.on('click', toggle);
-
-                    // Expose the toggle functions so we can access them from outside
-                    $scope.open = open;
-                    $scope.close = close;
+                    }
                 };
+            }
+        };
+    }
+
+    /** @ngInject */
+    function msNavToggleItems()
+    {
+        return {
+            restrict: 'E',
+            compile: function (tElement, tAttrs)
+            {
+                return function postLink($scope, $element)
+                {
+
+                }
             }
         };
     }

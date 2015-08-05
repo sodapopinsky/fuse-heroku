@@ -39,147 +39,158 @@ $navSidabarWidth: 240px;
         max-width: $navSidabarWidth;
     }
 
-    .ms-nav {
+    ms-nav {
+        display: block;
+        position: relative;
         color: rgba(255, 255, 255, 0.70);
         font-size: 13px;
+        user-select: none;
 
-        ul, ol {
-            margin: 0;
-            padding: 0;
-        }
+        ms-nav-item {
+            display: block;
+            position: relative;
+            font-size: 14px;
+            line-height: 48px;
 
-        .ms-nav-group {
-            padding: 16px 0 0 0;
-
-            .group-title {
+            &.ms-nav-title {
+                display: block;
                 line-height: 32px;
-                margin: 0;
+                margin-top: 16px;
+                padding: 0 24px;
                 width: 100%;
                 color: rgba(255, 255, 255, 0.30);
                 font-size: 12px;
                 font-weight: 500;
                 text-transform: uppercase;
-                padding-left: 24px;
             }
 
-            .ms-nav-item {
+            .ms-nav-button {
                 position: relative;
-                font-size: 15px;
-                line-height: 48px;
+                display: flex;
+                align-self: flex-start;
+                align-items: center;
+                cursor: pointer;
+                padding: 0 24px;
+                color: rgba(255, 255, 255, 0.70);
 
-                .ms-nav-button {
-                    position: relative;
+                &:hover {
+                    background: rgba(0, 0, 0, 0.1);
+                }
+
+                > span {
                     display: flex;
-                    align-self: flex-start;
-                    align-items: center;
-                    cursor: pointer;
-                    padding: 0 24px;
-                    color: rgba(255, 255, 255, 0.70);
-
-                    > span {
-                        display: flex;
-                        flex: 1;
-                    }
-
-                    .arrow {
-                        transition: transform 0.3s ease-in-out;
-                        margin: 0;
-                    }
-
-                    &.active {
-                        background: rgba(0, 0, 0, 0.12);
-                        color: rgba(255, 255, 255, 1);
-
-                        .ms-nav-icon {
-                            color: rgba(255, 255, 255, 1);
-                        }
-                    }
+                    flex: 1;
                 }
 
-                .ms-nav-icon {
-                    color: rgba(255, 255, 255, 0.70);
-                    margin: 0 16px 0 0;
-                }
-
-                .ms-nav-title {
-                    display: flex;
-                }
-            }
-
-            .ms-nav-toggle {
-
-                ul {
-                    display: none;
-                    overflow: hidden;
-                    margin-bottom: 8px;
-
-                    li {
-                        /* Level 1 */
-                        .ms-nav-button {
-                            padding-left: 58px;
-                        }
-
-                        /* Level 2 */
-                        ul li {
-
-                            .ms-nav-button {
-                                padding-left: 68px;
-                            }
-
-                            /* Level 3 */
-                            ul li {
-
-                                .ms-nav-button {
-                                    padding-left: 78px;
-                                }
-
-                                /* Level 4 */
-                                ul li {
-
-                                    .ms-nav-button {
-                                        padding-left: 88px;
-                                    }
-
-                                    /* Level 5 */
-                                    ul li {
-
-                                        .ms-nav-button {
-                                            padding-left: 98px;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
+                .arrow {
+                    transition: transform 0.3s ease-in-out;
+                    margin: 0;
                 }
 
                 &.active {
+                    background: rgba(0, 0, 0, 0.12);
+                    color: rgba(255, 255, 255, 1);
 
-                    > .ms-nav-button {
+                    i {
                         color: rgba(255, 255, 255, 1);
-
-                        a, md-icon {
-                            color: rgba(255, 255, 255, 1);
-                        }
                     }
                 }
+            }
 
-                &.open {
+            i {
+                color: rgba(255, 255, 255, 0.70);
+                margin: 0 16px 0 0;
+            }
 
-                    & > .ms-nav-button {
+            span {
+                display: flex;
+            }
+        }
 
-                        & > .arrow {
-                            transform: rotate(180deg);
+        .ms-nav-toggle {
+
+            ms-nav-toggle-items {
+                display: none;
+                overflow: hidden;
+
+                &.expanded {
+
+                }
+
+                &.expand-animation {
+                    transition: height 0.35s linear;
+                }
+
+                &.collapse-animation {
+                    transition: height 0.35s linear;
+                }
+
+                ms-nav-item {
+                    /* Level 1 */
+                    .ms-nav-button {
+                        padding-left: 58px;
+                    }
+
+                    /* Level 2 */
+                    ms-nav-toggle-items ms-nav-item {
+
+                        .ms-nav-button {
+                            padding-left: 68px;
+                        }
+
+                        /* Level 3 */
+                        ms-nav-toggle-items ms-nav-item {
+
+                            .ms-nav-button {
+                                padding-left: 78px;
+                            }
+
+                            /* Level 4 */
+                            ms-nav-toggle-items ms-nav-item {
+
+                                .ms-nav-button {
+                                    padding-left: 88px;
+                                }
+
+                                /* Level 5 */
+                                ms-nav-toggle-items ms-nav-item {
+
+                                    .ms-nav-button {
+                                        padding-left: 98px;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
             }
 
-            & > .ms-nav-toggle {
+            &.active {
 
-                &.open {
-                    background-color: rgba(0, 0, 0, 0.08);
+                > .ms-nav-button {
+                    color: rgba(255, 255, 255, 1);
+
+                    a, md-icon {
+                        color: rgba(255, 255, 255, 1);
+                    }
                 }
+            }
+
+            &[collapsed="false"] {
+
+                & > .ms-nav-button {
+
+                    & > .arrow {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+
+        & > .ms-nav-toggle {
+
+            &[collapsed="false"] {
+                background-color: rgba(0, 0, 0, 0.08);
             }
         }
     }

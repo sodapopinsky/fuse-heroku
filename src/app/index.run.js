@@ -7,7 +7,7 @@
         .run(runBlock);
 
     /** @ngInject */
-    function runBlock($rootScope, $timeout, msNavService)
+    function runBlock($rootScope, $timeout)
     {
         $rootScope.$on('$stateChangeStart', function ()
         {
@@ -16,9 +16,6 @@
 
         $rootScope.$on('$stateChangeSuccess', function ()
         {
-            // Update navigation toggle
-            msNavService.updateToggleables();
-
             $timeout(function ()
             {
                 $rootScope.loadingProgress = false;
