@@ -3,7 +3,6 @@
     'use strict';
 
     angular.module('fuse')
-        .factory('msNavService', msNavService)
         .controller('MsNavController', MsNavController)
         .controller('MsNavToggleController', MsNavToggleController)
         .directive('msNav', msNav)
@@ -14,22 +13,29 @@
         .directive('msNavToggleItems', msNavToggleItems);
 
     /** @ngInject */
-    function msNavService()
+    function MsNavController()
     {
-        var disabled = false;
+        var vm = this,
+            disabled = false,
+            toggleItems = [],
+            expandedItems = [];
 
-        var service = {
-            isDisabled: isDisabled,
-            disable   : disable,
-            enable    : enable
-        };
+        // Data
 
-        return service;
+        // Methods
+        vm.isDisabled = isDisabled;
+        vm.enable = enable;
+        vm.disable = disable;
+        vm.setToggleItem = setToggleItem;
+        vm.setExpandedItem = setExpandedItem;
+        vm.clearExpandedItems = clearExpandedItems;
+        vm.collapseAll = collapseAll;
 
         //////////
 
         /**
          * Is navigation disabled
+         *
          * @returns {boolean}
          */
         function isDisabled()
@@ -53,34 +59,142 @@
             disabled = false;
         }
 
-    }
-
-    /** @ngInject */
-    function MsNavController(msNavService)
-    {
-        var vm = this;
-
-        // Data
-        vm.element = undefined;
-
-        // Methods
-        vm.init = init;
-
-        //////////
-
         /**
-         * Init the controller by storing the element
+         * Set toggle item
+         *
          * @param element
+         * @param scope
          */
-        function init(element)
+        function setToggleItem(element, scope)
         {
-            vm.element = element;
+            toggleItems.push({
+                'element': element,
+                'scope'  : scope
+            })
         }
 
+        /**
+         * Set expanded item
+         *
+         * @param element
+         * @param scope
+         */
+        function setExpandedItem(element, scope)
+        {
+            expandedItems.push({
+                'element': element,
+                'scope'  : scope
+            })
+        }
+
+        /**
+         * Clear expanded items list
+         */
+        function clearExpandedItems()
+        {
+            expandedItems = [];
+        }
+
+        /**
+         * Collapse all navigation items except the
+         * one we just expanded and its parents
+         */
+        function collapseAll()
+        {
+            var collapse;
+
+            angular.forEach(toggleItems, function (toggleItem)
+            {
+                collapse = true;
+
+                angular.forEach(expandedItems, function (expandedItem)
+                {
+                    if ( angular.equals(toggleItem.scope, expandedItem.scope) )
+                    {
+                        collapse = false;
+                    }
+                });
+
+                // Collapse
+                if ( collapse )
+                {
+                    // Call collapse on the toggle item's scope
+                    toggleItem.scope.collapse();
+                }
+            });
+        }
     }
 
     /** @ngInject */
-    function MsNavToggleController($scope, $animate, msNavService)
+    function msNav()
+    {
+        return {
+            restrict  : 'E',
+            scope     : {},
+            controller: 'MsNavController',
+            compile   : function (tElement, tAttrs)
+            {
+                tElement.addClass('ms-nav');
+
+                return function postLink($scope, $element, $attrs, MsNavCtrl)
+                {
+
+                }
+            }
+        };
+    }
+
+    /** @ngInject */
+    function msNavTitle()
+    {
+        return {
+            restrict: 'A',
+            compile : function (tElement, tAttrs)
+            {
+                tElement.addClass('ms-nav-title');
+
+                return function postLink($scope, $element)
+                {
+
+                }
+            }
+        };
+    }
+
+    /** @ngInject */
+    function msNavItem()
+    {
+        return {
+            restrict: 'E',
+            compile : function (tElement, tAttrs)
+            {
+                return function postLink($scope, $element)
+                {
+
+                }
+            }
+        };
+    }
+
+    /** @ngInject */
+    function msNavButton()
+    {
+        return {
+            restrict: 'AE',
+            compile : function (tElement, tAttrs)
+            {
+                tElement.addClass('ms-nav-button');
+
+                return function postLink($scope, $element)
+                {
+
+                }
+            }
+        };
+    }
+
+    /** @ngInject */
+    function MsNavToggleController($scope, $q, $animate)
     {
         var vm = this;
 
@@ -103,6 +217,7 @@
 
         /**
          * Init the controller by storing the element
+         *
          * @param element
          */
         function init(element)
@@ -112,6 +227,7 @@
 
         /**
          * Is element collapsed
+         *
          * @returns {bool}
          */
         function isCollapsed()
@@ -121,6 +237,7 @@
 
         /**
          * Is element expanded
+         *
          * @returns {bool}
          */
         function isExpanded()
@@ -130,11 +247,23 @@
 
         /**
          * Expand the element
+         *
+         * @returns $promise
          */
         function expand()
         {
-            // Disable the navigation to prevent spamming
-            msNavService.disable();
+            // Create a new deferred object
+            var deferred = $q.defer();
+
+            // If the menu item is already expanded, do nothing..
+            if ( isExpanded() )
+            {
+                // Reject the deferred object
+                deferred.reject({'error': true});
+
+                // Return the promise
+                return deferred.promise;
+            }
 
             // Set element attr
             vm.element.attr('collapsed', false);
@@ -179,19 +308,34 @@
                     // Clear the inline styles after animation done
                     elementToExpand.css({'height': ''});
 
-                    // Enable the navigation
-                    msNavService.enable();
+                    // Resolve the deferred object
+                    deferred.resolve({'success': true});
                 }
             );
+
+            // Return the promise
+            return deferred.promise;
         }
 
         /**
          * Collapse the element
+         *
+         * @returns $promise
          */
         function collapse()
         {
-            // Disable the navigation to prevent spamming
-            msNavService.disable();
+            // Create a new deferred object
+            var deferred = $q.defer();
+
+            // If the menu item is already collapsed, do nothing..
+            if ( isCollapsed() )
+            {
+                // Reject the deferred object
+                deferred.reject({'error': true});
+
+                // Return the promise
+                return deferred.promise;
+            }
 
             // Set element attr
             vm.element.attr('collapsed', true);
@@ -223,87 +367,21 @@
                         'height' : ''
                     });
 
-                    // Enable the navigation
-                    msNavService.enable();
+                    // Resolve the deferred object
+                    deferred.resolve({'success': true});
                 }
             );
+
+            // Return the promise
+            return deferred.promise;
         }
     }
 
     /** @ngInject */
-    function msNav()
+    function msNavToggle()
     {
         return {
-            restrict: 'E',
-            scope     : {},
-            controller: 'MsNavController',
-            compile   : function (tElement, tAttrs)
-            {
-                tElement.addClass('ms-nav');
-
-                return function postLink($scope, $element, $attrs, MsNavCtrl)
-                {
-                    // Init the controller with the $element
-                    MsNavCtrl.init($element);
-                }
-            }
-        };
-    }
-
-    /** @ngInject */
-    function msNavTitle()
-    {
-        return {
-            restrict: 'A',
-            compile: function (tElement, tAttrs)
-            {
-                tElement.addClass('ms-nav-title');
-
-                return function postLink($scope, $element)
-                {
-
-                }
-            }
-        };
-    }
-
-    /** @ngInject */
-    function msNavItem()
-    {
-        return {
-            restrict: 'E',
-            compile: function (tElement, tAttrs)
-            {
-                return function postLink($scope, $element)
-                {
-
-                }
-            }
-        };
-    }
-
-    /** @ngInject */
-    function msNavButton()
-    {
-        return {
-            restrict: 'AE',
-            compile: function (tElement, tAttrs)
-            {
-                tElement.addClass('ms-nav-button');
-
-                return function postLink($scope, $element)
-                {
-
-                }
-            }
-        };
-    }
-
-    /** @ngInject */
-    function msNavToggle(msNavService)
-    {
-        return {
-            restrict: 'A',
+            restrict  : 'A',
             require   : ['^msNav', 'msNavToggle'],
             controller: 'MsNavToggleController',
             scope     : true,
@@ -323,8 +401,11 @@
                     var MsNavCtrl = ctrls[0],
                         MsNavToggleCtrl = ctrls[1];
 
-                    // Init the controller with the $element
+                    // Init the toggle controller with the $element
                     MsNavToggleCtrl.init($element);
+
+                    // Store toggle-able element and its scope in the main nav controller
+                    MsNavCtrl.setToggleItem($element, $scope);
 
                     // Click handler
                     $element.children('.ms-nav-button').on('click', toggle);
@@ -333,19 +414,85 @@
                     function toggle()
                     {
                         // If navigation is disabled, do nothing...
-                        if ( msNavService.isDisabled() )
+                        if ( MsNavCtrl.isDisabled() )
                         {
                             return;
                         }
 
+                        // Disable the entire navigation to prevent spamming
+                        MsNavCtrl.disable();
+
                         if ( MsNavToggleCtrl.isCollapsed() )
                         {
-                            MsNavToggleCtrl.expand();
+                            // Clear the expanded items list
+                            MsNavCtrl.clearExpandedItems();
+
+                            // Emit pushToExpandedList event
+                            $scope.$emit('msNav::pushToExpandedList');
+
+                            // Collapse all other menu items
+                            MsNavCtrl.collapseAll();
+
+                            // Expand this
+                            expandThis();
                         }
                         else
                         {
-                            MsNavToggleCtrl.collapse();
+                            // Broadcast collapseAllChildren event
+                            $scope.$broadcast('msNav::collapseAllChildren');
+
+                            // Collapse this
+                            collapseThis();
                         }
+                    }
+
+                    /**
+                     * Expand
+                     */
+                    function expandThis()
+                    {
+                        // Expand and then...
+                        MsNavToggleCtrl.expand().then(function ()
+                        {
+                            // Enable the entire navigation after animations completed
+                            MsNavCtrl.enable();
+                        });
+                    }
+
+                    /**
+                     * Collapse
+                     */
+                    function collapseThis()
+                    {
+                        // Collapse and then...
+                        MsNavToggleCtrl.collapse().then(function ()
+                        {
+                            // Enable the entire navigation after animations completed
+                            MsNavCtrl.enable();
+                        });
+                    }
+
+                    // Listen for collapseAllChildren event
+                    $scope.$on('msNav::collapseAllChildren', collapseThis);
+
+                    // Listen for pushToExpandedList event
+                    $scope.$on('msNav::pushToExpandedList', function ()
+                    {
+                        MsNavCtrl.setExpandedItem($element, $scope);
+                    });
+
+                    // Expose the controller functions to
+                    // the scope for programmatic use
+                    $scope.collapse = function ()
+                    {
+                        // Call collapse on the controller
+                        MsNavToggleCtrl.collapse();
+                    };
+
+                    $scope.expand = function ()
+                    {
+                        // Call expand on the controller
+                        MsNavToggleCtrl.expand();
                     }
                 };
             }
@@ -357,7 +504,7 @@
     {
         return {
             restrict: 'E',
-            compile: function (tElement, tAttrs)
+            compile : function (tElement, tAttrs)
             {
                 return function postLink($scope, $element)
                 {
