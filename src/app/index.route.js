@@ -545,6 +545,16 @@
                 }
             })
 
+            // Toast
+            .state('app.components.elements.toast', {
+                url  : '/toast',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/components/elements/toast/toast.html',
+                        controller : 'ToastController as vm'
+                    }
+                }
+            })
 
         /**
          * Tables
