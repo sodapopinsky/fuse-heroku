@@ -542,6 +542,16 @@
                     }
                 }
             })
+            // Fab Speed Dial
+            .state('app.components.elements.menu', {
+                url: '/menu',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/components/elements/menu/menu.html',
+                        controller: 'MenuController as vm'
+                    }
+                }
+            })
 
             // Progress Circular
             .state('app.components.elements.progress-circular', {
