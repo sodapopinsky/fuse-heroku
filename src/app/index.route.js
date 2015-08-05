@@ -523,6 +523,17 @@
                 }
             })
 
+            // Fab Toolbar
+            .state('app.components.elements.fab-toolbar', {
+                url  : '/fab-toolbar',
+                views: {
+                    'main@app': {
+                        templateUrl: 'app/main/components/elements/fab-toolbar/fab-toolbar.html',
+                        controller : 'FabToolbarController as vm'
+                    }
+                }
+            })
+
             // Progress Circular
             .state('app.components.elements.progress-circular', {
                 url  : '/progress-circular',
