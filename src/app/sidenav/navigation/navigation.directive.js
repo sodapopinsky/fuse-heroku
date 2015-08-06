@@ -5,14 +5,12 @@
     angular.module('fuse')
         .controller('MsNavController', MsNavController)
         .directive('msNav', msNav)
-        .directive('msNavItem', msNavItem)
         .directive('msNavTitle', msNavTitle)
         .directive('msNavButton', msNavButton)
-        .directive('msNavToggle', msNavToggle)
-        .directive('msNavToggleItems', msNavToggleItems);
+        .directive('msNavToggle', msNavToggle);
 
     /** @ngInject */
-    function MsNavController($rootScope, $state)
+    function MsNavController()
     {
         var vm = this,
             disabled = false,
@@ -149,26 +147,11 @@
     }
 
     /** @ngInject */
-    function msNavItem()
-    {
-        return {
-            restrict: 'E',
-            compile : function (tElement, tAttrs)
-            {
-                return function postLink($scope, $element)
-                {
-
-                }
-            }
-        };
-    }
-
-    /** @ngInject */
     function msNavButton()
     {
         return {
             restrict: 'AE',
-            compile : function (tElement, tAttrs)
+            compile : function (tElement)
             {
                 tElement.addClass('ms-nav-button');
 
@@ -242,7 +225,7 @@
 
                         if ( isCollapsed() )
                         {
-                            // Clear the expanded items list
+                            // Clear the locked items list
                             MsNavCtrl.clearLockedItems();
 
                             // Emit pushToLockedList event
@@ -504,21 +487,6 @@
                 }
             }
         }
-    }
-
-    /** @ngInject */
-    function msNavToggleItems()
-    {
-        return {
-            restrict: 'E',
-            compile : function (tElement, tAttrs)
-            {
-                return function postLink($scope, $element)
-                {
-
-                }
-            }
-        };
     }
 
 })();
