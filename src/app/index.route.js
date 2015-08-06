@@ -18,7 +18,7 @@
             .state('app', {
                 abstract: true,
                 views: {
-                    'app@': {
+                    'main@': {
                         templateUrl: 'app/layout/default.html'
                     },
                     'toolbar@app': {
@@ -44,7 +44,7 @@
             .state('app.dev', {
                 url: '/dev',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/apps/dev/dev.html',
                         controller: 'DevController as vm'
                     }
@@ -55,7 +55,7 @@
             .state('app.dashboard', {
                 url: '/dashboard',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/apps/dashboard/dashboard.html',
                         controller: 'DashboardController as vm'
                     }
@@ -66,7 +66,7 @@
             .state('app.calendar', {
                 url: '/calendar',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/apps/calendar/calendar.html',
                         controller: 'CalendarController as vm'
                     }
@@ -77,7 +77,7 @@
             .state('app.e-commerce', {
                 url: '/e-commerce',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/app/e-commerce/e-commerce.html',
                         controller: 'calendarController as vm'
                     }
@@ -88,7 +88,7 @@
             .state('app.e-mail', {
                 url: '/email',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/apps/mail/mail.html',
                         controller: 'MailController as vm'
                     }
@@ -99,7 +99,7 @@
             .state('app.file-manager', {
                 url: '/file-manager',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/apps/file-manager/file-manager.html',
                         controller: 'FileManagerController as vm'
                     }
@@ -110,7 +110,7 @@
             .state('app.to-do', {
                 url: '/to-do',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/apps/todo/todo.html',
                         controller: 'TodoController as vm'
                     }
@@ -140,7 +140,7 @@
                     'app@': {
                         templateUrl: 'app/layout/basic.html'
                     },
-                    'main@app.pages.auth.login': {
+                    'content@app.pages.auth.login': {
                         templateUrl: 'app/main/pages/auth/login/login.html',
                         controller: 'LoginController as vm'
                     }
@@ -154,7 +154,7 @@
                     'app@': {
                         templateUrl: 'app/layout/basic.html'
                     },
-                    'main@app.pages.auth.register': {
+                    'content@app.pages.auth.register': {
                         templateUrl: 'app/main/pages/auth/register/register.html',
                         controller: 'RegisterController as vm'
                     }
@@ -168,7 +168,7 @@
                     'app@': {
                         templateUrl: 'app/layout/basic.html'
                     },
-                    'main@app.pages.auth.forgot-password': {
+                    'content@app.pages.auth.forgot-password': {
                         templateUrl: 'app/main/pages/auth/forgot-password/forgot-password.html',
                         controller: 'ForgotPasswordController as vm'
                     }
@@ -182,7 +182,7 @@
                     'app@': {
                         templateUrl: 'app/layout/basic.html'
                     },
-                    'main@app.pages.auth.lock': {
+                    'content@app.pages.auth.lock': {
                         templateUrl: 'app/main/pages/auth/lock/lock.html',
                         controller: 'LockController as vm'
                     }
@@ -196,7 +196,7 @@
                     'app@': {
                         templateUrl: 'app/layout/basic.html'
                     },
-                    'main@app.pages.coming-soon': {
+                    'content@app.pages.coming-soon': {
                         templateUrl: 'app/main/pages/coming-soon/coming-soon.html',
                         controller: 'ComingSoonController as vm'
                     }
@@ -218,7 +218,7 @@
                     'app@': {
                         templateUrl: 'app/layout/basic.html'
                     },
-                    'main@app.pages.errors.error-404': {
+                    'content@app.pages.errors.error-404': {
                         templateUrl: 'app/main/pages/errors/404/error-404.html',
                         controller: 'Error404Controller as vm'
                     }
@@ -232,7 +232,7 @@
                     'app@': {
                         templateUrl: 'app/layout/basic.html'
                     },
-                    'main@app.pages.errors.error-500': {
+                    'content@app.pages.errors.error-500': {
                         templateUrl: 'app/main/pages/errors/500/error-500.html',
                         controller: 'Error500Controller as vm'
                     }
@@ -243,7 +243,7 @@
             .state('app.pages.invoice', {
                 url: '/invoice',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/pages/invoice/invoice.html',
                         controller: 'InvoiceController as vm'
                     }
@@ -254,7 +254,7 @@
             .state('app.pages.profile', {
                 url: '/profile',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/pages/profile/profile.html',
                         controller: 'ProfileController as vm'
                     }
@@ -265,7 +265,7 @@
             .state('app.pages.search', {
                 url: '/search',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/pages/search/search.html',
                         controller: 'SearchController as vm'
                     }
@@ -276,7 +276,7 @@
             .state('app.pages.timeline', {
                 url: '/timeline',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/pages/timeline/timeline.html',
                         controller: 'TimelineController as vm'
                     }
@@ -295,7 +295,7 @@
             .state('app.ui.typography', {
                 url: '/typography',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/ui/typography/typography.html',
                         controller: 'TypographyController as vm'
                     }
@@ -306,7 +306,7 @@
             .state('app.ui.colors', {
                 url: '/colors',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/ui/colors/colors.html',
                         controller: 'ColorsController as vm'
                     }
@@ -318,7 +318,7 @@
             .state('app.ui.icons', {
                 url: '/icons',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/ui/icons/icons.html',
                         controller: 'IconsController as vm'
                     }
@@ -337,7 +337,7 @@
             .state('app.ui.layouts.style1-fullwidth', {
                 url: '/style1-fullwidth',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/ui/layouts/style-1/fullwidth/fullwidth.html',
                         controller: 'Style1FullwidthController as vm'
                     }
@@ -348,7 +348,7 @@
             .state('app.ui.layouts.style1-leftpane', {
                 url: '/style1-leftpane',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/ui/layouts/style-1/leftpane/leftpane.html',
                         controller: 'Style1LeftpaneController as vm'
                     }
@@ -359,7 +359,7 @@
             .state('app.ui.layouts.style1-rightpane', {
                 url: '/style1-rightpane',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/ui/layouts/style-1/rightpane/rightpane.html',
                         controller: 'Style1RightpaneController as vm'
                     }
@@ -393,7 +393,7 @@
             .state('app.components.elements.inputs.autocomplete', {
                 url: '/autocomplete',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/elements/inputs/autocomplete/autocomplete.html',
                         controller: 'AutocompleteController as vm'
                     }
@@ -404,7 +404,7 @@
             .state('app.components.elements.inputs.checkbox', {
                 url: '/checkbox',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/elements/inputs/checkbox/checkbox.html',
                         controller: 'CheckboxController as vm'
                     }
@@ -415,7 +415,7 @@
             .state('app.components.elements.inputs.chips', {
                 url: '/chips',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/elements/inputs/chips/chips.html',
                         controller: 'ChipsController as vm'
                     }
@@ -426,7 +426,7 @@
             .state('app.components.elements.inputs.fields', {
                 url: '/fields',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/elements/inputs/fields/fields.html',
                         controller: 'FieldsController as vm'
                     }
@@ -437,7 +437,7 @@
             .state('app.components.elements.inputs.radio', {
                 url: '/radio',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/elements/inputs/radio/radio.html',
                         controller: 'RadioController as vm'
                     }
@@ -448,7 +448,7 @@
             .state('app.components.elements.inputs.select', {
                 url: '/select',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/elements/inputs/select/select.html',
                         controller: 'SelectController as vm'
                     }
@@ -459,7 +459,7 @@
             .state('app.components.elements.inputs.slider', {
                 url: '/slider',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/elements/inputs/slider/slider.html',
                         controller: 'SliderController as vm'
                     }
@@ -470,7 +470,7 @@
             .state('app.components.elements.inputs.switch', {
                 url: '/switch',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/elements/inputs/switch/switch.html',
                         controller: 'SwitchController as vm'
                     }
@@ -481,7 +481,7 @@
             .state('app.components.elements.buttons', {
                 url: '/buttons',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/elements/buttons/buttons.html',
                         controller: 'ButtonsController as vm'
                     }
@@ -492,7 +492,7 @@
             .state('app.components.elements.bottom-sheet', {
                 url: '/bottom-sheet',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/elements/bottom-sheet/bottom-sheet.html',
                         controller: 'BottomSheetController as vm'
                     }
@@ -503,7 +503,7 @@
             .state('app.components.elements.card', {
                 url: '/card',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/elements/card/card.html',
                         controller: 'CardController as vm'
                     }
@@ -514,7 +514,7 @@
             .state('app.components.elements.dialog', {
                 url: '/dialog',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/elements/dialog/dialog.html',
                         controller: 'DialogController as vm'
                     }
@@ -525,7 +525,7 @@
             .state('app.components.elements.fab-toolbar', {
                 url: '/fab-toolbar',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/elements/fab-toolbar/fab-toolbar.html',
                         controller: 'FabToolbarController as vm'
                     }
@@ -536,7 +536,7 @@
             .state('app.components.elements.fab-speed-dial', {
                 url: '/fab-speed-dial',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/elements/fab-speed-dial/fab-speed-dial.html',
                         controller: 'FabSpeedDialController as vm'
                     }
@@ -546,7 +546,7 @@
             .state('app.components.elements.menu', {
                 url: '/menu',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/elements/menu/menu.html',
                         controller: 'MenuController as vm'
                     }
@@ -557,7 +557,7 @@
             .state('app.components.elements.progress-circular', {
                 url: '/progress-circular',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/elements/progress-circular/progress-circular.html',
                         controller: 'ProgressCircularController as vm'
                     }
@@ -568,7 +568,7 @@
             .state('app.components.elements.progress-linear', {
                 url: '/progress-linear',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/elements/progress-linear/progress-linear.html',
                         controller: 'ProgressLinearController as vm'
                     }
@@ -579,7 +579,7 @@
             .state('app.components.elements.sidenav', {
                 url: '/sidenav',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/elements/sidenav/sidenav.html',
                         controller: 'SidenavController as vm'
                     }
@@ -590,7 +590,7 @@
             .state('app.components.elements.tabs', {
                 url: '/tabs',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/elements/tabs/tabs.html',
                         controller: 'TabsController as vm'
                     }
@@ -601,7 +601,7 @@
             .state('app.components.elements.toast', {
                 url: '/toast',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/elements/toast/toast.html',
                         controller: 'ToastController as vm'
                     }
@@ -620,7 +620,7 @@
             .state('app.components.tables.standard-table', {
                 url: '/standard-table',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/tables/standard-table/standard-table.html',
                         controller: 'StandardTableController as vm'
                     }
@@ -631,7 +631,7 @@
             .state('app.components.tables.data-table', {
                 url: '/datatable',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/tables/datatable/datatable.html',
                         controller: 'DatatableController as vm'
                     }
@@ -642,7 +642,7 @@
             .state('app.components.price-tables', {
                 url: '/price-tables',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/price-tables/price-tables.html',
                     }
                 }
@@ -652,7 +652,7 @@
             .state('app.components.charts', {
                 url: '/charts',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/charts/charts.html',
                         controller: 'ChartsController as vm'
                     }
@@ -663,7 +663,7 @@
             .state('app.components.maps', {
                 url: '/maps',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/maps/maps.html',
                         controller: 'MapsController as vm'
                     }
@@ -674,7 +674,7 @@
             .state('app.components.widgets', {
                 url: '/widgets',
                 views: {
-                    'main@app': {
+                    'content@app': {
                         templateUrl: 'app/main/components/maps/maps.html',
                         controller: 'WidgetsController as vm'
                     }

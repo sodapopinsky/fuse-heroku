@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-        <title>fuse</title>
+        <title>Fuse - Admin Theme</title>
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -29,7 +29,7 @@
     <![endif]-->
 
     <body md-theme="{{vm.themes.active.name}}" md-theme-watch ng-controller="AppController as vm">
-        <div id="app-wrapper" class="animate slide-up" layout="row" flex layout-fill ui-view="app"></div>
+        <main id="app-wrapper" class="animate slide-up" flex layout="row" ui-view="main" role="main"></main>
 
         <!-- build:js(src) scripts/vendor.js -->
             <!-- bower:js -->

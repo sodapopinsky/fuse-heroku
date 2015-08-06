@@ -1,18 +1,18 @@
-<md-sidenav md-is-locked-open="$mdMedia('gt-md')"
-            class="navigation md-whiteframe-z2 md-locked-open md-primary-bg"
+<md-sidenav class="navigation md-whiteframe-z2 md-locked-open md-primary-bg"
+            md-is-locked-open="$mdMedia('gt-md')"
             md-component-id="navigation"
             layout-fill ui-view="sidenavLeft">
 </md-sidenav>
 
-<main layout="column" role="main" flex>
+<div flex layout="column">
     <md-toolbar id="main-toolbar" class="md-whiteframe-glow-z1 md-background-bg" ui-view="toolbar"></md-toolbar>
 
-    <div flex class="main-content">
-        <md-content id="main" ui-view="main" class="md-background md-hue-1 animate slide-up"></md-content>
+    <div class="main-content" flex>
+        <md-content id="main" class="md-background md-hue-1 animate slide-up" ui-view="content"></md-content>
     </div>
 
     <div id="theme-changer" ui-view="themeChanger"></div>
-</main>
+</div>
 
 <md-sidenav id="quick-panel" class="md-sidenav-right md-whiteframe-z2"
             md-component-id="quick-panel"
