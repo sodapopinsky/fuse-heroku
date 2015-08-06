@@ -137,7 +137,7 @@
             .state('app.pages.auth.login', {
                 url: '/login',
                 views: {
-                    'app@': {
+                    'main@': {
                         templateUrl: 'app/layout/basic.html'
                     },
                     'content@app.pages.auth.login': {
@@ -151,7 +151,7 @@
             .state('app.pages.auth.register', {
                 url: '/register',
                 views: {
-                    'app@': {
+                    'main@': {
                         templateUrl: 'app/layout/basic.html'
                     },
                     'content@app.pages.auth.register': {
@@ -165,7 +165,7 @@
             .state('app.pages.auth.forgot-password', {
                 url: '/forgot-password',
                 views: {
-                    'app@': {
+                    'main@': {
                         templateUrl: 'app/layout/basic.html'
                     },
                     'content@app.pages.auth.forgot-password': {
@@ -179,7 +179,7 @@
             .state('app.pages.auth.lock', {
                 url: '/lock',
                 views: {
-                    'app@': {
+                    'main@': {
                         templateUrl: 'app/layout/basic.html'
                     },
                     'content@app.pages.auth.lock': {
@@ -193,7 +193,7 @@
             .state('app.pages.coming-soon', {
                 url: '/coming-soon',
                 views: {
-                    'app@': {
+                    'main@': {
                         templateUrl: 'app/layout/basic.html'
                     },
                     'content@app.pages.coming-soon': {
@@ -215,7 +215,7 @@
             .state('app.pages.errors.error-404', {
                 url: '/error-404',
                 views: {
-                    'app@': {
+                    'main@': {
                         templateUrl: 'app/layout/basic.html'
                     },
                     'content@app.pages.errors.error-404': {
@@ -229,7 +229,7 @@
             .state('app.pages.errors.error-500', {
                 url: '/error-500',
                 views: {
-                    'app@': {
+                    'main@': {
                         templateUrl: 'app/layout/basic.html'
                     },
                     'content@app.pages.errors.error-500': {
