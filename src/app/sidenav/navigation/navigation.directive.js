@@ -4,7 +4,6 @@
 
     angular.module('fuse')
         .controller('MsNavController', MsNavController)
-        .controller('MsNavToggleController', MsNavToggleController)
         .directive('msNav', msNav)
         .directive('msNavItem', msNavItem)
         .directive('msNavTitle', msNavTitle)
@@ -13,12 +12,12 @@
         .directive('msNavToggleItems', msNavToggleItems);
 
     /** @ngInject */
-    function MsNavController()
+    function MsNavController($rootScope, $state)
     {
         var vm = this,
             disabled = false,
             toggleItems = [],
-            expandedItems = [];
+            lockedItems = [];
 
         // Data
 
@@ -27,9 +26,9 @@
         vm.enable = enable;
         vm.disable = disable;
         vm.setToggleItem = setToggleItem;
-        vm.setExpandedItem = setExpandedItem;
-        vm.clearExpandedItems = clearExpandedItems;
-        vm.collapseAll = collapseAll;
+        vm.getLockedItems = getLockedItems;
+        vm.setLockedItem = setLockedItem;
+        vm.clearLockedItems = clearLockedItems;
 
         //////////
 
@@ -74,59 +73,40 @@
         }
 
         /**
-         * Set expanded item
+         * Get locked items
+         *
+         * @returns {Array}
+         */
+        function getLockedItems()
+        {
+            return lockedItems;
+        }
+
+        /**
+         * Set locked item
          *
          * @param element
          * @param scope
          */
-        function setExpandedItem(element, scope)
+        function setLockedItem(element, scope)
         {
-            expandedItems.push({
+            lockedItems.push({
                 'element': element,
                 'scope'  : scope
             })
         }
 
         /**
-         * Clear expanded items list
+         * Clear locked items list
          */
-        function clearExpandedItems()
+        function clearLockedItems()
         {
-            expandedItems = [];
-        }
-
-        /**
-         * Collapse all navigation items except the
-         * one we just expanded and its parents
-         */
-        function collapseAll()
-        {
-            var collapse;
-
-            angular.forEach(toggleItems, function (toggleItem)
-            {
-                collapse = true;
-
-                angular.forEach(expandedItems, function (expandedItem)
-                {
-                    if ( angular.equals(toggleItem.scope, expandedItem.scope) )
-                    {
-                        collapse = false;
-                    }
-                });
-
-                // Collapse
-                if ( collapse )
-                {
-                    // Call collapse on the toggle item's scope
-                    toggleItem.scope.collapse();
-                }
-            });
+            lockedItems = [];
         }
     }
 
     /** @ngInject */
-    function msNav()
+    function msNav($rootScope)
     {
         return {
             restrict  : 'E',
@@ -138,7 +118,14 @@
 
                 return function postLink($scope, $element, $attrs, MsNavCtrl)
                 {
+                    // Update toggle status according to the ui-router current state
+                    $rootScope.$broadcast('msNav::expandMatchingToggles');
 
+                    // Update toggles on state changes
+                    $rootScope.$on('$stateChangeSuccess', function ()
+                    {
+                        $rootScope.$broadcast('msNav::expandMatchingToggles');
+                    });
                 }
             }
         };
@@ -194,198 +181,13 @@
     }
 
     /** @ngInject */
-    function MsNavToggleController($scope, $q, $animate)
-    {
-        var vm = this;
-
-        // Data
-        vm.element = undefined;
-        vm.classes = {
-            expanded         : 'expanded',
-            expandAnimation  : 'expand-animation',
-            collapseAnimation: 'collapse-animation'
-        };
-
-        // Methods
-        vm.init = init;
-        vm.isCollapsed = isCollapsed;
-        vm.isExpanded = isExpanded;
-        vm.expand = expand;
-        vm.collapse = collapse;
-
-        //////////
-
-        /**
-         * Init the controller by storing the element
-         *
-         * @param element
-         */
-        function init(element)
-        {
-            vm.element = element;
-        }
-
-        /**
-         * Is element collapsed
-         *
-         * @returns {bool}
-         */
-        function isCollapsed()
-        {
-            return vm.element.attr('collapsed') === 'true';
-        }
-
-        /**
-         * Is element expanded
-         *
-         * @returns {bool}
-         */
-        function isExpanded()
-        {
-            return !isCollapsed();
-        }
-
-        /**
-         * Expand the element
-         *
-         * @returns $promise
-         */
-        function expand()
-        {
-            // Create a new deferred object
-            var deferred = $q.defer();
-
-            // If the menu item is already expanded, do nothing..
-            if ( isExpanded() )
-            {
-                // Reject the deferred object
-                deferred.reject({'error': true});
-
-                // Return the promise
-                return deferred.promise;
-            }
-
-            // Set element attr
-            vm.element.attr('collapsed', false);
-
-            // Grab the element to expand
-            var elementToExpand = angular.element(vm.element.find('ms-nav-toggle-items')[0]);
-
-            // Move the element out of the dom flow and
-            // make it block so we can get its height
-            elementToExpand.css({
-                'position'  : 'absolute',
-                'visibility': 'hidden',
-                'display'   : 'block'
-            });
-
-            // Grab the height
-            var height = elementToExpand[0].offsetHeight;
-
-            // Reset the style modifications
-            elementToExpand.css({
-                'position'  : '',
-                'visibility': '',
-                'display'   : ''
-            });
-
-            // Animate the height
-            $animate.animate(elementToExpand,
-                {
-                    'display': 'block',
-                    'height' : '0px'
-                },
-                {
-                    'height': height + 'px'
-                },
-                vm.classes.expandAnimation
-            ).then(
-                function ()
-                {
-                    // Add expanded class
-                    elementToExpand.addClass(vm.classes.expanded);
-
-                    // Clear the inline styles after animation done
-                    elementToExpand.css({'height': ''});
-
-                    // Resolve the deferred object
-                    deferred.resolve({'success': true});
-                }
-            );
-
-            // Return the promise
-            return deferred.promise;
-        }
-
-        /**
-         * Collapse the element
-         *
-         * @returns $promise
-         */
-        function collapse()
-        {
-            // Create a new deferred object
-            var deferred = $q.defer();
-
-            // If the menu item is already collapsed, do nothing..
-            if ( isCollapsed() )
-            {
-                // Reject the deferred object
-                deferred.reject({'error': true});
-
-                // Return the promise
-                return deferred.promise;
-            }
-
-            // Set element attr
-            vm.element.attr('collapsed', true);
-
-            // Grab the element to collapse
-            var elementToCollapse = angular.element(vm.element.find('ms-nav-toggle-items')[0]);
-
-            // Grab the height
-            var height = elementToCollapse[0].offsetHeight;
-
-            // Animate the height
-            $animate.animate(elementToCollapse,
-                {
-                    'height': height + 'px'
-                },
-                {
-                    'height': '0px'
-                },
-                vm.classes.collapseAnimation
-            ).then(
-                function ()
-                {
-                    // Remove expanded class
-                    elementToCollapse.removeClass(vm.classes.expanded);
-
-                    // Clear the inline styles after animation done
-                    elementToCollapse.css({
-                        'display': '',
-                        'height' : ''
-                    });
-
-                    // Resolve the deferred object
-                    deferred.resolve({'success': true});
-                }
-            );
-
-            // Return the promise
-            return deferred.promise;
-        }
-    }
-
-    /** @ngInject */
-    function msNavToggle()
+    function msNavToggle($rootScope, $q, $animate, $state)
     {
         return {
-            restrict  : 'A',
-            require   : ['^msNav', 'msNavToggle'],
-            controller: 'MsNavToggleController',
-            scope     : true,
-            compile   : function (tElement, tAttrs)
+            restrict: 'A',
+            require : '^msNav',
+            scope   : true,
+            compile : function (tElement, tAttrs)
             {
                 tElement.addClass('ms-nav-toggle');
 
@@ -396,13 +198,29 @@
                 }
                 tElement.attr('collapsed', tAttrs.collapsed);
 
-                return function postLink($scope, $element, $attrs, ctrls)
+                return function postLink($scope, $element, $attrs, MsNavCtrl)
                 {
-                    var MsNavCtrl = ctrls[0],
-                        MsNavToggleCtrl = ctrls[1];
+                    var classes = {
+                        expanded         : 'expanded',
+                        expandAnimation  : 'expand-animation',
+                        collapseAnimation: 'collapse-animation'
+                    };
 
-                    // Init the toggle controller with the $element
-                    MsNavToggleCtrl.init($element);
+                    // Store all related states
+                    var links = $element.find('a');
+                    var states = [];
+
+                    angular.forEach(links, function (link)
+                    {
+                        var state = angular.element(link).attr('ui-sref');
+
+                        if ( angular.isUndefined(state) )
+                        {
+                            return;
+                        }
+
+                        states.push(state);
+                    });
 
                     // Store toggle-able element and its scope in the main nav controller
                     MsNavCtrl.setToggleItem($element, $scope);
@@ -422,81 +240,270 @@
                         // Disable the entire navigation to prevent spamming
                         MsNavCtrl.disable();
 
-                        if ( MsNavToggleCtrl.isCollapsed() )
+                        if ( isCollapsed() )
                         {
                             // Clear the expanded items list
-                            MsNavCtrl.clearExpandedItems();
+                            MsNavCtrl.clearLockedItems();
 
-                            // Emit pushToExpandedList event
-                            $scope.$emit('msNav::pushToExpandedList');
+                            // Emit pushToLockedList event
+                            $scope.$emit('msNav::pushToLockedList');
 
-                            // Collapse all other menu items
-                            MsNavCtrl.collapseAll();
+                            // Collapse everything but locked items
+                            $rootScope.$broadcast('msNav::collapse');
 
-                            // Expand this
-                            expandThis();
+                            // Expand and then...
+                            expand().then(function ()
+                            {
+                                // Enable the entire navigation after animations completed
+                                MsNavCtrl.enable();
+                            });
                         }
                         else
                         {
-                            // Broadcast collapseAllChildren event
-                            $scope.$broadcast('msNav::collapseAllChildren');
-
-                            // Collapse this
-                            collapseThis();
+                            // Collapse with all children
+                            $scope.$broadcast('msNav::forceCollapse');
                         }
                     }
 
-                    /**
-                     * Expand
-                     */
-                    function expandThis()
-                    {
-                        // Expand and then...
-                        MsNavToggleCtrl.expand().then(function ()
-                        {
-                            // Enable the entire navigation after animations completed
-                            MsNavCtrl.enable();
-                        });
-                    }
+                    /*---------------------*/
+                    /* Scope Events        */
+                    /*---------------------*/
 
                     /**
-                     * Collapse
+                     * Collapse everything but locked items
                      */
-                    function collapseThis()
+                    $scope.$on('msNav::collapse', function ()
                     {
+                        // Only collapse toggles that are not locked
+                        var lockedItems = MsNavCtrl.getLockedItems();
+                        var locked = false;
+
+                        angular.forEach(lockedItems, function (lockedItem)
+                        {
+                            if ( angular.equals(lockedItem.scope, $scope) )
+                            {
+                                locked = true;
+                            }
+                        });
+
+                        if ( locked )
+                        {
+                            return;
+                        }
+
                         // Collapse and then...
-                        MsNavToggleCtrl.collapse().then(function ()
+                        collapse().then(function ()
                         {
                             // Enable the entire navigation after animations completed
                             MsNavCtrl.enable();
                         });
-                    }
-
-                    // Listen for collapseAllChildren event
-                    $scope.$on('msNav::collapseAllChildren', collapseThis);
-
-                    // Listen for pushToExpandedList event
-                    $scope.$on('msNav::pushToExpandedList', function ()
-                    {
-                        MsNavCtrl.setExpandedItem($element, $scope);
                     });
 
-                    // Expose the controller functions to
-                    // the scope for programmatic use
-                    $scope.collapse = function ()
+                    /**
+                     * Collapse everything
+                     */
+                    $scope.$on('msNav::forceCollapse', function ()
                     {
-                        // Call collapse on the controller
-                        MsNavToggleCtrl.collapse();
-                    };
+                        // Collapse and then...
+                        collapse().then(function ()
+                        {
+                            // Enable the entire navigation after animations completed
+                            MsNavCtrl.enable();
+                        });
+                    });
 
-                    $scope.expand = function ()
+                    /**
+                     * Expand toggles that match with the current states
+                     */
+                    $scope.$on('msNav::expandMatchingToggles', function ()
                     {
-                        // Call expand on the controller
-                        MsNavToggleCtrl.expand();
+                        var currentState = $state.current.name;
+                        var shouldExpand = false;
+
+                        angular.forEach(states, function (state)
+                        {
+                            if ( currentState === state )
+                            {
+                                shouldExpand = true;
+                            }
+                        });
+
+                        if ( shouldExpand )
+                        {
+                            expand();
+                        }
+                        else
+                        {
+                            collapse();
+                        }
+                    });
+
+                    /**
+                     * Add toggle to the locked list
+                     */
+                    $scope.$on('msNav::pushToLockedList', function ()
+                    {
+                        // Set expanded item on main nav controller
+                        MsNavCtrl.setLockedItem($element, $scope);
+                    });
+
+                    /*---------------------*/
+                    /* Internal functions  */
+                    /*---------------------*/
+
+                    /**
+                     * Is element collapsed
+                     *
+                     * @returns {bool}
+                     */
+                    function isCollapsed()
+                    {
+                        return $element.attr('collapsed') === 'true';
                     }
-                };
+
+                    /**
+                     * Is element expanded
+                     *
+                     * @returns {bool}
+                     */
+                    function isExpanded()
+                    {
+                        return !isCollapsed();
+                    }
+
+                    /**
+                     * Expand the toggle
+                     *
+                     * @returns $promise
+                     */
+                    function expand()
+                    {
+                        // Create a new deferred object
+                        var deferred = $q.defer();
+
+                        // If the menu item is already expanded, do nothing..
+                        if ( isExpanded() )
+                        {
+                            // Reject the deferred object
+                            deferred.reject({'error': true});
+
+                            // Return the promise
+                            return deferred.promise;
+                        }
+
+                        // Set element attr
+                        $element.attr('collapsed', false);
+
+                        // Grab the element to expand
+                        var elementToExpand = angular.element($element.find('ms-nav-toggle-items')[0]);
+
+                        // Move the element out of the dom flow and
+                        // make it block so we can get its height
+                        elementToExpand.css({
+                            'position'  : 'absolute',
+                            'visibility': 'hidden',
+                            'display'   : 'block'
+                        });
+
+                        // Grab the height
+                        var height = elementToExpand[0].offsetHeight;
+
+                        // Reset the style modifications
+                        elementToExpand.css({
+                            'position'  : '',
+                            'visibility': '',
+                            'display'   : ''
+                        });
+
+                        // Animate the height
+                        $animate.animate(elementToExpand,
+                            {
+                                'display': 'block',
+                                'height' : '0px'
+                            },
+                            {
+                                'height': height + 'px'
+                            },
+                            classes.expandAnimation
+                        ).then(
+                            function ()
+                            {
+                                // Add expanded class
+                                elementToExpand.addClass(classes.expanded);
+
+                                // Clear the inline styles after animation done
+                                elementToExpand.css({'height': ''});
+
+                                // Resolve the deferred object
+                                deferred.resolve({'success': true});
+                            }
+                        );
+
+                        // Return the promise
+                        return deferred.promise;
+                    }
+
+                    /**
+                     * Collapse the toggle
+                     *
+                     * @returns $promise
+                     */
+                    function collapse()
+                    {
+                        // Create a new deferred object
+                        var deferred = $q.defer();
+
+                        // If the menu item is already collapsed, do nothing..
+                        if ( isCollapsed() )
+                        {
+                            // Reject the deferred object
+                            deferred.reject({'error': true});
+
+                            // Return the promise
+                            return deferred.promise;
+                        }
+
+                        // Set element attr
+                        $element.attr('collapsed', true);
+
+                        // Grab the element to collapse
+                        var elementToCollapse = angular.element($element.find('ms-nav-toggle-items')[0]);
+
+                        // Grab the height
+                        var height = elementToCollapse[0].offsetHeight;
+
+                        // Animate the height
+                        $animate.animate(elementToCollapse,
+                            {
+                                'height': height + 'px'
+                            },
+                            {
+                                'height': '0px'
+                            },
+                            classes.collapseAnimation
+                        ).then(
+                            function ()
+                            {
+                                // Remove expanded class
+                                elementToCollapse.removeClass(classes.expanded);
+
+                                // Clear the inline styles after animation done
+                                elementToCollapse.css({
+                                    'display': '',
+                                    'height' : ''
+                                });
+
+                                // Resolve the deferred object
+                                deferred.resolve({'success': true});
+                            }
+                        );
+
+                        // Return the promise
+                        return deferred.promise;
+                    }
+                }
             }
-        };
+        }
     }
 
     /** @ngInject */
