@@ -181,83 +181,76 @@
 
         <ms-nav-item ms-nav-toggle>
             <a ms-nav-button md-ink-ripple>
-                <i class="icon-view_quilt s18 md-font md-default-theme"></i>
-                <span>Layouts</span>
+                <i class="icon-web s18 md-font md-default-theme"></i>
+                <span>Theme Layouts</span>
                 <i class="icon-keyboard_arrow_down s18 arrow"></i>
             </a>
 
             <ms-nav-toggle-items>
-                <ms-nav-item ms-nav-toggle="">
-                    <a ms-nav-button md-ink-ripple>
-                        <span>Main Layouts</span>
-                        <i class="icon-keyboard_arrow_down s18 arrow"></i>
+                <ms-nav-item>
+                    <a ms-nav-button ui-sref="app.ui.layouts.main.default" ui-sref-active="active" md-ink-ripple>
+                        <span>Default</span>
                     </a>
-
-                    <ms-nav-toggle-items>
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.ui.layouts.main.default" ui-sref-active="active" md-ink-ripple>
-                                <span>Default</span>
-                            </a>
-                        </ms-nav-item>
-
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.ui.layouts.main.basic" ui-sref-active="active" md-ink-ripple>
-                                <span>Basic</span>
-                            </a>
-                        </ms-nav-item>
-
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.ui.layouts.main.sidebar-right" ui-sref-active="active" md-ink-ripple>
-                                <span>Sidebar Right</span>
-                            </a>
-                        </ms-nav-item>
-
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.ui.layouts.main.sidebar-collapsed" ui-sref-active="active" md-ink-ripple>
-                                <span>Sidebar Collapsed</span>
-                            </a>
-                        </ms-nav-item>
-
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.ui.layouts.main.top-menu" ui-sref-active="active" md-ink-ripple>
-                                <span>Top Menu</span>
-                            </a>
-                        </ms-nav-item>
-                    </ms-nav-toggle-items>
                 </ms-nav-item>
 
+                <ms-nav-item>
+                    <a ms-nav-button ui-sref="app.ui.layouts.main.basic" ui-sref-active="active" md-ink-ripple>
+                        <span>Basic</span>
+                    </a>
+                </ms-nav-item>
+
+                <ms-nav-item>
+                    <a ms-nav-button ui-sref="app.ui.layouts.main.sidebar-right" ui-sref-active="active" md-ink-ripple>
+                        <span>Sidebar Right</span>
+                    </a>
+                </ms-nav-item>
+
+                <ms-nav-item>
+                    <a ms-nav-button ui-sref="app.ui.layouts.main.sidebar-collapsed" ui-sref-active="active" md-ink-ripple>
+                        <span>Sidebar Collapsed</span>
+                    </a>
+                </ms-nav-item>
+
+                <ms-nav-item>
+                    <a ms-nav-button ui-sref="app.ui.layouts.main.top-menu" ui-sref-active="active" md-ink-ripple>
+                        <span>Top Menu</span>
+                    </a>
+                </ms-nav-item>
+            </ms-nav-toggle-items>
+        </ms-nav-item>
+
+        <ms-nav-item ms-nav-toggle>
+            <a ms-nav-button md-ink-ripple>
+                <i class="icon-view_compact s18 md-font md-default-theme"></i>
+                <span>Layouts</span>
+                <i class="icon-keyboard_arrow_down s18 arrow"></i>
+            </a>
+
+
+            <ms-nav-toggle-items>
                 <ms-nav-item ms-nav-toggle="">
                     <a ms-nav-button md-ink-ripple>
-                        <span>Content Layouts</span>
+                        <span>Style 1</span>
                         <i class="icon-keyboard_arrow_down s18 arrow"></i>
                     </a>
 
                     <ms-nav-toggle-items>
-                        <ms-nav-item ms-nav-toggle="">
-                            <a ms-nav-button md-ink-ripple>
-                                <span>Style 1</span>
-                                <i class="icon-keyboard_arrow_down s18 arrow"></i>
+                        <ms-nav-item>
+                            <a ms-nav-button ui-sref="app.ui.layouts.style1-fullwidth" ui-sref-active="active" md-ink-ripple>
+                                <span>Full Width</span>
                             </a>
+                        </ms-nav-item>
 
-                            <ms-nav-toggle-items>
-                                <ms-nav-item>
-                                    <a ms-nav-button ui-sref="app.ui.layouts.app1-fullwidth" ui-sref-active="active" md-ink-ripple>
-                                        <span>Full Width</span>
-                                    </a>
-                                </ms-nav-item>
+                        <ms-nav-item>
+                            <a ms-nav-button ui-sref="app.ui.layouts.style1-leftpane" ui-sref-active="active" md-ink-ripple>
+                                <span>Left Pane</span>
+                            </a>
+                        </ms-nav-item>
 
-                                <ms-nav-item>
-                                    <a ms-nav-button ui-sref="app.ui.layouts.app1-leftpane" ui-sref-active="active" md-ink-ripple>
-                                        <span>Left Pane</span>
-                                    </a>
-                                </ms-nav-item>
-
-                                <ms-nav-item>
-                                    <a ms-nav-button ui-sref="app.ui.layouts.app1-rightpane" ui-sref-active="active" md-ink-ripple>
-                                        <span>Right Pane</span>
-                                    </a>
-                                </ms-nav-item>
-                            </ms-nav-toggle-items>
+                        <ms-nav-item>
+                            <a ms-nav-button ui-sref="app.ui.layouts.style1-rightpane" ui-sref-active="active" md-ink-ripple>
+                                <span>Right Pane</span>
+                            </a>
                         </ms-nav-item>
                     </ms-nav-toggle-items>
                 </ms-nav-item>

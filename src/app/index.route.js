@@ -53,7 +53,7 @@
 
             // Dashboard
             .state('app.dashboard', {
-                url: '/',
+                url: '/dashboard',
                 views: {
                     'main@app': {
                         templateUrl: 'app/main/apps/dashboard/dashboard.html',
@@ -333,35 +333,35 @@
                 url: '/layouts'
             })
 
-            // App 1 - Full Width
-            .state('app.ui.layouts.app1-fullwidth', {
-                url: '/app1-fullwidth',
+            // Style 1 - Full Width
+            .state('app.ui.layouts.style1-fullwidth', {
+                url: '/style1-fullwidth',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/ui/layouts/app1-fullwidth/app1-fullwidth.html',
-                        controller: 'App1FullwidthController as vm'
+                        templateUrl: 'app/main/ui/layouts/style-1/fullwidth/fullwidth.html',
+                        controller: 'Style1FullwidthController as vm'
                     }
                 }
             })
 
-            // App 1 - Left Pane
-            .state('app.ui.layouts.app1-leftpane', {
-                url: '/app1-leftpane',
+            // Style 1 - Left Pane
+            .state('app.ui.layouts.style1-leftpane', {
+                url: '/style1-leftpane',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/ui/layouts/app1-leftpane/app1-leftpane.html',
-                        controller: 'App1LeftpaneController as vm'
+                        templateUrl: 'app/main/ui/layouts/style-1/leftpane/leftpane.html',
+                        controller: 'Style1LeftpaneController as vm'
                     }
                 }
             })
 
-            // App 1 - Right Pane
-            .state('app.ui.layouts.app1-rightpane', {
-                url: '/app1-rightpane',
+            // Style 1 - Right Pane
+            .state('app.ui.layouts.style1-rightpane', {
+                url: '/style1-rightpane',
                 views: {
                     'main@app': {
-                        templateUrl: 'app/main/ui/layouts/app1-rightpane/app1-rightpane.html',
-                        controller: 'App1RightpaneController as vm'
+                        templateUrl: 'app/main/ui/layouts/style-1/rightpane/rightpane.html',
+                        controller: 'Style1RightpaneController as vm'
                     }
                 }
             })

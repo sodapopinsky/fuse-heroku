@@ -3,10 +3,10 @@
     'use strict';
 
     angular.module('app.ui')
-        .controller('App1LeftpaneController', App1LeftpaneController);
+        .controller('Style1FullwidthController', Style1FullwidthController);
 
     /** @ngInject */
-    function App1LeftpaneController()
+    function Style1FullwidthController()
     {
         var vm = this;
 

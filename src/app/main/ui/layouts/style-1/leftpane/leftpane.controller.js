@@ -3,10 +3,10 @@
     'use strict';
 
     angular.module('app.ui')
-        .controller('App1RightpaneController', App1RightpaneController);
+        .controller('Style1LeftpaneController', Style1LeftpaneController);
 
     /** @ngInject */
-    function App1RightpaneController()
+    function Style1LeftpaneController()
     {
         var vm = this;
 
