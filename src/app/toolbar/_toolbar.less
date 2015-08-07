@@ -1,8 +1,10 @@
+// Variables
+@toolbarHeight: 64px;
 
 #main-toolbar {
-    height: 64px;
-    min-height: 64px;
-    max-height: 64px;
+    height: @toolbarHeight;
+    min-height: @toolbarHeight;
+    max-height: @toolbarHeight;
     z-index: 55;
 
     #main-toolbar-content {
@@ -10,8 +12,8 @@
         #main-toolbar-left {
 
             #navigation-toggle {
-                width: 64px;
-                height: 64px;
+                width: @toolbarHeight;
+                height: @toolbarHeight;
                 margin: 0;
                 border-right: 1px solid rgba(0, 0, 0, 0.13);
                 border-radius: 0;
@@ -25,7 +27,6 @@
                     margin-left: 16px;
                 }
             }
-
         }
 
         #main-toolbar-right {
@@ -35,7 +36,7 @@
                 .user-button {
                     margin: 0;
                     padding: 0 16px;
-                    height: 64px;
+                    height: @toolbarHeight;
                     text-transform: none;
 
                     .avatar {
@@ -51,19 +52,20 @@
             }
 
             #quick-panel-toggle {
+                width: @toolbarHeight;
+                height: @toolbarHeight;
                 margin: 0;
-                min-width: 64px;
                 border-left: 1px solid rgba(0, 0, 0, 0.13);
-                height: 64px;
                 border-radius: 0;
 
                 .badge {
                     position: absolute;
-                    top: 24px;
-                    left: 20px;
                     width: 8px;
                     height: 8px;
-                    min-height: 8px;
+                    top: 50%;
+                    left: 50%;
+                    margin-left: -12px;
+                    margin-top: -8px;
                     border-radius: 8px;
                 }
             }
