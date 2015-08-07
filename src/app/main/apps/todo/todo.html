@@ -37,13 +37,13 @@
                             <md-option ng-repeat="filter in vm.filters.filter" value="{{filter}}">{{filter}}</md-option>
                         </md-select>
 
-                        <div class="divider-vert"></div>
+                        <div class="divider-vertical"></div>
 
                         <md-select class="simplified" ng-model="vm.selectedFilter.order" placeholder="Order">
                             <md-option ng-repeat="order in vm.filters.order" value="{{order}}">{{order}}</md-option>
                         </md-select>
 
-                        <div class="divider-vert"></div>
+                        <div class="divider-vertical"></div>
 
                         <md-select class="simplified" ng-model="vm.selectedFilter.next" placeholder="Next..">
                             <md-option ng-repeat="next in vm.filters.next" value="{{next}}">{{next}}</md-option>
