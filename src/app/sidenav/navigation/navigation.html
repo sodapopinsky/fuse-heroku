@@ -90,7 +90,8 @@
                         </ms-nav-item>
 
                         <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.pages.auth.forgot-password" ui-sref-active="active" md-ink-ripple>
+                            <a ms-nav-button ui-sref="app.pages.auth.forgot-password" ui-sref-active="active"
+                               md-ink-ripple>
                                 <span>Forgot Password</span>
                             </a>
                         </ms-nav-item>
@@ -206,7 +207,8 @@
                 </ms-nav-item>
 
                 <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.ui.layouts.main.sidebar-collapsed" ui-sref-active="active" md-ink-ripple>
+                    <a ms-nav-button ui-sref="app.ui.layouts.main.sidebar-collapsed" ui-sref-active="active"
+                       md-ink-ripple>
                         <span>Sidebar Collapsed</span>
                     </a>
                 </ms-nav-item>
@@ -236,19 +238,22 @@
 
                     <ms-nav-toggle-items>
                         <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.ui.layouts.style1-fullwidth" ui-sref-active="active" md-ink-ripple>
+                            <a ms-nav-button ui-sref="app.ui.layouts.style1-fullwidth" ui-sref-active="active"
+                               md-ink-ripple>
                                 <span>Full Width</span>
                             </a>
                         </ms-nav-item>
 
                         <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.ui.layouts.style1-leftpane" ui-sref-active="active" md-ink-ripple>
+                            <a ms-nav-button ui-sref="app.ui.layouts.style1-leftpane" ui-sref-active="active"
+                               md-ink-ripple>
                                 <span>Left Pane</span>
                             </a>
                         </ms-nav-item>
 
                         <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.ui.layouts.style1-rightpane" ui-sref-active="active" md-ink-ripple>
+                            <a ms-nav-button ui-sref="app.ui.layouts.style1-rightpane" ui-sref-active="active"
+                               md-ink-ripple>
                                 <span>Right Pane</span>
                             </a>
                         </ms-nav-item>
@@ -259,11 +264,39 @@
 
         <ms-nav-item ms-nav-title>COMPONENTS</ms-nav-item>
 
-        <ms-nav-item>
-            <a ms-nav-button ui-sref="app.components.charts" ui-sref-active="active" md-ink-ripple>
+        <ms-nav-item ms-nav-toggle="">
+            <a ms-nav-button md-ink-ripple>
                 <i class="icon-equalizer s18 md-font md-default-theme"></i>
                 <span>Charts</span>
+                <i class="icon-keyboard_arrow_down s18 arrow"></i>
             </a>
+            <ms-nav-toggle-items>
+
+                <ms-nav-item>
+                    <a ms-nav-button ui-sref="app.components.charts.c3" ui-sref-active="active" md-ink-ripple>
+                        <span>C3</span>
+                    </a>
+                </ms-nav-item>
+
+                <ms-nav-item>
+                    <a ms-nav-button ui-sref="app.components.charts.chartJs" ui-sref-active="active" md-ink-ripple>
+                        <span>Chart.js</span>
+                    </a>
+                </ms-nav-item>
+
+                <ms-nav-item>
+                    <a ms-nav-button ui-sref="app.components.charts.chartist" ui-sref-active="active" md-ink-ripple>
+                        <span>Chartist</span>
+                    </a>
+                </ms-nav-item>
+
+                <ms-nav-item>
+                    <a ms-nav-button ui-sref="app.components.charts.morrisJs" ui-sref-active="active" md-ink-ripple>
+                        <span>Morris.js</span>
+                    </a>
+                </ms-nav-item>
+
+            </ms-nav-toggle-items>
         </ms-nav-item>
 
         <ms-nav-item ms-nav-toggle="">
@@ -282,49 +315,57 @@
 
                     <ms-nav-toggle-items>
                         <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.components.elements.inputs.autocomplete" ui-sref-active="active" md-ink-ripple>
+                            <a ms-nav-button ui-sref="app.components.elements.inputs.autocomplete"
+                               ui-sref-active="active" md-ink-ripple>
                                 <span>Autocomplete</span>
                             </a>
                         </ms-nav-item>
 
                         <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.components.elements.inputs.checkbox" ui-sref-active="active" md-ink-ripple>
+                            <a ms-nav-button ui-sref="app.components.elements.inputs.checkbox" ui-sref-active="active"
+                               md-ink-ripple>
                                 <span>Checkbox</span>
                             </a>
                         </ms-nav-item>
 
                         <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.components.elements.inputs.chips" ui-sref-active="active" md-ink-ripple>
+                            <a ms-nav-button ui-sref="app.components.elements.inputs.chips" ui-sref-active="active"
+                               md-ink-ripple>
                                 <span>Chips / Tags</span>
                             </a>
                         </ms-nav-item>
 
                         <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.components.elements.inputs.fields" ui-sref-active="active" md-ink-ripple>
+                            <a ms-nav-button ui-sref="app.components.elements.inputs.fields" ui-sref-active="active"
+                               md-ink-ripple>
                                 <span>Fields</span>
                             </a>
                         </ms-nav-item>
 
                         <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.components.elements.inputs.radio" ui-sref-active="active" md-ink-ripple>
+                            <a ms-nav-button ui-sref="app.components.elements.inputs.radio" ui-sref-active="active"
+                               md-ink-ripple>
                                 <span>Radio</span>
                             </a>
                         </ms-nav-item>
 
                         <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.components.elements.inputs.select" ui-sref-active="active" md-ink-ripple>
+                            <a ms-nav-button ui-sref="app.components.elements.inputs.select" ui-sref-active="active"
+                               md-ink-ripple>
                                 <span>Select</span>
                             </a>
                         </ms-nav-item>
 
                         <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.components.elements.inputs.slider" ui-sref-active="active" md-ink-ripple>
+                            <a ms-nav-button ui-sref="app.components.elements.inputs.slider" ui-sref-active="active"
+                               md-ink-ripple>
                                 <span>Slider</span>
                             </a>
                         </ms-nav-item>
 
                         <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.components.elements.inputs.switch" ui-sref-active="active" md-ink-ripple>
+                            <a ms-nav-button ui-sref="app.components.elements.inputs.switch" ui-sref-active="active"
+                               md-ink-ripple>
                                 <span>Switch</span>
                             </a>
                         </ms-nav-item>
@@ -332,7 +373,8 @@
                 </ms-nav-item>
 
                 <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.elements.bottom-sheet" ui-sref-active="active" md-ink-ripple>
+                    <a ms-nav-button ui-sref="app.components.elements.bottom-sheet" ui-sref-active="active"
+                       md-ink-ripple>
                         <span>Bottom Sheet</span>
                     </a>
                 </ms-nav-item>
@@ -356,13 +398,15 @@
                 </ms-nav-item>
 
                 <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.elements.fab-speed-dial" ui-sref-active="active" md-ink-ripple>
+                    <a ms-nav-button ui-sref="app.components.elements.fab-speed-dial" ui-sref-active="active"
+                       md-ink-ripple>
                         <span>Fab Speed Dial</span>
                     </a>
                 </ms-nav-item>
 
                 <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.elements.fab-toolbar" ui-sref-active="active" md-ink-ripple>
+                    <a ms-nav-button ui-sref="app.components.elements.fab-toolbar" ui-sref-active="active"
+                       md-ink-ripple>
                         <span>Fab Toolbar</span>
                     </a>
                 </ms-nav-item>
@@ -374,13 +418,15 @@
                 </ms-nav-item>
 
                 <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.elements.progress-circular" ui-sref-active="active" md-ink-ripple>
+                    <a ms-nav-button ui-sref="app.components.elements.progress-circular" ui-sref-active="active"
+                       md-ink-ripple>
                         <span>Progress Circular</span>
                     </a>
                 </ms-nav-item>
 
                 <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.elements.progress-linear" ui-sref-active="active" md-ink-ripple>
+                    <a ms-nav-button ui-sref="app.components.elements.progress-linear" ui-sref-active="active"
+                       md-ink-ripple>
                         <span>Progress Linear</span>
                     </a>
                 </ms-nav-item>
@@ -428,7 +474,8 @@
 
             <ms-nav-toggle-items>
                 <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.tables.standard-table" ui-sref-active="active" md-ink-ripple>
+                    <a ms-nav-button ui-sref="app.components.tables.standard-table" ui-sref-active="active"
+                       md-ink-ripple>
                         <span>Standard Table</span>
                     </a>
                 </ms-nav-item>

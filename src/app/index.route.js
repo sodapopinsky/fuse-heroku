@@ -650,11 +650,51 @@
 
             // Charts
             .state('app.components.charts', {
-                url: '/charts',
+                abstract: true,
+                url: '/charts'
+            })
+
+            // C3 Charts
+            .state('app.components.charts.c3', {
+                url: '/charts/c3',
                 views: {
                     'content@app': {
-                        templateUrl: 'app/main/components/charts/charts.html',
-                        controller: 'ChartsController as vm'
+                        templateUrl: 'app/main/components/charts/c3/c3.html',
+                        controller: 'C3Controller as vm'
+                    }
+                }
+            })
+
+            // Chart.js Charts
+            .state('app.components.charts.chartJs', {
+                url: '/charts/chartJs',
+                views: {
+                    'content@app': {
+                        templateUrl: 'app/main/components/charts/chartJs/chartJs.html',
+                        controller: 'ChartJsController as vm'
+                    }
+                }
+            })
+
+
+            // Chart.js Charts
+            .state('app.components.charts.chartist', {
+                url: '/charts/chartist',
+                views: {
+                    'content@app': {
+                        templateUrl: 'app/main/components/charts/chartist/chartist.html',
+                        controller: 'ChartistController as vm'
+                    }
+                }
+            })
+
+            // Morris Charts
+            .state('app.components.charts.morrisJs', {
+                url: '/charts/morrisJs',
+                views: {
+                    'content@app': {
+                        templateUrl: 'app/main/components/charts/morrisJs/morrisJs.html',
+                        controller: 'MorrisJsController as vm'
                     }
                 }
             })
