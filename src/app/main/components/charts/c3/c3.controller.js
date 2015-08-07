@@ -10,12 +10,11 @@
 
         // Data
         vm.themes = fuseTheming.themes;
-
         vm.lineChart = {
             dimensions: {
                 'Last Week': {
                     axis: 'y',
-                    type: 'area-spline',
+                    type: 'line',
                     color: vm.themes.active.theme.accent.color,
                     label: true
                 },
@@ -82,7 +81,7 @@
                     enabled: true
                 },
                 legend: {
-                    show: false,
+                    show: true,
                     position: 'bottom'
                 },
                 point: {
@@ -96,6 +95,25 @@
                 }
             }
         };
+        vm.lineAreaChart = angular.copy(vm.lineChart);
+        vm.lineAreaChart.dimensions['Last Week'].type = 'area';
+        vm.lineAreaChart.dimensions['A Week Before'].type = 'area';
+
+        vm.splineChart = angular.copy(vm.lineChart);
+        vm.splineChart.dimensions['Last Week'].type = 'spline';
+        vm.splineChart.dimensions['A Week Before'].type = 'spline';
+
+        vm.splineAreaChart = angular.copy(vm.lineChart);
+        vm.splineAreaChart.dimensions['Last Week'].type = 'area-spline';
+        vm.splineAreaChart.dimensions['A Week Before'].type = 'area-spline';
+
+        vm.stepChart = angular.copy(vm.lineChart);
+        vm.stepChart.dimensions['Last Week'].type = 'step';
+        vm.stepChart.dimensions['A Week Before'].type = 'step';
+
+        vm.stepAreaChart = angular.copy(vm.lineChart);
+        vm.stepAreaChart.dimensions['Last Week'].type = 'area-step';
+        vm.stepAreaChart.dimensions['A Week Before'].type = 'area-step';
 
         vm.barChart = {
             dimensions: {
