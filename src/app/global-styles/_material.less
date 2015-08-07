@@ -1,12 +1,14 @@
-/*--------------------------------------------------------------------------*/
-/* Contains custom elements and components that follows
-/* Google(TM) Material Design(TM) specs
+/*-----------------------------------------------------------------------*/
+/* Contains custom elements, components and general styles that
+/* follows Google(TM) Material Design(TM) specs
 /*
 /* https://www.google.com/design/spec/material-design/introduction.html
-/*--------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------*/
 
-// Basic navigation
-.simple-navigation {
+/*----------------------------------------------------------------*/
+/*  @ Simple Navigation
+/*----------------------------------------------------------------*/
+.navigation-simple {
 
     .item {
         position: relative;
@@ -43,5 +45,54 @@
     md-divider {
         margin: 8px 0;
     }
+}
 
+/*----------------------------------------------------------------*/
+/*  @ Simple Table
+/*----------------------------------------------------------------*/
+.table-simple {
+    text-align: left;
+    font-size: 13px;
+    border: none;
+    border-spacing: 0;
+    width: 100%;
+
+    tr {
+
+        th,
+        td {
+            border: none;
+            font-weight: normal;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            padding: 24px 8px;
+
+            &:first-child {
+                padding-left: 24px;
+            }
+
+            &:last-child {
+                padding-right: 24px;
+            }
+        }
+    }
+
+    > thead {
+
+        tr {
+
+            th {
+                color: rgba(0, 0, 0, 0.54);
+                font-weight: 500;
+            }
+        }
+    }
+
+    > tbody {
+
+        tr {
+
+            td {
+            }
+        }
+    }
 }

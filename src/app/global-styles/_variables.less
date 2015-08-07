@@ -1,0 +1,15 @@
+/*----------------------------------------------------------------*/
+/*  @ Variables
+/*----------------------------------------------------------------*/
+
+// Material whiteframe shadows
+@shadow-multiplier: 0.7;
+@shadow-key-umbra-opacity: @shadow-multiplier * 0.2;
+@shadow-key-penumbra-opacity: @shadow-multiplier * 0.14;
+@shadow-ambient-shadow-opacity: @shadow-multiplier * 0.12;
+
+@whiteframe-shadow-z1: 0px 3px 1px -2px rgba(0, 0, 0, @shadow-key-umbra-opacity), 0px 2px 2px 0px rgba(0, 0, 0, @shadow-key-penumbra-opacity), 0px 1px 5px 0px rgba(0, 0, 0, @shadow-ambient-shadow-opacity);
+@whiteframe-shadow-z2: 0 2px 4px -1px rgba(0, 0, 0, @shadow-key-umbra-opacity), 0 4px 5px 0 rgba(0, 0, 0, @shadow-key-penumbra-opacity), 0 1px 10px 0 rgba(0, 0, 0, @shadow-ambient-shadow-opacity);
+@whiteframe-shadow-z3: 0px 3px 5px -1px rgba(0, 0, 0, @shadow-key-umbra-opacity), 0px 6px 10px 0px rgba(0, 0, 0, @shadow-key-penumbra-opacity), 0px 1px 18px 0px rgba(0, 0, 0, @shadow-ambient-shadow-opacity);
+@whiteframe-shadow-z4: 0px 5px 5px -3px rgba(0, 0, 0, @shadow-key-umbra-opacity), 0px 8px 10px 1px rgba(0, 0, 0, @shadow-key-penumbra-opacity), 0px 3px 14px 2px rgba(0, 0, 0, @shadow-ambient-shadow-opacity);
+@whiteframe-shadow-z5: 0px 8px 10px -5px rgba(0, 0, 0, @shadow-key-umbra-opacity), 0px 16px 24px 2px rgba(0, 0, 0, @shadow-key-penumbra-opacity), 0px 6px 30px 5px rgba(0, 0, 0, @shadow-ambient-shadow-opacity);

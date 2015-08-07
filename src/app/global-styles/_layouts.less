@@ -1,7 +1,78 @@
-.layout-app1 {
+.layout {
+    position: relative;
     min-height: 100%;
 
-    // Header
+    .top-bg {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 200px;
+        background-image: url('/assets/images/backgrounds/mail-bg.png');
+        background-size: cover;
+    }
+
+    md-backdrop {
+        z-index: 50;
+    }
+
+    &.layout-style-1 {
+
+        // Left pane
+        .left-pane {
+            width: 220px;
+            min-width: 220px;
+            max-width: 220px;
+            z-index: 51;
+
+            .header {
+                height: 200px;
+                padding: 32px 0 32px 32px;
+            }
+
+            .content {
+                padding: 32px 0 32px 32px;
+            }
+
+            &.md-locked-open {
+                z-index: 2;
+                background: transparent;
+            }
+        }
+
+        // Center pane
+        .center-pane {
+            z-index: 2;
+            margin: 0 32px;
+
+            .header {
+                height: 136px;
+                padding: 32px;
+            }
+
+            .content-card {
+                background: #FFFFFF;
+
+                .toolbar {
+                    padding: 8px 32px;
+                    height: 64px;
+                }
+
+                .content {
+                    padding: 32px;
+                }
+            }
+        }
+    }
+
+}
+
+.layout-style1 {
+
+    // Content
+
+    /*// Header
     > header {
         background-image: url('/assets/images/backgrounds/mail-bg.png');
         background-size: cover;
@@ -99,6 +170,42 @@
                 width: 220px;
                 padding: 32px;
             }
+        }
+    }*/
+}
+
+
+// TAKE CARE OF THIS LATER!!!!!!!!!!!
+.page-header {
+    background-image: url('/assets/images/backgrounds/mail-bg.png');
+    background-size: cover;
+    padding: 32px;
+
+    .breadcrumb {
+        font-size: 13px;
+        margin-bottom: 24px;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.54);
+
+        md-icon {
+            margin: 0;
+        }
+
+        .separator {
+            margin: 0 8px;
+        }
+    }
+
+    .title {
+        font-size: 35px;
+    }
+
+    .reference-button {
+        font-size: 13px;
+        text-transform: none;
+
+        span {
+            vertical-align: middle;
         }
     }
 }

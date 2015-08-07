@@ -1,31 +1,20 @@
 /*----------------------------------------------------------------*/
 /*  @ Helpers
 /*----------------------------------------------------------------*/
-.text-left {
-    text-align: left;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.text-right {
-    text-align: right;
-}
-
 .no-margin {
     margin-right: 0;
 }
 
-.md-whiteframe-glow-z1 {
-    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 0px 2px 2px rgba(0, 0, 0, 0.098), 0px 0px 5px 1px rgba(0, 0, 0, 0.084);
-}
-
-.divider-vert {
+.divider-vertical {
     background: rgba(0, 0, 0, 0.13);
     height: 24px;
     width: 1px;
     margin: 0 8px;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
 }
 
 [fill-width] {
@@ -36,33 +25,19 @@
     min-height: 100%;
 }
 
-//IE layout-fill fix
-[layout] {
-    > * {
-        min-height: auto;
-        min-height: initial;
+// Images in links
+a {
+
+    img {
+        display: block;
+        outline: none;
     }
 }
 
-//IE card img auto height Fix
-md-card > img, md-card > :not(md-card-content) img {
-    height: inherit;
-    height: initial;
-}
-
-code {
-    &:not(.highlight) {
-        background: rgba(0, 0, 0, 0.065);
-        color: #106CC8;
-        margin-left: 1px;
-        margin-right: 1px;
-        -webkit-font-smoothing: auto;
-        padding: 0.125em 0.35em;
-        border-radius: 2px;
-    }
-}
-
-.hidden {
-    visibility: hidden;
-    opacity: 0;
+// Responsive images
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+    border: none;
 }
