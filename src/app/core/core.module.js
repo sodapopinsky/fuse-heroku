@@ -15,6 +15,7 @@
             'ngMaterial',
             'angularChart',
             'chart.js',
+            'angular-chartist',
             'ui.router',
             'ui.ace',
             'timer',

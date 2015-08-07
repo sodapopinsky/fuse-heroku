@@ -677,7 +677,7 @@
             })
 
 
-            // Chart.js Charts
+            // Chartist Charts
             .state('app.components.charts.chartist', {
                 url: '/charts/chartist',
                 views: {
