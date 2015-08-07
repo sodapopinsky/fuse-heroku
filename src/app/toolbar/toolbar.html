@@ -1,6 +1,6 @@
 <div id="main-toolbar-content" layout="row" layout-align="start center">
     <div id="main-toolbar-left" layout="row" layout-align="start center" flex>
-        <md-button id="navigation-toggle" class="md-icon-button md-primary" ng-click="vm.toggleSidenav('navigation')" hide-gt-md>
+        <md-button id="navigation-toggle" class="md-icon-button md-primary" ng-click="vm.toggleSidenav('navigation')" hide-gt-md aria-label="Toggle navigation bar">
             <i class="icon icon-menu s24"></i>
         </md-button>
 
@@ -15,7 +15,7 @@
 
     <div id="main-toolbar-right" layout="row" layout-align="start center">
         <md-menu id="user-menu" md-offset="0 70">
-            <md-button class="user-button md-primary" aria-label="account settings"
+            <md-button class="user-button md-primary" aria-label="User settings"
                        ng-click="$mdOpenMenu()">
                 <div layout="row" layout-align="space-between center">
                     <img class="avatar" src="assets/images/avatars/profile-img.jpeg">
@@ -34,7 +34,7 @@
             </md-menu-content>
         </md-menu>
 
-        <md-button id="quick-panel-toggle" class="md-icon-button" aria-label="notifications"
+        <md-button id="quick-panel-toggle" class="md-icon-button" aria-label="Toggle quick panel"
                    ng-click="vm.toggleSidenav('quick-panel')">
             <md-icon class="icon s20" md-font-icon="icon-toc"></md-icon>
             <div class="badge md-warn-bg"></div>
