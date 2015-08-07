@@ -16,6 +16,7 @@
             'angularChart',
             'chart.js',
             'angular-chartist',
+            'nvd3',
             'ui.router',
             'ui.ace',
             'timer',

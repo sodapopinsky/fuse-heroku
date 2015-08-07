@@ -688,13 +688,13 @@
                 }
             })
 
-            // Morris Charts
-            .state('app.components.charts.morrisJs', {
-                url: '/charts/morrisJs',
+            // NvD3 Charts
+            .state('app.components.charts.nvd3', {
+                url: '/charts/nvd3',
                 views: {
                     'content@app': {
-                        templateUrl: 'app/main/components/charts/morrisJs/morrisJs.html',
-                        controller: 'MorrisJsController as vm'
+                        templateUrl: 'app/main/components/charts/nvd3/nvD3.html',
+                        controller: 'Nvd3Controller as vm'
                     }
                 }
             })
