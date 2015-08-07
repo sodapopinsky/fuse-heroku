@@ -203,28 +203,28 @@
 
                 <md-button class="item" aria-label="label notes">
                     <div layout="row" layout-align="start center">
-                        <md-icon md-font-icon="icon-label" class="s18 md-color-font green"></md-icon>
+                        <md-icon md-font-icon="icon-label" class="s18 md-green-fg"></md-icon>
                         <span class="title">Notes</span>
                     </div>
                 </md-button>
 
                 <md-button class="item" aria-label="label paypal">
                     <div layout="row" layout-align="start center">
-                        <md-icon md-font-icon="icon-label" class="s18 md-color-font orange"></md-icon>
+                        <md-icon md-font-icon="icon-label" class="s18 md-orange-fg"></md-icon>
                         <span class="title">Paypal</span>
                     </div>
                 </md-button>
 
                 <md-button class="item" aria-label="label invoices">
                     <div layout="row" layout-align="start center">
-                        <md-icon md-font-icon="icon-label" class="s18 md-color-font blue-grey"></md-icon>
+                        <md-icon md-font-icon="icon-label" class="s18 md-blue-grey-fg"></md-icon>
                         <span class="title">Invoices</span>
                     </div>
                 </md-button>
 
                 <md-button class="item" aria-label="label amazon">
                     <div layout="row" layout-align="start center">
-                        <md-icon md-font-icon="icon-label" class="s18 md-color-font blue"></md-icon>
+                        <md-icon md-font-icon="icon-label" class="s18 md-blue-fg"></md-icon>
                         <span class="title">Amazon</span>
                     </div>
                 </md-button>
@@ -265,7 +265,7 @@
 
                         <img ng-if="mail.from.avatar" alt="{{ mail.from.name }}" ng-src="{{ mail.from.avatar}}" class="avatar"/>
 
-                        <div ng-if="!mail.from.avatar" class="avatar md-color-bg" ng-random-class="vm.colors">
+                        <div ng-if="!mail.from.avatar" class="avatar" ng-random-class="vm.colors">
                             {{ mail.from.name[0] }}
                         </div>
 
@@ -286,7 +286,7 @@
                         <div class="time">{{mail.time}}</div>
 
                         <md-button class="md-icon-button" ng-click="vm.starredToggle(mail,$event)" aria-label="starred">
-                            <md-icon ng-if="mail.starred" md-font-icon="icon-star" class="md-color-font yellow"></md-icon>
+                            <md-icon ng-if="mail.starred" md-font-icon="icon-star" class="md-amber-fg"></md-icon>
                             <md-icon ng-if="!mail.starred" md-font-icon="icon-star_outline"></md-icon>
                         </md-button>
 
@@ -348,7 +348,7 @@
                             <img ng-if="vm.selectedMail.from.avatar" alt="{{ vm.selectedMail.from.name }}"
                                  ng-src="{{ vm.selectedMail.from.avatar}}" class="avatar"/>
 
-                            <div ng-if="!vm.selectedMail.from.avatar" class="avatar md-color-bg" ng-random-class="vm.colors">
+                            <div ng-if="!vm.selectedMail.from.avatar" class="avatar" ng-random-class="vm.colors">
                                 {{ vm.selectedMail.from.name[0] }}
                             </div>
 

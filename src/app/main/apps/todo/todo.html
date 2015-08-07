@@ -29,7 +29,8 @@
             </div>
 
             <!-- Header Toolbar -->
-            <div class="header-toolbar black-text md-whiteframe-z3" layout="row" layout-align="start center" layout-fill>
+            <div class="header-toolbar black-text md-whiteframe-z3" layout="row" layout-align="start center"
+                 layout-fill>
 
                 <div class="actions" flex="100" layout="row" layout-align="space-between center">
                     <div layout="row" layout-align="start center">
@@ -154,7 +155,8 @@
 
             <div class="task-list" layout="column">
                 <div class="task"
-                     ng-repeat="task in vm.tasks | filter: vm.search" md-ink-ripple ng-click="vm.openTaskDialog($event, task)"
+                     ng-repeat="task in vm.tasks | filter: vm.search" md-ink-ripple
+                     ng-click="vm.openTaskDialog($event, task)"
                      ng-class="{'starred': task.starred, 'selected': task.selected, 'checked': task.checked}">
 
                     <div layout-fill layout="row" layout-align="start center">
@@ -178,8 +180,7 @@
                         </div>
 
                         <md-button class="md-icon-button" ng-click="vm.starredToggle(task,$event)" aria-label="starred">
-                            <md-icon ng-if="task.starred" md-font-icon="icon-star"
-                                     class="md-color-font yellow"></md-icon>
+                            <md-icon ng-if="task.starred" md-font-icon="icon-star" class="md-amber-fg"></md-icon>
                             <md-icon ng-if="!task.starred" md-font-icon="icon-star_outline"></md-icon>
                         </md-button>
 
