@@ -1,66 +1,70 @@
-@toolbarHeight: 64px;
-#main-toolbar {
-    height: @toolbarHeight;
-    min-height: @toolbarHeight;
-    z-index: 55;
-    .search {
-        margin: 0 0 0 24px;
-        padding: 0;
-        font-size: 13px;
-        md-icon {
-            min-width: 20px;
-            max-width: 20px;
-            position: initial;
-            color: rgba(0, 0, 0, 0.54);
-            line-height: @toolbarHeight;
-            height: @toolbarHeight;
-        }
-        input {
-            border: none;
-            padding: 0;
-            margin-left: 16px;
-            height: @toolbarHeight;
-            color: rgba(0, 0, 0, 0.54);
-            outline: none;
-            background: none;
-        }
-    }
-    .user {
-        .notifications.md-button {
-            margin: 0;
-            min-width: 64px;
-            border-left: 1px solid rgba(0, 0, 0, 0.13);
-            height: 64px;
-            border-radius: 0;
-            color: rgba(0, 0, 0, 0.54);
-            md-icon {
-                color: rgba(0, 0, 0, 0.54);
 
+#main-toolbar {
+    height: 64px;
+    min-height: 64px;
+    max-height: 64px;
+    z-index: 55;
+
+    #main-toolbar-content {
+
+        #main-toolbar-left {
+
+            #navigation-toggle {
+                width: 64px;
+                height: 64px;
+                margin: 0;
+                border-right: 1px solid rgba(0, 0, 0, 0.13);
+                border-radius: 0;
             }
-            //      overflow: visible;
-            .badge {
-                position: absolute;
-                top: 24px;
-                left: 20px;
-                width: 8px;
-                height: 8px;
-                min-height: 8px;
-                border-radius: 50%;
-                padding: 0;
-            }
-        }
-        .md-menu {
-            padding: 0;
-            #user-button {
-                padding: 8px;
-                text-transform: inherit;
-                img {
-                    width: 32px;
-                    height: 32px;
-                    border-radius: 50%;
+
+            #search {
+                font-size: 13px;
+                margin-left: 24px;
+
+                input {
+                    margin-left: 16px;
                 }
-                .username {
-                    margin: 0 14px;
+            }
+
+        }
+
+        #main-toolbar-right {
+
+            #user-menu {
+
+                .user-button {
+                    margin: 0;
+                    padding: 0 16px;
+                    height: 64px;
+                    text-transform: none;
+
+                    .avatar {
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 32px;
+                    }
+
+                    .username {
+                        margin: 0 14px;
+                    }
+                }
+            }
+
+            #quick-panel-toggle {
+                margin: 0;
+                min-width: 64px;
+                border-left: 1px solid rgba(0, 0, 0, 0.13);
+                height: 64px;
+                border-radius: 0;
+
+                .badge {
+                    position: absolute;
+                    top: 24px;
+                    left: 20px;
+                    width: 8px;
+                    height: 8px;
+                    min-height: 8px;
+                    border-radius: 8px;
                 }
             }
         }

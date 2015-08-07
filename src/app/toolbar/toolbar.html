@@ -1,22 +1,26 @@
-<div layout="row" layout-align="space-between center" flex="" class="fill-height">
-    <div layout="row" layout-align="start center" flex class="search">
-        <md-icon flex md-font-icon="icon-search" class="name md-background-bg s24"></md-icon>
-        <input flex ng-model="vm.search" type="text" placeholder="Click and type to search anywhere">
+<div id="main-toolbar-content" layout="row" layout-align="start center">
+    <div id="main-toolbar-left" layout="row" layout-align="start center" flex>
+        <md-button id="navigation-toggle" class="md-icon-button md-primary" ng-click="vm.toggleSidenav('navigation')" hide-gt-md>
+            <i class="icon icon-menu s24"></i>
+        </md-button>
+
+        <div id="search" flex layout="row" layout-align="start center">
+            <md-icon class="icon s24" md-font-icon="icon-search"></md-icon>
+            <input type="text" ng-model="vm.search" placeholder="Click and type to search anywhere" flex>
+        </div>
+
+        <md-progress-circular ng-if="$root.loadingProgress" class="md-accent" md-mode="indeterminate" md-diameter="32">
+        </md-progress-circular>
     </div>
 
-    <md-progress-circular ng-if="$root.loadingProgress" class="md-accent" md-mode="indeterminate"
-                          md-diameter="32"></md-progress-circular>
-
-    <div class="user" layout="row" layout-align="center center">
-        <md-menu md-offset="200 70">
-            <md-button id="user-button" aria-label="account settings" ng-click="$mdOpenMenu()"
-                       class="md-background-bg ">
+    <div id="main-toolbar-right" layout="row" layout-align="start center">
+        <md-menu id="user-menu" md-offset="0 70">
+            <md-button class="user-button md-primary" aria-label="account settings"
+                       ng-click="$mdOpenMenu()">
                 <div layout="row" layout-align="space-between center">
-                    <img src="assets/images/avatars/profile-img.jpeg" class="mini-profile-img"/>
-                    <span class="username">
-                        Mustafa
-                    </span>
-                    <md-icon md-font-icon="icon-keyboard_arrow_down" class="md-background-bg s18"></md-icon>
+                    <img class="avatar" src="assets/images/avatars/profile-img.jpeg">
+                    <span class="username">Mustafa</span>
+                    <md-icon md-font-icon="icon-keyboard_arrow_down" class="s18"></md-icon>
                 </div>
             </md-button>
 
@@ -30,11 +34,10 @@
             </md-menu-content>
         </md-menu>
 
-        <md-button class="notifications md-icon-button" aria-label="notifications"
-                   ng-click="vm.notifySideNavToggle()">
-            <md-icon md-font-icon="icon-toc" class="s20"></md-icon>
+        <md-button id="quick-panel-toggle" class="md-icon-button" aria-label="notifications"
+                   ng-click="vm.toggleSidenav('quick-panel')">
+            <md-icon class="icon s20" md-font-icon="icon-toc"></md-icon>
             <div class="badge md-warn-bg"></div>
         </md-button>
-
     </div>
 </div>

@@ -13,13 +13,18 @@
         // Data
 
         // Methods
-        vm.notifySideNavToggle = notifySideNavToggle;
+        vm.toggleSidenav = toggleSidenav;
 
         //////////
 
-        function notifySideNavToggle()
+        /**
+         * Toggle sidenav
+         *
+         * @param sidenavId
+         */
+        function toggleSidenav(sidenavId)
         {
-            $mdSidenav('quick-panel').toggle();
+            $mdSidenav(sidenavId).toggle();
         }
     }
 
