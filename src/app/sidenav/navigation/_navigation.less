@@ -1,10 +1,10 @@
-/************
-* Navigation SideNav
-************/
-@navSidabarWidth: 240px;
+// Variables
+@navigationWidth: 240px;
 
-.navigation {
-    z-index: 70;
+#main-navigation {
+        width: @navigationWidth;
+        min-width: @navigationWidth;
+        max-width: @navigationWidth;
 
     .navigation-header {
         height: 64px;
@@ -27,168 +27,169 @@
         }
     }
 
-    md-content {
+    .navigation {
+        z-index: 70;
         background: transparent;
-    }
 
-    &.md-locked-open-add-active,
-    &.md-locked-open {
-        width: @navSidabarWidth;
-        min-width: @navSidabarWidth;
-        max-width: @navSidabarWidth;
-    }
-
-    ms-nav {
-        display: block;
-        position: relative;
-        color: rgba(255, 255, 255, 0.70);
-        user-select: none;
-
-        ms-nav-item {
+        ms-nav {
             display: block;
             position: relative;
-            line-height: 48px;
+            color: rgba(255, 255, 255, 0.70);
+            user-select: none;
 
-            &.ms-nav-title {
+            ms-nav-item {
                 display: block;
-                line-height: 32px;
-                font-size: 12px;
-                font-weight: 600;
-                margin-top: 16px;
-                padding: 0 24px;
-                width: 100%;
-                color: rgba(255, 255, 255, 0.30);
-                text-transform: uppercase;
-            }
-
-            .ms-nav-button {
                 position: relative;
-                display: flex;
-                align-self: flex-start;
-                align-items: center;
-                cursor: pointer;
-                padding: 0 24px;
-                color: rgba(255, 255, 255, 0.70);
+                line-height: 48px;
 
-                &:hover {
-                    background: rgba(0, 0, 0, 0.1);
+                &.ms-nav-title {
+                    display: block;
+                    line-height: 32px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    margin-top: 16px;
+                    padding: 0 24px;
+                    width: 100%;
+                    color: rgba(255, 255, 255, 0.30);
+                    text-transform: uppercase;
                 }
 
-                > span {
+                .ms-nav-button {
+                    position: relative;
                     display: flex;
-                    flex: 1;
-                }
+                    align-self: flex-start;
+                    align-items: center;
+                    cursor: pointer;
+                    padding: 0 24px;
+                    color: rgba(255, 255, 255, 0.70);
 
-                .arrow {
-                    transition: transform 0.3s ease-in-out;
-                    margin: 0;
-                }
+                    &:hover {
+                        background: rgba(0, 0, 0, 0.1);
+                    }
 
-                &.active {
-                    background: rgba(0, 0, 0, 0.12);
-                    color: rgba(255, 255, 255, 1);
+                    > span {
+                        display: flex;
+                        flex: 1;
+                    }
 
-                    i {
+                    .arrow {
+                        transition: transform 0.3s ease-in-out;
+                        margin: 0;
+                    }
+
+                    &.active {
+                        background: rgba(0, 0, 0, 0.12);
                         color: rgba(255, 255, 255, 1);
+
+                        i {
+                            color: rgba(255, 255, 255, 1);
+                        }
                     }
                 }
-            }
 
-            i {
-                color: rgba(255, 255, 255, 0.70);
-                margin: 0 16px 0 0;
-            }
-
-            span {
-                display: flex;
-            }
-        }
-
-        .ms-nav-toggle {
-
-            ms-nav-toggle-items {
-                display: none;
-                overflow: hidden;
-
-                &.expanded {
-
+                i {
+                    color: rgba(255, 255, 255, 0.70);
+                    margin: 0 16px 0 0;
                 }
 
-                &.expand-animation {
-                    transition: height 0.35s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+                span {
+                    display: flex;
                 }
+            }
 
-                &.collapse-animation {
-                    transition: height 0.35s cubic-bezier(0.250, 0.460, 0.450, 0.940);
-                }
+            .ms-nav-toggle {
 
-                ms-nav-item {
-                    /* Level 1 */
-                    .ms-nav-button {
-                        padding-left: 58px;
+                ms-nav-toggle-items {
+                    display: none;
+                    overflow: hidden;
+
+                    &.expanded {
+
                     }
 
-                    /* Level 2 */
-                    ms-nav-toggle-items ms-nav-item {
+                    &.expand-animation {
+                        transition: height 0.35s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+                    }
 
+                    &.collapse-animation {
+                        transition: height 0.35s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+                    }
+
+                    ms-nav-item {
+                        /* Level 1 */
                         .ms-nav-button {
-                            padding-left: 68px;
+                            padding-left: 58px;
                         }
 
-                        /* Level 3 */
+                        /* Level 2 */
                         ms-nav-toggle-items ms-nav-item {
 
                             .ms-nav-button {
-                                padding-left: 78px;
+                                padding-left: 68px;
                             }
 
-                            /* Level 4 */
+                            /* Level 3 */
                             ms-nav-toggle-items ms-nav-item {
 
                                 .ms-nav-button {
-                                    padding-left: 88px;
+                                    padding-left: 78px;
                                 }
 
-                                /* Level 5 */
+                                /* Level 4 */
                                 ms-nav-toggle-items ms-nav-item {
 
                                     .ms-nav-button {
-                                        padding-left: 98px;
+                                        padding-left: 88px;
+                                    }
+
+                                    /* Level 5 */
+                                    ms-nav-toggle-items ms-nav-item {
+
+                                        .ms-nav-button {
+                                            padding-left: 98px;
+                                        }
                                     }
                                 }
                             }
                         }
                     }
                 }
-            }
 
-            &.active {
+                &.active {
 
-                > .ms-nav-button {
-                    color: rgba(255, 255, 255, 1);
-
-                    a, md-icon {
+                    > .ms-nav-button {
                         color: rgba(255, 255, 255, 1);
+
+                        a, md-icon {
+                            color: rgba(255, 255, 255, 1);
+                        }
+                    }
+                }
+
+                &[collapsed="false"] {
+
+                    & > .ms-nav-button {
+
+                        & > .arrow {
+                            transform: rotate(180deg);
+                        }
                     }
                 }
             }
 
-            &[collapsed="false"] {
+            & > .ms-nav-toggle {
 
-                & > .ms-nav-button {
-
-                    & > .arrow {
-                        transform: rotate(180deg);
-                    }
+                &[collapsed="false"] {
+                    background-color: rgba(0, 0, 0, 0.08);
                 }
             }
         }
+    }
 
-        & > .ms-nav-toggle {
+    &:not(.md-locked-open) {
 
-            &[collapsed="false"] {
-                background-color: rgba(0, 0, 0, 0.08);
-            }
+        .navigation {
+            overflow: hidden
         }
     }
 }
