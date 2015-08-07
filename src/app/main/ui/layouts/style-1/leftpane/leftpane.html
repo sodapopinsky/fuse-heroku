@@ -1,44 +1,115 @@
-<div class="layout layout-style-1 layout-left-pane" layout="row">
+<div class="page-layout layout-style-1 layout-left-pane" layout="row">
 
+    <!-- Top background -->
     <div class="top-bg md-accent-bg"></div>
+    <!-- / Top background -->
 
     <!-- Left pane -->
-    <div class="left-pane" layout="column">
-        <header>
-            Left pane - Header
-        </header>
+    <md-sidenav class="left-pane" md-is-locked-open="$mdMedia('gt-md')" md-component-id="leftpane">
 
-        <main flex>
-            Left pane - Main
-        </main>
-    </div>
+        <!-- Left pane header -->
+        <div class="header">
+            <span>Left pane header</span>
+        </div>
+        <!-- / Left pane header -->
+
+        <!-- Left pane content -->
+        <md-content class="content" flex>
+            <span>Left pane scrollable content</span>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </md-content>
+        <!-- / Left pane content -->
+
+    </md-sidenav>
     <!-- / Left pane -->
 
     <!-- Center pane -->
     <div class="center-pane" layout="column" flex>
-        <header>
-            Content - Header
-        </header>
 
-        <main class="md-whiteframe-z3" flex>
+        <!-- Content header -->
+        <div class="header">
+            <i class="icon icon-menu" ng-click="vm.toggleSidenav('leftpane')" hide-gt-md></i>
+            <span>Content header</span>
+        </div>
+        <!-- / Content header -->
 
-            <div class="toolbar">
-                <span>Main Toolbar</span>
+        <!-- Content card -->
+        <div class="content-card" layout="column" flex>
+
+            <!-- Content toolbar -->
+            <div class="toolbar" layout="row" layout-align="start center">
+                <span>Content toolbar</span>
             </div>
+            <!-- / Content toolbar -->
 
-            <div class="content">
-                <span>Main Content Area</span>
-
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
+            <!-- Content -->
+            <md-content class="content" flex>
+                <span>Scrollable main content</span>
 
                 <br>
                 <br>
@@ -94,121 +165,26 @@
                 <br>
                 <br>
                 <br>
-            </div>
 
-        </main>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </md-content>
+            <!-- / Content -->
+
+        </div>
+        <!-- / Content card-->
+
     </div>
     <!-- / Center pane -->
 
 
-    <!-- Header
-    <header class="md-accent-bg" layout="row">
-
-         Header Left
-        <div class="header-left">
-            <span class="md-background-fg">Header Left</span>
-        </div>
-         Header Left - End
-
-         Header Right
-        <div class="header-right" flex layout="column" layout-align="space-between start">
-            <span class="md-background-fg">Header Right</span>
-
-             Header Toolbar
-            <div class="header-toolbar md-whiteframe-z3" layout="row" layout-align="start center" layout-fill>
-                <span class="black-text">Header Toolbar</span>
-            </div>
-             Header Toolbar - End
-
-        </div>
-         Header Right - End
-
-    </header>
-     End - Header
-
-     Content
-    <div class="content" layout="row">
-
-         Left Pane
-        <div class="content-left-pane">
-            <span>Left pane</span>
-        </div>
-         Left Pane - End
-
-         Main Content
-        <div class="content-main md-background-bg md-whiteframe-z3" flex>
-            <span>Main Content Area</span>
-
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-         Main Content - End
-
-    </div>
-     Content - End
--->
 </div>
 

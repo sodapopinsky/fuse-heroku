@@ -1,6 +1,7 @@
-.layout {
+.page-layout {
     position: relative;
     min-height: 100%;
+    height: 100%;
 
     .top-bg {
         position: absolute;
@@ -19,48 +20,75 @@
 
     &.layout-style-1 {
 
-        // Left pane
-        .left-pane {
-            width: 220px;
-            min-width: 220px;
-            max-width: 220px;
-            z-index: 51;
+        // Layout with left pane
+        &.layout-left-pane {
 
-            .header {
-                height: 200px;
-                padding: 32px 0 32px 32px;
-            }
+            // Left pane
+            .left-pane {
+                width: 220px;
+                min-width: 220px;
+                max-width: 220px;
+                box-shadow: @whiteframe-shadow-z3;
+                z-index: 51;
 
-            .content {
-                padding: 32px 0 32px 32px;
-            }
-
-            &.md-locked-open {
-                z-index: 2;
-                background: transparent;
-            }
-        }
-
-        // Center pane
-        .center-pane {
-            z-index: 2;
-            margin: 0 32px;
-
-            .header {
-                height: 136px;
-                padding: 32px;
-            }
-
-            .content-card {
-                background: #FFFFFF;
-
-                .toolbar {
-                    padding: 8px 32px;
-                    height: 64px;
+                .header {
+                    height: 200px;
+                    min-height: 200px;
+                    max-height: 200px;
+                    padding: 24px 0 24px 24px;
                 }
 
                 .content {
-                    padding: 32px;
+                    padding: 24px;
+                }
+
+                &.md-locked-open {
+                    z-index: 2;
+                    background: transparent;
+                    box-shadow: none;
+
+                    + .center-pane {
+                        margin-left: 0;
+                    }
+                }
+
+                &:not(.md-locked-open) {
+
+                    .content {
+                        overflow: hidden;
+                    }
+                }
+            }
+
+            // Center pane
+            .center-pane {
+                z-index: 2;
+                margin-left: 32px;
+                margin-right: 32px;
+
+                .header {
+                    height: 136px;
+                    min-height: 136px;
+                    max-height: 136px;
+                    padding: 24px;
+                }
+
+                .content-card {
+                    background: @material-color-white;
+                    box-shadow: @whiteframe-shadow-z3;
+                    overflow: hidden;
+
+                    .toolbar {
+                        padding: 8px 24px;
+                        height: 64px;
+                        min-height: 64px;
+                        max-height: 64px;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                    }
+
+                    .content {
+                        padding: 24px;
+                    }
                 }
             }
         }
@@ -173,7 +201,6 @@
         }
     }*/
 }
-
 
 // TAKE CARE OF THIS LATER!!!!!!!!!!!
 .page-header {
