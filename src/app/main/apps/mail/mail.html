@@ -285,22 +285,21 @@
                             <img ng-if="mail.from.avatar" alt="{{ mail.from.name }}" ng-src="{{ mail.from.avatar}}"
                                  class="avatar"/>
 
-                            <div ng-if="!mail.from.avatar" class="avatar" ng-random-class="vm.colors">
+                            <div class="avatar" ng-if="!mail.from.avatar" ng-random-class="vm.colors">
                                 {{ mail.from.name[0] }}
                             </div>
 
-                            <div layout="column" class="info" flex>
+                            <div class="info" flex layout="column">
                                 <div class="name">
                                     {{mail.from.name }}
                                 </div>
 
                                 <div class="subject">
-                                    {{mail.subject | limitTo:50}}{{mail.subject.length > 50 ? '...' : ''}}
+                                    {{mail.subject}}
                                 </div>
 
                                 <div class="message">
-                                    {{mail.message | htmlToPlaintext | limitTo:50}}{{mail.message.length > 50 ? '...' :
-                                    ''}}
+                                    {{mail.message | htmlToPlaintext}}
                                 </div>
                             </div>
 

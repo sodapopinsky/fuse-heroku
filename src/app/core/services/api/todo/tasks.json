@@ -2,7 +2,7 @@
   "data": [
     {
       "title": "Morbi scelerisque malesuada quam sit amet pretium",
-      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem diam, pulvinar id nisl non, ultrices maximus nibh. Suspendisse ut justo velit. Nullam ac ultrices risus, quis auctor orci. Vestibulum volutpat nisi et neque porta ullamcorper.",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem diam, pulvinar id nisl non, ultrices maximus nibh.",
       "time": "32 minutes ago",
       "checked": false,
       "starred": false,
@@ -15,7 +15,7 @@
     },
     {
       "title": "Vestibulum ante ipsum primis in faucibus",
-      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem diam, pulvinar id nisl non, ultrices maximus nibh. Suspendisse ut justo velit. Nullam ac ultrices risus, quis auctor orci. Vestibulum volutpat nisi et neque porta ullamcorper.",
+      "notes": " Suspendisse ut justo velit. Nullam ac ultrices risus, quis auctor orci. Vestibulum volutpat nisi et neque porta ullamcorper.",
       "time": "32 minutes ago",
       "checked": false,
       "starred": false,
@@ -41,7 +41,7 @@
     },
     {
       "title": "Nulla sit amet condimentum orci, luctus volutpat nisl. Fusce quis odio feugiat, maximus mauris sit amet, porta arcu...",
-      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem diam, pulvinar id nisl non, ultrices maximus nibh. Suspendisse ut justo velit. Nullam ac ultrices risus, quis auctor orci. Vestibulum volutpat nisi et neque porta ullamcorper.",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem diam, pulvinar id nisl non, ultrices maximus nibh.",
       "time": "32 minutes ago",
       "checked": false,
       "starred": false,
@@ -54,7 +54,7 @@
     },
     {
       "title": "Duis viverra in nisi sed ultrices",
-      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem diam, pulvinar id nisl non, ultrices maximus nibh. Suspendisse ut justo velit. Nullam ac ultrices risus, quis auctor orci. Vestibulum volutpat nisi et neque porta ullamcorper.",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem diam, pulvinar id nisl non, ultrices maximus nibh.",
       "time": "32 minutes ago",
       "checked": false,
       "starred": false,
@@ -140,7 +140,7 @@
     },
     {
       "title": "Nulla sit amet condimentum orci, luctus volutpat nisl. Fusce quis odio feugiat, maximus mauris sit amet, porta arcu...",
-      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem diam, pulvinar id nisl non, ultrices maximus nibh. Suspendisse ut justo velit. Nullam ac ultrices risus, quis auctor orci. Vestibulum volutpat nisi et neque porta ullamcorper.",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "time": "32 minutes ago",
       "checked": false,
       "starred": false,
@@ -153,7 +153,7 @@
     },
     {
       "title": "Duis viverra in nisi sed ultrices",
-      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem diam, pulvinar id nisl non, ultrices maximus nibh. Suspendisse ut justo velit. Nullam ac ultrices risus, quis auctor orci. Vestibulum volutpat nisi et neque porta ullamcorper.",
+      "notes": " Fusce lorem diam, pulvinar id nisl non, ultrices maximus nibh. Suspendisse ut justo velit. Nullam ac ultrices risus, quis auctor orci. Vestibulum volutpat nisi et neque porta ullamcorper.",
       "time": "32 minutes ago",
       "checked": false,
       "starred": false,
@@ -166,7 +166,7 @@
     },
     {
       "title": "Duis dolor enim, pellentesque vel nibh a, egestas sagittis massa",
-      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem diam, pulvinar id nisl non, ultrices maximus nibh. Suspendisse ut justo velit. Nullam ac ultrices risus, quis auctor orci. Vestibulum volutpat nisi et neque porta ullamcorper.",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem diam, pulvinar id nisl non, ultrices maximus nibh. Suspendisse ut justo velit.",
       "time": "32 minutes ago",
       "checked": false,
       "starred": false,
@@ -183,7 +183,7 @@
     },
     {
       "title": "Praesent sed nulla metus, proin at viverra neque",
-      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem diam, pulvinar id nisl non, ultrices maximus nibh. Suspendisse ut justo velit. Nullam ac ultrices risus, quis auctor orci. Vestibulum volutpat nisi et neque porta ullamcorper.",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "time": "32 minutes ago",
       "checked": false,
       "starred": false,
