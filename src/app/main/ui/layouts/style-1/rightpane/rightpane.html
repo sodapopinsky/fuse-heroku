@@ -1,113 +1,189 @@
-<div class="layout-app1 right-pane" layout="column">
+<div class="page-layout layout-style-1 layout-right-pane" layout="row">
 
-    <!-- Header -->
-    <header class="md-accent-bg" layout="row">
+    <!-- Top background -->
+    <div class="top-bg md-accent-bg"></div>
+    <!-- / Top background -->
 
-        <!-- Header Left -->
-        <div class="header-left" flex layout="column" layout-align="space-between start">
-            <span class="md-background-fg">Header Left</span>
+    <!-- Center pane -->
+    <div class="center-pane" layout="column" flex>
 
-            <!-- Header Toolbar -->
-            <div class="header-toolbar md-whiteframe-z3" layout="row" layout-align="start center" layout-fill>
-                <span class="black-text">Header Toolbar</span>
+        <!-- Content header -->
+        <div class="header" layout="row" layout-align="space-between">
+            <span>Content header</span>
+            <i class="right-pane-toggle icon icon-menu" ng-click="vm.toggleSidenav('rightpane')" hide-gt-md></i>
+        </div>
+        <!-- / Content header -->
+
+        <!-- Content card -->
+        <div class="content-card" layout="column" flex>
+
+            <!-- Content toolbar -->
+            <div class="toolbar" layout="row" layout-align="start center">
+                <span>Content toolbar</span>
             </div>
-            <!-- Header Toolbar - End -->
+            <!-- / Content toolbar -->
+
+            <!-- Content -->
+            <md-content class="content" flex>
+                <span>Scrollable main content</span>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </md-content>
+            <!-- / Content -->
 
         </div>
-        <!-- Header Left - End -->
-
-        <!-- Header Right -->
-        <div class="header-right">
-            <span class="md-background-fg">Header Right</span>
-        </div>
-        <!-- Header Right - End -->
-
-    </header>
-    <!-- End - Header -->
-
-    <!-- Content -->
-    <div class="content" layout="row">
-
-        <!-- Main Content -->
-        <div class="content-main md-background-bg md-whiteframe-z3" flex>
-            <span>Main Content Area</span>
-
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-        <!-- Main Content - End -->
-
-        <!-- Right Pane -->
-        <div class="content-right-pane">
-            <span>Right pane</span>
-        </div>
-        <!-- Right Pane - End -->
+        <!-- / Content card-->
 
     </div>
-    <!-- Content - End -->
+    <!-- / Center pane -->
+
+    <!-- Right pane -->
+    <md-sidenav class="right-pane md-sidenav-right" md-is-locked-open="$mdMedia('gt-md')" md-component-id="rightpane">
+
+        <!-- Right pane header -->
+        <div class="header">
+            <span>Right pane header</span>
+        </div>
+        <!-- / Right pane header -->
+
+        <!-- Right pane content -->
+        <md-content class="content" flex>
+            <span>Right pane scrollable content</span>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </md-content>
+        <!-- / Right pane content -->
+
+    </md-sidenav>
+    <!-- / Right pane -->
 
 </div>
 

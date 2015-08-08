@@ -6,14 +6,25 @@
         .controller('Style1RightpaneController', Style1RightpaneController);
 
     /** @ngInject */
-    function Style1RightpaneController()
+    function Style1RightpaneController($mdSidenav)
     {
         var vm = this;
 
         // Data
 
         // Methods
+        vm.toggleSidenav = toggleSidenav;
 
         //////////
+
+        /**
+         * Toggle sidenav
+         *
+         * @param sidenavId
+         */
+        function toggleSidenav(sidenavId)
+        {
+            $mdSidenav(sidenavId).toggle();
+        }
     }
 })();

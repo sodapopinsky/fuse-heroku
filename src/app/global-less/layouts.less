@@ -25,9 +25,9 @@
 
             // Left pane
             .left-pane {
-                width: 220px;
-                min-width: 220px;
-                max-width: 220px;
+                width: 240px;
+                min-width: 240px;
+                max-width: 240px;
                 box-shadow: @whiteframe-shadow-z3;
                 z-index: 51;
 
@@ -35,14 +35,18 @@
                     height: 200px;
                     min-height: 200px;
                     max-height: 200px;
-                    padding: 24px 0 24px 24px;
+                    padding: 24px;
                 }
 
                 .content {
+                    background: transparent;
                     padding: 24px;
                 }
 
                 &.md-locked-open {
+                    width: 220px;
+                    min-width: 220px;
+                    max-width: 220px;
                     z-index: 2;
                     background: transparent;
                     box-shadow: none;
@@ -71,6 +75,128 @@
                     min-height: 136px;
                     max-height: 136px;
                     padding: 24px;
+
+                    .left-pane-toggle {
+                        margin-right: 16px;
+                    }
+                }
+
+                .content-card {
+                    background: @material-color-white;
+                    box-shadow: @whiteframe-shadow-z3;
+                    overflow: hidden;
+
+                    .toolbar {
+                        padding: 8px 24px;
+                        height: 64px;
+                        min-height: 64px;
+                        max-height: 64px;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                    }
+
+                    .content {
+                        padding: 24px;
+                    }
+                }
+            }
+        }
+
+        // Layout fullwidth
+        &.layout-fullwidth {
+
+            // Center pane
+            .center-pane {
+                z-index: 2;
+                margin-left: 32px;
+                margin-right: 32px;
+
+                .header {
+                    height: 136px;
+                    min-height: 136px;
+                    max-height: 136px;
+                    padding: 24px;
+                }
+
+                .content-card {
+                    background: @material-color-white;
+                    box-shadow: @whiteframe-shadow-z3;
+                    overflow: hidden;
+
+                    .toolbar {
+                        padding: 8px 24px;
+                        height: 64px;
+                        min-height: 64px;
+                        max-height: 64px;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                    }
+
+                    .content {
+                        padding: 24px;
+                    }
+                }
+            }
+        }
+
+        // Layout with right pane
+        &.layout-right-pane {
+
+            // Right pane
+            .right-pane {
+                width: 240px;
+                min-width: 240px;
+                max-width: 240px;
+                box-shadow: @whiteframe-shadow-z3;
+                z-index: 51;
+
+                .header {
+                    height: 200px;
+                    min-height: 200px;
+                    max-height: 200px;
+                    padding: 24px 24px 24px 0;
+                }
+
+                .content {
+                    background: transparent;
+                    padding: 24px 24px 24px 0;
+                }
+
+                &.md-locked-open {
+                    width: 196px;
+                    min-width: 196px;
+                    max-width: 196px;
+                    z-index: 2;
+                    background: transparent;
+                    box-shadow: none;
+                }
+
+                &:not(.md-locked-open) {
+
+                    .header {
+                        padding: 24px;
+                    }
+
+                    .content {
+                        overflow: hidden;
+                        padding: 24px;
+                    }
+                }
+            }
+
+            // Center pane
+            .center-pane {
+                z-index: 2;
+                margin-left: 32px;
+                margin-right: 32px;
+
+                .header {
+                    height: 136px;
+                    min-height: 136px;
+                    max-height: 136px;
+                    padding: 24px;
+
+                    .right-pane-toggle {
+                        margin-left: 16px;
+                    }
                 }
 
                 .content-card {
