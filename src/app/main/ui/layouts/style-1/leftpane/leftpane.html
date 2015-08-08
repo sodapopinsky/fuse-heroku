@@ -93,8 +93,6 @@
 
         <!-- Content header -->
         <div class="header" layout="row">
-            MAKE ME A BUTTON!!!!
-            <i class="left-pane-toggle icon icon-menu" ng-click="vm.toggleSidenav('leftpane')" hide-gt-md></i>
             <span>Content header</span>
         </div>
         <!-- / Content header -->
@@ -104,6 +102,10 @@
 
             <!-- Content toolbar -->
             <div class="toolbar" layout="row" layout-align="start center">
+                <md-button class="md-icon-button left-pane-toggle" ng-click="vm.toggleSidenav('leftpane')" hide-gt-md aria-label="Toggle left pane">
+                    <i class="icon icon-menu"></i>
+                </md-button>
+
                 <span>Content toolbar</span>
             </div>
             <!-- / Content toolbar -->

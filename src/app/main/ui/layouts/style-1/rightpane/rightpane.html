@@ -8,9 +8,8 @@
     <div class="center-pane" layout="column" flex>
 
         <!-- Content header -->
-        <div class="header" layout="row" layout-align="space-between">
+        <div class="header" layout="row">
             <span>Content header</span>
-            <i class="right-pane-toggle icon icon-menu" ng-click="vm.toggleSidenav('rightpane')" hide-gt-md></i>
         </div>
         <!-- / Content header -->
 
@@ -18,8 +17,12 @@
         <div class="content-card" layout="column" flex>
 
             <!-- Content toolbar -->
-            <div class="toolbar" layout="row" layout-align="start center">
+            <div class="toolbar" layout="row" layout-align="space-between center">
                 <span>Content toolbar</span>
+
+                <md-button class="md-icon-button right-pane-toggle" ng-click="vm.toggleSidenav('rightpane')" hide-gt-md aria-label="Toggle right pane">
+                    <i class="icon icon-menu"></i>
+                </md-button>
             </div>
             <!-- / Content toolbar -->
 
