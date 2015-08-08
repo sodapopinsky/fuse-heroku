@@ -6,7 +6,7 @@
         .controller('TodoController', TodoController);
 
     /** @ngInject */
-    function TodoController(api, $mdDialog, $document)
+    function TodoController($document, $mdDialog, $mdSidenav, api)
     {
         var vm = this;
 
@@ -43,6 +43,7 @@
         vm.openTaskDialog = openTaskDialog;
         vm.starredToggle = starredToggle;
         vm.toggleCheck = toggleCheck;
+        vm.toggleSidenav = toggleSidenav;
 
         //////////
 
@@ -74,6 +75,16 @@
         {
             event.stopPropagation();
             task.checked = !task.checked;
+        }
+
+        /**
+         * Toggle sidenav
+         *
+         * @param sidenavId
+         */
+        function toggleSidenav(sidenavId)
+        {
+            $mdSidenav(sidenavId).toggle();
         }
     }
 })();

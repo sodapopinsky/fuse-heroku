@@ -1,12 +1,12 @@
 #todo {
 
-    // Header
-    > header {
+    // Left pane
+    .left-pane {
 
-        .header-left {
+        .header {
+            padding-top: 40px;
 
             .logo {
-                width: 100%;
                 height: 56px;
 
                 .logo-icon {
@@ -14,7 +14,8 @@
                 }
 
                 .logo-text {
-                    font-size: 21px;
+                    font-size: 20px;
+                    font-weight: 500;
                 }
             }
 
@@ -24,7 +25,60 @@
             }
         }
 
-        .header-right {
+        .content {
+            padding: 24px 0;
+
+            .add-task-button {
+                padding: 0 32px 24px 32px;
+                font-size: 13px;
+
+                .md-button {
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+        }
+
+        &.md-locked-open {
+
+            .header {
+                color: @material-color-white;
+
+                .logo-icon {
+
+                    md-icon {
+                        color: @material-color-white;
+                    }
+                }
+            }
+        }
+
+        &:not(.md-locked-open) {
+
+            .header {
+                height: auto;
+                min-height: 0;
+                max-height: none;
+                padding-top: 24px;
+            }
+        }
+    }
+
+    // Center pane
+    .center-pane {
+
+        .header {
+            padding: 24px 0;
+
+            .left-pane-toggle {
+                margin: 0;
+                width: 56px;
+                height: 56px;
+                line-height: 56px;
+                background: @material-color-white;
+                border-radius: 0;
+                border-right: 1px solid rgba(0, 0, 0, 0.12);
+            }
 
             .search {
                 height: 56px;
@@ -44,96 +98,84 @@
             }
         }
 
-        .header-toolbar {
-            padding: 0 16px;
+        .content-card {
 
-            .actions {
-                font-size: 13px;
+            .toolbar {
+                padding: 8px 16px;
 
-                .page-info {
-                    font-weight: 500;
-                    margin: 0 8px;
-                }
-            }
-        }
-    }
+                .actions {
+                    font-size: 13px;
 
-    // Content
-    > .content {
-
-        .content-left-pane {
-            padding: 32px 0;
-
-            .add-task-button {
-                padding: 0 32px 24px 32px;
-                font-size: 13px;
-
-                .md-button {
-                    width: 100%;
-                    margin: 0;
-                }
-            }
-        }
-
-        .content-main {
-            padding: 0;
-
-            .task-list {
-                background: #FAFAFA;
-
-                .task {
-                    padding: 16px;
-                    position: relative;
-                    text-transform: none;
-                    cursor: pointer;
-                    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-
-                    .tags {
-                        font-size: 11px;
-                        margin-right: 12px;
-
-                        .tag {
-                            border-radius: 2px;
-                            margin: 0 4px 0 0;
-                            padding: 4px 6px;
-                            color: rgba(255, 255, 255, 1);
-                            font-weight: 500;
-                        }
+                    .page-info {
+                        font-weight: 500;
+                        margin: 0 8px;
                     }
+                }
 
-                    &.checked {
-                        background: #EEEEEE;
-                        color: rgba(0, 0, 0, 0.54);
+            }
+
+            .content {
+                padding: 0;
+                overflow: hidden;
+
+                .task-list-pane {
+                    background: #FAFAFA;
+
+                    .task {
+                        padding: 16px;
+                        position: relative;
+                        text-transform: none;
+                        cursor: pointer;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+                        .tags {
+                            font-size: 11px;
+                            margin-right: 12px;
+
+                            .tag {
+                                border-radius: 2px;
+                                margin: 0 4px 0 0;
+                                padding: 4px 6px;
+                                color: rgba(255, 255, 255, 1);
+                                font-weight: 500;
+                            }
+                        }
+
+                        &.checked {
+                            background: #EEEEEE;
+                            color: rgba(0, 0, 0, 0.54);
+
+                            .info {
+                                text-decoration: line-through;
+                            }
+                        }
+
+                        &.selected {
+                            background: #FFF8E1;
+                        }
 
                         .info {
-                            text-decoration: line-through;
-                        }
-                    }
+                            margin: 0 8px 0 16px;
 
-                    &.selected {
-                        background: #FFF8E1;
-                    }
+                            .title,
+                            .notes {
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
 
-                    .info {
-                        margin: 0 8px 0 16px;
+                            .title {
+                                font-size: 15px;
+                                font-weight: 500;
+                            }
 
-                        .title,
-                        .notes {
-                            white-space: nowrap;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                        }
-
-                        .title {
-                            font-size: 15px;
-                            font-weight: 500;
-                        }
-
-                        .notes {
-                            font-size: 13px;
+                            .notes {
+                                font-size: 13px;
+                            }
                         }
                     }
                 }
+
             }
         }
     }
