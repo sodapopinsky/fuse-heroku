@@ -1,41 +1,48 @@
-
 #theme-changer {
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  md-fab-speed-dial {
-    .md-fab-action-item {
-      opacity: 1 !important;
-      transform: scale(1) !important;
-      visibility: visible !important;
-      .md-button {
-        opacity: 0;
-        transform: scale(0);
-        visibility: hidden;
-        .for(40);
-        .-each(@index) {
-          &:nth-child(@{index}) {
-            animation-delay: ~'-@{index}s';
-            transition: all 0.4 - (0.3 / @index) * 1s cubic-bezier(0.55, 0, 0.55, 0.2);
-          }
-        }
-      }
-    }
-    &.md-is-open {
-      .md-fab-action-item {
-        .md-button {
-          opacity: 1;
-          transform: scale(1);
-          visibility: visible;
-          .for(40);
-          .-each(@index) {
-            &:nth-child(@{index}) {
-              animation-delay: ~'-@{index}s';
-              transition: all (0.3 / @index) * 1s cubic-bezier(0.55, 0, 0.55, 0.2);
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    z-index: 9999;
+
+    md-fab-speed-dial {
+
+        .md-fab-action-item {
+
+            opacity: 1 !important;
+            transform: scale(1) !important;
+            visibility: visible !important;
+
+            .md-button {
+                opacity: 0;
+                transform: scale(0);
+                visibility: hidden;
+                .for(40);
+                .-each(@index) {
+                    &:nth-child(@{index}) {
+                        animation-delay: ~'-@{index}s';
+                        transition: all 0.4 - (0.3 / @index) * 1s cubic-bezier(0.55, 0, 0.55, 0.2);
+                    }
+                }
             }
-          }
         }
-      }
+
+        &.md-is-open {
+
+            .md-fab-action-item {
+
+                .md-button {
+                    opacity: 1;
+                    transform: scale(1);
+                    visibility: visible;
+                    .for(40);
+                    .-each(@index) {
+                        &:nth-child(@{index}) {
+                            animation-delay: ~'-@{index}s';
+                            transition: all (0.3 / @index) * 1s cubic-bezier(0.55, 0, 0.55, 0.2);
+                        }
+                    }
+                }
+            }
+        }
     }
-  }
 }
