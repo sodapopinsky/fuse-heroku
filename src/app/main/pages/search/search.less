@@ -1,0 +1,112 @@
+#search {
+
+  > header {
+    height: 160px;
+    padding: 32px;
+    .search {
+      position: relative;
+      height: 48px;
+      max-width: 780px;
+      label {
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 12px 0;
+        md-icon {
+          color: white;
+        }
+      }
+      #search-input {
+        padding-left: 48px;
+        background: transparent;
+        font-size: 24px;
+        line-height: 48px;
+        color: white;
+        border-width: 0 0 2px 0;
+        border-style: solid;
+        border-color: rgba(255, 255, 255, 0.3);
+        transition: border-color 300ms ease;
+        &:focus {
+          border-color: rgba(255, 255, 255, 1);
+        }
+        &::-webkit-input-placeholder {
+          color: white;
+        }
+      }
+      .refresh-button {
+        position: absolute;
+        right: 0;
+        line-height: 48px;
+        height: 48px;
+        width: 48px;
+        margin: 0;
+      }
+    }
+    .settings-button {
+      margin: 0;
+    }
+  }
+
+  .content {
+
+    md-tabs {
+
+      md-tabs-wrapper {
+        height: 56px;
+        padding: 0 32px;
+        background-color: white;
+        border-color: rgba(0, 0, 0, 0.22);
+
+        md-tabs-canvas {
+          height: 56px;
+
+          md-pagination-wrapper {
+            height: 56px;
+
+            .md-tab {
+              padding: 16px 24px;
+              font-size: 15px;
+              text-transform: inherit;
+            }
+          }
+        }
+      }
+
+      md-tabs-content-wrapper {
+
+        md-tab-content {
+
+          md-content {
+            background-color: transparent;
+            padding: 0 32px 32px 32px;
+
+            .content-header {
+              border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+              height: 60px;
+              > .title {
+                .md-title {
+                  margin-right: 16px;
+                }
+              }
+              .pager {
+                .page-info {
+                  font-weight: 500;
+                  margin: 0 8px;
+                }
+                .md-button {
+                  margin: 0;
+                }
+              }
+            }
+
+            .pagination{
+              margin-top: 48px;
+            }
+
+          }
+        }
+      }
+    }
+
+  }
+}

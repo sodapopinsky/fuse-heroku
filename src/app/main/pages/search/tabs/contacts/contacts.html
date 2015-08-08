@@ -1,0 +1,78 @@
+<div class="content-header" layout="row" layout-align="space-between center">
+    <span class="title">
+        <span class="md-title">Contacts</span>
+        <span class="secondary-text">13 Results</span>
+    </span>
+
+    <div class="pager">
+        <span class="secondary-text">Results:</span>
+        <span class="page-info">1-10</span>
+        <md-button class="md-icon-button" aria-label="previous page">
+            <md-icon md-font-icon="icon-navigate_before"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="next page">
+            <md-icon md-font-icon="icon-navigate_next"></md-icon>
+        </md-button>
+    </div>
+</div>
+
+<table class="results contacts table-simple" layout-fill>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Phone</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="result-item contact" ng-repeat="contact in vm.contacts">
+            <td class="text-left avatar-cell" ng-if="contact.avatar">
+                <img alt="{{ contact.name }}" ng-src="{{ contact.avatar}}" class="avatar"/>
+            </td>
+            <td class="text-left avatar-cell" ng-if="!contact.avatar">
+                <div class="avatar" ng-random-class="vm.colors">
+                    {{ contact.name[0] }}
+                </div>
+            </td>
+            <td class="name">{{contact.name}}</td>
+            <td class="position">{{contact.position}}</td>
+            <td class="phone">{{contact.phone}}</td>
+            <td class="email">{{contact.email}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<nav class="pagination" md-ink-ripple>
+    <a class="disabled" href="#" aria-label="Previous">
+        <i class="icon-navigate_before" aria-hidden="true"></i>
+    </a>
+    <a class="active" href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">6</a>
+    <a href="#">7</a>
+    <a href="#">8</a>
+    <a href="#">9</a>
+    <a href="#">10</a>
+    <a href="#" aria-label="Next">
+        <i class="icon-navigate_next" aria-hidden="true"></i>
+    </a>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

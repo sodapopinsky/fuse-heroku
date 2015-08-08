@@ -42,7 +42,7 @@
             'app.pages.error-500',
             'app.pages.invoice',
             'app.pages.profile',
-            //'app.pages.search',
+            'app.pages.search',
             'app.pages.timeline',
 
             // User Interface

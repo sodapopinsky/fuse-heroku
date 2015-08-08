@@ -1,0 +1,32 @@
+#search {
+  .content {
+    .results.contacts {
+      padding-top: 8px;
+      max-width: 1024px;
+      .result-item.contact {
+        cursor: pointer;
+        position: relative;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.03);
+        }
+        td {
+          border-bottom: none;
+        }
+        .avatar-cell {
+          width: 88px;
+          .avatar {
+            min-width: 40px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-sizing: content-box;
+            text-align: center;
+            line-height: 40px;
+            color: #ffffff;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}

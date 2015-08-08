@@ -1,0 +1,61 @@
+#search {
+  .content {
+    .results.mail-list {
+      padding-top: 24px;
+      .result-item.mail-list-item {
+        max-width: 800px;
+        position: relative;
+        padding: 16px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        cursor: pointer;
+
+        &.unread {
+          .info {
+            .subject,
+            .message {
+              font-weight: 500;
+            }
+          }
+        }
+
+        .avatar {
+          margin: 0 8px;
+          min-width: 40px;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          box-sizing: content-box;
+          text-align: center;
+          line-height: 40px;
+          color: #ffffff;
+          font-weight: 500;
+        }
+
+        .info {
+          overflow: hidden;
+          margin: 0 12px;
+
+          .name,
+          .subject,
+          .message {
+            white-space: nowrap;
+            font-size: 13px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          .name {
+            font-size: 15px;
+            font-weight: 500;
+          }
+        }
+
+        .time {
+          font-size: 13px;
+          margin: 0 8px;
+        }
+      }
+    }
+
+  }
+}
