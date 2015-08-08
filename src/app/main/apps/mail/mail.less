@@ -1,20 +1,19 @@
 #mail {
 
-    // Header
-    > header {
+    // Left pane
+    .left-pane {
 
-        .header-left {
+        .header {
 
             .logo {
-                width: 100%;
-                height: 56px;
 
                 .logo-icon {
                     margin: 0 16px 0 0;
                 }
 
                 .logo-text {
-                    font-size: 21px;
+                    font-size: 20px;
+                    font-weight: 500;
                 }
             }
 
@@ -37,7 +36,49 @@
             }
         }
 
-        .header-right {
+        .content {
+            padding: 24px 0;
+
+            .compose-button {
+                padding: 0 24px 24px 24px;
+                font-size: 13px;
+
+                .md-button {
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+        }
+
+        &.md-locked-open {
+
+            .header {
+                color: @material-color-white;
+
+                .logo-icon {
+
+                    md-icon {
+                        color: @material-color-white;
+                    }
+                }
+            }
+        }
+    }
+
+    // Center pane
+    .center-pane {
+
+        .header {
+            padding: 24px 0;
+
+            .left-pane-toggle {
+                margin: 0;
+                width: 56px;
+                height: 56px;
+                line-height: 56px;
+                background: @material-color-white;
+                border-radius: 0;
+            }
 
             .search {
                 height: 56px;
@@ -57,190 +98,176 @@
             }
         }
 
-        .header-toolbar {
-            padding: 0 16px;
+        .content-card {
 
-            .actions {
-                font-size: 13px;
+            .toolbar {
+                padding: 8px 16px;
 
-                .page-info {
-                    font-weight: 500;
-                    margin: 0 8px;
-                }
-            }
-        }
-    }
+                .actions {
+                    font-size: 13px;
 
-    // Content
-    > .content {
-
-        .content-left-pane {
-            padding: 32px 0;
-
-            .compose-button {
-                padding: 0 32px 24px 32px;
-                font-size: 13px;
-
-                .md-button {
-                    width: 100%;
-                    margin: 0;
-                }
-            }
-        }
-
-        .content-main {
-            padding: 0;
-
-            .mail-list {
-                border-right: 1px solid rgba(0, 0, 0, 0.12);
-                background: #FAFAFA;
-
-                .mail-list-item {
-                    position: relative;
-                    padding: 16px;
-                    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-                    cursor: pointer;
-
-                    &.read {
-
+                    .page-info {
+                        font-weight: 500;
+                        margin: 0 8px;
                     }
+                }
+            }
 
-                    &.unread {
-                        background: #FFFFFF;
+            .content {
+                padding: 0;
+                overflow: hidden;
+
+                .mail-list-pane {
+                    border-right: 1px solid rgba(0, 0, 0, 0.12);
+                    background: #FAFAFA;
+
+                    .mail-list-item {
+                        position: relative;
+                        padding: 16px;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                        cursor: pointer;
+
+                        &.read {
+
+                        }
+
+                        &.unread {
+                            background: @material-color-white;
+
+                            .info {
+
+                                .subject,
+                                .message {
+                                    font-weight: 500;
+                                }
+                            }
+                        }
+
+                        &.selected {
+                            background: #E3F2FD;
+                        }
+
+                        &.checked {
+                            background: #FFF8E1;
+                        }
+
+                        .avatar {
+                            margin: 0 8px;
+                        }
 
                         .info {
+                            overflow: hidden;
+                            margin: 0 12px;
 
+                            .name,
                             .subject,
                             .message {
+                                white-space: nowrap;
+                                font-size: 13px;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+
+                            .name {
+                                font-size: 15px;
+                                font-weight: 500;
+                            }
+                        }
+
+                        .time {
+                            font-size: 13px;
+                            margin: 0 8px;
+                        }
+                    }
+                }
+
+                .mail-read-pane {
+                    padding: 24px;
+
+                    .mail-header {
+                        padding-bottom: 24px;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+                        .subject {
+                            font-size: 17px;
+                            font-weight: 500;
+                        }
+                    }
+
+                    .mail-content {
+                        padding: 24px 0;
+                        font-size: 13px;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+                        .info {
+                            padding-bottom: 24px;
+
+                            .avatar {
+                                margin-right: 16px;
+                            }
+
+                            .name {
                                 font-weight: 500;
                             }
                         }
                     }
 
-                    &.selected {
-                        background: #E3F2FD;
-                    }
-
-                    &.checked {
-                        background: #FFF8E1;
-                    }
-
-                    .avatar {
-                        margin: 0 8px;
-                    }
-
-                    .info {
-                        overflow: hidden;
-                        margin: 0 12px;
-
-                        .name,
-                        .subject,
-                        .message {
-                            white-space: nowrap;
-                            font-size: 13px;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                        }
-
-                        .name {
-                            font-size: 15px;
-                            font-weight: 500;
-                        }
-                    }
-
-                    .time {
+                    .attachments {
                         font-size: 13px;
-                        margin: 0 8px;
-                    }
-                }
-            }
+                        padding: 24px 0;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
-            .mail-content {
-                padding: 24px;
-
-                header {
-                    padding-bottom: 24px;
-                    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-
-                    .subject {
-                        font-size: 17px;
-                        font-weight: 500;
-                    }
-                }
-
-                .content {
-                    padding: 24px 0;
-                    font-size: 13px;
-                    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-
-                    .info {
-                        padding-bottom: 24px;
-
-                        .avatar {
-                            margin-right: 16px;
-                        }
-
-                        .name {
+                        .title {
+                            margin-bottom: 16px;
                             font-weight: 500;
                         }
-                    }
-                }
 
-                .attachments {
-                    font-size: 13px;
-                    padding: 24px 0;
-                    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                        .attachment {
 
-                    .title {
-                        margin-bottom: 16px;
-                        font-weight: 500;
-                    }
+                            .preview {
+                                width: 100px;
+                                margin: 0 16px 8px 0;
+                            }
 
-                    .attachment {
+                            .link {
+                                text-decoration: underline;
+                                margin-bottom: 2px;
+                            }
 
-                        .preview {
-                            width: 100px;
-                            margin: 0 16px 8px 0;
-                        }
-
-                        .link {
-                            text-decoration: underline;
-                            margin-bottom: 2px;
-                        }
-
-                        .size {
-                            font-size: 11px;
+                            .size {
+                                font-size: 11px;
+                            }
                         }
                     }
-                }
 
-                .reply {
-                    padding: 24px 0;
+                    .reply {
+                        padding: 24px 0;
 
-                    .form {
-                        margin-left: 16px;
-                        border: 1px solid rgba(0, 0, 0, 0.12);
+                        .form {
+                            margin-left: 16px;
+                            border: 1px solid rgba(0, 0, 0, 0.12);
 
-                        textarea {
-                            width: 100% !important;
-                            height: 140px !important;
-                            border: none;
-                            padding: 8px;
-                            box-sizing: border-box;
-                        }
+                            textarea {
+                                width: 100% !important;
+                                height: 140px !important;
+                                border: none;
+                                padding: 8px;
+                                box-sizing: border-box;
+                            }
 
-                        .actions {
-                            padding: 8px 16px;
-                            border-top: 1px solid rgba(0, 0, 0, 0.12);
-                            background-color: rgba(0, 0, 0, 0.03);
+                            .actions {
+                                padding: 8px 16px;
+                                border-top: 1px solid rgba(0, 0, 0, 0.12);
+                                background-color: rgba(0, 0, 0, 0.03);
 
-                            .send-button {
-                                margin: 0;
-                                width: 64px;
-                                min-width: 64px;
-                                height: 30px;
-                                line-height: 30px;
-                                min-height: 30px;
+                                .send-button {
+                                    margin: 0;
+                                    width: 64px;
+                                    min-width: 64px;
+                                    height: 30px;
+                                    line-height: 30px;
+                                    min-height: 30px;
+                                }
                             }
                         }
                     }
@@ -257,7 +284,7 @@
         box-sizing: content-box;
         text-align: center;
         line-height: 40px;
-        color: white;
+        color: @material-color-white;
         font-weight: 500;
     }
 }

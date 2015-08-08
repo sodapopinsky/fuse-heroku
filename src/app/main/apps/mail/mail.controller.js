@@ -6,7 +6,7 @@
         .controller('MailController', MailController);
 
     /** @ngInject */
-    function MailController(api, $mdDialog, $document)
+    function MailController($document, $mdDialog, $mdSidenav, api)
     {
         var vm = this;
 
@@ -19,6 +19,7 @@
         vm.colors = ['md-blue-bg', 'md-blue-grey-bg', 'md-orange-bg', 'md-pink-bg', 'md-purple-bg'];
         vm.selectedAccount = 'creapond';
         vm.selectedMail = {};
+        vm.toggleSidenav = toggleSidenav;
 
         api.mail.inbox.get({}, function (response)
         {
@@ -106,6 +107,16 @@
                 targetEvent        : ev,
                 clickOutsideToClose: true
             });
+        }
+
+        /**
+         * Toggle sidenav
+         *
+         * @param sidenavId
+         */
+        function toggleSidenav(sidenavId)
+        {
+            $mdSidenav(sidenavId).toggle();
         }
     }
 })();

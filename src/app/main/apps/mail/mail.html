@@ -1,13 +1,18 @@
-<div id="mail" class="layout-app1 left-pane" layout="column">
+<div id="mail" class="page-layout layout-style-1 layout-left-pane" layout="row">
 
-    <!-- Header -->
-    <header class="md-accent-bg" layout="row">
+    <!-- Top background -->
+    <div class="top-bg md-accent-bg"></div>
+    <!-- / Top background -->
 
-        <!-- Header Left -->
-        <div class="header-left" layout="column" layout-align="space-between">
+    <!-- Left pane -->
+    <md-sidenav class="left-pane" md-is-locked-open="$mdMedia('gt-md')" md-component-id="leftpane">
+
+        <!-- Left pane header -->
+        <div class="header" layout="column" layout-align="space-between start">
+
             <div class="logo" layout="row" layout-align="start center">
                 <span class="logo-icon">
-                    <md-icon md-font-icon="icon-mail white-text" class="s24"></md-icon>
+                    <md-icon md-font-icon="icon-mail" class="icon s24"></md-icon>
                 </span>
                 <span class="logo-text">Mailbox</span>
             </div>
@@ -20,121 +25,12 @@
                     </md-option>
                 </md-select>
             </div>
-        </div>
-        <!-- Header Left - End -->
-
-        <!-- Header Right - End -->
-        <div class="header-right" flex layout="column" layout-align="space-between">
-            <div class="search md-whiteframe-z2 md-background-bg" layout="row" layout-align="start center">
-                <md-icon md-font-icon="icon-search" class="icon md-background-bg s24"></md-icon>
-                <input flex ng-model="vm.search" type="text" placeholder="Search for an e-mail or contact">
-            </div>
-
-            <!-- Header Toolbar -->
-            <div class="header-toolbar md-whiteframe-z3 black-text" layout="row" layout-align="start center" layout-fill>
-
-                <div class="actions" flex="100" layout="row" layout-align="space-between center">
-                    <div layout="row" layout-align="start center">
-                        <md-checkbox aria-label="Check All" ng-checked="vm.allChecked"
-                                     ng-click="vm.checkAll()"></md-checkbox>
-                        <md-menu>
-                            <md-button aria-label="check options" class="md-icon-button"
-                                       ng-click="$mdOpenMenu($event)">
-                                <md-icon md-font-icon="icon-arrow_drop_down"></md-icon>
-                            </md-button>
-                            <md-menu-content width="3">
-                                <md-menu-item>
-                                    <md-button aria-label="all">All</md-button>
-                                </md-menu-item>
-                                <md-menu-item>
-                                    <md-button aria-label="none">None</md-button>
-                                </md-menu-item>
-                                <md-menu-item>
-                                    <md-button aria-label="read">Read</md-button>
-                                </md-menu-item>
-                                <md-menu-item>
-                                    <md-button aria-label="unread">Unread</md-button>
-                                </md-menu-item>
-                                <md-menu-item>
-                                    <md-button aria-label="starred">Starred</md-button>
-                                </md-menu-item>
-                                <md-menu-item>
-                                    <md-button aria-label="unstarred">Unstarred</md-button>
-                                </md-menu-item>
-                            </md-menu-content>
-                        </md-menu>
-
-                        <div class="divider-vertical"></div>
-
-                        <md-button class="md-icon-button" aria-label="archive">
-                            <md-icon md-font-icon="icon-archive"></md-icon>
-                            <md-tooltip>
-                                Archive
-                            </md-tooltip>
-                        </md-button>
-
-                        <md-button class="md-icon-button" aria-label="report">
-                            <md-icon md-font-icon="icon-report"></md-icon>
-                            <md-tooltip>
-                                Report Spam
-                            </md-tooltip>
-                        </md-button>
-
-                        <md-button class="md-icon-button" aria-label="delete">
-                            <md-icon md-font-icon="icon-delete"></md-icon>
-                            <md-tooltip>
-                                Delete
-                            </md-tooltip>
-                        </md-button>
-
-                        <div class="divider-vertical"></div>
-
-                        <md-button class="md-icon-button" aria-label="folder">
-                            <md-icon md-font-icon="icon-folder"></md-icon>
-                            <md-tooltip>
-                                Move to
-                            </md-tooltip>
-                        </md-button>
-
-                        <md-button class="md-icon-button" aria-label="label">
-                            <md-icon md-font-icon="icon-label"></md-icon>
-                            <md-tooltip>
-                                Labels
-                            </md-tooltip>
-                        </md-button>
-                    </div>
-
-                    <div layout="row" layout-align="end center">
-                        <md-button class="md-icon-button" aria-label="refresh">
-                            <md-icon md-font-icon="icon-refresh"></md-icon>
-                        </md-button>
-
-                        <span class="page-info">1 - 100 of 980</span>
-
-                        <md-button class="md-icon-button arrow" aria-label="previous">
-                            <md-icon md-font-icon="icon-keyboard_arrow_left"></md-icon>
-                        </md-button>
-
-                        <md-button class="md-icon-button arrow" aria-label="next">
-                            <md-icon md-font-icon="icon-keyboard_arrow_right"></md-icon>
-                        </md-button>
-                    </div>
-                </div>
-
-            </div>
-            <!-- Header Toolbar - End -->
 
         </div>
-        <!-- Header Right - End -->
+        <!-- / Left pane header -->
 
-    </header>
-    <!-- End - Header -->
-
-    <!-- Content -->
-    <div class="content" layout="row">
-
-        <!-- Left Pane -->
-        <div class="content-left-pane">
+        <!-- Left pane content -->
+        <md-content class="content" flex>
 
             <div class="compose-button">
                 <md-button class="md-accent md-raised" aria-label="compose"
@@ -246,201 +142,332 @@
                 </md-button>
             </div>
 
+        </md-content>
+        <!-- / Left pane content -->
+
+    </md-sidenav>
+    <!-- / Left pane -->
+
+    <!-- Center pane -->
+    <div class="center-pane" layout="column" flex>
+
+        <!-- Center pane header -->
+        <div class="header" layout="row" layout-align="start center">
+
+            <div class="search-wrapper md-whiteframe-z2" layout="row" layout-align="start center" flex>
+                <md-button class="md-icon-button left-pane-toggle" ng-click="vm.toggleSidenav('leftpane')" hide-gt-md
+                           aria-label="Toggle left pane">
+                    <md-icon class="icon" md-font-icon="icon-menu"></md-icon>
+                </md-button>
+
+                <div class="search md-background-bg" flex layout="row" layout-align="start center">
+                    <md-icon md-font-icon="icon-search" class="icon md-background-bg s24"></md-icon>
+                    <input flex ng-model="vm.search" type="text" placeholder="Search for an e-mail or contact">
+                </div>
+            </div>
+
         </div>
-        <!-- Left Pane - End -->
+        <!-- / Center pane header -->
 
-        <!-- Main Content -->
-        <div class="content-main md-background-bg md-whiteframe-z3" flex layout="row">
+        <!-- Content card -->
+        <div class="content-card" layout="column" flex>
 
-            <!-- Mail List -->
-            <div flex="50" class="mail-list">
-                <div class="mail-list-item {{mail.status}}" ng-repeat="mail in vm.inbox | filter: vm.search" md-ink-ripple
-                     ng-click="vm.selectMail(mail)"
-                     ng-class="{'starred': mail.starred, 'selected': mail.selected, 'checked': vm.checkExists(mail, vm.checked)}">
+            <!-- Content toolbar -->
+            <div class="toolbar" layout="row" layout-align="start center">
 
-                    <div layout-fill layout="row" layout-align="start center">
-                        <md-checkbox aria-label="{{$index}}" class="checkbox" ng-checked="vm.checkExists(mail, vm.checked)"
-                                     ng-click="vm.checkToggle(mail, vm.checked,$event)">
-                        </md-checkbox>
-
-                        <img ng-if="mail.from.avatar" alt="{{ mail.from.name }}" ng-src="{{ mail.from.avatar}}" class="avatar"/>
-
-                        <div ng-if="!mail.from.avatar" class="avatar" ng-random-class="vm.colors">
-                            {{ mail.from.name[0] }}
-                        </div>
-
-                        <div layout="column" class="info" flex>
-                            <div class="name">
-                                {{mail.from.name }}
-                            </div>
-
-                            <div class="subject">
-                                {{mail.subject | limitTo:50}}{{mail.subject.length > 50 ? '...' : ''}}
-                            </div>
-
-                            <div class="message">
-                                {{mail.message | htmlToPlaintext | limitTo:50}}{{mail.message.length > 50 ? '...' : ''}}
-                            </div>
-                        </div>
-
-                        <div class="time">{{mail.time}}</div>
-
-                        <md-button class="md-icon-button" ng-click="vm.starredToggle(mail,$event)" aria-label="starred">
-                            <md-icon ng-if="mail.starred" md-font-icon="icon-star" class="md-amber-fg"></md-icon>
-                            <md-icon ng-if="!mail.starred" md-font-icon="icon-star_outline"></md-icon>
-                        </md-button>
-
+                <div class="actions" flex layout="row" layout-align="space-between center">
+                    <div layout="row" layout-align="start center">
+                        <md-checkbox aria-label="Check All" ng-checked="vm.allChecked"
+                                     ng-click="vm.checkAll()"></md-checkbox>
                         <md-menu>
-                            <md-button aria-label="more" class="md-icon-button"
+                            <md-button aria-label="check options" class="md-icon-button"
                                        ng-click="$mdOpenMenu($event)">
-                                <md-icon md-font-icon="icon-more_vert"></md-icon>
+                                <md-icon md-font-icon="icon-arrow_drop_down"></md-icon>
                             </md-button>
-
                             <md-menu-content width="3">
                                 <md-menu-item>
-                                    <md-button aria-label="all">Mark as unread</md-button>
+                                    <md-button aria-label="all">All</md-button>
                                 </md-menu-item>
-
                                 <md-menu-item>
-                                    <md-button aria-label="none">Mark as important</md-button>
+                                    <md-button aria-label="none">None</md-button>
                                 </md-menu-item>
-
                                 <md-menu-item>
-                                    <md-button aria-label="read">Add star</md-button>
+                                    <md-button aria-label="read">Read</md-button>
+                                </md-menu-item>
+                                <md-menu-item>
+                                    <md-button aria-label="unread">Unread</md-button>
+                                </md-menu-item>
+                                <md-menu-item>
+                                    <md-button aria-label="starred">Starred</md-button>
+                                </md-menu-item>
+                                <md-menu-item>
+                                    <md-button aria-label="unstarred">Unstarred</md-button>
                                 </md-menu-item>
                             </md-menu-content>
                         </md-menu>
-                    </div>
 
-                </div>
-            </div>
-            <!-- Mail List - End -->
+                        <div class="divider-vertical"></div>
 
-            <!-- Mail Content -->
-            <div flex="50" class="mail-content">
-
-                <header layout="row" layout-align="space-between center">
-                    <div class="subject" flex>{{vm.selectedMail.subject}}</div>
-
-                    <div layout="row" layout-align="end center">
                         <md-button class="md-icon-button" aria-label="archive">
                             <md-icon md-font-icon="icon-archive"></md-icon>
+                            <md-tooltip>
+                                Archive
+                            </md-tooltip>
                         </md-button>
 
                         <md-button class="md-icon-button" aria-label="report">
                             <md-icon md-font-icon="icon-report"></md-icon>
+                            <md-tooltip>
+                                Report Spam
+                            </md-tooltip>
                         </md-button>
 
                         <md-button class="md-icon-button" aria-label="delete">
                             <md-icon md-font-icon="icon-delete"></md-icon>
+                            <md-tooltip>
+                                Delete
+                            </md-tooltip>
                         </md-button>
 
-                        <md-button class="md-icon-button" aria-label="more">
-                            <md-icon md-font-icon="icon-more_vert"></md-icon>
+                        <div class="divider-vertical"></div>
+
+                        <md-button class="md-icon-button" aria-label="folder">
+                            <md-icon md-font-icon="icon-folder"></md-icon>
+                            <md-tooltip>
+                                Move to
+                            </md-tooltip>
+                        </md-button>
+
+                        <md-button class="md-icon-button" aria-label="label">
+                            <md-icon md-font-icon="icon-label"></md-icon>
+                            <md-tooltip>
+                                Labels
+                            </md-tooltip>
                         </md-button>
                     </div>
-                </header>
 
-                <div class="content">
-                    <div class="info" layout="row" layout-align="space-between center">
-                        <div layout="row" layout-align="start center">
+                    <div layout="row" layout-align="end center">
+                        <md-button class="md-icon-button" aria-label="refresh">
+                            <md-icon md-font-icon="icon-refresh"></md-icon>
+                        </md-button>
 
-                            <img ng-if="vm.selectedMail.from.avatar" alt="{{ vm.selectedMail.from.name }}"
-                                 ng-src="{{ vm.selectedMail.from.avatar}}" class="avatar"/>
+                        <span class="page-info">1 - 100 of 980</span>
 
-                            <div ng-if="!vm.selectedMail.from.avatar" class="avatar" ng-random-class="vm.colors">
-                                {{ vm.selectedMail.from.name[0] }}
+                        <md-button class="md-icon-button arrow" aria-label="previous">
+                            <md-icon md-font-icon="icon-keyboard_arrow_left"></md-icon>
+                        </md-button>
+
+                        <md-button class="md-icon-button arrow" aria-label="next">
+                            <md-icon md-font-icon="icon-keyboard_arrow_right"></md-icon>
+                        </md-button>
+                    </div>
+                </div>
+            </div>
+            <!-- / Content toolbar -->
+
+            <!-- Content -->
+            <div class="content" layout="row">
+
+                <!-- Mail list pane -->
+                <md-content class="mail-list-pane" flex="50">
+
+                    <div class="mail-list-item {{mail.status}}" ng-repeat="mail in vm.inbox | filter: vm.search"
+                         md-ink-ripple
+                         ng-click="vm.selectMail(mail)"
+                         ng-class="{'starred': mail.starred, 'selected': mail.selected, 'checked': vm.checkExists(mail, vm.checked)}">
+
+                        <div layout-fill layout="row" layout-align="start center">
+                            <md-checkbox aria-label="{{$index}}" class="checkbox"
+                                         ng-checked="vm.checkExists(mail, vm.checked)"
+                                         ng-click="vm.checkToggle(mail, vm.checked,$event)">
+                            </md-checkbox>
+
+                            <img ng-if="mail.from.avatar" alt="{{ mail.from.name }}" ng-src="{{ mail.from.avatar}}"
+                                 class="avatar"/>
+
+                            <div ng-if="!mail.from.avatar" class="avatar" ng-random-class="vm.colors">
+                                {{ mail.from.name[0] }}
                             </div>
 
-                            <div>
-                                <span class="name">
-                                    {{ vm.selectedMail.from.name }}
-                                </span>
+                            <div layout="column" class="info" flex>
+                                <div class="name">
+                                    {{mail.from.name }}
+                                </div>
 
-                                <span>
-                                    &lt;{{vm.selectedMail.from.email}}&gt;
-                                </span>
+                                <div class="subject">
+                                    {{mail.subject | limitTo:50}}{{mail.subject.length > 50 ? '...' : ''}}
+                                </div>
 
-                                to
-
-                                <span class="name">
-                                    {{ vm.selectedMail.to[0].name}}
-                                </span>
+                                <div class="message">
+                                    {{mail.message | htmlToPlaintext | limitTo:50}}{{mail.message.length > 50 ? '...' :
+                                    ''}}
+                                </div>
                             </div>
 
-                            <md-button aria-label="edit form" class="md-icon-button">
-                                <md-icon md-font-icon="icon-arrow_drop_down"></md-icon>
+                            <div class="time">{{mail.time}}</div>
+
+                            <md-button class="md-icon-button" ng-click="vm.starredToggle(mail,$event)"
+                                       aria-label="starred">
+                                <md-icon ng-if="mail.starred" md-font-icon="icon-star" class="md-amber-fg"></md-icon>
+                                <md-icon ng-if="!mail.starred" md-font-icon="icon-star_outline"></md-icon>
                             </md-button>
-                        </div>
 
-                        <div class="time">
-                            {{vm.selectedMail.time}}
+                            <md-menu>
+                                <md-button aria-label="more" class="md-icon-button"
+                                           ng-click="$mdOpenMenu($event)">
+                                    <md-icon md-font-icon="icon-more_vert"></md-icon>
+                                </md-button>
+
+                                <md-menu-content width="3">
+                                    <md-menu-item>
+                                        <md-button aria-label="all">Mark as unread</md-button>
+                                    </md-menu-item>
+
+                                    <md-menu-item>
+                                        <md-button aria-label="none">Mark as important</md-button>
+                                    </md-menu-item>
+
+                                    <md-menu-item>
+                                        <md-button aria-label="read">Add star</md-button>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
                         </div>
                     </div>
 
-                    <div ng-bind-html="vm.selectedMail.message"></div>
-                </div>
+                </md-content>
+                <!-- / Mail list pane -->
 
-                <div ng-if="vm.selectedMail.attachments" class="attachments">
-                    <div class="title">Attachments ({{vm.selectedMail.attachments.length}})</div>
-                    <div class="attachment-list" layout-wrap layout="row">
-                        <div class="attachment" layout="column" ng-repeat="attachment in vm.selectedMail.attachments">
-                            <img class="preview" ng-src="{{attachment.preview}}">
+                <!-- Mail read pane -->
+                <md-content class="mail-read-pane" flex="50">
 
-                            <div layout="column">
-                                <a href="#" class="md-accent-color link">View</a>
-                                <a href="#" class="md-accent-color link">Download</a>
-                                <div class="size">({{attachment.size}})</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <div class="mail-header" layout="row" layout-align="space-between center">
+                        <div class="subject" flex>{{vm.selectedMail.subject}}</div>
 
-                <div class="reply" layout="row" layout-fill>
-                    <img src="assets/images/avatars/profile-img.jpeg" class="avatar"/>
+                        <div layout="row" layout-align="end center">
+                            <md-button class="md-icon-button" aria-label="archive">
+                                <md-icon md-font-icon="icon-archive"></md-icon>
+                            </md-button>
 
-                    <div class="form" flex>
-                        <textarea></textarea>
-
-                        <div class="actions" layout="row" layout-align="space-between center">
-                            <div layout="row" layout-align="start center">
-                                <md-button ng-aria="send" class="send-button md-accent md-raised">
-                                    SEND
-                                </md-button>
-
-                                <md-button class="md-icon-button" aria-label="archive">
-                                    <md-icon md-font-icon="icon-text_format"></md-icon>
-                                </md-button>
-
-                                <div class="divider-vertical"></div>
-
-                                <md-button class="md-icon-button" aria-label="archive">
-                                    <md-icon md-font-icon="icon-attach_file"></md-icon>
-                                </md-button>
-
-                                <md-button class="md-icon-button" aria-label="archive">
-                                    <md-icon md-font-icon="icon-insert_photo"></md-icon>
-                                </md-button>
-
-                                <md-button class="md-icon-button" aria-label="archive">
-                                    <md-icon md-font-icon="icon-insert_emoticon"></md-icon>
-                                </md-button>
-                            </div>
+                            <md-button class="md-icon-button" aria-label="report">
+                                <md-icon md-font-icon="icon-report"></md-icon>
+                            </md-button>
 
                             <md-button class="md-icon-button" aria-label="delete">
                                 <md-icon md-font-icon="icon-delete"></md-icon>
                             </md-button>
+
+                            <md-button class="md-icon-button" aria-label="more">
+                                <md-icon md-font-icon="icon-more_vert"></md-icon>
+                            </md-button>
                         </div>
                     </div>
-                </div>
+
+                    <div class="mail-content">
+                        <div class="info" layout="row" layout-align="space-between center">
+                            <div layout="row" layout-align="start center">
+
+                                <img ng-if="vm.selectedMail.from.avatar" alt="{{ vm.selectedMail.from.name }}"
+                                     ng-src="{{ vm.selectedMail.from.avatar}}" class="avatar"/>
+
+                                <div ng-if="!vm.selectedMail.from.avatar" class="avatar" ng-random-class="vm.colors">
+                                    {{ vm.selectedMail.from.name[0] }}
+                                </div>
+
+                                <div>
+                                    <span class="name">
+                                        {{ vm.selectedMail.from.name }}
+                                    </span>
+
+                                    <span>
+                                        &lt;{{vm.selectedMail.from.email}}&gt;
+                                    </span>
+
+                                    to
+
+                                    <span class="name">
+                                        {{ vm.selectedMail.to[0].name}}
+                                    </span>
+                                </div>
+
+                                <md-button aria-label="edit form" class="md-icon-button">
+                                    <md-icon md-font-icon="icon-arrow_drop_down"></md-icon>
+                                </md-button>
+                            </div>
+
+                            <div class="time">
+                                {{vm.selectedMail.time}}
+                            </div>
+                        </div>
+
+                        <div ng-bind-html="vm.selectedMail.message"></div>
+                    </div>
+
+                    <div ng-if="vm.selectedMail.attachments" class="attachments">
+                        <div class="title">Attachments ({{vm.selectedMail.attachments.length}})</div>
+                        <div class="attachment-list" layout-wrap layout="row">
+                            <div class="attachment" layout="column"
+                                 ng-repeat="attachment in vm.selectedMail.attachments">
+                                <img class="preview" ng-src="{{attachment.preview}}">
+
+                                <div layout="column">
+                                    <a href="#" class="md-accent-color link">View</a>
+                                    <a href="#" class="md-accent-color link">Download</a>
+
+                                    <div class="size">({{attachment.size}})</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reply" layout="row" layout-fill>
+                        <img src="assets/images/avatars/profile-img.jpeg" class="avatar"/>
+
+                        <div class="form" flex>
+                            <textarea></textarea>
+
+                            <div class="actions" layout="row" layout-align="space-between center">
+                                <div layout="row" layout-align="start center">
+                                    <md-button ng-aria="send" class="send-button md-accent md-raised">
+                                        SEND
+                                    </md-button>
+
+                                    <md-button class="md-icon-button" aria-label="archive">
+                                        <md-icon md-font-icon="icon-text_format"></md-icon>
+                                    </md-button>
+
+                                    <div class="divider-vertical"></div>
+
+                                    <md-button class="md-icon-button" aria-label="archive">
+                                        <md-icon md-font-icon="icon-attach_file"></md-icon>
+                                    </md-button>
+
+                                    <md-button class="md-icon-button" aria-label="archive">
+                                        <md-icon md-font-icon="icon-insert_photo"></md-icon>
+                                    </md-button>
+
+                                    <md-button class="md-icon-button" aria-label="archive">
+                                        <md-icon md-font-icon="icon-insert_emoticon"></md-icon>
+                                    </md-button>
+                                </div>
+
+                                <md-button class="md-icon-button" aria-label="delete">
+                                    <md-icon md-font-icon="icon-delete"></md-icon>
+                                </md-button>
+                            </div>
+                        </div>
+                    </div>
+
+                </md-content>
+                <!-- / Mail read pane -->
 
             </div>
-            <!-- Mail Content - End -->
+            <!-- / Content -->
 
         </div>
-        <!-- Main Content - End -->
+        <!-- / Content card-->
 
     </div>
-    <!-- Content - End -->
-
+    <!-- / Center pane -->
+    
 </div>
