@@ -47,7 +47,16 @@
                 </div>
 
                 <div layout="row" layout-align="end end">
-                    <angular-chart class="stroke-3" options="vm.dailyMiniChart"></angular-chart>
+                    <c3chart bindto-id="daily-min-chart">
+                        <chart-legend show-legend="false"/>
+                        <chart-column column-id="Data 1"
+                                      column-values="510,535,560,525,547,570,531.69"
+                                      column-type="line"/>
+                        <chart-axis>
+                            <chart-axis-x show="false"></chart-axis-x>
+                            <chart-axis-y show="false"></chart-axis-y>
+                        </chart-axis>
+                    </c3chart>
                 </div>
             </div>
         </div>

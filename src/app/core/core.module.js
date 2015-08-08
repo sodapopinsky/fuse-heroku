@@ -13,7 +13,7 @@
             'ngSanitize',
             'ngTouch',
             'ngMaterial',
-            'angularChart',
+            'gridshore.c3js.chart',
             'chart.js',
             'angular-chartist',
             'nvd3',
