@@ -276,7 +276,7 @@
                          ng-click="vm.selectMail(mail)"
                          ng-class="{'starred': mail.starred, 'selected': mail.selected, 'checked': vm.checkExists(mail, vm.checked)}">
 
-                        <div layout-fill layout="row" layout-align="start center">
+                        <div layout="row" layout-align="start center">
                             <md-checkbox aria-label="{{$index}}" class="checkbox"
                                          ng-checked="vm.checkExists(mail, vm.checked)"
                                          ng-click="vm.checkToggle(mail, vm.checked,$event)">
@@ -420,7 +420,7 @@
                         </div>
                     </div>
 
-                    <div class="reply" layout="row" layout-fill>
+                    <div class="reply" layout="row">
                         <img src="assets/images/avatars/profile-img.jpeg" class="avatar"/>
 
                         <div class="form" flex>
@@ -469,5 +469,5 @@
 
     </div>
     <!-- / Center pane -->
-    
+
 </div>

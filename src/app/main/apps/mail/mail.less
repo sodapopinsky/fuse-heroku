@@ -4,8 +4,10 @@
     .left-pane {
 
         .header {
+            padding-top: 40px;
 
             .logo {
+                height: 56px;
 
                 .logo-icon {
                     margin: 0 16px 0 0;
@@ -63,6 +65,16 @@
                 }
             }
         }
+
+        &:not(.md-locked-open) {
+
+            .header {
+                height: auto;
+                min-height: 0;
+                max-height: none;
+                padding-top: 24px;
+            }
+        }
     }
 
     // Center pane
@@ -78,6 +90,7 @@
                 line-height: 56px;
                 background: @material-color-white;
                 border-radius: 0;
+                border-right: 1px solid rgba(0, 0, 0, 0.12);
             }
 
             .search {
