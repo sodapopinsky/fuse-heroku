@@ -11,8 +11,8 @@
             "title": "Nature",
             "subtitle": "Mountain view from lake side",
             "text": "Look deep into nature, then you will understand everything better.",
-            "time" : "July 22, 2015, 12:33AM",
-            "event" : "You posted a blog"
+            "time": "July 22, 2015, 12:33AM",
+            "event": "You posted a blog"
         },
         {
             "template": "template-2",
@@ -29,9 +29,10 @@
                 }
             },
             "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.",
-            "time" : "July 22, 2015, 12:33AM",
-            "event" : "You posted a blog"
-        },{
+            "time": "July 22, 2015, 12:33AM",
+            "event": "You posted a blog"
+        },
+        {
             "template": "template-2",
             "avatar": {
                 "src": "assets/images/avatars/alice.png",
@@ -46,9 +47,10 @@
                 }
             },
             "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.",
-            "time" : "July 22, 2015, 12:33AM",
-            "event" : "You posted a blog"
-        },{
+            "time": "July 22, 2015, 12:33AM",
+            "event": "You posted a blog"
+        },
+        {
             "template": "template-2",
             "avatar": {
                 "src": "assets/images/avatars/alice.png",
@@ -63,9 +65,10 @@
                 }
             },
             "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.",
-            "time" : "July 22, 2015, 12:33AM",
-            "event" : "You posted a blog"
-        },{
+            "time": "July 22, 2015, 12:33AM",
+            "event": "You posted a blog"
+        },
+        {
             "template": "template-2",
             "avatar": {
                 "src": "assets/images/avatars/alice.png",
@@ -80,9 +83,10 @@
                 }
             },
             "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.",
-            "time" : "July 22, 2015, 12:33AM",
-            "event" : "You posted a blog"
-        },{
+            "time": "July 22, 2015, 12:33AM",
+            "event": "You posted a blog"
+        },
+        {
             "template": "template-2",
             "avatar": {
                 "src": "assets/images/avatars/alice.png",
@@ -97,8 +101,8 @@
                 }
             },
             "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.",
-            "time" : "July 22, 2015, 12:33AM",
-            "event" : "You posted a blog"
+            "time": "July 22, 2015, 12:33AM",
+            "event": "You posted a blog"
         }
     ]
 }

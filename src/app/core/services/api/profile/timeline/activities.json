@@ -1,68 +1,68 @@
 {
-  "data": [
-    {
-      "user": {
-        "name": "Alice Freeman",
-        "avatar": "assets/images/avatars/alice.png"
-      },
-      "message": "started following you.",
-      "time": "13 mins. ago"
-    },
-    {
-      "user": {
-        "name": "Andrew Green",
-        "avatar": "assets/images/avatars/andrew.png"
-      },
-      "message": "send you a message.",
-      "time": "June 10,2015"
-    },
-    {
-      "user": {
-        "name": "Sercan Yemen",
-        "avatar": "assets/images/avatars/sercan.jpg"
-      },
-      "message": "shared a public post with your group.",
-      "time": "June 9,2015"
-    },
-    {
-      "user": {
-        "name": "Carl Henderson",
-        "avatar": "assets/images/avatars/carl.png"
-      },
-      "message": "want to play Fallout Shelter with you.",
-      "time": "June 8,2015"
-    },
-    {
-      "user": {
-        "name": "Jane Dean",
-        "avatar": "assets/images/avatars/jane.png"
-      },
-      "message": "started following you.",
-      "time": "June 7,2015"
-    },
-    {
-      "user": {
-        "name": "Juan Carpenter",
-        "avatar": "assets/images/avatars/james.png"
-      },
-      "message": "send you a message.",
-      "time": "June 6,2015"
-    },
-    {
-      "user": {
-        "name": "Judith Burton",
-        "avatar": "assets/images/avatars/joyce.png"
-      },
-      "message": "shared a photo with you.",
-      "time": "June 5,2015"
-    },
-    {
-      "user": {
-        "name": "Vincent Munoz",
-        "avatar": "assets/images/avatars/vincent.png"
-      },
-      "message": "shared a photo with you.",
-      "time": "June 4,2015"
-    }
-  ]
+    "data": [
+        {
+            "user": {
+                "name": "Alice Freeman",
+                "avatar": "assets/images/avatars/alice.png"
+            },
+            "message": "started following you.",
+            "time": "13 mins. ago"
+        },
+        {
+            "user": {
+                "name": "Andrew Green",
+                "avatar": "assets/images/avatars/andrew.png"
+            },
+            "message": "send you a message.",
+            "time": "June 10,2015"
+        },
+        {
+            "user": {
+                "name": "Sercan Yemen",
+                "avatar": "assets/images/avatars/sercan.jpg"
+            },
+            "message": "shared a public post with your group.",
+            "time": "June 9,2015"
+        },
+        {
+            "user": {
+                "name": "Carl Henderson",
+                "avatar": "assets/images/avatars/carl.png"
+            },
+            "message": "want to play Fallout Shelter with you.",
+            "time": "June 8,2015"
+        },
+        {
+            "user": {
+                "name": "Jane Dean",
+                "avatar": "assets/images/avatars/jane.png"
+            },
+            "message": "started following you.",
+            "time": "June 7,2015"
+        },
+        {
+            "user": {
+                "name": "Juan Carpenter",
+                "avatar": "assets/images/avatars/james.png"
+            },
+            "message": "send you a message.",
+            "time": "June 6,2015"
+        },
+        {
+            "user": {
+                "name": "Judith Burton",
+                "avatar": "assets/images/avatars/joyce.png"
+            },
+            "message": "shared a photo with you.",
+            "time": "June 5,2015"
+        },
+        {
+            "user": {
+                "name": "Vincent Munoz",
+                "avatar": "assets/images/avatars/vincent.png"
+            },
+            "message": "shared a photo with you.",
+            "time": "June 4,2015"
+        }
+    ]
 }
