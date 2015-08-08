@@ -303,34 +303,15 @@
                                 </div>
                             </div>
 
-                            <div class="time">{{mail.time}}</div>
+                            <div layout="column" layout-align="space-between end">
+                                <div class="time">{{mail.time}}</div>
 
-                            <md-button class="md-icon-button" ng-click="vm.starredToggle(mail,$event)"
-                                       aria-label="starred">
-                                <md-icon ng-if="mail.starred" md-font-icon="icon-star" class="md-amber-fg"></md-icon>
-                                <md-icon ng-if="!mail.starred" md-font-icon="icon-star_outline"></md-icon>
-                            </md-button>
-
-                            <md-menu>
-                                <md-button aria-label="more" class="md-icon-button"
-                                           ng-click="$mdOpenMenu($event)">
-                                    <md-icon md-font-icon="icon-more_vert"></md-icon>
+                                <md-button class="md-icon-button" ng-click="vm.starredToggle(mail,$event)"
+                                           aria-label="starred">
+                                    <md-icon ng-if="mail.starred" md-font-icon="icon-star" class="md-amber-fg"></md-icon>
+                                    <md-icon ng-if="!mail.starred" md-font-icon="icon-star_outline"></md-icon>
                                 </md-button>
-
-                                <md-menu-content width="3">
-                                    <md-menu-item>
-                                        <md-button aria-label="all">Mark as unread</md-button>
-                                    </md-menu-item>
-
-                                    <md-menu-item>
-                                        <md-button aria-label="none">Mark as important</md-button>
-                                    </md-menu-item>
-
-                                    <md-menu-item>
-                                        <md-button aria-label="read">Add star</md-button>
-                                    </md-menu-item>
-                                </md-menu-content>
-                            </md-menu>
+                            </div>
                         </div>
                     </div>
 
@@ -356,9 +337,30 @@
                                 <md-icon md-font-icon="icon-delete"></md-icon>
                             </md-button>
 
-                            <md-button class="md-icon-button" aria-label="more">
+                            <!--<md-button class="md-icon-button" aria-label="more">
                                 <md-icon md-font-icon="icon-more_vert"></md-icon>
-                            </md-button>
+                            </md-button>-->
+
+                            <md-menu>
+                                <md-button aria-label="more" class="md-icon-button"
+                                           ng-click="$mdOpenMenu($event)">
+                                    <md-icon md-font-icon="icon-more_vert"></md-icon>
+                                </md-button>
+
+                                <md-menu-content width="3">
+                                    <md-menu-item>
+                                        <md-button aria-label="all">Mark as unread</md-button>
+                                    </md-menu-item>
+
+                                    <md-menu-item>
+                                        <md-button aria-label="none">Mark as important</md-button>
+                                    </md-menu-item>
+
+                                    <md-menu-item>
+                                        <md-button aria-label="read">Add label</md-button>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
                         </div>
                     </div>
 
