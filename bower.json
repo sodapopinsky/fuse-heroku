@@ -30,7 +30,8 @@
     "angular-chartist.js": "~3.3.6",
     "angular-nvd3": "~0.1.1",
     "c3-angular": "~0.6.0",
-    "d3": "~3.5.6"
+    "d3": "~3.5.6",
+    "angular-google-maps": "~2.1.5"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0"

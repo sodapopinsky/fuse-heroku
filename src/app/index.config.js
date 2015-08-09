@@ -1,5 +1,4 @@
-(function ()
-{
+(function () {
     'use strict';
 
     angular
@@ -7,8 +6,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($ariaProvider, $logProvider, toastr)
-    {
+    function config($ariaProvider, $logProvider, toastr, uiGmapGoogleMapApiProvider) {
         $ariaProvider.config({
             tabindex: false
         });
@@ -22,6 +20,11 @@
         toastr.options.preventDuplicates = true;
         toastr.options.progressBar = true;
 
+        uiGmapGoogleMapApiProvider.configure({
+            //    key: 'your api key',
+            v: '3.exp',
+            libraries: 'weather,geometry,visualization'
+        });
     }
 
 })();

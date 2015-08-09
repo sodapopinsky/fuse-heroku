@@ -20,8 +20,8 @@
             'ui.router',
             'ui.ace',
             'timer',
-            'gridster'
-            //'chart.js'
+            'gridster',
+            'uiGmapgoogle-maps'
         ]);
 
 })();
