@@ -388,6 +388,17 @@
                 }
             })
 
+            // Simple - Left Pane, Full Height
+            .state('app.ui.layouts.simple-leftpane-fullheight', {
+                url: '/simple-leftpane-fullheight',
+                views: {
+                    'content@app': {
+                        templateUrl: 'app/main/ui/layouts/simple/leftpane-fullheight/leftpane-fullheight.html',
+                        controller: 'SimpleLeftpaneFullheightController as vm'
+                    }
+                }
+            })
+
             // Simple - Right Pane
             .state('app.ui.layouts.simple-rightpane', {
                 url: '/simple-rightpane',
