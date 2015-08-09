@@ -129,7 +129,7 @@
             $mdDialog.show({
                 controller         : 'ComposeDialogController',
                 controllerAs       : 'vm',
-                templateUrl        : 'app/main/apps/mail/compose-dialog.html',
+                templateUrl        : 'app/main/apps/mail/dialogs/compose/compose-dialog.html',
                 parent             : angular.element($document.body),
                 targetEvent        : ev,
                 clickOutsideToClose: true

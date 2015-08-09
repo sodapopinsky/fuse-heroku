@@ -1,0 +1,72 @@
+#mail {
+  .centerpane {
+    .content-card {
+      .content {
+        .mail-list-pane {
+          border-right: 1px solid rgba(0, 0, 0, 0.12);
+          background: #FAFAFA;
+
+          .mail-list-item {
+            position: relative;
+            padding: 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            cursor: pointer;
+
+            &.read {
+
+            }
+
+            &.unread {
+              background: @material-color-white;
+
+              .info {
+
+                .subject,
+                .message {
+                  font-weight: 500;
+                }
+              }
+            }
+
+            &.selected {
+              background: #E3F2FD;
+            }
+
+            &.checked {
+              background: #FFF8E1;
+            }
+
+            .avatar {
+              margin: 0 8px;
+            }
+
+            .info {
+              overflow: hidden;
+              margin: 0 12px;
+
+              .name,
+              .subject,
+              .message {
+                white-space: nowrap;
+                font-size: 13px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+
+              .name {
+                font-size: 15px;
+                font-weight: 500;
+              }
+            }
+
+            .time {
+              font-size: 13px;
+              margin: 0 8px;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+
+<div class="mail-list-item {{mail.status}}" ng-repeat="mail in vm.inbox | filter: vm.search"
+     md-ink-ripple
+     ng-click="vm.selectMail(mail)"
+     ng-class="{'starred': mail.starred, 'selected': vm.selectedMail === mail, 'checked': vm.isChecked(mail)}">
+
+    <div layout="row" layout-align="start center">
+        <md-checkbox aria-label="{{$index}}" class="checkbox"
+                     ng-checked="vm.isChecked(mail)"
+                     ng-click="vm.toggleCheck(mail, $event)">
+        </md-checkbox>
+
+        <img ng-if="mail.from.avatar" alt="{{ mail.from.name }}" ng-src="{{ mail.from.avatar}}"
+             class="avatar"/>
+
+        <div class="avatar" ng-if="!mail.from.avatar" ng-random-class="vm.colors">
+            {{ mail.from.name[0] }}
+        </div>
+
+        <div class="info" flex layout="column">
+            <div class="name">
+                {{mail.from.name }}
+            </div>
+
+            <div class="subject">
+                {{mail.subject}}
+            </div>
+
+            <div class="message">
+                {{mail.message | htmlToPlaintext}}
+            </div>
+        </div>
+
+        <div layout="column" layout-align="space-between end">
+            <div class="time">{{mail.time}}</div>
+
+            <md-button class="md-icon-button" ng-click="vm.toggleStarred(mail, $event)"
+                       aria-label="starred">
+                <md-icon ng-if="mail.starred" md-font-icon="icon-star"
+                         class="md-amber-fg"></md-icon>
+                <md-icon ng-if="!mail.starred" md-font-icon="icon-star_outline"></md-icon>
+            </md-button>
+        </div>
+    </div>
+</div>
