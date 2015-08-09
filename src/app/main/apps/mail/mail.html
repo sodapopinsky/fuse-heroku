@@ -306,7 +306,7 @@
                             <div layout="column" layout-align="space-between end">
                                 <div class="time">{{mail.time}}</div>
 
-                                <md-button class="md-icon-button" ng-click="vm.starredToggle(mail,$event)"
+                                <md-button class="md-icon-button" ng-click="vm.toggleStarred(mail, $event)"
                                            aria-label="starred">
                                     <md-icon ng-if="mail.starred" md-font-icon="icon-star" class="md-amber-fg"></md-icon>
                                     <md-icon ng-if="!mail.starred" md-font-icon="icon-star_outline"></md-icon>
