@@ -274,12 +274,12 @@
                     <div class="mail-list-item {{mail.status}}" ng-repeat="mail in vm.inbox | filter: vm.search"
                          md-ink-ripple
                          ng-click="vm.selectMail(mail)"
-                         ng-class="{'starred': mail.starred, 'selected': mail.selected, 'checked': vm.checkExists(mail, vm.checked)}">
+                         ng-class="{'starred': mail.starred, 'selected': vm.selectedMail === mail, 'checked': vm.isChecked(mail)}">
 
                         <div layout="row" layout-align="start center">
                             <md-checkbox aria-label="{{$index}}" class="checkbox"
-                                         ng-checked="vm.checkExists(mail, vm.checked)"
-                                         ng-click="vm.checkToggle(mail, vm.checked,$event)">
+                                         ng-checked="vm.isChecked(mail)"
+                                         ng-click="vm.toggleCheck(mail, $event)">
                             </md-checkbox>
 
                             <img ng-if="mail.from.avatar" alt="{{ mail.from.name }}" ng-src="{{ mail.from.avatar}}"
@@ -336,7 +336,7 @@
                             <md-button class="md-icon-button" aria-label="delete">
                                 <md-icon md-font-icon="icon-delete"></md-icon>
                             </md-button>
-                            
+
                             <md-menu>
                                 <md-button aria-label="more" class="md-icon-button"
                                            ng-click="$mdOpenMenu($event)">

@@ -24,79 +24,106 @@
         api.mail.inbox.get({}, function (response)
         {
             vm.inbox = response.data;
-            vm.selectedMail = vm.inbox[0];
+            selectMail(vm.inbox[0]);
         });
 
         // Methods
-        vm.checkAll = checkAll;
-        vm.checkExists = checkExists;
-        vm.checkToggle = checkToggle;
-        vm.composeDialog = composeDialog;
         vm.selectMail = selectMail;
-        vm.starredToggle = starredToggle;
+        vm.toggleStarred = toggleStarred;
+        vm.toggleCheck = toggleCheck;
+        vm.isChecked = isChecked;
+        vm.checkAll = checkAll;
+        vm.composeDialog = composeDialog;
 
         //////////
 
+        /**
+         * Select mail
+         *
+         * @param mail
+         */
         function selectMail(mail)
         {
             vm.selectedMail = mail;
-
-            angular.forEach(vm.inbox, function (mail)
-            {
-                delete mail.selected;
-            });
-
-            mail.selected = true;
         }
 
-        function starredToggle(mail, event)
+        /**
+         * Toggle starred
+         *
+         * @param mail
+         * @param event
+         */
+        function toggleStarred(mail, event)
         {
             event.stopPropagation();
             mail.starred = !mail.starred;
         }
 
-        function checkToggle(item, list, event)
+        /**
+         * Toggle checked status of the mail
+         *
+         * @param mail
+         * @param event
+         */
+        function toggleCheck(mail, event)
         {
             if ( event )
             {
                 event.stopPropagation();
             }
 
-            var idx = list.indexOf(item);
+            var idx = vm.checked.indexOf(mail);
 
             if ( idx > -1 )
             {
-                list.splice(idx, 1);
+                vm.checked.splice(idx, 1);
             }
             else
             {
-                list.push(item);
+                vm.checked.push(mail);
             }
         }
 
-        function checkExists(item, list)
+        /**
+         * Return checked status of the mail
+         *
+         * @param mail
+         * @returns {boolean}
+         */
+        function isChecked(mail)
         {
-            return list.indexOf(item) > -1;
+            return vm.checked.indexOf(mail) > -1;
         }
 
+        /**
+         * Check all
+         */
         function checkAll()
         {
-            if ( vm.checked.length > 0 )
+            if ( vm.allChecked )
             {
                 vm.checked = [];
                 vm.allChecked = false;
             }
             else
             {
-                vm.selected = angular.copy(vm.inbox);
                 angular.forEach(vm.inbox, function (mail)
                 {
-                    checkToggle(mail, vm.checked);
+                    if ( !isChecked(mail) )
+                    {
+                        toggleCheck(mail);
+                    }
                 });
+
                 vm.allChecked = true;
             }
         }
 
+        /**
+         * Open compose dialog
+         *
+         * @param ev
+         */
         function composeDialog(ev)
         {
             $mdDialog.show({
