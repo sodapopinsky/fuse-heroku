@@ -180,7 +180,7 @@
 
                         <div layout="row" layout-align="start center">
                             <md-checkbox aria-label="{{$index}}" class="checkbox" ng-checked="task.checked"
-                                         ng-click="vm.toggleCheck($event,task)">
+                                         ng-click="vm.toggleCheck(task, $event)">
                             </md-checkbox>
 
                             <div layout="column" class="info" flex>
@@ -198,7 +198,7 @@
                                 </div>
                             </div>
 
-                            <md-button class="md-icon-button" ng-click="vm.starredToggle(task,$event)"
+                            <md-button class="md-icon-button" ng-click="vm.toggleStarred(task, $event)"
                                        aria-label="starred">
                                 <md-icon ng-if="task.starred" md-font-icon="icon-star" class="md-amber-fg"></md-icon>
                                 <md-icon ng-if="!task.starred" md-font-icon="icon-star_outline"></md-icon>

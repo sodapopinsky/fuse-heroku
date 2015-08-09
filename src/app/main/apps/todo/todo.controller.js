@@ -41,18 +41,30 @@
 
         // Methods
         vm.openTaskDialog = openTaskDialog;
-        vm.starredToggle = starredToggle;
+        vm.toggleStarred = toggleStarred;
         vm.toggleCheck = toggleCheck;
         vm.toggleSidenav = toggleSidenav;
 
         //////////
 
-        function starredToggle(task, event)
+        /**
+         * Toggle starred
+         *
+         * @param task
+         * @param event
+         */
+        function toggleStarred(task, event)
         {
             event.stopPropagation();
             task.starred = !task.starred;
         }
 
+        /**
+         * Open new task dialog
+         *
+         * @param ev
+         * @param task
+         */
         function openTaskDialog(ev, task)
         {
             var title = (task) ? 'Edit Task' : 'New Task';
@@ -71,7 +83,13 @@
             });
         }
 
-        function toggleCheck(event, task)
+        /**
+         * Toggle checked status of the task
+         *
+         * @param task
+         * @param event
+         */
+        function toggleCheck(task, event)
         {
             event.stopPropagation();
             task.checked = !task.checked;
