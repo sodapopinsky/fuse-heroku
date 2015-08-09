@@ -333,35 +333,35 @@
                 url: '/layouts'
             })
 
-            // Style 1 - Full Width
-            .state('app.ui.layouts.style1-fullwidth', {
-                url: '/style1-fullwidth',
+            // Carded - Full Width
+            .state('app.ui.layouts.carded-fullwidth', {
+                url: '/carded-fullwidth',
                 views: {
                     'content@app': {
-                        templateUrl: 'app/main/ui/layouts/style-1/fullwidth/fullwidth.html',
-                        controller: 'Style1FullwidthController as vm'
+                        templateUrl: 'app/main/ui/layouts/carded/fullwidth/fullwidth.html',
+                        controller: 'CardedFullwidthController as vm'
                     }
                 }
             })
 
-            // Style 1 - Left Pane
-            .state('app.ui.layouts.style1-leftpane', {
-                url: '/style1-leftpane',
+            // Carded - Left Pane
+            .state('app.ui.layouts.carded-leftpane', {
+                url: '/carded-leftpane',
                 views: {
                     'content@app': {
-                        templateUrl: 'app/main/ui/layouts/style-1/leftpane/leftpane.html',
-                        controller: 'Style1LeftpaneController as vm'
+                        templateUrl: 'app/main/ui/layouts/carded/leftpane/leftpane.html',
+                        controller: 'CardedLeftpaneController as vm'
                     }
                 }
             })
 
-            // Style 1 - Right Pane
-            .state('app.ui.layouts.style1-rightpane', {
-                url: '/style1-rightpane',
+            // Carded - Right Pane
+            .state('app.ui.layouts.carded-rightpane', {
+                url: '/carded-rightpane',
                 views: {
                     'content@app': {
-                        templateUrl: 'app/main/ui/layouts/style-1/rightpane/rightpane.html',
-                        controller: 'Style1RightpaneController as vm'
+                        templateUrl: 'app/main/ui/layouts/carded/rightpane/rightpane.html',
+                        controller: 'CardedRightpaneController as vm'
                     }
                 }
             })

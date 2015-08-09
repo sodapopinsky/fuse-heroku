@@ -1,32 +1,14 @@
-<div class="page-layout layout-style-1 layout-left-pane" layout="row">
+<div class="page-layout carded carded-fullwidth" layout="row">
 
     <!-- Top background -->
     <div class="top-bg md-accent-bg"></div>
     <!-- / Top background -->
 
-    <!-- Left pane -->
-    <md-sidenav class="left-pane" md-is-locked-open="$mdMedia('gt-md')" md-component-id="leftpane">
-
-        <!-- Left pane header -->
-        <div class="header">
-            <span>Left pane header</span>
-        </div>
-        <!-- / Left pane header -->
-
-        <!-- Left pane content -->
-        <md-content class="content" flex>
-            <span>Left pane scrollable content</span>
-        </md-content>
-        <!-- / Left pane content -->
-
-    </md-sidenav>
-    <!-- / Left pane -->
-
     <!-- Center pane -->
     <div class="center-pane" layout="column" flex>
 
         <!-- Center pane header -->
-        <div class="header" layout="row">
+        <div class="header">
             <span>Content header</span>
         </div>
         <!-- / Center pane header -->
@@ -36,10 +18,6 @@
 
             <!-- Content toolbar -->
             <div class="toolbar" layout="row" layout-align="start center">
-                <md-button class="md-icon-button left-pane-toggle" ng-click="vm.toggleSidenav('leftpane')" hide-gt-md aria-label="Toggle left pane">
-                    <i class="icon icon-menu"></i>
-                </md-button>
-
                 <span>Content toolbar</span>
             </div>
             <!-- / Content toolbar -->
