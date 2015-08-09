@@ -366,6 +366,39 @@
                 }
             })
 
+            // Simple - Full Width
+            .state('app.ui.layouts.simple-fullwidth', {
+                url: '/simple-fullwidth',
+                views: {
+                    'content@app': {
+                        templateUrl: 'app/main/ui/layouts/simple/fullwidth/fullwidth.html',
+                        controller: 'SimpleFullwidthController as vm'
+                    }
+                }
+            })
+
+            // Simple - Left Pane
+            .state('app.ui.layouts.simple-leftpane', {
+                url: '/simple-leftpane',
+                views: {
+                    'content@app': {
+                        templateUrl: 'app/main/ui/layouts/simple/leftpane/leftpane.html',
+                        controller: 'SimpleLeftpaneController as vm'
+                    }
+                }
+            })
+
+            // Simple - Right Pane
+            .state('app.ui.layouts.simple-rightpane', {
+                url: '/simple-rightpane',
+                views: {
+                    'content@app': {
+                        templateUrl: 'app/main/ui/layouts/simple/rightpane/rightpane.html',
+                        controller: 'SimpleRightpaneController as vm'
+                    }
+                }
+            })
+
         /**
          * Components
          */
