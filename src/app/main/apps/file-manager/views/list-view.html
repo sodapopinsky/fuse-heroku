@@ -1,28 +1,42 @@
-<table class="list-view table-simple" layout-fill>
+<table class="list-view table-simple">
     <thead>
-    <tr>
-        <th></th>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Owner</th>
-        <th>Size</th>
-        <th>Last Modified</th>
-        <th></th>
-    </tr>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Owner</th>
+            <th>Size</th>
+            <th>Last Modified</th>
+            <th></th>
+        </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="file in vm.documents" ng-click="vm.select(file)" ng-class="{'selected' : vm.selected === file}">
-        <td class="file-icon">
-            <i class="icon- s18" ng-class="file.type"></i>
-        </td>
-        <td class="name">{{file.name}}</td>
-        <td class="type">{{file.type}}</td>
-        <td class="owner">{{file.owner}}</td>
-        <td class="size">{{file.size === '' ? '-': file.size}}</td>
-        <td class="last-modified">{{file.modified}}</td>
-        <td class="more">
-            <md-icon class="" md-font-icon="icon-more_vert"></md-icon>
-        </td>
-    </tr>
+        <tr ng-repeat="item in vm.folders" ng-click="vm.select(item)" ng-class="{'selected' : vm.selected === item}">
+            <td class="file-icon">
+                <i class="icon- s18" ng-class="item.type"></i>
+            </td>
+            <td class="name">{{item.name}}</td>
+            <td class="type">{{item.type}}</td>
+            <td class="owner">{{item.owner}}</td>
+            <td class="size">{{item.size === '' ? '-': item.size}}</td>
+            <td class="last-modified">{{item.modified}}</td>
+            <td class="more">
+                <md-icon class="" md-font-icon="icon-more_vert"></md-icon>
+            </td>
+        </tr>
+
+        <tr ng-repeat="item in vm.files" ng-click="vm.select(item)" ng-class="{'selected' : vm.selected === item}">
+            <td class="file-icon">
+                <i class="icon- s18" ng-class="item.type"></i>
+            </td>
+            <td class="name">{{item.name}}</td>
+            <td class="type">{{item.type}}</td>
+            <td class="owner">{{item.owner}}</td>
+            <td class="size">{{item.size === '' ? '-': item.size}}</td>
+            <td class="last-modified">{{item.modified}}</td>
+            <td class="more">
+                <md-icon class="" md-font-icon="icon-more_vert"></md-icon>
+            </td>
+        </tr>
     </tbody>
 </table>

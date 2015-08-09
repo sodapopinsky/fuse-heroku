@@ -1,13 +1,106 @@
-<div id="file-manager" layout="column" layout-fill>
-    <section layout="row" flex>
-        <md-sidenav class="md-sidenav-left main-sidenav md-whiteframe-z2" md-component-id="fileManager-main-sidenav"
+<div id="file-manager" class="page-layout simple simple-rightpane-fullheight" layout="row">
+
+    <!-- Left pane -->
+    <md-sidenav class="leftpane" md-component-id="leftpane">
+        <div class="main-sidenav" ng-include="'app/main/apps/file-manager/sidenavs/main-sidenav.html'"></div>
+    </md-sidenav>
+    <!-- / Left pane -->
+
+    <!-- Content wrapper -->
+    <div class="centerpane" layout="column" flex>
+
+        <!-- Header -->
+        <div class="header md-accent-bg" layout="column" layout-align="space-between">
+
+            <!-- Toolbar -->
+            <div class="toolbar" layout="row" layout-align="space-between">
+
+                <md-button class="md-icon-button leftpane-toggle" ng-click="vm.toggleSidenav('leftpane')"
+                           aria-label="Toggle left pane">
+                    <i class="icon icon-menu"></i>
+                </md-button>
+
+                <div class="right-side" layout="row">
+                    <md-button class="md-icon-button" aria-label="Search">
+                        <md-icon md-font-icon="icon-search"></md-icon>
+                        <md-tooltip>Search</md-tooltip>
+                    </md-button>
+
+                    <md-button ng-if="vm.currentView === 'list'" class="md-icon-button" aria-label="view type"
+                               ng-click="vm.toggleView()">
+                        <md-icon md-font-icon="icon-view_comfortable"></md-icon>
+                        <md-tooltip>Grid View</md-tooltip>
+                    </md-button>
+
+                    <md-button ng-if="vm.currentView === 'grid'" class="md-icon-button" aria-label="view type"
+                               ng-click="vm.toggleView()">
+                        <md-icon md-font-icon="icon-list"></md-icon>
+                        <md-tooltip>List View</md-tooltip>
+                    </md-button>
+
+                    <!-- <md-button class="md-icon-button" aria-label="details" ng-click="vm.toggleDetails()">
+                         <md-icon ng-if="vm.showDetails" md-font-icon="icon-info"></md-icon>
+                         <md-tooltip ng-if="vm.showDetails">
+                             Hide Details
+                         </md-tooltip>
+                         <md-icon ng-if="!vm.showDetails" md-font-icon="icon-info_outline"></md-icon>
+                         <md-tooltip ng-if="!vm.showDetails">
+                             Show Details
+                         </md-tooltip>
+                     </md-button>-->
+
+                    <md-button class="md-icon-button rightpane-toggle" ng-click="vm.toggleSidenav('rightpane')"
+                               aria-label="Toggle right pane">
+                        <i class="icon icon-info"></i>
+                    </md-button>
+                </div>
+            </div>
+            <!-- / Toolbar -->
+
+            <!-- Breadcrumb -->
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <span>My Files</span>
+                <i class="icon icon-keyboard_arrow_right separator"></i>
+                <span>Documents</span>
+            </div>
+            <!-- / Breadcrumb -->
+
+            <!-- Add file button -->
+            <md-button class="add-file-button md-fab md-warn" aria-label="Add file"
+                       ng-click="vm.addFile($event)">
+                <md-icon md-font-icon="icon-add" class="s20"></md-icon>
+            </md-button>
+            <!-- / Add file button -->
+
+        </div>
+        <!-- / Header -->
+
+        <!-- Content -->
+        <md-content class="content" flex>
+            <div ng-if="vm.currentView === 'grid'" ng-include="'app/main/apps/file-manager/views/grid-view.html'"></div>
+            <div ng-if="vm.currentView === 'list'" ng-include="'app/main/apps/file-manager/views/list-view.html'"></div>
+        </md-content>
+        <!-- / Content -->
+
+    </div>
+    <!-- / Content wrapper -->
+
+    <!-- Right pane -->
+    <md-sidenav class="rightpane md-sidenav-right" md-is-locked-open="$mdMedia('gt-md')" md-component-id="rightpane">
+        <div class="detail-sidenav" ng-include="'app/main/apps/file-manager/sidenavs/detail-sidenav.html'"></div>
+    </md-sidenav>
+    <!-- / Right pane -->
+
+
+    <!--<section layout="row" flex>
+        <md-sidenav class="md-sidenav-left main-sidenav md-whiteframe-z2" md-component-id="leftpane"
                     ng-include="'app/main/apps/file-manager/sidenavs/main-sidenav.html'">
         </md-sidenav>
 
         <md-content flex layout="column" class="main-content md-whiteframe-z3">
             <md-toolbar class="md-accent md-tall" layout="column" layout-align="space-between start">
                 <div class="md-toolbar-tools">
-                    <md-button class="md-icon-button" aria-label="Menu" ng-click="vm.sideNavToggle()">
+                    <md-button class="md-icon-button" aria-label="Menu" ng-click="vm.toggleSidenav('leftpane')">
                         <md-icon md-font-icon="icon-menu"></md-icon>
                     </md-button>
 
@@ -17,7 +110,7 @@
                         <md-icon md-font-icon="icon-search"></md-icon>
                     </md-button>
 
-                    <md-button ng-if="vm.selectedView === 'list'" class="md-icon-button" aria-label="view type"
+                    <md-button ng-if="vm.currentView === 'list'" class="md-icon-button" aria-label="view type"
                                ng-click="vm.toggleView()">
                         <md-icon md-font-icon="icon-view_comfortable"></md-icon>
                         <md-tooltip>
@@ -25,7 +118,7 @@
                         </md-tooltip>
                     </md-button>
 
-                    <md-button ng-if="vm.selectedView === 'grid'" class="md-icon-button" aria-label="view type"
+                    <md-button ng-if="vm.currentView === 'grid'" class="md-icon-button" aria-label="view type"
                                ng-click="vm.toggleView()">
                         <md-icon md-font-icon="icon-list"></md-icon>
                         <md-tooltip>
@@ -33,7 +126,7 @@
                         </md-tooltip>
                     </md-button>
 
-                    <md-button class="md-icon-button" aria-label="details" ng-click="vm.detailsToggle()">
+                    <md-button class="md-icon-button" aria-label="details" ng-click="vm.toggleDetails()">
                         <md-icon ng-if="vm.showDetails" md-font-icon="icon-info"></md-icon>
                         <md-tooltip ng-if="vm.showDetails">
                             Hide Details
@@ -69,5 +162,5 @@
                     ng-include="'app/main/apps/file-manager/sidenavs/detail-sidenav.html'">
         </md-sidenav>
 
-    </section>
+    </section>-->
 </div>

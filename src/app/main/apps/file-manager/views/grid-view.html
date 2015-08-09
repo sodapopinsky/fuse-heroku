@@ -1,11 +1,24 @@
-<div class="grid-view" layout-wrap layout="row">
-    <div ng-click="vm.select(file)" class="md-whiteframe-z1 item" ng-repeat="file in vm.documents" layout="column" layout-align="center start">
-        <div ng-if="file.preview" class="preview">
-            <img ng-src="{{file.preview}}">
+<div class="grid-view" layout="column">
+    <div class="folders" layout="row" layout-wrap>
+        <div ng-click="vm.select(file)" class="md-whiteframe-z1 item folder" ng-repeat="folder in vm.folders"
+             layout="column">
+            <div layout="row" class="title md-background-bg md-hue-1" layout-align="start center" flex>
+                <i class="icon- s18" ng-class="folder.type"></i>
+                <span class="name">{{folder.name}}</span>
+            </div>
         </div>
-        <div layout="row" class="title" layout-align="start center">
-            <i class="icon- s18" ng-class="file.type"></i>
-            <span>{{file.name}}</span>
+    </div>
+
+    <div class="files" layout="row" layout-wrap>
+        <div ng-click="vm.select(file)" class="md-whiteframe-z1 item file" ng-repeat="file in vm.files" layout="column">
+            <div class="preview">
+                <img ng-src="{{file.preview}}">
+            </div>
+
+            <div layout="row" class="title md-background-bg md-hue-1" layout-align="start center" flex>
+                <i class="icon- s18" ng-class="file.type"></i>
+                <span class="name">{{file.name}}</span>
+            </div>
         </div>
     </div>
 </div>

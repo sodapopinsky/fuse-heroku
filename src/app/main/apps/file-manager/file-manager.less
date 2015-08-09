@@ -1,70 +1,121 @@
 #file-manager {
+    min-height: 100%;
+    height: 100%;
 
-    md-toolbar {
-
-        &.md-tall {
-            height: 185px;
-            min-height: 185px;
-        }
+    .leftpane {
+        width: 240px;
+        min-width: 240px;
+        max-width: 240px;
+        z-index: 51;
+        box-shadow: @whiteframe-shadow-z3;
     }
 
-    .main-content {
-        z-index: 50;
+    .centerpane {
 
-        > md-toolbar {
-            background-image: url('/assets/images/backgrounds/mail-bg.png');
-            background-size: cover;
+        .header {
+            position: relative;
+
+            .breadcrumb {
+                font-size: 24px;
+                padding-left: 90px;
+
+                .separator {
+                    margin-left: 8px;
+                    margin-right: 8px;
+                }
+            }
 
             .add-file-button {
                 position: absolute;
                 bottom: -32px;
                 left: 16px;
 
-                md-icon {
-                    color: white;
-                }
             }
+        }
 
-            .breadcrumb {
-                padding: 32px 0;
-                margin-left: 104px;
-
-                .separator {
-                    margin: 0 8px;
-                }
-            }
+        .content {
+            padding: 0;
         }
     }
 
-    .detail-sidenav {
-        z-index: 40;
+    .rightpane {
+        width: 320px;
+        min-width: 320px;
+        max-width: 320px;
+        padding: 0;
+
+        &.md-locked-open {
+            width: 320px;
+            min-width: 320px;
+            max-width: 320px;
+        }
+    }
+}
+
+md-toolbar {
+
+    &.md-tall {
+        height: 185px;
+        min-height: 185px;
+    }
+}
+
+.main-content {
+    z-index: 50;
+
+    > md-toolbar {
+        background-image: url('/assets/images/backgrounds/mail-bg.png');
+        background-size: cover;
+
+        .add-file-button {
+            position: absolute;
+            bottom: -32px;
+            left: 16px;
+
+            md-icon {
+                color: @material-color-white;
+            }
+        }
+
+        .breadcrumb {
+            padding: 32px 0;
+            margin-left: 104px;
+
+            .separator {
+                margin: 0 8px;
+            }
+        }
+    }
+}
+
+.detail-sidenav {
+    z-index: 40;
+}
+
+.icon- {
+    text-align: center;
+
+    &.folder {
+
+        &:before {
+            content: "\e101";
+            color: #FFB300;
+        }
     }
 
-    .icon- {
-        text-align: center;
+    &.document {
 
-        &.folder {
-
-            &:before {
-                content: "\e101";
-                color: #FFB300;
-            }
+        &:before {
+            content: "\e288";
+            color: #1565C0;
         }
+    }
 
-        &.document {
+    &.spreadsheet {
 
-            &:before {
-                content: "\e288";
-                color: #1565C0;
-            }
-        }
-
-        &.spreadsheet {
-
-            &:before {
-                content: "\e180";
-                color: #4CAF50;
-            }
+        &:before {
+            content: "\e180";
+            color: #4CAF50;
         }
     }
 }

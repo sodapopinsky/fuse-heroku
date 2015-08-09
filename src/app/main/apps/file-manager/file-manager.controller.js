@@ -16,44 +16,38 @@
             'withinpixels': 'johndoe@withinpixels.com'
         };
         vm.selectedAccount = 'creapond';
-        vm.selectedView = 'list';
+        vm.currentView = 'list';
         vm.showDetails = true;
 
         api.fileManager.documents.get({}, function (response)
         {
-            vm.documents = response.data;
-            vm.selected = vm.documents[0];
+            vm.folders = response.data.folders;
+            vm.files = response.data.files;
+            vm.selected = vm.files[0];
         });
 
         // Methods
-        vm.detailsToggle = detailsToggle;
         vm.select = select;
-        vm.sideNavToggle = sideNavToggle;
+        vm.toggleDetails = toggleDetails;
+        vm.toggleSidenav = toggleSidenav;
         vm.toggleView = toggleView;
-        vm.viewTemplate = viewTemplate;
 
         //////////
 
+        /**
+         * Select file
+         *
+         * @param file
+         */
         function select(file)
         {
             vm.selected = file;
-
-            if ( vm.showDetails )
-            {
-                $mdSidenav('fileManager-details-sidenav').open();
-            }
-            else
-            {
-                $mdSidenav('fileManager-details-sidenav').close();
-            }
         }
 
-        function sideNavToggle()
-        {
-            $mdSidenav('fileManager-main-sidenav').toggle();
-        }
-
-        function detailsToggle()
+        /**
+         * Toggle details
+         */
+        function toggleDetails()
         {
             vm.showDetails = !vm.showDetails;
 
@@ -67,14 +61,22 @@
             }
         }
 
-        function toggleView()
+        /**
+         * Toggle sidenav
+         *
+         * @param sidenavId
+         */
+        function toggleSidenav(sidenavId)
         {
-            vm.selectedView = vm.selectedView === 'list' ? 'grid' : 'list';
+            $mdSidenav(sidenavId).toggle();
         }
 
-        function viewTemplate()
+        /**
+         * Toggle view
+         */
+        function toggleView()
         {
-            return vm.selectedView === 'list' ? 'app/main/apps/file-manager/views/list-view.html' : 'app/main/apps/file-manager/views/grid-view.html';
+            vm.currentView = vm.currentView === 'list' ? 'grid' : 'list';
         }
     }
 })();
