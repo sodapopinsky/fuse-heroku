@@ -1,0 +1,32 @@
+<div class="page-layout simple simple-rightpane-fullheight" layout="row" layout-fill>
+
+    <!-- Content wrapper -->
+    <div class="centerpane" layout="column" flex>
+
+        <!-- Header -->
+        <div class="header md-accent-bg" layout="row" layout-align="space-between">
+            <span>Header</span>
+
+            <md-button class="md-icon-button rightpane-toggle" ng-click="vm.toggleSidenav('rightpane')" hide-gt-md
+                       aria-label="Toggle right pane">
+                <i class="icon icon-menu"></i>
+            </md-button>
+        </div>
+        <!-- / Header -->
+
+        <!-- Content -->
+        <div class="content" flex>
+            <span>Content</span>
+        </div>
+        <!-- / Content -->
+
+    </div>
+    <!-- / Content wrapper -->
+
+    <!-- Right pane -->
+    <md-sidenav class="rightpane md-sidenav-right" md-is-locked-open="$mdMedia('gt-md')" md-component-id="rightpane">
+        <span>Right pane</span>
+    </md-sidenav>
+    <!-- / Right pane -->
+
+</div>

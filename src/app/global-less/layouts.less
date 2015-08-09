@@ -306,7 +306,6 @@
                 }
             }
 
-
             .centerpane {
                 z-index: 3;
                 box-shadow: @whiteframe-shadow-z3;
@@ -330,6 +329,81 @@
         // With right pane
         &.simple-rightpane {
 
+            .header {
+                height: 200px;
+                min-height: 200px;
+                max-height: 200px;
+                padding: 24px;
+                background-image: url('/assets/images/backgrounds/mail-bg.png');
+                background-size: cover;
+            }
+
+            .content {
+                background: @material-color-white;
+
+                .centerpane {
+                    padding: 24px;
+                }
+
+                .rightpane {
+                    width: 240px;
+                    min-width: 240px;
+                    max-width: 240px;
+                    padding: 24px;
+                    z-index: 51;
+                    box-shadow: @whiteframe-shadow-z3;
+
+                    &.md-locked-open {
+                        width: 220px;
+                        min-width: 220px;
+                        max-width: 220px;
+                        z-index: 2;
+                        box-shadow: none;
+                        background: transparent;
+                    }
+                }
+            }
+        }
+
+        // With right pane, full height
+        &.simple-rightpane-fullheight {
+
+            .centerpane {
+                z-index: 3;
+                box-shadow: @whiteframe-shadow-z3;
+
+                .header {
+                    height: 200px;
+                    min-height: 200px;
+                    max-height: 200px;
+                    padding: 24px;
+                    background-image: url('/assets/images/backgrounds/mail-bg.png');
+                    background-size: cover;
+                }
+
+                .content {
+                    padding: 24px;
+                    background: @material-color-white;
+                }
+            }
+
+            .rightpane {
+                width: 240px;
+                min-width: 240px;
+                max-width: 240px;
+                padding: 24px;
+                z-index: 51;
+                box-shadow: @whiteframe-shadow-z3;
+
+                &.md-locked-open {
+                    width: 220px;
+                    min-width: 220px;
+                    max-width: 220px;
+                    z-index: 2;
+                    box-shadow: none;
+                    background: transparent;
+                }
+            }
         }
     }
 }

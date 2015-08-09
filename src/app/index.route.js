@@ -410,6 +410,18 @@
                 }
             })
 
+            // Simple - Right Pane, Full Height
+            .state('app.ui.layouts.simple-rightpane-fullheight', {
+                url: '/simple-rightpane-fullheight',
+                views: {
+                    'content@app': {
+                        templateUrl: 'app/main/ui/layouts/simple/rightpane-fullheight/rightpane-fullheight.html',
+                        controller: 'SimpleRightpaneFullheightController as vm'
+                    }
+                }
+            })
+
+
         /**
          * Components
          */
