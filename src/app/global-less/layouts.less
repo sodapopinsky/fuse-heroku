@@ -25,7 +25,7 @@
         &.carded-fullwidth {
 
             // Center pane
-            .center-pane {
+            .centerpane {
                 z-index: 2;
                 margin-left: 32px;
                 margin-right: 32px;
@@ -58,10 +58,10 @@
         }
 
         // With left pane
-        &.carded-left-pane {
+        &.carded-leftpane {
 
             // Left pane
-            .left-pane {
+            .leftpane {
                 width: 240px;
                 min-width: 240px;
                 max-width: 240px;
@@ -88,7 +88,7 @@
                     background: transparent;
                     box-shadow: none;
 
-                    + .center-pane {
+                    + .centerpane {
                         margin-left: 0;
                     }
                 }
@@ -106,7 +106,7 @@
             }
 
             // Center pane
-            .center-pane {
+            .centerpane {
                 z-index: 2;
                 margin-left: 32px;
                 margin-right: 32px;
@@ -130,7 +130,7 @@
                         max-height: 64px;
                         border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
-                        .left-pane-toggle {
+                        .leftpane-toggle {
                             margin: 0 16px 0 0;
                         }
                     }
@@ -143,10 +143,10 @@
         }
 
         // With right pane
-        &.carded-right-pane {
+        &.carded-rightpane {
 
             // Right pane
-            .right-pane {
+            .rightpane {
                 width: 240px;
                 min-width: 240px;
                 max-width: 240px;
@@ -188,7 +188,7 @@
             }
 
             // Center pane
-            .center-pane {
+            .centerpane {
                 z-index: 2;
                 margin-left: 32px;
                 margin-right: 32px;
@@ -212,7 +212,7 @@
                         max-height: 64px;
                         border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
-                        .right-pane-toggle {
+                        .rightpane-toggle {
                             margin: 0 0 0 16px;
                         }
                     }
@@ -228,20 +228,16 @@
     // Simple layout
     &.simple {
 
-        .header {
-            height: 200px;
-            min-height: 200px;
-            max-height: 200px;
-            padding: 24px;
-            background-image: url('/assets/images/backgrounds/mail-bg.png');
-            background-size: cover;
-        }
-
         // Fullwidth
         &.simple-fullwidth {
 
             .header {
-
+                height: 200px;
+                min-height: 200px;
+                max-height: 200px;
+                padding: 24px;
+                background-image: url('/assets/images/backgrounds/mail-bg.png');
+                background-size: cover;
             }
 
             .content {
@@ -250,15 +246,21 @@
         }
 
         // With left pane
-        &.simple-left-pane {
+        &.simple-leftpane {
 
             .header {
-
+                height: 200px;
+                min-height: 200px;
+                max-height: 200px;
+                padding: 24px;
+                background-image: url('/assets/images/backgrounds/mail-bg.png');
+                background-size: cover;
             }
 
-            .content-wrapper {
+            .content {
+                background: @material-color-white;
 
-                .left-pane {
+                .leftpane {
                     width: 240px;
                     min-width: 240px;
                     max-width: 240px;
@@ -271,10 +273,50 @@
                         min-width: 220px;
                         max-width: 220px;
                         z-index: 2;
-                        background: transparent;
                         box-shadow: none;
-                        border-right: 1px solid rgba(0, 0, 0, 0.12);
+                        background: transparent;
                     }
+                }
+
+                .centerpane {
+                    padding: 24px;
+                }
+            }
+        }
+
+        // With left pane, full height
+        &.simple-leftpane-fullheight {
+
+            .leftpane {
+                width: 240px;
+                min-width: 240px;
+                max-width: 240px;
+                padding: 24px;
+                z-index: 51;
+                box-shadow: @whiteframe-shadow-z3;
+
+                &.md-locked-open {
+                    width: 220px;
+                    min-width: 220px;
+                    max-width: 220px;
+                    z-index: 2;
+                    box-shadow: none;
+                    background: transparent;
+                }
+            }
+
+
+            .centerpane {
+                z-index: 3;
+                box-shadow: @whiteframe-shadow-z3;
+
+                .header {
+                    height: 200px;
+                    min-height: 200px;
+                    max-height: 200px;
+                    padding: 24px;
+                    background-image: url('/assets/images/backgrounds/mail-bg.png');
+                    background-size: cover;
                 }
 
                 .content {
@@ -285,7 +327,7 @@
         }
 
         // With right pane
-        &.simple-right-pane {
+        &.simple-rightpane {
 
         }
     }

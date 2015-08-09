@@ -1,4 +1,4 @@
-<div id="todo" class="page-layout carded carded-left-pane" layout="row">
+<div id="todo" class="page-layout carded carded-leftpane" layout="row">
 
 
     <!-- Top background -->
@@ -6,7 +6,7 @@
     <!-- / Top background -->
 
     <!-- Left pane -->
-    <md-sidenav class="left-pane" md-is-locked-open="$mdMedia('gt-md')" md-component-id="leftpane">
+    <md-sidenav class="leftpane" md-is-locked-open="$mdMedia('gt-md')" md-component-id="leftpane">
 
         <!-- Left pane header -->
         <div class="header" layout="column" layout-align="space-between">
@@ -106,13 +106,13 @@
     <!-- / Left pane -->
 
     <!-- Center pane -->
-    <div class="center-pane" layout="column" flex>
+    <div class="centerpane" layout="column" flex>
 
         <!-- Center pane header -->
         <div class="header" layout="row" layout-align="start center">
 
             <div class="search-wrapper md-whiteframe-z2" flex layout="row" layout-align="start center">
-                <md-button class="md-icon-button left-pane-toggle" ng-click="vm.toggleSidenav('leftpane')" hide-gt-md
+                <md-button class="md-icon-button leftpane-toggle" ng-click="vm.toggleSidenav('leftpane')" hide-gt-md
                            aria-label="Toggle left pane">
                     <i class="icon icon-menu"></i>
                 </md-button>
