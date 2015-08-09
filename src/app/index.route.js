@@ -84,9 +84,9 @@
                 }
             })
 
-            // E-Mail
-            .state('app.e-mail', {
-                url: '/email',
+            // Mail
+            .state('app.mail', {
+                url: '/mail',
                 views: {
                     'content@app': {
                         templateUrl: 'app/main/apps/mail/mail.html',
