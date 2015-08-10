@@ -1,74 +1,65 @@
 // Variables
 @toolbarHeight: 64px;
 
-#main-toolbar {
+#toolbar {
     height: @toolbarHeight;
     min-height: @toolbarHeight;
     max-height: @toolbarHeight;
     z-index: 55;
 
-    #main-toolbar-content {
+    #navigation-toggle {
+        width: @toolbarHeight;
+        height: @toolbarHeight;
+        margin: 0;
+        border-right: 1px solid rgba(0, 0, 0, 0.13);
+        border-radius: 0;
+    }
 
-        #main-toolbar-left {
+    #search {
+        font-size: 13px;
+        margin-left: 24px;
 
-            #navigation-toggle {
-                width: @toolbarHeight;
-                height: @toolbarHeight;
-                margin: 0;
-                border-right: 1px solid rgba(0, 0, 0, 0.13);
-                border-radius: 0;
+        input {
+            margin-left: 16px;
+        }
+    }
+
+    #user-menu {
+
+        .user-button {
+            margin: 0;
+            padding: 0 16px;
+            height: @toolbarHeight;
+            text-transform: none;
+
+            .avatar {
+                width: 32px;
+                height: 32px;
+                border-radius: 32px;
             }
 
-            #search {
-                font-size: 13px;
-                margin-left: 24px;
-
-                input {
-                    margin-left: 16px;
-                }
+            .username {
+                margin: 0 14px;
             }
         }
+    }
 
-        #main-toolbar-right {
+    #quick-panel-toggle {
+        width: @toolbarHeight;
+        height: @toolbarHeight;
+        margin: 0;
+        border-left: 1px solid rgba(0, 0, 0, 0.13);
+        border-radius: 0;
 
-            #user-menu {
-
-                .user-button {
-                    margin: 0;
-                    padding: 0 16px;
-                    height: @toolbarHeight;
-                    text-transform: none;
-
-                    .avatar {
-                        width: 32px;
-                        height: 32px;
-                        border-radius: 32px;
-                    }
-
-                    .username {
-                        margin: 0 14px;
-                    }
-                }
-            }
-
-            #quick-panel-toggle {
-                width: @toolbarHeight;
-                height: @toolbarHeight;
-                margin: 0;
-                border-left: 1px solid rgba(0, 0, 0, 0.13);
-                border-radius: 0;
-
-                .badge {
-                    position: absolute;
-                    width: 8px;
-                    height: 8px;
-                    top: 50%;
-                    left: 50%;
-                    margin-left: -12px;
-                    margin-top: -8px;
-                    border-radius: 8px;
-                }
-            }
+        .badge {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            top: 50%;
+            left: 50%;
+            margin-left: -12px;
+            margin-top: -8px;
+            border-radius: 8px;
         }
     }
 }

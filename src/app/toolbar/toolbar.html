@@ -1,6 +1,6 @@
-<div id="main-toolbar-content" layout="row" layout-align="start center">
-    <div id="main-toolbar-left" layout="row" layout-align="start center" flex>
-        <md-button id="navigation-toggle" class="md-icon-button md-primary" ng-click="vm.toggleSidenav('main-navigation')" hide-gt-md aria-label="Toggle navigation bar">
+<div layout="row" layout-align="start center">
+    <div layout="row" layout-align="start center" flex>
+        <md-button id="navigation-toggle" class="md-icon-button md-primary" ng-click="vm.toggleSidenav('navigation')" hide-gt-md aria-label="Toggle navigation bar">
             <i class="icon icon-menu s24"></i>
         </md-button>
 
@@ -13,7 +13,7 @@
         </md-progress-circular>
     </div>
 
-    <div id="main-toolbar-right" layout="row" layout-align="start center">
+    <div layout="row" layout-align="start center">
         <md-menu id="user-menu" md-offset="0 70">
             <md-button class="user-button md-primary" aria-label="User settings"
                        ng-click="$mdOpenMenu()">
