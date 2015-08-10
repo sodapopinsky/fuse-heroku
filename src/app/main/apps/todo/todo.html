@@ -1,25 +1,24 @@
-<div id="todo" class="page-layout carded carded-leftpane" layout="row">
-
+<div id="todo" class="page-layout carded left-sidenav" layout="row">
 
     <!-- Top background -->
     <div class="top-bg md-accent-bg"></div>
     <!-- / Top background -->
 
-    <!-- Left pane -->
-    <md-sidenav class="leftpane" md-is-locked-open="$mdMedia('gt-md')" md-component-id="leftpane"
+    <!-- Left sidenav -->
+    <md-sidenav class="sidenav" md-is-locked-open="$mdMedia('gt-md')" md-component-id="main-sidenav"
                 ng-include="'app/main/apps/todo/sidenavs/main/main-sidenav.html'">
     </md-sidenav>
-    <!-- / Left pane -->
+    <!-- / Left sidenav -->
 
-    <!-- Center pane -->
-    <div class="centerpane" layout="column" flex>
+    <!-- Center -->
+    <div class="center" layout="column" flex>
 
-        <!-- Center pane header -->
+        <!-- Content header -->
         <div class="header" layout="row" layout-align="start center">
 
             <div class="search-wrapper md-whiteframe-z2" flex layout="row" layout-align="start center">
-                <md-button class="md-icon-button leftpane-toggle" ng-click="vm.toggleSidenav('leftpane')" hide-gt-md
-                           aria-label="Toggle left pane">
+                <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleSidenav('main-sidenav')" hide-gt-md
+                           aria-label="Toggle sidenav">
                     <i class="icon icon-menu"></i>
                 </md-button>
 
@@ -30,7 +29,7 @@
             </div>
 
         </div>
-        <!-- / Center pane header -->
+        <!-- / Content header -->
 
         <!-- Content card -->
         <div class="content-card" layout="column" flex>
@@ -89,6 +88,6 @@
         <!-- / Content card-->
 
     </div>
-    <!-- / Center pane -->
+    <!-- / Center -->
 
 </div>

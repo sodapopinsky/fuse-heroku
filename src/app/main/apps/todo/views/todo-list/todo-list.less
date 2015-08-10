@@ -1,66 +1,57 @@
 #todo {
 
-    .centerpane {
+    .todo-list-pane {
 
-        .content-card {
+        .todo {
+            padding: 16px;
+            position: relative;
+            text-transform: none;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
-            .content {
+            .tags {
+                font-size: 11px;
+                margin-right: 12px;
 
-                .todo-list-pane {
+                .tag {
+                    border-radius: 2px;
+                    margin: 0 4px 0 0;
+                    padding: 4px 6px;
+                    color: @material-color-white;
+                    font-weight: 500;
+                }
+            }
 
-                    .todo {
-                        padding: 16px;
-                        position: relative;
-                        text-transform: none;
-                        cursor: pointer;
-                        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            &.checked {
+                background: #EEEEEE;
+                color: rgba(0, 0, 0, 0.54);
 
-                        .tags {
-                            font-size: 11px;
-                            margin-right: 12px;
+                .info {
+                    text-decoration: line-through;
+                }
+            }
 
-                            .tag {
-                                border-radius: 2px;
-                                margin: 0 4px 0 0;
-                                padding: 4px 6px;
-                                color: @material-color-white;
-                                font-weight: 500;
-                            }
-                        }
+            &.selected {
+                background: #FFF8E1;
+            }
 
-                        &.checked {
-                            background: #EEEEEE;
-                            color: rgba(0, 0, 0, 0.54);
+            .info {
+                margin: 0 16px 0 8px;
 
-                            .info {
-                                text-decoration: line-through;
-                            }
-                        }
+                .title,
+                .notes {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
 
-                        &.selected {
-                            background: #FFF8E1;
-                        }
+                .title {
+                    font-size: 15px;
+                    font-weight: 500;
+                }
 
-                        .info {
-                            margin: 0 16px 0 8px;
-
-                            .title,
-                            .notes {
-                                white-space: nowrap;
-                                overflow: hidden;
-                                text-overflow: ellipsis;
-                            }
-
-                            .title {
-                                font-size: 15px;
-                                font-weight: 500;
-                            }
-
-                            .notes {
-                                font-size: 13px;
-                            }
-                        }
-                    }
+                .notes {
+                    font-size: 13px;
                 }
             }
         }
