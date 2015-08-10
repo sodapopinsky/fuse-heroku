@@ -6,102 +6,8 @@
     <!-- / Top background -->
 
     <!-- Left pane -->
-    <md-sidenav class="leftpane" md-is-locked-open="$mdMedia('gt-md')" md-component-id="leftpane">
-
-        <!-- Left pane header -->
-        <div class="header" layout="column" layout-align="space-between">
-
-            <div class="logo" layout="row" layout-align="start center">
-                <span class="logo-icon">
-                    <md-icon md-font-icon="icon-check_box" class="s24"></md-icon>
-                </span>
-                <span class="logo-text">To-Do</span>
-            </div>
-
-            <md-select class="project-selection simplified" placeholder="Project Selection"
-                       ng-model="vm.selectedProject">
-                <md-option ng-repeat="(project, title) in vm.projects" value="{{project}}">
-                    {{title}}
-                </md-option>
-            </md-select>
-
-        </div>
-        <!-- / Left pane header -->
-
-        <!-- Left pane content -->
-        <md-content class="content" flex>
-
-            <div class="add-task-button">
-                <md-button class="md-accent md-raised" aria-label="add task" ng-click="vm.openTaskDialog($event)">
-                    ADD TASK
-                </md-button>
-            </div>
-
-            <div class="navigation-simple" layout="column">
-                <md-button class="item" aria-label="all tasks">
-                    <div layout="row" layout-align="start center">
-                        <md-icon md-font-icon="icon-list" class="s18"></md-icon>
-                        <span class="title">All Tasks</span>
-                    </div>
-                </md-button>
-
-                <md-button class="item" aria-label="starred">
-                    <div layout="row" layout-align="start center">
-                        <md-icon md-font-icon="icon-star" class="s18"></md-icon>
-                        <span class="title">Starred</span>
-                    </div>
-                </md-button>
-
-                <md-button class="item" aria-label="priority">
-                    <div layout="row" layout-align="start center">
-                        <md-icon md-font-icon="icon-info" class="s18"></md-icon>
-                        <span class="title">Priority</span>
-                    </div>
-                </md-button>
-
-                <md-button class="item" aria-label="scheduled">
-                    <div layout="row" layout-align="start center">
-                        <md-icon md-font-icon="icon-access_time" class="s18"></md-icon>
-                        <span class="title">Scheduled</span>
-                    </div>
-                </md-button>
-
-                <md-button class="item" aria-label="today">
-                    <div layout="row" layout-align="start center">
-                        <md-icon md-font-icon="icon-today" class="s18"></md-icon>
-                        <span class="title">Today</span>
-                    </div>
-                </md-button>
-
-                <md-button class="item" aria-label="done">
-                    <div layout="row" layout-align="start center">
-                        <md-icon md-font-icon="icon-check" class="s18"></md-icon>
-                        <span class="title">Done</span>
-                    </div>
-                </md-button>
-
-                <md-button class="item" aria-label="deleted">
-                    <div layout="row" layout-align="start center">
-                        <md-icon md-font-icon="icon-delete" class="s18"></md-icon>
-                        <span class="title">Deleted</span>
-                    </div>
-                </md-button>
-
-                <div class="item subheader">
-                    Tags
-                </div>
-
-                <md-button class="item" aria-label="tag {{tag.title}}" ng-repeat="tag in vm.tags">
-                    <div layout="row" layout-align="start center">
-                        <md-icon md-font-icon="icon-label" class="s18" ng-style="{'color' : tag.color}"></md-icon>
-                        <span class="title">{{tag.title}}</span>
-                    </div>
-                </md-button>
-            </div>
-
-        </md-content>
-        <!-- / Left pane content -->
-
+    <md-sidenav class="leftpane" md-is-locked-open="$mdMedia('gt-md')" md-component-id="leftpane"
+                ng-include="'app/main/apps/todo/sidenavs/main/main-sidenav.html'">
     </md-sidenav>
     <!-- / Left pane -->
 
@@ -170,64 +76,11 @@
             <!-- Content -->
             <div class="content" layout="row">
 
-                <!-- Task list pane -->
-                <md-content class="task-list-pane" flex>
-
-                    <div class="task"
-                         ng-repeat="task in vm.tasks | filter: vm.search" md-ink-ripple
-                         ng-click="vm.openTaskDialog($event, task)"
-                         ng-class="{'starred': task.starred, 'selected': task.selected, 'checked': task.checked}">
-
-                        <div layout="row" layout-align="start center">
-                            <md-checkbox aria-label="{{$index}}" class="checkbox" ng-checked="task.checked"
-                                         ng-click="vm.toggleCheck(task, $event)">
-                            </md-checkbox>
-
-                            <div layout="column" class="info" flex>
-                                <div class="title">{{task.title}}</div>
-
-                                <div class="notes">
-                                    {{task.notes}}
-                                </div>
-                            </div>
-
-                            <div class="tags" layout="row">
-                                <div class="tag" data-ng-repeat="tag in task.tags"
-                                     ng-style="{'background-color': tag.color}">
-                                    {{tag.title}}
-                                </div>
-                            </div>
-
-                            <md-button class="md-icon-button" ng-click="vm.toggleStarred(task, $event)"
-                                       aria-label="starred">
-                                <md-icon ng-if="task.starred" md-font-icon="icon-star" class="md-amber-fg"></md-icon>
-                                <md-icon ng-if="!task.starred" md-font-icon="icon-star_outline"></md-icon>
-                            </md-button>
-
-                            <md-menu>
-                                <md-button aria-label="more" class="md-icon-button">
-                                    <md-icon md-font-icon="icon-more_vert" ng-click="$mdOpenMenu($event)"></md-icon>
-                                </md-button>
-
-                                <md-menu-content width="3">
-                                    <md-menu-item>
-                                        <md-button aria-label="all">Mark as done</md-button>
-                                    </md-menu-item>
-
-                                    <md-menu-item>
-                                        <md-button aria-label="none">Mark as important</md-button>
-                                    </md-menu-item>
-
-                                    <md-menu-item>
-                                        <md-button aria-label="read">Add star</md-button>
-                                    </md-menu-item>
-                                </md-menu-content>
-                            </md-menu>
-                        </div>
-                    </div>
-
+                <!-- Todo list pane -->
+                <md-content class="todo-list-pane" flex
+                            ng-include="'app/main/apps/todo/views/todo-list/todo-list.html'">
                 </md-content>
-                <!-- Task list pane -->
+                <!-- Todo list pane -->
 
             </div>
             <!-- / Content -->

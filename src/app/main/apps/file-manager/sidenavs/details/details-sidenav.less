@@ -1,6 +1,7 @@
 #file-manager {
 
-    .details-sidenav {
+    // Right pane
+    .rightpane {
 
         .header {
             height: 200px;
@@ -18,69 +19,72 @@
             }
         }
 
-        .file-details {
+        .content {
 
-            .preview {
-                background: @material-color-white;
-                height: 240px;
-            }
+            .file-details {
 
-            .offline-switch {
-                padding: 16px 24px;
-                border-top: 1px solid rgba(0, 0, 0, 0.13);
-                border-bottom: 1px solid rgba(0, 0, 0, 0.13);
-                font-weight: 500;
+                .preview {
+                    background: @material-color-white;
+                    height: 240px;
+                }
 
-                md-switch {
-                    margin: 0;
+                .offline-switch {
+                    padding: 16px 24px;
+                    border-top: 1px solid rgba(0, 0, 0, 0.13);
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+                    font-weight: 500;
 
-                    .md-container {
+                    md-switch {
                         margin: 0;
+
+                        .md-container {
+                            margin: 0;
+                        }
                     }
                 }
-            }
 
-            .title {
-                padding: 24px 24px 16px 24px;
-            }
+                .title {
+                    padding: 24px 24px 16px 24px;
+                }
 
-            table {
-                padding: 0 24px;
-                width: 100%;
-                text-align: left;
+                table {
+                    padding: 0 24px;
+                    width: 100%;
+                    text-align: left;
 
-                tr {
+                    tr {
 
-                    th, td {
-                        padding: 16px 0;
-                    }
+                        th, td {
+                            padding: 16px 0;
+                        }
 
-                    th {
+                        th {
 
-                    }
+                        }
 
-                    td {
+                        td {
 
-                    }
+                        }
 
-                    &.type {
-                        text-transform: capitalize;
-                    }
+                        &.type {
+                            text-transform: capitalize;
+                        }
 
-                    &.size {
-                    }
+                        &.size {
+                        }
 
-                    &.location {
-                    }
+                        &.location {
+                        }
 
-                    &.owner {
-                        text-transform: capitalize;
-                    }
+                        &.owner {
+                            text-transform: capitalize;
+                        }
 
-                    &.opened {
-                    }
+                        &.opened {
+                        }
 
-                    &.created {
+                        &.created {
+                        }
                     }
                 }
             }

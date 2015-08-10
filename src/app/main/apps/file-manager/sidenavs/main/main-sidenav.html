@@ -1,44 +1,63 @@
-<div class="account">
-    <div class="title">John Doe</div>
-    <md-select class="account-selection simplified" placeholder="Mail Selection" ng-model="vm.selectedAccount">
-        <md-option ng-repeat="(provider, address) in vm.accounts" value="{{provider}}">{{address}}
-        </md-option>
-    </md-select>
+<!-- Left pane header -->
+<div class="header">
+
+    <div class="logo" layout="row" layout-align="start center">
+        <span class="logo-icon">
+            <md-icon md-font-icon="icon-folder" class="icon s24"></md-icon>
+        </span>
+        <span class="logo-text">File Manager</span>
+    </div>
+
+    <div class="account">
+        <div class="title">John Doe</div>
+        <md-select class="account-selection simplified" placeholder="Mail Selection" ng-model="vm.selectedAccount">
+            <md-option ng-repeat="(provider, address) in vm.accounts" value="{{provider}}">{{address}}
+            </md-option>
+        </md-select>
+    </div>
+
 </div>
+<!-- / Left pane header -->
 
-<div class="navigation-simple" layout="column">
-    <md-button class="item" aria-label="inbox">
-        <div class="context" layout="row" layout-align="start center">
-            <md-icon md-font-icon="icon-folder" class="s18"></md-icon>
-            <div class="title">My Files</div>
-        </div>
-    </md-button>
+<!-- Left pane content -->
+<div class="content">
 
-    <md-button class="item" aria-label="starred">
-        <div class="context" layout="row" layout-align="start center">
-            <md-icon md-font-icon="icon-star" class="s18"></md-icon>
-            <div class="title">Starred</div>
-        </div>
-    </md-button>
+    <div class="navigation-simple" layout="column">
+        <md-button class="item" aria-label="inbox">
+            <div class="context" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-folder" class="s18"></md-icon>
+                <div class="title">My Files</div>
+            </div>
+        </md-button>
 
-    <md-button class="item" aria-label="starred">
-        <div class="context" layout="row" layout-align="start center">
-            <md-icon md-font-icon="icon-folder_shared" class="s18"></md-icon>
-            <div class="title">Sharred with me</div>
-        </div>
-    </md-button>
+        <md-button class="item" aria-label="starred">
+            <div class="context" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-star" class="s18"></md-icon>
+                <div class="title">Starred</div>
+            </div>
+        </md-button>
 
-    <md-button class="item" aria-label="starred">
-        <div class="context" layout="row" layout-align="start center">
-            <md-icon md-font-icon="icon-access_time" class="s18"></md-icon>
-            <div class="title">Recent</div>
-        </div>
-    </md-button>
+        <md-button class="item" aria-label="starred">
+            <div class="context" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-folder_shared" class="s18"></md-icon>
+                <div class="title">Sharred with me</div>
+            </div>
+        </md-button>
 
-    <md-button class="item" aria-label="starred">
-        <div class="context" layout="row" layout-align="start center">
-            <md-icon md-font-icon="icon-offline_pin" class="s18"></md-icon>
-            <div class="title">Offline</div>
-        </div>
-    </md-button>
+        <md-button class="item" aria-label="starred">
+            <div class="context" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-access_time" class="s18"></md-icon>
+                <div class="title">Recent</div>
+            </div>
+        </md-button>
+
+        <md-button class="item" aria-label="starred">
+            <div class="context" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-offline_pin" class="s18"></md-icon>
+                <div class="title">Offline</div>
+            </div>
+        </md-button>
+    </div>
+
 </div>
+<!-- / Left pane content -->

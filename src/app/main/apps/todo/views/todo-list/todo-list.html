@@ -1,0 +1,53 @@
+<!-- Todo list items -->
+<div class="todo" ng-repeat="task in vm.tasks | filter: vm.search" md-ink-ripple
+     ng-click="vm.openTaskDialog($event, task)"
+     ng-class="{'starred': task.starred, 'selected': task.selected, 'checked': task.checked}">
+
+    <div layout="row" layout-align="start center">
+        <md-checkbox aria-label="{{$index}}" class="checkbox" ng-checked="task.checked"
+                     ng-click="vm.toggleCheck(task, $event)">
+        </md-checkbox>
+
+        <div layout="column" class="info" flex>
+            <div class="title">{{task.title}}</div>
+
+            <div class="notes">
+                {{task.notes}}
+            </div>
+        </div>
+
+        <div class="tags" layout="row">
+            <div class="tag" data-ng-repeat="tag in task.tags"
+                 ng-style="{'background-color': tag.color}">
+                {{tag.title}}
+            </div>
+        </div>
+
+        <md-button class="md-icon-button" ng-click="vm.toggleStarred(task, $event)"
+                   aria-label="starred">
+            <md-icon ng-if="task.starred" md-font-icon="icon-star" class="md-amber-fg"></md-icon>
+            <md-icon ng-if="!task.starred" md-font-icon="icon-star_outline"></md-icon>
+        </md-button>
+
+        <md-menu>
+            <md-button aria-label="more" class="md-icon-button">
+                <md-icon md-font-icon="icon-more_vert" ng-click="$mdOpenMenu($event)"></md-icon>
+            </md-button>
+
+            <md-menu-content width="3">
+                <md-menu-item>
+                    <md-button aria-label="all">Mark as done</md-button>
+                </md-menu-item>
+
+                <md-menu-item>
+                    <md-button aria-label="none">Mark as important</md-button>
+                </md-menu-item>
+
+                <md-menu-item>
+                    <md-button aria-label="read">Add star</md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </div>
+</div>
+<!-- / Todo list items -->

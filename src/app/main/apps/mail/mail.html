@@ -5,8 +5,8 @@
     <!-- / Top background -->
 
     <!-- Left pane -->
-    <md-sidenav class="leftpane" md-is-locked-open="$mdMedia('gt-md')" md-component-id="leftpane"
-                ng-include="'app/main/apps/mail/sidenavs/leftpane/leftpane-sidenav.html'">
+    <md-sidenav class="leftpane" md-is-locked-open="$mdMedia('gt-md')" md-component-id="main-sidenav"
+                ng-include="'app/main/apps/mail/sidenavs/main/main-sidenav.html'">
     </md-sidenav>
     <!-- / Left pane -->
 
@@ -17,7 +17,7 @@
         <div class="header" layout="row" layout-align="start center">
 
             <div class="search-wrapper md-whiteframe-z2" layout="row" layout-align="start center" flex>
-                <md-button class="md-icon-button leftpane-toggle" ng-click="vm.toggleSidenav('leftpane')" hide-gt-md
+                <md-button class="md-icon-button main-sidenav-toggle" ng-click="vm.toggleSidenav('main-sidenav')" hide-gt-md
                            aria-label="Toggle left pane">
                     <md-icon class="icon" md-font-icon="icon-menu"></md-icon>
                 </md-button>
@@ -72,39 +72,29 @@
 
                         <md-button class="md-icon-button" aria-label="archive">
                             <md-icon md-font-icon="icon-archive"></md-icon>
-                            <md-tooltip>
-                                Archive
-                            </md-tooltip>
+                            <md-tooltip>Archive</md-tooltip>
                         </md-button>
 
                         <md-button class="md-icon-button" aria-label="report">
                             <md-icon md-font-icon="icon-report"></md-icon>
-                            <md-tooltip>
-                                Report Spam
-                            </md-tooltip>
+                            <md-tooltip>Report Spam</md-tooltip>
                         </md-button>
 
                         <md-button class="md-icon-button" aria-label="delete">
                             <md-icon md-font-icon="icon-delete"></md-icon>
-                            <md-tooltip>
-                                Delete
-                            </md-tooltip>
+                            <md-tooltip>Delete</md-tooltip>
                         </md-button>
 
                         <div class="divider-vertical"></div>
 
                         <md-button class="md-icon-button" aria-label="folder">
                             <md-icon md-font-icon="icon-folder"></md-icon>
-                            <md-tooltip>
-                                Move to
-                            </md-tooltip>
+                            <md-tooltip>Move to</md-tooltip>
                         </md-button>
 
                         <md-button class="md-icon-button" aria-label="label">
                             <md-icon md-font-icon="icon-label"></md-icon>
-                            <md-tooltip>
-                                Labels
-                            </md-tooltip>
+                            <md-tooltip>Labels</md-tooltip>
                         </md-button>
                     </div>
 

@@ -1,69 +1,5 @@
 #todo {
 
-    // Left pane
-    .leftpane {
-
-        .header {
-            padding-top: 40px;
-
-            .logo {
-                height: 56px;
-
-                .logo-icon {
-                    margin: 0 16px 0 0;
-                }
-
-                .logo-text {
-                    font-size: 20px;
-                    font-weight: 500;
-                }
-            }
-
-            .project-selection {
-                font-size: 13px;
-                margin: 0;
-            }
-        }
-
-        .content {
-            padding: 24px 0;
-
-            .add-task-button {
-                padding: 0 32px 24px 32px;
-                font-size: 13px;
-
-                .md-button {
-                    width: 100%;
-                    margin: 0;
-                }
-            }
-        }
-
-        &.md-locked-open {
-
-            .header {
-                color: @material-color-white;
-
-                .logo-icon {
-
-                    md-icon {
-                        color: @material-color-white;
-                    }
-                }
-            }
-        }
-
-        &:not(.md-locked-open) {
-
-            .header {
-                height: auto;
-                min-height: 0;
-                max-height: none;
-                padding-top: 24px;
-            }
-        }
-    }
-
     // Center pane
     .centerpane {
 
@@ -118,62 +54,8 @@
                 padding: 0;
                 overflow: hidden;
 
-                .task-list-pane {
+                .todo-list-pane {
                     background: #FAFAFA;
-
-                    .task {
-                        padding: 16px;
-                        position: relative;
-                        text-transform: none;
-                        cursor: pointer;
-                        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-
-                        .tags {
-                            font-size: 11px;
-                            margin-right: 12px;
-
-                            .tag {
-                                border-radius: 2px;
-                                margin: 0 4px 0 0;
-                                padding: 4px 6px;
-                                color: @material-color-white;
-                                font-weight: 500;
-                            }
-                        }
-
-                        &.checked {
-                            background: #EEEEEE;
-                            color: rgba(0, 0, 0, 0.54);
-
-                            .info {
-                                text-decoration: line-through;
-                            }
-                        }
-
-                        &.selected {
-                            background: #FFF8E1;
-                        }
-
-                        .info {
-                            margin: 0 16px 0 8px;
-
-                            .title,
-                            .notes {
-                                white-space: nowrap;
-                                overflow: hidden;
-                                text-overflow: ellipsis;
-                            }
-
-                            .title {
-                                font-size: 15px;
-                                font-weight: 500;
-                            }
-
-                            .notes {
-                                font-size: 13px;
-                            }
-                        }
-                    }
                 }
 
             }

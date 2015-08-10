@@ -1,8 +1,8 @@
 <div id="file-manager" class="page-layout simple simple-rightpane-fullheight" layout="row">
 
     <!-- Left pane -->
-    <md-sidenav class="leftpane" md-component-id="leftpane">
-        <div class="main-sidenav" ng-include="'app/main/apps/file-manager/sidenavs/main/main-sidenav.html'"></div>
+    <md-sidenav class="leftpane" md-component-id="main-sidenav"
+                ng-include="'app/main/apps/file-manager/sidenavs/main/main-sidenav.html'">
     </md-sidenav>
     <!-- / Left pane -->
 
@@ -15,7 +15,7 @@
             <!-- Toolbar -->
             <div class="toolbar" layout="row" layout-align="space-between">
 
-                <md-button class="md-icon-button main-sidenav-toggle" ng-click="vm.toggleSidenav('leftpane')"
+                <md-button class="md-icon-button main-sidenav-toggle" ng-click="vm.toggleSidenav('main-sidenav')"
                            aria-label="Toggle main sidenav">
                     <i class="icon icon-menu"></i>
                 </md-button>
@@ -61,8 +61,10 @@
 
         <!-- Content -->
         <md-content class="content" flex>
-            <div ng-if="vm.currentView === 'grid'" ng-include="'app/main/apps/file-manager/views/grid/grid-view.html'"></div>
-            <div ng-if="vm.currentView === 'list'" ng-include="'app/main/apps/file-manager/views/list/list-view.html'"></div>
+            <div ng-if="vm.currentView === 'grid'"
+                 ng-include="'app/main/apps/file-manager/views/grid/grid-view.html'"></div>
+            <div ng-if="vm.currentView === 'list'"
+                 ng-include="'app/main/apps/file-manager/views/list/list-view.html'"></div>
         </md-content>
         <!-- / Content -->
 
@@ -70,8 +72,9 @@
     <!-- / Content wrapper -->
 
     <!-- Right pane -->
-    <md-sidenav class="rightpane md-sidenav-right" md-is-locked-open="$mdMedia('gt-md')" md-component-id="rightpane">
-        <div class="details-sidenav" ng-include="'app/main/apps/file-manager/sidenavs/details/details-sidenav.html'"></div>
+    <md-sidenav class="rightpane md-sidenav-right" md-is-locked-open="$mdMedia('gt-md')"
+                md-component-id="details-sidenav"
+                ng-include="'app/main/apps/file-manager/sidenavs/details/details-sidenav.html'">
     </md-sidenav>
     <!-- / Right pane -->
 

@@ -52,7 +52,7 @@
         function toggleDetails(item)
         {
             vm.selected = item;
-            toggleSidenav('rightpane');
+            toggleSidenav('details-sidenav');
         }
 
         /**
