@@ -6,7 +6,7 @@
         .controller('FileManagerController', FileManagerController);
 
     /** @ngInject */
-    function FileManagerController(api, $mdSidenav, $mdMedia)
+    function FileManagerController(api, $mdSidenav)
     {
         var vm = this;
 
@@ -31,7 +31,6 @@
         vm.toggleDetails = toggleDetails;
         vm.toggleSidenav = toggleSidenav;
         vm.toggleView = toggleView;
-        vm.detailsSidenavVisibility = detailsSidenavVisibility;
 
         //////////
 
@@ -72,11 +71,6 @@
         function toggleView()
         {
             vm.currentView = vm.currentView === 'list' ? 'grid' : 'list';
-        }
-
-        function detailsSidenavVisibility()
-        {
-            return vm.showDetails && $mdMedia('gt-md');
         }
     }
 })();
