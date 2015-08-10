@@ -1,17 +1,17 @@
-<div class="page-layout carded carded-rightpane" layout="row">
+<div class="page-layout carded right-sidenav" layout="row">
 
     <!-- Top background -->
     <div class="top-bg md-accent-bg"></div>
     <!-- / Top background -->
 
-    <!-- Center pane -->
-    <div class="centerpane" layout="column" flex>
+    <!-- Center -->
+    <div class="center" layout="column" flex>
 
-        <!-- Center pane header -->
+        <!-- Content header -->
         <div class="header" layout="row">
             <span>Content header</span>
         </div>
-        <!-- / Center pane header -->
+        <!-- / Content header -->
 
         <!-- Content card -->
         <div class="content-card" layout="column" flex>
@@ -20,7 +20,7 @@
             <div class="toolbar" layout="row" layout-align="space-between center">
                 <span>Content toolbar</span>
 
-                <md-button class="md-icon-button rightpane-toggle" ng-click="vm.toggleSidenav('rightpane')" hide-gt-md aria-label="Toggle right pane">
+                <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleSidenav('sidenav')" hide-gt-md aria-label="Toggle right pane">
                     <i class="icon icon-menu"></i>
                 </md-button>
             </div>
@@ -28,7 +28,7 @@
 
             <!-- Content -->
             <md-content class="content" flex>
-                <span>Scrollable main content</span>
+                <span>Scrollable content</span>
             </md-content>
             <!-- / Content -->
 
@@ -36,24 +36,24 @@
         <!-- / Content card-->
 
     </div>
-    <!-- / Center pane -->
+    <!-- / Center -->
 
-    <!-- Right pane -->
-    <md-sidenav class="rightpane md-sidenav-right" md-is-locked-open="$mdMedia('gt-md')" md-component-id="rightpane">
+    <!-- Sidenav -->
+    <md-sidenav class="sidenav md-sidenav-right" md-is-locked-open="$mdMedia('gt-md')" md-component-id="sidenav">
 
-        <!-- Right pane header -->
+        <!-- Sidenav header -->
         <div class="header">
-            <span>Right pane header</span>
+            <span>Sidenav header</span>
         </div>
-        <!-- / Right pane header -->
+        <!-- / Sidenav header -->
 
-        <!-- Right pane content -->
+        <!-- Sidenav content -->
         <md-content class="content" flex>
-            <span>Right pane scrollable content</span>
+            <span>Sidenav scrollable content</span>
         </md-content>
-        <!-- / Right pane content -->
+        <!-- / Sidenav content -->
 
     </md-sidenav>
-    <!-- / Right pane -->
+    <!-- / Sidenav -->
 
 </div>

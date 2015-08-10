@@ -343,24 +343,24 @@
                 }
             })
 
-            // Carded - Left Pane
-            .state('app.ui.layouts.carded-leftpane', {
-                url: '/carded-leftpane',
+            // Carded - Left Sidenav
+            .state('app.ui.layouts.carded-left-sidenav', {
+                url: '/carded-left-sidenav',
                 views: {
                     'content@app': {
-                        templateUrl: 'app/main/ui/layouts/carded/leftpane/leftpane.html',
-                        controller: 'CardedLeftpaneController as vm'
+                        templateUrl: 'app/main/ui/layouts/carded/left-sidenav/left-sidenav.html',
+                        controller: 'CardedLeftSidenavController as vm'
                     }
                 }
             })
 
-            // Carded - Right Pane
-            .state('app.ui.layouts.carded-rightpane', {
-                url: '/carded-rightpane',
+            // Carded - Right Sidenav
+            .state('app.ui.layouts.carded-right-sidenav', {
+                url: '/carded-right-sidenav',
                 views: {
                     'content@app': {
-                        templateUrl: 'app/main/ui/layouts/carded/rightpane/rightpane.html',
-                        controller: 'CardedRightpaneController as vm'
+                        templateUrl: 'app/main/ui/layouts/carded/right-sidenav/right-sidenav.html',
+                        controller: 'CardedRightSidenavController as vm'
                     }
                 }
             })
@@ -376,13 +376,13 @@
                 }
             })
 
-            // Simple - Left Pane
-            .state('app.ui.layouts.simple-leftpane', {
-                url: '/simple-leftpane',
+            // Simple - Left Sidenav
+            .state('app.ui.layouts.simple-left-sidenav', {
+                url: '/simple-left-sidenav',
                 views: {
                     'content@app': {
-                        templateUrl: 'app/main/ui/layouts/simple/leftpane/leftpane.html',
-                        controller: 'SimpleLeftpaneController as vm'
+                        templateUrl: 'app/main/ui/layouts/simple/left-sidenav/left-sidenav.html',
+                        controller: 'SimpleLeftSidenavController as vm'
                     }
                 }
             })

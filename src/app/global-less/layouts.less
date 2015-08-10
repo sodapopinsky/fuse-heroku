@@ -23,10 +23,10 @@
         height: 100%;
 
         // Fullwidth
-        &.carded-fullwidth {
+        &.fullwidth {
 
-            // Center pane
-            .centerpane {
+            // Center
+            .center {
                 z-index: 2;
                 margin-left: 32px;
                 margin-right: 32px;
@@ -58,11 +58,11 @@
             }
         }
 
-        // With left pane
-        &.carded-leftpane {
+        // Left sidenav
+        &.left-sidenav {
 
-            // Left pane
-            .leftpane {
+            // Sidenav
+            .sidenav {
                 width: 240px;
                 min-width: 240px;
                 max-width: 240px;
@@ -89,7 +89,7 @@
                     background: transparent;
                     box-shadow: none;
 
-                    + .centerpane {
+                    + .center {
                         margin-left: 0;
                     }
                 }
@@ -106,8 +106,8 @@
                 }
             }
 
-            // Center pane
-            .centerpane {
+            // Center
+            .center {
                 z-index: 2;
                 margin-left: 32px;
                 margin-right: 32px;
@@ -131,7 +131,7 @@
                         max-height: 64px;
                         border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
-                        .leftpane-toggle {
+                        .sidenav-toggle {
                             margin: 0 16px 0 0;
                         }
                     }
@@ -143,11 +143,11 @@
             }
         }
 
-        // With right pane
-        &.carded-rightpane {
+        // With right sidenav
+        &.right-sidenav {
 
-            // Right pane
-            .rightpane {
+            // Sidenav
+            .sidenav {
                 width: 240px;
                 min-width: 240px;
                 max-width: 240px;
@@ -179,6 +179,7 @@
 
                     .header {
                         padding: 24px;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
                     }
 
                     .content {
@@ -188,8 +189,8 @@
                 }
             }
 
-            // Center pane
-            .centerpane {
+            // Center
+            .center {
                 z-index: 2;
                 margin-left: 32px;
                 margin-right: 32px;
@@ -213,7 +214,7 @@
                         max-height: 64px;
                         border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
-                        .rightpane-toggle {
+                        .sidenav-toggle {
                             margin: 0 0 0 16px;
                         }
                     }
