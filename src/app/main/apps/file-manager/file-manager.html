@@ -1,13 +1,13 @@
-<div id="file-manager" class="page-layout simple simple-rightpane-fullheight" layout="row">
+<div id="file-manager" class="page-layout simple right-sidenav-alt" layout="row">
 
-    <!-- Left pane -->
-    <md-sidenav class="leftpane" md-component-id="main-sidenav"
+    <!-- Main sidenav (extra sidenav) -->
+    <md-sidenav class="main-sidenav" md-component-id="main-sidenav"
                 ng-include="'app/main/apps/file-manager/sidenavs/main/main-sidenav.html'">
     </md-sidenav>
-    <!-- / Left pane -->
+    <!-- / Main sidenav (extra sidenav) -->
 
-    <!-- Content wrapper -->
-    <div class="centerpane" layout="column" flex>
+    <!-- Center -->
+    <div class="center" layout="column" flex>
 
         <!-- Header -->
         <div class="header md-accent-bg" layout="column" layout-align="space-between">
@@ -69,13 +69,13 @@
         <!-- / Content -->
 
     </div>
-    <!-- / Content wrapper -->
+    <!-- / Center -->
 
-    <!-- Right pane -->
-    <md-sidenav class="rightpane md-sidenav-right" md-is-locked-open="$mdMedia('gt-md')"
+    <!-- Sidenav -->
+    <md-sidenav class="sidenav details-sidenav md-sidenav-right" md-is-locked-open="$mdMedia('gt-md')"
                 md-component-id="details-sidenav"
                 ng-include="'app/main/apps/file-manager/sidenavs/details/details-sidenav.html'">
     </md-sidenav>
-    <!-- / Right pane -->
+    <!-- / Sidenav -->
 
 </div>
