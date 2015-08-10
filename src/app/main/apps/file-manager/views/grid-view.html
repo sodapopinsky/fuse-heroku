@@ -1,12 +1,18 @@
 <div class="grid-view" layout="column">
     <div class="folders" layout="row" layout-wrap>
-        <div ng-click="vm.select(file)" class="md-whiteframe-z1 item folder" ng-repeat="folder in vm.folders"
-             layout="column">
-            <div layout="row" class="title md-background-bg md-hue-1" layout-align="start center" flex>
+        <div class="md-background-bg md-hue-1 md-whiteframe-z1 item folder" ng-click="vm.select(folder)" ng-repeat="folder in vm.folders" layout="row" layout-align="space-between center">
+            <div layout="row" class="title" layout-align="start center">
                 <i class="icon- s18" ng-class="folder.type"></i>
                 <span class="name">{{folder.name}}</span>
             </div>
+
+            <div class="show-details" hide-gt-md>
+                <md-button class="md-icon-button details-toggle" aria-label="Toggle details sidenav">
+                    <md-icon md-font-icon="icon-info" ng-click="vm.toggleDetails(folder)"></md-icon>
+                </md-button>
+            </div>
         </div>
+
     </div>
 
     <div class="files" layout="row" layout-wrap>
@@ -15,10 +21,19 @@
                 <img ng-src="{{file.preview}}">
             </div>
 
-            <div layout="row" class="title md-background-bg md-hue-1" layout-align="start center" flex>
-                <i class="icon- s18" ng-class="file.type"></i>
-                <span class="name">{{file.name}}</span>
+            <div class="bottom md-background-bg md-hue-1" layout="row" layout-align="space-between center">
+                <div layout="row" class="title" layout-align="start center" flex>
+                    <i class="icon- s18" ng-class="file.type"></i>
+                    <span class="name">{{file.name}}</span>
+                </div>
+
+                <div class="show-details" hide-gt-md>
+                    <md-button class="md-icon-button details-toggle" aria-label="Toggle details sidenav">
+                        <md-icon md-font-icon="icon-info" ng-click="vm.toggleDetails(file)"></md-icon>
+                    </md-button>
+                </div>
             </div>
+
         </div>
     </div>
 </div>

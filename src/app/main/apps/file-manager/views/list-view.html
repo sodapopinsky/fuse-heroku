@@ -8,34 +8,43 @@
             <th>Size</th>
             <th>Last Modified</th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="item in vm.folders" ng-click="vm.select(item)" ng-class="{'selected' : vm.selected === item}">
+        <tr ng-repeat="folder in vm.folders" ng-click="vm.select(folder)" ng-class="{'selected' : vm.selected === folder}">
             <td class="file-icon">
-                <i class="icon- s18" ng-class="item.type"></i>
+                <i class="icon- s18" ng-class="folder.type"></i>
             </td>
-            <td class="name">{{item.name}}</td>
-            <td class="type">{{item.type}}</td>
-            <td class="owner">{{item.owner}}</td>
-            <td class="size">{{item.size === '' ? '-': item.size}}</td>
-            <td class="last-modified">{{item.modified}}</td>
+            <td class="name">{{folder.name}}</td>
+            <td class="type">{{folder.type}}</td>
+            <td class="owner">{{folder.owner}}</td>
+            <td class="size">{{folder.size === '' ? '-': folder.size}}</td>
+            <td class="last-modified">{{folder.modified}}</td>
+            <td class="show-details" hide-gt-md>
+                <md-button class="md-icon-button details-toggle" aria-label="Toggle details sidenav">
+                    <md-icon md-font-icon="icon-info" ng-click="vm.toggleDetails(folder)"></md-icon>
+                </md-button>
+            </td>
             <td class="more">
-                <md-icon class="" md-font-icon="icon-more_vert"></md-icon>
+                <md-icon md-font-icon="icon-more_vert"></md-icon>
             </td>
         </tr>
 
-        <tr ng-repeat="item in vm.files" ng-click="vm.select(item)" ng-class="{'selected' : vm.selected === item}">
+        <tr ng-repeat="file in vm.files" ng-click="vm.select(file)" ng-class="{'selected' : vm.selected === file}">
             <td class="file-icon">
-                <i class="icon- s18" ng-class="item.type"></i>
+                <i class="icon- s18" ng-class="file.type"></i>
             </td>
-            <td class="name">{{item.name}}</td>
-            <td class="type">{{item.type}}</td>
-            <td class="owner">{{item.owner}}</td>
-            <td class="size">{{item.size === '' ? '-': item.size}}</td>
-            <td class="last-modified">{{item.modified}}</td>
+            <td class="name">{{file.name}}</td>
+            <td class="type">{{file.type}}</td>
+            <td class="owner">{{file.owner}}</td>
+            <td class="size">{{file.size === '' ? '-': file.size}}</td>
+            <td class="last-modified">{{file.modified}}</td>
+            <td class="show-details" hide-gt-md>
+                <md-icon md-font-icon="icon-info" ng-click="vm.toggleDetails(file)"></md-icon>
+            </td>
             <td class="more">
-                <md-icon class="" md-font-icon="icon-more_vert"></md-icon>
+                <md-icon md-font-icon="icon-more_vert"></md-icon>
             </td>
         </tr>
     </tbody>
