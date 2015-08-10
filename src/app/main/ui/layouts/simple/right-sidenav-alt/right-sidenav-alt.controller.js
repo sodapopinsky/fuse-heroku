@@ -3,10 +3,10 @@
     'use strict';
 
     angular.module('app.ui')
-        .controller('SimpleLeftpaneFullheightController', SimpleLeftpaneFullheightController);
+        .controller('SimpleRightSidenavAltController', SimpleRightSidenavAltController);
 
     /** @ngInject */
-    function SimpleLeftpaneFullheightController($mdSidenav)
+    function SimpleRightSidenavAltController($mdSidenav)
     {
         var vm = this;
 

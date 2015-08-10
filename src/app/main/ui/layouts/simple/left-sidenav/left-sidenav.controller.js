@@ -3,10 +3,10 @@
     'use strict';
 
     angular.module('app.ui')
-        .controller('SimpleLeftpaneController', SimpleLeftpaneController);
+        .controller('SimpleLeftSidenavController', SimpleLeftSidenavController);
 
     /** @ngInject */
-    function SimpleLeftpaneController($mdSidenav)
+    function SimpleLeftSidenavController($mdSidenav)
     {
         var vm = this;
 

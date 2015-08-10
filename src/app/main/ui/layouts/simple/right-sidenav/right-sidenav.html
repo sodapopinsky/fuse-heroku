@@ -1,0 +1,31 @@
+<div class="page-layout simple right-sidenav" layout="column" layout-fill>
+
+    <!-- Header -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+        <span>Header</span>
+
+        <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleSidenav('sidenav')" hide-gt-md
+                   aria-label="Toggle sidenav">
+            <i class="icon icon-menu"></i>
+        </md-button>
+    </div>
+    <!-- / Header -->
+
+    <div layout="row" flex>
+
+        <!-- Content -->
+        <div class="content" flex>
+            <span>Content</span>
+        </div>
+        <!-- / Content -->
+
+        <!-- Sidenav -->
+        <md-sidenav class="sidenav md-sidenav-right" md-is-locked-open="$mdMedia('gt-md')"
+                    md-component-id="sidenav">
+            <span>Sidenav content</span>
+        </md-sidenav>
+        <!-- / Sidenav -->
+
+    </div>
+
+</div>

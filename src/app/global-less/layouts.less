@@ -143,7 +143,7 @@
             }
         }
 
-        // With right sidenav
+        // Right sidenav
         &.right-sidenav {
 
             // Sidenav
@@ -231,7 +231,7 @@
     &.simple {
 
         // Fullwidth
-        &.simple-fullwidth {
+        &.fullwidth {
 
             .header {
                 height: 200px;
@@ -247,8 +247,8 @@
             }
         }
 
-        // With left pane
-        &.simple-leftpane {
+        // Left sidenav
+        &.left-sidenav {
 
             .header {
                 height: 200px;
@@ -259,37 +259,7 @@
                 background-size: cover;
             }
 
-            .content {
-                background: @material-color-white;
-
-                .leftpane {
-                    width: 240px;
-                    min-width: 240px;
-                    max-width: 240px;
-                    padding: 24px;
-                    z-index: 51;
-                    box-shadow: @whiteframe-shadow-z3;
-
-                    &.md-locked-open {
-                        width: 220px;
-                        min-width: 220px;
-                        max-width: 220px;
-                        z-index: 2;
-                        box-shadow: none;
-                        background: transparent;
-                    }
-                }
-
-                .centerpane {
-                    padding: 24px;
-                }
-            }
-        }
-
-        // With left pane, full height
-        &.simple-leftpane-fullheight {
-
-            .leftpane {
+            .sidenav {
                 width: 240px;
                 min-width: 240px;
                 max-width: 240px;
@@ -307,7 +277,33 @@
                 }
             }
 
-            .centerpane {
+            .content {
+                padding: 24px;
+            }
+        }
+
+        // Left sidenav alt.
+        &.left-sidenav-alt {
+
+            .sidenav {
+                width: 240px;
+                min-width: 240px;
+                max-width: 240px;
+                padding: 24px;
+                z-index: 51;
+                box-shadow: @whiteframe-shadow-z3;
+
+                &.md-locked-open {
+                    width: 220px;
+                    min-width: 220px;
+                    max-width: 220px;
+                    z-index: 2;
+                    box-shadow: none;
+                    background: transparent;
+                }
+            }
+
+            .center {
                 z-index: 3;
                 box-shadow: @whiteframe-shadow-z3;
 
@@ -327,8 +323,8 @@
             }
         }
 
-        // With right pane
-        &.simple-rightpane {
+        // Right sidenav
+        &.right-sidenav {
 
             .header {
                 height: 200px;
@@ -340,36 +336,32 @@
             }
 
             .content {
-                background: @material-color-white;
+                padding: 24px;
+            }
 
-                .centerpane {
-                    padding: 24px;
-                }
+            .sidenav {
+                width: 240px;
+                min-width: 240px;
+                max-width: 240px;
+                padding: 24px;
+                z-index: 51;
+                box-shadow: @whiteframe-shadow-z3;
 
-                .rightpane {
-                    width: 240px;
-                    min-width: 240px;
-                    max-width: 240px;
-                    padding: 24px;
-                    z-index: 51;
-                    box-shadow: @whiteframe-shadow-z3;
-
-                    &.md-locked-open {
-                        width: 220px;
-                        min-width: 220px;
-                        max-width: 220px;
-                        z-index: 2;
-                        box-shadow: none;
-                        background: transparent;
-                    }
+                &.md-locked-open {
+                    width: 220px;
+                    min-width: 220px;
+                    max-width: 220px;
+                    z-index: 2;
+                    box-shadow: none;
+                    background: transparent;
                 }
             }
         }
 
-        // With right pane, full height
-        &.simple-rightpane-fullheight {
+        // Right sidenav alt.
+        &.right-sidenav-alt {
 
-            .centerpane {
+            .center {
                 z-index: 3;
                 box-shadow: @whiteframe-shadow-z3;
 
@@ -388,7 +380,7 @@
                 }
             }
 
-            .rightpane {
+            .sidenav {
                 width: 240px;
                 min-width: 240px;
                 max-width: 240px;

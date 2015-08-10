@@ -387,35 +387,35 @@
                 }
             })
 
-            // Simple - Left Pane, Full Height
-            .state('app.ui.layouts.simple-leftpane-fullheight', {
-                url: '/simple-leftpane-fullheight',
+            // Simple - Left Sidenav Alt.
+            .state('app.ui.layouts.simple-left-sidenav-alt', {
+                url: '/simple-left-sidenav-alt',
                 views: {
                     'content@app': {
-                        templateUrl: 'app/main/ui/layouts/simple/leftpane-fullheight/leftpane-fullheight.html',
-                        controller: 'SimpleLeftpaneFullheightController as vm'
+                        templateUrl: 'app/main/ui/layouts/simple/left-sidenav-alt/left-sidenav-alt.html',
+                        controller: 'SimpleLeftSidenavAltController as vm'
                     }
                 }
             })
 
-            // Simple - Right Pane
-            .state('app.ui.layouts.simple-rightpane', {
-                url: '/simple-rightpane',
+            // Simple - Right Sidenav
+            .state('app.ui.layouts.simple-right-sidenav', {
+                url: '/simple-right-sidenav',
                 views: {
                     'content@app': {
-                        templateUrl: 'app/main/ui/layouts/simple/rightpane/rightpane.html',
-                        controller: 'SimpleRightpaneController as vm'
+                        templateUrl: 'app/main/ui/layouts/simple/right-sidenav/right-sidenav.html',
+                        controller: 'SimpleRightSidenavController as vm'
                     }
                 }
             })
 
-            // Simple - Right Pane, Full Height
-            .state('app.ui.layouts.simple-rightpane-fullheight', {
-                url: '/simple-rightpane-fullheight',
+            // Simple - Right Pane Alt.
+            .state('app.ui.layouts.simple-right-sidenav-alt', {
+                url: '/simple-right-sidenav-alt',
                 views: {
                     'content@app': {
-                        templateUrl: 'app/main/ui/layouts/simple/rightpane-fullheight/rightpane-fullheight.html',
-                        controller: 'SimpleRightpaneFullheightController as vm'
+                        templateUrl: 'app/main/ui/layouts/simple/right-sidenav-alt/right-sidenav-alt.html',
+                        controller: 'SimpleRightSidenavAltController as vm'
                     }
                 }
             })
