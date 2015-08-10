@@ -297,7 +297,6 @@
                 views: {
                     'content@app': {
                         templateUrl: 'app/main/ui/typography/typography.html',
-                        controller: 'TypographyController as vm'
                     }
                 }
             })
