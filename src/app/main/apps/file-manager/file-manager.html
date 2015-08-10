@@ -2,7 +2,7 @@
 
     <!-- Left pane -->
     <md-sidenav class="leftpane" md-component-id="main-sidenav">
-        <div class="main-sidenav" ng-include="'app/main/apps/file-manager/sidenavs/main-sidenav.html'"></div>
+        <div class="main-sidenav" ng-include="'app/main/apps/file-manager/sidenavs/main/main-sidenav.html'"></div>
     </md-sidenav>
     <!-- / Left pane -->
 
@@ -61,8 +61,8 @@
 
         <!-- Content -->
         <md-content class="content" flex>
-            <div ng-if="vm.currentView === 'grid'" ng-include="'app/main/apps/file-manager/views/grid-view.html'"></div>
-            <div ng-if="vm.currentView === 'list'" ng-include="'app/main/apps/file-manager/views/list-view.html'"></div>
+            <div ng-if="vm.currentView === 'grid'" ng-include="'app/main/apps/file-manager/views/grid/grid-view.html'"></div>
+            <div ng-if="vm.currentView === 'list'" ng-include="'app/main/apps/file-manager/views/list/list-view.html'"></div>
         </md-content>
         <!-- / Content -->
 
@@ -71,7 +71,7 @@
 
     <!-- Right pane -->
     <md-sidenav class="rightpane md-sidenav-right" md-is-locked-open="$mdMedia('gt-md')" md-component-id="details-sidenav">
-        <div class="details-sidenav" ng-include="'app/main/apps/file-manager/sidenavs/details-sidenav.html'"></div>
+        <div class="details-sidenav" ng-include="'app/main/apps/file-manager/sidenavs/details/details-sidenav.html'"></div>
     </md-sidenav>
     <!-- / Right pane -->
 
