@@ -1,13 +1,17 @@
 #event-detail-dialog {
+
     md-toolbar {
         min-height: 88px;
         height: 88px;
         min-width: 560px;
         width: 560px;
         box-sizing: border-box;
+
         .md-toolbar-tools {
+            position: relative;
             min-height: 88px;
             height: 88px;
+
             .title {
                 font-size: 20px;
                 padding-left: 8px;
@@ -15,17 +19,22 @@
                 white-space: nowrap;
                 overflow: hidden;
             }
+
             .edit-event-button {
-                margin: 0 0 -80px 0;
+                position: absolute;
+                right: 24px;
+                bottom: -28px;
             }
         }
     }
+
     md-dialog-content {
         font-size: 15px;
         min-width: 560px;
         width: 560px;
         box-sizing: border-box;
         padding: 24px 24px 16px 24px;
+
         .md-avatar {
             width: 40px;
             height: 40px;
