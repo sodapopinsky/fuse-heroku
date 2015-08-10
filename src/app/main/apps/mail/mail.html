@@ -1,19 +1,19 @@
-<div id="mail" class="page-layout carded carded-leftpane" layout="row">
+<div id="mail" class="page-layout carded left-sidenav" layout="row">
 
     <!-- Top background -->
     <div class="top-bg md-accent-bg"></div>
     <!-- / Top background -->
 
-    <!-- Left pane -->
-    <md-sidenav class="leftpane" md-is-locked-open="$mdMedia('gt-md')" md-component-id="main-sidenav"
+    <!-- Sidenav -->
+    <md-sidenav class="sidenav" md-is-locked-open="$mdMedia('gt-md')" md-component-id="main-sidenav"
                 ng-include="'app/main/apps/mail/sidenavs/main/main-sidenav.html'">
     </md-sidenav>
-    <!-- / Left pane -->
+    <!-- / Sidenav -->
 
-    <!-- Center pane -->
-    <div class="centerpane" layout="column" flex>
+    <!-- Center -->
+    <div class="center" layout="column" flex>
 
-        <!-- Center pane header -->
+        <!-- Content header -->
         <div class="header" layout="row" layout-align="start center">
 
             <div class="search-wrapper md-whiteframe-z2" layout="row" layout-align="start center" flex>
@@ -29,7 +29,7 @@
             </div>
 
         </div>
-        <!-- / Center pane header -->
+        <!-- / Content header -->
 
         <!-- Content card -->
         <div class="content-card" layout="column" flex>
@@ -139,6 +139,6 @@
         <!-- / Content card-->
 
     </div>
-    <!-- / Center pane -->
+    <!-- / Center -->
 
 </div>

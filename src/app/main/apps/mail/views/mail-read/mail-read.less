@@ -1,99 +1,90 @@
 #mail {
 
-    .centerpane {
+    .mail-read-pane {
 
-        .content-card {
+        .mail-header {
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
-            .content {
+            .subject {
+                font-size: 17px;
+                font-weight: 500;
+            }
+        }
 
-                .mail-read-pane {
+        .mail-content {
+            padding: 24px 0;
+            font-size: 13px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
-                    .mail-header {
-                        padding-bottom: 24px;
-                        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            .info {
+                padding-bottom: 24px;
 
-                        .subject {
-                            font-size: 17px;
-                            font-weight: 500;
-                        }
-                    }
+                .avatar {
+                    margin-right: 16px;
+                }
 
-                    .mail-content {
-                        padding: 24px 0;
-                        font-size: 13px;
-                        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                .name {
+                    font-weight: 500;
+                }
+            }
+        }
 
-                        .info {
-                            padding-bottom: 24px;
+        .attachments {
+            font-size: 13px;
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
-                            .avatar {
-                                margin-right: 16px;
-                            }
+            .title {
+                margin-bottom: 16px;
+                font-weight: 500;
+            }
 
-                            .name {
-                                font-weight: 500;
-                            }
-                        }
-                    }
+            .attachment {
 
-                    .attachments {
-                        font-size: 13px;
-                        padding: 24px 0;
-                        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                .preview {
+                    width: 100px;
+                    margin: 0 16px 8px 0;
+                }
 
-                        .title {
-                            margin-bottom: 16px;
-                            font-weight: 500;
-                        }
+                .link {
+                    text-decoration: underline;
+                    margin-bottom: 2px;
+                }
 
-                        .attachment {
+                .size {
+                    font-size: 11px;
+                }
+            }
+        }
 
-                            .preview {
-                                width: 100px;
-                                margin: 0 16px 8px 0;
-                            }
+        .reply {
+            padding: 24px 0;
 
-                            .link {
-                                text-decoration: underline;
-                                margin-bottom: 2px;
-                            }
+            .form {
+                margin-left: 16px;
+                border: 1px solid rgba(0, 0, 0, 0.12);
 
-                            .size {
-                                font-size: 11px;
-                            }
-                        }
-                    }
+                textarea {
+                    width: 100% !important;
+                    height: 140px !important;
+                    border: none;
+                    padding: 8px;
+                    box-sizing: border-box;
+                }
 
-                    .reply {
-                        padding: 24px 0;
+                .actions {
+                    padding: 8px 16px;
+                    border-top: 1px solid rgba(0, 0, 0, 0.12);
+                    background-color: rgba(0, 0, 0, 0.03);
 
-                        .form {
-                            margin-left: 16px;
-                            border: 1px solid rgba(0, 0, 0, 0.12);
-
-                            textarea {
-                                width: 100% !important;
-                                height: 140px !important;
-                                border: none;
-                                padding: 8px;
-                                box-sizing: border-box;
-                            }
-
-                            .actions {
-                                padding: 8px 16px;
-                                border-top: 1px solid rgba(0, 0, 0, 0.12);
-                                background-color: rgba(0, 0, 0, 0.03);
-
-                                .send-button {
-                                    margin: 0;
-                                    width: 64px;
-                                    min-width: 64px;
-                                    height: 30px;
-                                    line-height: 30px;
-                                    min-height: 30px;
-                                }
-                            }
-                        }
+                    .send-button {
+                        margin: 0;
+                        width: 64px;
+                        min-width: 64px;
+                        height: 30px;
+                        line-height: 30px;
+                        min-height: 30px;
                     }
                 }
             }

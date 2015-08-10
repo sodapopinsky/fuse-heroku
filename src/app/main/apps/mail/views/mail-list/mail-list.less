@@ -1,73 +1,63 @@
 #mail {
 
-    .centerpane {
+    .mail-list-pane {
 
-        .content-card {
+        .mail-list-item {
+            position: relative;
+            padding: 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            cursor: pointer;
 
-            .content {
+            &.read {
 
-                .mail-list-pane {
+            }
 
-                    .mail-list-item {
-                        position: relative;
-                        padding: 16px;
-                        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-                        cursor: pointer;
+            &.unread {
+                background: @material-color-white;
 
-                        &.read {
+                .info {
 
-                        }
-
-                        &.unread {
-                            background: @material-color-white;
-
-                            .info {
-
-                                .subject,
-                                .message {
-                                    font-weight: 500;
-                                }
-                            }
-                        }
-
-                        &.selected {
-                            background: #E3F2FD;
-                        }
-
-                        &.checked {
-                            background: #FFF8E1;
-                        }
-
-                        .avatar {
-                            margin: 0 8px;
-                        }
-
-                        .info {
-                            overflow: hidden;
-                            margin: 0 12px;
-
-                            .name,
-                            .subject,
-                            .message {
-                                white-space: nowrap;
-                                font-size: 13px;
-                                overflow: hidden;
-                                text-overflow: ellipsis;
-                            }
-
-                            .name {
-                                font-size: 15px;
-                                font-weight: 500;
-                            }
-                        }
-
-                        .time {
-                            font-size: 13px;
-                            margin: 0 8px;
-                        }
+                    .subject,
+                    .message {
+                        font-weight: 500;
                     }
                 }
+            }
 
+            &.selected {
+                background: #E3F2FD;
+            }
+
+            &.checked {
+                background: #FFF8E1;
+            }
+
+            .avatar {
+                margin: 0 8px;
+            }
+
+            .info {
+                overflow: hidden;
+                margin: 0 12px;
+
+                .name,
+                .subject,
+                .message {
+                    white-space: nowrap;
+                    font-size: 13px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .name {
+                    font-size: 15px;
+                    font-weight: 500;
+                }
+            }
+
+            .time {
+                font-size: 13px;
+                margin: 0 8px;
             }
         }
     }
