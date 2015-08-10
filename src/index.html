@@ -31,6 +31,7 @@
     <body md-theme="{{vm.themes.active.name}}" md-theme-watch ng-controller="AppController as vm">
         <div id="main-wrapper" class="animate slide-up" flex layout="row" ui-view="main"></div>
 
+        <div id="theme-changer" ui-view="themeChanger"></div>
         <!-- build:js(src) scripts/vendor.js -->
             <!-- bower:js -->
                 <!-- run `gulp inject` to automatically populate bower script dependencies -->

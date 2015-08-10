@@ -33,8 +33,8 @@
                         templateUrl: 'app/sidenav/quick-panel/quick-panel.html',
                         controller: 'QuickPanelController as vm'
                     },
-                    'themeChanger@app': {
-                        templateUrl: 'app/components/theme-changer/theme-changer.html',
+                    'themeChanger': {
+                        templateUrl: 'app/core/theming/theme-changer/theme-changer.html',
                         controller: 'ThemeChangerController as vm'
                     }
                 }
