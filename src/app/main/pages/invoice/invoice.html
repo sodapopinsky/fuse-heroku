@@ -1,12 +1,16 @@
-<div id="invoice" class="md-background-bg md-hue-1" layout="column" layout-fill>
+<div id="invoice" class="page-layout blank" layout="row">
+
+    <!-- Invoice -->
     <div class="card md-whiteframe-z1 md-background-bg">
-        <header layout="row" layout-align="space-between start">
-            <div layout="column" class="ids">
-                <div layout="row" class="from" layout-align="start center">
+        <div class="header" layout="row" layout-align="space-between start">
+            <div class="ids" layout="column">
+                <div layout="row" class="seller" layout-align="start center">
                     <div class="logo md-accent-bg" layout="row" layout-align="center center">
                         <div>F</div>
                     </div>
+
                     <div class="divider"></div>
+
                     <div class="detail">
                         <div class="title">{{vm.invoice.from.title}}</div>
                         <div ng-if="vm.invoice.from.address" class="address">{{vm.invoice.from.address}}</div>
@@ -15,11 +19,14 @@
                         <div ng-if="vm.invoice.from.website" class="website">Web: {{vm.invoice.from.website}}</div>
                     </div>
                 </div>
+
                 <div layout="row" class="client" layout-align="start center">
                     <div class="label" layout="row" layout-align="end center">
                         <div>CLIENT</div>
                     </div>
+
                     <div class="divider"></div>
+
                     <div class="detail">
                         <div class="title">{{vm.invoice.client.title}}</div>
                         <div ng-if="vm.invoice.client.address" class="address">{{vm.invoice.client.address}}</div>
@@ -29,97 +36,104 @@
                     </div>
                 </div>
             </div>
+
             <table class="summary">
                 <tr class="code">
                     <td class="label">INVOICE</td>
                     <td class="value">{{vm.invoice.number}}</td>
                 </tr>
+
                 <tr>
                     <td class="label">INVOICE DATE</td>
                     <td class="value">{{vm.invoice.date}}</td>
                 </tr>
+
                 <tr>
                     <td class="label">DUE DATE</td>
                     <td class="value">{{vm.invoice.dueDate}}</td>
                 </tr>
+
                 <tr>
                     <td class="label">TOTAL DUE</td>
                     <td class="value">{{vm.invoice.total | currency}}</td>
                 </tr>
-
             </table>
-        </header>
+        </div>
+
         <div class="content">
             <table class="invoice-table table-simple">
                 <thead>
-                <th>SERVICE</th>
-                <th>UNIT</th>
-                <th class="text-right">UNIT PRICE</th>
-                <th class="text-right">QUANTITY</th>
-                <th class="text-right">TOTAL</th>
+                    <th>SERVICE</th>
+                    <th>UNIT</th>
+                    <th class="text-right">UNIT PRICE</th>
+                    <th class="text-right">QUANTITY</th>
+                    <th class="text-right">TOTAL</th>
                 </thead>
                 <tbody>
-                <tr ng-repeat="service in vm.invoice.services">
-                    <td>
-                        <div class="title"> {{service.title}}</div>
-                        <div class="detail"> {{service.detail}}</div>
-                    </td>
-                    <td>
-                        {{service.unit}}
-                    </td>
-                    <td class="text-right">
-                        {{service.unitPrice | currency}}
-                    </td>
-                    <td class="text-right">
-                        {{service.quantity}}
-                    </td>
-                    <td class="text-right">
-                        {{service.total | currency}}
-                    </td>
-                </tr>
+                    <tr ng-repeat="service in vm.invoice.services">
+                        <td>
+                            <div class="title"> {{service.title}}</div>
+                            <div class="detail"> {{service.detail}}</div>
+                        </td>
+                        <td>
+                            {{service.unit}}
+                        </td>
+                        <td class="text-right">
+                            {{service.unitPrice | currency}}
+                        </td>
+                        <td class="text-right">
+                            {{service.quantity}}
+                        </td>
+                        <td class="text-right">
+                            {{service.total | currency}}
+                        </td>
+                    </tr>
                 </tbody>
 
             </table>
             <table class="invoice-table-footer table-simple">
                 <tbody>
-                <tr class="subtotal">
-                    <td>SUBTOTAL</td>
-                    <td>{{vm.invoice.subtotal | currency}}</td>
-                </tr>
-                <tr class="tax">
-                    <td>TAX</td>
-                    <td>{{vm.invoice.tax | currency}}</td>
-                </tr>
-                <tr class="discount">
-                    <td>DISCOUNT</td>
-                    <td>-{{vm.invoice.discount | currency}}</td>
-                </tr>
-                <tr class="total">
-                    <td>TOTAL</td>
-                    <td>{{vm.invoice.total | currency}}</td>
-                </tr>
+                    <tr class="subtotal">
+                        <td>SUBTOTAL</td>
+                        <td>{{vm.invoice.subtotal | currency}}</td>
+                    </tr>
+                    <tr class="tax">
+                        <td>TAX</td>
+                        <td>{{vm.invoice.tax | currency}}</td>
+                    </tr>
+                    <tr class="discount">
+                        <td>DISCOUNT</td>
+                        <td>-{{vm.invoice.discount | currency}}</td>
+                    </tr>
+                    <tr class="total">
+                        <td>TOTAL</td>
+                        <td>{{vm.invoice.total | currency}}</td>
+                    </tr>
                 </tbody>
             </table>
-            <div class="foot-note">
-                <div class="note">Please pay within 15 days. Thank you for your business.</div>
-                <div layout="row" layout-align="start start">
-                    <div class="logo md-accent-bg" layout="row" layout-align="center center">
-                        <div>F</div>
-                    </div>
-                    <div class="small-note">In condimentum malesuada efficitur. Mauris volutpat placerat auctor. Ut ac
-                        congue dolor. Quisque scelerisque lacus sed feugiat fermentum. Cras aliquet facilisis
-                        pellentesque. Nunc hendrerit quam at leo commodo,
-                        a suscipit tellus dapibus. Etiam at felis volutpat est mollis lacinia. Mauris placerat sem sit
-                        amet velit mollis, in porttitor ex finibus. Proin eu nibh id libero tincidunt lacinia et eget
-                        eros. Nulla laoreet ipsum quam, quis
-                        auctor velit sodales sit amet. Phasellus at felis iaculis, sodales lectus vitae, egestas mauris.
-                        Duis cursus, metus non dignissim consectetur, augue erat convallis massa, sit amet mollis lacus
-                        lorem eu purus. Praesent
-                        posuere ante quam. Curabitur ultricies magna diam, non consequat purus suscipit quis. Proin
-                        egestas nibh id massa dapibus, sed auctor velit ullamcorper. Integer id dolor nunc.
-                    </div>
+        </div>
+
+        <div class="footer">
+            <div class="note">Please pay within 15 days. Thank you for your business.</div>
+            <div layout="row" layout-align="start start">
+                <div class="logo md-accent-bg" layout="row" layout-align="center center">
+                    <div>F</div>
+                </div>
+                <div class="small-note">In condimentum malesuada efficitur. Mauris volutpat placerat auctor. Ut ac
+                    congue dolor. Quisque scelerisque lacus sed feugiat fermentum. Cras aliquet facilisis
+                    pellentesque. Nunc hendrerit quam at leo commodo,
+                    a suscipit tellus dapibus. Etiam at felis volutpat est mollis lacinia. Mauris placerat sem sit
+                    amet velit mollis, in porttitor ex finibus. Proin eu nibh id libero tincidunt lacinia et eget
+                    eros. Nulla laoreet ipsum quam, quis
+                    auctor velit sodales sit amet. Phasellus at felis iaculis, sodales lectus vitae, egestas mauris.
+                    Duis cursus, metus non dignissim consectetur, augue erat convallis massa, sit amet mollis lacus
+                    lorem eu purus. Praesent
+                    posuere ante quam. Curabitur ultricies magna diam, non consequat purus suscipit quis. Proin
+                    egestas nibh id massa dapibus, sed auctor velit ullamcorper. Integer id dolor nunc.
                 </div>
             </div>
         </div>
     </div>
+    <!-- / Invoice -->
+
 </div>

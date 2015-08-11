@@ -1,34 +1,42 @@
 #invoice {
     padding: 80px;
+
     .card {
         max-width: 1400px;
         box-sizing: border-box;
         padding: 96px;
         overflow: hidden;
-        header {
+
+        .header {
+
             .ids {
                 font-size: 13px;
                 line-height: 22px;
                 color: rgba(0, 0, 0, 0.54);
+
                 .detail {
                     width: 160px;
                 }
-                .from {
+
+                .seller {
                     margin-bottom: 80px;
+
                     .logo {
                         width: 156px;
                         height: 156px;
                         font-size: 115px;
                     }
                 }
+
                 .client {
+
                     .label {
                         width: 156px;
                         font-size: 24px;
                         font-weight: 300;
                     }
-
                 }
+
                 .divider {
                     width: 1px;
                     margin: 0 48px;
@@ -36,29 +44,33 @@
                     height: 144px;
                 }
             }
+
             .summary {
                 font-size: 15px;
-                td {
-                    padding-bottom: 8px;
-                }
+
                 .label {
                     color: rgba(0, 0, 0, 0.54);
                     text-align: right;
                     padding-right: 16px;
                 }
+
                 .value {
                     color: rgba(0, 0, 0, 1);
                 }
+
                 .code {
                     font-size: 35px;
                     font-weight: 300;
+
                     td {
                         padding-bottom: 32px;
                     }
                 }
             }
         }
+
         .content {
+
             .invoice-table {
                 font-size: 15px;
                 font-weight: 500;
@@ -67,6 +79,7 @@
                 .title {
                     font-size: 17px;
                 }
+
                 .detail {
                     margin-top: 8px;
                     font-size: 12px;
@@ -74,26 +87,34 @@
                     max-width: 360px;
                 }
             }
+
             .invoice-table-footer {
                 margin: 32px 0 96px 0;
+
                 tr {
+
                     td {
-                        &:first-child {
-                            text-align: left;
-                        }
                         text-align: right;
                         font-size: 17px;
                         font-weight: 500;
                         color: rgba(0, 0, 0, 0.54);
                         border-bottom: none;
                         padding: 8px 8px;
+
+                        &:first-child {
+                            text-align: left;
+                        }
                     }
+
                     &.discount {
+
                         td {
                             padding-bottom: 32px;
                         }
                     }
+
                     &.total {
+
                         td {
                             padding: 32px 8px;
                             border-top: 1px solid rgba(0, 0, 0, 0.12);
@@ -104,28 +125,32 @@
                     }
                 }
             }
-            .foot-note {
-                .note {
-                    font-size: 15px;
-                    font-weight: 500;
-                    margin-bottom: 24px;
-                }
-                .logo {
-                    width: 32px;
-                    min-width: 32px;
-                    height: 32px;
-                    font-size: 17px;
-                    font-weight: 500;
-                    margin-right: 24px;
-                    border-radius: 2px;
-                    overflow: hidden;
-                }
-                .small-note {
-                    font-size: 12px;
-                    font-weight: 500;
-                    color: rgba(0, 0, 0, 0.54);
-                    line-height: 18px;
-                }
+        }
+
+        .footer {
+
+            .note {
+                font-size: 15px;
+                font-weight: 500;
+                margin-bottom: 24px;
+            }
+
+            .logo {
+                width: 32px;
+                min-width: 32px;
+                height: 32px;
+                font-size: 17px;
+                font-weight: 500;
+                margin-right: 24px;
+                border-radius: 2px;
+                overflow: hidden;
+            }
+
+            .small-note {
+                font-size: 12px;
+                font-weight: 500;
+                color: rgba(0, 0, 0, 0.54);
+                line-height: 18px;
             }
         }
     }
