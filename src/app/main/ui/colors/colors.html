@@ -1,15 +1,24 @@
-<div id="colors">
-    <header class="page-header md-accent-bg" layout="column">
-        <div class="breadcrumb" layout="row" layout-align="start center">
-            <md-icon md-font-icon="icon-home" class="s18"></md-icon>
-            <md-icon md-font-icon="icon-keyboard_arrow_right" class="s18 separator"></md-icon>
-            <span class="parent">USER INTERFACE</span>
-        </div>
-        <div class="title">Colors</div>
-    </header>
+<div id="colors" class="page-layout simple tabbed doc-page" layout="column" layout-fill>
 
-    <div layout-padding class="content">
-        <md-tabs class="color-tabs  md-whiteframe-z3" md-dynamic-height md-swipe-content md-stretch-tabs="always">
+    <!-- Header -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+
+        <div layout="column" layout-align="center start">
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-home" class="s18"></md-icon>
+                <md-icon md-font-icon="icon-keyboard_arrow_right" class="s18 separator"></md-icon>
+                <span class="parent">USER INTERFACE</span>
+            </div>
+            <div class="title">Colors</div>
+        </div>
+
+    </div>
+    <!-- / Header -->
+
+    <!-- Content -->
+    <div class="content">
+
+        <md-tabs class="color-tabs" md-dynamic-height md-swipe-content md-stretch-tabs="always">
             <md-tab label="PRIMARY COLOR">
                 <md-content class="color-tab" ng-include="'app/main/ui/colors/tabs/primary/primary.html'"></md-content>
             </md-tab>
@@ -26,5 +35,8 @@
                 <md-content class="color-tab" ng-include="'app/main/ui/colors/tabs/background/background.html'"></md-content>
             </md-tab>
         </md-tabs>
+
     </div>
+    <!-- / Content -->
+
 </div>

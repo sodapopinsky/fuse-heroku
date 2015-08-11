@@ -1,14 +1,23 @@
-<div id="icons">
-    <header class="page-header md-accent-bg" layout="column">
-        <div class="breadcrumb" layout="row" layout-align="start center">
-            <md-icon md-font-icon="icon-home" class="s18"></md-icon>
-            <md-icon md-font-icon="icon-keyboard_arrow_right" class="s18 separator"></md-icon>
-            <span class="parent">USER INTERFACE</span>
-        </div>
-        <div class="title">Icons</div>
-    </header>
+<div id="icons" class="page-layout simple fullwidth doc-page" layout="column" layout-fill>
 
+    <!-- Header -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+
+        <div layout="column" layout-align="center start">
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-home" class="s18"></md-icon>
+                <md-icon md-font-icon="icon-keyboard_arrow_right" class="s18 separator"></md-icon>
+                <span class="parent">USER INTERFACE</span>
+            </div>
+            <div class="title">Icons</div>
+        </div>
+
+    </div>
+    <!-- / Header -->
+
+    <!-- Content -->
     <div class="content" layout="column">
+
         <div id="icons-toolbar" flex="100" layout="row" layout-align="space-between center">
             <div flex="50" class="search md-whiteframe-z1 md-background-bg" layout="row" layout-align="start center">
                 <md-icon flex md-font-icon="icon-search" class="name md-background-bg s24"></md-icon>
@@ -16,7 +25,7 @@
             </div>
 
             <div layout="row" layout-align="center center">
-                 <span>Icon Size: </span>
+                <span>Icon Size: </span>
                 <md-select placeholder="Sizes" ng-model="vm.iconSize">
                     <md-option ng-repeat="size in vm.iconSizes" value="{{size}}">{{size}}</md-option>
                 </md-select>
@@ -35,6 +44,8 @@
                 </md-button>
             </div>
         </div>
+
     </div>
+    <!-- / Content -->
 
 </div>
