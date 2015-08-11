@@ -1,5 +1,5 @@
 <!-- List view -->
-<table class="list-view table-simple">
+<table class="simple list-view">
     <thead>
         <tr>
             <th></th>
@@ -12,8 +12,10 @@
             <th></th>
         </tr>
     </thead>
+
     <tbody>
-        <tr ng-repeat="folder in vm.folders" ng-click="vm.select(folder)" ng-class="{'selected' : vm.selected === folder}">
+        <tr ng-repeat="folder in vm.folders" ng-click="vm.select(folder)"
+            ng-class="{'selected' : vm.selected === folder}">
             <td class="file-icon">
                 <i class="icon- s18" ng-class="folder.type"></i>
             </td>
