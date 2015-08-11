@@ -24,10 +24,8 @@
             </md-input-container>
 
             <div class="terms" layout="row" layout-align="start center">
-                <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
-                    I read and accept
-                </md-checkbox>
-                <a class="md-accent-color">Terms and Conditions</a>
+                <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1"></md-checkbox>
+                <span>I read and accept <a href="#" class="md-accent-color">terms and conditions</a></span>
             </div>
 
             <md-button class="md-raised md-accent">
@@ -35,9 +33,9 @@
             </md-button>
         </form>
 
-        <div class="have-account">
-            <span>Already have an account?</span>
-            <a ui-sref="app.pages.auth.login" class="md-accent-color">Sign in</a>
+        <div class="login" layout="row" layout-align="center center">
+            <span class="text">Already have an account?</span>
+            <a class="link" ui-sref="app.pages.auth.login">Log in</a>
         </div>
     </md-whiteframe>
 </div>

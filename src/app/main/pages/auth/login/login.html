@@ -4,7 +4,7 @@
             <span>F</span>
         </div>
 
-        <div class="title">Sign into your account</div>
+        <div class="title">Log in to your account</div>
 
         <form layout="column">
             <md-input-container flex md-no-float>
@@ -15,7 +15,7 @@
                 <input placeholder="Password" ng-model="vm.form.password" type="password">
             </md-input-container>
 
-            <div class="remember-forget" layout="row" layout-align="space-between center">
+            <div class="remember-me" layout="row" layout-align="space-between center">
                 <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
                     Remember Me
                 </md-checkbox>
@@ -23,19 +23,19 @@
             </div>
 
             <md-button class="md-raised md-accent">
-                SIGN IN
+                LOG IN
             </md-button>
         </form>
 
         <div class="separator">
-            <span>OR</span>
+            <span class="text">OR</span>
         </div>
 
         <md-button class="md-raised google">
             <div layout="row" layout-align="center center">
                 <span>
                     <md-icon md-font-icon="icon-google-plus-square"></md-icon>
-                    Sign in with Google
+                    Log in with Google
                 </span>
             </div>
         </md-button>
@@ -44,14 +44,14 @@
             <div layout="row" layout-align="center center">
                 <span>
                     <md-icon md-font-icon="icon-facebook-square"></md-icon>
-                    Login with Facebook
+                    Log in with Facebook
                 </span>
             </div>
         </md-button>
 
-        <div class="create-account" layout="row" layout-align="space-between center">
-            <span>Don't have an account?</span>
-            <a ui-sref="app.pages.auth.register" class="md-accent-color">Create an account</a>
+        <div class="register" layout="row" layout-align="center center">
+            <span class="text">Don't have an account?</span>
+            <a class="link" ui-sref="app.pages.auth.register">Create an account</a>
         </div>
     </md-whiteframe>
 </div>
