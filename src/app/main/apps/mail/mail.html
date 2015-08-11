@@ -35,84 +35,82 @@
         <div class="content-card" layout="column" flex>
 
             <!-- Content toolbar -->
-            <div class="toolbar" layout="row" layout-align="start center">
+            <div class="toolbar" layout="row" layout-align="space-between center">
 
-                <div class="actions" flex layout="row" layout-align="space-between center">
-                    <div layout="row" layout-align="start center">
-                        <md-checkbox aria-label="Check All" ng-checked="vm.allChecked"
-                                     ng-click="vm.checkAll()"></md-checkbox>
-                        <md-menu>
-                            <md-button aria-label="check options" class="md-icon-button"
-                                       ng-click="$mdOpenMenu($event)">
-                                <md-icon md-font-icon="icon-arrow_drop_down"></md-icon>
-                            </md-button>
-                            <md-menu-content width="3">
-                                <md-menu-item>
-                                    <md-button aria-label="all">All</md-button>
-                                </md-menu-item>
-                                <md-menu-item>
-                                    <md-button aria-label="none">None</md-button>
-                                </md-menu-item>
-                                <md-menu-item>
-                                    <md-button aria-label="read">Read</md-button>
-                                </md-menu-item>
-                                <md-menu-item>
-                                    <md-button aria-label="unread">Unread</md-button>
-                                </md-menu-item>
-                                <md-menu-item>
-                                    <md-button aria-label="starred">Starred</md-button>
-                                </md-menu-item>
-                                <md-menu-item>
-                                    <md-button aria-label="unstarred">Unstarred</md-button>
-                                </md-menu-item>
-                            </md-menu-content>
-                        </md-menu>
-
-                        <div class="divider-vertical"></div>
-
-                        <md-button class="md-icon-button" aria-label="archive">
-                            <md-icon md-font-icon="icon-archive"></md-icon>
-                            <md-tooltip>Archive</md-tooltip>
+                <div layout="row" layout-align="start center">
+                    <md-checkbox aria-label="Check All" ng-checked="vm.allChecked"
+                                 ng-click="vm.checkAll()"></md-checkbox>
+                    <md-menu>
+                        <md-button aria-label="check options" class="md-icon-button"
+                                   ng-click="$mdOpenMenu($event)">
+                            <md-icon md-font-icon="icon-arrow_drop_down"></md-icon>
                         </md-button>
+                        <md-menu-content width="3">
+                            <md-menu-item>
+                                <md-button aria-label="all">All</md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button aria-label="none">None</md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button aria-label="read">Read</md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button aria-label="unread">Unread</md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button aria-label="starred">Starred</md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button aria-label="unstarred">Unstarred</md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
 
-                        <md-button class="md-icon-button" aria-label="report">
-                            <md-icon md-font-icon="icon-report"></md-icon>
-                            <md-tooltip>Report Spam</md-tooltip>
-                        </md-button>
+                    <div class="divider-vertical"></div>
 
-                        <md-button class="md-icon-button" aria-label="delete">
-                            <md-icon md-font-icon="icon-delete"></md-icon>
-                            <md-tooltip>Delete</md-tooltip>
-                        </md-button>
+                    <md-button class="md-icon-button" aria-label="archive">
+                        <md-icon md-font-icon="icon-archive"></md-icon>
+                        <md-tooltip>Archive</md-tooltip>
+                    </md-button>
 
-                        <div class="divider-vertical"></div>
+                    <md-button class="md-icon-button" aria-label="report">
+                        <md-icon md-font-icon="icon-report"></md-icon>
+                        <md-tooltip>Report Spam</md-tooltip>
+                    </md-button>
 
-                        <md-button class="md-icon-button" aria-label="folder">
-                            <md-icon md-font-icon="icon-folder"></md-icon>
-                            <md-tooltip>Move to</md-tooltip>
-                        </md-button>
+                    <md-button class="md-icon-button" aria-label="delete">
+                        <md-icon md-font-icon="icon-delete"></md-icon>
+                        <md-tooltip>Delete</md-tooltip>
+                    </md-button>
 
-                        <md-button class="md-icon-button" aria-label="label">
-                            <md-icon md-font-icon="icon-label"></md-icon>
-                            <md-tooltip>Labels</md-tooltip>
-                        </md-button>
-                    </div>
+                    <div class="divider-vertical"></div>
 
-                    <div layout="row" layout-align="end center">
-                        <md-button class="md-icon-button" aria-label="refresh">
-                            <md-icon md-font-icon="icon-refresh"></md-icon>
-                        </md-button>
+                    <md-button class="md-icon-button" aria-label="folder">
+                        <md-icon md-font-icon="icon-folder"></md-icon>
+                        <md-tooltip>Move to</md-tooltip>
+                    </md-button>
 
-                        <span class="page-info">1 - 100 of 980</span>
+                    <md-button class="md-icon-button" aria-label="label">
+                        <md-icon md-font-icon="icon-label"></md-icon>
+                        <md-tooltip>Labels</md-tooltip>
+                    </md-button>
+                </div>
 
-                        <md-button class="md-icon-button arrow" aria-label="previous">
-                            <md-icon md-font-icon="icon-keyboard_arrow_left"></md-icon>
-                        </md-button>
+                <div layout="row" layout-align="start center">
+                    <md-button class="md-icon-button" aria-label="refresh">
+                        <md-icon md-font-icon="icon-refresh"></md-icon>
+                    </md-button>
 
-                        <md-button class="md-icon-button arrow" aria-label="next">
-                            <md-icon md-font-icon="icon-keyboard_arrow_right"></md-icon>
-                        </md-button>
-                    </div>
+                    <span class="page-info">1 - 100 of 980</span>
+
+                    <md-button class="md-icon-button arrow" aria-label="previous">
+                        <md-icon md-font-icon="icon-keyboard_arrow_left"></md-icon>
+                    </md-button>
+
+                    <md-button class="md-icon-button arrow" aria-label="next">
+                        <md-icon md-font-icon="icon-keyboard_arrow_right"></md-icon>
+                    </md-button>
                 </div>
             </div>
             <!-- / Content toolbar -->

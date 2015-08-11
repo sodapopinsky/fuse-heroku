@@ -35,38 +35,36 @@
         <div class="content-card" layout="column" flex>
 
             <!-- Content toolbar -->
-            <div class="toolbar" layout="row" layout-align="start center">
+            <div class="toolbar" layout="row" layout-align="space-between center">
 
-                <div class="actions" flex="100" layout="row" layout-align="space-between center">
-                    <div layout="row" layout-align="start center">
-                        <md-select class="simplified" ng-model="vm.selectedFilter.filter" placeholder="Filter">
-                            <md-option ng-repeat="filter in vm.filters.filter" value="{{filter}}">{{filter}}</md-option>
-                        </md-select>
+                <div layout="row" layout-align="start center">
+                    <md-select class="simplified" ng-model="vm.selectedFilter.filter" placeholder="Filter">
+                        <md-option ng-repeat="filter in vm.filters.filter" value="{{filter}}">{{filter}}</md-option>
+                    </md-select>
 
-                        <div class="divider-vertical"></div>
+                    <div class="divider-vertical"></div>
 
-                        <md-select class="simplified" ng-model="vm.selectedFilter.order" placeholder="Order">
-                            <md-option ng-repeat="order in vm.filters.order" value="{{order}}">{{order}}</md-option>
-                        </md-select>
+                    <md-select class="simplified" ng-model="vm.selectedFilter.order" placeholder="Order">
+                        <md-option ng-repeat="order in vm.filters.order" value="{{order}}">{{order}}</md-option>
+                    </md-select>
 
-                        <div class="divider-vertical"></div>
+                    <div class="divider-vertical"></div>
 
-                        <md-select class="simplified" ng-model="vm.selectedFilter.next" placeholder="Next..">
-                            <md-option ng-repeat="next in vm.filters.next" value="{{next}}">{{next}}</md-option>
-                        </md-select>
-                    </div>
+                    <md-select class="simplified" ng-model="vm.selectedFilter.next" placeholder="Next..">
+                        <md-option ng-repeat="next in vm.filters.next" value="{{next}}">{{next}}</md-option>
+                    </md-select>
+                </div>
 
-                    <div layout="row" layout-align="end center">
-                        <span class="page-info">1 - 100 of 980</span>
+                <div layout="row" layout-align="start center">
+                    <span class="page-info">1 - 100 of 980</span>
 
-                        <md-button class="md-icon-button arrow" aria-label="previous">
-                            <md-icon md-font-icon="icon-keyboard_arrow_left"></md-icon>
-                        </md-button>
+                    <md-button class="md-icon-button arrow" aria-label="previous">
+                        <md-icon md-font-icon="icon-keyboard_arrow_left"></md-icon>
+                    </md-button>
 
-                        <md-button class="md-icon-button arrow" aria-label="next">
-                            <md-icon md-font-icon="icon-keyboard_arrow_right"></md-icon>
-                        </md-button>
-                    </div>
+                    <md-button class="md-icon-button arrow" aria-label="next">
+                        <md-icon md-font-icon="icon-keyboard_arrow_right"></md-icon>
+                    </md-button>
                 </div>
 
             </div>
