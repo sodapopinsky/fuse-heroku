@@ -1,37 +1,46 @@
 <div id="coming-soon" layout="column" layout-fill layout-align="center center">
-    <md-whiteframe class="md-whiteframe-z1 md-background-bg" layout="column" layout-align="center center">
-        <div class="logo md-accent-bg" layout="column" layout-align="center center">
-            <small>F</small>
+    <md-whiteframe class="md-whiteframe-z1 md-background-bg" layout="column">
+        <div class="top" layout="column" layout-align="center center">
+            <div class="logo md-accent-bg" layout="row" layout-align="center center">
+                <small>F</small>
+            </div>
+
+            <div class="title">Hey! Thank you for checking out our app.</div>
+            <div class="subtitle">It’s not quite ready yet, but we are working hard and it will be ready in approximately:
+            </div>
+
+            <timer start-time="vm.startTime" layout="row">
+                <div layout="column" layout-align="center center">
+                    <span class="value">{{days}}</span>
+                    <span class="type">days</span>
+                </div>
+
+                <div layout="column" layout-align="center center">
+                    <span class="value">{{hours}}</span>
+                    <span class="type">hours</span>
+                </div>
+
+                <div layout="column" layout-align="center center">
+                    <span class="value">{{minutes}}</span>
+                    <span class="type">minutes</span>
+                </div>
+
+                <div layout="column" layout-align="center center">
+                    <span class="value">{{seconds}}</span>
+                    <span class="type">seconds</span>
+                </div>
+            </timer>
         </div>
-        <div class="title">Hey! Thank you for checking out our app.</div>
-        <div class="sub-title">It’s not quite ready yet, but we are working hard
-            and it will be ready in approximately:
-        </div>
-        <timer start-time="vm.startTime" layout="row">
-            <div layout="column" layout-align="center center">
-                <span class="value">{{days}}</span>
-                <span class="type">days</span>
-            </div>
-            <div layout="column" layout-align="center center">
-                <span class="value">{{hours}}</span>
-                <span class="type">hours</span>
-            </div>
-            <div layout="column" layout-align="center center">
-                <span class="value">{{minutes}}</span>
-                <span class="type">minutes</span>
-            </div>
-            <div layout="column" layout-align="center center">
-                <span class="value">{{seconds}}</span>
-                <span class="type">seconds</span>
-            </div>
-        </timer>
+
         <form layout="column">
             <span class="message">
                 If you would like to be notified when the app is ready, you can subscribe to our e-mail list.
             </span>
+
             <md-input-container flex md-no-float>
                 <input placeholder="Email address" type="password">
             </md-input-container>
+
             <md-button class="md-raised md-accent">
                 SUBSCRIBE
             </md-button>
