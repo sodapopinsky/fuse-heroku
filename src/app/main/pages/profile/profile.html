@@ -1,20 +1,23 @@
-<div id="profile" layout="column" layout-fill>
-    <header layout="column" layout-align="end start">
-        <div layout="row" layout-align="space-between end" layout-fill>
-            <div layout="row" layout-align="start center">
-                <img src="assets/images/avatars/katherine.png" class="profile-img"/>
+<div id="profile" class="page-layout simple tabbed" layout="column" layout-fill>
 
-                <div class="username">Katherine Wilson</div>
-            </div>
-            <div layout="row" layout-align="end center">
-                <md-button class="md-raised md-accent">Follow</md-button>
-                <md-button class="md-raised md-primary">Send Message</md-button>
-            </div>
+    <!-- Header -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between end">
+        <div class="user-info" layout="row" layout-align="start center">
+            <img class="profile-image" src="assets/images/avatars/katherine.png">
+            <div class="name">Katherine Wilson</div>
         </div>
-    </header>
 
+        <div class="actions" layout="row" layout-align="end center">
+            <md-button class="md-raised md-accent">Follow</md-button>
+            <md-button class="md-raised md-primary">Send Message</md-button>
+        </div>
+    </div>
+    <!-- / Header -->
+
+    <!-- Content -->
     <div class="content" flex>
-        <md-tabs md-dynamic-height md-border-bottom>
+
+        <md-tabs md-dynamic-height>
             <md-tab label="Timeline">
                 <md-content class="timeline-tab"
                             ng-include="'app/main/pages/profile/tabs/timeline/timeline.html'">
@@ -31,5 +34,8 @@
                 </md-content>
             </md-tab>
         </md-tabs>
+
     </div>
+    <!-- / Content -->
+
 </div>

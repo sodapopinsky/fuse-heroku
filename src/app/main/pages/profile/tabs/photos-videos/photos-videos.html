@@ -1,13 +1,13 @@
 <div class="photos-videos">
     <div class="period" data-ng-repeat="period in vm.photosVideos">
-        <div class="title">
-            <span class="date">{{period.date}}</span>
-            <span class="context">{{period.context}}</span>
+        <div class="period-title">
+            <span class="name">{{period.name}}</span>
+            <span class="info">{{period.info}}</span>
         </div>
 
-        <div class="medias" layout="row" layout-wrap>
+        <div class="period-media" layout="row" layout-wrap>
             <div class="media" ng-repeat="media in period.media">
-                <img class="preview" ng-src="{{media.preview}}">
+                <img class="preview" ng-src="{{media.preview}}" title="{{media.title}}">
                 <div class="title">{{media.title}}</div>
             </div>
         </div>
