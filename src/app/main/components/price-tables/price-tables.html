@@ -1,6 +1,6 @@
 <div id="price-tables" class="page-layout simple fullwidth doc-page" layout="column" layout-fill>
 
-    <!-- Header -->
+    <!-- package-type -->
     <div class="header md-accent-bg" layout="row" layout-align="space-between">
 
         <div layout="column" layout-align="center start">
@@ -13,192 +13,241 @@
         </div>
 
     </div>
-    <!-- / Header -->
+    <!-- / package-type -->
 
     <!-- Content -->
     <div class="content">
 
+        <!-- Style 1 -->
         <div class="md-title">Style 1</div>
 
-        <div class="price-tables-wrapper" flex layout="row" layout-wrap>
-            <div class="price-table style-1 md-whiteframe-z2" layout="column">
-                <div class="header md-primary-bg">
+        <div class="price-tables" flex layout="row" layout-wrap>
+            <div class="price-table style-1 md-whiteframe-z1" layout="column">
+                <div class="package-type md-primary-bg">
                     <span>BASIC</span>
                 </div>
-                <div class="price" layout="row" layout-align="center end">
+
+                <div class="price" layout="row" layout-align="center start">
                     <div class="currency">$</div>
-                    <div class="value">4</div>
-                    <div class="period">/ month</div>
+                    <div layout="row" layout-align="center end">
+                        <div class="value">4</div>
+                        <div class="period">/ month</div>
+                    </div>
                 </div>
+
                 <md-divider></md-divider>
+
                 <div class="terms" layout="column">
-                    <div class="term"><b>10</b> Projects</div>
-                    <div class="term"><b>10</b> Pages</div>
-                    <div class="term"><b>100</b> Mb Disk Space</div>
+                    <div class="term"><span class="bold">10</span> Projects</div>
+                    <div class="term"><span class="bold">10</span> Pages</div>
+                    <div class="term"><span class="bold">100</span> Mb Disk Space</div>
                 </div>
-                <md-button class="md-raised md-accent">BUY NOW</md-button>
+
+                <md-button class="cta-button md-raised md-accent">BUY NOW</md-button>
             </div>
 
-            <div class="price-table style-1 md-whiteframe-z2" layout="column">
-                <div class="header md-primary-bg">
+            <div class="price-table style-1 md-whiteframe-z4" layout="column">
+                <div class="package-type md-primary-bg" layout="row" layout-align="space-between center">
                     <span>STANDARD</span>
-                </div>
-                <div class="price" layout="row" layout-align="center end">
-                    <div class="currency">$</div>
-                    <div class="value">8</div>
-                    <div class="period">/ month</div>
-                </div>
-                <md-divider></md-divider>
-                <div class="terms" layout="column">
-                    <div class="term"><b>20</b> Projects</div>
-                    <div class="term"><b>20</b> Pages</div>
-                    <div class="term"><b>200</b> Mb Disk Space</div>
-                </div>
-                <md-button class="md-raised md-accent">BUY NOW</md-button>
-            </div>
-
-            <div class="price-table style-1 md-whiteframe-z2" layout="column">
-                <div class="header md-primary-bg" layout="row" layout-align="space-between center">
-                    <span>ADVANCED</span>
                     <span class="sale md-accent-color md-hue-1">Save 15%</span>
                 </div>
-                <div class="price" layout="row" layout-align="center end">
+
+                <div class="price" layout="row" layout-align="center start">
                     <div class="currency">$</div>
-                    <div class="value">12</div>
-                    <div class="period">/ month</div>
+                    <div layout="row" layout-align="center end">
+                        <div class="value">8</div>
+                        <div class="period">/ month</div>
+                    </div>
                 </div>
+
                 <md-divider></md-divider>
+
                 <div class="terms" layout="column">
-                    <div class="term"><b>40</b> Projects</div>
-                    <div class="term"><b>40</b> Pages</div>
-                    <div class="term"><b>500</b> Mb Disk Space</div>
+                    <div class="term"><span class="bold">20</span> Projects</div>
+                    <div class="term"><span class="bold">20</span> Pages</div>
+                    <div class="term"><span class="bold">200</span> Mb Disk Space</div>
                 </div>
-                <md-button class="md-raised md-accent">BUY NOW</md-button>
+
+                <md-button class="cta-button md-raised md-accent">BUY NOW</md-button>
+            </div>
+
+            <div class="price-table style-1 md-whiteframe-z1" layout="column">
+                <div class="package-type md-primary-bg" layout="row">
+                    <span>ADVANCED</span>
+                </div>
+
+                <div class="price" layout="row" layout-align="center start">
+                    <div class="currency">$</div>
+                    <div layout="row" layout-align="center end">
+                        <div class="value">12</div>
+                        <div class="period">/ month</div>
+                    </div>
+                </div>
+
+                <md-divider></md-divider>
+
+                <div class="terms" layout="column">
+                    <div class="term"><span class="bold">40</span> Projects</div>
+                    <div class="term"><span class="bold">40</span> Pages</div>
+                    <div class="term"><span class="bold">500</span> Mb Disk Space</div>
+                </div>
+
+                <md-button class="cta-button md-raised md-accent">BUY NOW</md-button>
             </div>
         </div>
+        <!-- / Style 1 -->
 
+        <!-- Style 2 -->
         <div class="md-title">Style 2</div>
 
-        <div class="price-tables-wrapper" flex layout="row" layout-wrap>
-            <div class="price-table style-2 md-whiteframe-z2" layout="column">
-                <div class="header md-accent-color">SILVER PACKAGE</div>
-                <div class="price" layout="row" layout-align="center end">
+        <div class="price-tables" flex layout="row" layout-wrap>
+            <div class="price-table style-2 md-whiteframe-z1" layout="column">
+                <div class="package-type md-accent-fg">SILVER PACKAGE</div>
+
+                <div class="price" layout="row" layout-align="center start">
                     <div class="currency">$</div>
                     <div class="value">99</div>
                 </div>
+
                 <div class="period">PER MONTH</div>
+
                 <div class="terms" layout="column" layout-align="start center">
-                    <div class="term"><b>10</b> Projects</div>
-                    <div class="term"><b>10</b> Pages</div>
-                    <div class="term"><b>100</b> Mb Disk Space</div>
+                    <div class="term"><span class="bold">10</span> Projects</div>
+                    <div class="term"><span class="bold">10</span> Pages</div>
+                    <div class="term"><span class="bold">100</span> Mb Disk Space</div>
                 </div>
-                <md-button class="md-raised md-accent">GET STARTED</md-button>
+
+                <md-button class="cta-button md-raised md-accent">GET STARTED</md-button>
             </div>
 
-            <div class="price-table style-2 md-whiteframe-z2" layout="column">
+            <div class="price-table style-2 md-whiteframe-z4" layout="column">
                 <div class="badge md-warn-bg">BEST VALUE</div>
-                <div class="header md-accent-color">GOLD PACKAGE</div>
-                <div class="price" layout="row" layout-align="center end">
+
+                <div class="package-type md-accent-fg">GOLD PACKAGE</div>
+
+                <div class="price" layout="row" layout-align="center start">
                     <div class="currency">$</div>
                     <div class="value">299</div>
                 </div>
+
                 <div class="period">PER MONTH</div>
+
                 <div class="terms" layout="column" layout-align="start center">
-                    <div class="term"><b>20</b> Projects</div>
-                    <div class="term"><b>20</b> Pages</div>
-                    <div class="term"><b>200</b> Mb Disk Space</div>
+                    <div class="term"><span class="bold">20</span> Projects</div>
+                    <div class="term"><span class="bold">20</span> Pages</div>
+                    <div class="term"><span class="bold">200</span> Mb Disk Space</div>
                 </div>
-                <md-button class="md-raised md-accent">GET STARTED</md-button>
+
+                <md-button class="cta-button md-raised md-accent">GET STARTED</md-button>
             </div>
 
-            <div class="price-table style-2 md-whiteframe-z2" layout="column">
-                <div class="header md-accent-color">PLATINUM PACKAGE</div>
-                <div class="price" layout="row" layout-align="center end">
+            <div class="price-table style-2 md-whiteframe-z1" layout="column">
+                <div class="package-type md-accent-fg">PLATINUM PACKAGE</div>
+
+                <div class="price" layout="row" layout-align="center start">
                     <div class="currency">$</div>
                     <div class="value">499</div>
                 </div>
+
                 <div class="period">PER MONTH</div>
+
                 <div class="terms" layout="column" layout-align="start center">
-                    <div class="term"><b>40</b> Projects</div>
-                    <div class="term"><b>40</b> Pages</div>
-                    <div class="term"><b>500</b> Mb Disk Space</div>
+                    <div class="term"><span class="bold">40</span> Projects</div>
+                    <div class="term"><span class="bold">40</span> Pages</div>
+                    <div class="term"><span class="bold">500</span> Mb Disk Space</div>
                 </div>
-                <md-button class="md-raised md-accent">GET STARTED</md-button>
+
+                <md-button class="cta-button md-raised md-accent">GET STARTED</md-button>
             </div>
         </div>
+        <!-- / Style 2 -->
 
+        <!-- Style 3 -->
         <div class="md-title">Style 3</div>
 
-        <div class="price-tables-wrapper" flex layout="row" layout-wrap>
-            <div class="price-table style-3 md-whiteframe-z2" layout="column">
-                <div class="header">
+        <div class="price-tables" flex layout="row" layout-align="start start" layout-wrap>
+            <div class="price-table style-3 md-whiteframe-z1" layout="column">
+                <div class="package-type">
                     <div class="title">Starter</div>
-                    <div class="sub-title">For small teams</div>
+                    <div class="subtitle">For small teams</div>
                 </div>
-                <div class="price">
+
+                <div class="price md-background-bg md-hue-1" layout="row" layout-align="center start">
+                    <div class="currency md-accent-fg">$</div>
                     <div layout="row" layout-align="center end">
-                        <div class="currency md-accent-color">$</div>
-                        <div class="value md-accent-color">29</div>
+                        <div class="value md-accent-fg">29</div>
                         <div class="period">monthly per user</div>
                     </div>
                 </div>
+
                 <div class="terms" layout="column" layout-align="start center">
                     <div class="term">Unlimited projects</div>
                     <div class="term">Unlimited pages</div>
                     <div class="term">Unlimited disk space</div>
                     <div class="term">24 / 7 Free support</div>
                 </div>
-                <md-button class="md-raised md-accent">GET STARTED FREE</md-button>
+
+                <md-button class="cta-button md-raised md-accent">GET STARTED FREE</md-button>
+
                 <div class="note">7 day free trial to start</div>
             </div>
 
-            <div class="price-table style-3 md-whiteframe-z2" layout="column">
-                <div class="header">
+            <div class="price-table style-3 md-whiteframe-z4" layout="column">
+                <div class="package-type">
                     <div class="title">Pro</div>
-                    <div class="sub-title">For larger teams</div>
+                    <div class="subtitle">For larger teams</div>
                 </div>
-                <div class="price">
-                    <div class=" md-primary-bg" layout="row" layout-align="center end">
-                        <div class="currency md-accent-color">$</div>
-                        <div class="value md-accent-color">59</div>
+
+                <div class="price md-primary-bg" layout="row" layout-align="center start">
+                    <div class="currency md-accent-fg">$</div>
+                    <div layout="row" layout-align="center end">
+                        <div class="value md-accent-fg">59</div>
                         <div class="period">monthly per user</div>
                     </div>
                 </div>
+
                 <div class="terms" layout="column" layout-align="start center">
                     <div class="term">Unlimited projects</div>
                     <div class="term">Unlimited pages</div>
                     <div class="term">Unlimited disk space</div>
                     <div class="term">24 / 7 Free support</div>
-                    <div class="term md-warn-color">Advanced reporting</div>
-                    <div class="term md-warn-color">Customizable interface</div>
-                    <div class="term md-warn-color">CRM Integration</div>
+                    <div class="term md-warn-fg">Advanced reporting</div>
+                    <div class="term md-warn-fg">Customizable interface</div>
+                    <div class="term md-warn-fg">CRM Integration</div>
                 </div>
-                <md-button class="md-raised md-accent">GET STARTED FREE</md-button>
+
+                <md-button class="cta-button md-raised md-accent">GET STARTED FREE</md-button>
+
                 <div class="note">30 day free trial to start</div>
             </div>
 
-            <div class="price-table style-3 md-whiteframe-z2" layout="column">
-                <div class="header">
+            <div class="price-table style-3 md-whiteframe-z1" layout="column">
+                <div class="package-type">
                     <div class="title">Enterprise</div>
-                    <div class="sub-title">For big teams</div>
+                    <div class="subtitle">For big teams</div>
                 </div>
-                <div class="price">
+
+                <div class="price md-background-bg md-hue-1" layout="row" layout-align="center start">
+                    <div class="currency md-accent-fg">$</div>
                     <div layout="row" layout-align="center end">
-                        <div class="currency md-accent-color">$</div>
-                        <div class="value md-accent-color">99</div>
+                        <div class="value md-accent-fg">99</div>
                         <div class="period">monthly per user</div>
                     </div>
                 </div>
+
                 <div class="terms" layout="column" layout-align="start center">
                     <div class="term">Unlimited projects</div>
                     <div class="term">Unlimited pages</div>
                     <div class="term">Unlimited disk space</div>
                     <div class="term">For full feature list, call us</div>
                 </div>
-                <md-button class="md-raised md-accent">CALL US</md-button>
+
+                <md-button class="cta-button md-raised md-accent">CALL US</md-button>
+
                 <div class="note">90 day free trial to start</div>
             </div>
         </div>
+        <!-- / Style 3 -->
 
     </div>
     <!-- / Content -->
