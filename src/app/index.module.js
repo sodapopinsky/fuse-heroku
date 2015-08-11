@@ -41,6 +41,7 @@
             'app.pages.error-404',
             'app.pages.error-500',
             'app.pages.invoice',
+            'app.pages.maintenance',
             'app.pages.profile',
             'app.pages.search',
             'app.pages.timeline',

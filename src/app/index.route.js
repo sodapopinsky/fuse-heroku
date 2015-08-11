@@ -203,6 +203,20 @@
                 }
             })
 
+            // Maintenance
+            .state('app.pages.maintenance', {
+                url: '/maintenance',
+                views: {
+                    'main@': {
+                        templateUrl: 'app/layout/basic.html'
+                    },
+                    'content@app.pages.maintenance': {
+                        templateUrl: 'app/main/pages/maintenance/maintenance.html',
+                        controller: 'MaintenanceController as vm'
+                    }
+                }
+            })
+
             /*
              * Errors
              */
