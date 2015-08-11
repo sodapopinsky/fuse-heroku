@@ -1,35 +1,38 @@
 .element-doc-page {
+
     .content {
-        max-width: 1200px;
-        padding: 32px;
+
         .description {
             margin-bottom: 32px;
         }
+
         .card {
-            margin: 16px 0 48px 0;
             padding: 8px;
+
             .preview,
             .source-code {
                 margin: 8px;
             }
+
             .preview {
-                padding: 8px;
+                min-height: 90px;
+                padding: 8px 16px;
             }
+
             .source-code {
                 position: relative;
+
                 [hljs] {
+                    background-color: transparent;
                     position: absolute;
                     top: 0;
                     left: 0;
                     right: 0;
                     bottom: 0;
-                    min-height: 100%;
-                    background-color: transparent;
-                    padding-top: 8px;
-
                 }
             }
         }
+
         .attributes {
             margin: 16px 0 48px 0;
         }
