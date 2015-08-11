@@ -1,4 +1,4 @@
-<div id="standard-table" class="page-layout simple fullwidth doc-page element-doc-page" layout="column" layout-fill>
+<div id="simple-table" class="page-layout simple fullwidth doc-page element-doc-page" layout="column" layout-fill>
 
     <!-- Header -->
     <div class="header md-accent-bg" layout="row" layout-align="space-between">
@@ -9,7 +9,7 @@
                 <md-icon md-font-icon="icon-keyboard_arrow_right" class="s18 separator"></md-icon>
                 <span class="parent">Tables</span>
             </div>
-            <div class="title">Standard Tables</div>
+            <div class="title">Simple Table</div>
         </div>
 
     </div>
@@ -17,7 +17,6 @@
 
     <!-- Content -->
     <div class="content">
-
         Tables are used to present raw data sets, and usually appear in desktop enterprise products.
         <p>
             Data sets may include:
@@ -30,12 +29,14 @@
             <li>The ability for users to query and manipulate data at scale</li>
         </ul>
         </p>
-        <div class="md-title">Classic</div>
-        <div class="card classic md-background-bg md-whiteframe-z2">
+
+        <br>
+
+        <div class="table-simple md-background-bg md-whiteframe-z2">
             <div class="table-title">
                 Employees
             </div>
-            <table class="table-simple" layout-fill>
+            <table class="table" layout-fill>
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -46,34 +47,13 @@
                         <th class="text-right">Salary</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr ng-repeat="person in vm.employees">
-                        <td class="name">{{person.name}}</td>
-                        <td class="position">{{person.position}}</td>
-                        <td class="office">{{person.office}}</td>
-                        <td class="age text-right">{{person.age}}</td>
-                        <td class="start-date text-right">{{person.startDate}}</td>
-                        <td class="salary text-right">{{person.salary | currency}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="md-title">Full Width</div>
-        <div class="card full-width md-background-bg md-whiteframe-z2">
-            <div class="table-title">
-                Employees
-            </div>
-            <table class="table-simple" layout-fill>
-                <thead>
+
+                <tfoot>
                     <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th class="text-right">Age</th>
-                        <th class="text-right">Start Date</th>
-                        <th class="text-right">Salary</th>
+                        <td></td>
                     </tr>
-                </thead>
+                </tfoot>
+
                 <tbody>
                     <tr ng-repeat="person in vm.employees">
                         <td class="name">{{person.name}}</td>

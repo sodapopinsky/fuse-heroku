@@ -3,10 +3,10 @@
     'use strict';
 
     angular.module('app.components')
-        .controller('StandardTableController', StandardTableController);
+        .controller('SimpleTableController', SimpleTableController);
 
     /** @ngInject */
-    function StandardTableController(api)
+    function SimpleTableController(api)
     {
         var vm = this;
 

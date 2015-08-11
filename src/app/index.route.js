@@ -706,13 +706,13 @@
                 url: '/tables'
             })
 
-            // Standard Table
-            .state('app.components.tables.standard-table', {
-                url: '/standard-table',
+            // Simple Table
+            .state('app.components.tables.simple-table', {
+                url: '/simple-table',
                 views: {
                     'content@app': {
-                        templateUrl: 'app/main/components/tables/standard-table/standard-table.html',
-                        controller: 'StandardTableController as vm'
+                        templateUrl: 'app/main/components/tables/simple-table/simple-table.html',
+                        controller: 'SimpleTableController as vm'
                     }
                 }
             })
