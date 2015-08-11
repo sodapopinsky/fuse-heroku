@@ -1,6 +1,9 @@
-<div id="sidenav" class="element-doc-page">
-    <header class="page-header md-accent-bg" layout="row" layout-align="space-between center">
-        <div layout="column">
+<div id="sidenav" class="page-layout simple fullwidth doc-page element-doc-page" layout="column" layout-fill>
+
+    <!-- Header -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+
+        <div layout="column" layout-align="center start">
             <div class="breadcrumb" layout="row" layout-align="start center">
                 <md-icon md-font-icon="icon-home" class="s18"></md-icon>
                 <md-icon md-font-icon="icon-keyboard_arrow_right" class="s18 separator"></md-icon>
@@ -10,14 +13,20 @@
             </div>
             <div class="title">Sidenav</div>
         </div>
-        <a href="https://material.angularjs.org/latest/#/api/material.components.sidenav/directive/mdSidenav"
-           target="_blank">
-            <md-button class="md-raised reference-button">
+
+        <div layout="row" layout-align="start center">
+            <md-button class="md-raised reference-button"
+                       href="https://material.angularjs.org/latest/#/api/material.components.sidenav/directive/mdSidenav"
+                       target="_blank">
                 <md-icon md-font-icon="icon-link"></md-icon>
-                Reference
+                <span>Reference</span>
             </md-button>
-        </a>
-    </header>
+        </div>
+
+    </div>
+    <!-- / Header -->
+
+    <!-- Content -->
     <div class="content">
 
         <div class="description">
@@ -35,7 +44,7 @@
             </p>
         </div>
 
-        <div class="card  md-background-bg md-whiteframe-z2" layout="column">
+        <div class="card md-background-bg md-whiteframe-z2" layout="column">
             <div layout="row">
                 <div flex class="preview md-background-bg md-hue-2" layout="column">
                     <div class="md-caption">Left Sidenav</div>
@@ -200,7 +209,8 @@
                                             <h1 class="md-toolbar-tools">Left Sidenav Locked</h1>
                                         </md-toolbar>
                                         <md-content flex layout="column" layout-align="center center">
-                                            <md-button class="md-raised md-primary" ng-click="vm.toggleLeftSidenavLocked()"
+                                            <md-button class="md-raised md-primary"
+                                                       ng-click="vm.toggleLeftSidenavLocked()"
                                                        hide-gt-md>
                                                 Close Left Sidenav
                                             </md-button>
@@ -226,7 +236,7 @@
                         <md-tab label="JS">
                             <div hljs lang="js">
                                 function toggleLeftSidenavLocked() {
-                                    $mdSidenav('left-sidenav-locked').toggle();
+                                $mdSidenav('left-sidenav-locked').toggle();
                                 }
                             </div>
                         </md-tab>
@@ -257,12 +267,13 @@
                             <span hide="" show-sm="">
                                 <code class="api-type label type-hint type-hint-expression">expression</code></span>
                         </td>
+
                         <td style="white-space: nowrap;">
-                            <code class="api-type label type-hint type-hint-expression">expression</code></td>
+                            <code class="api-type label type-hint type-hint-expression">expression</code>
+                        </td>
+
                         <td class="description">
                             <p>A model bound to whether the sidenav is opened.</p>
-
-
                         </td>
                     </tr>
 
@@ -274,25 +285,29 @@
                             <span hide="" show-sm="">
                                 <code class="api-type label type-hint type-hint-string">string</code></span>
                         </td>
+
                         <td style="white-space: nowrap;">
-                            <code class="api-type label type-hint type-hint-string">string</code></td>
+                            <code class="api-type label type-hint type-hint-string">string</code>
+                        </td>
+
                         <td class="description">
                             <p>componentId to use with $mdSidenav service.</p>
-
-
                         </td>
                     </tr>
-
 
                     <tr class="api-params-item">
                         <td style="white-space: nowrap;">
                             md-is-locked-open
 
                             <span hide="" show-sm="">
-                                <code class="api-type label type-hint type-hint-expression">expression</code></span>
+                                <code class="api-type label type-hint type-hint-expression">expression</code>
+                            </span>
                         </td>
+
                         <td style="white-space: nowrap;">
-                            <code class="api-type label type-hint type-hint-expression">expression</code></td>
+                            <code class="api-type label type-hint type-hint-expression">expression</code>
+                        </td>
+
                         <td class="description">
                             <p>When this expression evalutes to true,
                                 the sidenav 'locks open': it falls into the content's flow instead
@@ -313,14 +328,14 @@
                                     (locks open on small screens)
                                 </li>
                             </ul>
-
-
                         </td>
                     </tr>
-
 
                 </tbody>
             </table>
         </div>
-    </div>
 
+    </div>
+    <!-- / Content -->
+
+</div>

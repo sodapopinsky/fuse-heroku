@@ -1,6 +1,9 @@
-<div id="progress-circular" class="element-doc-page">
-    <header class="page-header md-accent-bg" layout="row" layout-align="space-between center">
-        <div layout="column">
+<div id="progress-circular" class="page-layout simple fullwidth doc-page element-doc-page" layout="column" layout-fill>
+
+    <!-- Header -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+
+        <div layout="column" layout-align="center start">
             <div class="breadcrumb" layout="row" layout-align="start center">
                 <md-icon md-font-icon="icon-home" class="s18"></md-icon>
                 <md-icon md-font-icon="icon-keyboard_arrow_right" class="s18 separator"></md-icon>
@@ -10,15 +13,19 @@
             </div>
             <div class="title">Progreess Circular</div>
         </div>
-        <a href="https://material.angularjs.org/latest/#/demo/material.components.progressCircular"
-           target="_blank">
-            <md-button class="md-raised reference-button">
-                <md-icon md-font-icon="icon-link"></md-icon>
-                Reference
-            </md-button>
-        </a>
 
-    </header>
+        <div layout="row" layout-align="start center">
+            <md-button class="md-raised reference-button" href="https://material.angularjs.org/latest/#/demo/material.components.progressCircular"
+                       target="_blank">
+                <md-icon md-font-icon="icon-link"></md-icon>
+                <span>Reference</span>
+            </md-button>
+        </div>
+
+    </div>
+    <!-- / Header -->
+
+    <!-- Content -->
     <div class="content">
 
         <div class="description">
@@ -35,7 +42,7 @@
         </div>
 
         <div class="md-title">Determinate</div>
-        <div class="card  md-background-bg md-whiteframe-z2">
+        <div class="card md-background-bg md-whiteframe-z2">
             <div layout="row">
                 <div flex class="preview md-background-bg md-hue-2">
                     <div class="md-caption">Accent Colored</div>
@@ -77,7 +84,7 @@
             </div>
         </div>
         <div class="md-title">Indeterminate</div>
-        <div class="card  md-background-bg md-whiteframe-z2">
+        <div class="card md-background-bg md-whiteframe-z2">
             <div layout="row">
                 <div flex class="preview md-background-bg md-hue-2">
                     <div class="md-caption">Accent Colored</div>
@@ -175,5 +182,8 @@
                 </tbody>
             </table>
         </div>
+
     </div>
+    <!-- / Content -->
+
 </div>

@@ -1,6 +1,9 @@
-<div id="buttons" class="element-doc-page">
-    <header class="page-header md-accent-bg" layout="row" layout-align="space-between center">
-        <div layout="column">
+<div id="buttons" class="page-layout simple fullwidth doc-page element-doc-page" layout="column" layout-fill>
+
+    <!-- Header -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+
+        <div layout="column" layout-align="center start">
             <div class="breadcrumb" layout="row" layout-align="start center">
                 <md-icon md-font-icon="icon-home" class="s18"></md-icon>
                 <md-icon md-font-icon="icon-keyboard_arrow_right" class="s18 separator"></md-icon>
@@ -10,15 +13,19 @@
             </div>
             <div class="title">Buttons</div>
         </div>
-        <a href="https://material.angularjs.org/latest/#/api/material.components.button/directive/mdButton"
-           target="_blank">
-            <md-button class="md-raised reference-button">
-                <md-icon md-font-icon="icon-link"></md-icon>
-                Reference
-            </md-button>
-        </a>
 
-    </header>
+        <div layout="row" layout-align="start center">
+            <md-button class="md-raised reference-button" href="https://material.angularjs.org/latest/#/api/material.components.button/directive/mdButton"
+                       target="_blank">
+                <md-icon md-font-icon="icon-link"></md-icon>
+                <span>Reference</span>
+            </md-button>
+        </div>
+
+    </div>
+    <!-- / Header -->
+
+    <!-- Content -->
     <div class="content">
 
         <div class="description">
@@ -36,7 +43,7 @@
         </div>
 
         <div class="md-title">FLAT</div>
-        <div class="card  md-background-bg md-whiteframe-z2">
+        <div class="card md-background-bg md-whiteframe-z2">
             <div layout="row">
                 <div flex class="preview md-background-bg md-hue-2">
                     <div class="md-caption">Accent Colored</div>
@@ -107,7 +114,7 @@
             </div>
         </div>
         <div class="md-title">RAISED</div>
-        <div class="card  md-background-bg md-whiteframe-z2" layout="column">
+        <div class="card md-background-bg md-whiteframe-z2" layout="column">
             <div layout="row">
                 <div flex class="preview md-background-bg md-hue-2">
                     <div class="md-caption">Accent Colored</div>
@@ -178,7 +185,7 @@
             </div>
         </div>
         <div class="md-title">FAB</div>
-        <div class="card  md-background-bg md-whiteframe-z2" layout="column">
+        <div class="card md-background-bg md-whiteframe-z2" layout="column">
             <div layout="row">
                 <div flex class="preview md-background-bg md-hue-2">
                     <div class="md-caption">Accent Colored</div>
@@ -249,7 +256,7 @@
             </div>
         </div>
         <div class="md-title">ICON BUTTON</div>
-        <div class="card  md-background-bg md-whiteframe-z2" layout="column">
+        <div class="card md-background-bg md-whiteframe-z2" layout="column">
             <div layout="row">
                 <div flex class="preview md-background-bg md-hue-2">
                     <div class="md-caption">Accent Colored</div>
@@ -393,4 +400,8 @@
                 </tbody>
             </table>
         </div>
+
     </div>
+    <!-- / Content -->
+
+</div>
