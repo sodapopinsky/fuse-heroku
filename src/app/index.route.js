@@ -420,6 +420,27 @@
                 }
             })
 
+            // Simple - Tabbed
+            .state('app.ui.layouts.simple-tabbed', {
+                url: '/simple-tabbed',
+                views: {
+                    'content@app': {
+                        templateUrl: 'app/main/ui/layouts/simple/tabbed/tabbed.html',
+                        controller: 'SimpleTabbedController as vm'
+                    }
+                }
+            })
+
+            // Blank
+            .state('app.ui.layouts.blank', {
+                url: '/blank',
+                views: {
+                    'content@app': {
+                        templateUrl: 'app/main/ui/layouts/blank/blank.html',
+                        controller: 'BlankController as vm'
+                    }
+                }
+            })
 
         /**
          * Components
