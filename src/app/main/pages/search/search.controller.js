@@ -13,9 +13,9 @@
         // Data
         vm.colors = ['md-blue-bg', 'md-blue-grey-bg', 'md-orange-bg', 'md-pink-bg', 'md-purple-bg'];
 
-        api.search.articles.get({}, function (response)
+        api.search.classic.get({}, function (response)
         {
-            vm.articles = response.data;
+            vm.classic = response.data;
         });
 
         api.search.mails.get({}, function (response)
