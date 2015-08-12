@@ -14,21 +14,21 @@
     </div>
 
     <div layout="row" layout-align="start center">
-        <md-menu id="user-menu" md-offset="0 70">
+        <md-menu id="user-menu" md-offset="17 40" md-position-mode="target-right target">
             <md-button class="user-button md-primary" aria-label="User settings"
                        ng-click="$mdOpenMenu()">
                 <div layout="row" layout-align="space-between center">
                     <img class="md-avatar" src="assets/images/avatars/profile-img.jpeg">
                     <span class="username">Mustafa</span>
-                    <md-icon md-font-icon="icon-keyboard_arrow_down" class="s18"></md-icon>
+                    <md-icon md-menu-origin md-menu-align-target md-font-icon="icon-keyboard_arrow_down" class="s18"></md-icon>
                 </div>
             </md-button>
 
             <md-menu-content width="4">
                 <md-menu-item ng-repeat="item in [1, 2, 3]">
                     <md-button ng-click="ctrl.announceClick($index)">
+                        <md-icon md-font-icon="icon-settings_applications"></md-icon>
                         <p>Option {{item}}</p>
-                        <md-icon md-menu-align-target md-font-icon="icon-settings_applications"></md-icon>
                     </md-button>
                 </md-menu-item>
             </md-menu-content>
