@@ -10,16 +10,16 @@
                      ng-click="vm.toggleCheck(mail, $event)">
         </md-checkbox>
 
-        <img ng-if="mail.from.avatar" alt="{{ mail.from.name }}" ng-src="{{ mail.from.avatar}}"
+        <img ng-if="mail.from.avatar" alt="{{mail.from.name}}" ng-src="{{mail.from.avatar}}"
              class="md-avatar"/>
 
         <div class="md-avatar" ng-if="!mail.from.avatar" ng-random-class="vm.colors">
-            {{ mail.from.name[0] }}
+            {{mail.from.name[0]}}
         </div>
 
         <div class="info" flex layout="column">
             <div class="name">
-                {{mail.from.name }}
+                {{mail.from.name}}
             </div>
 
             <div class="subject">

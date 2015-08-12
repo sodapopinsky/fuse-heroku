@@ -5,9 +5,9 @@
         <div class="status  {{friend.status}}"></div>
         <div ng-if="contact.unread" class="md-accent-bg unread-message-count">{{contact.unread}}</div>
         <div class="md-list-item-text">
-            <span class="message">{{ friend.message}}</span>
+            <span class="message">{{friend.message}}</span>
 
-            <p class="time">{{ friend.time}}</p>
+            <p class="time">{{friend.time}}</p>
         </div>
     </md-list-item>
 </md-list>
@@ -19,9 +19,9 @@
     <md-list-item class="server md-2-line" ng-repeat="server in vm.activities.servers">
         <md-icon md-font-icon="icon-lens" class="md-accent s16 status" ng-class="server.status"></md-icon>
         <div class="md-list-item-text">
-            <h3>{{ server.location }}</h3>
+            <h3>{{server.location}}</h3>
 
-            <p>{{ server.detail }}</p>
+            <p>{{server.detail}}</p>
         </div>
     </md-list-item>
 </md-list>
@@ -32,7 +32,7 @@
     <md-subheader class="md-no-sticky">User Stats</md-subheader>
     <md-list-item class="stat md-2-line" ng-repeat="stat in vm.activities.stats">
         <div class="md-list-item-text">
-            <span>{{ stat.title}} ({{stat.current}} / {{stat.total}})</span>
+            <span>{{stat.title}} ({{stat.current}} / {{stat.total}})</span>
             <md-progress-linear ng-class="stat.status" md-mode="determinate" value="{{stat.percent}}"></md-progress-linear>
         </div>
     </md-list-item>

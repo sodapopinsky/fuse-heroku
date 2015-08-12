@@ -42,16 +42,16 @@
     <div class="info" layout="row" layout-align="space-between center">
         <div layout="row" layout-align="start center">
 
-            <img ng-if="vm.selectedMail.from.avatar" alt="{{ vm.selectedMail.from.name }}"
-                 ng-src="{{ vm.selectedMail.from.avatar}}" class="md-avatar"/>
+            <img ng-if="vm.selectedMail.from.avatar" alt="{{vm.selectedMail.from.name}}"
+                 ng-src="{{vm.selectedMail.from.avatar}}" class="md-avatar"/>
 
             <div ng-if="!vm.selectedMail.from.avatar" class="md-avatar" ng-random-class="vm.colors">
-                {{ vm.selectedMail.from.name[0] }}
+                {{vm.selectedMail.from.name[0]}}
             </div>
 
             <div>
                 <span class="name">
-                    {{ vm.selectedMail.from.name }}
+                    {{vm.selectedMail.from.name}}
                 </span>
 
                 <span>
@@ -61,7 +61,7 @@
                 to
 
                 <span class="name">
-                    {{ vm.selectedMail.to[0].name}}
+                    {{vm.selectedMail.to[0].name}}
                 </span>
             </div>
 
