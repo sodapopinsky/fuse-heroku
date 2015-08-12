@@ -312,3 +312,68 @@ table {
         }
     }
 }
+
+/*----------------------------------------------------------------*/
+/*  @ Pagination
+/*----------------------------------------------------------------*/
+.simple-pagination {
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    box-shadow: @whiteframe-shadow-z1;
+    background-color: @material-color-white;
+    padding: 0 8px;
+
+    .pagination-item {
+        min-width: 48px;
+        min-height: 56px;
+        line-height: 56px;
+        border-radius: 0;
+        margin: 0;
+        font-weight: normal;
+        color: rgba(0, 0, 0, 0.54);
+
+        &:hover {
+            color: rgba(0, 0, 0, 0.87);
+        }
+
+        &.active {
+            cursor: default;
+            color: rgba(0, 0, 0, 87);
+        }
+
+        &.disabled {
+            cursor: default;
+            color: rgba(0, 0, 0, 0.26);
+        }
+    }
+
+    > span {
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 48px;
+
+        > a {
+            display: block;
+            padding: 16px;
+            font-weight: 500;
+
+            &:hover {
+                color: rgba(0, 0, 0, 0.87);
+            }
+
+            &.active {
+                cursor: default;
+                color: rgba(0, 0, 0, 87);
+            }
+
+            &.disabled {
+                cursor: default;
+                color: rgba(0, 0, 0, 0.26);
+            }
+        }
+
+    }
+
+}
