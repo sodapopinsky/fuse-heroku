@@ -4,24 +4,28 @@
         <img ng-src="{{contact.avatar}}" class="md-avatar" alt="{{contact.name}}"/>
 
         <div class="status  {{contact.status}}"></div>
-        <div ng-if="contact.unread" class="md-accent-bg unread-message-count">{{contact.unread}}</div>
-        <div class="md-list-item-text">
-            <h3>{{ contact.name }}</h3>
 
-            <p class="last-meessage">{{ contact.lastMessage }}</p>
+        <div ng-if="contact.unread" class="md-accent-bg unread-message-count">{{contact.unread}}</div>
+
+        <div class="md-list-item-text">
+            <h3>{{contact.name}}</h3>
+            <p class="last-message">{{contact.lastMessage}}</p>
         </div>
     </md-list-item>
 </md-list>
+
 <md-divider></md-divider>
+
 <md-list class="all">
     <md-subheader class="md-no-sticky">Start New Chat</md-subheader>
     <md-list-item class="contact md-2-line" ng-repeat="contact in vm.contacts.all">
         <img ng-src="{{contact.avatar}}" class="md-avatar" alt="{{contact.name}}"/>
 
-        <div class="status  {{contact.status}}"></div>
+        <div class="status {{contact.status}}"></div>
         <div class="md-list-item-text">
-            <h3>{{ contact.name }}</h3>
+            <h3>{{contact.name}}</h3>
         </div>
     </md-list-item>
 </md-list>
+
 <md-divider></md-divider>

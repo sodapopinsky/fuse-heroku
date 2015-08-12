@@ -1,46 +1,55 @@
 #quick-panel {
-    md-tab-content {
-        .chat-tab {
-            .contact {
-                .unread-message-count,
-                .status {
-                    position: absolute;
-                    border-radius: 50%;
-                    content: '';
-                    z-index: 10;
+
+    .chat-tab {
+
+        .contact {
+
+            .unread-message-count,
+            .status {
+                position: absolute;
+                border-radius: 50%;
+                content: '';
+                z-index: 10;
+            }
+
+            .unread-message-count {
+                left: 16px;
+                bottom: 16px;
+                width: 18px;
+                height: 18px;
+                text-align: center;
+                line-height: 18px;
+                font-size: 11px;
+            }
+
+            .status {
+                top: 8px;
+                left: 44px;
+                border: 3px solid white;
+                width: 18px;
+                height: 18px;
+
+                &.online {
+                    background-color: #00C853;
                 }
-                .unread-message-count {
-                    left: 16px;
-                    bottom: 16px;
-                    width: 18px;
-                    height: 18px;
-                    text-align: center;
-                    line-height: 18px;
-                    font-size: 11px;
+
+                &.offline {
+                    background-color: #D50000;
                 }
-                .status {
-                    top: 8px;
-                    left: 44px;
-                    border: 3px solid white;
-                    width: 18px;
-                    height: 18px;
-                    &.online {
-                        background-color: #00c853;
-                    }
-                    &.offline {
-                        background-color: #d50000;
-                    }
-                    &.away {
-                        background-color: #ff6d00;
-                    }
-                }
-                .last-meessage {
-                    font-size: 13px;
+
+                &.away {
+                    background-color: #FF6D00;
                 }
             }
-            .recent {
-                .md-list-item-text {
-                }
+
+            .last-message {
+                font-size: 13px;
+            }
+        }
+
+        .recent {
+            .md-list-item-text {
+
             }
         }
     }

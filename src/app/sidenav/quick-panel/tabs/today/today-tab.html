@@ -11,19 +11,21 @@
         </div>
     </md-list-item>
 </md-list>
+
 <md-divider></md-divider>
 
 <md-list>
     <md-subheader>Events</md-subheader>
+
     <md-list-item class="md-2-line" ng-repeat="event in vm.events">
         <div class="md-list-item-text">
             <span>{{event.title}}</span>
-
-            <p>{{ event.detail}}</p>
+            <p>{{event.detail}}</p>
         </div>
         <md-icon md-font-icon="icon-more_vert" class="s24"></md-icon>
     </md-list-item>
 </md-list>
+
 <md-divider></md-divider>
 
 <md-list>
@@ -31,24 +33,27 @@
     <md-list-item class="md-2-line" ng-repeat="note in vm.notes">
         <div class="md-list-item-text">
             <span>{{note.title}}</span>
-
-            <p>{{ note.detail}}</p>
+            <p>{{note.detail}}</p>
         </div>
         <md-icon md-font-icon="icon-more_vert" class="s24"></md-icon>
     </md-list-item>
 </md-list>
+
 <md-divider></md-divider>
 
 <md-list>
     <md-subheader>Quick Settings</md-subheader>
+
     <md-list-item>
         <p>Notifications</p>
         <md-switch class="md-secondary" ng-model="vm.settings.notify"></md-switch>
     </md-list-item>
+
     <md-list-item>
         <p>Cloud Sync</p>
         <md-switch class="md-secondary" ng-model="vm.settings.cloud"></md-switch>
     </md-list-item>
+
     <md-list-item>
         <p>Retro Thrusters</p>
         <md-switch class="md-secondary md-warn" ng-model="vm.settings.retro"></md-switch>
