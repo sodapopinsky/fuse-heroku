@@ -43,9 +43,9 @@
         <div layout="row" layout-align="start center">
 
             <img ng-if="vm.selectedMail.from.avatar" alt="{{ vm.selectedMail.from.name }}"
-                 ng-src="{{ vm.selectedMail.from.avatar}}" class="avatar"/>
+                 ng-src="{{ vm.selectedMail.from.avatar}}" class="md-avatar"/>
 
-            <div ng-if="!vm.selectedMail.from.avatar" class="avatar" ng-random-class="vm.colors">
+            <div ng-if="!vm.selectedMail.from.avatar" class="md-avatar" ng-random-class="vm.colors">
                 {{ vm.selectedMail.from.name[0] }}
             </div>
 
@@ -96,7 +96,7 @@
 </div>
 
 <div class="reply" layout="row">
-    <img src="assets/images/avatars/profile-img.jpeg" class="avatar"/>
+    <img src="assets/images/avatars/profile-img.jpeg" class="md-avatar"/>
 
     <div class="form" flex>
         <textarea></textarea>

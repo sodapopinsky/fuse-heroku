@@ -11,9 +11,9 @@
         </md-checkbox>
 
         <img ng-if="mail.from.avatar" alt="{{ mail.from.name }}" ng-src="{{ mail.from.avatar}}"
-             class="avatar"/>
+             class="md-avatar"/>
 
-        <div class="avatar" ng-if="!mail.from.avatar" ng-random-class="vm.colors">
+        <div class="md-avatar" ng-if="!mail.from.avatar" ng-random-class="vm.colors">
             {{ mail.from.name[0] }}
         </div>
 

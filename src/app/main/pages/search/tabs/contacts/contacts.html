@@ -33,10 +33,10 @@
     <tbody>
         <tr class="result-item" ng-repeat="contact in vm.contacts">
             <td class="text-left avatar-cell" ng-if="contact.avatar">
-                <img alt="{{contact.name}}" ng-src="{{contact.avatar}}" class="avatar"/>
+                <img class="md-avatar" alt="{{contact.name}}" ng-src="{{contact.avatar}}">
             </td>
             <td class="text-left avatar-cell" ng-if="!contact.avatar">
-                <div class="avatar" ng-random-class="vm.colors">
+                <div class="md-avatar" ng-random-class="vm.colors">
                     {{contact.name[0]}}
                 </div>
             </td>
