@@ -1,23 +1,44 @@
-<div id="search" layout="column" layout-fill>
-    <header class="page-header md-accent-bg" layout="row" layout-align="space-between">
-        <div flex layout="column" layout-align="center">
-            <div class="search" layout="row" layout-align="start center">
-                <label for="search-input">
-                    <md-icon md-font-icon="icon-search" class="icon s24"></md-icon>
-                </label>
-                <input id="search-input" ng-model="vm.search" type="text" placeholder="Search.." flex>
-                <md-button class="md-icon-button refresh-button" aria-label="refresh">
-                    <md-icon md-font-icon="icon-refresh" class="icon s24"></md-icon>
-                </md-button>
-            </div>
-        </div>
-        <md-button class="md-icon-button settings-button" aria-label="settings">
-            <md-icon md-font-icon="icon-settings" class="icon s18"></md-icon>
-        </md-button>
-    </header>
+<div id="search" class="page-layout simple tabbed" layout="column" layout-fill>
 
+    <!-- Header -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between center">
+        <div class="search" flex layout="row" layout-align="start center">
+            <md-icon md-font-icon="icon-search" class="icon search-icon s24"></md-icon>
+
+            <input class="search-input" ng-model="vm.search" type="text" placeholder="Search.." flex>
+
+            <md-button class="md-icon-button refresh" aria-label="refresh">
+                <md-icon md-font-icon="icon-refresh" class="icon s24"></md-icon>
+            </md-button>
+        </div>
+
+        <md-menu class="search-settings" md-position-mode="target-right target" >
+            <md-button aria-label="Search settings"
+                       ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="icon-settings" class="icon s18"></md-icon>
+            </md-button>
+
+            <md-menu-content width="3">
+                <md-menu-item>
+                    <md-button ng-click="vm.dummyFunction()">
+                        <p>Settings 1</p>
+                    </md-button>
+                </md-menu-item>
+
+                <md-menu-item>
+                    <md-button ng-click="vm.dummyFunction()">
+                        <p>Settings 2</p>
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </div>
+    <!-- / Header -->
+
+    <!-- Content -->
     <div class="content" flex>
-        <md-tabs md-dynamic-height md-border-bottom>
+
+        <md-tabs md-dynamic-height>
             <md-tab label="Classic">
                 <md-content class="classic-tab"
                             ng-include="'app/main/pages/search/tabs/classic/classic.html'">
@@ -39,5 +60,8 @@
                 </md-content>
             </md-tab>
         </md-tabs>
+
     </div>
+    <!-- / Content -->
+
 </div>

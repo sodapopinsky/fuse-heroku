@@ -1,112 +1,85 @@
 #search {
 
-  > header {
-    height: 160px;
-    padding: 32px;
-    .search {
-      position: relative;
-      height: 48px;
-      max-width: 780px;
-      label {
-        position: absolute;
-        left: 0;
-        top: 0;
-        padding: 12px 0;
-        md-icon {
-          color: @material-color-white;
-        }
-      }
-      #search-input {
-        padding-left: 48px;
-        background: transparent;
-        font-size: 24px;
-        line-height: 48px;
-        color: @material-color-white;
-        border-width: 0 0 2px 0;
-        border-style: solid;
-        border-color: rgba(255, 255, 255, 0.3);
-        transition: border-color 300ms ease;
-        &:focus {
-          border-color: rgba(255, 255, 255, 1);
-        }
-        &::-webkit-input-placeholder {
-          color: @material-color-white;
-        }
-      }
-      .refresh-button {
-        position: absolute;
-        right: 0;
-        line-height: 48px;
-        height: 48px;
-        width: 48px;
-        margin: 0;
-      }
-    }
-    .settings-button {
-      margin: 0;
-    }
-  }
+    .header {
 
-  .content {
+        .search {
+            position: relative;
+            max-width: 780px;
 
-    md-tabs {
-
-      md-tabs-wrapper {
-        height: 56px;
-        padding: 0 32px;
-        background-color: @material-color-white;
-        border-color: rgba(0, 0, 0, 0.22);
-
-        md-tabs-canvas {
-          height: 56px;
-
-          md-pagination-wrapper {
-            height: 56px;
-
-            .md-tab {
-              padding: 16px 24px;
-              font-size: 15px;
-              text-transform: inherit;
+            .search-icon {
+                position: absolute;
+                left: 0;
+                top: 0;
+                padding: 12px;
+                width: 48px;
+                height: 48px;
             }
-          }
-        }
-      }
 
-      md-tabs-content-wrapper {
+            .search-input {
+                padding: 0 48px;
+                background: none;
+                font-size: 24px;
+                line-height: 48px;
+                color: @material-color-white;
+                border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+                transition: border-color 300ms ease;
 
-        md-tab-content {
-
-          md-content {
-            background-color: transparent;
-            padding: 0 32px 32px 32px;
-
-            .content-header {
-              border-bottom: 1px solid rgba(0, 0, 0, 0.13);
-              height: 60px;
-              > .title {
-                .md-title {
-                  margin-right: 16px;
+                &:focus {
+                    border-color: rgba(255, 255, 255, 1);
                 }
-              }
-              .pager {
+
+                &::-webkit-input-placeholder {
+                    color: @material-color-white;
+                }
+            }
+
+            .refresh {
+                position: absolute;
+                right: 0;
+                line-height: 48px;
+                height: 48px;
+                width: 48px;
+                margin: 0;
+            }
+        }
+    }
+
+    .content {
+
+        md-tabs {
+
+            md-tabs-content-wrapper {
+
+                md-tab-content {
+                    padding: 0;
+                }
+            }
+
+            md-content {
+                padding: 24px;
+                background-color: transparent;
+            }
+        }
+
+        .result-info {
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+            .md-title {
+                padding-right: 8px;
+            }
+
+            .pager {
+
                 .page-info {
-                  font-weight: 500;
-                  margin: 0 8px;
+                    font-weight: 500;
+                    margin: 0 8px 0 0;
                 }
-                .md-button {
-                  margin: 0;
-                }
-              }
             }
-
-            .pagination{
-              margin-top: 48px;
-            }
-
-          }
         }
-      }
-    }
 
-  }
+        .simple-pagination {
+            margin: 32px 0;
+        }
+    }
 }

@@ -1,23 +1,26 @@
-<div class="content-header" layout="row" layout-align="space-between center">
-    <span class="title">
+<div class="result-info" layout="row" layout-align="space-between center">
+    <div>
         <span class="md-title">E-Mails</span>
         <span class="secondary-text">87 Results</span>
-    </span>
+    </div>
 
     <div class="pager">
         <span class="secondary-text">Results:</span>
-        <span class="page-info">1-10</span>
+
+        <span class="page-info">1 - 10 of 100</span>
+
         <md-button class="md-icon-button" aria-label="previous page">
             <md-icon md-font-icon="icon-navigate_before"></md-icon>
         </md-button>
+
         <md-button class="md-icon-button" aria-label="next page">
             <md-icon md-font-icon="icon-navigate_next"></md-icon>
         </md-button>
     </div>
 </div>
 
-<div class="results mail-list">
-    <div class="result-item mail-list-item {{mail.status}}" ng-repeat="mail in vm.mails | filter: vm.search"
+<div class="results">
+    <div class="result-item {{mail.status}}" ng-repeat="mail in vm.mails | filter: vm.search"
          md-ink-ripple>
         <div layout="row" layout-align="start center">
             <img ng-if="mail.from.avatar" alt="{{ mail.from.name }}" ng-src="{{ mail.from.avatar}}" class="avatar"/>
@@ -31,37 +34,68 @@
                     {{mail.from.name }}
                 </div>
 
-                <div class="subject">
+                <div class="subject secondary-text">
                     {{mail.subject}}
                 </div>
 
-                <div class="message">
+                <div class="message secondary-text">
                     {{mail.message | htmlToPlaintext}}
                 </div>
             </div>
 
             <div layout="column" layout-align="center end">
-                <div class="time">{{mail.time}}</div>
+                <div class="time secondary-text">{{mail.time}}</div>
             </div>
         </div>
     </div>
 </div>
 
-<nav class="pagination" md-ink-ripple>
-    <a class="disabled" href="#" aria-label="Previous">
+<div class="simple-pagination">
+    <md-button class="pagination-item disabled" md-no-ink ng-href="#" aria-label="Go to previous page">
         <i class="icon-navigate_before" aria-hidden="true"></i>
-    </a>
-    <a class="active" href="#">1</a>
-    <a href="#">2</a>
-    <a href="#">3</a>
-    <a href="#">4</a>
-    <a href="#">5</a>
-    <a href="#">6</a>
-    <a href="#">7</a>
-    <a href="#">8</a>
-    <a href="#">9</a>
-    <a href="#">10</a>
-    <a href="#" aria-label="Next">
+    </md-button>
+
+    <md-button class="pagination-item active" md-no-ink ng-href="#" aria-label="Go to page 1">
+        <span>1</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 2">
+        <span>2</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 3">
+        <span>3</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 4">
+        <span>4</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 5">
+        <span>5</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 6">
+        <span>6</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 7">
+        <span>7</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 8">
+        <span>8</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 9">
+        <span>9</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 10">
+        <span>10</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to next page">
         <i class="icon-navigate_next" aria-hidden="true"></i>
-    </a>
-</nav>
+    </md-button>
+</div>

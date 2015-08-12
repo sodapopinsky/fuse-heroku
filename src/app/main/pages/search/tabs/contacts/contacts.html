@@ -1,22 +1,25 @@
-<div class="content-header" layout="row" layout-align="space-between center">
-    <span class="title">
+<div class="result-info" layout="row" layout-align="space-between center">
+    <div>
         <span class="md-title">Contacts</span>
         <span class="secondary-text">13 Results</span>
-    </span>
+    </div>
 
     <div class="pager">
         <span class="secondary-text">Results:</span>
-        <span class="page-info">1-10</span>
+
+        <span class="page-info">1 - 10 of 100</span>
+
         <md-button class="md-icon-button" aria-label="previous page">
             <md-icon md-font-icon="icon-navigate_before"></md-icon>
         </md-button>
+
         <md-button class="md-icon-button" aria-label="next page">
             <md-icon md-font-icon="icon-navigate_next"></md-icon>
         </md-button>
     </div>
 </div>
 
-<table class="results contacts table-simple" layout-fill>
+<table class="results simple clickable">
     <thead>
         <tr>
             <th></th>
@@ -26,14 +29,15 @@
             <th>Email</th>
         </tr>
     </thead>
+
     <tbody>
-        <tr class="result-item contact" ng-repeat="contact in vm.contacts">
+        <tr class="result-item" ng-repeat="contact in vm.contacts">
             <td class="text-left avatar-cell" ng-if="contact.avatar">
-                <img alt="{{ contact.name }}" ng-src="{{ contact.avatar}}" class="avatar"/>
+                <img alt="{{contact.name}}" ng-src="{{contact.avatar}}" class="avatar"/>
             </td>
             <td class="text-left avatar-cell" ng-if="!contact.avatar">
                 <div class="avatar" ng-random-class="vm.colors">
-                    {{ contact.name[0] }}
+                    {{contact.name[0]}}
                 </div>
             </td>
             <td class="name">{{contact.name}}</td>
@@ -44,24 +48,55 @@
     </tbody>
 </table>
 
-<nav class="pagination" md-ink-ripple>
-    <a class="disabled" href="#" aria-label="Previous">
+<div class="simple-pagination">
+    <md-button class="pagination-item disabled" md-no-ink ng-href="#" aria-label="Go to previous page">
         <i class="icon-navigate_before" aria-hidden="true"></i>
-    </a>
-    <a class="active" href="#">1</a>
-    <a href="#">2</a>
-    <a href="#">3</a>
-    <a href="#">4</a>
-    <a href="#">5</a>
-    <a href="#">6</a>
-    <a href="#">7</a>
-    <a href="#">8</a>
-    <a href="#">9</a>
-    <a href="#">10</a>
-    <a href="#" aria-label="Next">
+    </md-button>
+
+    <md-button class="pagination-item active" md-no-ink ng-href="#" aria-label="Go to page 1">
+        <span>1</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 2">
+        <span>2</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 3">
+        <span>3</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 4">
+        <span>4</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 5">
+        <span>5</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 6">
+        <span>6</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 7">
+        <span>7</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 8">
+        <span>8</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 9">
+        <span>9</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 10">
+        <span>10</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to next page">
         <i class="icon-navigate_next" aria-hidden="true"></i>
-    </a>
-</nav>
+    </md-button>
+</div>
 
 
 
