@@ -61,7 +61,6 @@
 table {
 
     &.simple {
-
         width: 100%;
         border: none;
         border-spacing: 0;
@@ -109,6 +108,20 @@ table {
 
                     td {
                         border-bottom: none;
+                    }
+                }
+            }
+        }
+
+        &.clickable {
+
+            tbody {
+
+                tr {
+                    cursor: pointer;
+
+                    &:hover {
+                        background: rgba(0, 0, 0, 0.03);
                     }
                 }
             }
