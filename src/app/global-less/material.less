@@ -6,7 +6,7 @@
 /*-----------------------------------------------------------------------*/
 
 /*----------------------------------------------------------------*/
-/*  @ Simple Navigation
+/*  @ Navigation - Simple
 /*----------------------------------------------------------------*/
 .navigation-simple {
 
@@ -48,83 +48,37 @@
 }
 
 /*----------------------------------------------------------------*/
-/*  @ Simple Table
+/*  @ Pagination
 /*----------------------------------------------------------------*/
-.simple-table-container {
+.simple-pagination {
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    box-shadow: @whiteframe-shadow-z1;
+    background-color: @material-color-white;
+    padding: 0 8px;
 
-    .table-title {
-        font-size: 20px;
-        padding: 24px;
-    }
-}
+    .pagination-item {
+        min-width: 48px;
+        min-height: 56px;
+        line-height: 56px;
+        border-radius: 0;
+        margin: 0;
+        font-weight: normal;
+        color: rgba(0, 0, 0, 0.54);
 
-table {
-
-    &.simple {
-        width: 100%;
-        border: none;
-        border-spacing: 0;
-        text-align: left;
-
-        thead {
-
-            tr {
-
-                th {
-                    padding: 16px 8px;
-                    font-weight: 500;
-                    color: rgba(0, 0, 0, 0.54);
-                    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-
-                    &:first-child {
-                        padding-left: 24px;
-                    }
-
-                    &:last-child {
-                        padding-right: 24px;
-                    }
-                }
-            }
+        &:hover {
+            color: rgba(0, 0, 0, 0.87);
         }
 
-        tbody {
-
-            tr {
-
-                td {
-                    padding: 16px 8px;
-                    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-
-                    &:first-child {
-                        padding-left: 24px;
-                    }
-
-                    &:last-child {
-                        padding-right: 24px;
-                    }
-                }
-
-                &:last-child {
-
-                    td {
-                        border-bottom: none;
-                    }
-                }
-            }
+        &.active {
+            cursor: default;
+            color: rgba(0, 0, 0, 87);
         }
 
-        &.clickable {
-
-            tbody {
-
-                tr {
-                    cursor: pointer;
-
-                    &:hover {
-                        background: rgba(0, 0, 0, 0.03);
-                    }
-                }
-            }
+        &.disabled {
+            cursor: default;
+            color: rgba(0, 0, 0, 0.26);
         }
     }
 }
@@ -327,37 +281,83 @@ table {
 }
 
 /*----------------------------------------------------------------*/
-/*  @ Pagination
+/*  @ Table - Simple
 /*----------------------------------------------------------------*/
-.simple-pagination {
-    position: relative;
-    display: inline-flex;
-    flex-direction: row;
-    box-shadow: @whiteframe-shadow-z1;
-    background-color: @material-color-white;
-    padding: 0 8px;
+.simple-table-container {
 
-    .pagination-item {
-        min-width: 48px;
-        min-height: 56px;
-        line-height: 56px;
-        border-radius: 0;
-        margin: 0;
-        font-weight: normal;
-        color: rgba(0, 0, 0, 0.54);
+    .table-title {
+        font-size: 20px;
+        padding: 24px;
+    }
+}
 
-        &:hover {
-            color: rgba(0, 0, 0, 0.87);
+table {
+
+    &.simple {
+        width: 100%;
+        border: none;
+        border-spacing: 0;
+        text-align: left;
+
+        thead {
+
+            tr {
+
+                th {
+                    padding: 16px 8px;
+                    font-weight: 500;
+                    color: rgba(0, 0, 0, 0.54);
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+                    &:first-child {
+                        padding-left: 24px;
+                    }
+
+                    &:last-child {
+                        padding-right: 24px;
+                    }
+                }
+            }
         }
 
-        &.active {
-            cursor: default;
-            color: rgba(0, 0, 0, 87);
+        tbody {
+
+            tr {
+
+                td {
+                    padding: 16px 8px;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+                    &:first-child {
+                        padding-left: 24px;
+                    }
+
+                    &:last-child {
+                        padding-right: 24px;
+                    }
+                }
+
+                &:last-child {
+
+                    td {
+                        border-bottom: none;
+                    }
+                }
+            }
         }
 
-        &.disabled {
-            cursor: default;
-            color: rgba(0, 0, 0, 0.26);
+        &.clickable {
+
+            tbody {
+
+                tr {
+                    cursor: pointer;
+
+                    &:hover {
+                        background: rgba(0, 0, 0, 0.03);
+                    }
+                }
+            }
         }
     }
 }
