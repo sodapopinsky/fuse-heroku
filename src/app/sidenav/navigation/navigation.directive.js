@@ -10,7 +10,7 @@
         .directive('msNavToggle', msNavToggle);
 
     /** @ngInject */
-    function MsNavController()
+    function MsNavController($rootScope)
     {
         var vm = this,
             disabled = false,
@@ -101,6 +101,21 @@
         {
             lockedItems = [];
         }
+
+        /**
+         * Navigation Collapse
+         */
+        var navSidNavEl = angular.element(document.getElementById('navigation'));
+
+        navSidNavEl.on('mouseenter', function() {
+            navSidNavEl.removeClass('collapsed');
+        });
+
+        navSidNavEl.on('mouseleave', function() {
+            navSidNavEl.addClass('collapsed');
+            $rootScope.$broadcast('msNav::forceCollapse');
+        });
+
     }
 
     /** @ngInject */
@@ -124,6 +139,8 @@
                     {
                         $rootScope.$broadcast('msNav::expandMatchingToggles');
                     });
+
+
                 }
             }
         };
@@ -158,7 +175,8 @@
                 return function postLink($scope, $element)
                 {
 
-                }
+
+                };
             }
         };
     }

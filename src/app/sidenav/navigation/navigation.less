@@ -1,10 +1,43 @@
 // Variables
 @navigationWidth: 240px;
+@collapsedNavigationWidth: 64px;
 
 #navigation {
     width: @navigationWidth;
     min-width: @navigationWidth;
     max-width: @navigationWidth;
+    overflow-x: hidden;
+
+    &.collapsed {
+        width: @collapsedNavigationWidth;
+        min-width: @collapsedNavigationWidth;
+        max-width: @collapsedNavigationWidth;
+        .navigation-header{
+            padding: 0;
+            .logo{
+                margin: 0 16px;
+            }
+            .logo-text{
+                display: none;
+            }
+        }
+        .navigation {
+            ms-nav {
+                ms-nav-item {
+                    &.ms-nav-title {
+                        display: none;
+                    }
+                    .ms-nav-button {
+                        height: 48px;
+                        > span,
+                        > i.arrow {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     .navigation-header {
         height: 64px;
@@ -30,6 +63,7 @@
     .navigation {
         z-index: 70;
         background: transparent;
+        overflow-x: hidden;
 
         ms-nav {
             display: block;
