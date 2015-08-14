@@ -45,6 +45,9 @@
                         $element.perfectScrollbar(options);
                     }, 0);
 
+                    // Update the scrollbar on element mouseenter
+                    $element.on('mouseenter', updateScrollbar);
+
                     // Watch scrollHeight and update
                     // the scrollbar if it changes
                     $scope.$watch(function ()
