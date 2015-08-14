@@ -1,0 +1,28 @@
+.ps-container {
+
+    > .ps-scrollbar-x-rail {
+        margin: 4px 0;
+        height: 4px;
+
+        > .ps-scrollbar-x {
+            height: 4px;
+        }
+    }
+
+    > .ps-scrollbar-y-rail {
+        margin: 4px 0;
+        width: 4px;
+
+        > .ps-scrollbar-y {
+            width: 4px;
+        }
+
+        &:hover, &:active {
+            width: 8px;
+
+            > .ps-scrollbar-y {
+                width: 8px;
+            }
+        }
+    }
+}
