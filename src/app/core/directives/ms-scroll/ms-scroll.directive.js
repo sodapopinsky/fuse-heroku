@@ -27,29 +27,37 @@
                 {
                     var options = {};
 
-                    // If options supplied, evaluate the given
-                    // value. This is because we don't want to
-                    // have an isolated scope but still be able
-                    // to use scope variables.
-                    // We don't want an isolated scope because
-                    // we should be able to use this everywhere
-                    // especially with other directives
+                    /**
+                     * If options supplied, evaluate the given
+                     * value. This is because we don't want to
+                     * have an isolated scope but still be able
+                     * to use scope variables.
+                     * We don't want an isolated scope because
+                     * we should be able to use this everywhere
+                     * especially with other directives
+                     */
                     if ( $attrs.msScroll )
                     {
                         options = $scope.$eval($attrs.msScroll);
                     }
 
-                    // Initialize the perfectScrollbar
+                    /**
+                     * Initialize the scrollbar
+                     */
                     $timeout(function ()
                     {
                         $element.perfectScrollbar(options);
                     }, 0);
 
-                    // Update the scrollbar on element mouseenter
+                    /**
+                     * Update the scrollbar on element mouseenter
+                     */
                     $element.on('mouseenter', updateScrollbar);
 
-                    // Watch scrollHeight and update
-                    // the scrollbar if it changes
+                    /**
+                     * Watch scrollHeight and update
+                     * the scrollbar if it changes
+                     */
                     $scope.$watch(function ()
                     {
                         return $element.prop('scrollHeight');
@@ -63,13 +71,17 @@
                         updateScrollbar();
                     });
 
-                    // Update the scrollbar
+                    /**
+                     * Update the scrollbar
+                     */
                     function updateScrollbar()
                     {
                         $element.perfectScrollbar('update');
                     }
 
-                    // Cleanup on $destroy
+                    /**
+                     * Cleanup on destroy
+                     */
                     $scope.$on('$destroy', function ()
                     {
                         $element.off('mouseenter');
