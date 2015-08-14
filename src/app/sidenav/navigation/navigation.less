@@ -203,67 +203,70 @@
 }
 
 // Folded navigation
-body {
+@media only screen and (min-width: 960px) {
 
-    &.navigation-folded {
+    body {
 
-        #content-container {
-            margin-left: @navigationFoldedWidth;
-        }
+        &.navigation-folded {
 
-        #navigation {
+            #content-container {
+                margin-left: @navigationFoldedWidth;
+            }
 
-            &.folded {
-                position: absolute;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                transition: width 0.1s linear, min-width 0.1s linear, max-width 0.1s linear;
+            #navigation {
 
-                &:not(.folded-open) {
-                    width: @navigationFoldedWidth;
-                    min-width: @navigationFoldedWidth;
-                    max-width: @navigationFoldedWidth;
+                &.folded {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    transition: width 0.1s linear, min-width 0.1s linear, max-width 0.1s linear;
 
-                    .navigation-header {
-                        padding: 0 16px;
+                    &:not(.folded-open) {
+                        width: @navigationFoldedWidth;
+                        min-width: @navigationFoldedWidth;
+                        max-width: @navigationFoldedWidth;
 
-                        .logo {
+                        .navigation-header {
+                            padding: 0 16px;
 
-                        }
+                            .logo {
 
-                        .logo-text {
-                            display: none;
-                        }
-                    }
-
-                    ms-nav {
-
-                        ms-nav-item {
-
-                            &.ms-nav-title {
-                                height: 32px;
-
-                                &:before {
-                                    content: '';
-                                    display: block;
-                                    position: relative;
-                                    top: 12px;
-                                    width: 16px;
-                                    border-top: 1px solid rgba(255, 255, 255, 0.12);
-                                }
-
-                                span {
-                                    display: none;
-                                }
                             }
 
-                            .ms-nav-button {
-                                height: 48px;
+                            .logo-text {
+                                display: none;
+                            }
+                        }
 
-                                > .ms-nav-label,
-                                > .arrow {
-                                    display: none;
+                        ms-nav {
+
+                            ms-nav-item {
+
+                                &.ms-nav-title {
+                                    height: 32px;
+
+                                    &:before {
+                                        content: '';
+                                        display: block;
+                                        position: relative;
+                                        top: 12px;
+                                        width: 16px;
+                                        border-top: 1px solid rgba(255, 255, 255, 0.12);
+                                    }
+
+                                    span {
+                                        display: none;
+                                    }
+                                }
+
+                                .ms-nav-button {
+                                    height: 48px;
+
+                                    > .ms-nav-label,
+                                    > .arrow {
+                                        display: none;
+                                    }
                                 }
                             }
                         }
@@ -273,4 +276,3 @@ body {
         }
     }
 }
-
