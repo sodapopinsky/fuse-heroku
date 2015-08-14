@@ -33,7 +33,7 @@
         <div class="timeline-item md-whiteframe-z1" layout="column" ng-repeat="post in vm.posts">
             <header layout="row" layout-align="space-between start">
                 <div class="user" layout="row" layout-align="start center">
-                    <img class="md-avatar" ng-src="{{post.user.avatar}}">
+                    <img class="avatar" ng-src="{{post.user.avatar}}">
 
                     <div layout="column">
                         <div class="title">
@@ -95,7 +95,7 @@
                 </div>
 
                 <div class="comment" layout="row" layout-fill ng-repeat="comment in post.comments">
-                    <img ng-src="{{comment.user.avatar}}" class="md-avatar"/>
+                    <img ng-src="{{comment.user.avatar}}" class="avatar"/>
 
                     <div flex layout="column">
                         <div>
@@ -113,7 +113,7 @@
                 </div>
 
                 <div class="reply" layout="row" layout-fill>
-                    <img src="assets/images/avatars/profile-img.jpeg" class="md-avatar"/>
+                    <img src="assets/images/avatars/profile-img.jpeg" class="avatar"/>
 
                     <form flex>
                         <textarea placeholder="Add a comment..."></textarea>
@@ -137,7 +137,7 @@
             <div class="content" layout="row" layout-wrap>
                 <md-list class="activities">
                     <md-list-item class="activity md-2-line" ng-repeat="activity in vm.activities">
-                        <img ng-src="{{activity.user.avatar}}" class="md-avatar" alt="{{activity.user.name}}"/>
+                        <img ng-src="{{activity.user.avatar}}" class="avatar" alt="{{activity.user.name}}"/>
 
                         <div class="md-list-item-text">
                             <span class="username md-accent-color">{{activity.user.name}}</span>
