@@ -1,6 +1,6 @@
 // Variables
 @navigationWidth: 240px;
-@collapsedNavigationWidth: 64px;
+@navigationFoldedWidth: 64px;
 
 #navigation {
     width: @navigationWidth;
@@ -8,222 +8,269 @@
     max-width: @navigationWidth;
     overflow-x: hidden;
 
-    &.collapsed {
-        width: @collapsedNavigationWidth;
-        min-width: @collapsedNavigationWidth;
-        max-width: @collapsedNavigationWidth;
-        .navigation-header{
-            padding: 0;
-            .logo{
-                margin: 0 16px;
-            }
-            .logo-text{
-                display: none;
-            }
-        }
-        .navigation {
-            ms-nav {
-                ms-nav-item {
-                    &.ms-nav-title {
-                        display: none;
-                    }
-                    .ms-nav-button {
-                        height: 48px;
-                        > span,
-                        > i.arrow {
-                            display: none;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     .navigation-header {
         height: 64px;
         min-height: 64px;
         background-color: rgba(255, 255, 255, 0.08);
-        padding-left: 32px;
+        padding: 0 24px;
 
         .logo {
-            width: 32px;
-            height: 32px;
-            font-size: 16px;
-            font-weight: 900;
-            margin-right: 16px;
-            color: rgba(255, 255, 255, 1);
-            border-radius: 2px;
-        }
 
-        .logo-text {
-            font-size: 16px;
-        }
-    }
-
-    .navigation {
-        z-index: 70;
-        background: transparent;
-        overflow-x: hidden;
-
-        ms-nav {
-            display: block;
-            position: relative;
-            color: rgba(255, 255, 255, 0.70);
-            user-select: none;
-
-            ms-nav-item {
-                display: block;
-                position: relative;
-                line-height: 48px;
-
-                &.ms-nav-title {
-                    display: block;
-                    line-height: 32px;
-                    font-size: 12px;
-                    font-weight: 600;
-                    margin-top: 16px;
-                    padding: 0 24px;
-                    width: 100%;
-                    color: rgba(255, 255, 255, 0.30);
-                    text-transform: uppercase;
-                }
-
-                .ms-nav-button {
-                    position: relative;
-                    display: flex;
-                    align-self: flex-start;
-                    align-items: center;
-                    cursor: pointer;
-                    padding: 0 24px;
-                    color: rgba(255, 255, 255, 0.70);
-
-                    &:hover {
-                        background: rgba(0, 0, 0, 0.1);
-                    }
-
-                    > span {
-                        display: flex;
-                        flex: 1;
-                    }
-
-                    .arrow {
-                        transition: transform 0.3s ease-in-out;
-                        margin: 0;
-                    }
-
-                    &.active {
-                        background: rgba(0, 0, 0, 0.12);
-                        color: rgba(255, 255, 255, 1);
-
-                        i {
-                            color: rgba(255, 255, 255, 1);
-                        }
-                    }
-                }
-
-                i {
-                    color: rgba(255, 255, 255, 0.70);
-                    margin: 0 16px 0 0;
-                }
-
-                span {
-                    display: flex;
-                }
+            .logo-image {
+                background: @material-color-light-blue;
+                width: 32px;
+                height: 32px;
+                line-height: 32px;
+                text-align: center;
+                font-size: 16px;
+                font-weight: 900;
+                color: @material-color-white;
+                border-radius: 2px;
             }
 
-            .ms-nav-toggle {
+            .logo-text {
+                margin-left: 16px;
+                font-size: 16px;
+            }
+        }
 
-                ms-nav-toggle-items {
-                    display: none;
+    }
+
+    ms-nav {
+        display: block;
+        position: relative;
+        color: rgba(255, 255, 255, 0.70);
+        user-select: none;
+        z-index: 70;
+
+        ms-nav-item {
+            display: block;
+            position: relative;
+            line-height: 48px;
+
+            &.ms-nav-title {
+                line-height: 32px;
+                font-size: 12px;
+                font-weight: 600;
+                margin-top: 8px;
+                padding: 0 24px;
+                width: 100%;
+                color: rgba(255, 255, 255, 0.30);
+                text-transform: uppercase;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .ms-nav-button {
+                display: flex;
+                align-self: flex-start;
+                align-items: center;
+                position: relative;
+                cursor: pointer;
+                padding: 0 48px 0 24px;
+                color: rgba(255, 255, 255, 0.70);
+
+                &:hover {
+                    background: rgba(0, 0, 0, 0.1);
+                }
+
+                .ms-nav-label {
+                    white-space: nowrap;
                     overflow: hidden;
+                    text-overflow: ellipsis;
+                }
 
-                    &.expanded {
-
-                    }
-
-                    &.expand-animation {
-                        transition: height 0.35s cubic-bezier(0.250, 0.460, 0.450, 0.940);
-                    }
-
-                    &.collapse-animation {
-                        transition: height 0.35s cubic-bezier(0.250, 0.460, 0.450, 0.940);
-                    }
-
-                    ms-nav-item {
-                        /* Level 1 */
-                        .ms-nav-button {
-                            padding-left: 58px;
-                        }
-
-                        /* Level 2 */
-                        ms-nav-toggle-items ms-nav-item {
-
-                            .ms-nav-button {
-                                padding-left: 68px;
-                            }
-
-                            /* Level 3 */
-                            ms-nav-toggle-items ms-nav-item {
-
-                                .ms-nav-button {
-                                    padding-left: 78px;
-                                }
-
-                                /* Level 4 */
-                                ms-nav-toggle-items ms-nav-item {
-
-                                    .ms-nav-button {
-                                        padding-left: 88px;
-                                    }
-
-                                    /* Level 5 */
-                                    ms-nav-toggle-items ms-nav-item {
-
-                                        .ms-nav-button {
-                                            padding-left: 98px;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
+                .arrow {
+                    position: absolute;
+                    top: 16px;
+                    right: 24px;
+                    margin: 0;
+                    transition: transform 0.3s ease-in-out;
                 }
 
                 &.active {
+                    background: rgba(0, 0, 0, 0.12);
+                    color: rgba(255, 255, 255, 1);
 
-                    > .ms-nav-button {
+                    i {
                         color: rgba(255, 255, 255, 1);
-
-                        a, md-icon {
-                            color: rgba(255, 255, 255, 1);
-                        }
                     }
                 }
+            }
 
-                &[collapsed="false"] {
+            i {
+                color: rgba(255, 255, 255, 0.70);
+                margin: 0 16px 0 0;
+            }
+        }
 
-                    & > .ms-nav-button {
+        .ms-nav-toggle {
 
-                        & > .arrow {
-                            transform: rotate(180deg);
+            ms-nav-toggle-items {
+                display: none;
+                overflow: hidden;
+
+                &.expanded {
+
+                }
+
+                &.expand-animation {
+                    transition: height 0.35s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+                }
+
+                &.collapse-animation {
+                    transition: height 0.35s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+                }
+
+                ms-nav-item {
+                    /* Level 1 */
+                    .ms-nav-button {
+                        padding-left: 58px;
+                    }
+
+                    /* Level 2 */
+                    ms-nav-toggle-items ms-nav-item {
+
+                        .ms-nav-button {
+                            padding-left: 68px;
+                        }
+
+                        /* Level 3 */
+                        ms-nav-toggle-items ms-nav-item {
+
+                            .ms-nav-button {
+                                padding-left: 78px;
+                            }
+
+                            /* Level 4 */
+                            ms-nav-toggle-items ms-nav-item {
+
+                                .ms-nav-button {
+                                    padding-left: 88px;
+                                }
+
+                                /* Level 5 */
+                                ms-nav-toggle-items ms-nav-item {
+
+                                    .ms-nav-button {
+                                        padding-left: 98px;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
             }
 
-            & > .ms-nav-toggle {
+            &.active {
 
-                &[collapsed="false"] {
-                    background-color: rgba(0, 0, 0, 0.08);
+                > .ms-nav-button {
+                    color: rgba(255, 255, 255, 1);
+
+                    a,
+                    md-icon {
+                        color: rgba(255, 255, 255, 1);
+                    }
                 }
+            }
+
+            &[collapsed="false"] {
+
+                & > .ms-nav-button {
+
+                    & > .arrow {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+
+        & > .ms-nav-toggle {
+
+            &[collapsed="false"] {
+                background-color: rgba(0, 0, 0, 0.08);
             }
         }
     }
 
     &:not(.md-locked-open) {
 
-        .navigation {
+        ms-nav {
             overflow: hidden
         }
     }
 }
+
+// Folded navigation
+body {
+
+    &.navigation-folded {
+
+        #content-container {
+            margin-left: @navigationFoldedWidth;
+        }
+
+        #navigation {
+
+            &.folded {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                transition: width 0.1s linear, min-width 0.1s linear, max-width 0.1s linear;
+
+                &:not(.folded-open) {
+                    width: @navigationFoldedWidth;
+                    min-width: @navigationFoldedWidth;
+                    max-width: @navigationFoldedWidth;
+
+                    .navigation-header {
+                        padding: 0 16px;
+
+                        .logo {
+
+                        }
+
+                        .logo-text {
+                            display: none;
+                        }
+                    }
+
+                    ms-nav {
+
+                        ms-nav-item {
+
+                            &.ms-nav-title {
+                                height: 32px;
+
+                                &:before {
+                                    content: '';
+                                    display: block;
+                                    position: relative;
+                                    top: 12px;
+                                    width: 16px;
+                                    border-top: 1px solid rgba(255, 255, 255, 0.12);
+                                }
+
+                                span {
+                                    display: none;
+                                }
+                            }
+
+                            .ms-nav-button {
+                                height: 48px;
+
+                                > .ms-nav-label,
+                                > .arrow {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

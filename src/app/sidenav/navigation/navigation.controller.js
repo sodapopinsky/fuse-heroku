@@ -11,6 +11,9 @@
         var vm = this;
 
         // Data
+        vm.msScrollOptions = {
+            suppressScrollX: true
+        };
 
         // Methods
 

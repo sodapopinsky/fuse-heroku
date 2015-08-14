@@ -6,7 +6,7 @@
         .controller('ToolbarController', ToolbarController);
 
     /** @ngInject */
-    function ToolbarController($mdSidenav)
+    function ToolbarController($mdSidenav, msNavFoldService)
     {
         var vm = this;
 
@@ -14,6 +14,7 @@
 
         // Methods
         vm.toggleSidenav = toggleSidenav;
+        vm.toggleNavigationSidenavMode = toggleNavigationSidenavMode;
 
         //////////
 
@@ -25,6 +26,14 @@
         function toggleSidenav(sidenavId)
         {
             $mdSidenav(sidenavId).toggle();
+        }
+
+        /**
+         * Toggle navigation sidenav mode
+         */
+        function toggleNavigationSidenavMode()
+        {
+            msNavFoldService.toggleFold();
         }
     }
 

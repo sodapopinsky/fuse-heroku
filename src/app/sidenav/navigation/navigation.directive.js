@@ -3,6 +3,8 @@
     'use strict';
 
     angular.module('fuse')
+        .factory('msNavFoldService', msNavFoldService)
+        .directive('msNavIsFolded', msNavIsFolded)
         .controller('MsNavController', MsNavController)
         .directive('msNav', msNav)
         .directive('msNavTitle', msNavTitle)
@@ -10,7 +12,126 @@
         .directive('msNavToggle', msNavToggle);
 
     /** @ngInject */
-    function MsNavController($rootScope)
+    function msNavFoldService()
+    {
+        var foldable = {};
+
+        var service = {
+            setFoldable: setFoldable,
+            toggleFold : toggleFold
+        };
+
+        return service;
+
+        //////////
+
+        /**
+         * Set the foldable
+         *
+         * @param scope
+         * @param element
+         */
+        function setFoldable(scope, element)
+        {
+            foldable = {
+                'scope'  : scope,
+                'element': element
+            };
+        }
+
+        /**
+         * Toggle fold
+         */
+        function toggleFold()
+        {
+            foldable.scope.toggleFold();
+        }
+
+    }
+
+    /** @ngInject */
+    function msNavIsFolded($document, $rootScope, msNavFoldService)
+    {
+        return {
+            restrict: 'A',
+            link    : function ($scope, $element, $attrs)
+            {
+                var isFolded = ($attrs.msNavIsFolded === 'true'),
+                    body = angular.element($document[0].body);
+
+                // Initialize the service
+                msNavFoldService.setFoldable($scope, $element, isFolded);
+
+                // Set the fold status for the first time
+                if ( isFolded )
+                {
+                    fold();
+                }
+                else
+                {
+                    unfold();
+                }
+
+                /**
+                 * Toggle fold
+                 */
+                function toggleFold()
+                {
+                    isFolded = !isFolded;
+
+                    if ( isFolded )
+                    {
+                        fold();
+                    }
+                    else
+                    {
+                        unfold();
+                    }
+                }
+
+                /**
+                 * Fold the navigation
+                 */
+                function fold()
+                {
+                    $element.addClass('folded');
+                    body.addClass('navigation-folded');
+
+                    $element.on('mouseenter', function ()
+                    {
+                        $element.addClass('folded-open');
+                    });
+
+                    $element.on('mouseleave', function ()
+                    {
+                        //$rootScope.$broadcast('msNav::collapse');
+                        $rootScope.$broadcast('msNav::forceCollapse');
+
+                        $element.removeClass('folded-open');
+                    });
+                }
+
+                /**
+                 * Unfold the navigation
+                 */
+                function unfold()
+                {
+                    $element.removeClass('folded');
+                    body.removeClass('navigation-folded');
+
+                    $element.off('mouseenter');
+                    $element.off('mouseleave');
+                }
+
+                // Expose functions to the scope
+                $scope.toggleFold = toggleFold;
+            }
+        };
+    }
+
+
+    /** @ngInject */
+    function MsNavController()
     {
         var vm = this,
             disabled = false,
@@ -18,8 +139,10 @@
             lockedItems = [];
 
         // Data
+        vm.element = undefined;
 
         // Methods
+        vm.init = init;
         vm.isDisabled = isDisabled;
         vm.enable = enable;
         vm.disable = disable;
@@ -29,6 +152,14 @@
         vm.clearLockedItems = clearLockedItems;
 
         //////////
+
+        /**
+         * Init the controller
+         */
+        function init(element)
+        {
+            vm.element = element;
+        }
 
         /**
          * Is navigation disabled
@@ -67,7 +198,7 @@
             toggleItems.push({
                 'element': element,
                 'scope'  : scope
-            })
+            });
         }
 
         /**
@@ -91,7 +222,7 @@
             lockedItems.push({
                 'element': element,
                 'scope'  : scope
-            })
+            });
         }
 
         /**
@@ -101,21 +232,6 @@
         {
             lockedItems = [];
         }
-
-        /**
-         * Navigation Collapse
-         */
-        var navSidNavEl = angular.element(document.getElementById('navigation'));
-
-        navSidNavEl.on('mouseenter', function() {
-            navSidNavEl.removeClass('collapsed');
-        });
-
-        navSidNavEl.on('mouseleave', function() {
-            navSidNavEl.addClass('collapsed');
-            $rootScope.$broadcast('msNav::forceCollapse');
-        });
-
     }
 
     /** @ngInject */
@@ -125,12 +241,15 @@
             restrict  : 'E',
             scope     : {},
             controller: 'MsNavController',
-            compile   : function (tElement, tAttrs)
+            compile   : function (tElement)
             {
                 tElement.addClass('ms-nav');
 
                 return function postLink($scope, $element, $attrs, MsNavCtrl)
                 {
+                    // Init the controller with the element
+                    MsNavCtrl.init($element);
+
                     // Update toggle status according to the ui-router current state
                     $rootScope.$broadcast('msNav::expandMatchingToggles');
 
@@ -139,9 +258,7 @@
                     {
                         $rootScope.$broadcast('msNav::expandMatchingToggles');
                     });
-
-
-                }
+                };
             }
         };
     }
@@ -151,14 +268,14 @@
     {
         return {
             restrict: 'A',
-            compile : function (tElement, tAttrs)
+            compile : function (tElement)
             {
                 tElement.addClass('ms-nav-title');
 
                 return function postLink($scope, $element)
                 {
 
-                }
+                };
             }
         };
     }
@@ -172,9 +289,8 @@
             {
                 tElement.addClass('ms-nav-button');
 
-                return function postLink($scope, $element)
+                return function postLink($scope, $element, $attrs)
                 {
-
 
                 };
             }
@@ -197,6 +313,7 @@
                 {
                     tAttrs.collapsed = true;
                 }
+
                 tElement.attr('collapsed', tAttrs.collapsed);
 
                 return function postLink($scope, $element, $attrs, MsNavCtrl)
@@ -502,9 +619,8 @@
                         // Return the promise
                         return deferred.promise;
                     }
-                }
+                };
             }
-        }
+        };
     }
-
 })();

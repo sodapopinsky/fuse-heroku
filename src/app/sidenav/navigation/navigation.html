@@ -1,565 +1,568 @@
-<md-toolbar class="navigation-header" layout="row" layout-align="start center">
-    <div class="logo md-accent-bg" layout="column" layout-align="center center">
-        <span>F</span>
+<md-toolbar class="navigation-header md-whiteframe-z1" layout="row" layout-align="start center">
+    <div class="logo" layout="row" layout-align="start center">
+        <span class="logo-image">F</span>
+        <span class="logo-text">FUSE</span>
     </div>
-    <span class="logo-text">FUSE</span>
 </md-toolbar>
 
-<md-content class="navigation" flex>
-
-    <ms-nav>
-
-        <ms-nav-item ms-nav-title>DEV TEAM</ms-nav-item>
-
-        <ms-nav-item>
-            <a ms-nav-button ui-sref="app.dev" ui-sref-active="active" md-ink-ripple>
-                <i class="icon-code s18 md-font md-default-theme"></i>
-                <span>Development</span>
-            </a>
-        </ms-nav-item>
-
-        <ms-nav-item ms-nav-title>FUSE</ms-nav-item>
-
-        <ms-nav-item>
-            <a ms-nav-button ui-sref="app.dashboard" ui-sref-active="active" md-ink-ripple>
-                <i class="icon-dashboard s18 md-font md-default-theme"></i>
-                <span>Dashboard</span>
-            </a>
-        </ms-nav-item>
-
-        <ms-nav-item>
-            <a ms-nav-button ui-sref="app.calendar" ui-sref-active="active" md-ink-ripple>
-                <i class="icon-today s18 md-font md-default-theme"></i>
-                <span>Calendar</span>
-            </a>
-        </ms-nav-item>
-
-        <ms-nav-item>
-            <a ms-nav-button ui-sref="app.e-commerce" ui-sref-active="active" md-ink-ripple>
-                <i class="icon-shopping_cart s18 md-font md-default-theme"></i>
-                <span>E-Commerce</span>
-            </a>
-        </ms-nav-item>
-
-        <ms-nav-item>
-            <a ms-nav-button ui-sref="app.mail" ui-sref-active="active" md-ink-ripple>
-                <i class="icon-email s18 md-font md-default-theme"></i>
-                <span>Mail</span>
-            </a>
-        </ms-nav-item>
-
-        <ms-nav-item>
-            <a ms-nav-button ui-sref="app.file-manager" ui-sref-active="active" md-ink-ripple>
-                <i class="icon-folder s18 md-font md-default-theme"></i>
-                <span>File Manager</span>
-            </a>
-        </ms-nav-item>
-
-        <ms-nav-item>
-            <a ms-nav-button ui-sref="app.to-do" ui-sref-active="active" md-ink-ripple>
-                <i class="icon-check_box s18 md-font md-default-theme"></i>
-                <span>To-Do</span>
-            </a>
-        </ms-nav-item>
-
-        <ms-nav-item ms-nav-toggle>
-            <a ms-nav-button md-ink-ripple>
-                <i class="icon-pages s18 md-font md-default-theme"></i>
-                <span>Pages</span>
-                <i class="icon-keyboard_arrow_down s18 arrow"></i>
-            </a>
-
-            <ms-nav-toggle-items>
-                <ms-nav-item ms-nav-toggle>
-                    <a ms-nav-button md-ink-ripple>
-                        <span>Authentication</span>
-                        <i class="icon-keyboard_arrow_down s18 arrow"></i>
-                    </a>
-
-                    <ms-nav-toggle-items>
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.pages.auth.login" ui-sref-active="active" md-ink-ripple>
-                                <span>Login</span>
-                            </a>
-                        </ms-nav-item>
-
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.pages.auth.register" ui-sref-active="active" md-ink-ripple>
-                                <span>Register</span>
-                            </a>
-                        </ms-nav-item>
-
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.pages.auth.forgot-password" ui-sref-active="active"
-                               md-ink-ripple>
-                                <span>Forgot Password</span>
-                            </a>
-                        </ms-nav-item>
-
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.pages.auth.lock" ui-sref-active="active" md-ink-ripple>
-                                <span>Lock Screen</span>
-                            </a>
-                        </ms-nav-item>
-                    </ms-nav-toggle-items>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.pages.coming-soon" ui-sref-active="active" md-ink-ripple>
-                        <span>Coming Soon</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item ms-nav-toggle>
-                    <div ms-nav-button md-ink-ripple>
-                        <span>Errors</span>
-                        <i class="icon-keyboard_arrow_down s18 arrow"></i>
-                    </div>
-
-                    <ms-nav-toggle-items>
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.pages.errors.error-404" ui-sref-active="active" md-ink-ripple>
-                                <span>404</span>
-                            </a>
-                        </ms-nav-item>
-
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.pages.errors.error-500" ui-sref-active="active" md-ink-ripple>
-                                <span>500</span>
-                            </a>
-                        </ms-nav-item>
-                    </ms-nav-toggle-items>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.pages.invoice" ui-sref-active="active" md-ink-ripple>
-                        <span>Invoice</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.pages.maintenance" ui-sref-active="active" md-ink-ripple>
-                        <span>Maintenance</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.pages.profile" ui-sref-active="active" md-ink-ripple>
-                        <span>Profile</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.pages.search" ui-sref-active="active" md-ink-ripple>
-                        <span>Search</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.pages.timeline" ui-sref-active="active" md-ink-ripple>
-                        <span>Timeline</span>
-                    </a>
-                </ms-nav-item>
-            </ms-nav-toggle-items>
-        </ms-nav-item>
-
-        <ms-nav-item ms-nav-title>USER INTERFACE</ms-nav-item>
-
-        <ms-nav-item>
-            <a ms-nav-button ui-sref="app.ui.typography" ui-sref-active="active" md-ink-ripple>
-                <i class="icon-format_size s18 md-font md-default-theme"></i>
-                <span>Typography</span>
-            </a>
-        </ms-nav-item>
-
-        <ms-nav-item>
-            <a ms-nav-button ui-sref="app.ui.colors" ui-sref-active="active" md-ink-ripple>
-                <i class="icon-palette s18 md-font md-default-theme"></i>
-                <span>Colors</span>
-            </a>
-        </ms-nav-item>
-
-        <ms-nav-item>
-            <a ms-nav-button ui-sref="app.ui.icons" ui-sref-active="active" md-ink-ripple>
-                <i class="icon-photo s18 md-font md-default-theme"></i>
-                <span>Icons</span>
-            </a>
-        </ms-nav-item>
-
-        <ms-nav-item ms-nav-toggle>
-            <a ms-nav-button md-ink-ripple>
-                <i class="icon-web s18 md-font md-default-theme"></i>
-                <span>Theme Layouts</span>
-                <i class="icon-keyboard_arrow_down s18 arrow"></i>
-            </a>
-
-            <ms-nav-toggle-items>
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.ui.layouts.main.default" ui-sref-active="active" md-ink-ripple>
-                        <span>Default</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.ui.layouts.main.basic" ui-sref-active="active" md-ink-ripple>
-                        <span>Basic</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.ui.layouts.main.sidebar-right" ui-sref-active="active" md-ink-ripple>
-                        <span>Sidebar Right</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.ui.layouts.main.sidebar-collapsed" ui-sref-active="active"
-                       md-ink-ripple>
-                        <span>Sidebar Collapsed</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.ui.layouts.main.top-menu" ui-sref-active="active" md-ink-ripple>
-                        <span>Top Menu</span>
-                    </a>
-                </ms-nav-item>
-            </ms-nav-toggle-items>
-        </ms-nav-item>
-
-        <ms-nav-item ms-nav-toggle>
-            <a ms-nav-button md-ink-ripple>
-                <i class="icon-view_compact s18 md-font md-default-theme"></i>
-                <span>Page Layouts</span>
-                <i class="icon-keyboard_arrow_down s18 arrow"></i>
-            </a>
-
-
-            <ms-nav-toggle-items>
-                <ms-nav-item ms-nav-toggle="">
-                    <a ms-nav-button md-ink-ripple>
-                        <span>Carded</span>
-                        <i class="icon-keyboard_arrow_down s18 arrow"></i>
-                    </a>
-
-                    <ms-nav-toggle-items>
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.ui.layouts.carded-fullwidth" ui-sref-active="active"
-                               md-ink-ripple>
-                                <span>Full Width</span>
-                            </a>
-                        </ms-nav-item>
-
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.ui.layouts.carded-left-sidenav" ui-sref-active="active"
-                               md-ink-ripple>
-                                <span>Left Sidenav</span>
-                            </a>
-                        </ms-nav-item>
-
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.ui.layouts.carded-right-sidenav" ui-sref-active="active"
-                               md-ink-ripple>
-                                <span>Right Sidenav</span>
-                            </a>
-                        </ms-nav-item>
-                    </ms-nav-toggle-items>
-                </ms-nav-item>
-
-                <ms-nav-item ms-nav-toggle="">
-                    <a ms-nav-button md-ink-ripple>
-                        <span>Simple</span>
-                        <i class="icon-keyboard_arrow_down s18 arrow"></i>
-                    </a>
-
-                    <ms-nav-toggle-items>
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.ui.layouts.simple-fullwidth" ui-sref-active="active"
-                               md-ink-ripple>
-                                <span>Full Width</span>
-                            </a>
-                        </ms-nav-item>
-
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.ui.layouts.simple-left-sidenav" ui-sref-active="active"
-                               md-ink-ripple>
-                                <span>Left Sidenav</span>
-                            </a>
-                        </ms-nav-item>
-
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.ui.layouts.simple-left-sidenav-alt" ui-sref-active="active"
-                               md-ink-ripple>
-                                <span>Left Sidenav - Alt.</span>
-                            </a>
-                        </ms-nav-item>
-
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.ui.layouts.simple-right-sidenav" ui-sref-active="active"
-                               md-ink-ripple>
-                                <span>Right Sidenav</span>
-                            </a>
-                        </ms-nav-item>
-
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.ui.layouts.simple-right-sidenav-alt" ui-sref-active="active"
-                               md-ink-ripple>
-                                <span>Right Sidenav - Alt.</span>
-                            </a>
-                        </ms-nav-item>
-
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.ui.layouts.simple-tabbed" ui-sref-active="active"
-                               md-ink-ripple>
-                                <span>Tabbed</span>
-                            </a>
-                        </ms-nav-item>
-                    </ms-nav-toggle-items>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.ui.layouts.blank" ui-sref-active="active"
-                       md-ink-ripple>
-                        <span>Blank</span>
-                    </a>
-                </ms-nav-item>
-            </ms-nav-toggle-items>
-        </ms-nav-item>
-
-        <ms-nav-item ms-nav-title>COMPONENTS</ms-nav-item>
-
-        <ms-nav-item ms-nav-toggle="">
-            <a ms-nav-button md-ink-ripple>
-                <i class="icon-equalizer s18 md-font md-default-theme"></i>
-                <span>Charts</span>
-                <i class="icon-keyboard_arrow_down s18 arrow"></i>
-            </a>
-            <ms-nav-toggle-items>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.charts.c3" ui-sref-active="active" md-ink-ripple>
-                        <span>C3</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.charts.chartJs" ui-sref-active="active" md-ink-ripple>
-                        <span>Chart.js</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.charts.chartist" ui-sref-active="active" md-ink-ripple>
-                        <span>Chartist</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.charts.nvd3" ui-sref-active="active" md-ink-ripple>
-                        <span>nvD3</span>
-                    </a>
-                </ms-nav-item>
-
-            </ms-nav-toggle-items>
-        </ms-nav-item>
-
-        <ms-nav-item ms-nav-toggle="">
-            <a ms-nav-button md-ink-ripple>
-                <i class="icon-layers s18 md-font md-default-theme"></i>
-                <span>Elements</span>
-                <i class="icon-keyboard_arrow_down s18 arrow"></i>
-            </a>
-
-            <ms-nav-toggle-items>
-                <ms-nav-item ms-nav-toggle="">
-                    <a ms-nav-button md-ink-ripple>
-                        <span>Inputs</span>
-                        <i class="icon-keyboard_arrow_down s18 arrow"></i>
-                    </a>
-
-                    <ms-nav-toggle-items>
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.components.elements.inputs.autocomplete"
-                               ui-sref-active="active" md-ink-ripple>
-                                <span>Autocomplete</span>
-                            </a>
-                        </ms-nav-item>
-
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.components.elements.inputs.checkbox" ui-sref-active="active"
-                               md-ink-ripple>
-                                <span>Checkbox</span>
-                            </a>
-                        </ms-nav-item>
-
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.components.elements.inputs.chips" ui-sref-active="active"
-                               md-ink-ripple>
-                                <span>Chips / Tags</span>
-                            </a>
-                        </ms-nav-item>
-
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.components.elements.inputs.fields" ui-sref-active="active"
-                               md-ink-ripple>
-                                <span>Fields</span>
-                            </a>
-                        </ms-nav-item>
-
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.components.elements.inputs.radio" ui-sref-active="active"
-                               md-ink-ripple>
-                                <span>Radio</span>
-                            </a>
-                        </ms-nav-item>
-
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.components.elements.inputs.select" ui-sref-active="active"
-                               md-ink-ripple>
-                                <span>Select</span>
-                            </a>
-                        </ms-nav-item>
-
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.components.elements.inputs.slider" ui-sref-active="active"
-                               md-ink-ripple>
-                                <span>Slider</span>
-                            </a>
-                        </ms-nav-item>
-
-                        <ms-nav-item>
-                            <a ms-nav-button ui-sref="app.components.elements.inputs.switch" ui-sref-active="active"
-                               md-ink-ripple>
-                                <span>Switch</span>
-                            </a>
-                        </ms-nav-item>
-                    </ms-nav-toggle-items>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.elements.bottom-sheet" ui-sref-active="active"
-                       md-ink-ripple>
-                        <span>Bottom Sheet</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.elements.buttons" ui-sref-active="active" md-ink-ripple>
-                        <span>Buttons</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.elements.card" ui-sref-active="active" md-ink-ripple>
-                        <span>Card</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.elements.dialog" ui-sref-active="active" md-ink-ripple>
-                        <span>Dialog</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.elements.fab-speed-dial" ui-sref-active="active"
-                       md-ink-ripple>
-                        <span>Fab Speed Dial</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.elements.fab-toolbar" ui-sref-active="active"
-                       md-ink-ripple>
-                        <span>Fab Toolbar</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.elements.menu" ui-sref-active="active" md-ink-ripple>
-                        <span>Menu</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.elements.progress-circular" ui-sref-active="active"
-                       md-ink-ripple>
-                        <span>Progress Circular</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.elements.progress-linear" ui-sref-active="active"
-                       md-ink-ripple>
-                        <span>Progress Linear</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.elements.sidenav" ui-sref-active="active" md-ink-ripple>
-                        <span>Sidenav</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.elements.tabs" ui-sref-active="active" md-ink-ripple>
-                        <span>Tabs</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.elements.toast" ui-sref-active="active" md-ink-ripple>
-                        <span>Toast</span>
-                    </a>
-                </ms-nav-item>
-            </ms-nav-toggle-items>
-        </ms-nav-item>
-
-        <ms-nav-item>
-            <a ms-nav-button ui-sref="app.components.maps" ui-sref-active="active" md-ink-ripple>
-                <i class="icon-location_on s18 md-font md-default-theme"></i>
-                <span>Maps</span>
-            </a>
-        </ms-nav-item>
-
-        <ms-nav-item>
-            <a ms-nav-button ui-sref="app.components.price-tables" ui-sref-active="active" md-ink-ripple>
-                <i class="icon-view_carousel s18 md-font md-default-theme"></i>
-                <span>Price Tables</span>
-            </a>
-        </ms-nav-item>
-
-        <ms-nav-item ms-nav-toggle>
-            <a ms-nav-button md-ink-ripple>
-                <i class="icon-view_column s18 md-font md-default-theme"></i>
-                <span>Tables</span>
-                <i class="icon-keyboard_arrow_down s18 arrow"></i>
-            </a>
-
-            <ms-nav-toggle-items>
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.tables.simple-table" ui-sref-active="active"
-                       md-ink-ripple>
-                        <span>Simple Table</span>
-                    </a>
-                </ms-nav-item>
-
-                <ms-nav-item>
-                    <a ms-nav-button ui-sref="app.components.tables.datatable" ui-sref-active="active" md-ink-ripple>
-                        <span>Datatable</span>
-                    </a>
-                </ms-nav-item>
-            </ms-nav-toggle-items>
-        </ms-nav-item>
-
-        <ms-nav-item>
-            <a ms-nav-button md-ink-ripple>
-                <i class="icon-now_widgets s18 md-font md-default-theme"></i>
-                <span>Widgets</span>
-            </a>
-        </ms-nav-item>
-
-    </ms-nav>
-
-</md-content>
-
+<ms-nav ms-scroll="vm.msScrollOptions" class="scrollable">
+
+    <ms-nav-item ms-nav-title>
+        <span>DEV TEAM</span>
+    </ms-nav-item>
+
+    <ms-nav-item>
+        <a ms-nav-button ui-sref="app.dev" ui-sref-active="active" md-ink-ripple>
+            <i class="icon-code s16 md-font md-default-theme"></i>
+            <span class="ms-nav-label">Development</span>
+        </a>
+    </ms-nav-item>
+
+    <ms-nav-item ms-nav-title>
+        <span>FUSE</span>
+    </ms-nav-item>
+
+    <ms-nav-item>
+        <a ms-nav-button ui-sref="app.dashboard" ui-sref-active="active" md-ink-ripple>
+            <i class="icon-dashboard s16 md-font md-default-theme"></i>
+            <span class="ms-nav-label">Dashboard</span>
+        </a>
+    </ms-nav-item>
+
+    <ms-nav-item>
+        <a ms-nav-button ui-sref="app.calendar" ui-sref-active="active" md-ink-ripple>
+            <i class="icon-today s16 md-font md-default-theme"></i>
+            <span class="ms-nav-label">Calendar</span>
+        </a>
+    </ms-nav-item>
+
+    <ms-nav-item>
+        <a ms-nav-button ui-sref="app.e-commerce" ui-sref-active="active" md-ink-ripple>
+            <i class="icon-shopping_cart s16 md-font md-default-theme"></i>
+            <span class="ms-nav-label">E-Commerce</span>
+        </a>
+    </ms-nav-item>
+
+    <ms-nav-item>
+        <a ms-nav-button ui-sref="app.mail" ui-sref-active="active" md-ink-ripple>
+            <i class="icon-email s16 md-font md-default-theme"></i>
+            <span class="ms-nav-label">Mail</span>
+        </a>
+    </ms-nav-item>
+
+    <ms-nav-item>
+        <a ms-nav-button ui-sref="app.file-manager" ui-sref-active="active" md-ink-ripple>
+            <i class="icon-folder s16 md-font md-default-theme"></i>
+            <span class="ms-nav-label">File Manager</span>
+        </a>
+    </ms-nav-item>
+
+    <ms-nav-item>
+        <a ms-nav-button ui-sref="app.to-do" ui-sref-active="active" md-ink-ripple>
+            <i class="icon-check_box s16 md-font md-default-theme"></i>
+            <span class="ms-nav-label">To-Do</span>
+        </a>
+    </ms-nav-item>
+
+    <ms-nav-item ms-nav-toggle>
+        <a ms-nav-button md-ink-ripple>
+            <i class="icon-pages s16 md-font md-default-theme"></i>
+            <span class="ms-nav-label">Pages</span>
+            <i class="icon-keyboard_arrow_down s16 arrow"></i>
+        </a>
+
+        <ms-nav-toggle-items>
+            <ms-nav-item ms-nav-toggle>
+                <a ms-nav-button md-ink-ripple>
+                    <span class="ms-nav-label">Authentication</span>
+                    <i class="icon-keyboard_arrow_down s16 arrow"></i>
+                </a>
+
+                <ms-nav-toggle-items>
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.pages.auth.login" ui-sref-active="active" md-ink-ripple>
+                            <span class="ms-nav-label">Login</span>
+                        </a>
+                    </ms-nav-item>
+
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.pages.auth.register" ui-sref-active="active" md-ink-ripple>
+                            <span class="ms-nav-label">Register</span>
+                        </a>
+                    </ms-nav-item>
+
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.pages.auth.forgot-password" ui-sref-active="active"
+                           md-ink-ripple>
+                            <span class="ms-nav-label">Forgot Password</span>
+                        </a>
+                    </ms-nav-item>
+
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.pages.auth.lock" ui-sref-active="active" md-ink-ripple>
+                            <span class="ms-nav-label">Lock Screen</span>
+                        </a>
+                    </ms-nav-item>
+                </ms-nav-toggle-items>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.pages.coming-soon" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label">Coming Soon</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item ms-nav-toggle>
+                <div ms-nav-button md-ink-ripple>
+                    <span class="ms-nav-label">Errors</span>
+                    <i class="icon-keyboard_arrow_down s16 arrow"></i>
+                </div>
+
+                <ms-nav-toggle-items>
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.pages.errors.error-404" ui-sref-active="active" md-ink-ripple>
+                            <span class="ms-nav-label">404</span>
+                        </a>
+                    </ms-nav-item>
+
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.pages.errors.error-500" ui-sref-active="active" md-ink-ripple>
+                            <span class="ms-nav-label">500</span>
+                        </a>
+                    </ms-nav-item>
+                </ms-nav-toggle-items>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.pages.invoice" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label">Invoice</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.pages.maintenance" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label">Maintenance</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.pages.profile" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label">Profile</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.pages.search" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label">Search</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.pages.timeline" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label">Timeline</span>
+                </a>
+            </ms-nav-item>
+        </ms-nav-toggle-items>
+    </ms-nav-item>
+
+    <ms-nav-item ms-nav-title>
+        <span>USER INTERFACE</span>
+    </ms-nav-item>
+
+    <ms-nav-item>
+        <a ms-nav-button ui-sref="app.ui.typography" ui-sref-active="active" md-ink-ripple>
+            <i class="icon-format_size s16 md-font md-default-theme"></i>
+            <span class="ms-nav-label">Typography</span>
+        </a>
+    </ms-nav-item>
+
+    <ms-nav-item>
+        <a ms-nav-button ui-sref="app.ui.colors" ui-sref-active="active" md-ink-ripple>
+            <i class="icon-palette s16 md-font md-default-theme"></i>
+            <span class="ms-nav-label">Colors</span>
+        </a>
+    </ms-nav-item>
+
+    <ms-nav-item>
+        <a ms-nav-button ui-sref="app.ui.icons" ui-sref-active="active" md-ink-ripple>
+            <i class="icon-photo s16 md-font md-default-theme"></i>
+            <span class="ms-nav-label">Icons</span>
+        </a>
+    </ms-nav-item>
+
+    <ms-nav-item ms-nav-toggle>
+        <a ms-nav-button md-ink-ripple>
+            <i class="icon-web s16 md-font md-default-theme"></i>
+            <span class="ms-nav-label">Theme Layouts</span>
+            <i class="icon-keyboard_arrow_down s16 arrow"></i>
+        </a>
+
+        <ms-nav-toggle-items>
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.ui.layouts.main.default" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label">Default</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.ui.layouts.main.basic" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label">Basic</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.ui.layouts.main.sidebar-right" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label">Sidebar Right</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.ui.layouts.main.sidebar-collapsed" ui-sref-active="active"
+                   md-ink-ripple>
+                    <span class="ms-nav-label">Sidebar Collapsed</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.ui.layouts.main.top-menu" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label">Top Menu</span>
+                </a>
+            </ms-nav-item>
+        </ms-nav-toggle-items>
+    </ms-nav-item>
+
+    <ms-nav-item ms-nav-toggle>
+        <a ms-nav-button md-ink-ripple>
+            <i class="icon-view_compact s16 md-font md-default-theme"></i>
+            <span class="ms-nav-label">Page Layouts</span>
+            <i class="icon-keyboard_arrow_down s16 arrow"></i>
+        </a>
+
+
+        <ms-nav-toggle-items>
+            <ms-nav-item ms-nav-toggle="">
+                <a ms-nav-button md-ink-ripple>
+                    <span class="ms-nav-label">Carded</span>
+                    <i class="icon-keyboard_arrow_down s16 arrow"></i>
+                </a>
+
+                <ms-nav-toggle-items>
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.ui.layouts.carded-fullwidth" ui-sref-active="active"
+                           md-ink-ripple>
+                            <span class="ms-nav-label">Full Width</span>
+                        </a>
+                    </ms-nav-item>
+
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.ui.layouts.carded-left-sidenav" ui-sref-active="active"
+                           md-ink-ripple>
+                            <span class="ms-nav-label">Left Sidenav</span>
+                        </a>
+                    </ms-nav-item>
+
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.ui.layouts.carded-right-sidenav" ui-sref-active="active"
+                           md-ink-ripple>
+                            <span class="ms-nav-label">Right Sidenav</span>
+                        </a>
+                    </ms-nav-item>
+                </ms-nav-toggle-items>
+            </ms-nav-item>
+
+            <ms-nav-item ms-nav-toggle="">
+                <a ms-nav-button md-ink-ripple>
+                    <span class="ms-nav-label">Simple</span>
+                    <i class="icon-keyboard_arrow_down s16 arrow"></i>
+                </a>
+
+                <ms-nav-toggle-items>
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.ui.layouts.simple-fullwidth" ui-sref-active="active"
+                           md-ink-ripple>
+                            <span class="ms-nav-label">Full Width</span>
+                        </a>
+                    </ms-nav-item>
+
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.ui.layouts.simple-left-sidenav" ui-sref-active="active"
+                           md-ink-ripple>
+                            <span class="ms-nav-label">Left Sidenav</span>
+                        </a>
+                    </ms-nav-item>
+
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.ui.layouts.simple-left-sidenav-alt" ui-sref-active="active"
+                           md-ink-ripple>
+                            <span class="ms-nav-label">Left Sidenav - Alt.</span>
+                        </a>
+                    </ms-nav-item>
+
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.ui.layouts.simple-right-sidenav" ui-sref-active="active"
+                           md-ink-ripple>
+                            <span class="ms-nav-label">Right Sidenav</span>
+                        </a>
+                    </ms-nav-item>
+
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.ui.layouts.simple-right-sidenav-alt" ui-sref-active="active"
+                           md-ink-ripple>
+                            <span class="ms-nav-label">Right Sidenav - Alt.</span>
+                        </a>
+                    </ms-nav-item>
+
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.ui.layouts.simple-tabbed" ui-sref-active="active"
+                           md-ink-ripple>
+                            <span class="ms-nav-label">Tabbed</span>
+                        </a>
+                    </ms-nav-item>
+                </ms-nav-toggle-items>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.ui.layouts.blank" ui-sref-active="active"
+                   md-ink-ripple>
+                    <span class="ms-nav-label">Blank</span>
+                </a>
+            </ms-nav-item>
+        </ms-nav-toggle-items>
+    </ms-nav-item>
+
+    <ms-nav-item ms-nav-title>
+        <span>COMPONENTS</span>
+    </ms-nav-item>
+
+    <ms-nav-item ms-nav-toggle="">
+        <a ms-nav-button md-ink-ripple>
+            <i class="icon-equalizer s16 md-font md-default-theme"></i>
+            <span class="ms-nav-label">Charts</span>
+            <i class="icon-keyboard_arrow_down s16 arrow"></i>
+        </a>
+        <ms-nav-toggle-items>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.components.charts.c3" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label">C3</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.components.charts.chartJs" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label">Chart.js</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.components.charts.chartist" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label">Chartist</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.components.charts.nvd3" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label">nvD3</span>
+                </a>
+            </ms-nav-item>
+
+        </ms-nav-toggle-items>
+    </ms-nav-item>
+
+    <ms-nav-item ms-nav-toggle="">
+        <a ms-nav-button md-ink-ripple>
+            <i class="icon-layers s16 md-font md-default-theme"></i>
+            <span class="ms-nav-label">Elements</span>
+            <i class="icon-keyboard_arrow_down s16 arrow"></i>
+        </a>
+
+        <ms-nav-toggle-items>
+            <ms-nav-item ms-nav-toggle="">
+                <a ms-nav-button md-ink-ripple>
+                    <span class="ms-nav-label">Inputs</span>
+                    <i class="icon-keyboard_arrow_down s16 arrow"></i>
+                </a>
+
+                <ms-nav-toggle-items>
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.components.elements.inputs.autocomplete"
+                           ui-sref-active="active" md-ink-ripple>
+                            <span class="ms-nav-label">Autocomplete</span>
+                        </a>
+                    </ms-nav-item>
+
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.components.elements.inputs.checkbox" ui-sref-active="active"
+                           md-ink-ripple>
+                            <span class="ms-nav-label">Checkbox</span>
+                        </a>
+                    </ms-nav-item>
+
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.components.elements.inputs.chips" ui-sref-active="active"
+                           md-ink-ripple>
+                            <span class="ms-nav-label">Chips / Tags</span>
+                        </a>
+                    </ms-nav-item>
+
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.components.elements.inputs.fields" ui-sref-active="active"
+                           md-ink-ripple>
+                            <span class="ms-nav-label">Fields</span>
+                        </a>
+                    </ms-nav-item>
+
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.components.elements.inputs.radio" ui-sref-active="active"
+                           md-ink-ripple>
+                            <span class="ms-nav-label">Radio</span>
+                        </a>
+                    </ms-nav-item>
+
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.components.elements.inputs.select" ui-sref-active="active"
+                           md-ink-ripple>
+                            <span class="ms-nav-label">Select</span>
+                        </a>
+                    </ms-nav-item>
+
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.components.elements.inputs.slider" ui-sref-active="active"
+                           md-ink-ripple>
+                            <span class="ms-nav-label">Slider</span>
+                        </a>
+                    </ms-nav-item>
+
+                    <ms-nav-item>
+                        <a ms-nav-button ui-sref="app.components.elements.inputs.switch" ui-sref-active="active"
+                           md-ink-ripple>
+                            <span class="ms-nav-label">Switch</span>
+                        </a>
+                    </ms-nav-item>
+                </ms-nav-toggle-items>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.components.elements.bottom-sheet" ui-sref-active="active"
+                   md-ink-ripple>
+                    <span class="ms-nav-label">Bottom Sheet</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.components.elements.buttons" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label">Buttons</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.components.elements.card" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label">Card</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.components.elements.dialog" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label">Dialog</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.components.elements.fab-speed-dial" ui-sref-active="active"
+                   md-ink-ripple>
+                    <span class="ms-nav-label">Fab Speed Dial</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.components.elements.fab-toolbar" ui-sref-active="active"
+                   md-ink-ripple>
+                    <span class="ms-nav-label">Fab Toolbar</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.components.elements.menu" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label">Menu</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.components.elements.progress-circular" ui-sref-active="active"
+                   md-ink-ripple>
+                    <span class="ms-nav-label">Progress Circular</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.components.elements.progress-linear" ui-sref-active="active"
+                   md-ink-ripple>
+                    <span class="ms-nav-label">Progress Linear</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.components.elements.sidenav" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label">Sidenav</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.components.elements.tabs" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label">Tabs</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.components.elements.toast" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label">Toast</span>
+                </a>
+            </ms-nav-item>
+        </ms-nav-toggle-items>
+    </ms-nav-item>
+
+    <ms-nav-item>
+        <a ms-nav-button ui-sref="app.components.maps" ui-sref-active="active" md-ink-ripple>
+            <i class="icon-location_on s16 md-font md-default-theme"></i>
+            <span class="ms-nav-label">Maps</span>
+        </a>
+    </ms-nav-item>
+
+    <ms-nav-item>
+        <a ms-nav-button ui-sref="app.components.price-tables" ui-sref-active="active" md-ink-ripple>
+            <i class="icon-view_carousel s16 md-font md-default-theme"></i>
+            <span class="ms-nav-label">Price Tables</span>
+        </a>
+    </ms-nav-item>
+
+    <ms-nav-item ms-nav-toggle>
+        <a ms-nav-button md-ink-ripple>
+            <i class="icon-view_column s16 md-font md-default-theme"></i>
+            <span class="ms-nav-label">Tables</span>
+            <i class="icon-keyboard_arrow_down s16 arrow"></i>
+        </a>
+
+        <ms-nav-toggle-items>
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.components.tables.simple-table" ui-sref-active="active"
+                   md-ink-ripple>
+                    <span class="ms-nav-label">Simple Table</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.components.tables.datatable" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label">Datatable</span>
+                </a>
+            </ms-nav-item>
+        </ms-nav-toggle-items>
+    </ms-nav-item>
+
+    <ms-nav-item>
+        <a ms-nav-button md-ink-ripple>
+            <i class="icon-now_widgets s16 md-font md-default-theme"></i>
+            <span class="ms-nav-label">Widgets</span>
+        </a>
+    </ms-nav-item>
+
+</ms-nav>
