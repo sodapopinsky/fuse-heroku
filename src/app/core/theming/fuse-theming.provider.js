@@ -12,25 +12,31 @@
         var registeredPalettes,
             registeredThemes;
 
+        // Methods
+        this.setRegisteredPalettes = setRegisteredPalettes;
+        this.setRegisteredThemes = setRegisteredThemes;
+
+        //////////
+
         /**
          * Set registered palettes
          *
          * @param _registeredPalettes
          */
-        this.setRegisteredPalettes = function (_registeredPalettes)
+        function setRegisteredPalettes(_registeredPalettes)
         {
             registeredPalettes = _registeredPalettes;
-        };
+        }
 
         /**
          * Set registered themes
          *
          * @param _registeredThemes
          */
-        this.setRegisteredThemes = function (_registeredThemes)
+        function setRegisteredThemes(_registeredThemes)
         {
             registeredThemes = _registeredThemes;
-        };
+        }
 
         /**
          * Service
