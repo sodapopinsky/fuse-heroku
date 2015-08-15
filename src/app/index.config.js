@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($ariaProvider, $logProvider, uiGmapGoogleMapApiProvider)
+    function config($ariaProvider, $logProvider, fuseConfigProvider, uiGmapGoogleMapApiProvider)
     {
         $ariaProvider.config({
             tabindex: false
@@ -15,6 +15,12 @@
 
         // Enable log
         $logProvider.debugEnabled(true);
+
+        // Fuse theme configurations
+        fuseConfigProvider.config({
+            'disableCustomScrollbarsOnMobile': true,
+            'disableMdInkRippleOnMobile': true
+        });
 
         // Set options third-party lib
         toastr.options.timeOut = 3000;
