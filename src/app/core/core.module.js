@@ -23,5 +23,4 @@
             'gridster',
             'uiGmapgoogle-maps'
         ]);
-
 })();
