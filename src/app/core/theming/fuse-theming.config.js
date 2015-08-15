@@ -4,8 +4,7 @@
 
     angular
         .module('app.core')
-        .config(config)
-        .run(runBlock);
+        .config(config);
 
     /** @ngInject */
     function config($mdThemingProvider, fusePalettes, fuseThemes, fuseThemingProvider)
@@ -32,13 +31,5 @@
         // in our custom provider, so we can inject them into other areas
         fuseThemingProvider.setRegisteredPalettes($mdThemingProvider._PALETTES);
         fuseThemingProvider.setRegisteredThemes($mdThemingProvider._THEMES);
-    }
-
-    /** @ngInject */
-    function runBlock(fuseGenerator)
-    {
-        // Generate extra classes based on registered themes so we
-        // can use same colors with non-angular-material elements
-        fuseGenerator.generate();
     }
 })();
