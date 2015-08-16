@@ -2,7 +2,7 @@
 
     <!-- Main sidenav (extra sidenav) -->
     <md-sidenav class="main-sidenav" md-component-id="main-sidenav"
-                ng-include="'app/main/apps/file-manager/sidenavs/main/main-sidenav.html'">
+                ng-include="'app/main/apps/file-manager/sidenavs/main/main-sidenav.html'" ms-scroll>
     </md-sidenav>
     <!-- / Main sidenav (extra sidenav) -->
 
@@ -60,7 +60,7 @@
         <!-- / Header -->
 
         <!-- Content -->
-        <md-content class="content" flex>
+        <md-content class="content" flex  ms-scroll>
             <div ng-if="vm.currentView === 'grid'"
                  ng-include="'app/main/apps/file-manager/views/grid/grid-view.html'"></div>
             <div ng-if="vm.currentView === 'list'"
@@ -74,7 +74,7 @@
     <!-- Sidenav -->
     <md-sidenav class="sidenav details-sidenav md-sidenav-right" md-is-locked-open="$mdMedia('gt-md')"
                 md-component-id="details-sidenav"
-                ng-include="'app/main/apps/file-manager/sidenavs/details/details-sidenav.html'">
+                ng-include="'app/main/apps/file-manager/sidenavs/details/details-sidenav.html'" ms-scroll>
     </md-sidenav>
     <!-- / Sidenav -->
 
