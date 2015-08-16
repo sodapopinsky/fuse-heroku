@@ -6,7 +6,7 @@
 
     <!-- Sidenav -->
     <md-sidenav class="sidenav" md-is-locked-open="$mdMedia('gt-md')" md-component-id="main-sidenav"
-                ng-include="'app/main/apps/mail/sidenavs/main/main-sidenav.html'">
+                ng-include="'app/main/apps/mail/sidenavs/main/main-sidenav.html'" ms-scroll>
     </md-sidenav>
     <!-- / Sidenav -->
 
@@ -120,13 +120,13 @@
 
                 <!-- Mail list pane -->
                 <md-content class="mail-list-pane" flex="50"
-                            ng-include="'app/main/apps/mail/views/mail-list/mail-list.html'">
+                            ng-include="'app/main/apps/mail/views/mail-list/mail-list.html'" ms-scroll>
                 </md-content>
                 <!-- / Mail list pane -->
 
                 <!-- Mail read pane -->
                 <md-content class="mail-read-pane" flex="50"
-                            ng-include="'app/main/apps/mail/views/mail-read/mail-read.html'">
+                            ng-include="'app/main/apps/mail/views/mail-read/mail-read.html'" ms-scroll>
                 </md-content>
                 <!-- / Mail read pane -->
 
