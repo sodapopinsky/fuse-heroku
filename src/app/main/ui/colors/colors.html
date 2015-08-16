@@ -1,16 +1,15 @@
-<div id="colors" class="page-layout simple tabbed doc-page" layout="column" layout-fill>
+<div id="colors" class="page-layout simple tabbed doc-page" layout="column">
 
     <!-- Header -->
-    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+    <div class="header md-accent-bg" layout="column" layout-align="center start">
 
-        <div layout="column" layout-align="center start">
-            <div class="breadcrumb" layout="row" layout-align="start center">
-                <md-icon md-font-icon="icon-home" class="s18"></md-icon>
-                <md-icon md-font-icon="icon-keyboard_arrow_right" class="s18 separator"></md-icon>
-                <span class="parent">USER INTERFACE</span>
-            </div>
-            <div class="title">Colors</div>
+        <div class="breadcrumb" layout="row" layout-align="start center">
+            <md-icon md-font-icon="icon-home" class="s18"></md-icon>
+            <md-icon md-font-icon="icon-keyboard_arrow_right" class="s18 separator"></md-icon>
+            <span class="parent">USER INTERFACE</span>
         </div>
+
+        <div class="title">Colors</div>
 
     </div>
     <!-- / Header -->
@@ -32,7 +31,8 @@
             </md-tab>
 
             <md-tab label="Background Color">
-                <md-content class="color-tab" ng-include="'app/main/ui/colors/tabs/background/background.html'"></md-content>
+                <md-content class="color-tab"
+                            ng-include="'app/main/ui/colors/tabs/background/background.html'"></md-content>
             </md-tab>
         </md-tabs>
 
