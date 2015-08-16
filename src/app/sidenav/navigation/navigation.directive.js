@@ -520,7 +520,8 @@
                         elementToExpand.css({
                             'position'  : 'absolute',
                             'visibility': 'hidden',
-                            'display'   : 'block'
+                            'display'   : 'block',
+                            'height'    : 'auto'
                         });
 
                         // Grab the height
@@ -530,32 +531,36 @@
                         elementToExpand.css({
                             'position'  : '',
                             'visibility': '',
-                            'display'   : ''
+                            'display'   : '',
+                            'height'    : ''
                         });
 
                         // Animate the height
-                        $animate.animate(elementToExpand,
-                            {
-                                'display': 'block',
-                                'height' : '0px'
-                            },
-                            {
-                                'height': height + 'px'
-                            },
-                            classes.expandAnimation
-                        ).then(
-                            function ()
-                            {
-                                // Add expanded class
-                                elementToExpand.addClass(classes.expanded);
+                        $scope.$evalAsync(function ()
+                        {
+                            $animate.animate(elementToExpand,
+                                {
+                                    'display': 'block',
+                                    'height' : '0px'
+                                },
+                                {
+                                    'height': height + 'px'
+                                },
+                                classes.expandAnimation
+                            ).then(
+                                function ()
+                                {
+                                    // Add expanded class
+                                    elementToExpand.addClass(classes.expanded);
 
-                                // Clear the inline styles after animation done
-                                elementToExpand.css({'height': ''});
+                                    // Clear the inline styles after animation done
+                                    elementToExpand.css({'height': ''});
 
-                                // Resolve the deferred object
-                                deferred.resolve({'success': true});
-                            }
-                        );
+                                    // Resolve the deferred object
+                                    deferred.resolve({'success': true});
+                                }
+                            );
+                        });
 
                         // Return the promise
                         return deferred.promise;
@@ -591,30 +596,33 @@
                         var height = elementToCollapse[0].offsetHeight;
 
                         // Animate the height
-                        $animate.animate(elementToCollapse,
-                            {
-                                'height': height + 'px'
-                            },
-                            {
-                                'height': '0px'
-                            },
-                            classes.collapseAnimation
-                        ).then(
-                            function ()
-                            {
-                                // Remove expanded class
-                                elementToCollapse.removeClass(classes.expanded);
+                        $scope.$evalAsync(function ()
+                        {
+                            $animate.animate(elementToCollapse,
+                                {
+                                    'height': height + 'px'
+                                },
+                                {
+                                    'height': '0px'
+                                },
+                                classes.collapseAnimation
+                            ).then(
+                                function ()
+                                {
+                                    // Remove expanded class
+                                    elementToCollapse.removeClass(classes.expanded);
 
-                                // Clear the inline styles after animation done
-                                elementToCollapse.css({
-                                    'display': '',
-                                    'height' : ''
-                                });
+                                    // Clear the inline styles after animation done
+                                    elementToCollapse.css({
+                                        'display': '',
+                                        'height' : ''
+                                    });
 
-                                // Resolve the deferred object
-                                deferred.resolve({'success': true});
-                            }
-                        );
+                                    // Resolve the deferred object
+                                    deferred.resolve({'success': true});
+                                }
+                            );
+                        });
 
                         // Return the promise
                         return deferred.promise;
