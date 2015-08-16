@@ -94,21 +94,73 @@
                  */
                 function fold()
                 {
+                    // Add classes
                     $element.addClass('folded');
                     body.addClass('navigation-folded');
 
-                    $element.on('mouseenter', function ()
+                    // Collapse everything and scroll to the top
+                    $rootScope.$broadcast('msNav::forceCollapse');
+                    $element.find('ms-nav').scrollTop(0);
+
+                    // Create an overlay for opening the fold and append it to the element
+                    var openOverlay = angular.element('<div id="navigation-fold-open-overlay"></div>');
+                    $element.append(openOverlay);
+
+                    // Create another overlay for closing the fold
+                    var closeOverlay = angular.element('<div id="navigation-fold-close-overlay"></div>');
+
+                    // Event listeners
+                    openOverlay.on('mouseenter touchstart', function (event)
                     {
-                        $element.addClass('folded-open');
+                        openFolded(event);
                     });
 
-                    $element.on('mouseleave', function ()
+                    /**
+                     * Open folded navigation
+                     */
+                    function openFolded(event)
                     {
-                        //$rootScope.$broadcast('msNav::collapse');
+                        event.preventDefault();
+
+                        $element.addClass('folded-open');
+
+                        // Update the location
+                        $rootScope.$broadcast('msNav::expandMatchingToggles');
+
+                        // Remove open overlay
+                        $element.find('#navigation-fold-open-overlay').remove();
+
+                        // Append close overlay and its events
+                        $element.parent().append(closeOverlay);
+                        closeOverlay.on('mouseenter touchstart', function (event)
+                        {
+                            closeFolded(event);
+                        });
+                    }
+
+                    /**
+                     * Close folded navigation
+                     */
+                    function closeFolded(event)
+                    {
+                        event.preventDefault();
+
+                        // Collapse everything and scroll to the top
                         $rootScope.$broadcast('msNav::forceCollapse');
+                        $element.find('ms-nav').scrollTop(0);
 
                         $element.removeClass('folded-open');
-                    });
+
+                        // Remove close overlay
+                        $element.parent().find('#navigation-fold-close-overlay').remove();
+
+                        // Append open overlay and its events
+                        $element.append(openOverlay);
+                        openOverlay.on('mouseenter touchstart', function (event)
+                        {
+                            openFolded(event);
+                        });
+                    }
                 }
 
                 /**
