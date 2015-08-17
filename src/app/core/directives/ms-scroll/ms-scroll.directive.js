@@ -11,17 +11,17 @@
     {
         // Default configuration
         var defaultConfiguration = {
-            wheelSpeed: 1,
-            wheelPropagation: false,
-            swipePropagation: true,
-            minScrollbarLength: null,
-            maxScrollbarLength: null,
-            useBothWheelAxes: false,
-            useKeyboard: true,
-            suppressScrollX: false,
-            suppressScrollY: false,
-            scrollXMarginOffset: 0,
-            scrollYMarginOffset: 0,
+            wheelSpeed            : 1,
+            wheelPropagation      : false,
+            swipePropagation      : true,
+            minScrollbarLength    : null,
+            maxScrollbarLength    : null,
+            useBothWheelAxes      : false,
+            useKeyboard           : true,
+            suppressScrollX       : false,
+            suppressScrollY       : false,
+            scrollXMarginOffset   : 0,
+            scrollYMarginOffset   : 0,
             stopPropagationOnClick: true
         };
 
@@ -82,42 +82,34 @@
 
                 return function postLink($scope, $element, $attrs)
                 {
-                    var config = {};
+                    var options = {};
 
-                    /**
-                     * If options supplied, evaluate the given
-                     * value. This is because we don't want to
-                     * have an isolated scope but still be able
-                     * to use scope variables.
-                     * We don't want an isolated scope because
-                     * we should be able to use this everywhere
-                     * especially with other directives
-                     */
+                    // If options supplied, evaluate the given
+                    // value. This is because we don't want to
+                    // have an isolated scope but still be able
+                    // to use scope variables.
+                    // We don't want an isolated scope because
+                    // we should be able to use this everywhere
+                    // especially with other directives
                     if ( $attrs.msScroll )
                     {
-                        config = $scope.$eval($attrs.msScroll);
+                        options = $scope.$eval($attrs.msScroll);
                     }
 
                     // Extend the given config with the ones from provider
-                    config = angular.extend({}, msScrollConfig.getConfig(), config);
+                    options = angular.extend({}, msScrollConfig.getConfig(), options);
 
-                    /**
-                     * Initialize the scrollbar
-                     */
+                    // Initialize the scrollbar
                     $timeout(function ()
                     {
-                        $element.perfectScrollbar(config);
+                        $element.perfectScrollbar(options);
                     }, 0);
 
-                    /**
-                     * Update the scrollbar on element mouseenter
-                     */
+                    // Update the scrollbar on element mouseenter
                     $element.on('mouseenter', updateScrollbar);
 
-                    /**
-                     * Watch scrollHeight and update
-                     * the scrollbar if it changes
-                     */
+                    // Watch scrollHeight and update
+                    // the scrollbar if it changes
                     $scope.$watch(function ()
                     {
                         return $element.prop('scrollHeight');
@@ -139,9 +131,7 @@
                         $element.perfectScrollbar('update');
                     }
 
-                    /**
-                     * Cleanup on destroy
-                     */
+                    // Cleanup on destroy
                     $scope.$on('$destroy', function ()
                     {
                         $element.off('mouseenter');
