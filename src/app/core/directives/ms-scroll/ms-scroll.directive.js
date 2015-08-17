@@ -4,7 +4,7 @@
 
     angular.module('fuse')
         .provider('msScrollConfig', msScrollConfigProvider)
-        .directive('msScroll', msScroll);
+        .directive('msScroll', msScrollDirective);
 
     /** @ngInject */
     function msScrollConfigProvider()
@@ -64,7 +64,7 @@
     }
 
     /** @ngInject */
-    function msScroll($timeout, msScrollConfig, fuseConfig, fuseHelper)
+    function msScrollDirective($timeout, msScrollConfig, fuseConfig, fuseHelper)
     {
         return {
             restrict: 'AE',
@@ -98,9 +98,9 @@
                     // We don't want an isolated scope because
                     // we should be able to use this everywhere
                     // especially with other directives
-                    if ( $attrs.msScroll )
+                    if ( $attrs.msScrollDirective )
                     {
-                        options = $scope.$eval($attrs.msScroll);
+                        options = $scope.$eval($attrs.msScrollDirective);
                     }
 
                     // Extend the given config with the ones from provider

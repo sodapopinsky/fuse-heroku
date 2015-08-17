@@ -4,10 +4,10 @@
 
     angular
         .module('app.core')
-        .factory('fuseHelper', fuseHelper);
+        .factory('fuseHelper', fuseHelperService);
 
     /** @ngInject */
-    function fuseHelper()
+    function fuseHelperService()
     {
         // Private variables
         var mobileDetect = new MobileDetect(window.navigator.userAgent);

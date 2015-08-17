@@ -2,10 +2,10 @@
     'use strict';
 
     angular.module('fuse')
-        .directive('ngRandomClass', ngRandomClass);
+        .directive('ngRandomClass', ngRandomClassDirective);
 
     /** @ngInject */
-    function ngRandomClass() {
+    function ngRandomClassDirective() {
         return {
             restrict: 'EA',
             replace: false,

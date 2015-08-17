@@ -3,10 +3,10 @@
     'use strict';
 
     angular.module('fuse')
-        .directive('msCard', msCard);
+        .directive('msCard', msCardDirective);
 
     /** @ngInject */
-    function msCard()
+    function msCardDirective()
     {
         return {
             restrict: 'AE',

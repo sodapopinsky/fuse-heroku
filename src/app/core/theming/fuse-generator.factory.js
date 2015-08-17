@@ -3,10 +3,10 @@
     'use strict';
 
     angular.module('app.core')
-        .factory('fuseGenerator', fuseGenerator);
+        .factory('fuseGenerator', fuseGeneratorService);
 
     /** @ngInject */
-    function fuseGenerator(fuseTheming)
+    function fuseGeneratorService(fuseTheming)
     {
         // Storage for simplified themes object
         var themes = {};

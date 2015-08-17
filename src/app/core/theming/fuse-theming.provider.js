@@ -4,10 +4,10 @@
 
     angular
         .module('app.core')
-        .provider('fuseTheming', fuseTheming);
+        .provider('fuseTheming', fuseThemingProvider);
 
     /** @ngInject */
-    function fuseTheming()
+    function fuseThemingProvider()
     {
         var registeredPalettes,
             registeredThemes;

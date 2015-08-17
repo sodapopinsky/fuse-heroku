@@ -4,12 +4,12 @@
 
     angular.module('fuse')
         .factory('msNavFoldService', msNavFoldService)
-        .directive('msNavIsFolded', msNavIsFolded)
+        .directive('msNavIsFolded', msNavIsFoldedDirective)
         .controller('MsNavController', MsNavController)
-        .directive('msNav', msNav)
-        .directive('msNavTitle', msNavTitle)
-        .directive('msNavButton', msNavButton)
-        .directive('msNavToggle', msNavToggle);
+        .directive('msNav', msNavDirective)
+        .directive('msNavTitle', msNavTitleDirective)
+        .directive('msNavButton', msNavButtonDirective)
+        .directive('msNavToggle', msNavToggleDirective);
 
     /** @ngInject */
     function msNavFoldService()
@@ -50,13 +50,13 @@
     }
 
     /** @ngInject */
-    function msNavIsFolded($document, $rootScope, msNavFoldService)
+    function msNavIsFoldedDirective($document, $rootScope, msNavFoldService)
     {
         return {
             restrict: 'A',
             link    : function ($scope, $element, $attrs)
             {
-                var isFolded = ($attrs.msNavIsFolded === 'true'),
+                var isFolded = ($attrs.msNavIsFoldedDirective === 'true'),
                     body = angular.element($document[0].body);
 
                 // Initialize the service
@@ -287,7 +287,7 @@
     }
 
     /** @ngInject */
-    function msNav($rootScope)
+    function msNavDirective($rootScope)
     {
         return {
             restrict  : 'E',
@@ -316,7 +316,7 @@
     }
 
     /** @ngInject */
-    function msNavTitle()
+    function msNavTitleDirective()
     {
         return {
             restrict: 'A',
@@ -333,7 +333,7 @@
     }
 
     /** @ngInject */
-    function msNavButton()
+    function msNavButtonDirective()
     {
         return {
             restrict: 'AE',
@@ -350,7 +350,7 @@
     }
 
     /** @ngInject */
-    function msNavToggle($rootScope, $q, $animate, $state)
+    function msNavToggleDirective($rootScope, $q, $animate, $state)
     {
         return {
             restrict: 'A',
