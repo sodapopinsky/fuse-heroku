@@ -55,23 +55,24 @@
 
                     <md-tabs>
                         <md-tab label="HTML">
-                            <div hljs lang="html">
+                            <hljs lang="html" ms-scroll>
                                 <md-button class="md-accent md-raised" ng-click="vm.showSimpleToast()" flex="50">
                                     Show Simple
                                 </md-button>
-                            </div>
+                            </hljs>
                         </md-tab>
                         <md-tab label="JS">
-                            <div hljs lang="js">
-                                function showSimpleToast() {
-                                $mdToast.show(
-                                $mdToast.simple()
-                                .content('Simple Toast!')
-                                .position('top right')
-                                .hideDelay(3000)
-                                );
+                            <hljs lang="js" ms-scroll>
+                                function showSimpleToast()
+                                {
+                                    $mdToast.show(
+                                            $mdToast.simple()
+                                                    .content('Simple Toast!')
+                                                    .position('top right')
+                                                    .hideDelay(3000)
+                                    );
                                 }
-                            </div>
+                            </hljs>
                         </md-tab>
                     </md-tabs>
 
@@ -90,25 +91,27 @@
 
                     <md-tabs>
                         <md-tab label="HTML">
-                            <div hljs lang="html">
+                            <hljs lang="html" ms-scroll>
                                 <md-button class="md-primary md-raised" ng-click="vm.showActionToast()" flex="50">
                                     Show With Action
                                 </md-button>
-                            </div>
+                            </hljs>
                         </md-tab>
                         <md-tab label="JS">
-                            <div hljs lang="js">
-                                function showActionToast() {
-                                var toast = $mdToast.simple()
-                                .content('Action Toast!')
-                                .action('OK')
-                                .highlightAction(false)
-                                .position('top left');
-                                $mdToast.show(toast).then(function (test) {
-                                alert('You clicked \'OK\'.');
-                                });
+                            <hljs lang="js" ms-scroll>
+                                function showActionToast()
+                                {
+                                    var toast = $mdToast.simple()
+                                            .content('Action Toast!')
+                                            .action('OK')
+                                            .highlightAction(false)
+                                            .position('top left');
+                                    $mdToast.show(toast).then(function (test)
+                                    {
+                                        alert('You clicked \'OK\'.');
+                                    });
                                 }
-                            </div>
+                            </hljs>
                         </md-tab>
                     </md-tabs>
 
@@ -128,39 +131,42 @@
 
                     <md-tabs>
                         <md-tab label="HTML">
-                            <div hljs lang="html">
+                            <hljs lang="html" ms-scroll>
                                 <md-button class="md-warn md-raised" ng-click="vm.showCustomToast()" flex="50">
                                     Show Custom
                                 </md-button>
-                            </div>
+                            </hljs>
                         </md-tab>
                         <md-tab label="JS">
-                            <div hljs lang="js">
-                                function showCustomToast() {
-                                $mdToast.show({
-                                controller: ToastCtrl,
-                                templateUrl: 'toast-template.html',
-                                hideDelay: 6000,
-                                position: 'bottom right'
-                                });
+                            <hljs lang="js" ms-scroll>
+                                function showCustomToast()
+                                {
+                                    $mdToast.show({
+                                        controller : ToastCtrl,
+                                        templateUrl: 'toast-template.html',
+                                        hideDelay  : 6000,
+                                        position   : 'bottom right'
+                                    });
                                 }
 
-                                function ToastCtrl($scope, $mdToast) {
-                                $scope.closeToast = function () {
-                                $mdToast.hide();
-                                };
+                                function ToastCtrl($scope, $mdToast)
+                                {
+                                    $scope.closeToast = function ()
+                                    {
+                                        $mdToast.hide();
+                                    };
                                 }
-                            </div>
+                            </hljs>
                         </md-tab>
                         <md-tab label="toast-template.html">
-                            <div hljs lang="html">
+                            <hljs lang="html" ms-scroll>
                                 <md-toast>
                                     <span flex>Custom toast!</span>
                                     <md-button ng-click="closeToast()">
                                         Close
                                     </md-button>
                                 </md-toast>
-                            </div>
+                            </hljs>
                         </md-tab>
                     </md-tabs>
 
@@ -345,7 +351,8 @@
                                         </li>
                                         <li><code>scope</code> - <code>{object=}</code>: the scope to link the template
                                             / controller to. If none is specified, it will create a new child scope.
-                                            This scope will be destroyed when the toast is removed unless <code>preserveScope</code>
+                                            This scope will be destroyed when the toast is removed unless
+                                            <code>preserveScope</code>
                                             is set to true.
                                         </li>
                                         <li><code>preserveScope</code> - <code>{boolean=}</code>: whether to preserve
@@ -544,7 +551,7 @@
 
     </div>
     <!-- / Content -->
-    
+
     <script type="text/ng-template" id="toast-template.html">
         <md-toast>
             <span flex>Custom toast!</span>

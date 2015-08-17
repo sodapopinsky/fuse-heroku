@@ -89,7 +89,7 @@
 
                     <md-tabs>
                         <md-tab label="HTML">
-                            <div hljs lang="html">
+                            <hljs lang="html" ms-scroll>
                                 <md-autocomplete
                                         md-selected-item="vm.selectedItem"
                                         md-search-text-change="vm.searchTextChange(vm.searchText)"
@@ -107,10 +107,10 @@
                                         No matches found for "{{vm.searchText}}".
                                     </md-not-found>
                                 </md-autocomplete>
-                            </div>
+                            </hljs>
                         </md-tab>
                         <md-tab label="JS">
-                            <div hljs lang="js">
+                            <hljs lang="js" ms-scroll>
                                 // list of `state` value/display objects
                                 vm.states = loadAll();
                                 vm.querySearch = querySearch;
@@ -165,7 +165,7 @@
                                 return (state.value.indexOf(lowercaseQuery) === 0);
                                 };
                                 }
-                            </div>
+                            </hljs>
                         </md-tab>
                     </md-tabs>
 
@@ -200,7 +200,7 @@
 
                     <md-tabs>
                         <md-tab label="HTML">
-                            <div hljs lang="html">
+                            <hljs lang="html" ms-scroll>
                                 <md-autocomplete
                                         md-selected-item="vm.selectedItem2"
                                         md-search-text-change="vm.searchTextChange(vm.searchText2)"
@@ -218,10 +218,10 @@
                                         No matches found for "{{vm.searchText2}}".
                                     </md-not-found>
                                 </md-autocomplete>
-                            </div>
+                            </hljs>
                         </md-tab>
                         <md-tab label="JS">
-                            <div hljs lang="js">
+                            <hljs lang="js" ms-scroll>
                                 // list of `state` value/display objects
                                 vm.states = loadAll();
                                 vm.querySearch = querySearch;
@@ -276,7 +276,7 @@
                                 return (state.value.indexOf(lowercaseQuery) === 0);
                                 };
                                 }
-                            </div>
+                            </hljs>
                         </md-tab>
                     </md-tabs>
 

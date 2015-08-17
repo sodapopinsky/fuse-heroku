@@ -71,7 +71,7 @@
 
                     <md-tabs flex>
                         <md-tab label="HTML">
-                            <div hljs lang="html">
+                            <hljs lang="html" ms-scroll>
                                 <div layout="row" flex>
                                     <md-sidenav class="md-sidenav-left md-whiteframe-z2" layout="column"
                                                 md-component-id="left-sidenav">
@@ -90,14 +90,15 @@
                                         </md-button>
                                     </md-content>
                                 </div>
-                            </div>
+                            </hljs>
                         </md-tab>
                         <md-tab label="JS">
-                            <div hljs lang="js">
-                                function toggleLeftSidenav() {
-                                $mdSidenav('left-sidenav').toggle();
+                            <hljs lang="js" ms-scroll>
+                                function toggleLeftSidenav()
+                                {
+                                    $mdSidenav('left-sidenav').toggle();
                                 }
-                            </div>
+                            </hljs>
                         </md-tab>
                     </md-tabs>
 
@@ -130,7 +131,7 @@
 
                     <md-tabs flex>
                         <md-tab label="HTML">
-                            <div hljs lang="html">
+                            <hljs lang="html" ms-scroll>
                                 <div layout="row" flex>
                                     <md-sidenav class="md-sidenav-right md-whiteframe-z2" layout="column"
                                                 md-component-id="right-sidenav">
@@ -149,14 +150,15 @@
                                         </md-button>
                                     </md-content>
                                 </div>
-                            </div>
+                            </hljs>
                         </md-tab>
                         <md-tab label="JS">
-                            <div hljs lang="js">
-                                function toggleRightSidenav() {
-                                $mdSidenav('right-sidenav').toggle();
+                            <hljs lang="js" ms-scroll>
+                                function toggleRightSidenav()
+                                {
+                                    $mdSidenav('right-sidenav').toggle();
                                 }
-                            </div>
+                            </hljs>
                         </md-tab>
                     </md-tabs>
 
@@ -200,7 +202,7 @@
 
                     <md-tabs flex>
                         <md-tab label="HTML">
-                            <div hljs lang="html">
+                            <hljs lang="html" ms-scroll>
                                 <div layout="row" flex>
                                     <md-sidenav md-is-locked-open="$mdMedia('gt-md')"
                                                 class="md-sidenav-left md-whiteframe-z2" layout="column"
@@ -231,14 +233,15 @@
                                         </md-button>
                                     </md-content>
                                 </div>
-                            </div>
+                            </hljs>
                         </md-tab>
                         <md-tab label="JS">
-                            <div hljs lang="js">
-                                function toggleLeftSidenavLocked() {
-                                $mdSidenav('left-sidenav-locked').toggle();
+                            <hljs lang="js" ms-scroll>
+                                function toggleLeftSidenavLocked()
+                                {
+                                    $mdSidenav('left-sidenav-locked').toggle();
                                 }
-                            </div>
+                            </hljs>
                         </md-tab>
                     </md-tabs>
 

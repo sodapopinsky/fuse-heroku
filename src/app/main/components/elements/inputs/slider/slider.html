@@ -17,7 +17,8 @@
         </div>
 
         <div layout="row" layout-align="start center">
-            <md-button class="md-raised reference-button" href="https://material.angularjs.org/latest/#/api/material.components.slider/directive/mdSlider"
+            <md-button class="md-raised reference-button"
+                       href="https://material.angularjs.org/latest/#/api/material.components.slider/directive/mdSlider"
                        target="_blank">
                 <md-icon md-font-icon="icon-link"></md-icon>
                 <span>Reference</span>
@@ -63,11 +64,11 @@
                     </div>
                 </div>
                 <div flex class="source-code md-background-bg md-hue-1">
-                    <div hljs lang="html">
+                    <hljs lang="html" ms-scroll>
                         <md-slider flex min="0" max="255" ng-model="vm.sliderValue" aria-label="slider"></md-slider>
                         <input flex="15" type="number" ng-model="vm.sliderValue" aria-label="red"
                                aria-controls="red-slider">
-                    </div>
+                    </hljs>
                 </div>
             </div>
 
@@ -82,12 +83,12 @@
                     </div>
                 </div>
                 <div flex class="source-code md-background-bg md-hue-1">
-                    <div hljs lang="html">
+                    <hljs lang="html" ms-scroll>
                         <md-slider flex class="md-primary" min="0" max="255" ng-model="vm.sliderValue"
                                    aria-label="slider"></md-slider>
                         <input flex="15" type="number" ng-model="vm.sliderValue" aria-label="red"
                                aria-controls="red-slider">
-                    </div>
+                    </hljs>
                 </div>
             </div>
 
@@ -102,12 +103,12 @@
                     </div>
                 </div>
                 <div flex class="source-code md-background-bg md-hue-1">
-                    <div hljs lang="html">
+                    <hljs lang="html" ms-scroll>
                         <md-slider flex class="md-warn" min="0" max="255" ng-model="vm.sliderValue"
                                    aria-label="slider"></md-slider>
                         <input flex="15" type="number" ng-model="vm.sliderValue" aria-label="red"
                                aria-controls="red-slider">
-                    </div>
+                    </hljs>
                 </div>
             </div>
 
@@ -122,12 +123,12 @@
                     </div>
                 </div>
                 <div flex class="source-code md-background-bg md-hue-1">
-                    <div hljs lang="html">
+                    <hljs lang="html" ms-scroll>
                         <md-slider ng-disabled="true" flex min="0" max="255" ng-model="vm.sliderValue"
                                    aria-label="slider"></md-slider>
                         <input flex="15" type="number" ng-model="vm.sliderValue" aria-label="red"
                                aria-controls="red-slider">
-                    </div>
+                    </hljs>
                 </div>
             </div>
         </div>
@@ -140,17 +141,19 @@
                 <div flex class="preview md-background-bg md-hue-2">
                     <div class="md-caption">Accent Colored (default)</div>
                     <div layout="row" layout-align="center center" layout-fill layout-margin>
-                        <md-slider  md-discrete flex min="0" max="255" ng-model="vm.sliderValue" aria-label="slider"></md-slider>
+                        <md-slider md-discrete flex min="0" max="255" ng-model="vm.sliderValue"
+                                   aria-label="slider"></md-slider>
                         <input flex="15" type="number" ng-model="vm.sliderValue" aria-label="red"
                                aria-controls="red-slider">
                     </div>
                 </div>
                 <div flex class="source-code md-background-bg md-hue-1">
-                    <div hljs lang="html">
-                        <md-slider  md-discrete flex min="0" max="255" ng-model="vm.sliderValue" aria-label="slider"></md-slider>
+                    <hljs lang="html" ms-scroll>
+                        <md-slider md-discrete flex min="0" max="255" ng-model="vm.sliderValue"
+                                   aria-label="slider"></md-slider>
                         <input flex="15" type="number" ng-model="vm.sliderValue" aria-label="red"
                                aria-controls="red-slider">
-                    </div>
+                    </hljs>
                 </div>
             </div>
 
@@ -158,19 +161,19 @@
                 <div flex class="preview md-background-bg md-hue-2">
                     <div class="md-caption">Primary Colored</div>
                     <div layout="row" layout-align="center center" layout-fill layout-margin>
-                        <md-slider  md-discrete flex class="md-primary" min="0" max="255" ng-model="vm.sliderValue"
-                                    aria-label="slider"></md-slider>
+                        <md-slider md-discrete flex class="md-primary" min="0" max="255" ng-model="vm.sliderValue"
+                                   aria-label="slider"></md-slider>
                         <input flex="15" type="number" ng-model="vm.sliderValue" aria-label="red"
                                aria-controls="red-slider">
                     </div>
                 </div>
                 <div flex class="source-code md-background-bg md-hue-1">
-                    <div hljs lang="html">
-                        <md-slider  md-discrete flex class="md-primary" min="0" max="255" ng-model="vm.sliderValue"
-                                    aria-label="slider"></md-slider>
+                    <hljs lang="html" ms-scroll>
+                        <md-slider md-discrete flex class="md-primary" min="0" max="255" ng-model="vm.sliderValue"
+                                   aria-label="slider"></md-slider>
                         <input flex="15" type="number" ng-model="vm.sliderValue" aria-label="red"
                                aria-controls="red-slider">
-                    </div>
+                    </hljs>
                 </div>
             </div>
 
@@ -178,19 +181,19 @@
                 <div flex class="preview md-background-bg md-hue-2">
                     <div class="md-caption">Warn Colored</div>
                     <div layout="row" layout-align="center center" layout-fill layout-margin>
-                        <md-slider  md-discrete flex class="md-warn" min="0" max="255" ng-model="vm.sliderValue"
-                                    aria-label="slider"></md-slider>
+                        <md-slider md-discrete flex class="md-warn" min="0" max="255" ng-model="vm.sliderValue"
+                                   aria-label="slider"></md-slider>
                         <input flex="15" type="number" ng-model="vm.sliderValue" aria-label="red"
                                aria-controls="red-slider">
                     </div>
                 </div>
                 <div flex class="source-code md-background-bg md-hue-1">
-                    <div hljs lang="html">
-                        <md-slider  md-discrete flex class="md-warn" min="0" max="255" ng-model="vm.sliderValue"
-                                    aria-label="slider"></md-slider>
+                    <hljs lang="html" ms-scroll>
+                        <md-slider md-discrete flex class="md-warn" min="0" max="255" ng-model="vm.sliderValue"
+                                   aria-label="slider"></md-slider>
                         <input flex="15" type="number" ng-model="vm.sliderValue" aria-label="red"
                                aria-controls="red-slider">
-                    </div>
+                    </hljs>
                 </div>
             </div>
 
@@ -198,19 +201,19 @@
                 <div flex class="preview md-background-bg md-hue-2">
                     <div class="md-caption">Disabled</div>
                     <div layout="row" layout-align="center center" layout-fill layout-margin>
-                        <md-slider  md-discrete ng-disabled="true" flex min="0" max="255" ng-model="vm.sliderValue"
-                                    aria-label="slider"></md-slider>
+                        <md-slider md-discrete ng-disabled="true" flex min="0" max="255" ng-model="vm.sliderValue"
+                                   aria-label="slider"></md-slider>
                         <input flex="15" type="number" ng-model="vm.sliderValue" aria-label="red"
                                aria-controls="red-slider">
                     </div>
                 </div>
                 <div flex class="source-code md-background-bg md-hue-1">
-                    <div hljs lang="html">
-                        <md-slider  md-discrete ng-disabled="true" flex min="0" max="255" ng-model="vm.sliderValue"
-                                    aria-label="slider"></md-slider>
+                    <hljs lang="html" ms-scroll>
+                        <md-slider md-discrete ng-disabled="true" flex min="0" max="255" ng-model="vm.sliderValue"
+                                   aria-label="slider"></md-slider>
                         <input flex="15" type="number" ng-model="vm.sliderValue" aria-label="red"
                                aria-controls="red-slider">
-                    </div>
+                    </hljs>
                 </div>
             </div>
         </div>

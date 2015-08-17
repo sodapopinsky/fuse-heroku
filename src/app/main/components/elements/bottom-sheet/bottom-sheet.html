@@ -55,43 +55,59 @@
 
                     <md-tabs>
                         <md-tab label="HTML">
-                            <div hljs lang="html">
+                            <hljs lang="html" ms-scroll>
                                 <md-button flex="50" class="md-primary md-raised"
                                            ng-click="vm.showListBottomSheet($event)">Show as List
                                 </md-button>
                                 <div>{{vm.alert}}</div>
-                            </div>
+                            </hljs>
                         </md-tab>
                         <md-tab label="JS">
-                            <div hljs lang="js">
-                                vm.showListBottomSheet = function ($event) {
-                                vm.alert = '';
-                                $mdBottomSheet.show({
-                                templateUrl: 'bottom-sheet-list-template.html',
-                                controller: ListBottomSheetCtrl,
-                                targetEvent: $event,
-                                parent: angular.element('#app-wrapper > main > .main-content')
-                                }).then(function (clickedItem) {
-                                vm.alert = clickedItem.name + ' clicked!';
-                                });
+                            <hljs lang="js" ms-scroll>
+                                vm.showListBottomSheet = function ($event)
+                                {
+                                    vm.alert = '';
+                                    $mdBottomSheet.show({
+                                        templateUrl: 'bottom-sheet-list-template.html',
+                                        controller : ListBottomSheetCtrl,
+                                        targetEvent: $event,
+                                        parent     : angular.element('#app-wrapper > main > .main-content')
+                                    }).then(function (clickedItem)
+                                    {
+                                        vm.alert = clickedItem.name + ' clicked!';
+                                    });
                                 };
 
-                                function ListBottomSheetCtrl($scope, $mdBottomSheet) {
-                                $scope.items = [
-                                {name: 'Share', icon: 'icon-share'},
-                                {name: 'Upload', icon: 'icon-cloud_upload'},
-                                {name: 'Copy', icon: 'icon-content_copy'},
-                                {name: 'Print this page', icon: 'icon-print'},
-                                ];
-                                $scope.listItemClick = function ($index) {
-                                var clickedItem = $scope.items[$index];
-                                $mdBottomSheet.hide(clickedItem);
-                                };
+                                function ListBottomSheetCtrl($scope, $mdBottomSheet)
+                                {
+                                    $scope.items = [
+                                        {
+                                            name: 'Share',
+                                            icon: 'icon-share'
+                                        },
+                                        {
+                                            name: 'Upload',
+                                            icon: 'icon-cloud_upload'
+                                        },
+                                        {
+                                            name: 'Copy',
+                                            icon: 'icon-content_copy'
+                                        },
+                                        {
+                                            name: 'Print this page',
+                                            icon: 'icon-print'
+                                        },
+                                    ];
+                                    $scope.listItemClick = function ($index)
+                                    {
+                                        var clickedItem = $scope.items[$index];
+                                        $mdBottomSheet.hide(clickedItem);
+                                    };
                                 }
-                            </div>
+                            </hljs>
                         </md-tab>
                         <md-tab label="bottom-sheet-list-template.html">
-                            <div hljs lang="html">
+                            <hljs lang="html" ms-scroll>
                                 <md-bottom-sheet class="md-list md-has-header bottom-sheet-list-demo">
                                     <md-subheader>Comment Actions</md-subheader>
                                     <md-list>
@@ -103,7 +119,7 @@
                                         </md-list-item>
                                     </md-list>
                                 </md-bottom-sheet>
-                            </div>
+                            </hljs>
                         </md-tab>
                     </md-tabs>
 
@@ -123,43 +139,59 @@
 
                     <md-tabs>
                         <md-tab label="HTML">
-                            <div hljs lang="html">
+                            <hljs lang="html" ms-scroll>
                                 <md-button flex="50" class="md-primary md-raised"
                                            ng-click="vm.showGridBottomSheet($event)">Show as Grid
                                 </md-button>
                                 <div>{{vm.alert2}}</div>
-                            </div>
+                            </hljs>
                         </md-tab>
                         <md-tab label="JS">
-                            <div hljs lang="js">
-                                vm.showGridBottomSheet = function ($event) {
-                                vm.alert2 = '';
-                                $mdBottomSheet.show({
-                                templateUrl: 'bottom-sheet-grid-template.html',
-                                controller: GridBottomSheetCtrl,
-                                targetEvent: $event,
-                                parent: angular.element('#app-wrapper > main > .main-content')
-                                }).then(function (clickedItem) {
-                                vm.alert2 = clickedItem.name + ' clicked!';
-                                });
+                            <hljs lang="js" ms-scroll>
+                                vm.showGridBottomSheet = function ($event)
+                                {
+                                    vm.alert2 = '';
+                                    $mdBottomSheet.show({
+                                        templateUrl: 'bottom-sheet-grid-template.html',
+                                        controller : GridBottomSheetCtrl,
+                                        targetEvent: $event,
+                                        parent     : angular.element('#app-wrapper > main > .main-content')
+                                    }).then(function (clickedItem)
+                                    {
+                                        vm.alert2 = clickedItem.name + ' clicked!';
+                                    });
                                 };
 
-                                function GridBottomSheetCtrl($scope, $mdBottomSheet) {
-                                $scope.items = [
-                                {name: 'Share', icon: 'icon-share'},
-                                {name: 'Upload', icon: 'icon-cloud_upload'},
-                                {name: 'Copy', icon: 'icon-content_copy'},
-                                {name: 'Print this page', icon: 'icon-print'},
-                                ];
-                                $scope.listItemClick = function ($index) {
-                                var clickedItem = $scope.items[$index];
-                                $mdBottomSheet.hide(clickedItem);
-                                };
+                                function GridBottomSheetCtrl($scope, $mdBottomSheet)
+                                {
+                                    $scope.items = [
+                                        {
+                                            name: 'Share',
+                                            icon: 'icon-share'
+                                        },
+                                        {
+                                            name: 'Upload',
+                                            icon: 'icon-cloud_upload'
+                                        },
+                                        {
+                                            name: 'Copy',
+                                            icon: 'icon-content_copy'
+                                        },
+                                        {
+                                            name: 'Print this page',
+                                            icon: 'icon-print'
+                                        },
+                                    ];
+                                    $scope.listItemClick = function ($index)
+                                    {
+                                        var clickedItem = $scope.items[$index];
+                                        $mdBottomSheet.hide(clickedItem);
+                                    };
                                 }
-                            </div>
+                            </hljs>
                         </md-tab>
                         <md-tab label="bottom-sheet-grid-template.html">
-                            <div hljs lang="html">
+                            <hljs lang="html" ms-scroll>
                                 <md-bottom-sheet class="md-grid bottom-sheet-grid-demo">
                                     <md-list>
                                         <md-list-item ng-repeat="item in items">
@@ -170,7 +202,7 @@
                                         </md-list-item>
                                     </md-list>
                                 </md-bottom-sheet>
-                            </div>
+                            </hljs>
                         </md-tab>
                     </md-tabs>
 

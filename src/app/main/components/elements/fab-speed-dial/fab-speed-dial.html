@@ -91,7 +91,7 @@
 
                     <md-tabs flex>
                         <md-tab label="HTML">
-                            <div hljs lang="html">
+                            <hljs lang="html" ms-scroll>
                                 <div class="lock-size" layout="row" layout-align="center center">
                                     <md-fab-speed-dial md-open="vm.demo.isOpen"
                                                        md-direction="{{vm.demo.selectedDirection}}"
@@ -140,10 +140,10 @@
                                         </md-radio-group>
                                     </div>
                                 </div>
-                            </div>
+                            </hljs>
                         </md-tab>
                         <md-tab label="JS">
-                            <div hljs lang="js">
+                            <hljs lang="js" ms-scroll>
                                 vm.demo = {
                                 topDirections: ['left', 'up'],
                                 bottomDirections: ['down', 'right'],
@@ -153,7 +153,7 @@
                                 availableDirections: ['up', 'down', 'left', 'right'],
                                 selectedDirection: 'up'
                                 };
-                            </div>
+                            </hljs>
                         </md-tab>
                     </md-tabs>
                 </div>
