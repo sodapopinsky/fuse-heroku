@@ -11,6 +11,7 @@
     {
         // Default configuration
         var fuseConfiguration = {
+            'disableCustomScrollbars'        : false,
             'disableMdInkRippleOnMobile'     : true,
             'disableCustomScrollbarsOnMobile': true
         };

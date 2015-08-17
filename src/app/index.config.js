@@ -18,13 +18,14 @@
 
         // Fuse theme configurations
         fuseConfigProvider.config({
+            'disableCustomScrollbars'        : false,
             'disableCustomScrollbarsOnMobile': true,
             'disableMdInkRippleOnMobile'     : true
         });
 
         // msScroll configuration
         msScrollConfigProvider.config({
-            useKeyboard: false,
+            wheelPropagation: true
         });
 
         // Set options third-party lib

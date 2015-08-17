@@ -70,8 +70,15 @@
             restrict: 'AE',
             compile : function (tElement)
             {
+                // Do not replace scrollbars if
+                // 'disableCustomScrollbars' config enabled
+                if ( fuseConfig.config('disableCustomScrollbars') )
+                {
+                    return false;
+                }
+
                 // Do not replace scrollbars on mobile devices
-                // if 'disableScrollbarsOnMobile' config enabled
+                // if 'disableCustomScrollbarsOnMobile' config enabled
                 if ( fuseConfig.config('disableCustomScrollbarsOnMobile') && fuseHelper.isMobile() )
                 {
                     return false;
