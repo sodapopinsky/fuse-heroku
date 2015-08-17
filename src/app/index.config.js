@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($ariaProvider, $logProvider, fuseConfigProvider, uiGmapGoogleMapApiProvider)
+    function config($ariaProvider, $logProvider, fuseConfigProvider, msScrollConfigProvider, uiGmapGoogleMapApiProvider)
     {
         $ariaProvider.config({
             tabindex: false
@@ -19,7 +19,12 @@
         // Fuse theme configurations
         fuseConfigProvider.config({
             'disableCustomScrollbarsOnMobile': true,
-            'disableMdInkRippleOnMobile': true
+            'disableMdInkRippleOnMobile'     : true
+        });
+
+        // msScroll configuration
+        msScrollConfigProvider.config({
+            useKeyboard: false,
         });
 
         // Set options third-party lib

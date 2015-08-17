@@ -3,10 +3,68 @@
     'use strict';
 
     angular.module('fuse')
+        .provider('msScrollConfig', msScrollConfigProvider)
         .directive('msScroll', msScroll);
 
     /** @ngInject */
-    function msScroll($timeout, fuseConfig, fuseHelper)
+    function msScrollConfigProvider()
+    {
+        // Default configuration
+        var defaultConfiguration = {
+            wheelSpeed: 1,
+            wheelPropagation: false,
+            swipePropagation: true,
+            minScrollbarLength: null,
+            maxScrollbarLength: null,
+            useBothWheelAxes: false,
+            useKeyboard: true,
+            suppressScrollX: false,
+            suppressScrollY: false,
+            scrollXMarginOffset: 0,
+            scrollYMarginOffset: 0,
+            stopPropagationOnClick: true
+        };
+
+        // Methods
+        this.config = config;
+
+        //////////
+
+        /**
+         * Extend default configuration with the given one
+         *
+         * @param configuration
+         */
+        function config(configuration)
+        {
+            defaultConfiguration = angular.extend({}, defaultConfiguration, configuration);
+        }
+
+        /**
+         * Service
+         */
+        this.$get = function ()
+        {
+            var service = {
+                getConfig: getConfig
+            };
+
+            return service;
+
+            //////////
+
+            /**
+             * Return the config
+             */
+            function getConfig()
+            {
+                return defaultConfiguration;
+            }
+        };
+    }
+
+    /** @ngInject */
+    function msScroll($timeout, msScrollConfig, fuseConfig, fuseHelper)
     {
         return {
             restrict: 'AE',
@@ -24,7 +82,7 @@
 
                 return function postLink($scope, $element, $attrs)
                 {
-                    var options = {};
+                    var config = {};
 
                     /**
                      * If options supplied, evaluate the given
@@ -37,15 +95,18 @@
                      */
                     if ( $attrs.msScroll )
                     {
-                        options = $scope.$eval($attrs.msScroll);
+                        config = $scope.$eval($attrs.msScroll);
                     }
+
+                    // Extend the given config with the ones from provider
+                    config = angular.extend({}, msScrollConfig.getConfig(), config);
 
                     /**
                      * Initialize the scrollbar
                      */
                     $timeout(function ()
                     {
-                        $element.perfectScrollbar(options);
+                        $element.perfectScrollbar(config);
                     }, 0);
 
                     /**
