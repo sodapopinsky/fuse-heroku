@@ -21,13 +21,20 @@
                 // Timeline Item Template Loaded
                 $scope.$on('$includeContentLoaded', function ()
                 {
-                    // Images loaded in timeline item
-                    $element.find('img').bind('load', function ()
+                    // Wait if image exists in timeline item
+                    if ( $element.find('img').length > 0 )
                     {
-                        console.log('images loaded');
-                        timelineHeight = $element.outerHeight();
+                        // Images loaded in timeline item
+                        $element.find('img').bind('load', function ()
+                        {
+                            console.log('images loaded');
+                            checkHeights();
+                        });
+                    }
+                    else
+                    {
                         checkHeights();
-                    });
+                    }
 
                 });
 
@@ -35,6 +42,8 @@
                 // adds one item more
                 function checkHeights()
                 {
+                    timelineHeight = $element.outerHeight();
+
                     console.log(scrollEl.outerHeight());
                     console.log(timelineHeight);
 
