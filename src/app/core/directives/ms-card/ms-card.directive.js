@@ -24,8 +24,6 @@
                 {
                     var baseDir = 'app/core/directives/ms-card/templates/';
                     $scope.templateDir = baseDir + $scope.template + '/' + $scope.template + '.html';
-                    $scope.$emit('$cardLoaded');
-
                 };
             }
         };
