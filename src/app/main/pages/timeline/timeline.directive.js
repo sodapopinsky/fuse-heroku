@@ -12,47 +12,58 @@
             scope: true,
             link : function ($scope, $element)
             {
-                $timeout(function ()
+                var vm = $scope.vm;
+                var timelineHeight;
+                vm.limit = 1;
+
+                var scrollEl = angular.element('#content > md-content');
+
+                // Timeline Item Template Loaded
+                $scope.$on('$includeContentLoaded', function ()
                 {
+                    // Images loaded in timeline item
+                    $element.find('img').bind('load', function ()
+                    {
+                        console.log('images loaded');
+                        timelineHeight = $element.outerHeight();
+                        checkHeights();
+                    });
 
-                // Set onScreen to true
-                $scope.onScreen = true;
+                });
 
-                var windowEl = angular.element($window);
-                var scrollEl = angular.element('#main');
-
-                console.log($element);
-                console.log($element.offset().top);
-
-                var rect = $element[0].getBoundingClientRect();
-                console.log(rect.top);
-
-                console.log( windowEl.scrollTop() + windowEl.height() * 0.70);
-
-                // Set onScreen true if element is on screen
-                if ( $element.offset().top > windowEl.scrollTop() + windowEl.height() * 0.70 )
+                // If timeline height smaller than content height
+                // adds one item more
+                function checkHeights()
                 {
-                    $scope.onScreen = false;
+                    console.log(scrollEl.outerHeight());
+                    console.log(timelineHeight);
+
+                    if ( timelineHeight < scrollEl.outerHeight() )
+                    {
+                        addItem();
+                    }
+
                 }
 
-                // On scroll
+                function addItem()
+                {
+                    $timeout(function ()
+                    {
+                        vm.limit++;
+                    });
+                }
+
+
+                // On Content scroll
                 scrollEl.on('scroll', function ()
                 {
-                    if ( $scope.onScreen )
+                    console.log('scrolled');
+                    if ( scrollEl[0].scrollTop + scrollEl[0].offsetHeight >= scrollEl[0].scrollHeight )
                     {
-                        return;
+                        addItem();
+                        console.log('limit increased');
                     }
 
-                    if ( $element.offset().top <= windowEl.scrollTop() + windowEl.height() * 0.70 )
-                    {
-                        $element.addClass('animate');
-
-                        $timeout(function ()
-                        {
-                            $scope.onScreen = true;
-                        });
-                    }
-                });
                 });
             }
         };

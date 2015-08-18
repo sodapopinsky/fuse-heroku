@@ -14,14 +14,14 @@
         margin-left: -1px;
     }
 
-    .timeline-row {
+    .timeline-item {
         overflow: hidden;
         position: relative;
         z-index: 20;
         padding: 32px;
         max-width: 1200px;
 
-        .timeline-item {
+        .timeline-card {
             padding-right: 84px;
             order: 1;
         }
@@ -53,7 +53,7 @@
 
         &:nth-child(2n) {
 
-            .timeline-item {
+            .timeline-card {
                 order: 3;
                 padding-right: 0;
                 padding-left: 84px;
@@ -77,11 +77,11 @@
     }
 
     /* Animations */
-    .timeline-row {
+    .timeline-item {
 
         &.animate {
 
-            .timeline-item {
+            .timeline-card {
                 animation: slide-in-left 0.4s;
             }
 
@@ -98,7 +98,7 @@
 
             &.animate {
 
-                .timeline-item {
+                .timeline-card {
                     animation: slide-in-right 0.4s;
                 }
 
