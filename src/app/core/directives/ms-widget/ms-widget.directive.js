@@ -27,28 +27,78 @@
                 widget: '=ngModel'
             },
             controller: 'MsWidgetController',
-            template  : '<div ng-include="templateDir"></div>',
+            template  : '<div class="widget-container" ng-include="templateDir"></div>',
             compile   : function (tElement, tAttrs)
             {
                 tElement.addClass('ms-widget');
 
-                return function postLink($scope, $element, $attrs, MsWidgetCTrl)
+                return function postLink($scope, $element, $attrs, MsWidgetCtrl)
                 {
-                    var widgetData = $scope.widget;
-                    $scope.flipped = false;
+                    var widget = $scope.widget;
+
+                    // Add classes based on the template
+                    $element.addClass('widget-' + widget.options.template);
 
                     // Load the selected template
                     var baseDir = 'app/core/directives/ms-widget/templates/';
-                    $scope.templateDir = baseDir + widgetData.template + '/' + widgetData.template + '.html';
+                    $scope.templateDir = baseDir + widget.options.template + '/' + widget.options.template + '.html';
 
-                    // Expose the public API
+                    /**
+                     * Initialize the widget
+                     */
+                    function initWidget()
+                    {
+                        // Set the current size
+                        setWidgetSize(widget.options.currentSize);
+                    }
+
+                    // Init the widget
+                    initWidget();
+
+                    // Methods
                     $scope.flipWidget = flipWidget;
+                    $scope.setWidgetSize = setWidgetSize;
 
-                    // Public API
+                    //////////
+
+                    /**
+                     * Flip the widget
+                     */
                     function flipWidget()
                     {
-                        $scope.flipped = !$scope.flipped;
+                        widget.options.flipped = !widget.options.flipped;
                     }
+
+                    /**
+                     * Set widget size
+                     *
+                     * @param size
+                     */
+                    function setWidgetSize(size)
+                    {
+
+                        // Remove the old size class
+                        $element.removeClass(widget.options.currentSize);
+
+                        // Update the size and class
+                        widget.options.currentSize = size;
+                        $element.addClass(size);
+                    }
+
+                    // Watchers
+                    $scope.$watch(function ()
+                        {
+                            return $element.width();
+                        },
+                        function (current, old)
+                        {
+                            if ( angular.isUndefined(current) )
+                            {
+                                return;
+                            }
+
+                            $element.height(current);
+                        });
                 };
             }
         };

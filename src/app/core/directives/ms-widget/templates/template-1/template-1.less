@@ -1,70 +1,83 @@
-.widget {
+.widget-template-1 {
 
-    &.template-1 {
+    .front {
 
-        .front {
+        .header {
+            font-size: 14px;
+            font-weight: 500;
 
-            .header {
-                font-size: 14px;
-                font-weight: 500;
-
-                .title {
-
-                }
-            }
-
-            .content {
-                padding-top: 8px;
-                color: rgba(0, 0, 0, 0.87);
-
-                .value {
-                    font-size: 36px;
-                    font-weight: 300;
-                    line-height: 1;
-
-                    md-icon {
-                        margin-left: 16px;
-                    }
-                }
-
-                .detail {
-                    padding-top: 16px;
-
-                    md-icon {
-                        margin: 0 8px 0 0;
-                    }
-
-                    .box {
-                        border-radius: 2px;
-                        padding: 4px 8px;
-                        margin: 0 8px;
-                        font-size: 11px;
-                        font-weight: 800;
-                        color: rgba(0, 0, 0, 0.54);
-                        background-color: rgba(0, 0, 0, 0.12);
-                        white-space: nowrap;
-                    }
-                }
-            }
-
-            .footer {
+            .title {
 
             }
         }
 
-        .back {
+        .content {
+            padding-top: 8px;
+            color: rgba(0, 0, 0, 0.87);
 
+            .value {
+                font-size: 36px;
+                font-weight: 300;
+                line-height: 1;
+
+                md-icon {
+                    margin-left: 16px;
+                }
+            }
+
+            .detail {
+                padding-top: 16px;
+
+                md-icon {
+                    margin: 0 8px 0 0;
+                }
+
+                .box {
+                    border-radius: 2px;
+                    padding: 4px 8px;
+                    margin: 0 8px;
+                    font-size: 11px;
+                    font-weight: 800;
+                    color: rgba(0, 0, 0, 0.54);
+                    background-color: rgba(0, 0, 0, 0.12);
+                    white-space: nowrap;
+                }
+            }
         }
 
-        .md-button {
+        .footer {
 
-            &.md-icon-button {
-                margin: 0 2px;
-                width: 24px;
-                min-height: 24px;
-                height: 24px;
-                line-height: 24px;
-            }
         }
     }
+
+    .back {
+
+    }
+
+    .md-button {
+
+        &.md-icon-button {
+            margin: 0 2px;
+            width: 24px;
+            min-height: 24px;
+            height: 24px;
+            line-height: 24px;
+        }
+    }
+
+    &.small {
+        max-width: 25%;
+        width: 25%;
+    }
+
+    &.large {
+        max-width: 50%;
+        width: 50%;
+    }
+
+    &.wide {
+        max-width: 50%;
+        width: 50%;
+    }
+
 }

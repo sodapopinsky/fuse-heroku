@@ -30,8 +30,8 @@
         };
 
         vm.widget1 = {
-            size    : {
-                available: [
+            options : {
+                availableSizes: [
                     {
                         'name' : 'small',
                         'label': 'Small'
@@ -45,14 +45,13 @@
                         'label': 'Large'
                     }
                 ],
-                current  : 'wide',
-                minX     : 1,
-                minY     : 1
+                currentSize   : 'wide',
+                flipped : false,
+                template: 'template-1',
             },
-            position: [0, 0],
-            flipped : false,
-            template: 'template-1',
-            title   : 'WEEKLY TRANSACTIONS'
+            data    : {
+                title: 'WEEKLY TRANSACTIONS'
+            }
         };
 
         vm.widget2 = {
