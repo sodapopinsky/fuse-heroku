@@ -59,7 +59,7 @@
                     // Increase the limit onScroll if needed
                     scrollEl.on('scroll', function ()
                     {
-                        if ( scrollEl.scrollTop() + scrollEl.height() >= $element.height() + 160 )
+                        if ( scrollEl.scrollTop() + scrollEl.height() >= $element.outerHeight() )
                         {
                             $scope.$evalAsync(function ()
                             {
@@ -68,9 +68,14 @@
                         }
                     });
 
+                    /**
+                     * Test if the limit should be increased
+                     *
+                     * @returns {boolean}
+                     */
                     function shouldIncreaseLimit()
                     {
-                        return ($element.height() <= scrollEl.height());
+                        return ($element.outerHeight() <= scrollEl.height());
                     }
                 };
             }
