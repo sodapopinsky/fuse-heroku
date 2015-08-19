@@ -14,7 +14,7 @@
                 template: '=',
                 card    : '=ngModel'
             },
-            template: "<div ng-include='templateDir'></div>",
+            template: "<div ng-include='templateDir' onload='templateLoaded()'></div>",
             compile : function (tElement)
             {
                 // Add class
@@ -24,6 +24,10 @@
                 {
                     var baseDir = 'app/core/directives/ms-card/templates/';
                     $scope.templateDir = baseDir + $scope.template + '/' + $scope.template + '.html';
+                    $scope.templateLoaded = function ()
+                    {
+                        $scope.$emit('templateLoaded', tElement);
+                    };
                 };
             }
         };

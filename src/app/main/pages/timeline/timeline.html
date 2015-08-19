@@ -1,7 +1,7 @@
 <div ms-timeline id="timeline" layout="column" layout-align="start center">
     <!-- Start Timeline Item -->
     <div class="timeline-item animate" layout="row" layout-align="center start"
-         ng-repeat="timelineItem in vm.timeline | limitTo:vm.limit">
+         ng-repeat="timelineItem in vm.timeline | limitTo:vm.limit" on-repeat-done="repeatDone" >
         <div class="timeline-card" flex="50">
             <!-- Start ms-card -->
             <ms-card template="timelineItem.template" ng-model="timelineItem"></ms-card>

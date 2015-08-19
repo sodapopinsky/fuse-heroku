@@ -3,7 +3,20 @@
     'use strict';
 
     angular.module('fuse')
-        .directive('msTimeline', msTimeline);
+        .directive('msTimeline', msTimeline)
+        .directive('onRepeatDone', onRepeatDone);
+
+    /** @ngInject */
+    function onRepeatDone()
+    {
+        return {
+            restriction: 'A',
+            link       : function ($scope, element, attributes)
+            {
+                $scope.$emit(attributes.onRepeatDone || 'repeatDone', element);
+            }
+        };
+    }
 
     /** @ngInject */
     function msTimeline($window, $timeout)
@@ -14,12 +27,29 @@
             {
                 var vm = $scope.vm;
                 var timelineHeight;
+                var scrollEl = angular.element('#content > md-content');
                 vm.limit = 1;
 
-                var scrollEl = angular.element('#content > md-content');
 
-                // Timeline Item Template Loaded
-                $scope.$on('$includeContentLoaded', function ()
+                // When ng-repeat done
+                $scope.$on('repeatDone', function ()
+                {
+                    // If msCard exists; wait for template load
+                    if ( $element.find('ms-card').length > 0 )
+                    {
+                        $scope.$on('templateLoaded', function ()
+                        {
+                            initTimeline();
+                        });
+                    }
+                    else
+                    {
+                        initTimeline();
+                    }
+                });
+
+                // Add Items for the first load
+                function initTimeline()
                 {
                     // Wait if image exists in timeline item
                     if ( $element.find('img').length > 0 )
@@ -36,7 +66,7 @@
                         checkHeights();
                     }
 
-                });
+                }
 
                 // If timeline height smaller than content height
                 // adds one item more
