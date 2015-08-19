@@ -3,36 +3,88 @@
     'use strict';
 
     angular.module('app.core')
-        .controller('MsWidgetController', MsWidgetController)
+        .controller('MsWidgetTrayController', MsWidgetTrayController)
+        .directive('msWidgetTray', msWidgetTrayDirective)
         .directive('msWidget', msWidgetDirective);
 
     /** @ngInject */
-    function MsWidgetController()
+    function MsWidgetTrayController($scope)
     {
         var vm = this;
 
         // Data
+        vm.gridSize = 0;
 
         // Methods
+        vm.calculateGridSize = calculateGridSize;
 
         //////////
+
+        /**
+         * Calculate the grid size
+         *
+         * @param width
+         * @param columns
+         */
+        function calculateGridSize(width, columns)
+        {
+            // Calculate and set the grid size
+            vm.gridSize = Math.floor(width) / parseInt(columns);
+
+            // Broadcast an event
+            $scope.$broadcast('msWidgetTray::gridSizeCalculated');
+        }
+    }
+
+    /** @ngInject */
+    function msWidgetTrayDirective()
+    {
+        return {
+            restrict  : 'E',
+            scope     : true,
+            controller: 'MsWidgetTrayController',
+            compile   : function (tElement)
+            {
+                tElement.addClass('ms-widget-tray');
+
+                return function postLink($scope, $element, $attrs, MsWidgetTrayCtrl)
+                {
+                    // Watch element width
+                    $scope.$watch(function ()
+                        {
+                            return $element.width();
+                        },
+                        function (current, old)
+                        {
+                            if ( angular.isUndefined(current) )
+                            {
+                                return;
+                            }
+
+                            // Calculate grid size every time the width changes
+                            MsWidgetTrayCtrl.calculateGridSize(current, $attrs.trayColumns);
+                        }
+                    );
+                };
+            }
+        };
     }
 
     /** @ngInject */
     function msWidgetDirective()
     {
         return {
-            restrict  : 'E',
-            scope     : {
+            restrict: 'E',
+            require : '^msWidgetTray',
+            scope   : {
                 widget: '=ngModel'
             },
-            controller: 'MsWidgetController',
-            template  : '<div class="widget-container" ng-include="templateDir"></div>',
-            compile   : function (tElement, tAttrs)
+            template: '<div class="widget-container" ng-include="templateDir"></div>',
+            compile : function (tElement)
             {
                 tElement.addClass('ms-widget');
 
-                return function postLink($scope, $element, $attrs, MsWidgetCtrl)
+                return function postLink($scope, $element, $attrs, MsWidgetTrayCtrl)
                 {
                     var widget = $scope.widget;
 
@@ -55,6 +107,13 @@
                     // Init the widget
                     initWidget();
 
+                    // Update widget width and height every time grid size changes
+                    $scope.$on('msWidgetTray::gridSizeCalculated', function ()
+                    {
+                        $element.width(MsWidgetTrayCtrl.gridSize);
+                        $element.height(MsWidgetTrayCtrl.gridSize);
+                    });
+
                     // Methods
                     $scope.flipWidget = flipWidget;
                     $scope.setWidgetSize = setWidgetSize;
@@ -76,7 +135,6 @@
                      */
                     function setWidgetSize(size)
                     {
-
                         // Remove the old size class
                         $element.removeClass(widget.options.currentSize);
 
@@ -84,24 +142,8 @@
                         widget.options.currentSize = size;
                         $element.addClass(size);
                     }
-
-                    // Watchers
-                    $scope.$watch(function ()
-                        {
-                            return $element.width();
-                        },
-                        function (current, old)
-                        {
-                            if ( angular.isUndefined(current) )
-                            {
-                                return;
-                            }
-
-                            $element.height(current);
-                        });
                 };
             }
         };
     }
-
 })();
