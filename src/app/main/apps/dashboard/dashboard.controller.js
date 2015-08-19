@@ -2,150 +2,17 @@
 {
     'use strict';
 
-    angular.module('app.dashboard').controller('DashboardController', DashboardController);
+    angular.module('app.dashboard')
+        .controller('DashboardController', DashboardController);
 
     /** @ngInject */
-    function DashboardController($scope, fuseTheming)
+    function DashboardController($scope, $state, fuseTheming)
     {
         var vm = this;
 
         // Data
         vm.date = new Date();
         vm.themes = fuseTheming.themes;
-
-        vm.gridItems = [
-            {
-                sizeX: 2,
-                sizeY: 1,
-                row  : 0,
-                col  : 0
-            }, {
-                sizeX: 2,
-                sizeY: 2,
-                row  : 0,
-                col  : 2
-            }, {
-                sizeX: 1,
-                sizeY: 1,
-                row  : 0,
-                col  : 4
-            }, {
-                sizeX: 1,
-                sizeY: 1,
-                row  : 0,
-                col  : 5
-            }, {
-                sizeX: 2,
-                sizeY: 1,
-                row  : 1,
-                col  : 0
-            }, {
-                sizeX: 1,
-                sizeY: 1,
-                row  : 1,
-                col  : 4
-            }, {
-                sizeX: 1,
-                sizeY: 2,
-                row  : 1,
-                col  : 5
-            }, {
-                sizeX: 1,
-                sizeY: 1,
-                row  : 2,
-                col  : 0
-            }, {
-                sizeX: 2,
-                sizeY: 1,
-                row  : 2,
-                col  : 1
-            }, {
-                sizeX: 1,
-                sizeY: 1,
-                row  : 2,
-                col  : 3
-            }, {
-                sizeX: 1,
-                sizeY: 1,
-                row  : 2,
-                col  : 4
-            }
-        ];
-        vm.gridsterOptions = {
-            columns          : 6, // the width of the grid, in columns
-            pushing          : true, // whether to push other items out of the way on move or resize
-            floating         : true, // whether to automatically float items up so they stack (you can temporarily disable if you are adding unsorted items with ng-repeat)
-            swapping         : false, // whether or not to have items of the same size switch places instead of pushing down if they are the same size
-            width            : 'auto', // can be an integer or 'auto'. 'auto' scales gridster to be the full width of its containing element
-            colWidth         : 'auto', // can be an integer or 'auto'.  'auto' uses the pixel width of the element divided by 'columns'
-            rowHeight        : 'match', // can be an integer or 'match'.  Match uses the colWidth, giving you square widgets.
-            margins          : [16, 16], // the pixel distance between each widget
-            outerMargin      : false, // whether margins apply to outer edges of the grid
-            isMobile         : true, // stacks the grid items if true
-            mobileBreakPoint : 784, // if the screen is not wider that this, remove the grid layout and stack the items
-            mobileModeEnabled: true, // whether or not to toggle mobile mode when screen width is less than mobileBreakPoint
-            minColumns       : 1, // the minimum columns the grid must have
-            minRows          : 2, // the minimum height of the grid, in rows
-            maxRows          : 100,
-            defaultSizeX     : 3, // the default width of a gridster item, if not specifed
-            defaultSizeY     : 3, // the default height of a gridster item, if not specified
-            minSizeX         : 1, // minimum column width of an item
-            maxSizeX         : null, // maximum column width of an item
-            minSizeY         : 1, // minumum row height of an item
-            maxSizeY         : null, // maximum row height of an item
-            resizable        : {
-                enabled: false,
-                handles: ['s', 'e', 'n', 'w'],
-                start  : function (event, $element, widget)
-                {
-                    // optional callback fired when resize is started,
-                    console.log('resize started');
-                },
-                resize : function (event, $element, widget)
-                {
-                    //console.log(event);
-                    //console.log($element);
-                    //console.log(widget);
-                    //console.log('resizing...');
-                    // optional callback fired when item is resized,
-                },
-                stop   : function (event, $element, widget)
-                {
-                    console.log('resize stopped');
-                    // optional callback fired when item is finished resizing
-                }
-            },
-            draggable        : {
-                enabled: true, // whether dragging items is supported
-                handle : '.my-class', // optional selector for resize handle
-                start  : function (event, $element, widget)
-                {
-                    // optional callback fired when drag is started,
-                },
-                drag   : function (event, $element, widget)
-                {
-                    // optional callback fired when item is moved,
-                },
-                stop   : function (event, $element, widget)
-                {
-                    // optional callback fired when item is finished dragging
-                }
-            }
-        };
-
-        /*$scope.$on('gridster-resized', function (gridster, sizes)
-         {
-         console.log(sizes);
-
-         if ( sizes[0] > 1200 )
-         {
-         vm.gridsterOptions.columns = 8;
-         }
-         else
-         {
-         vm.gridsterOptions.columns = 6;
-         }
-         });*/
 
         vm.widgetSizes = {
             small: {
@@ -163,22 +30,29 @@
         };
 
         vm.widget1 = {
-            defaultSize   : 'small',
-            availableSizes: [
-                'small',
-                'wide',
-                'large'
-            ],
-            size          : {
-                x   : 2,
-                y   : 1,
-                minX: 1,
-                minY: 1
+            size    : {
+                available: [
+                    {
+                        'name' : 'small',
+                        'label': 'Small'
+                    },
+                    {
+                        'name' : 'wide',
+                        'label': 'Wide'
+                    },
+                    {
+                        'name' : 'large',
+                        'label': 'Large'
+                    }
+                ],
+                current  : 'wide',
+                minX     : 1,
+                minY     : 1
             },
-            position      : [0, 0],
-            data          : {
-                title: 'WEEKLY TRANSACTIONS'
-            }
+            position: [0, 0],
+            flipped : false,
+            template: 'template-1',
+            title   : 'WEEKLY TRANSACTIONS'
         };
 
         vm.widget2 = {
@@ -456,11 +330,14 @@
 
         /**
          * Line Chart
-         * @type {{data: {Last Week: number, A Week Before: number, day: string}[], dimensions: {Last Week: {axis: string, type: string, color:
-         *     (themes.palette.accent|*|LIGHT_DEFAULT_HUES.accent|Q.accent|A.accent)}, A Week Before: {axis: string, type: string, color:
-         *     (themes.palette.primary|*|AST.primary|r.primary|rulesByType.primary|m.primary)}, day: {axis: string}}, chart: {axis: {y: {min: number}}, grid: {x: {show: boolean},
-         *     y: {show: boolean}}, zoom: {enabled: boolean}, legend: {position: string}, point: {r: number}, padding: {top: number, right: number, left: number, bottom:
-         *     number}}}}
+         * @type {{data: {Last Week: number, A Week Before: number, day: string}[], dimensions: {Last Week: {axis:
+         *     string, type: string, color:
+         *     (themes.palette.accent|*|LIGHT_DEFAULT_HUES.accent|Q.accent|A.accent)}, A Week Before: {axis: string,
+         *     type: string, color:
+         *     (themes.palette.primary|*|AST.primary|r.primary|rulesByType.primary|m.primary)}, day: {axis: string}},
+         *     chart: {axis: {y: {min: number}}, grid: {x: {show: boolean}, y: {show: boolean}}, zoom: {enabled:
+         *     boolean}, legend: {position: string}, point: {r: number}, padding: {top: number, right: number, left:
+         *     number, bottom: number}}}}
          */
         vm.lineChart = {
             dimensions: {
@@ -551,8 +428,8 @@
 
         /**
          * Pie Chart
-         * @type {{data: *[], dimensions: {Direct: {type: string, color: *}, Search Engines: {type: string, color: *}, Social: {type: string, color: *}, others: {type: string,
-         *     color: *}}}}
+         * @type {{data: *[], dimensions: {Direct: {type: string, color: *}, Search Engines: {type: string, color: *},
+         *     Social: {type: string, color: *}, others: {type: string, color: *}}}}
          */
         vm.pieChart = {
             dimensions: {
