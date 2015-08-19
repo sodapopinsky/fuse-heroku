@@ -14,20 +14,27 @@
                 template: '=',
                 card    : '=ngModel'
             },
-            template: "<div ng-include='templateDir' onload='templateLoaded()'></div>",
+            template: "<div ng-include='templateDir' onload='cardTemplateLoaded()'></div>",
             compile : function (tElement)
             {
                 // Add class
                 tElement.addClass('ms-card');
 
-                return function postLink($scope)
+                return function postLink($scope, $element)
                 {
                     var baseDir = 'app/core/directives/ms-card/templates/';
                     $scope.templateDir = baseDir + $scope.template + '/' + $scope.template + '.html';
-                    $scope.templateLoaded = function ()
+
+                    // Expose public API
+                    $scope.cardTemplateLoaded = cardTemplateLoaded;
+
+                    /**
+                     * Emit cardTemplateLoaded event
+                     */
+                    function cardTemplateLoaded()
                     {
-                        $scope.$emit('templateLoaded', tElement);
-                    };
+                        $scope.$emit('msCard::cardTemplateLoaded', $element);
+                    }
                 };
             }
         };
