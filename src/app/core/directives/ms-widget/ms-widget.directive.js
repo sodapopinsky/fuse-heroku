@@ -29,7 +29,7 @@
         function calculateGridSize(width, columns)
         {
             // Calculate and set the grid size
-            vm.gridSize = Math.floor(width) / parseInt(columns);
+            vm.gridSize = Math.floor(Math.floor(width) / parseInt(columns));
 
             // Broadcast an event
             $scope.$broadcast('msWidgetTray::gridSizeCalculated');
@@ -52,7 +52,7 @@
                     // Watch element width
                     $scope.$watch(function ()
                         {
-                            return $element.width();
+                            return $element[0].getBoundingClientRect().width;
                         },
                         function (current, old)
                         {
@@ -110,8 +110,8 @@
                     // Update widget width and height every time grid size changes
                     $scope.$on('msWidgetTray::gridSizeCalculated', function ()
                     {
-                        $element.width(MsWidgetTrayCtrl.gridSize);
-                        $element.height(MsWidgetTrayCtrl.gridSize);
+                        $element.outerWidth(MsWidgetTrayCtrl.gridSize);
+                        $element.outerHeight(MsWidgetTrayCtrl.gridSize);
                     });
 
                     // Methods

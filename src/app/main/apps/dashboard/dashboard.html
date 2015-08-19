@@ -1,12 +1,13 @@
 <div id="dashboard" layout="row">
 
-    <ms-widget-tray id="left-widget-tray" tray-columns="2" layout="column" flex="50">
+    <ms-widget-tray id="left-widget-tray" tray-columns="2" layout="row" flex="50" layout-wrap>
 
+        <ms-widget ng-model="vm.widget1"></ms-widget>
         <ms-widget ng-model="vm.widget1"></ms-widget>
 
     </ms-widget-tray>
 
-    <ms-widget-tray id="right-widget-tray" tray-columns="2" layout="column" flex="50">
+    <ms-widget-tray id="right-widget-tray" tray-columns="2" layout="column" flex="50" layout-wrap>
 
     </ms-widget-tray>
 
