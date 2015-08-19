@@ -21,7 +21,6 @@
             'ui.router',
             'ui.ace',
             'timer',
-            'gridster',
             'uiGmapgoogle-maps'
         ]);
 })();

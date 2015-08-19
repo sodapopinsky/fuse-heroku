@@ -23,7 +23,6 @@
     "angular-masonry": "~0.11.1",
     "highlightjs": "~8.6.0",
     "angular-ui-ace": "bower",
-    "angular-gridster": "~0.13.5",
     "angular-chart.js": "~0.7.2",
     "angular-chartist.js": "~3.3.6",
     "angular-nvd3": "~0.1.1",
@@ -45,7 +44,7 @@
         "./src-min-noconflict/ace.js"
       ]
     },
-    "perfect-scrollbar" : {
+    "perfect-scrollbar": {
       "main": [
         "css/perfect-scrollbar.css",
         "js/perfect-scrollbar.jquery.js"
