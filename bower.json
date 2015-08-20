@@ -30,7 +30,8 @@
     "d3": "~3.5.6",
     "angular-google-maps": "~2.1.5",
     "mobile-detect": "hgoebl/mobile-detect.js#~1.2.1",
-    "perfect-scrollbar": "~0.6.4"
+    "perfect-scrollbar": "~0.6.4",
+    "Sortable": "~1.2.1"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0"
@@ -48,6 +49,12 @@
       "main": [
         "css/perfect-scrollbar.css",
         "js/perfect-scrollbar.jquery.js"
+      ]
+    },
+    "Sortable": {
+      "main": [
+        "Sortable.js",
+        "ng-sortable.js"
       ]
     }
   }

@@ -12,16 +12,17 @@
     }
 }
 
-@media screen and (max-width: ($breakpoint-lg - 1)) {
+@media screen and (max-width: $breakpoint-lg - 1) {
 
     #dashboard {
-        flex-direction: column;
 
         #left-widget-tray {
+            width: 100%;
             max-width: none;
         }
 
-        #right--widget-tray {
+        #right-widget-tray {
+            width: 100%;
             max-width: none;
         }
     }

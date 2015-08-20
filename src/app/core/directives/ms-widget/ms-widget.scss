@@ -12,6 +12,7 @@
             display: inline-block;
             vertical-align: top;
             padding: 8px;
+            transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
 
             .widget-container {
                 width: 100%;

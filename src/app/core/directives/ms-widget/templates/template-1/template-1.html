@@ -23,10 +23,10 @@
                         <md-icon md-font-icon="icon-more_vert" class="s20"></md-icon>
                     </md-button>
                     <md-menu-content width="2">
-                        <md-menu-item ng-repeat="availableSize in widget.options.availableSizes">
-                            <md-button ng-click="setWidgetSize(availableSize.name)"
-                                       aria-label="{{availableSize.label}}">
-                                {{availableSize.label}}
+                        <md-menu-item ng-repeat="size in widget.options.availableSizes">
+                            <md-button ng-click="setWidgetSize(size)"
+                                       aria-label="{{size}}">
+                                {{size}}
                             </md-button>
                         </md-menu-item>
                     </md-menu-content>

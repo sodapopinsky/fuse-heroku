@@ -14,84 +14,48 @@
         vm.date = new Date();
         vm.themes = fuseTheming.themes;
 
-        vm.widgetSizes = {
-            small: {
-                x: 1,
-                y: 1
-            },
-            wide : {
-                x: 2,
-                y: 1
-            },
-            large: {
-                x: 2,
-                y: 2
+        vm.widgetOptions = {
+            columns: 2,
+            sizes  : {
+                Small: {
+                    x: 1,
+                    y: 1
+                },
+                Wide : {
+                    x: 2,
+                    y: 1
+                },
+                Large: {
+                    x: 2,
+                    y: 2
+                }
             }
         };
 
         vm.widget1 = {
-            options : {
-                availableSizes: [
-                    {
-                        'name' : 'small',
-                        'label': 'Small'
-                    },
-                    {
-                        'name' : 'wide',
-                        'label': 'Wide'
-                    },
-                    {
-                        'name' : 'large',
-                        'label': 'Large'
-                    }
-                ],
-                currentSize   : 'wide',
-                flipped : false,
-                template: 'template-1',
+            options: {
+                availableSizes: ['Small','Wide','Large'],
+                size          : 'Small',
+                flipped       : false,
+                template      : 'template-1',
             },
-            data    : {
+            data   : {
                 title: 'WEEKLY TRANSACTIONS'
             }
         };
 
         vm.widget2 = {
-            size    : {
-                x   : 2,
-                y   : 1,
-                minX: 1,
-                minY: 1
+            options: {
+                availableSizes: ['Small','Wide','Large'],
+                size          : 'Small',
+                flipped       : false,
+                template      : 'template-1',
             },
-            position: [1, 0],
-            data    : {
+            data   : {
                 title: 'DAILY VISITORS'
             }
         };
 
-        vm.widget3 = {
-            size    : {
-                x   : 2,
-                y   : 1,
-                minX: 1,
-                minY: 1
-            },
-            position: [3, 0],
-            data    : {
-                title: 'DAILY VISITORS'
-            }
-        };
-
-        vm.widget4 = {
-            size    : {
-                x   : 1,
-                y   : 1,
-                minX: 1,
-                minY: 1
-            },
-            position: [5, 0],
-            data    : {
-                title: 'DAILY VISITORS'
-            }
-        };
 
         vm.dailyMiniChart = {
             dimensions: {
