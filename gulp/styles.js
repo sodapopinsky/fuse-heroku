@@ -3,11 +3,8 @@
 var path = require('path');
 var gulp = require('gulp');
 var conf = require('./conf');
-
 var browserSync = require('browser-sync');
-
 var $ = require('gulp-load-plugins')();
-
 var wiredep = require('wiredep').stream;
 var _ = require('lodash');
 
@@ -18,8 +15,8 @@ gulp.task('styles', function ()
     };
 
     var injectFiles = gulp.src([
-        path.join(conf.paths.src, '/app/global-scss/variables.scss'),
         path.join(conf.paths.src, '/app/**/*.scss'),
+        path.join('!' + conf.paths.src, '/app/global-scss/partials/**/*.scss'),
         path.join('!' + conf.paths.src, '/app/index.scss')
     ], {read: false});
 
@@ -33,7 +30,6 @@ gulp.task('styles', function ()
         endtag      : '// endinjector',
         addRootSlash: false
     };
-
 
     return gulp.src([
         path.join(conf.paths.src, '/app/index.scss')
