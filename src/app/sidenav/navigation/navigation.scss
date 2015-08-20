@@ -79,6 +79,7 @@ $navigationFoldedWidth: 64px;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
+                    transition: opacity 0.2s ease-in-out;
                 }
 
                 .arrow {
@@ -86,7 +87,7 @@ $navigationFoldedWidth: 64px;
                     top: 16px;
                     right: 24px;
                     margin: 0;
-                    transition: transform 0.3s ease-in-out;
+                    transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
                 }
 
                 &.active {
@@ -276,7 +277,8 @@ $navigationFoldedWidth: 64px;
 
                                     > .ms-nav-label,
                                     > .arrow {
-                                        display: none;
+                                        opacity: 0;
+                                        visibility: hidden;
                                     }
                                 }
                             }
