@@ -14,30 +14,10 @@
         vm.date = new Date();
         vm.themes = fuseTheming.themes;
 
-        vm.widgetOptions = {
-            columns: 2,
-            sizes  : {
-                Small: {
-                    x: 1,
-                    y: 1
-                },
-                Wide : {
-                    x: 2,
-                    y: 1
-                },
-                Large: {
-                    x: 2,
-                    y: 2
-                }
-            }
-        };
-
         vm.widget1 = {
             options: {
-                availableSizes: ['Small','Wide','Large'],
-                size          : 'Small',
-                flipped       : false,
-                template      : 'template-1',
+                flipped : false,
+                template: 'template-1',
             },
             data   : {
                 title: 'WEEKLY TRANSACTIONS'
@@ -46,13 +26,51 @@
 
         vm.widget2 = {
             options: {
-                availableSizes: ['Small','Wide','Large'],
-                size          : 'Small',
-                flipped       : false,
-                template      : 'template-1',
+                flipped : false,
+                template: 'template-1',
             },
             data   : {
                 title: 'DAILY VISITORS'
+            }
+        };
+
+        vm.widget3 = {
+            options: {
+                flipped : false,
+                template: 'template-1',
+            },
+            data   : {
+                title: 'DAILY VISITORS 2'
+            }
+        };
+
+        vm.widget4 = {
+            options: {
+                flipped : false,
+                template: 'template-1',
+            },
+            data   : {
+                title: 'DAILY VISITORS 3'
+            }
+        };
+
+        vm.widget5 = {
+            options: {
+                flipped : false,
+                template: 'template-1',
+            },
+            data   : {
+                title: 'DAILY VISITORS 4'
+            }
+        };
+
+        vm.widget6 = {
+            options: {
+                flipped : false,
+                template: 'template-1',
+            },
+            data   : {
+                title: 'DAILY VISITORS 5'
             }
         };
 

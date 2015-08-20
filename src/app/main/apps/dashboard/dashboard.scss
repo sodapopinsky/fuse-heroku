@@ -1,14 +1,12 @@
 #dashboard {
     padding: 8px;
 
-    #left-widget-tray {
-        width: 50%;
-        max-width: 50%;
-    }
+    #widgets {
 
-    #right-widget-tray {
-        width: 50%;
-        max-width: 50%;
+        .widget-group {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
     }
 }
 
@@ -16,14 +14,12 @@
 
     #dashboard {
 
-        #left-widget-tray {
-            width: 100%;
-            max-width: none;
-        }
+        #widgets {
 
-        #right-widget-tray {
-            width: 100%;
-            max-width: none;
+            .widget-group {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
         }
     }
 }

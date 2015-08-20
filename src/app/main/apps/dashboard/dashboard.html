@@ -1,18 +1,80 @@
-<div id="dashboard" layout="row">
+<div id="dashboard">
 
-    <ms-widgets options="vm.widgetOptions">
+    <div id="widgets">
 
-        <ms-widget-tray id="left-widget-tray" ng-sortable>
-            <ms-widget widget="vm.widget1"></ms-widget>
-            <ms-widget widget="vm.widget2"></ms-widget>
-        </ms-widget-tray>
+        <div layout="row" flex="100" layout-wrap>
 
-        <ms-widget-tray id="right-widget-tray">
+            <!-- WIDGET GROUP -->
+            <div class="widget-group" layout="column">
 
-        </ms-widget-tray>
+                <div layout="row" flex="100">
+                    <div layout="row" flex="66">
+                        <ms-widget class="ar-2-1" widget="vm.widget1"></ms-widget>
+                    </div>
 
-    </ms-widgets>
+                    <div layout="row" flex="33">
+                        <ms-widget class="ar-1-1" widget="vm.widget2"></ms-widget>
+                    </div>
+                </div>
 
+                <div layout="row" flex="100">
+                    <div layout="row" flex="66">
+                        <ms-widget class="ar-1-1" widget="vm.widget3"></ms-widget>
+                    </div>
+
+                    <div layout="column" flex="33">
+                        <ms-widget class="ar-1-1" widget="vm.widget1"></ms-widget>
+                        <ms-widget class="ar-1-1" widget="vm.widget2"></ms-widget>
+                    </div>
+                </div>
+
+            </div>
+            <!-- / WIDGET GROUP -->
+
+            <!-- WIDGET GROUP -->
+            <div class="widget-group" layout="column">
+
+                <div layout="row" flex="66">
+                    <div layout="row" flex="66">
+                        <ms-widget class="ar-1-1" widget="vm.widget4"></ms-widget>
+                    </div>
+
+                    <div layout="column" flex="33">
+                        <ms-widget class="ar-1-1" widget="vm.widget5"></ms-widget>
+                        <ms-widget class="ar-1-1" widget="vm.widget6"></ms-widget>
+                    </div>
+                </div>
+
+                <div layout="row" flex="33">
+
+                </div>
+
+            </div>
+            <!-- / WIDGET GROUP -->
+
+        </div>
+
+        <!--<div layout="row">
+
+            <div class="widget-group" layout="row">
+
+                <ms-widget widget="vm.widget1"></ms-widget>
+                <ms-widget widget="vm.widget2"></ms-widget>
+                <ms-widget widget="vm.widget6"></ms-widget>
+
+            </div>
+
+            <div class="widget-group" layout="row">
+
+                <ms-widget widget="vm.widget3"></ms-widget>
+                <ms-widget widget="vm.widget4"></ms-widget>
+                <ms-widget widget="vm.widget5"></ms-widget>
+
+            </div>
+
+        </div>-->
+
+    </div>
 
     <!--<div class="widget contrast blue md-whiteframe-z1" layout="column" layout-align="start space-between"
          gridster-item col="vm.widget2.position[0]" row="vm.widget2.position[1]" size-x="vm.widget2.size.x"
