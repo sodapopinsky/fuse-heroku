@@ -1,0 +1,62 @@
+/*----------------------------------------------------------------*/
+/*  Helpers
+/*----------------------------------------------------------------*/
+.no-margin {
+    margin-right: 0;
+}
+
+.divider-vertical {
+    background: rgba(0, 0, 0, 0.13);
+    height: 24px;
+    width: 1px;
+    margin: 0 8px;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+[fill-width] {
+    min-width: 100%;
+}
+
+[fill-height] {
+    min-height: 100%;
+}
+
+// Images in links
+a {
+
+    img {
+        display: block;
+        outline: none;
+    }
+}
+
+// Responsive images
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+    border: none;
+}
+
+// Scrollable
+.scrollable {
+    display: block;
+    position: relative;
+    overflow-x: auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    &.only-x {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    &.only-y {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}

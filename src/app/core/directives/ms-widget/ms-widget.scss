@@ -1,0 +1,78 @@
+.ms-widgets {
+    display: block;
+    font-size: 0;
+    width: 100%;
+    max-width: 1920px;
+
+    .ms-widget-tray {
+        display: inline-block;
+        vertical-align: top;
+
+        .ms-widget {
+            display: inline-block;
+            vertical-align: top;
+            padding: 8px;
+
+            .widget-container {
+                width: 100%;
+                height: 100%;
+                font-size: $font-size-base;
+
+                .widget {
+                    width: 100%;
+                    height: 100%;
+                    perspective: 3000px;
+
+                    .front {
+                        overflow: hidden;
+                        visibility: visible;
+                        width: 100%;
+                        height: 100%;
+                        opacity: 1;
+                        z-index: 10;
+                        padding: 16px;
+                        border-radius: 2px;
+                        background: $material-color-white;
+                        transition: transform 0.5s ease-out 0s, visibility 0s ease-in 0.2s, opacity 0s ease-in 0.2s;
+                        transform: rotateY(0deg);
+                        backface-visibility: hidden;
+                    }
+
+                    .back {
+                        position: absolute;
+                        overflow: hidden;
+                        visibility: hidden;
+                        opacity: 0;
+                        z-index: 10;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        padding: 16px;
+                        border-radius: 2px;
+                        background: $material-color-white;
+                        transition: transform 0.5s ease-out 0s, visibility 0s ease-in 0.2s, opacity 0s ease-in 0.2s;
+                        transform: rotateY(180deg);
+                        backface-visibility: hidden;
+                    }
+
+                    &.flipped {
+
+                        .front {
+                            visibility: hidden;
+                            opacity: 0;
+                            transform: rotateY(180deg);
+                        }
+
+                        .back {
+                            display: block;
+                            visibility: visible;
+                            opacity: 1;
+                            transform: rotateY(360deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

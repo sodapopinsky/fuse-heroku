@@ -1,0 +1,56 @@
+/*----------------------------------------------------------------*/
+/*  Variables
+/*----------------------------------------------------------------*/
+
+// Typography
+$font-size-root: 62.5%;
+$font-size-base: 1.3rem;
+
+$h1: 3.4rem;
+$h2: 2.4rem;
+$h3: 2.0rem;
+$h4: 1.6rem;
+$h5: 1.4rem;
+$h6: 1.2rem;
+
+// Breakpoints
+$breakpoint-sm: 600px;
+$breakpoint-md: 960px;
+$breakpoint-lg: 1200px;
+
+// Material colors
+// https://www.google.com/design/spec/style/color.html
+// Primary (500)
+$material-color-red: #F44336;
+$material-color-pink: #E91E63;
+$material-color-purple: #9C27B0;
+$material-color-deep-purple: #673AB7;
+$material-color-indigo: #3F51B5;
+$material-color-blue: #2196F3;
+$material-color-light-blue: #03A9F4;
+$material-color-cyan: #00BCD4;
+$material-color-teal: #009688;
+$material-color-green: #4CAF50;
+$material-color-light-green: #8BC34A;
+$material-color-lime: #CDDC39;
+$material-color-yellow: #FFEB3B;
+$material-color-amber: #FFC107;
+$material-color-orange: #FF9800;
+$material-color-deep-orange: #FF5722;
+$material-color-brown: #795548;
+$material-color-grey: #9E9E9E;
+$material-color-blue-grey: #607D8B;
+$material-color-black: #000000;
+$material-color-white: #FFFFFF;
+
+// Material whiteframe shadows
+$shadow-multiplier: 0.7;
+$shadow-key-umbra-opacity: $shadow-multiplier * 0.2;
+$shadow-key-penumbra-opacity: $shadow-multiplier * 0.14;
+$shadow-ambient-shadow-opacity: $shadow-multiplier * 0.12;
+
+$whiteframe-shadow-z1: 0px 3px 1px -2px rgba(0, 0, 0, $shadow-key-umbra-opacity), 0px 2px 2px 0px rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0px 1px 5px 0px rgba(0, 0, 0, $shadow-ambient-shadow-opacity);
+$whiteframe-shadow-z2: 0 2px 4px -1px rgba(0, 0, 0, $shadow-key-umbra-opacity), 0 4px 5px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 1px 10px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity);
+$whiteframe-shadow-z3: 0px 3px 5px -1px rgba(0, 0, 0, $shadow-key-umbra-opacity), 0px 6px 10px 0px rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0px 1px 18px 0px rgba(0, 0, 0, $shadow-ambient-shadow-opacity);
+$whiteframe-shadow-z4: 0px 5px 5px -3px rgba(0, 0, 0, $shadow-key-umbra-opacity), 0px 8px 10px 1px rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0px 3px 14px 2px rgba(0, 0, 0, $shadow-ambient-shadow-opacity);
+$whiteframe-shadow-z5: 0px 8px 10px -5px rgba(0, 0, 0, $shadow-key-umbra-opacity), 0px 16px 24px 2px rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0px 6px 30px 5px rgba(0, 0, 0, $shadow-ambient-shadow-opacity);

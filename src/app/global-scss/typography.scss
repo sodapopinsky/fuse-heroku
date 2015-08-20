@@ -1,0 +1,96 @@
+/*----------------------------------------------------------------*/
+/*  Typography
+/*----------------------------------------------------------------*/
+
+html {
+    font-size: $font-size-root;
+    line-height: 1.4;
+}
+
+body {
+    font-size: $font-size-base;
+}
+
+// Headings
+h1 {
+    font-size: $h1;
+    font-weight: 400;
+    letter-spacing: -0.010em;
+    line-height: 4rem;
+}
+
+h2 {
+    font-size: $h2;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    line-height: 3.2rem;
+}
+
+h3 {
+    font-size: $h3;
+    font-weight: 400;
+    line-height: 3.2rem;
+}
+
+h4 {
+    font-size: $h4;
+    font-weight: 400;
+    line-height: 2.4rem;
+}
+
+h5 {
+    font-size: $h5;
+    font-weight: 400;
+    line-height: 1.8rem;
+}
+
+h6 {
+    font-size: $h6;
+    font-weight: 500;
+    letter-spacing: 0.005em;
+}
+
+// Links
+a {
+    text-decoration: none;
+
+    &:hover, &:active {
+        text-decoration: none;
+    }
+}
+
+code {
+    @include font-stack-code();
+
+    &:not(.highlight) {
+        background: rgba(0, 0, 0, 0.065);
+        color: #106CC8;
+        margin: 0 1px;
+        padding: 2px 3px;
+        border-radius: 2px;
+    }
+}
+
+pre {
+    margin: 8px 16px;
+}
+
+
+// Text format helpers
+.bold {
+    color: $material-color-black;
+    font-weight: 500;
+}
+
+// Text align helpers
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}

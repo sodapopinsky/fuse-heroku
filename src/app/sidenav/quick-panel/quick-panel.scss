@@ -1,0 +1,37 @@
+$quickPanelWidth: 330px;
+
+#quick-panel {
+    width: $quickPanelWidth;
+    min-width: $quickPanelWidth;
+    max-width: $quickPanelWidth;
+    z-index: 99;
+
+    md-content {
+
+        md-tabs {
+
+            md-tabs-wrapper {
+                background-color: rgba(0, 0, 0, 0.03);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            }
+
+            md-tabs-content-wrapper {
+
+                md-tab-content {
+
+                    md-list {
+                        margin: 0 8px;
+
+                        .md-subheader {
+                        }
+
+                        md-list-item {
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

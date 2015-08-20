@@ -1,0 +1,24 @@
+/*----------------------------------------------------------------*/
+/*  Icons
+/*----------------------------------------------------------------*/
+
+$iconSizes: 16, 18, 20, 24, 32, 36, 48, 96;
+
+[md-font-icon],
+i {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: middle;
+    outline: 0;
+
+    @each $size in $iconSizes {
+        &.s#{$size} {
+            font-size: #{$size}px;
+            width: #{$size}px !important;
+            height: #{$size}px !important;
+            line-height: #{$size}px !important;
+        }
+    }
+}

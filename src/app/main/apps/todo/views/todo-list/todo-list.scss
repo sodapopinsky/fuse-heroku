@@ -1,0 +1,59 @@
+#todo {
+
+    .todo-list-pane {
+
+        .todo {
+            padding: 16px;
+            position: relative;
+            text-transform: none;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+            .tags {
+                font-size: 11px;
+                margin-right: 12px;
+
+                .tag {
+                    border-radius: 2px;
+                    margin: 0 4px 0 0;
+                    padding: 4px 6px;
+                    color: $material-color-white;
+                    font-weight: 500;
+                }
+            }
+
+            &.checked {
+                background: #EEEEEE;
+                color: rgba(0, 0, 0, 0.54);
+
+                .info {
+                    text-decoration: line-through;
+                }
+            }
+
+            &.selected {
+                background: #FFF8E1;
+            }
+
+            .info {
+                margin: 0 16px 0 8px;
+
+                .title,
+                .notes {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .title {
+                    font-size: 15px;
+                    font-weight: 500;
+                }
+
+                .notes {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}

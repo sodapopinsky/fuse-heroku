@@ -1,0 +1,47 @@
+#theme-changer {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    z-index: 997;
+
+    md-fab-speed-dial {
+
+        .md-fab-action-item {
+
+            opacity: 1 !important;
+            transform: scale(1) !important;
+            visibility: visible !important;
+
+            .md-button {
+                opacity: 0;
+                transform: scale(0);
+                visibility: hidden;
+                @for $item from 1 through 40 {
+                    &:nth-child(#{$item}) {
+                        animation-delay: -#{$item}s;
+                        transition: all #{0.4 - (0.3 / $item)}s cubic-bezier(0.55, 0, 0.55, 0.2);
+                    }
+                }
+            }
+        }
+
+        &.md-is-open {
+
+            .md-fab-action-item {
+
+                .md-button {
+                    opacity: 1;
+                    transform: scale(1);
+                    visibility: visible;
+                    @for $item from 1 through 40 {
+                        &:nth-child(#{$item}) {
+                            animation-delay: -#{$item}s;
+                            transition: all #{0.3 / $item}s cubic-bezier(0.55, 0, 0.55, 0.2);
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
