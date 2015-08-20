@@ -21,27 +21,29 @@ $breakpoint-lg: 1200px;
 // Material colors
 // https://www.google.com/design/spec/style/color.html
 // Primary (500)
-$material-color-red: #F44336;
-$material-color-pink: #E91E63;
-$material-color-purple: #9C27B0;
-$material-color-deep-purple: #673AB7;
-$material-color-indigo: #3F51B5;
-$material-color-blue: #2196F3;
-$material-color-light-blue: #03A9F4;
-$material-color-cyan: #00BCD4;
-$material-color-teal: #009688;
-$material-color-green: #4CAF50;
-$material-color-light-green: #8BC34A;
-$material-color-lime: #CDDC39;
-$material-color-yellow: #FFEB3B;
-$material-color-amber: #FFC107;
-$material-color-orange: #FF9800;
-$material-color-deep-orange: #FF5722;
-$material-color-brown: #795548;
-$material-color-grey: #9E9E9E;
-$material-color-blue-grey: #607D8B;
-$material-color-black: #000000;
-$material-color-white: #FFFFFF;
+$materialColorsMap: (red: #F44336, pink: #E91E63, purple: #9C27B0, deep-purple: #673AB7, indigo: #3F51B5, blue: #2196F3, light-blue: #03A9F4, cyan: #00BCD4, teal: #009688, green: #4CAF50, light-green: #8BC34A, lime: #CDDC39, yellow: #FFEB3B, amber: #FFC107, orange: #FF9800, deep-orange: #FF5722, brown: #795548, grey: #9E9E9E, blue-grey: #607D8B, black: #000000, white: #FFFFFF);
+
+$material-color-red: map_get($materialColorsMap, red);
+$material-color-pink: map_get($materialColorsMap, pink);
+$material-color-purple: map_get($materialColorsMap, purple);
+$material-color-deep-purple: map_get($materialColorsMap, deep-purple);
+$material-color-indigo: map_get($materialColorsMap, indigo);
+$material-color-blue: map_get($materialColorsMap, blue);
+$material-color-light-blue: map_get($materialColorsMap, light-blue);
+$material-color-cyan: map_get($materialColorsMap, cyan);
+$material-color-teal: map_get($materialColorsMap, teal);
+$material-color-green: map_get($materialColorsMap, green);
+$material-color-light-green: map_get($materialColorsMap, light-green);
+$material-color-lime: map_get($materialColorsMap, lime);
+$material-color-yellow: map_get($materialColorsMap, yellow);
+$material-color-amber: map_get($materialColorsMap, amber);
+$material-color-orange: map_get($materialColorsMap, orange);
+$material-color-deep-orange: map_get($materialColorsMap, deep-orange);
+$material-color-brown: map_get($materialColorsMap, brown);
+$material-color-grey: map_get($materialColorsMap, grey);
+$material-color-blue-grey: map_get($materialColorsMap, blue-grey);
+$material-color-black: map_get($materialColorsMap, black);
+$material-color-white: map_get($materialColorsMap, white);
 
 // Material whiteframe shadows
 $shadow-multiplier: 0.7;

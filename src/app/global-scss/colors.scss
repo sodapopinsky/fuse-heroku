@@ -40,18 +40,16 @@
     }
 }
 
-// Material primary colors
-$materialColors: red, pink, purple, deep-purple, indigo, blue, light-blue, cyan, teal, green, lime, yellow, amber, orange, deep-orange, brown, grey, blue-grey, black, white;
+// Material colors
+$colors: map_keys($materialColorsMap);
 
-@each $materialColor in $materialColors {
+@each $color in $colors {
 
-    $color: material-color-#{$materialColor};
-
-    .md-#{$materialColor}-bg {
-        background-color: $color;
+    .md-#{$color}-bg {
+        background-color: map_get($materialColorsMap, $color);
     }
 
-    .md-#{$materialColor}-fg {
-        color: $color;
+    .md-#{$color}-fg {
+        color: map_get($materialColorsMap, $color);
     }
 }
