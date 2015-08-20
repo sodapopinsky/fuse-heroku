@@ -21,7 +21,7 @@
                 abstract: true,
                 views   : {
                     'main@'         : {
-                        templateUrl: 'app/layout/default.html'
+                        templateUrl: 'app/core/layouts/default.html'
                     },
                     'toolbar@app'   : {
                         templateUrl: 'app/toolbar/toolbar.html',
@@ -140,7 +140,7 @@
                 url  : '/login',
                 views: {
                     'main@'                       : {
-                        templateUrl: 'app/layout/basic.html'
+                        templateUrl: 'app/core/layouts/basic.html'
                     },
                     'content@app.pages.auth.login': {
                         templateUrl: 'app/main/pages/auth/login/login.html',
@@ -154,7 +154,7 @@
                 url  : '/register',
                 views: {
                     'main@'                          : {
-                        templateUrl: 'app/layout/basic.html'
+                        templateUrl: 'app/core/layouts/basic.html'
                     },
                     'content@app.pages.auth.register': {
                         templateUrl: 'app/main/pages/auth/register/register.html',
@@ -168,7 +168,7 @@
                 url  : '/forgot-password',
                 views: {
                     'main@'                                 : {
-                        templateUrl: 'app/layout/basic.html'
+                        templateUrl: 'app/core/layouts/basic.html'
                     },
                     'content@app.pages.auth.forgot-password': {
                         templateUrl: 'app/main/pages/auth/forgot-password/forgot-password.html',
@@ -182,7 +182,7 @@
                 url  : '/lock',
                 views: {
                     'main@'                      : {
-                        templateUrl: 'app/layout/basic.html'
+                        templateUrl: 'app/core/layouts/basic.html'
                     },
                     'content@app.pages.auth.lock': {
                         templateUrl: 'app/main/pages/auth/lock/lock.html',
@@ -196,7 +196,7 @@
                 url  : '/coming-soon',
                 views: {
                     'main@'                        : {
-                        templateUrl: 'app/layout/basic.html'
+                        templateUrl: 'app/core/layouts/basic.html'
                     },
                     'content@app.pages.coming-soon': {
                         templateUrl: 'app/main/pages/coming-soon/coming-soon.html',
@@ -210,7 +210,7 @@
                 url  : '/maintenance',
                 views: {
                     'main@'                        : {
-                        templateUrl: 'app/layout/basic.html'
+                        templateUrl: 'app/core/layouts/basic.html'
                     },
                     'content@app.pages.maintenance': {
                         templateUrl: 'app/main/pages/maintenance/maintenance.html',
@@ -232,7 +232,7 @@
                 url  : '/error-404',
                 views: {
                     'main@'                             : {
-                        templateUrl: 'app/layout/basic.html'
+                        templateUrl: 'app/core/layouts/basic.html'
                     },
                     'content@app.pages.errors.error-404': {
                         templateUrl: 'app/main/pages/errors/404/error-404.html',
@@ -246,7 +246,7 @@
                 url  : '/error-500',
                 views: {
                     'main@'                             : {
-                        templateUrl: 'app/layout/basic.html'
+                        templateUrl: 'app/core/layouts/basic.html'
                     },
                     'content@app.pages.errors.error-500': {
                         templateUrl: 'app/main/pages/errors/500/error-500.html',
