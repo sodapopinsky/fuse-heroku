@@ -1,78 +1,35 @@
 <div id="dashboard">
 
-    <div id="widgets">
+    <div id="widgets" layout="column">
 
-        <div layout="row" flex="100" layout-wrap>
+        <!-- WIDGET GROUP -->
+        <div class="widget-group" layout="row" flex="100" layout-wrap>
 
-            <!-- WIDGET GROUP -->
-            <div class="widget-group" layout="column">
-
-                <div layout="row" flex="100">
-                    <div layout="row" flex="66">
-                        <ms-widget class="ar-2-1" widget="vm.widget1"></ms-widget>
-                    </div>
-
-                    <div layout="row" flex="33">
-                        <ms-widget class="ar-1-1" widget="vm.widget2"></ms-widget>
-                    </div>
-                </div>
-
-                <div layout="row" flex="100">
-                    <div layout="row" flex="66">
-                        <ms-widget class="ar-1-1" widget="vm.widget3"></ms-widget>
-                    </div>
-
-                    <div layout="column" flex="33">
-                        <ms-widget class="ar-1-1" widget="vm.widget1"></ms-widget>
-                        <ms-widget class="ar-1-1" widget="vm.widget2"></ms-widget>
-                    </div>
-                </div>
-
-            </div>
-            <!-- / WIDGET GROUP -->
-
-            <!-- WIDGET GROUP -->
-            <div class="widget-group" layout="column">
-
-                <div layout="row" flex="66">
-                    <div layout="row" flex="66">
-                        <ms-widget class="ar-1-1" widget="vm.widget4"></ms-widget>
-                    </div>
-
-                    <div layout="column" flex="33">
-                        <ms-widget class="ar-1-1" widget="vm.widget5"></ms-widget>
-                        <ms-widget class="ar-1-1" widget="vm.widget6"></ms-widget>
-                    </div>
-                </div>
-
-                <div layout="row" flex="33">
-
-                </div>
-
-            </div>
-            <!-- / WIDGET GROUP -->
+            <ms-widget class="ar-2-1" widget="vm.widget1" flex="50" flex-gt-lg="25"></ms-widget>
+            <ms-widget class="ar-2-1" widget="vm.widget2" flex="50" flex-gt-lg="25"></ms-widget>
+            <ms-widget class="ar-2-1" widget="vm.widget3" flex="50" flex-gt-lg="25"></ms-widget>
+            <ms-widget class="ar-2-1" widget="vm.widget4" flex="50" flex-gt-lg="25"></ms-widget>
 
         </div>
+        <!-- / WIDGET GROUP -->
 
-        <!--<div layout="row">
+        <!-- WIDGET GROUP -->
+        <div class="widget-group" layout="row" flex="100" layout-wrap>
 
-            <div class="widget-group" layout="row">
+            <ms-widget class="ar-2-1" widget="vm.widget1" flex="100" flex-gt-lg="50"></ms-widget>
+            <ms-widget class="ar-2-1" widget="vm.widget2" flex="100" flex-gt-lg="50"></ms-widget>
 
-                <ms-widget widget="vm.widget1"></ms-widget>
-                <ms-widget widget="vm.widget2"></ms-widget>
-                <ms-widget widget="vm.widget6"></ms-widget>
+        </div>
+        <!-- / WIDGET GROUP -->
 
-            </div>
+        <!-- WIDGET GROUP -->
+        <div class="widget-group" layout="row" flex="100" layout-wrap>
 
-            <div class="widget-group" layout="row">
+            <ms-widget class="ar-2-1" widget="vm.widget3" flex="100" flex-gt-lg="50"></ms-widget>
+            <ms-widget class="ar-2-1" widget="vm.widget4" flex="100" flex-gt-lg="50"></ms-widget>
 
-                <ms-widget widget="vm.widget3"></ms-widget>
-                <ms-widget widget="vm.widget4"></ms-widget>
-                <ms-widget widget="vm.widget5"></ms-widget>
-
-            </div>
-
-        </div>-->
+        </div>
+        <!-- / WIDGET GROUP -->
 
     </div>
 
