@@ -21,7 +21,6 @@
             'ui.router',
             'ui.ace',
             'timer',
-            'uiGmapgoogle-maps',
-            'ng-sortable'
+            'uiGmapgoogle-maps'
         ]);
 })();

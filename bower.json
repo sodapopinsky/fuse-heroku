@@ -30,8 +30,7 @@
     "d3": "~3.5.6",
     "angular-google-maps": "~2.1.5",
     "mobile-detect": "hgoebl/mobile-detect.js#~1.2.1",
-    "perfect-scrollbar": "~0.6.4",
-    "Sortable": "~1.2.1"
+    "perfect-scrollbar": "~0.6.4"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0"
