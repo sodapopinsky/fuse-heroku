@@ -16,7 +16,7 @@
             accent    : {
                 name   : 'light-blue',
                 options: {
-                    'default': '500',
+                    'default': '600',
                     'hue-1'  : '400',
                     'hue-2'  : '600',
                     'hue-3'  : 'A700'
