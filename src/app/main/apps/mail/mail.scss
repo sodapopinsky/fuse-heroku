@@ -45,17 +45,20 @@
                 }
             }
 
-            .content {
-                padding: 0;
+            .content-wrapper {
                 overflow: hidden;
 
-                .mail-list-pane {
-                    border-right: 1px solid rgba(0, 0, 0, 0.12);
-                    background: #FAFAFA;
-                }
+                .content {
+                    padding: 0;
 
-                .mail-read-pane {
-                    padding: 24px;
+                    &.mail-list-pane {
+                        border-right: 1px solid rgba(0, 0, 0, 0.12);
+                        background: #FAFAFA;
+                    }
+
+                    &.mail-read-pane {
+                        padding: 24px;
+                    }
                 }
             }
         }

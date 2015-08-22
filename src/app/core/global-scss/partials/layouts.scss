@@ -3,6 +3,7 @@
 /*----------------------------------------------------------------*/
 .page-layout {
     position: relative;
+    overflow: hidden;
 
     .top-bg {
         position: absolute;
@@ -27,8 +28,13 @@
         // Fullwidth
         &.fullwidth {
 
+            // Single scroll
             &.single-scroll {
                 height: auto;
+
+                .content {
+                    overflow: hidden;
+                }
             }
 
             // Center
@@ -74,10 +80,6 @@
                 &.sidenav-open {
                     height: 100%;
                 }
-            }
-
-            // Sidenav open
-            &.sidenav-open {
 
                 .content {
                     overflow: hidden;
@@ -176,10 +178,6 @@
                 &.sidenav-open {
                     height: 100%;
                 }
-            }
-
-            // Sidenav open
-            &.sidenav-open {
 
                 .content {
                     overflow: hidden;
@@ -300,12 +298,8 @@
                 &.sidenav-open {
                     height: 100%;
                 }
-            }
 
-            // Sidenav open
-            &.sidenav-open {
-
-                .content {
+                .center {
                     overflow: hidden;
                 }
             }
@@ -329,6 +323,7 @@
             }
 
             .center {
+                position: relative;
                 overflow: auto;
                 z-index: 3;
                 box-shadow: $whiteframe-shadow-z3;
@@ -360,17 +355,14 @@
                 &.sidenav-open {
                     height: 100%;
                 }
-            }
 
-            // Sidenav open
-            &.sidenav-open {
-
-                .content {
+                .center {
                     overflow: hidden;
                 }
             }
 
             .center {
+                position: relative;
                 overflow: auto;
                 z-index: 3;
                 box-shadow: $whiteframe-shadow-z3;
