@@ -7,7 +7,7 @@
     <!-- / Main sidenav (extra sidenav) -->
 
     <!-- Center -->
-    <div class="center" layout="column" flex>
+    <div class="center" flex ms-scroll>
 
         <!-- Header -->
         <div class="header md-accent-bg" layout="column" layout-align="space-between">
@@ -60,7 +60,7 @@
         <!-- / Header -->
 
         <!-- Content -->
-        <md-content class="content" flex  ms-scroll>
+        <md-content class="content" ms-scroll>
             <div ng-if="vm.currentView === 'grid'"
                  ng-include="'app/main/apps/file-manager/views/grid/grid-view.html'"></div>
             <div ng-if="vm.currentView === 'list'"
