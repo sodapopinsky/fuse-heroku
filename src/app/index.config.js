@@ -18,7 +18,7 @@
 
         // Fuse theme configurations
         fuseConfigProvider.config({
-            'disableCustomScrollbars'        : false,
+            'disableCustomScrollbars'        : true,
             'disableCustomScrollbarsOnMobile': true,
             'disableMdInkRippleOnMobile'     : true
         });
