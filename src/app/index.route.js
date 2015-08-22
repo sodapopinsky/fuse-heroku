@@ -404,17 +404,6 @@
                 }
             })
 
-            // Simple - Left Sidenav Alt.
-            .state('app.ui.layouts.simple-left-sidenav-alt', {
-                url  : '/simple-left-sidenav-alt',
-                views: {
-                    'content@app': {
-                        templateUrl: 'app/main/ui/layouts/simple/left-sidenav-alt/left-sidenav-alt.html',
-                        controller : 'SimpleLeftSidenavAltController as vm'
-                    }
-                }
-            })
-
             // Simple - Right Sidenav
             .state('app.ui.layouts.simple-right-sidenav', {
                 url  : '/simple-right-sidenav',
@@ -422,17 +411,6 @@
                     'content@app': {
                         templateUrl: 'app/main/ui/layouts/simple/right-sidenav/right-sidenav.html',
                         controller : 'SimpleRightSidenavController as vm'
-                    }
-                }
-            })
-
-            // Simple - Right Pane Alt.
-            .state('app.ui.layouts.simple-right-sidenav-alt', {
-                url  : '/simple-right-sidenav-alt',
-                views: {
-                    'content@app': {
-                        templateUrl: 'app/main/ui/layouts/simple/right-sidenav-alt/right-sidenav-alt.html',
-                        controller : 'SimpleRightSidenavAltController as vm'
                     }
                 }
             })

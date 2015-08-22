@@ -238,6 +238,7 @@
 
     // Simple layout
     &.simple {
+        background: wheat;
 
         // Fullwidth
         &.fullwidth {
@@ -262,43 +263,6 @@
             min-height: 100%;
             height: 100%;
 
-            .header {
-                height: 200px;
-                min-height: 200px;
-                max-height: 200px;
-                padding: 24px;
-                background-image: url('/assets/images/backgrounds/mail-bg.png');
-                background-size: cover;
-            }
-
-            .sidenav {
-                width: 240px;
-                min-width: 240px;
-                max-width: 240px;
-                padding: 24px;
-                z-index: 51;
-                box-shadow: $whiteframe-shadow-z3;
-
-                &.md-locked-open {
-                    width: 220px;
-                    min-width: 220px;
-                    max-width: 220px;
-                    z-index: 2;
-                    box-shadow: none;
-                    background: transparent;
-                }
-            }
-
-            .content {
-                padding: 24px;
-            }
-        }
-
-        // Left sidenav alt.
-        &.left-sidenav-alt {
-            min-height: 100%;
-            height: 100%;
-
             .sidenav {
                 width: 240px;
                 min-width: 240px;
@@ -337,22 +301,33 @@
             }
         }
 
+        // Left sidenav alt.
+        &.left-sidenav-alt {
+
+        }
+
         // Right sidenav
         &.right-sidenav {
             min-height: 100%;
             height: 100%;
 
-            .header {
-                height: 200px;
-                min-height: 200px;
-                max-height: 200px;
-                padding: 24px;
-                background-image: url('/assets/images/backgrounds/mail-bg.png');
-                background-size: cover;
-            }
+            .center {
+                overflow: auto;
+                z-index: 3;
+                box-shadow: $whiteframe-shadow-z3;
 
-            .content {
-                padding: 24px;
+                .header {
+                    height: 200px;
+                    min-height: 200px;
+                    max-height: 200px;
+                    padding: 24px;
+                    background-image: url('/assets/images/backgrounds/mail-bg.png');
+                    background-size: cover;
+                }
+
+                .content {
+                    padding: 24px;
+                }
             }
 
             .sidenav {
@@ -376,45 +351,7 @@
 
         // Right sidenav alt.
         &.right-sidenav-alt {
-            min-height: 100%;
-            height: 100%;
 
-            .center {
-                overflow: auto;
-                z-index: 3;
-                box-shadow: $whiteframe-shadow-z3;
-
-                .header {
-                    height: 200px;
-                    min-height: 200px;
-                    max-height: 200px;
-                    padding: 24px;
-                    background-image: url('/assets/images/backgrounds/mail-bg.png');
-                    background-size: cover;
-                }
-
-                .content {
-                    padding: 24px;
-                }
-            }
-
-            .sidenav {
-                width: 240px;
-                min-width: 240px;
-                max-width: 240px;
-                padding: 24px;
-                z-index: 51;
-                box-shadow: $whiteframe-shadow-z3;
-
-                &.md-locked-open {
-                    width: 220px;
-                    min-width: 220px;
-                    max-width: 220px;
-                    z-index: 2;
-                    box-shadow: none;
-                    background: transparent;
-                }
-            }
         }
 
         // Tabbed
