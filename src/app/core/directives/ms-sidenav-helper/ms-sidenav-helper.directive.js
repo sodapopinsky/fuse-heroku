@@ -26,10 +26,7 @@
                         return;
                     }
 
-                    $scope.$evalAsync(function(){
-
-                        $element.parents('.page-layout').toggleClass('sidenav-open', current);
-                    });
+                    $element.parents('.page-layout').toggleClass('sidenav-open', current);
                 });
             }
         };
