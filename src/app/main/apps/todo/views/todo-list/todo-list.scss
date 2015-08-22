@@ -1,5 +1,13 @@
 #todo {
 
+    // Single scroll
+    &.single-scroll {
+
+        .todo-list-pane {
+            overflow: hidden;
+        }
+    }
+
     .todo-list-pane {
 
         .todo {

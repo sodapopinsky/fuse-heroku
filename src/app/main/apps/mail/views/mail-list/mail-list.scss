@@ -1,5 +1,13 @@
 #mail {
 
+    // Single scroll
+    &.single-scroll {
+
+        .mail-list-pane {
+            overflow: hidden;
+        }
+    }
+
     .mail-list-pane {
 
         .mail-list-item {
