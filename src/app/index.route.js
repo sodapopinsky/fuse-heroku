@@ -349,13 +349,24 @@
                 url     : '/layouts'
             })
 
-            // Carded - Full Width
+            // Carded - Full Width (I)
             .state('app.ui.layouts.carded-fullwidth', {
                 url  : '/carded-fullwidth',
                 views: {
                     'content@app': {
                         templateUrl: 'app/main/ui/layouts/carded/fullwidth/fullwidth.html',
                         controller : 'CardedFullwidthController as vm'
+                    }
+                }
+            })
+
+            // Carded - Full Width (II)
+            .state('app.ui.layouts.carded-fullwidth-ii', {
+                url  : '/carded-fullwidth-ii',
+                views: {
+                    'content@app': {
+                        templateUrl: 'app/main/ui/layouts/carded/fullwidth-ii/fullwidth-ii.html',
+                        controller : 'CardedFullwidthIIController as vm'
                     }
                 }
             })
