@@ -360,7 +360,7 @@
                 }
             })
 
-            // Carded - Left Sidenav
+            // Carded - Left Sidenav (I)
             .state('app.ui.layouts.carded-left-sidenav', {
                 url  : '/carded-left-sidenav',
                 views: {
@@ -371,13 +371,35 @@
                 }
             })
 
-            // Carded - Right Sidenav
+            // Carded - Left Sidenav (II)
+            .state('app.ui.layouts.carded-left-sidenav-ii', {
+                url  : '/carded-left-sidenav-ii',
+                views: {
+                    'content@app': {
+                        templateUrl: 'app/main/ui/layouts/carded/left-sidenav-ii/left-sidenav-ii.html',
+                        controller : 'CardedLeftSidenavIIController as vm'
+                    }
+                }
+            })
+
+            // Carded - Right Sidenav (I)
             .state('app.ui.layouts.carded-right-sidenav', {
                 url  : '/carded-right-sidenav',
                 views: {
                     'content@app': {
                         templateUrl: 'app/main/ui/layouts/carded/right-sidenav/right-sidenav.html',
                         controller : 'CardedRightSidenavController as vm'
+                    }
+                }
+            })
+
+            // Carded - Right Sidenav (II)
+            .state('app.ui.layouts.carded-right-sidenav-ii', {
+                url  : '/carded-right-sidenav-ii',
+                views: {
+                    'content@app': {
+                        templateUrl: 'app/main/ui/layouts/carded/right-sidenav-ii/right-sidenav-ii.html',
+                        controller : 'CardedRightSidenavIIController as vm'
                     }
                 }
             })
@@ -393,7 +415,7 @@
                 }
             })
 
-            // Simple - Left Sidenav
+            // Simple - Left Sidenav (I)
             .state('app.ui.layouts.simple-left-sidenav', {
                 url  : '/simple-left-sidenav',
                 views: {
@@ -404,13 +426,35 @@
                 }
             })
 
-            // Simple - Right Sidenav
+            // Simple - Left Sidenav (II)
+            .state('app.ui.layouts.simple-left-sidenav-ii', {
+                url  : '/simple-left-sidenav-ii',
+                views: {
+                    'content@app': {
+                        templateUrl: 'app/main/ui/layouts/simple/left-sidenav-ii/left-sidenav-ii.html',
+                        controller : 'SimpleLeftSidenavIIController as vm'
+                    }
+                }
+            })
+
+            // Simple - Right Sidenav (I)
             .state('app.ui.layouts.simple-right-sidenav', {
                 url  : '/simple-right-sidenav',
                 views: {
                     'content@app': {
                         templateUrl: 'app/main/ui/layouts/simple/right-sidenav/right-sidenav.html',
                         controller : 'SimpleRightSidenavController as vm'
+                    }
+                }
+            })
+
+            // Simple - Right Sidenav (II)
+            .state('app.ui.layouts.simple-right-sidenav-ii', {
+                url  : '/simple-right-sidenav-ii',
+                views: {
+                    'content@app': {
+                        templateUrl: 'app/main/ui/layouts/simple/right-sidenav-ii/right-sidenav-ii.html',
+                        controller : 'SimpleRightSidenavIIController as vm'
                     }
                 }
             })
