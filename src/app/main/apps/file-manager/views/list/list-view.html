@@ -25,8 +25,8 @@
             <td class="size">{{folder.size === '' ? '-': folder.size}}</td>
             <td class="last-modified">{{folder.modified}}</td>
             <td class="show-details" hide-gt-md>
-                <md-button class="md-icon-button sidenav-toggle" aria-label="Toggle details sidenav">
-                    <md-icon md-font-icon="icon-info" ng-click="vm.toggleDetails(folder)"></md-icon>
+                <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleDetails(folder)" aria-label="Toggle details sidenav">
+                    <md-icon md-font-icon="icon-info"></md-icon>
                 </md-button>
             </td>
             <td class="more">
@@ -44,8 +44,8 @@
             <td class="size">{{file.size === '' ? '-': file.size}}</td>
             <td class="last-modified">{{file.modified}}</td>
             <td class="show-details" hide-gt-md>
-                <md-button class="md-icon-button sidenav-toggle" aria-label="Toggle details sidenav">
-                    <md-icon md-font-icon="icon-info" ng-click="vm.toggleDetails(file)"></md-icon>
+                <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleDetails(file)" aria-label="Toggle details sidenav">
+                    <md-icon md-font-icon="icon-info"></md-icon>
                 </md-button>
             </td>
             <td class="more">
