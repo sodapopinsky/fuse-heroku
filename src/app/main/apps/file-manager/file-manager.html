@@ -1,18 +1,18 @@
 <div id="file-manager" class="page-layout simple right-sidenav" layout="row">
 
-    <!-- Main sidenav (extra sidenav) -->
+    <!-- MAIN SIDENAV (EXTRA SIDENAV) -->
     <md-sidenav class="main-sidenav" md-component-id="main-sidenav"
                 ng-include="'app/main/apps/file-manager/sidenavs/main/main-sidenav.html'" ms-scroll ms-sidenav-helper>
     </md-sidenav>
-    <!-- / Main sidenav (extra sidenav) -->
+    <!-- / MAIN SIDENAV (EXTRA SIDENAV) -->
 
-    <!-- Center -->
+    <!-- CENTER -->
     <div class="center" layout="column" flex>
 
-        <!-- Header -->
+        <!-- HEADER -->
         <div class="header md-accent-bg" layout="column" layout-align="space-between">
 
-            <!-- Toolbar -->
+            <!-- TOOLBAR -->
             <div class="toolbar" layout="row" layout-align="space-between">
 
                 <md-button class="md-icon-button main-sidenav-toggle" ng-click="vm.toggleSidenav('main-sidenav')"
@@ -39,43 +39,43 @@
                     </md-button>
                 </div>
             </div>
-            <!-- / Toolbar -->
+            <!-- / TOOLBAR -->
 
-            <!-- Breadcrumb -->
+            <!-- BREADCRUMB -->
             <div class="breadcrumb" layout="row" layout-align="start center">
                 <span>My Files</span>
                 <i class="icon icon-keyboard_arrow_right separator"></i>
                 <span>Documents</span>
             </div>
-            <!-- / Breadcrumb -->
+            <!-- / BREADCRUMB -->
 
-            <!-- Add file button -->
+            <!-- ADD FILE BUTTON -->
             <md-button class="add-file-button md-fab md-warn" aria-label="Add file"
                        ng-click="vm.addFile($event)">
                 <md-icon md-font-icon="icon-add" class="s20"></md-icon>
             </md-button>
-            <!-- / Add file button -->
+            <!-- / ADD FILE BUTTON -->
 
         </div>
-        <!-- / Header -->
+        <!-- / HEADER -->
 
-        <!-- Content -->
+        <!-- CONTENT -->
         <md-content class="content" flex ms-scroll>
             <div ng-if="vm.currentView === 'grid'"
                  ng-include="'app/main/apps/file-manager/views/grid/grid-view.html'"></div>
             <div ng-if="vm.currentView === 'list'"
                  ng-include="'app/main/apps/file-manager/views/list/list-view.html'"></div>
         </md-content>
-        <!-- / Content -->
+        <!-- / CONTENT -->
 
     </div>
-    <!-- / Center -->
+    <!-- / CENTER -->
 
-    <!-- Sidenav -->
+    <!-- SIDENAV -->
     <md-sidenav class="sidenav details-sidenav md-sidenav-right" md-is-locked-open="$mdMedia('gt-md')"
                 md-component-id="details-sidenav"
                 ng-include="'app/main/apps/file-manager/sidenavs/details/details-sidenav.html'" ms-scroll ms-sidenav-helper>
     </md-sidenav>
-    <!-- / Sidenav -->
+    <!-- / SIDENAV -->
 
 </div>

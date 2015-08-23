@@ -1,19 +1,19 @@
 <div id="mail" class="page-layout carded left-sidenav" layout="row">
 
-    <!-- Top background -->
+    <!-- TOP BACKGROUND -->
     <div class="top-bg md-accent-bg"></div>
-    <!-- / Top background -->
+    <!-- / TOP BACKGROUND -->
 
-    <!-- Sidenav -->
+    <!-- SIDENAV -->
     <md-sidenav class="sidenav" md-is-locked-open="$mdMedia('gt-md')" md-component-id="main-sidenav"
                 ng-include="'app/main/apps/mail/sidenavs/main/main-sidenav.html'" ms-scroll ms-sidenav-helper>
     </md-sidenav>
-    <!-- / Sidenav -->
+    <!-- / SIDENAV -->
 
-    <!-- Center -->
+    <!-- CENTER -->
     <div class="center" layout="column" flex>
 
-        <!-- Content header -->
+        <!-- CONTENT HEADER -->
         <div class="header" layout="row" layout-align="start center">
 
             <div class="search-wrapper md-whiteframe-z2" layout="row" layout-align="start center" flex>
@@ -29,12 +29,12 @@
             </div>
 
         </div>
-        <!-- / Content header -->
+        <!-- / CONTENT HEADER -->
 
-        <!-- Content card -->
+        <!-- CONTENT CARD -->
         <div class="content-card" layout="column" flex>
 
-            <!-- Content toolbar -->
+            <!-- CONTENT TOOLBAR -->
             <div class="toolbar" layout="row" layout-align="space-between center">
 
                 <div layout="row" layout-align="start center">
@@ -113,30 +113,30 @@
                     </md-button>
                 </div>
             </div>
-            <!-- / Content toolbar -->
+            <!-- / CONTENT TOOLBAR -->
 
-            <!-- Content wrapper -->
+            <!-- CONTENT WRAPPER -->
             <div class="content-wrapper" layout="row" flex>
 
-                <!-- Mail list pane -->
+                <!-- MAIL LIST PANE -->
                 <md-content class="content mail-list-pane" flex="50"
                             ng-include="'app/main/apps/mail/views/mail-list/mail-list.html'" ms-scroll>
                 </md-content>
-                <!-- / Mail list pane -->
+                <!-- / MAIL LIST PANE -->
 
-                <!-- Mail read pane -->
+                <!-- MAIL READ PANE -->
                 <md-content class="content mail-read-pane" flex="50"
                             ng-include="'app/main/apps/mail/views/mail-read/mail-read.html'" ms-scroll>
                 </md-content>
-                <!-- / Mail read pane -->
+                <!-- / MAIL READ PANE -->
 
             </div>
-            <!-- / Content wrapper -->
+            <!-- / CONTENT WRAPPER -->
 
         </div>
-        <!-- / Content card-->
+        <!-- / CONTENT CARD -->
 
     </div>
-    <!-- / Center -->
+    <!-- / CENTER -->
 
 </div>

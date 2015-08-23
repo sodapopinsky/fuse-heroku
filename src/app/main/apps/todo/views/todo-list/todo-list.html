@@ -1,4 +1,4 @@
-<!-- Todo list items -->
+<!-- TODO LIST ITEMS -->
 <div class="todo" ng-repeat="task in vm.tasks | filter: vm.search" md-ink-ripple
      ng-click="vm.openTaskDialog($event, task)"
      ng-class="{'starred': task.starred, 'selected': task.selected, 'checked': task.checked}">
@@ -50,4 +50,4 @@
         </md-menu>
     </div>
 </div>
-<!-- / Todo list items -->
+<!-- / TODO LIST ITEMS -->

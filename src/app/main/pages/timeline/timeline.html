@@ -1,13 +1,13 @@
 <div id="timeline" ms-timeline layout="column" layout-align="start center" layout-fill>
 
-    <!-- Start Timeline Item -->
+    <!-- TIMELINE ITEM -->
     <div class="timeline-item animate" layout="row" layout-align="center start"
          ng-repeat="timelineItem in vm.timeline | limitTo: timelineItemLimit">
         <div class="timeline-card" flex="50">
 
-            <!-- Start ms-card -->
+            <!-- MS-CARD -->
             <ms-card template="timelineItem.template" ng-model="timelineItem"></ms-card>
-            <!-- End ms-card -->
+            <!-- / MS-CARD -->
 
         </div>
 
@@ -26,6 +26,6 @@
             </div>
         </div>
     </div>
-    <!-- End Timeline Item -->
+    <!-- / TIMELINE ITEM -->
 
 </div>
