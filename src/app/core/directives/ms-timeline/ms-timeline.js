@@ -42,6 +42,12 @@
                                     });
                                 }
                             });
+
+                            // Cleanup
+                            $scope.$on('$destroy', function ()
+                            {
+                               imageEl.off('load');
+                            });
                         }
                         else
                         {
@@ -77,6 +83,12 @@
                     {
                         return ($element.outerHeight() <= scrollEl.height());
                     }
+
+                    // Cleanup
+                    $scope.$on('$destroy', function ()
+                    {
+                        scrollEl.off('scroll');
+                    });
                 };
             }
         };
