@@ -1,126 +1,122 @@
 <div id="dashboard">
 
-    <div id="widgets" layout="column">
+    <!-- WIDGETS -->
+    <div id="widgets">
 
         <!-- WIDGET GROUP -->
         <div class="widget-group" layout="row" flex="100" layout-wrap>
-
-            <ms-widget class="ar-2-1" widget="vm.widget1" flex="50" flex-gt-lg="25"></ms-widget>
-            <ms-widget class="ar-2-1" widget="vm.widget2" flex="50" flex-gt-lg="25"></ms-widget>
-            <ms-widget class="ar-2-1" widget="vm.widget3" flex="50" flex-gt-lg="25"></ms-widget>
-            <ms-widget class="ar-2-1" widget="vm.widget4" flex="50" flex-gt-lg="25"></ms-widget>
-
+            <ms-widget class="ar-2-1" widget="vm.widget1" layout="column" flex="50" flex-gt-lg="25"></ms-widget>
+            <ms-widget class="ar-2-1" widget="vm.widget2" layout="column" flex="50" flex-gt-lg="25"></ms-widget>
+            <ms-widget class="ar-2-1" widget="vm.widget3" layout="column" flex="50" flex-gt-lg="25"></ms-widget>
+            <ms-widget class="ar-2-1" widget="vm.widget4" layout="column" flex="50" flex-gt-lg="25"></ms-widget>
         </div>
         <!-- / WIDGET GROUP -->
 
         <!-- WIDGET GROUP -->
         <div class="widget-group" layout="row" flex="100" layout-wrap>
-
-            <ms-widget class="ar-2-1" widget="vm.widget1" flex="100" flex-gt-lg="50"></ms-widget>
-            <ms-widget class="ar-2-1" widget="vm.widget2" flex="100" flex-gt-lg="50"></ms-widget>
-
+            <ms-widget class="ar-2-1" widget="vm.widget1" layout="column" flex="100" flex-gt-lg="50"></ms-widget>
+            <ms-widget class="ar-2-1" widget="vm.widget2" layout="column" flex="100" flex-gt-lg="50"></ms-widget>
         </div>
         <!-- / WIDGET GROUP -->
 
         <!-- WIDGET GROUP -->
         <div class="widget-group" layout="row" flex="100" layout-wrap>
-
-            <ms-widget class="ar-2-1" widget="vm.widget3" flex="100" flex-gt-lg="50"></ms-widget>
-            <ms-widget class="ar-2-1" widget="vm.widget4" flex="100" flex-gt-lg="50"></ms-widget>
-
+            <ms-widget class="ar-2-1" widget="vm.widget3" layout="column" flex="100" flex-gt-lg="50"></ms-widget>
+            <ms-widget class="ar-2-1" widget="vm.widget4" layout="column" flex="100" flex-gt-lg="50"></ms-widget>
         </div>
         <!-- / WIDGET GROUP -->
 
     </div>
-
-    <!--<div class="widget contrast blue md-whiteframe-z1" layout="column" layout-align="start space-between"
-         gridster-item col="vm.widget2.position[0]" row="vm.widget2.position[1]" size-x="vm.widget2.size.x"
-         min-size-x="vm.widget2.size.minX" size-y="vm.widget2.size.y" min-size-y="vm.widget2.size.minY">
-        <header layout="row" layout-align="space-between center">
-            <span class="title">{{vm.widget2.data.title}}</span>
-            <md-icon md-font-icon="icon-refresh" class="s20"></md-icon>
-        </header>
-
-        <div flex class="content" layout="row" layout-align="space-between">
-            <div layout="column" layout-align="space-between start">
-                <div class="value" layout="row" layout-align="start center">
-                    <span>800</span>
-                    <md-icon md-font-icon="icon-trending_up" class="s36"></md-icon>
-                    <span flex></span>
-                </div>
-
-                <div class="detail" layout="row" layout-align="start center">
-                    <span>See more details</span>
-                </div>
-            </div>
-
-            <div layout="row" layout-align="end end">
-                <c3chart bindto-id="daily-min-chart">
-                    <chart-legend show-legend="false"/>
-                    <chart-column column-id="Data 1"
-                                  column-values="510,535,560,525,547,570,531.69"
-                                  column-type="line"/>
-                    <chart-axis>
-                        <chart-axis-x show="false"></chart-axis-x>
-                        <chart-axis-y show="false"></chart-axis-y>
-                    </chart-axis>
-                </c3chart>
-            </div>
-        </div>
-    </div>
-
-    <div class="widget contrast blue md-whiteframe-z1" layout="column" layout-align="start space-between"
-         gridster-item col="vm.widget3.position[0]" row="vm.widget3.position[1]" size-x="vm.widget3.size.x"
-         min-size-x="vm.widget3.size.minX" size-y="vm.widget3.size.y" min-size-y="vm.widget3.size.minY">
-        <header layout="row" layout-align="space-between center">
-            <span class="title">{{vm.widget3.data.title}}</span>
-            <md-icon md-font-icon="icon-refresh" class="s20"></md-icon>
-        </header>
-
-        <div flex class="content" layout="row" layout-align="space-between">
-            <div layout="column" layout-align="space-between start">
-                <div class="value" layout="row" layout-align="start center">
-                    <span>800</span>
-                    <md-icon md-font-icon="icon-trending_up" class="s36"></md-icon>
-                    <span flex></span>
-                </div>
-
-                <div class="detail" layout="row" layout-align="start center">
-                    <span>See more details</span>
-                </div>
-            </div>
-
-            <div layout="row" layout-align="end end">
-                <angular-chart class="stroke-3" options="vm.dailyMiniChart"></angular-chart>
-            </div>
-        </div>
-    </div>
-
-    <div class="widget contrast blue md-whiteframe-z1" layout="column" layout-align="start space-between"
-         gridster-item col="vm.widget4.position[0]" row="vm.widget4.position[1]" size-x="vm.widget4.size.x"
-         min-size-x="vm.widget4.size.minX" size-y="vm.widget4.size.y" min-size-y="vm.widget4.size.minY">
-        <header layout="row" layout-align="space-between center">
-            <span class="title">{{vm.widget4.data.title}}</span>
-            <md-icon md-font-icon="icon-refresh" class="s20"></md-icon>
-        </header>
-
-        <div flex class="content" layout="row" layout-align="space-between">
-            <div layout="column" layout-align="space-between start">
-                <div class="value" layout="row" layout-align="start center">
-                    <span>800</span>
-                    <md-icon md-font-icon="icon-trending_up" class="s36"></md-icon>
-                    <span flex></span>
-                </div>
-
-                <div class="detail" layout="row" layout-align="start center">
-                    <span>See more details</span>
-                </div>
-            </div>
-
-            <div layout="row" layout-align="end end">
-                <angular-chart class="stroke-3" options="vm.dailyMiniChart"></angular-chart>
-            </div>
-        </div>
-    </div>-->
+    <!-- / WIDGETS -->
 
 </div>
+
+<!--<div class="widget contrast blue md-whiteframe-z1" layout="column" layout-align="start space-between"
+     gridster-item col="vm.widget2.position[0]" row="vm.widget2.position[1]" size-x="vm.widget2.size.x"
+     min-size-x="vm.widget2.size.minX" size-y="vm.widget2.size.y" min-size-y="vm.widget2.size.minY">
+    <header layout="row" layout-align="space-between center">
+        <span class="title">{{vm.widget2.data.title}}</span>
+        <md-icon md-font-icon="icon-refresh" class="s20"></md-icon>
+    </header>
+
+    <div flex class="content" layout="row" layout-align="space-between">
+        <div layout="column" layout-align="space-between start">
+            <div class="value" layout="row" layout-align="start center">
+                <span>800</span>
+                <md-icon md-font-icon="icon-trending_up" class="s36"></md-icon>
+                <span flex></span>
+            </div>
+
+            <div class="detail" layout="row" layout-align="start center">
+                <span>See more details</span>
+            </div>
+        </div>
+
+        <div layout="row" layout-align="end end">
+            <c3chart bindto-id="daily-min-chart">
+                <chart-legend show-legend="false"/>
+                <chart-column column-id="Data 1"
+                              column-values="510,535,560,525,547,570,531.69"
+                              column-type="line"/>
+                <chart-axis>
+                    <chart-axis-x show="false"></chart-axis-x>
+                    <chart-axis-y show="false"></chart-axis-y>
+                </chart-axis>
+            </c3chart>
+        </div>
+    </div>
+</div>
+
+<div class="widget contrast blue md-whiteframe-z1" layout="column" layout-align="start space-between"
+     gridster-item col="vm.widget3.position[0]" row="vm.widget3.position[1]" size-x="vm.widget3.size.x"
+     min-size-x="vm.widget3.size.minX" size-y="vm.widget3.size.y" min-size-y="vm.widget3.size.minY">
+    <header layout="row" layout-align="space-between center">
+        <span class="title">{{vm.widget3.data.title}}</span>
+        <md-icon md-font-icon="icon-refresh" class="s20"></md-icon>
+    </header>
+
+    <div flex class="content" layout="row" layout-align="space-between">
+        <div layout="column" layout-align="space-between start">
+            <div class="value" layout="row" layout-align="start center">
+                <span>800</span>
+                <md-icon md-font-icon="icon-trending_up" class="s36"></md-icon>
+                <span flex></span>
+            </div>
+
+            <div class="detail" layout="row" layout-align="start center">
+                <span>See more details</span>
+            </div>
+        </div>
+
+        <div layout="row" layout-align="end end">
+            <angular-chart class="stroke-3" options="vm.dailyMiniChart"></angular-chart>
+        </div>
+    </div>
+</div>
+
+<div class="widget contrast blue md-whiteframe-z1" layout="column" layout-align="start space-between"
+     gridster-item col="vm.widget4.position[0]" row="vm.widget4.position[1]" size-x="vm.widget4.size.x"
+     min-size-x="vm.widget4.size.minX" size-y="vm.widget4.size.y" min-size-y="vm.widget4.size.minY">
+    <header layout="row" layout-align="space-between center">
+        <span class="title">{{vm.widget4.data.title}}</span>
+        <md-icon md-font-icon="icon-refresh" class="s20"></md-icon>
+    </header>
+
+    <div flex class="content" layout="row" layout-align="space-between">
+        <div layout="column" layout-align="space-between start">
+            <div class="value" layout="row" layout-align="start center">
+                <span>800</span>
+                <md-icon md-font-icon="icon-trending_up" class="s36"></md-icon>
+                <span flex></span>
+            </div>
+
+            <div class="detail" layout="row" layout-align="start center">
+                <span>See more details</span>
+            </div>
+        </div>
+
+        <div layout="row" layout-align="end end">
+            <angular-chart class="stroke-3" options="vm.dailyMiniChart"></angular-chart>
+        </div>
+    </div>
+</div>-->
