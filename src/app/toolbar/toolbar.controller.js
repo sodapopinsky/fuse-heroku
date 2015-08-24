@@ -14,7 +14,7 @@
 
         // Methods
         vm.toggleSidenav = toggleSidenav;
-        vm.toggleNavigationSidenavMode = toggleNavigationSidenavMode;
+        vm.toggleNavigationSidenavFold = toggleNavigationSidenavFold;
 
         //////////
 
@@ -29,10 +29,12 @@
         }
 
         /**
-         * Toggle navigation sidenav mode
+         * Toggle navigation sidenav fold
          */
-        function toggleNavigationSidenavMode()
+        function toggleNavigationSidenavFold(event)
         {
+            event.preventDefault();
+
             msNavFoldService.toggleFold();
         }
     }
