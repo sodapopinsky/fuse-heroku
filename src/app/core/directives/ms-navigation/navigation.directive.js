@@ -57,7 +57,9 @@
             link    : function ($scope, $element, $attrs)
             {
                 var isFolded = ($attrs.msNavIsFoldedDirective === 'true'),
-                    body = angular.element($document[0].body);
+                    body = angular.element($document[0].body),
+                    openOverlay = angular.element('<div id="navigation-fold-open-overlay"></div>'),
+                    closeOverlay = angular.element('<div id="navigation-fold-close-overlay"></div>');
 
                 // Initialize the service
                 msNavFoldService.setFoldable($scope, $element, isFolded);
@@ -102,12 +104,8 @@
                     $rootScope.$broadcast('msNav::forceCollapse');
                     $element.find('ms-nav').scrollTop(0);
 
-                    // Create an overlay for opening the fold and append it to the element
-                    var openOverlay = angular.element('<div id="navigation-fold-open-overlay"></div>');
+                    // Append the openOverlay to the element
                     $element.append(openOverlay);
-
-                    // Create another overlay for closing the fold
-                    var closeOverlay = angular.element('<div id="navigation-fold-close-overlay"></div>');
 
                     // Event listeners
                     openOverlay.on('mouseenter touchstart', function (event)
@@ -128,9 +126,9 @@
                         $rootScope.$broadcast('msNav::expandMatchingToggles');
 
                         // Remove open overlay
-                        $element.find('#navigation-fold-open-overlay').remove();
+                        $element.find(openOverlay).remove();
 
-                        // Append close overlay and its events
+                        // Append close overlay and bind its events
                         $element.parent().append(closeOverlay);
                         closeOverlay.on('mouseenter touchstart', function (event)
                         {
@@ -152,9 +150,9 @@
                         $element.removeClass('folded-open');
 
                         // Remove close overlay
-                        $element.parent().find('#navigation-fold-close-overlay').remove();
+                        $element.parent().find(closeOverlay).remove();
 
-                        // Append open overlay and its events
+                        // Append open overlay and bind its events
                         $element.append(openOverlay);
                         openOverlay.on('mouseenter touchstart', function (event)
                         {
@@ -171,12 +169,19 @@
                     $element.removeClass('folded');
                     body.removeClass('navigation-folded');
 
-                    $element.off('mouseenter');
-                    $element.off('mouseleave');
+                    $element.off('mouseenter mouseleave');
                 }
 
                 // Expose functions to the scope
                 $scope.toggleFold = toggleFold;
+
+                // Cleanup
+                $scope.$on('$destroy', function ()
+                {
+                    openOverlay.off('mouseenter touchstart');
+                    closeOverlay.off('mouseenter touchstart');
+                    $element.off('mouseenter mouseleave');
+                });
             }
         };
     }
@@ -434,6 +439,12 @@
                             $scope.$broadcast('msNav::forceCollapse');
                         }
                     }
+
+                    // Cleanup
+                    $scope.$on('$destroy', function ()
+                    {
+                        $element.children('.ms-nav-button').off('click');
+                    });
 
                     /*---------------------*/
                     /* Scope Events        */
