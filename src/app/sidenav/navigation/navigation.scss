@@ -79,7 +79,7 @@ $navigationFoldedWidth: 64px;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
-                    transition: opacity 0.2s ease-in-out;
+                    transition: opacity 0.2s ease-in-out 0.1s;
                 }
 
                 .arrow {
@@ -87,7 +87,7 @@ $navigationFoldedWidth: 64px;
                     top: 16px;
                     right: 24px;
                     margin: 0;
-                    transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+                    transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out 0.1s;
                 }
 
                 .ms-nav-badge {
@@ -101,6 +101,7 @@ $navigationFoldedWidth: 64px;
                     font-weight: bold;
                     border-radius: 20px;
                     transform: translateY(-50%);
+                    transition: opacity 0.2s ease-in-out 0.1s;
                 }
 
                 &.active {
@@ -289,6 +290,7 @@ $navigationFoldedWidth: 64px;
                                     height: 48px;
 
                                     > .ms-nav-label,
+                                    > .ms-nav-badge,
                                     > .arrow {
                                         opacity: 0;
                                         visibility: hidden;
