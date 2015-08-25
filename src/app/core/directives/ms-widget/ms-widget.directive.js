@@ -3,49 +3,130 @@
     'use strict';
 
     angular.module('app.core')
-        .directive('msWidget', msWidgetDirective);
+        .controller('MsWidgetController', MsWidgetController)
+        .directive('msWidget', msWidgetDirective)
+        .directive('msWidgetFront', msWidgetFrontDirective)
+        .directive('msWidgetBack', msWidgetBackDirective);
+
+    /** @ngInject */
+    function MsWidgetController($scope)
+    {
+        var vm = this;
+
+        // Data
+        vm.element = undefined;
+        vm.flipped = false;
+
+        // Methods
+        vm.flip = flip;
+        vm.init = init;
+
+        //////////
+
+        /**
+         * Init the controller with the element
+         *
+         * @param element
+         */
+        function init(element)
+        {
+            vm.element = element;
+        }
+
+        /**
+         * Flip the widget
+         */
+        function flip()
+        {
+            if ( !isFlippable() )
+            {
+                return;
+            }
+
+            // Toggle flipped status
+            vm.flipped = !vm.flipped;
+
+            // Toggle the 'flipped' class
+            vm.element.toggleClass('flipped', vm.flipped);
+        }
+
+        /**
+         * Check if widget is flippable
+         *
+         * @returns {boolean}
+         */
+        function isFlippable()
+        {
+            return (angular.isDefined($scope.flippable) && $scope.flippable === true);
+        }
+    }
 
     /** @ngInject */
     function msWidgetDirective()
     {
         return {
-            restrict: 'E',
-            scope   : {
-                widget: '='
+            restrict        : 'E',
+            scope           : {
+                flippable: '=?'
             },
-            template: '<div class="widget-container" ng-include="templateDir"></div>',
-            compile : function (tElement)
+            controller      : 'MsWidgetController',
+            transclude      : true,
+            template        : '<div class="widget" ng-transclude></div>',
+            compile         : function (tElement)
             {
                 tElement.addClass('ms-widget');
 
-                return function postLink($scope, $element)
+                return function postLink($scope, $element, $attrs, MsWidgetCtrl)
                 {
-                    // Variables
-                    var widget = $scope.widget;
-
-                    /* Initial setup */
-
-                    // Add classes based on the template
-                    $element.addClass('widget-' + widget.options.template);
-
-                    // Load the selected template
-                    var baseDir = 'app/core/directives/ms-widget/templates/';
-                    $scope.templateDir = baseDir + widget.options.template + '/' + widget.options.template + '.html';
+                    // Init the controller with element
+                    MsWidgetCtrl.init($element);
 
                     //////////
-
-                    // Methods
-                    $scope.flipWidget = flipWidget;
-
-                    /**
-                     * Flip the widget
-                     */
-                    function flipWidget()
-                    {
-                        widget.options.flipped = !widget.options.flipped;
-                    }
                 };
             }
         };
     }
+
+    /** @ngInject */
+    function msWidgetFrontDirective()
+    {
+        return {
+            restrict  : 'E',
+            require   : '^msWidget',
+            transclude: true,
+            template  : '<div ng-transclude></div>',
+            compile   : function (tElement)
+            {
+                tElement.addClass('ms-widget-front');
+
+                return function postLink($scope, $element, $attrs, MsWidgetCtrl)
+                {
+                    // Methods
+                    $scope.flipWidget = MsWidgetCtrl.flip;
+                };
+            }
+        };
+    }
+
+    /** @ngInject */
+    function msWidgetBackDirective()
+    {
+        return {
+            restrict  : 'E',
+            require   : '^msWidget',
+            transclude: true,
+            template  : '<div ng-transclude></div>',
+            compile   : function (tElement)
+            {
+                tElement.addClass('ms-widget-back');
+
+                return function postLink($scope, $element, $attrs, MsWidgetCtrl)
+                {
+                    // Methods
+                    $scope.flipWidget = MsWidgetCtrl.flip;
+                };
+            }
+        };
+    }
+
 })();
