@@ -15,65 +15,28 @@
         vm.themes = fuseTheming.themes;
 
         vm.widget1 = {
-            options: {
-                flipped : false,
-                template: 'template-1',
-            },
-            data   : {
-                title: 'WEEKLY TRANSACTIONS'
-            }
+            title: 'WEEKLY TRANSACTIONS'
         };
 
         vm.widget2 = {
-            options: {
-                flipped : false,
-                template: 'template-1',
-            },
-            data   : {
-                title: 'DAILY VISITORS'
-            }
+            title: 'DAILY VISITORS'
         };
 
         vm.widget3 = {
-            options: {
-                flipped : false,
-                template: 'template-1',
-            },
-            data   : {
-                title: 'DAILY VISITORS 2'
-            }
+            title: 'DAILY VISITORS 2'
         };
 
         vm.widget4 = {
-            options: {
-                flipped : false,
-                template: 'template-1',
-            },
-            data   : {
-                title: 'DAILY VISITORS 3'
-            }
+            title: 'DAILY VISITORS 3'
         };
 
         vm.widget5 = {
-            options: {
-                flipped : false,
-                template: 'template-1',
-            },
-            data   : {
-                title: 'DAILY VISITORS 4'
-            }
+            title: 'DAILY VISITORS 4'
         };
 
         vm.widget6 = {
-            options: {
-                flipped : false,
-                template: 'template-1',
-            },
-            data   : {
-                title: 'DAILY VISITORS 5'
-            }
+            title: 'DAILY VISITORS 5'
         };
-
 
         vm.dailyMiniChart = {
             dimensions: {

@@ -5,25 +5,230 @@
 
         <!-- WIDGET GROUP -->
         <div class="widget-group" layout="row" flex="100" layout-wrap>
-            <ms-widget class="ar-2-1" widget="vm.widget1" layout="column" flex="50" flex-gt-lg="25"></ms-widget>
-            <ms-widget class="ar-2-1" widget="vm.widget2" layout="column" flex="50" flex-gt-lg="25"></ms-widget>
-            <ms-widget class="ar-2-1" widget="vm.widget3" layout="column" flex="50" flex-gt-lg="25"></ms-widget>
-            <ms-widget class="ar-2-1" widget="vm.widget4" layout="column" flex="50" flex-gt-lg="25"></ms-widget>
+
+            <!-- WIDGET 1 -->
+            <ms-widget class="widget-1" flippable="true" layout="column" flex="50" flex-gt-lg="25">
+
+                <!-- Front -->
+                <ms-widget-front class="md-whiteframe-z1">
+                    <div class="header" layout="row" layout-align="space-between center">
+                        <div class="title secondary-text">{{vm.widget1.title}}</div>
+
+                        <div class="toolbar" layout="row" layout-align="end center">
+                            <md-menu>
+                                <md-button aria-label="more" class="md-icon-button"
+                                           ng-click="$mdOpenMenu($event)">
+                                    <md-icon md-font-icon="icon-more_vert" class="s20"></md-icon>
+                                </md-button>
+                                <md-menu-content width="2">
+                                    <md-menu-item>
+                                        <md-button ng-click="flipWidget()" aria-label="Flip widget">
+                                            Details
+                                        </md-button>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+                        </div>
+                    </div>
+
+                    <div class="content" layout="column" layout-align="space-between" flex>
+                        <div class="value" layout="row" layout-align="start center">
+                            <span>30,342</span>
+                            <md-icon md-font-icon="icon-trending_up" class="s36 icon"></md-icon>
+                        </div>
+
+                        <div class="detail" layout="row" layout-align="start center">
+                            <span class="secondary-text">Last week: 30,002</span>
+                            <span class="box">+ 1,12%</span>
+                        </div>
+                    </div>
+                </ms-widget-front>
+                <!-- / Front -->
+
+                <!-- Back -->
+                <ms-widget-back class="md-whiteframe-z1">
+                    <md-button aria-label="more" class="md-icon-button" ng-click="flipWidget()">
+                        <md-icon md-font-icon="icon-arrow_back" class="s20"></md-icon>
+                    </md-button>
+
+                    This is the back side!
+                </ms-widget-back>
+                <!-- / Back -->
+
+            </ms-widget>
+            <!-- / WIDGET 1 -->
+
+            <!-- WIDGET 2
+            <ms-widget class="widget-1" flippable="true" layout="column" flex="50" flex-gt-lg="25">
+
+                 Back
+                <ms-widget-back class="md-whiteframe-z1">
+                    <md-button aria-label="more" class="md-icon-button" ng-click="flipWidget()">
+                        <md-icon md-font-icon="icon-arrow_back" class="s20"></md-icon>
+                    </md-button>
+
+                    This is the back side!
+                </ms-widget-back>
+                 / Back
+
+                 Front
+                <ms-widget-front class="md-whiteframe-z1">
+                    <div class="header" layout="row" layout-align="space-between center">
+                        <div class="title secondary-text">{{vm.widget1.data.title}}</div>
+
+                        <div class="toolbar" layout="row" layout-align="end center">
+                            <md-menu>
+                                <md-button aria-label="more" class="md-icon-button"
+                                           ng-click="$mdOpenMenu($event)">
+                                    <md-icon md-font-icon="icon-more_vert" class="s20"></md-icon>
+                                </md-button>
+                                <md-menu-content width="2">
+                                    <md-menu-item>
+                                        <md-button ng-click="flipWidget()" aria-label="Flip widget">
+                                            Details
+                                        </md-button>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+                        </div>
+                    </div>
+
+                    <div class="content" layout="column" layout-align="space-between" flex>
+                        <div class="value" layout="row" layout-align="start center">
+                            <span>30,342</span>
+                            <md-icon md-font-icon="icon-trending_up" class="s36 icon"></md-icon>
+                        </div>
+
+                        <div class="detail" layout="row" layout-align="start center">
+                            <span class="secondary-text">Last week: 30,002</span>
+                            <span class="box">+ 1,12%</span>
+                        </div>
+                    </div>
+                </ms-widget-front>
+                 / Front
+
+            </ms-widget>
+             / WIDGET 2
+
+             WIDGET 3
+            <ms-widget class="widget-1" flippable="true" layout="column" flex="50" flex-gt-lg="25">
+
+                 Back
+                <ms-widget-back class="md-whiteframe-z1">
+                    <md-button aria-label="more" class="md-icon-button" ng-click="flipWidget()">
+                        <md-icon md-font-icon="icon-arrow_back" class="s20"></md-icon>
+                    </md-button>
+
+                    This is the back side!
+                </ms-widget-back>
+                 / Back
+
+                 Front
+                <ms-widget-front class="md-whiteframe-z1">
+                    <div class="header" layout="row" layout-align="space-between center">
+                        <div class="title secondary-text">{{vm.widget1.data.title}}</div>
+
+                        <div class="toolbar" layout="row" layout-align="end center">
+                            <md-menu>
+                                <md-button aria-label="more" class="md-icon-button"
+                                           ng-click="$mdOpenMenu($event)">
+                                    <md-icon md-font-icon="icon-more_vert" class="s20"></md-icon>
+                                </md-button>
+                                <md-menu-content width="2">
+                                    <md-menu-item>
+                                        <md-button ng-click="flipWidget()" aria-label="Flip widget">
+                                            Details
+                                        </md-button>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+                        </div>
+                    </div>
+
+                    <div class="content" layout="column" layout-align="space-between" flex>
+                        <div class="value" layout="row" layout-align="start center">
+                            <span>30,342</span>
+                            <md-icon md-font-icon="icon-trending_up" class="s36 icon"></md-icon>
+                        </div>
+
+                        <div class="detail" layout="row" layout-align="start center">
+                            <span class="secondary-text">Last week: 30,002</span>
+                            <span class="box">+ 1,12%</span>
+                        </div>
+                    </div>
+                </ms-widget-front>
+                 / Front
+
+            </ms-widget>
+             / WIDGET 3
+
+             WIDGET 4
+            <ms-widget class="widget-1" flippable="true" layout="column" flex="50" flex-gt-lg="25">
+
+                 Back
+                <ms-widget-back class="md-whiteframe-z1">
+                    <md-button aria-label="more" class="md-icon-button" ng-click="flipWidget()">
+                        <md-icon md-font-icon="icon-arrow_back" class="s20"></md-icon>
+                    </md-button>
+
+                    This is the back side!
+                </ms-widget-back>
+                 / Back
+
+                 Front
+                <ms-widget-front class="md-whiteframe-z1">
+                    <div class="header" layout="row" layout-align="space-between center">
+                        <div class="title secondary-text">{{vm.widget1.data.title}}</div>
+
+                        <div class="toolbar" layout="row" layout-align="end center">
+                            <md-menu>
+                                <md-button aria-label="more" class="md-icon-button"
+                                           ng-click="$mdOpenMenu($event)">
+                                    <md-icon md-font-icon="icon-more_vert" class="s20"></md-icon>
+                                </md-button>
+                                <md-menu-content width="2">
+                                    <md-menu-item>
+                                        <md-button ng-click="flipWidget()" aria-label="Flip widget">
+                                            Details
+                                        </md-button>
+                                    </md-menu-item>
+                                </md-menu-content>
+                            </md-menu>
+                        </div>
+                    </div>
+
+                    <div class="content" layout="column" layout-align="space-between" flex>
+                        <div class="value" layout="row" layout-align="start center">
+                            <span>30,342</span>
+                            <md-icon md-font-icon="icon-trending_up" class="s36 icon"></md-icon>
+                        </div>
+
+                        <div class="detail" layout="row" layout-align="start center">
+                            <span class="secondary-text">Last week: 30,002</span>
+                            <span class="box">+ 1,12%</span>
+                        </div>
+                    </div>
+                </ms-widget-front>
+                 / Front
+
+            </ms-widget>
+             / WIDGET 5
+-->
         </div>
         <!-- / WIDGET GROUP -->
 
         <!-- WIDGET GROUP -->
-        <div class="widget-group" layout="row" flex="100" layout-wrap>
-            <ms-widget class="ar-2-1" widget="vm.widget1" layout="column" flex="100" flex-gt-lg="50"></ms-widget>
-            <ms-widget class="ar-2-1" widget="vm.widget2" layout="column" flex="100" flex-gt-lg="50"></ms-widget>
-        </div>
+        <!--<div class="widget-group" layout="row" flex="100" layout-wrap>
+            <ms-widget widget="vm.widget1" layout="column" flex="100" flex-gt-lg="50"></ms-widget>
+            <ms-widget widget="vm.widget2" layout="column" flex="100" flex-gt-lg="50"></ms-widget>
+        </div>-->
         <!-- / WIDGET GROUP -->
 
         <!-- WIDGET GROUP -->
-        <div class="widget-group" layout="row" flex="100" layout-wrap>
-            <ms-widget class="ar-2-1" widget="vm.widget3" layout="column" flex="100" flex-gt-lg="50"></ms-widget>
-            <ms-widget class="ar-2-1" widget="vm.widget4" layout="column" flex="100" flex-gt-lg="50"></ms-widget>
-        </div>
+       <!-- <div class="widget-group" layout="row" flex="100" layout-wrap>
+            <ms-widget widget="vm.widget3" layout="column" flex="100" flex-gt-lg="50"></ms-widget>
+            <ms-widget widget="vm.widget4" layout="column" flex="100" flex-gt-lg="50"></ms-widget>
+        </div>-->
         <!-- / WIDGET GROUP -->
 
     </div>
