@@ -169,6 +169,9 @@
                     $element.removeClass('folded');
                     body.removeClass('navigation-folded');
 
+                    // Update the location
+                    $rootScope.$broadcast('msNav::expandMatchingToggles');
+
                     $element.off('mouseenter mouseleave');
                 }
 
