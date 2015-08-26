@@ -14,6 +14,7 @@
             'ngSanitize',
             'ngTouch',
             'ngMaterial',
+            'pascalprecht.translate',
             'gridshore.c3js.chart',
             'chart.js',
             'angular-chartist',

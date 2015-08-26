@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($ariaProvider, $logProvider, fuseConfigProvider, msScrollConfigProvider, uiGmapGoogleMapApiProvider)
+    function config($ariaProvider, $logProvider, fuseConfigProvider, msScrollConfigProvider, uiGmapGoogleMapApiProvider, $translateProvider)
     {
         $ariaProvider.config({
             tabindex: false
@@ -39,6 +39,11 @@
             v        : '3.exp',
             libraries: 'weather,geometry,visualization'
         });
+        $translateProvider.useLoader('$translatePartialLoader', {
+            urlTemplate: '{part}/language/{lang}.json'
+        });
+        $translateProvider.preferredLanguage('en');
+        $translateProvider.useSanitizeValueStrategy('sanitize');
     }
 
 })();
