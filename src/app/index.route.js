@@ -836,13 +836,20 @@
                 }
             })
 
-            // Widgets
+        /**
+         * Widget
+         */
             .state('app.components.widgets', {
-                url  : '/widgets',
+                abstract: true,
+                url     : '/widgets'
+            })
+
+            .state('app.components.widgets.statistic', {
+                url  : '/statistic-widgets',
                 views: {
                     'content@app': {
-                        templateUrl: 'app/main/components/maps/maps.html',
-                        controller : 'WidgetsController as vm'
+                        templateUrl: 'app/main/components/widgets/statistic/statistic-widgets.html',
+                        controller : 'StatisticWidgetsController as vm'
                     }
                 }
             });

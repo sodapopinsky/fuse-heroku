@@ -7,6 +7,7 @@
 
         .ms-widget-front {
             display: block;
+            position: relative;
             overflow: hidden;
             visibility: visible;
             width: 100%;
@@ -15,7 +16,6 @@
             z-index: 10;
             padding: 16px;
             border-radius: 2px;
-            background-color: $material-color-white;
             transition: transform 0.5s ease-out 0s, visibility 0s ease-in 0.2s, opacity 0s ease-in 0.2s;
             transform: rotateY(0deg);
             backface-visibility: hidden;
@@ -34,10 +34,20 @@
             left: 0;
             padding: 16px;
             border-radius: 2px;
-            background-color: $material-color-white;
             transition: transform 0.5s ease-out 0s, visibility 0s ease-in 0.2s, opacity 0s ease-in 0.2s;
             transform: rotateY(180deg);
             backface-visibility: hidden;
+        }
+
+        .md-button {
+
+            &.md-icon-button {
+                margin: 0 2px;
+                width: 24px;
+                min-height: 24px;
+                height: 24px;
+                line-height: 24px;
+            }
         }
     }
 

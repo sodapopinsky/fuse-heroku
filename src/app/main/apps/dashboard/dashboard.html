@@ -10,9 +10,9 @@
             <ms-widget class="widget-1" flippable="true" layout="column" flex="50" flex-gt-lg="25">
 
                 <!-- Front -->
-                <ms-widget-front class="md-whiteframe-z1">
-                    <div class="header" layout="row" layout-align="space-between center">
-                        <div class="title secondary-text">{{vm.widget1.title}}</div>
+                <ms-widget-front>
+                    <div class="header secondary-text" layout="row" layout-align="space-between center">
+                        <div class="title">{{vm.widget1.title}}</div>
 
                         <div class="toolbar" layout="row" layout-align="end center">
                             <md-menu>
@@ -34,11 +34,11 @@
                     <div class="content" layout="column" layout-align="space-between" flex>
                         <div class="value" layout="row" layout-align="start center">
                             <span>30,342</span>
-                            <md-icon md-font-icon="icon-trending_up" class="s36 icon"></md-icon>
+                            <md-icon md-font-icon="icon-trending_up" class="s36"></md-icon>
                         </div>
 
                         <div class="detail" layout="row" layout-align="start center">
-                            <span class="secondary-text">Last week: 30,002</span>
+                            <span>Last week: 30,002</span>
                             <span class="box">+ 1,12%</span>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                 <!-- / Front -->
 
                 <!-- Back -->
-                <ms-widget-back class="md-whiteframe-z1">
+                <ms-widget-back>
                     <md-button aria-label="more" class="md-icon-button" ng-click="flipWidget()">
                         <md-icon md-font-icon="icon-arrow_back" class="s20"></md-icon>
                     </md-button>

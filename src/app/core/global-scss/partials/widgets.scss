@@ -1,84 +1,156 @@
 /*----------------------------------------------------------------*/
-/*  Widget Styles
+/*  Global Widget Styles
 /*----------------------------------------------------------------*/
+.ms-widget {
 
-/*----------------------------------------------------------------*/
-/*  Widget-1
-/*----------------------------------------------------------------*/
-.widget-1 {
+    .widget {
 
-    .ms-widget-front {
+        .ms-widget-front {
+            box-shadow: $whiteframe-shadow-z1;
 
-        .header {
-            font-size: 14px;
-            font-weight: 500;
+            &.contrast-bg {
 
-            .title {
-
-            }
-        }
-
-        .content {
-            padding-top: 8px;
-            color: rgba(0, 0, 0, 0.87);
-
-            .value {
-                font-size: 36px;
-                font-weight: 300;
-                line-height: 1;
+                .content {
+                    color: $material-color-white;
+                }
 
                 md-icon {
-                    margin-left: 16px;
+                    color: $material-color-white;
                 }
             }
+        }
 
-            .detail {
-                padding-top: 16px;
+        .ms-widget-back {
+            box-shadow: $whiteframe-shadow-z1;
+
+            &.contrast-bg {
+
+                .content {
+                    color: $material-color-white;
+                }
 
                 md-icon {
-                    margin: 0 8px 0 0;
+                    color: $material-color-white;
                 }
+            }
 
-                .box {
-                    border-radius: 2px;
-                    padding: 4px 8px;
-                    margin: 0 8px;
-                    font-size: 11px;
-                    font-weight: 800;
-                    color: rgba(0, 0, 0, 0.54);
-                    background-color: rgba(0, 0, 0, 0.12);
-                    white-space: nowrap;
-                }
+            .flip-to-front {
+                position: absolute;
+                top: 0;
+                right: 0;
             }
         }
 
-        .footer {
+        // Heights
+        &.height-1 {
+            min-height: 150px;
+            height: 150px;
+        }
 
+        &.height-2 {
+            min-height: 300px;
+            height: 300px;
+        }
+
+        &.height-3 {
+            min-height: 450px;
+            height: 450px;
+        }
+
+        // md-progress-linear override
+        md-progress-linear:not([md-mode="indeterminate"]) {
+
+            .md-container {
+                top: 0;
+            }
         }
     }
+}
 
-    .ms-widget-back {
+/*----------------------------------------------------------------*/
+/*  Statistic Widget 1
+/*----------------------------------------------------------------*/
+.ms-widget {
 
-    }
+    &.statistic-widget-1 {
 
-    .md-button {
+        .widget {
 
-        &.md-icon-button {
-            margin: 0 2px;
-            width: 24px;
-            min-height: 24px;
-            height: 24px;
-            line-height: 24px;
+            .ms-widget-front {
+
+                .header {
+                    font-size: 14px;
+                    font-weight: 500;
+                    padding-bottom: 8px;
+
+                    .title {
+
+                    }
+                }
+
+                .content {
+
+                    .value {
+                        font-size: 36px;
+                        font-weight: 300;
+                        line-height: 1;
+                        padding-bottom: 16px;
+
+                        md-icon {
+                            margin-left: 16px;
+                        }
+                    }
+
+                    .details {
+
+                        md-icon {
+                            margin: 0 8px 0 0;
+                        }
+
+                        .box {
+                            border-radius: 2px;
+                            padding: 4px 8px;
+                            margin: 0 8px;
+                            font-size: 11px;
+                            font-weight: 800;
+                            color: rgba(0, 0, 0, 0.54);
+                            background-color: rgba(0, 0, 0, 0.12);
+                            white-space: nowrap;
+                        }
+                    }
+                }
+
+                .footer {
+
+                }
+
+                // Contrast background
+                &.contrast-bg {
+
+                    .content {
+
+                        .details {
+
+                            .box {
+                                color: rgba(0, 0, 0, 0.54);
+                                background-color: rgba(255, 255, 255, 0.7);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .ms-widget-back {
+
+                .content {
+                    padding-top: 8px;
+                }
+
+                // Contrast background
+                &.contrast-bg {
+
+                }
+            }
         }
-    }
-
-    &.small {
-
-    }
-
-    &.large {
-    }
-
-    &.wide {
     }
 }
