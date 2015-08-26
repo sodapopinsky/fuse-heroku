@@ -54,15 +54,15 @@
     {
         return {
             restrict: 'A',
-            link    : function ($scope, $element, $attrs)
+            link    : function (scope, iElement, iAttrs)
             {
-                var isFolded = ($attrs.msNavIsFoldedDirective === 'true'),
+                var isFolded = (iAttrs.msNavIsFoldedDirective === 'true'),
                     body = angular.element($document[0].body),
                     openOverlay = angular.element('<div id="navigation-fold-open-overlay"></div>'),
                     closeOverlay = angular.element('<div id="navigation-fold-close-overlay"></div>');
 
                 // Initialize the service
-                msNavFoldService.setFoldable($scope, $element, isFolded);
+                msNavFoldService.setFoldable(scope, iElement, isFolded);
 
                 // Set the fold status for the first time
                 if ( isFolded )
@@ -97,15 +97,15 @@
                 function fold()
                 {
                     // Add classes
-                    $element.addClass('folded');
+                    iElement.addClass('folded');
                     body.addClass('navigation-folded');
 
                     // Collapse everything and scroll to the top
                     $rootScope.$broadcast('msNav::forceCollapse');
-                    $element.find('ms-nav').scrollTop(0);
+                    iElement.find('ms-nav').scrollTop(0);
 
                     // Append the openOverlay to the element
-                    $element.append(openOverlay);
+                    iElement.append(openOverlay);
 
                     // Event listeners
                     openOverlay.on('mouseenter touchstart', function (event)
@@ -120,16 +120,16 @@
                     {
                         event.preventDefault();
 
-                        $element.addClass('folded-open');
+                        iElement.addClass('folded-open');
 
                         // Update the location
                         $rootScope.$broadcast('msNav::expandMatchingToggles');
 
                         // Remove open overlay
-                        $element.find(openOverlay).remove();
+                        iElement.find(openOverlay).remove();
 
                         // Append close overlay and bind its events
-                        $element.parent().append(closeOverlay);
+                        iElement.parent().append(closeOverlay);
                         closeOverlay.on('mouseenter touchstart', function (event)
                         {
                             closeFolded(event);
@@ -145,15 +145,15 @@
 
                         // Collapse everything and scroll to the top
                         $rootScope.$broadcast('msNav::forceCollapse');
-                        $element.find('ms-nav').scrollTop(0);
+                        iElement.find('ms-nav').scrollTop(0);
 
-                        $element.removeClass('folded-open');
+                        iElement.removeClass('folded-open');
 
                         // Remove close overlay
-                        $element.parent().find(closeOverlay).remove();
+                        iElement.parent().find(closeOverlay).remove();
 
                         // Append open overlay and bind its events
-                        $element.append(openOverlay);
+                        iElement.append(openOverlay);
                         openOverlay.on('mouseenter touchstart', function (event)
                         {
                             openFolded(event);
@@ -166,24 +166,24 @@
                  */
                 function unfold()
                 {
-                    $element.removeClass('folded');
+                    iElement.removeClass('folded');
                     body.removeClass('navigation-folded');
 
                     // Update the location
                     $rootScope.$broadcast('msNav::expandMatchingToggles');
 
-                    $element.off('mouseenter mouseleave');
+                    iElement.off('mouseenter mouseleave');
                 }
 
                 // Expose functions to the scope
-                $scope.toggleFold = toggleFold;
+                scope.toggleFold = toggleFold;
 
                 // Cleanup
-                $scope.$on('$destroy', function ()
+                scope.$on('$destroy', function ()
                 {
                     openOverlay.off('mouseenter touchstart');
                     closeOverlay.off('mouseenter touchstart');
-                    $element.off('mouseenter mouseleave');
+                    iElement.off('mouseenter mouseleave');
                 });
             }
         };
@@ -199,10 +199,8 @@
             lockedItems = [];
 
         // Data
-        vm.element = undefined;
 
         // Methods
-        vm.init = init;
         vm.isDisabled = isDisabled;
         vm.enable = enable;
         vm.disable = disable;
@@ -212,14 +210,6 @@
         vm.clearLockedItems = clearLockedItems;
 
         //////////
-
-        /**
-         * Init the controller
-         */
-        function init(element)
-        {
-            vm.element = element;
-        }
 
         /**
          * Is navigation disabled
@@ -305,11 +295,8 @@
             {
                 tElement.addClass('ms-nav');
 
-                return function postLink($scope, $element, $attrs, MsNavCtrl)
+                return function postLink()
                 {
-                    // Init the controller with the element
-                    MsNavCtrl.init($element);
-
                     // Update toggle status according to the ui-router current state
                     $rootScope.$broadcast('msNav::expandMatchingToggles');
 
@@ -332,7 +319,7 @@
             {
                 tElement.addClass('ms-nav-title');
 
-                return function postLink($scope, $element)
+                return function postLink()
                 {
 
                 };
@@ -349,7 +336,7 @@
             {
                 tElement.addClass('ms-nav-button');
 
-                return function postLink($scope, $element, $attrs)
+                return function postLink()
                 {
 
                 };
@@ -376,7 +363,7 @@
 
                 tElement.attr('collapsed', tAttrs.collapsed);
 
-                return function postLink($scope, $element, $attrs, MsNavCtrl)
+                return function postLink(scope, iElement, iAttrs, MsNavCtrl)
                 {
                     var classes = {
                         expanded         : 'expanded',
@@ -385,7 +372,7 @@
                     };
 
                     // Store all related states
-                    var links = $element.find('a');
+                    var links = iElement.find('a');
                     var states = [];
 
                     angular.forEach(links, function (link)
@@ -401,10 +388,10 @@
                     });
 
                     // Store toggle-able element and its scope in the main nav controller
-                    MsNavCtrl.setToggleItem($element, $scope);
+                    MsNavCtrl.setToggleItem(iElement, scope);
 
                     // Click handler
-                    $element.children('.ms-nav-button').on('click', toggle);
+                    iElement.children('.ms-nav-button').on('click', toggle);
 
                     // Toggle function
                     function toggle()
@@ -424,7 +411,7 @@
                             MsNavCtrl.clearLockedItems();
 
                             // Emit pushToLockedList event
-                            $scope.$emit('msNav::pushToLockedList');
+                            scope.$emit('msNav::pushToLockedList');
 
                             // Collapse everything but locked items
                             $rootScope.$broadcast('msNav::collapse');
@@ -439,14 +426,14 @@
                         else
                         {
                             // Collapse with all children
-                            $scope.$broadcast('msNav::forceCollapse');
+                            scope.$broadcast('msNav::forceCollapse');
                         }
                     }
 
                     // Cleanup
-                    $scope.$on('$destroy', function ()
+                    scope.$on('$destroy', function ()
                     {
-                        $element.children('.ms-nav-button').off('click');
+                        iElement.children('.ms-nav-button').off('click');
                     });
 
                     /*---------------------*/
@@ -456,7 +443,7 @@
                     /**
                      * Collapse everything but locked items
                      */
-                    $scope.$on('msNav::collapse', function ()
+                    scope.$on('msNav::collapse', function ()
                     {
                         // Only collapse toggles that are not locked
                         var lockedItems = MsNavCtrl.getLockedItems();
@@ -464,7 +451,7 @@
 
                         angular.forEach(lockedItems, function (lockedItem)
                         {
-                            if ( angular.equals(lockedItem.scope, $scope) )
+                            if ( angular.equals(lockedItem.scope, scope) )
                             {
                                 locked = true;
                             }
@@ -486,7 +473,7 @@
                     /**
                      * Collapse everything
                      */
-                    $scope.$on('msNav::forceCollapse', function ()
+                    scope.$on('msNav::forceCollapse', function ()
                     {
                         // Collapse and then...
                         collapse().then(function ()
@@ -499,7 +486,7 @@
                     /**
                      * Expand toggles that match with the current states
                      */
-                    $scope.$on('msNav::expandMatchingToggles', function ()
+                    scope.$on('msNav::expandMatchingToggles', function ()
                     {
                         var currentState = $state.current.name;
                         var shouldExpand = false;
@@ -525,10 +512,10 @@
                     /**
                      * Add toggle to the locked list
                      */
-                    $scope.$on('msNav::pushToLockedList', function ()
+                    scope.$on('msNav::pushToLockedList', function ()
                     {
                         // Set expanded item on main nav controller
-                        MsNavCtrl.setLockedItem($element, $scope);
+                        MsNavCtrl.setLockedItem(iElement, scope);
                     });
 
                     /*---------------------*/
@@ -542,7 +529,7 @@
                      */
                     function isCollapsed()
                     {
-                        return $element.attr('collapsed') === 'true';
+                        return iElement.attr('collapsed') === 'true';
                     }
 
                     /**
@@ -576,10 +563,10 @@
                         }
 
                         // Set element attr
-                        $element.attr('collapsed', false);
+                        iElement.attr('collapsed', false);
 
                         // Grab the element to expand
-                        var elementToExpand = angular.element($element.find('ms-nav-toggle-items')[0]);
+                        var elementToExpand = angular.element(iElement.find('ms-nav-toggle-items')[0]);
 
                         // Move the element out of the dom flow and
                         // make it block so we can get its height
@@ -602,7 +589,7 @@
                         });
 
                         // Animate the height
-                        $scope.$evalAsync(function ()
+                        scope.$evalAsync(function ()
                         {
                             $animate.animate(elementToExpand,
                                 {
@@ -653,16 +640,16 @@
                         }
 
                         // Set element attr
-                        $element.attr('collapsed', true);
+                        iElement.attr('collapsed', true);
 
                         // Grab the element to collapse
-                        var elementToCollapse = angular.element($element.find('ms-nav-toggle-items')[0]);
+                        var elementToCollapse = angular.element(iElement.find('ms-nav-toggle-items')[0]);
 
                         // Grab the height
                         var height = elementToCollapse[0].offsetHeight;
 
                         // Animate the height
-                        $scope.$evalAsync(function ()
+                        scope.$evalAsync(function ()
                         {
                             $animate.animate(elementToCollapse,
                                 {

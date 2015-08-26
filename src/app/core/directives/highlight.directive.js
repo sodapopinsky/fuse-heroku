@@ -10,24 +10,24 @@
     {
         return {
             restrict: 'EA',
-            compile : function (element, attr)
+            compile : function (tElement, tAttrs)
             {
                 var code;
                 //No attribute? code is the content
-                if ( !attr.code )
+                if ( !tAttrs.code )
                 {
-                    code = element.html();
-                    element.empty();
+                    code = tElement.html();
+                    tElement.empty();
                 }
 
-                return function (scope, element, attr)
+                return function (scope, iElement, iAttrs)
                 {
-                    if ( attr.code )
+                    if ( iAttrs.code )
                     {
                         // Attribute? code is the evaluation
-                        code = scope.$eval(attr.code);
+                        code = scope.$eval(iAttrs.code);
                     }
-                    var shouldInterpolate = scope.$eval(attr.shouldInterpolate);
+                    var shouldInterpolate = scope.$eval(iAttrs.shouldInterpolate);
 
                     $q.when(code).then(function (code)
                     {
@@ -37,10 +37,13 @@
                             {
                                 code = $interpolate(code)(scope);
                             }
+
                             var contentParent = angular.element(
                                 '<pre><code class="highlight" ng-non-bindable></code></pre>'
                             );
-                            element.append(contentParent);
+
+                            iElement.append(contentParent);
+
                             // Defer highlighting 1-frame to prevent GA interference...
                             $timeout(function ()
                             {
@@ -51,7 +54,6 @@
 
                     function render(contents, parent)
                     {
-
                         var codeElement = parent.find('code');
                         var lines = contents.split('\n');
 
@@ -64,6 +66,7 @@
                         // Make it so each line starts at 0 whitespace
                         var firstLineWhitespace = lines[0].match(/^\s*/)[0];
                         var startingWhitespaceRegex = new RegExp('^' + firstLineWhitespace);
+
                         lines = lines.map(function (line)
                         {
                             return line
@@ -71,7 +74,7 @@
                                 .replace(/\s+$/, '');
                         });
 
-                        var highlightedCode = hljs.highlight(attr.language || attr.lang, lines.join('\n'), true);
+                        var highlightedCode = hljs.highlight(iAttrs.language || iAttrs.lang, lines.join('\n'), true);
                         highlightedCode.value = highlightedCode.value
                             .replace(/=<span class="hljs-value">""<\/span>/gi, '')
                             .replace('<head>', '')
@@ -80,6 +83,6 @@
                     }
                 };
             }
-        }
+        };
     }
 })();

@@ -20,13 +20,13 @@
                 // Add class
                 tElement.addClass('ms-card');
 
-                return function postLink($scope, $element)
+                return function postLink(scope, iElement)
                 {
                     var baseDir = 'app/core/directives/ms-card/templates/';
-                    $scope.templateDir = baseDir + $scope.template + '/' + $scope.template + '.html';
+                    scope.templateDir = baseDir + scope.template + '/' + scope.template + '.html';
 
                     // Methods
-                    $scope.cardTemplateLoaded = cardTemplateLoaded;
+                    scope.cardTemplateLoaded = cardTemplateLoaded;
 
                     //////////
 
@@ -35,7 +35,7 @@
                      */
                     function cardTemplateLoaded()
                     {
-                        $scope.$emit('msCard::cardTemplateLoaded', $element);
+                        scope.$emit('msCard::cardTemplateLoaded', iElement);
                     }
                 };
             }

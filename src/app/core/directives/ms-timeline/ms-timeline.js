@@ -14,14 +14,14 @@
             {
                 tElement.addClass('ms-timeline');
 
-                return function postLink($scope, $element)
+                return function postLink(scope, iElement)
                 {
                     var scrollEl = angular.element('#content > md-content');
 
                     // Set the timelineItemLimit
-                    $scope.timelineItemLimit = 1;
+                    scope.timelineItemLimit = 1;
 
-                    $scope.$on('msCard::cardTemplateLoaded', function (event, args)
+                    scope.$on('msCard::cardTemplateLoaded', function (event, args)
                     {
                         var cardEl = angular.element(args[0]);
 
@@ -36,15 +36,15 @@
                                 // Increase the limit if needed
                                 if ( shouldIncreaseLimit() )
                                 {
-                                    $scope.$evalAsync(function ()
+                                    scope.$evalAsync(function ()
                                     {
-                                        $scope.timelineItemLimit++;
+                                        scope.timelineItemLimit++;
                                     });
                                 }
                             });
 
                             // Cleanup
-                            $scope.$on('$destroy', function ()
+                            scope.$on('$destroy', function ()
                             {
                                imageEl.off('load');
                             });
@@ -54,9 +54,9 @@
                             // Increase the limit if needed
                             if ( shouldIncreaseLimit() )
                             {
-                                $scope.$evalAsync(function ()
+                                scope.$evalAsync(function ()
                                 {
-                                    $scope.timelineItemLimit++;
+                                    scope.timelineItemLimit++;
                                 });
                             }
                         }
@@ -65,11 +65,11 @@
                     // Increase the limit onScroll if needed
                     scrollEl.on('scroll', function ()
                     {
-                        if ( scrollEl.scrollTop() + scrollEl.height() >= $element.outerHeight() )
+                        if ( scrollEl.scrollTop() + scrollEl.height() >= iElement.outerHeight() )
                         {
-                            $scope.$evalAsync(function ()
+                            scope.$evalAsync(function ()
                             {
-                                $scope.timelineItemLimit++;
+                                scope.timelineItemLimit++;
                             });
                         }
                     });
@@ -81,11 +81,11 @@
                      */
                     function shouldIncreaseLimit()
                     {
-                        return ($element.outerHeight() <= scrollEl.height());
+                        return (iElement.outerHeight() <= scrollEl.height());
                     }
 
                     // Cleanup
-                    $scope.$on('$destroy', function ()
+                    scope.$on('$destroy', function ()
                     {
                         scrollEl.off('scroll');
                     });

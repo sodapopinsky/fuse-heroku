@@ -11,12 +11,12 @@
         return {
             restrict: 'A',
             require : '^mdSidenav',
-            link    : function ($scope, $element, $attrs, MdSidenavCtrl)
+            link    : function (scope, iElement, iAttrs, MdSidenavCtrl)
             {
                 // Watch md-sidenav open & locked open statuses
                 // and add class to the ".page-layout" if only
                 // the sidenav open and NOT locked open
-                $scope.$watch(function ()
+                scope.$watch(function ()
                 {
                     return MdSidenavCtrl.isOpen() && !MdSidenavCtrl.isLockedOpen();
                 }, function (current, old)
@@ -26,7 +26,7 @@
                         return;
                     }
 
-                    $element.parents('.page-layout').toggleClass('sidenav-open', current);
+                    iElement.parents('.page-layout').toggleClass('sidenav-open', current);
                 });
             }
         };

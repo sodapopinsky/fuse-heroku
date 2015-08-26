@@ -9,29 +9,17 @@
         .directive('msWidgetBack', msWidgetBackDirective);
 
     /** @ngInject */
-    function MsWidgetController($scope)
+    function MsWidgetController($scope, $element)
     {
         var vm = this;
 
         // Data
-        vm.element = undefined;
         vm.flipped = false;
 
         // Methods
         vm.flip = flip;
-        vm.init = init;
 
         //////////
-
-        /**
-         * Init the controller with the element
-         *
-         * @param element
-         */
-        function init(element)
-        {
-            vm.element = element;
-        }
 
         /**
          * Flip the widget
@@ -47,7 +35,7 @@
             vm.flipped = !vm.flipped;
 
             // Toggle the 'flipped' class
-            vm.element.toggleClass('flipped', vm.flipped);
+            $element.toggleClass('flipped', vm.flipped);
         }
 
         /**
@@ -76,10 +64,8 @@
             {
                 tElement.addClass('ms-widget');
 
-                return function postLink($scope, $element, $attrs, MsWidgetCtrl)
+                return function postLink()
                 {
-                    // Init the controller with element
-                    MsWidgetCtrl.init($element);
 
                     //////////
                 };
@@ -99,10 +85,10 @@
             {
                 tElement.addClass('ms-widget-front');
 
-                return function postLink($scope, $element, $attrs, MsWidgetCtrl)
+                return function postLink(scope, iElement, iAttrs, MsWidgetCtrl)
                 {
                     // Methods
-                    $scope.flipWidget = MsWidgetCtrl.flip;
+                    scope.flipWidget = MsWidgetCtrl.flip;
                 };
             }
         };
@@ -120,10 +106,10 @@
             {
                 tElement.addClass('ms-widget-back');
 
-                return function postLink($scope, $element, $attrs, MsWidgetCtrl)
+                return function postLink(scope, iElement, iAttrs, MsWidgetCtrl)
                 {
                     // Methods
-                    $scope.flipWidget = MsWidgetCtrl.flip;
+                    scope.flipWidget = MsWidgetCtrl.flip;
                 };
             }
         };

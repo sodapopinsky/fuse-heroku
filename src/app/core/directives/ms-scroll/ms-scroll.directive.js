@@ -87,7 +87,7 @@
                 // Add class
                 tElement.addClass('ms-scroll');
 
-                return function postLink($scope, $element, $attrs)
+                return function postLink(scope, iElement, iAttrs)
                 {
                     var options = {};
 
@@ -98,9 +98,9 @@
                     // We don't want an isolated scope because
                     // we should be able to use this everywhere
                     // especially with other directives
-                    if ( $attrs.msScrollDirective )
+                    if ( iAttrs.msScrollDirective )
                     {
-                        options = $scope.$eval($attrs.msScrollDirective);
+                        options = scope.$eval(iAttrs.msScrollDirective);
                     }
 
                     // Extend the given config with the ones from provider
@@ -109,17 +109,17 @@
                     // Initialize the scrollbar
                     $timeout(function ()
                     {
-                        $element.perfectScrollbar(options);
+                        iElement.perfectScrollbar(options);
                     }, 0);
 
                     // Update the scrollbar on element mouseenter
-                    $element.on('mouseenter', updateScrollbar);
+                    iElement.on('mouseenter', updateScrollbar);
 
                     // Watch scrollHeight and update
                     // the scrollbar if it changes
-                    $scope.$watch(function ()
+                    scope.$watch(function ()
                     {
-                        return $element.prop('scrollHeight');
+                        return iElement.prop('scrollHeight');
                     }, function (current, old)
                     {
                         if ( angular.isUndefined(current) || angular.equals(current, old) )
@@ -135,14 +135,14 @@
                      */
                     function updateScrollbar()
                     {
-                        $element.perfectScrollbar('update');
+                        iElement.perfectScrollbar('update');
                     }
 
                     // Cleanup on destroy
-                    $scope.$on('$destroy', function ()
+                    scope.$on('$destroy', function ()
                     {
-                        $element.off('mouseenter');
-                        $element.perfectScrollbar('destroy');
+                        iElement.off('mouseenter');
+                        iElement.perfectScrollbar('destroy');
                     });
                 };
             }
