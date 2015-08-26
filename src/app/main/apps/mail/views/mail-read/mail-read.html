@@ -45,7 +45,7 @@
             <img ng-if="vm.selectedMail.from.avatar" alt="{{vm.selectedMail.from.name}}"
                  ng-src="{{vm.selectedMail.from.avatar}}" class="avatar"/>
 
-            <div ng-if="!vm.selectedMail.from.avatar" class="avatar" ng-random-class="vm.colors">
+            <div ng-if="!vm.selectedMail.from.avatar" class="avatar" ms-random-class="vm.colors">
                 {{vm.selectedMail.from.name[0]}}
             </div>
 
