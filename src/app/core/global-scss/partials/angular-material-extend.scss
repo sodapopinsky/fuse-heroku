@@ -36,6 +36,14 @@ md-dialog {
     padding: 0;
 }
 
+// Progress
+md-progress-linear {
+
+    .md-container {
+        top: 0 !important;
+    }
+}
+
 // Select
 md-select {
 
