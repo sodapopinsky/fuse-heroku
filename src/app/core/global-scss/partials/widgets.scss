@@ -5,38 +5,38 @@
 
     .ms-widget-front {
         box-shadow: $whiteframe-shadow-z1;
-
-        &.contrast-bg {
-
-            .content {
-                color: $material-color-white;
-            }
-
-            md-icon {
-                color: $material-color-white;
-            }
-        }
     }
 
     .ms-widget-back {
         box-shadow: $whiteframe-shadow-z1;
+    }
 
-        &.contrast-bg {
+    // Flip to front button
+    .flip-to-front {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
 
-            .content {
-                color: $material-color-white;
-            }
-
-            md-icon {
-                color: $material-color-white;
-            }
+    // Contrast background
+    .contrast-bg {
+        .content {
+            color: $material-color-white;
         }
 
-        // Flip to front button
-        .flip-to-front {
-            position: absolute;
-            top: 0;
-            right: 0;
+        md-icon {
+            color: $material-color-white;
+        }
+
+        md-progress-linear {
+
+            .md-container {
+                background: rgba(255, 255, 255, 0.3);
+            }
+
+            .md-bar {
+                background: rgba(255, 255, 255, 0.7);
+            }
         }
     }
 }
