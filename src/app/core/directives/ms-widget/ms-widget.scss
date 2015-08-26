@@ -1,53 +1,48 @@
 .ms-widget {
     font-size: $font-size-base;
+    perspective: 3000px;
     padding: 8px;
 
-    .widget {
-        perspective: 3000px;
+    .ms-widget-front {
+        position: relative;
+        overflow: hidden;
+        visibility: visible;
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        z-index: 10;
+        padding: 16px;
+        border-radius: 2px;
+        transition: transform 0.5s ease-out 0s, visibility 0s ease-in 0.2s, opacity 0s ease-in 0.2s;
+        transform: rotateY(0deg);
+        backface-visibility: hidden;
+    }
 
-        .ms-widget-front {
-            display: block;
-            position: relative;
-            overflow: hidden;
-            visibility: visible;
-            width: 100%;
-            height: 100%;
-            opacity: 1;
-            z-index: 10;
-            padding: 16px;
-            border-radius: 2px;
-            transition: transform 0.5s ease-out 0s, visibility 0s ease-in 0.2s, opacity 0s ease-in 0.2s;
-            transform: rotateY(0deg);
-            backface-visibility: hidden;
-        }
+    .ms-widget-back {
+        position: absolute;
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 16px;
+        border-radius: 2px;
+        transition: transform 0.5s ease-out 0s, visibility 0s ease-in 0.2s, opacity 0s ease-in 0.2s;
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+    }
 
-        .ms-widget-back {
-            display: block;
-            position: absolute;
-            overflow: hidden;
-            visibility: hidden;
-            opacity: 0;
-            z-index: 10;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            padding: 16px;
-            border-radius: 2px;
-            transition: transform 0.5s ease-out 0s, visibility 0s ease-in 0.2s, opacity 0s ease-in 0.2s;
-            transform: rotateY(180deg);
-            backface-visibility: hidden;
-        }
+    .md-button {
 
-        .md-button {
-
-            &.md-icon-button {
-                margin: 0 2px;
-                width: 24px;
-                min-height: 24px;
-                height: 24px;
-                line-height: 24px;
-            }
+        &.md-icon-button {
+            margin: 0 2px;
+            width: 24px;
+            min-height: 24px;
+            height: 24px;
+            line-height: 24px;
         }
     }
 

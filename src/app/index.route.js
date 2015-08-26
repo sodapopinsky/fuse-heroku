@@ -844,12 +844,12 @@
                 url     : '/widgets'
             })
 
-            .state('app.components.widgets.statistic', {
-                url  : '/statistic-widgets',
+            .state('app.components.widgets.stat', {
+                url  : '/stat-widgets',
                 views: {
                     'content@app': {
-                        templateUrl: 'app/main/components/widgets/statistic/statistic-widgets.html',
-                        controller : 'StatisticWidgetsController as vm'
+                        templateUrl: 'app/main/components/widgets/stat/stat-widgets.html',
+                        controller : 'StatWidgetsController as vm'
                     }
                 }
             });

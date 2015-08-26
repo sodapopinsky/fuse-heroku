@@ -4,20 +4,21 @@
 
     angular
         .module('app.components')
-        .controller('StatisticWidgetsController', StatisticWidgetsController);
+        .controller('StatWidgetsController', StatWidgetsController);
 
     /** @ngInject */
-    function StatisticWidgetsController()
+    function StatWidgetsController()
     {
         var vm = this;
 
         // Data
         vm.widget1 = {
-            title: 'WEEKLY TRANSACTIONS'
+            title: 'WEEKLY TRANSACTIONS',
+            value: '30,002'
         };
 
         vm.widget2 = {
-            title: 'DAILY VISITORS'
+            title: 'SALES QUOTA'
         };
 
         vm.widget3 = {

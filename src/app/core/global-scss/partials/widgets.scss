@@ -3,153 +3,101 @@
 /*----------------------------------------------------------------*/
 .ms-widget {
 
-    .widget {
+    .ms-widget-front {
+        box-shadow: $whiteframe-shadow-z1;
 
-        .ms-widget-front {
-            box-shadow: $whiteframe-shadow-z1;
+        &.contrast-bg {
 
-            &.contrast-bg {
+            .content {
+                color: $material-color-white;
+            }
 
-                .content {
-                    color: $material-color-white;
-                }
+            md-icon {
+                color: $material-color-white;
+            }
+        }
+    }
 
-                md-icon {
-                    color: $material-color-white;
-                }
+    .ms-widget-back {
+        box-shadow: $whiteframe-shadow-z1;
+
+        &.contrast-bg {
+
+            .content {
+                color: $material-color-white;
+            }
+
+            md-icon {
+                color: $material-color-white;
             }
         }
 
-        .ms-widget-back {
-            box-shadow: $whiteframe-shadow-z1;
-
-            &.contrast-bg {
-
-                .content {
-                    color: $material-color-white;
-                }
-
-                md-icon {
-                    color: $material-color-white;
-                }
-            }
-
-            .flip-to-front {
-                position: absolute;
-                top: 0;
-                right: 0;
-            }
-        }
-
-        // Heights
-        &.height-1 {
-            min-height: 150px;
-            height: 150px;
-        }
-
-        &.height-2 {
-            min-height: 300px;
-            height: 300px;
-        }
-
-        &.height-3 {
-            min-height: 450px;
-            height: 450px;
-        }
-
-        // md-progress-linear override
-        md-progress-linear:not([md-mode="indeterminate"]) {
-
-            .md-container {
-                top: 0;
-            }
+        // Flip to front button
+        .flip-to-front {
+            position: absolute;
+            top: 0;
+            right: 0;
         }
     }
 }
 
 /*----------------------------------------------------------------*/
-/*  Statistic Widget 1
+/*  Stat Widget
 /*----------------------------------------------------------------*/
 .ms-widget {
 
-    &.statistic-widget-1 {
+    &.stat-widget {
 
-        .widget {
+        .ms-widget-front {
 
-            .ms-widget-front {
+            .header {
+                font-size: 14px;
+                font-weight: 500;
 
-                .header {
-                    font-size: 14px;
-                    font-weight: 500;
-                    padding-bottom: 8px;
+                .title {
 
-                    .title {
+                }
+            }
 
+            .content {
+
+                .value {
+                    font-size: 36px;
+                    font-weight: 300;
+                    line-height: 1;
+
+                    md-icon {
+                        margin-left: 16px;
                     }
                 }
 
-                .content {
+                .details {
 
-                    .value {
-                        font-size: 36px;
-                        font-weight: 300;
-                        line-height: 1;
-                        padding-bottom: 16px;
-
-                        md-icon {
-                            margin-left: 16px;
-                        }
-                    }
-
-                    .details {
-
-                        md-icon {
-                            margin: 0 8px 0 0;
-                        }
-
-                        .box {
-                            border-radius: 2px;
-                            padding: 4px 8px;
-                            margin: 0 8px;
-                            font-size: 11px;
-                            font-weight: 800;
-                            color: rgba(0, 0, 0, 0.54);
-                            background-color: rgba(0, 0, 0, 0.12);
-                            white-space: nowrap;
-                        }
-                    }
-                }
-
-                .footer {
-
-                }
-
-                // Contrast background
-                &.contrast-bg {
-
-                    .content {
-
-                        .details {
-
-                            .box {
-                                color: rgba(0, 0, 0, 0.54);
-                                background-color: rgba(255, 255, 255, 0.7);
-                            }
-                        }
+                    md-icon {
+                        margin: 0 8px 0 0;
                     }
                 }
             }
 
-            .ms-widget-back {
+            .footer {
 
-                .content {
-                    padding-top: 8px;
-                }
+            }
 
-                // Contrast background
-                &.contrast-bg {
+            // Contrast background
+            &.contrast-bg {
 
-                }
+            }
+        }
+
+        .ms-widget-back {
+
+            .content {
+
+            }
+
+            // Contrast background
+            &.contrast-bg {
+
             }
         }
     }

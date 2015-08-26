@@ -1,14 +1,14 @@
-<div id="statistic-widgets">
+<div id="stat-widgets">
 
     <!-- WIDGET GROUP -->
     <div class="widget-group" layout="row" flex="100" layout-wrap>
 
         <!-- WIDGET 1 -->
-        <ms-widget class="statistic-widget-1" flippable="true" layout="column" flex="50" flex-gt-lg="25">
+        <ms-widget class="stat-widget" flippable="true" layout="column" flex="50" flex-gt-lg="25">
 
             <!-- Front -->
-            <ms-widget-front class="contrast-bg md-light-blue-bg">
-                <div class="header" layout="row" layout-align="space-between center">
+            <ms-widget-front layout="column" class="contrast-bg md-light-blue-bg">
+                <div class="header padding-bottom-8" layout="row" layout-align="space-between center">
                     <div class="title secondary-text">{{vm.widget1.title}}</div>
 
                     <div class="toolbar" layout="row" layout-align="end center">
@@ -34,21 +34,21 @@
                 </div>
 
                 <div class="content" layout="column" layout-align="space-between" flex>
-                    <div class="value" layout="row" layout-align="start center">
-                        <span>30,342</span>
+                    <div class="value padding-bottom-8" layout="row" layout-align="start center">
+                        <span>{{vm.widget1.value}}</span>
                         <md-icon md-font-icon="icon-trending_up" class="s36"></md-icon>
                     </div>
 
                     <div class="details" layout="row" layout-align="start center">
                         <span>Last week: 30,002</span>
-                        <span class="box">+ 1,12%</span>
+                        <span class="text-boxed-light">+ 1,12%</span>
                     </div>
                 </div>
             </ms-widget-front>
             <!-- / Front -->
 
             <!-- Back -->
-            <ms-widget-back class="contrast-bg md-blue-bg">
+            <ms-widget-back layout="column" class="contrast-bg md-light-blue-bg">
                 <div class="flip-to-front">
                     <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip wdiget">
                         <md-icon md-font-icon="icon-close" class="s16"></md-icon>
@@ -65,11 +65,11 @@
         <!-- / WIDGET 1 -->
 
         <!-- WIDGET 2 -->
-        <ms-widget class="statistic-widget-1" flippable="true" layout="column" flex="50" flex-gt-lg="25">
+        <ms-widget class="stat-widget" flippable="true" layout="column" flex="50" flex-gt-lg="25">
 
             <!-- Front -->
-            <ms-widget-front class="md-white-bg">
-                <div class="header" layout="row" layout-align="space-between center">
+            <ms-widget-front layout="column" class="md-white-bg">
+                <div class="header padding-bottom-8" layout="row" layout-align="space-between center">
                     <div class="title secondary-text">{{vm.widget2.title}}</div>
 
                     <div class="toolbar" layout="row" layout-align="end center">
@@ -95,13 +95,20 @@
                 </div>
 
                 <div class="content" layout="column" layout-align="space-between" flex>
-                    <div class="value" layout="row" layout-align="start center">
-                        <span>30,342</span>
-                        <md-icon md-font-icon="icon-trending_up" class="s36"></md-icon>
+                    <div class="value padding-bottom-16" layout="row" layout-align="start center">
+                        <span>40%</span>
                     </div>
 
+
                     <div class="details">
-                        <md-progress-linear md-mode="determinate" value="40"></md-progress-linear>
+                        <div class="progress-bar padding-bottom-8">
+                            <md-progress-linear md-mode="determinate" value="40"></md-progress-linear>
+                        </div>
+
+                        <div layout="row" layout-align="start center">
+                            <span>Last week: 85%</span>
+                            <span class="text-boxed">- 45%</span>
+                        </div>
                     </div>
                 </div>
             </ms-widget-front>

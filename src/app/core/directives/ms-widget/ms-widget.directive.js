@@ -50,22 +50,26 @@
     }
 
     /** @ngInject */
-    function msWidgetDirective()
+    function msWidgetDirective($compile)
     {
         return {
-            restrict        : 'E',
-            scope           : {
+            restrict  : 'E',
+            scope     : {
                 flippable: '=?'
             },
-            controller      : 'MsWidgetController',
-            transclude      : true,
-            template        : '<div class="widget" ng-transclude></div>',
-            compile         : function (tElement)
+            controller: 'MsWidgetController',
+            transclude: true,
+            compile   : function (tElement)
             {
                 tElement.addClass('ms-widget');
 
-                return function postLink()
+                return function postLink(scope, iElement, iAttrs, MsWidgetCtrl, transcludeFn)
                 {
+                    // Custom transclusion
+                    transcludeFn(function (clone)
+                    {
+                        iElement.append(clone);
+                    });
 
                     //////////
                 };
@@ -80,13 +84,18 @@
             restrict  : 'E',
             require   : '^msWidget',
             transclude: true,
-            template  : '<div ng-transclude></div>',
             compile   : function (tElement)
             {
                 tElement.addClass('ms-widget-front');
 
-                return function postLink(scope, iElement, iAttrs, MsWidgetCtrl)
+                return function postLink(scope, iElement, iAttrs, MsWidgetCtrl, transcludeFn)
                 {
+                    // Custom transclusion
+                    transcludeFn(function (clone)
+                    {
+                        iElement.append(clone);
+                    });
+
                     // Methods
                     scope.flipWidget = MsWidgetCtrl.flip;
                 };
@@ -101,13 +110,18 @@
             restrict  : 'E',
             require   : '^msWidget',
             transclude: true,
-            template  : '<div ng-transclude></div>',
             compile   : function (tElement)
             {
                 tElement.addClass('ms-widget-back');
 
-                return function postLink(scope, iElement, iAttrs, MsWidgetCtrl)
+                return function postLink(scope, iElement, iAttrs, MsWidgetCtrl, transcludeFn)
                 {
+                    // Custom transclusion
+                    transcludeFn(function (clone)
+                    {
+                        iElement.append(clone);
+                    });
+
                     // Methods
                     scope.flipWidget = MsWidgetCtrl.flip;
                 };
