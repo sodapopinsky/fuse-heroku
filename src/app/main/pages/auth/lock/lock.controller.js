@@ -11,6 +11,9 @@
         var vm = this;
 
         // Data
+        vm.form = {
+            userName : 'John Doe'
+        };
 
         // Methods
 
