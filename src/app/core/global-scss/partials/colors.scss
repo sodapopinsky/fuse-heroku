@@ -7,16 +7,21 @@
     color: rgba(0, 0, 0, 0.87) !important;
 
     &.secondary-text,
-    &.icon {
+    .secondary-text,
+    &.icon,
+    .icon {
         color: rgba(0, 0, 0, 0.54) !important;
     }
 
     &.hint-text,
-    &.disabled-text {
+    .hint-text,
+    &.disabled-text,
+    .disabled-text {
         color: rgba(0, 0, 0, 0.26) !important;
     }
 
-    &.divider {
+    &.divider,
+    .divider {
         color: rgba(0, 0, 0, 0.12) !important;
     }
 }
@@ -26,16 +31,21 @@
     color: rgb(255, 255, 255) !important;
 
     &.secondary-text,
-    &.icon {
+    .secondary-text,
+    &.icon,
+    .icon {
         color: rgba(255, 255, 255, 0.70) !important;
     }
 
     &.hint-text,
-    &.disabled-text {
+    .hint-text,
+    &.disabled-text,
+    .disabled-text {
         color: rgba(255, 255, 255, 0.30) !important;
     }
 
-    &.divider {
+    &.divider,
+    .divider {
         color: rgba(255, 255, 255, 0.12) !important;
     }
 }
