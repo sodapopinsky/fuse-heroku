@@ -170,10 +170,11 @@ img {
 
 // Height helpers
 // Multiples of 5, Max: 500
-@for $i from 1 through 10 {
+@for $i from 1 through 100 {
 
-    .height-#{$i * 50} {
-        min-height: #{($i * 50) + 'px'};
-        height: #{($i * 50) + 'px'};
+    .height-#{$i * 5} {
+        height: #{($i * 5) + 'px'} !important;
+        min-height: #{($i * 5) + 'px'} !important;
+        max-height: #{($i * 5) + 'px'} !important;
     }
 }
