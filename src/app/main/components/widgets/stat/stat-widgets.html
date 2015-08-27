@@ -7,39 +7,37 @@
         <ms-widget class="stat-widget" flippable="true" layout="column" flex="50" flex-gt-lg="25">
 
             <!-- Front -->
-            <ms-widget-front class="contrast-bg md-light-blue-bg" layout="column" flex>
-                <div class="header padding-bottom-8" layout="row" layout-align="space-between center">
-                    <div class="title secondary-text">{{vm.widget1.title}}</div>
+            <ms-widget-front class="md-light-blue-bg" layout="column" flex>
+                <div class="padding-bottom-8" layout="row" layout-align="space-between center">
+                    <div class="h5 secondary-text">{{vm.widget1.title}}</div>
 
-                    <div class="toolbar" layout="row" layout-align="end center">
-                        <md-menu>
-                            <md-button aria-label="more" class="md-icon-button"
-                                       ng-click="$mdOpenMenu($event)">
-                                <md-icon md-font-icon="icon-more_vert" class="s20"></md-icon>
-                            </md-button>
-                            <md-menu-content width="2">
-                                <md-menu-item>
-                                    <md-button ng-click="flipWidget()" aria-label="Flip widget">
-                                        Details
-                                    </md-button>
-                                </md-menu-item>
-                                <md-menu-item>
-                                    <md-button ng-click="refreshWidget()" aria-label="Refresh widget">
-                                        Refresh
-                                    </md-button>
-                                </md-menu-item>
-                            </md-menu-content>
-                        </md-menu>
-                    </div>
+                    <md-menu>
+                        <md-button aria-label="more" class="md-icon-button"
+                                   ng-click="$mdOpenMenu($event)">
+                            <md-icon md-font-icon="icon-more_vert" class="s20"></md-icon>
+                        </md-button>
+                        <md-menu-content width="2">
+                            <md-menu-item>
+                                <md-button ng-click="flipWidget()" aria-label="Flip widget">
+                                    Details
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button ng-click="refreshWidget()" aria-label="Refresh widget">
+                                    Refresh
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
                 </div>
 
-                <div class="content white-text" layout="column" layout-align="space-between" flex>
-                    <div class="value padding-bottom-8" layout="row" layout-align="start center">
+                <div class="white-text" layout="column" layout-align="space-between" flex>
+                    <div class="h1" layout="row" layout-align="start center">
                         <span>{{vm.widget1.value | number}}</span>
-                        <md-icon md-font-icon="icon-trending_up" class="s36"></md-icon>
+                        <md-icon md-font-icon="icon-trending_up" class="s36 margin-left-16"></md-icon>
                     </div>
 
-                    <div class="details" layout="row" layout-align="start center">
+                    <div layout="row" layout-align="start center">
                         <span>Last week: {{vm.widget1.lastWeekValue | number}}</span>
                         <span class="text-boxed-light">{{vm.widget1.lastWeekDiff}}</span>
                     </div>
@@ -48,14 +46,14 @@
             <!-- / Front -->
 
             <!-- Back -->
-            <ms-widget-back class="contrast-bg md-light-blue-bg white-text" layout="column" flex>
+            <ms-widget-back class="md-light-blue-bg white-text" layout="column" flex>
                 <div class="flip-to-front">
-                    <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip wdiget">
+                    <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip widget">
                         <md-icon md-font-icon="icon-close" class="s16"></md-icon>
                     </md-button>
                 </div>
 
-                <div class="content">
+                <div>
                     {{vm.widget1.detail}}
                 </div>
             </ms-widget-back>
@@ -68,60 +66,56 @@
         <ms-widget class="stat-widget" flippable="true" layout="column" flex="50" flex-gt-lg="25">
 
             <!-- Front -->
-            <ms-widget-front class="contrast-bg md-green-bg" layout="column" flex>
-                <div class="header padding-bottom-8" layout="row" layout-align="space-between center">
-                    <div class="title secondary-text">{{vm.widget2.title}}</div>
+            <ms-widget-front class="md-green-bg" layout="column" flex>
+                <div class="padding-bottom-8" layout="row" layout-align="space-between center">
+                    <div class="h5 secondary-text">{{vm.widget2.title}}</div>
 
-                    <div class="toolbar" layout="row" layout-align="end center">
-                        <md-menu>
-                            <md-button aria-label="more" class="md-icon-button"
-                                       ng-click="$mdOpenMenu($event)">
-                                <md-icon md-font-icon="icon-more_vert" class="s20"></md-icon>
-                            </md-button>
-                            <md-menu-content width="2">
-                                <md-menu-item>
-                                    <md-button ng-click="flipWidget()" aria-label="Flip widget">
-                                        Details
-                                    </md-button>
-                                </md-menu-item>
-                                <md-menu-item>
-                                    <md-button ng-click="refreshWidget()" aria-label="Refresh widget">
-                                        Refresh
-                                    </md-button>
-                                </md-menu-item>
-                            </md-menu-content>
-                        </md-menu>
-                    </div>
+                    <md-menu>
+                        <md-button aria-label="more" class="md-icon-button"
+                                   ng-click="$mdOpenMenu($event)">
+                            <md-icon md-font-icon="icon-more_vert" class="s20"></md-icon>
+                        </md-button>
+                        <md-menu-content width="2">
+                            <md-menu-item>
+                                <md-button ng-click="flipWidget()" aria-label="Flip widget">
+                                    Details
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button ng-click="refreshWidget()" aria-label="Refresh widget">
+                                    Refresh
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
                 </div>
 
-                <div class="content white-text" layout="column" layout-align="space-between" flex>
-                    <div class="value padding-bottom-16" layout="row" layout-align="start center">
-                        <span>{{vm.widget2.value}}%</span>
-                    </div>
+                <div class="white-text" layout="column" layout-align="space-between" flex>
+                    <div>
+                        <div class="h1 padding-bottom-16">{{vm.widget2.value}}%</div>
 
-                    <div class="details">
-                        <div class="progress-bar padding-bottom-8">
+                        <div class="padding-bottom-16">
                             <md-progress-linear md-mode="determinate" value="{{vm.widget2.value}}"></md-progress-linear>
                         </div>
+                    </div>
 
-                        <div layout="row" layout-align="start center">
-                            <span>Last week: {{vm.widget2.lastWeekValue}}%</span>
-                            <span class="text-boxed-light">{{vm.widget2.lastWeekDiff}}</span>
-                        </div>
+                    <div layout="row" layout-align="start center">
+                        <span>Last week: {{vm.widget2.lastWeekValue}}%</span>
+                        <span class="text-boxed-light">{{vm.widget2.lastWeekDiff}}</span>
                     </div>
                 </div>
             </ms-widget-front>
             <!-- / Front -->
 
             <!-- Back -->
-            <ms-widget-back class="contrast-bg md-green-bg white-text" flex>
+            <ms-widget-back class="md-green-bg white-text" flex>
                 <div class="flip-to-front">
-                    <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip wdiget">
+                    <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip widget">
                         <md-icon md-font-icon="icon-close" class="s16"></md-icon>
                     </md-button>
                 </div>
 
-                <div class="content">
+                <div>
                     {{vm.widget2.detail}}
                 </div>
             </ms-widget-back>
@@ -134,59 +128,53 @@
         <ms-widget class="stat-widget" flippable="true" layout="column" flex="50" flex-gt-lg="25">
 
             <!-- Front -->
-            <ms-widget-front class="contrast-bg md-blue-grey-bg white-text" layout="column" flex>
-                <div class="header padding-bottom-8" layout="row" layout-align="space-between center">
-                    <div class="title secondary-text">{{vm.widget3.title}}</div>
+            <ms-widget-front class="md-blue-grey-bg white-text" layout="column" flex>
+                <div class="padding-bottom-8" layout="row" layout-align="space-between center">
+                    <div class="h5 secondary-text">{{vm.widget3.title}}</div>
 
-                    <div class="toolbar" layout="row" layout-align="end center">
-                        <md-menu>
-                            <md-button aria-label="more" class="md-icon-button"
-                                       ng-click="$mdOpenMenu($event)">
-                                <md-icon md-font-icon="icon-more_vert" class="s20"></md-icon>
-                            </md-button>
-                            <md-menu-content width="2">
-                                <md-menu-item>
-                                    <md-button ng-click="flipWidget()" aria-label="Flip widget">
-                                        Details
-                                    </md-button>
-                                </md-menu-item>
-                                <md-menu-item>
-                                    <md-button ng-click="refreshWidget()" aria-label="Refresh widget">
-                                        Refresh
-                                    </md-button>
-                                </md-menu-item>
-                            </md-menu-content>
-                        </md-menu>
-                    </div>
+                    <md-menu>
+                        <md-button aria-label="more" class="md-icon-button"
+                                   ng-click="$mdOpenMenu($event)">
+                            <md-icon md-font-icon="icon-more_vert" class="s20"></md-icon>
+                        </md-button>
+                        <md-menu-content width="2">
+                            <md-menu-item>
+                                <md-button ng-click="flipWidget()" aria-label="Flip widget">
+                                    Details
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button ng-click="refreshWidget()" aria-label="Refresh widget">
+                                    Refresh
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
                 </div>
 
-                <div class="content" layout="column" layout-align="space-between" flex>
-                    <div class="value padding-bottom-16" layout="row" layout-align="start center">
-                        <span>{{vm.widget3.value}}%</span>
-                    </div>
+                <div layout="column" layout-align="space-between" flex>
+                    <div>
+                        <div class="h1 padding-bottom-16">{{vm.widget3.value}}%</div>
 
-                    <div class="details">
-                        <div class="progress-bar padding-bottom-8">
+                        <div class="padding-bottom-8">
                             <md-progress-linear md-mode="determinate" value="{{vm.widget3.value}}"></md-progress-linear>
                         </div>
                     </div>
 
-                    <div layout="row" layout-align="start center">
-                        <span>See more details...</span>
-                    </div>
+                    <div>See more details...</div>
                 </div>
             </ms-widget-front>
             <!-- / Front -->
 
             <!-- Back -->
-            <ms-widget-back class="contrast-bg md-blue-grey-bg white-text" flex>
+            <ms-widget-back class="md-blue-grey-bg white-text" flex>
                 <div class="flip-to-front">
-                    <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip wdiget">
+                    <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip widget">
                         <md-icon md-font-icon="icon-close" class="s16"></md-icon>
                     </md-button>
                 </div>
 
-                <div class="content">
+                <div>
                     {{vm.widget3.detail}}
                 </div>
             </ms-widget-back>
@@ -199,53 +187,50 @@
         <ms-widget class="stat-widget" flippable="true" layout="column" flex="50" flex-gt-lg="25">
 
             <!-- Front -->
-            <ms-widget-front class="contrast-bg md-deep-purple-bg white-text" layout="column" flex>
-                <div class="header padding-bottom-8" layout="row" layout-align="space-between center">
-                    <div class="title secondary-text">{{vm.widget4.title}}</div>
+            <ms-widget-front class="md-deep-purple-bg white-text" layout="column" flex>
+                <div class="padding-bottom-8" layout="row" layout-align="space-between center">
+                    <div class="h5 secondary-text">{{vm.widget4.title}}</div>
 
-                    <div class="toolbar" layout="row" layout-align="end center">
-                        <md-menu>
-                            <md-button aria-label="more" class="md-icon-button"
-                                       ng-click="$mdOpenMenu($event)">
-                                <md-icon md-font-icon="icon-more_vert" class="s20"></md-icon>
-                            </md-button>
-                            <md-menu-content width="2">
-                                <md-menu-item>
-                                    <md-button ng-click="flipWidget()" aria-label="Flip widget">
-                                        Details
-                                    </md-button>
-                                </md-menu-item>
-                                <md-menu-item>
-                                    <md-button ng-click="refreshWidget()" aria-label="Refresh widget">
-                                        Refresh
-                                    </md-button>
-                                </md-menu-item>
-                            </md-menu-content>
-                        </md-menu>
-                    </div>
+                    <md-menu>
+                        <md-button aria-label="more" class="md-icon-button"
+                                   ng-click="$mdOpenMenu($event)">
+                            <md-icon md-font-icon="icon-more_vert" class="s20"></md-icon>
+                        </md-button>
+                        <md-menu-content width="2">
+                            <md-menu-item>
+                                <md-button ng-click="flipWidget()" aria-label="Flip widget">
+                                    Details
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button ng-click="refreshWidget()" aria-label="Refresh widget">
+                                    Refresh
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
                 </div>
 
-                <div class="content" layout="column" layout-align="space-between" flex>
-                    <div class="value padding-bottom-16" layout="row" layout-align="start center">
+                <div layout="column" layout-align="space-between" flex>
+                    <div class="h1 padding-bottom-8" layout="row" layout-align="start center">
                         <span>{{vm.widget4.value | number}}</span>
+                        <md-icon md-font-icon="icon-trending_down" class="s36 margin-left-16"></md-icon>
                     </div>
 
-                    <div layout="row" layout-align="start center">
-                        <span>See more details...</span>
-                    </div>
+                    <div>See more details...</div>
                 </div>
             </ms-widget-front>
             <!-- / Front -->
 
             <!-- Back -->
-            <ms-widget-back class="contrast-bg md-deep-purple-bg white-text" flex>
+            <ms-widget-back class="md-deep-purple-bg white-text" flex>
                 <div class="flip-to-front">
-                    <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip wdiget">
+                    <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip widget">
                         <md-icon md-font-icon="icon-close" class="s16"></md-icon>
                     </md-button>
                 </div>
 
-                <div class="content">
+                <div>
                     {{vm.widget4.detail}}
                 </div>
             </ms-widget-back>
@@ -266,12 +251,9 @@
 
             <!-- Front -->
             <ms-widget-front class="md-white-bg" layout="row" flex>
-                <div class="content padding-top-8 padding-bottom-8" layout="column" layout-align="center center" flex>
-                    <div class="content padding-top-8 padding-bottom-8" layout="column" layout-align="center center"
-                         flex>
-                        <div class="value padding-bottom-8">{{vm.widget5.value}}</div>
-                        <div class="secondary-text">{{vm.widget5.title}}</div>
-                    </div>
+                <div class="padding-top-8 padding-bottom-8" layout="column" layout-align="center center" flex>
+                    <div class="h1 padding-bottom-8">{{vm.widget5.value}}</div>
+                    <div class="secondary-text">{{vm.widget5.title}}</div>
                 </div>
             </ms-widget-front>
             <!-- / Front -->
@@ -284,9 +266,9 @@
 
             <!-- Front -->
             <ms-widget-front class="md-white-bg" layout="row" flex>
-                <div class="content padding-top-8 padding-bottom-8" layout="column" layout-align="center center" flex>
+                <div class="padding-top-8 padding-bottom-8" layout="column" layout-align="center center" flex>
                     <div class="secondary-text padding-bottom-8">{{vm.widget6.title}}</div>
-                    <div class="value">{{vm.widget6.value}}</div>
+                    <div class="h1">{{vm.widget6.value}}</div>
                 </div>
             </ms-widget-front>
             <!-- / Front -->
@@ -299,10 +281,9 @@
 
             <!-- Front -->
             <ms-widget-front class="md-white-bg" layout="row" flex>
-                <div class="content padding-top-8 padding-bottom-8" layout="row" layout-align="space-between center"
-                     flex>
-                    <div layout="column" layout-align="center start">
-                        <span class="value padding-bottom-8">{{vm.widget7.value}}</span>
+                <div class="padding-top-8 padding-bottom-8" layout="row" layout-align="space-between center" flex>
+                    <div class="padding-left-8" layout="column" layout-align="center start">
+                        <span class="h1 padding-bottom-8">{{vm.widget7.value}}</span>
                         <span class="secondary-text">{{vm.widget7.title}}</span>
                     </div>
 
@@ -321,14 +302,13 @@
 
             <!-- Front -->
             <ms-widget-front class="md-white-bg" layout="row" flex>
-                <div class="content padding-top-8 padding-bottom-8" layout="row" layout-align="space-between center"
-                     flex>
+                <div class="padding-top-8 padding-bottom-8" layout="row" layout-align="space-between center" flex>
                     <div>
                         <md-icon md-font-icon="icon-lock_open" class="s48 hint-text"></md-icon>
                     </div>
 
-                    <div layout="column" layout-align="center end">
-                        <div class="value padding-bottom-8">{{vm.widget8.value}}</div>
+                    <div class="padding-right-8" layout="column" layout-align="center end">
+                        <div class="h1 padding-bottom-8">{{vm.widget8.value}}</div>
                         <div class="secondary-text">{{vm.widget8.title}}</div>
                     </div>
                 </div>
@@ -349,11 +329,14 @@
         <ms-widget class="stat-widget height-300" flippable="true" layout="column" flex="50" flex-gt-lg="25">
 
             <!-- Front -->
-            <ms-widget-front class="contrast-bg md-deep-orange-bg white-text" layout="row" flex>
-                <div class="content padding-top-8 padding-bottom-8" layout="column" layout-align="center center"
-                     flex>
+            <ms-widget-front class="md-deep-orange-bg white-text" layout="row" flex>
+                <div layout="column" layout-align="center center" flex>
                     <div class="md-display-3 padding-bottom-8">{{vm.widget9.value}}</div>
-                    <div>{{vm.widget9.title}}</div>
+                    <div class="h4">{{vm.widget9.title}}</div>
+                </div>
+                
+                <div class="background-image-center">
+                    <md-icon md-font-icon="icon-audiotrack" class="s256 faint-text"></md-icon>
                 </div>
             </ms-widget-front>
             <!-- / Front -->
@@ -365,11 +348,14 @@
         <ms-widget class="stat-widget height-300" flippable="true" layout="column" flex="50" flex-gt-lg="25">
 
             <!-- Front -->
-            <ms-widget-front class="contrast-bg md-cyan-bg white-text" layout="row" flex>
-                <div class="content padding-top-8 padding-bottom-8" layout="column" layout-align="center center"
-                     flex>
+            <ms-widget-front class="md-cyan-bg white-text" layout="row" flex>
+                <div layout="column" layout-align="center center" flex>
                     <div class="md-display-3 padding-bottom-8">{{vm.widget10.value}}</div>
-                    <div>{{vm.widget10.title}}</div>
+                    <div class="h4">{{vm.widget10.title}}</div>
+                </div>
+
+                <div class="background-image-center">
+                    <md-icon md-font-icon="icon-local_movies" class="s256 faint-text"></md-icon>
                 </div>
             </ms-widget-front>
             <!-- / Front -->
@@ -381,17 +367,90 @@
         <ms-widget class="stat-widget height-300" flippable="true" layout="column" flex="100" flex-gt-lg="50">
 
             <!-- Front -->
-            <ms-widget-front class="contrast-bg md-teal-bg white-text" layout="row" flex>
-                <div class="content padding-top-8 padding-bottom-8" layout="column" layout-align="center center"
-                     flex>
+            <ms-widget-front class="md-teal-bg white-text" layout="row" flex>
+                <div layout="column" layout-align="center center" flex>
                     <div class="md-display-3 padding-bottom-8">{{vm.widget11.value}}</div>
-                    <div>{{vm.widget11.title}}</div>
+                    <div class="h4">{{vm.widget11.title}}</div>
+                </div>
+
+                <div class="background-image-center">
+                    <md-icon md-font-icon="icon-description" class="s256 faint-text"></md-icon>
                 </div>
             </ms-widget-front>
             <!-- / Front -->
 
         </ms-widget>
         <!-- / WIDGET 11 -->
+
+    </div>
+    <!-- / WIDGET GROUP -->
+
+
+    <!-- WIDGET GROUP -->
+    <div class="widget-group" layout="row" flex="100" layout-wrap>
+
+        <!-- WIDGET 12 -->
+        <ms-widget class="stat-widget height-500" flippable="true" layout="column" flex="50" flex-gt-lg="25">
+
+            <!-- Front -->
+            <ms-widget-front class="md-light-blue-bg" layout="column" flex>
+                <div class="padding-bottom-8" layout="row" layout-align="space-between center">
+                    <div class="h5 secondary-text">
+                        <md-icon md-font-icon="icon-arrow_back" class="s16 margin-right-8"></md-icon>
+                        <span>{{vm.widget12.title}}</span>
+                        <md-icon md-font-icon="icon-arrow_forward" class="s16 margin-left-8"></md-icon>
+                    </div>
+
+                    <md-menu>
+                        <md-button aria-label="more" class="md-icon-button"
+                                   ng-click="$mdOpenMenu($event)">
+                            <md-icon md-font-icon="icon-more_vert" class="s20"></md-icon>
+                        </md-button>
+                        <md-menu-content width="2">
+                            <md-menu-item>
+                                <md-button ng-click="flipWidget()" aria-label="Flip widget">
+                                    Details
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button ng-click="refreshWidget()" aria-label="Refresh widget">
+                                    Refresh
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                </div>
+
+                <div class="white-text padding-top-32" layout="column" layout-align="start center" flex>
+                    <div>
+                        <md-icon md-font-icon="icon-sun" class="s96"></md-icon>
+                    </div>
+
+                    <div layout="row" layout-align="center center">
+
+                    </div>
+                    <div class="md-display-3 padding-bottom-8">{{vm.widget11.value}}</div>
+                    <div class="h4">{{vm.widget11.title}}</div>
+                </div>
+            </ms-widget-front>
+            <!-- / Front -->
+
+            <!-- Back -->
+            <ms-widget-back class="md-light-blue-bg white-text" layout="column" flex>
+                <div class="flip-to-front">
+                    <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip widget">
+                        <md-icon md-font-icon="icon-close" class="s16"></md-icon>
+                    </md-button>
+                </div>
+
+                <div>
+                    {{vm.widget1.detail}}
+                </div>
+            </ms-widget-back>
+            <!-- / Back -->
+
+        </ms-widget>
+        <!-- / WIDGET 12 -->
 
     </div>
     <!-- / WIDGET GROUP -->

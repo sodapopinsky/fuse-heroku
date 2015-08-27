@@ -17,25 +17,6 @@
         top: 0;
         right: 0;
     }
-
-    // Contrast background
-    .contrast-bg {
-
-        md-icon {
-            color: $material-color-white;
-        }
-
-        md-progress-linear {
-
-            .md-container {
-                background: rgba(255, 255, 255, 0.3);
-            }
-
-            .md-bar {
-                background: rgba(255, 255, 255, 0.7);
-            }
-        }
-    }
 }
 
 /*----------------------------------------------------------------*/
@@ -48,8 +29,6 @@
         .ms-widget-front {
 
             .header {
-                font-size: 14px;
-                font-weight: 500;
 
                 .title {
 
@@ -58,30 +37,10 @@
 
             .content {
 
-                .value {
-                    font-size: 36px;
-                    font-weight: 300;
-                    line-height: 1;
 
-                    md-icon {
-                        margin-left: 16px;
-                    }
-                }
-
-                .details {
-
-                    md-icon {
-                        margin: 0 8px 0 0;
-                    }
-                }
             }
 
             .footer {
-
-            }
-
-            // Contrast background
-            &.contrast-bg {
 
             }
         }
@@ -89,11 +48,6 @@
         .ms-widget-back {
 
             .content {
-
-            }
-
-            // Contrast background
-            &.contrast-bg {
 
             }
         }

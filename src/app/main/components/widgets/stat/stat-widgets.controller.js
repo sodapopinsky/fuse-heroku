@@ -78,7 +78,7 @@
         };
 
         vm.widget12 = {
-            title: 'SHARES',
+            title: 'June 27, Saturday',
             value: 9963,
         };
 
