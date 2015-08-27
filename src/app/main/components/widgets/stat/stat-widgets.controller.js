@@ -40,7 +40,6 @@
             lastWeekValue: 5583,
             lastWeekDiff: '- 0%',
             detail: 'This is the back side. You can show detailed information here.'
-
         };
 
         vm.widget5 = {
@@ -49,18 +48,38 @@
         };
 
         vm.widget6 = {
-            title: 'USERS ONLINE',
+            title: 'WASTELANDERS',
             value: 358,
         };
 
         vm.widget7 = {
-            title: 'USERS ONLINE',
-            value: 169,
+            title: 'VAULTS SEALED',
+            value: 24,
         };
 
         vm.widget8 = {
-            title: 'USERS ONLINE',
-            value: 452,
+            title: 'VAULTS OPEN',
+            value: 62,
+        };
+
+        vm.widget9 = {
+            title: 'SONGS',
+            value: 210,
+        };
+
+        vm.widget10 = {
+            title: 'VIDEOS',
+            value: 54,
+        };
+
+        vm.widget11 = {
+            title: 'DOCUMENTS',
+            value: 1252,
+        };
+
+        vm.widget12 = {
+            title: 'SHARES',
+            value: 9963,
         };
 
         // Methods
