@@ -21,7 +21,9 @@
     }
 
     &.divider,
-    .divider {
+    .divider,
+    &.faint-text,
+    .faint-text {
         color: rgba(0, 0, 0, 0.12) !important;
     }
 }
@@ -45,8 +47,26 @@
     }
 
     &.divider,
-    .divider {
+    .divider,
+    &.faint-text,
+    .faint-text {
         color: rgba(255, 255, 255, 0.12) !important;
+    }
+
+    // Angular material element color override
+    md-icon {
+        color: $material-color-white;
+    }
+
+    md-progress-linear {
+
+        .md-container {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .md-bar {
+            background: rgba(255, 255, 255, 0.7);
+        }
     }
 }
 
