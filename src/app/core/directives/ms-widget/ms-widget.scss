@@ -1,7 +1,9 @@
+$widgetPadding: 8px;
+
 .ms-widget {
     font-size: $font-size-base;
     perspective: 3000px;
-    margin: 8px;
+    padding: $widgetPadding;
 
     .ms-widget-front {
         position: relative;
@@ -24,10 +26,10 @@
         visibility: hidden;
         opacity: 0;
         z-index: 10;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+        top: $widgetPadding;
+        right: $widgetPadding;
+        bottom: $widgetPadding;
+        left: $widgetPadding;
         padding: 16px;
         border-radius: 2px;
         transition: transform 0.5s ease-out 0s, visibility 0s ease-in 0.2s, opacity 0s ease-in 0.2s;
