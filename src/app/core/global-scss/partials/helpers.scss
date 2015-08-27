@@ -61,6 +61,15 @@ img {
     }
 }
 
+// Background Icon
+.background-image-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
 // Padding helpers
 // Multiples of 5, max:100
 @for $i from 0 through 20 {
