@@ -4,39 +4,39 @@
 
 // Black text
 .black-text {
-    color: rgba(0, 0, 0, 0.87);
+    color: rgba(0, 0, 0, 0.87) !important;
 
     &.secondary-text,
     &.icon {
-        color: rgba(0, 0, 0, 0.54);
+        color: rgba(0, 0, 0, 0.54) !important;
     }
 
     &.hint-text,
     &.disabled-text {
-        color: rgba(0, 0, 0, 0.26);
+        color: rgba(0, 0, 0, 0.26) !important;
     }
 
     &.divider {
-        color: rgba(0, 0, 0, 0.12);
+        color: rgba(0, 0, 0, 0.12) !important;
     }
 }
 
 // White text
 .white-text {
-    color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255) !important;
 
     &.secondary-text,
     &.icon {
-        color: rgba(0, 0, 0, 0.70);
+        color: rgba(255, 255, 255, 0.70) !important;
     }
 
     &.hint-text,
     &.disabled-text {
-        color: rgba(0, 0, 0, 0.30);
+        color: rgba(255, 255, 255, 0.30) !important;
     }
 
     &.divider {
-        color: rgba(0, 0, 0, 0.12);
+        color: rgba(255, 255, 255, 0.12) !important;
     }
 }
 
