@@ -10,7 +10,7 @@ i {
     vertical-align: middle;
     outline: 0;
 
-    @for $size from 1 through 12 {
+    @for $size from 1 through 32 {
 
         &.s#{$size * 8} {
             font-size: #{($size * 8) + 'px'} !important;
