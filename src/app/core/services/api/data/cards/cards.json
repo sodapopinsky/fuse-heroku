@@ -39,6 +39,28 @@
                     "alt": "Alice Cooper - Poison"
                 }
             }
+        },
+        {
+            "template": "template-4",
+            "title": "Nature",
+            "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.",
+            "media": {
+                "image": {
+                    "src": "assets/images/etc/avenue.jpg",
+                    "alt": "Avenue"
+                }
+            }
+        },
+        {
+            "template": "template-5",
+            "title": "Friends",
+            "event": "Andrew Ryan is now following you",
+            "media": {
+                "image": {
+                    "src": "assets/images/avatars/vincent.png",
+                    "alt": "Andrew Ryan"
+                }
+            }
         }
     ]
 }
