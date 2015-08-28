@@ -4,10 +4,10 @@
 
     angular
         .module('app.components')
-        .controller('ContentWidgetsController', ContentWidgetsController);
+        .controller('ChartWidgetsController', ChartWidgetsController);
 
     /** @ngInject */
-    function ContentWidgetsController()
+    function ChartWidgetsController()
     {
         var vm = this;
 
