@@ -774,6 +774,17 @@
                 }
             })
 
+            // Cards
+            .state('app.components.cards', {
+                url  : '/cards',
+                views: {
+                    'content@app': {
+                        templateUrl: 'app/main/components/cards/cards.html',
+                        controller : 'CardsController as vm'
+                    }
+                }
+            })
+
             // Charts
             .state('app.components.charts', {
                 abstract: true,
