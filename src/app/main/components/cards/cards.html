@@ -16,21 +16,37 @@
     <!-- / HEADER -->
 
     <!-- CONTENT -->
-    <div class="content" md-background-bg>
+    <div class="content" layout="row" layout-wrap md-background-bg>
 
-        <p>
-            Cards are useful for showing content excerpts, quick information and/or notifications. Using
-            <code>ms-card</code> directive you can easily create different cards compatible with Google Material design
-            specifications.
-        </p>
+        <div layout="row" flex="100">
+            <p>
+                Cards are useful for showing content excerpts, quick information and/or notifications. Using
+                <code>ms-card</code> directive you can easily create different cards compatible with Google Material design
+                specifications.
+            </p>
+        </div>
 
-        <!-- MS-CARD -->
-        <ms-card template="'template-1'" ng-model="vm.cards[0]"></ms-card>
-        <!-- / MS-CARD -->
+        <div layout="column" flex="50">
 
-        <!-- MS-CARD -->
-        <ms-card template="'template-2'" ng-model="vm.cards[1]"></ms-card>
-        <!-- / MS-CARD -->
+            <div class="md-title">Template 1</div>
+
+            <!-- MS-CARD -->
+            <ms-card template="'template-1'" ng-model="vm.cards[0]"></ms-card>
+            <!-- / MS-CARD -->
+
+            <div class="md-title margin-top-48">Template 2</div>
+
+            <!-- MS-CARD -->
+            <ms-card template="'template-2'" ng-model="vm.cards[1]"></ms-card>
+            <!-- / MS-CARD -->
+
+            <div class="md-title margin-top-48">Template 3</div>
+
+            <!-- MS-CARD -->
+            <ms-card template="'template-3'" ng-model="vm.cards[2]"></ms-card>
+            <!-- / MS-CARD -->
+
+        </div>
 
     </div>
     <!-- / CONTENT -->

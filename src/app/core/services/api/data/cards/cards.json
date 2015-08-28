@@ -27,6 +27,18 @@
                 }
             },
             "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better."
+        },
+        {
+            "template": "template-3",
+            "title": "Poison",
+            "subtitle": "Alice Cooper",
+            "cta": "LISTEN NOW",
+            "media": {
+                "image": {
+                    "src": "assets/images/etc/alice-cooper-poison.jpg",
+                    "alt": "Alice Cooper - Poison"
+                }
+            }
         }
     ]
 }
