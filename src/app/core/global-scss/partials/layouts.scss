@@ -32,13 +32,19 @@
             &.single-scroll {
                 height: auto;
 
-                .content {
-                    overflow: hidden;
+                > .center {
+
+                    .content-card {
+
+                        .content {
+                            overflow: hidden;
+                        }
+                    }
                 }
             }
 
             // Center
-            .center {
+            > .center {
                 position: relative;
                 z-index: 2;
                 margin-left: 32px;
@@ -82,13 +88,19 @@
                     height: 100%;
                 }
 
-                .content {
-                    overflow: hidden;
+                > .center {
+
+                    .content-card {
+
+                        .content {
+                            overflow: hidden;
+                        }
+                    }
                 }
             }
 
             // Sidenav
-            .sidenav {
+            > .sidenav {
                 width: 240px;
                 min-width: 240px;
                 max-width: 240px;
@@ -133,7 +145,7 @@
             }
 
             // Center
-            .center {
+            > .center {
                 position: relative;
                 z-index: 2;
                 margin-left: 32px;
@@ -181,13 +193,19 @@
                     height: 100%;
                 }
 
-                .content {
-                    overflow: hidden;
+                > .center {
+
+                    .content-card {
+
+                        .content {
+                            overflow: hidden;
+                        }
+                    }
                 }
             }
 
             // Sidenav
-            .sidenav {
+            > .sidenav {
                 width: 240px;
                 min-width: 240px;
                 max-width: 240px;
@@ -230,7 +248,7 @@
             }
 
             // Center
-            .center {
+            > .center {
                 position: relative;
                 z-index: 2;
                 margin-left: 32px;
@@ -275,7 +293,7 @@
         &.fullwidth {
             min-height: 100%;
 
-            .header {
+            > .header {
                 height: 200px;
                 min-height: 200px;
                 max-height: 200px;
@@ -284,7 +302,7 @@
                 background-size: cover;
             }
 
-            .content {
+            > .content {
                 padding: 24px;
             }
         }
@@ -302,7 +320,7 @@
                     height: 100%;
                 }
 
-                .center {
+                > .center {
                     overflow: hidden;
                 }
             }
@@ -325,7 +343,7 @@
                 }
             }
 
-            .center {
+            > .center {
                 position: relative;
                 overflow: auto;
                 z-index: 3;
@@ -359,12 +377,12 @@
                     height: 100%;
                 }
 
-                .center {
+                > .center {
                     overflow: hidden;
                 }
             }
 
-            .center {
+            > .center {
                 position: relative;
                 overflow: auto;
                 z-index: 3;
@@ -384,7 +402,7 @@
                 }
             }
 
-            .sidenav {
+            > .sidenav {
                 width: 240px;
                 min-width: 240px;
                 max-width: 240px;
@@ -407,7 +425,7 @@
         &.tabbed {
             min-height: 100%;
 
-            .header {
+            > .header {
                 height: 200px;
                 min-height: 200px;
                 max-height: 200px;
@@ -416,7 +434,7 @@
                 background-size: cover;
             }
 
-            .content {
+            > .content {
 
                 md-tabs {
 
