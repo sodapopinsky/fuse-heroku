@@ -1,7 +1,6 @@
 {
     "data": [
         {
-            "template": "template-1",
             "media": {
                 "image": {
                     "src": "assets/images/photos/early_sunrise-2560x1440.jpg",
@@ -13,7 +12,6 @@
             "text": "Look deep into nature, then you will understand everything better."
         },
         {
-            "template": "template-2",
             "avatar": {
                 "src": "assets/images/avatars/alice.png",
                 "alt": "Alice Freeman"
@@ -29,7 +27,6 @@
             "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better."
         },
         {
-            "template": "template-3",
             "title": "Poison",
             "subtitle": "Alice Cooper",
             "cta": "LISTEN NOW",
@@ -41,7 +38,6 @@
             }
         },
         {
-            "template": "template-4",
             "title": "Nature",
             "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.",
             "media": {
@@ -52,7 +48,6 @@
             }
         },
         {
-            "template": "template-5",
             "title": "Friends",
             "event": "Andrew Ryan is now following you",
             "media": {
@@ -61,6 +56,11 @@
                     "alt": "Andrew Ryan"
                 }
             }
+        },
+        {
+            "title": "The Fallout 4 Pip-Boy Edition Is Back In Stock Now",
+            "subtitle": "Kotaku",
+            "text": "The Fallout 4 Pip-Boy edition is back in stock at Gamestop, for all 3 platforms. Additionally, Walmart also has it in stock for the PS4 and Xbox One as of this writing, as does Best Buy. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec laoreet mauris sit amet metus porttitor ultrices. Interdum et malesuada fames ac ante ipsum primis in faucibus."
         }
     ]
 }
