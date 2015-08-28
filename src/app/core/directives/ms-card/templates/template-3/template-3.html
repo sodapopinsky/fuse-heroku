@@ -1,5 +1,5 @@
-<div class="template-3 md-teal-bg white-text" layout="row" layout-align="space-between">
-    <div class="header padding-16" layout="column" layout-align="space-between" flex>
+<div class="template-3 padding-16 md-teal-bg white-text" layout="row" layout-align="space-between">
+    <div layout="column" layout-align="space-between" flex>
         <div class="info">
             <div class="title h2" ng-if="card.title">
                 {{card.title}}
@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <div class="media padding-16">
+    <div class="media padding-left-16">
         <img class="image" ng-src="{{card.media.image.src}}" alt="{{card.media.image.alt}}" ng-show="card.media.image">
     </div>
 </div>

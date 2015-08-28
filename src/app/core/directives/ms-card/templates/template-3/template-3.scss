@@ -1,25 +1,25 @@
 .ms-card {
 
     .template-3 {
+        position: relative;
+        border-radius: 2px;
+        overflow: hidden;
 
-        .header {
+        .info {
 
-            .info {
+            .title {
 
-                .title {
-
-                }
-
-                .subtitle {
-
-                }
             }
 
-            .cta {
+            .subtitle {
 
-                .md-button {
+            }
+        }
 
-                }
+        .cta {
+
+            .md-button {
+
             }
         }
 
