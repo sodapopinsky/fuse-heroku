@@ -1,6 +1,6 @@
 .doc-page {
 
-    .header {
+    > .header {
         height: 160px !important;
         min-height: 160px !important;
         max-height: 160px !important;
@@ -33,7 +33,7 @@
         }
     }
 
-    .content {
+    > .content {
         max-width: 1200px;
 
         .card {
@@ -45,5 +45,4 @@
             margin-bottom: 16px;
         }
     }
-
 }
