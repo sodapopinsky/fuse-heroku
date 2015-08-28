@@ -7,11 +7,15 @@
         .controller('CardsController', CardsController);
 
     /** @ngInject */
-    function CardsController()
+    function CardsController(api)
     {
         var vm = this;
 
         // Data
+        api.cards.get({}, function (response)
+        {
+            vm.cards = response.data;
+        });
 
         // Methods
 
