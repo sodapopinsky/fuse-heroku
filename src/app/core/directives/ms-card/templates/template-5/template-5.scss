@@ -17,8 +17,9 @@
         }
 
         .media {
-            width: 64px;
-            max-width: 64px;
+            width: 80px;
+            min-width: 80px;
+            max-width: 80px;
 
             .image {
 
