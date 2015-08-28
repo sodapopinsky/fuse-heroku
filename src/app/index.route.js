@@ -42,17 +42,6 @@
                 }
             })
 
-            // Dev
-            .state('app.dev', {
-                url  : '/dev',
-                views: {
-                    'content@app': {
-                        templateUrl: 'app/main/apps/dev/dev.html',
-                        controller : 'DevController as vm'
-                    }
-                }
-            })
-
             // Dashboard
             .state('app.dashboard', {
                 url  : '/dashboard',
