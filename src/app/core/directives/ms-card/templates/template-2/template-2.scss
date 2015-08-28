@@ -1,13 +1,10 @@
 .ms-card {
 
-    .content-2 {
-        font-size: 13px;
+    .template-2 {
 
         .header {
-            padding: 16px;
 
             .avatar {
-                margin-right: 16px;
 
                 .image {
                     display: block;
@@ -24,7 +21,7 @@
                 }
 
                 .subtitle {
-                    color: rgba(0, 0, 0, 0.54);
+
                 }
             }
         }
@@ -32,15 +29,11 @@
         .media {
 
             .image {
-                display: block;
-                width: 100%;
-                max-width: 100%;
-                border-radius: 2px 2px 0 0;
+
             }
         }
 
         .text {
-            padding: 16px;
 
         }
     }

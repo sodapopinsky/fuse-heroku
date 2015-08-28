@@ -1,23 +1,18 @@
 .ms-card {
 
-    .content-1 {
-        font-size: 13px;
+    .template-1 {
 
         .media {
 
             .image {
-                display: block;
-                width: 100%;
-                max-width: 100%;
                 border-radius: 2px 2px 0 0;
             }
         }
 
         .content {
-            padding: 24px 16px;
 
             .title {
-                font-size: 24px;
+
             }
 
             .subtitle {
@@ -25,7 +20,7 @@
             }
 
             .text {
-                padding-top: 16px;
+
             }
         }
     }
