@@ -6,6 +6,7 @@
         .module('app.components')
         .controller('CardsController', CardsController);
 
+    /** @ngInject */
     function CardsController()
     {
         var vm = this;
