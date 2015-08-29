@@ -5,9 +5,10 @@
      ng-class="{'starred': mail.starred, 'selected': vm.selectedMail === mail, 'checked': vm.isChecked(mail)}">
 
     <div layout="row" layout-align="start center">
-        <md-checkbox aria-label="{{$index}}" class="checkbox"
+        <md-checkbox class="checkbox"
                      ng-checked="vm.isChecked(mail)"
-                     ng-click="vm.toggleCheck(mail, $event)">
+                     ng-click="vm.toggleCheck(mail, $event)"
+                     aria-label="{{vm.isChecked(mail)? 'Uncheck':'check'}}">
         </md-checkbox>
 
         <img ng-if="mail.from.avatar" alt="{{mail.from.name}}" ng-src="{{mail.from.avatar}}"
@@ -35,7 +36,7 @@
             <div class="time">{{mail.time}}</div>
 
             <md-button class="md-icon-button" ng-click="vm.toggleStarred(mail, $event)"
-                       aria-label="starred">
+                       aria-label="Toggle starred" translate translate-attr-toogle-starred="MAIL.TOGGLE_STARRED">
                 <md-icon ng-if="mail.starred" md-font-icon="icon-star"
                          class="md-amber-fg"></md-icon>
                 <md-icon ng-if="!mail.starred" md-font-icon="icon-star_outline"></md-icon>

@@ -2,36 +2,37 @@
     <form>
         <md-toolbar class="md-accent md-hue-2">
             <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
-                <span class="title">New Message</span>
-                <md-button class="md-icon-button" ng-click="vm.closeDialog()">
-                    <md-icon md-font-icon="icon-close" aria-label="Close dialog"></md-icon>
+                <span class="title" translate="MAIL.NEW_MESSAGE">New Message</span>
+                <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate
+                           translate-aria-label="MAIL.CLOSE_DIALOG">
+                    <md-icon md-font-icon="icon-close"></md-icon>
                 </md-button>
             </div>
         </md-toolbar>
 
         <md-dialog-content>
             <md-input-container>
-                <label>From</label>
+                <label translate="MAIL.FROM">From</label>
                 <input ng-model="vm.form.from" type="email" disabled>
             </md-input-container>
 
             <md-input-container>
-                <label>To</label>
+                <label translate="MAIL.TO">To</label>
                 <input ng-model="vm.form.to" type="email">
             </md-input-container>
 
             <md-input-container>
-                <label>Cc</label>
+                <label translate="MAIL.CC">Cc</label>
                 <input ng-model="vm.form.cc" type="email">
             </md-input-container>
 
             <md-input-container>
-                <label>Bcc</label>
+                <label translate="MAIL.BCC">Bcc</label>
                 <input ng-model="vm.form.bcc" type="email">
             </md-input-container>
 
             <md-input-container flex class="textarea-container">
-                <label>Message</label>
+                <label translate="MAIL.MESSAGE">Message</label>
                 <textarea ng-model="vm.form.message" md-maxlength="250"></textarea>
             </md-input-container>
 
@@ -42,8 +43,9 @@
                         <span class="size">(12 Kb)</span>
                     </div>
 
-                    <md-button class="md-icon-button">
-                        <md-icon md-font-icon="icon-close" aria-label="delete attachment" class="s16"></md-icon>
+                    <md-button class="md-icon-button" aria-label="Delete attachment" translate
+                               translate-attr-aria-label="MAIL.DELETE_ATTACHMENT">
+                        <md-icon md-font-icon="icon-close" class="s16"></md-icon>
                     </md-button>
                 </div>
 
@@ -52,9 +54,10 @@
                         <span class="filename">attachment-1.png</span>
                         <span class="size">(350 Kb)</span>
                     </div>
-                    <md-button
-                            class="md-icon-button">
-                        <md-icon md-font-icon="icon-close" aria-label="delete attachment" class="s16"></md-icon>
+
+                    <md-button class="md-icon-button" aria-label="Delete attachment" translate
+                               translate-attr-aria-label="MAIL.DELETE_ATTACHMENT">
+                        <md-icon md-font-icon="icon-close" class="s16"></md-icon>
                     </md-button>
                 </div>
             </div>
@@ -62,31 +65,42 @@
 
         <div class="md-actions" layout="row" layout-align="space-between center">
             <div layout="row" layout-align="start center">
-                <md-button ng-click="vm.closeDialog()" ng-aria="send" class="send-button md-accent md-raised">
+                <md-button ng-click="vm.closeDialog()" class="send-button md-accent md-raised" aria-label="Send"
+                           translate="MAIL.SEND"
+                           translate-attr-aria-label="MAIL.SEND">
                     SEND
                 </md-button>
 
-                <md-button class="md-icon-button" aria-label="archive">
+                <md-button class="md-icon-button" aria-label="Text format"
+                           translate-attr-aria-label="MAIL.TEXT_FORMAT">
                     <md-icon md-font-icon="icon-text_format"></md-icon>
+                    <md-tooltip><span translate="MAIL.TEXT_FORMAT"></span></md-tooltip>
                 </md-button>
-
                 <div class="divider-vertical"></div>
 
-                <md-button class="md-icon-button" aria-label="archive">
+                <md-button class="md-icon-button" aria-label="Attach file"
+                           translate-attr-aria-label="MAIL.ATTACH_FILE">
                     <md-icon md-font-icon="icon-attach_file"></md-icon>
+                    <md-tooltip><span translate="MAIL.ATTACH_FILE"></span></md-tooltip>
                 </md-button>
 
-                <md-button class="md-icon-button" aria-label="archive">
+                <md-button class="md-icon-button" aria-label="Insert picture"
+                           translate-attr-aria-label="MAIL.INSERT_PICTURE">
                     <md-icon md-font-icon="icon-insert_photo"></md-icon>
+                    <md-tooltip><span translate="MAIL.INSERT_PICTURE"></span></md-tooltip>
                 </md-button>
 
-                <md-button class="md-icon-button" aria-label="archive">
+                <md-button class="md-icon-button" aria-label="Insert emoticon"
+                           translate-attr-aria-label="MAIL.INSERT_EMOTICON">
                     <md-icon md-font-icon="icon-insert_emoticon"></md-icon>
+                    <md-tooltip><span translate="MAIL.INSERT_EMOTICON"></span></md-tooltip>
                 </md-button>
             </div>
 
-            <md-button class="md-icon-button" aria-label="delete">
+            <md-button class="md-icon-button" aria-label="Delete"
+                       translate-attr-aria-label="MAIL.DELETE">
                 <md-icon md-font-icon="icon-delete"></md-icon>
+                <md-tooltip><span translate="MAIL.DELETE"></span></md-tooltip>
             </md-button>
         </div>
     </form>
