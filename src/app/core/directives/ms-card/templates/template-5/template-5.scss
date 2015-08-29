@@ -1,9 +1,10 @@
 .ms-card {
 
-    .template-5 {
+    &.template-5 {
         position: relative;
         border-radius: 2px;
         overflow: hidden;
+        max-width: 400px;
 
         .info {
 

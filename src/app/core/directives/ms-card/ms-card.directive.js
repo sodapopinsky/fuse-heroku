@@ -25,6 +25,9 @@
                     var baseDir = 'app/core/directives/ms-card/templates/';
                     scope.templateDir = baseDir + scope.template + '/' + scope.template + '.html';
 
+                    // Add template name as a class
+                    iElement.addClass(scope.template);
+
                     // Methods
                     scope.cardTemplateLoaded = cardTemplateLoaded;
 
