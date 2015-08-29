@@ -33,7 +33,7 @@
             })
         };
 
-        api.icons = $resource('assets/icons/selection.json', null, {
+        api.icons = $resource(api.dataUrl + 'icons/icons.json', null, {
             'get': {method: 'get'}
         });
 

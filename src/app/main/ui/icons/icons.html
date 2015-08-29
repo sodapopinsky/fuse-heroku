@@ -32,13 +32,10 @@
         </div>
 
         <div id="icons-list" layout="row" layout-wrap class="md-whiteframe-z1 md-background-bg">
-            <div class="item" flex="10" ng-repeat="icon in vm.icons | filter:vm.search">
-                <md-button
-                        class="r1"
-                        ng-click="vm.iconDetail($event, icon)"
-                        aria-label="{{icon.properties.name}}">
+            <div class="item" flex="10" ng-repeat="icon in vm.icons | filter:vm.search track by icon.id">
+                <md-button class="r1" ng-click="vm.iconDetail($event, icon)" aria-label="{{::icon.name}}">
                     <div layout="column" layout-align="center center" layout-padding>
-                        <i class="icon icon-{{icon.properties.name}} {{'s'+vm.iconSize}}"></i>
+                        <i class="icon icon-{{::icon.name}} s{{vm.iconSize}}"></i>
                     </div>
                 </md-button>
             </div>
