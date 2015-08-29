@@ -22,15 +22,16 @@
 
                 <div>
                     <c3chart bindto-id="cpu-usage">
-                        <chart-column column-id="CPU"
-                                      column-name="CPU"
-                                      column-color="white"
-                                      column-values="30,200,100,400,150,250"
-                                      column-type="spline"/>
+                        <chart-column ng-repeat="column in vm.widget1.chart.columns"
+                                      column-id="{{column.id}}"
+                                      column-name="{{column.name}}"
+                                      column-color="{{column.color}}"
+                                      column-values="{{column.values}}"
+                                      column-type="{{column.type}}"
+                                />
                         <chart-axis>
                             <chart-axis-y show="false"></chart-axis-y>
                         </chart-axis>
-
                         <chart-legend show-legend="false"/>
                         <chart-size chart-height="120"/>
                     </c3chart>
@@ -42,7 +43,7 @@
         <!-- / WIDGET 1 -->
 
         <!-- WIDGET 2 -->
-        <ms-widget class="chart-widget" flippable="true" layout="column" flex="50" flex-gt-lg="75">
+        <ms-widget class="chart-widget" layout="column" flex="100" flex-gt-sm="50" flex-gt-lg="75">
 
             <!-- Front -->
             <ms-widget-front class="md-white-bg" layout="column" layout-align="space-between" flex>
@@ -53,16 +54,13 @@
 
                 <div>
                     <c3chart bindto-id="io-rate">
-                        <chart-column column-id="Input"
-                                      column-name="Input"
-                                      column-color="green"
-                                      column-values="30,75,290,400,150,250"
-                                      column-type="line"/>
-                        <chart-column column-id="Output"
-                                      column-name="Output"
-                                      column-color="blue"
-                                      column-values="500,300,120,600,50,80"
-                                      column-type="line"/>
+                        <chart-column ng-repeat="column in vm.widget2.chart.columns"
+                                      column-id="{{column.id}}"
+                                      column-name="{{column.name}}"
+                                      column-color="{{column.color}}"
+                                      column-values="{{column.values}}"
+                                      column-type="{{column.type}}"
+                                />
                         <chart-axis>
                             <chart-axis-y show="false"></chart-axis-y>
                         </chart-axis>
@@ -75,6 +73,40 @@
 
         </ms-widget>
         <!-- / WIDGET 2 -->
+
+        <!-- WIDGET 3 -->
+        <ms-widget class="chart-widget" layout="column" flex="100" flex-gt-lg="50">
+
+            <!-- Front -->
+            <ms-widget-front class="md-white-bg" layout="row" layout-align="space-between" flex>
+                <div class="margin-right-16">
+                    <div class="h5 weight-500 padding-bottom-8">{{vm.widget3.title}}</div>
+                    <div class="h1 secondary-text">{{vm.widget3.value | number}}</div>
+                    <div class="padding-top-8" layout="row" layout-align="start center">
+                        <div>LW: {{vm.widget3.lastWeekValue | number}}</div>
+                        <div class="text-boxed">{{vm.widget3.lastWeekDiff}}</div>
+                    </div>
+                </div>
+
+                <div flex>
+                    <c3chart bindto-id="weekly-visitors">
+                        <chart-column ng-repeat="column in vm.widget3.chart.columns"
+                                      column-id="{{column.id}}"
+                                      column-name="{{column.name}}"
+                                      column-color="{{column.color}}"
+                                      column-values="{{column.values}}"
+                                      column-type="{{column.type}}"
+                                />
+                        <chart-legend show-legend="false"/>
+                        <chart-bar width="10"/>
+                        <chart-size chart-height="240"/>
+                    </c3chart>
+                </div>
+            </ms-widget-front>
+            <!-- / Front -->
+
+        </ms-widget>
+        <!-- / WIDGET 3 -->
 
     </div>
     <!-- / WIDGET GROUP -->
