@@ -64,17 +64,6 @@
                 }
             })
 
-            // E-Commerce
-            .state('app.e-commerce', {
-                url  : '/e-commerce',
-                views: {
-                    'content@app': {
-                        templateUrl: 'app/main/app/e-commerce/e-commerce.html',
-                        controller : 'calendarController as vm'
-                    }
-                }
-            })
-
             // Mail
             .state('app.mail', {
                 url  : '/mail',
