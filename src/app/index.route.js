@@ -854,16 +854,6 @@
                 }
             })
 
-            .state('app.components.widgets.content', {
-                url  : '/content-widgets',
-                views: {
-                    'content@app': {
-                        templateUrl: 'app/main/components/widgets/content/content-widgets.html',
-                        controller : 'ContentWidgetsController as vm'
-                    }
-                }
-            })
-
             .state('app.components.widgets.chart', {
                 url  : '/chart-widgets',
                 views: {
