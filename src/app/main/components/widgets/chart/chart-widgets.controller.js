@@ -12,6 +12,15 @@
         var vm = this;
 
         // Data
+        vm.widget1 = {
+            title: 'CPU USAGE',
+            value: 200
+        };
+
+        vm.widget2 = {
+            title   : 'IO RATE',
+            subtitle: 'Showing last 5 hours'
+        };
 
         // Methods
 
