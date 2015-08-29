@@ -66,3 +66,16 @@ $toolbarHeight: 64px;
         }
     }
 }
+
+.navigation-folded {
+
+    #toolbar {
+
+        #navigation-sidenav-mode-toggle {
+
+            md-icon {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
