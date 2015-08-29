@@ -100,6 +100,17 @@
                     "alt": "Early Sunrise"
                 }
             }
+        },
+        {
+            "title": "Health",
+            "subtitle": "Stimpaks are good for you",
+            "media": {
+                "image": {
+                    "src": "assets/images/logos/fallout.png",
+                    "alt": "Andrew Ryan"
+                }
+            },
+            "text": "Cras lobortis justo vel risus pulvinar, a fermentum eros luctus. Aliquam quis tortor ornare metus bibendum consectetur. Mauris tincidunt libero eros, et tempus justo tristique nec. Proin mollis sagittis ligula ac sollicitudin. Ut imperdiet purus varius, tristique nisi eu, sagittis mauris."
         }
     ]
 }
