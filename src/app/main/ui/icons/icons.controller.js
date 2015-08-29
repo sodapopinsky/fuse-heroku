@@ -12,7 +12,7 @@
 
         // Data
         vm.iconSize = 24;
-        vm.iconSizes = [16, 18, 20, 24, 32];
+        vm.iconSizes = [16, 24, 32];
 
         api.icons.get({}, function (response)
         {
