@@ -98,6 +98,14 @@ pre {
     text-align: right;
 }
 
+// Font weight helpers
+@for $weight from 1 through 9 {
+
+    .weight-#{$weight * 100} {
+        font-weight: #{$weight * 100};
+    }
+}
+
 // Text styles
 // Boxed text
 .text-boxed {
