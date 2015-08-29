@@ -1,0 +1,44 @@
+.ms-card {
+
+    &.template-9 {
+        position: relative;
+        border-radius: 2px;
+        overflow: hidden;
+        max-width: 400px;
+
+        .header {
+
+            .avatar {
+
+                .image {
+                    display: block;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 20px;
+                }
+            }
+
+            .info {
+
+                .title {
+
+                }
+
+                .subtitle {
+
+                }
+            }
+        }
+
+        .media {
+
+            .image {
+
+            }
+        }
+
+        .text {
+
+        }
+    }
+}
