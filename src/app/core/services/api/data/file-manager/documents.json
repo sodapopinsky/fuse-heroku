@@ -1,5 +1,9 @@
 {
     "data": {
+        "path":[
+          "My Files",
+          "Documents"
+        ],
         "folders": [
             {
                 "name": "Work Documents",

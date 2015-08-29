@@ -21,6 +21,8 @@
 
         api.fileManager.documents.get({}, function (response)
         {
+
+            vm.path = response.data.path;
             vm.folders = response.data.folders;
             vm.files = response.data.files;
             vm.selected = vm.files[0];

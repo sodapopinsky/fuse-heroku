@@ -1,22 +1,26 @@
 <!-- SIDENAV HEADER -->
 <div class="header md-accent-bg" layout="column" layout-align="space-between">
     <div class="toolbar" layout="row" layout-align="end center">
-        <md-button class="md-icon-button" aria-label="Delete" ng-click="vm.delete()">
+        <md-button class="md-icon-button" ng-click="vm.delete()" aria-label="Delete" translate
+                   translate-attr-aria-label="FM.DELETE">
             <md-icon md-font-icon="icon-delete"></md-icon>
+            <md-tooltip><span translate="FM.DELETE">Delete</span></md-tooltip>
         </md-button>
 
-        <md-button class="md-icon-button" aria-label="Download">
+        <md-button class="md-icon-button" aria-label="Download" translate translate-attr-aria-label="FM.DOWNLOAD">
             <md-icon md-font-icon="icon-file_download"></md-icon>
+            <md-tooltip><span translate="FM.DOWNLOAD">Download</span></md-tooltip>
         </md-button>
 
-        <md-button class="md-icon-button" aria-label="More">
+        <md-button class="md-icon-button" aria-label="More" translate translate-attr-aria-label="FM.MORE">
             <md-icon md-font-icon="icon-more_vert"></md-icon>
+            <md-tooltip><span translate="FM.MORE">More</span></md-tooltip>
         </md-button>
     </div>
 
     <div>
         <div class="title">{{vm.selected.name}}</div>
-        <div class="subtitle secondary-text">Edited: {{vm.selected.modified}}</div>
+        <div class="subtitle secondary-text"><span translate="FM.EDITED">Edited</span>: {{vm.selected.modified}}</div>
     </div>
 </div>
 <!-- / SIDENAV HEADER -->
@@ -30,45 +34,47 @@
         </div>
 
         <div class="offline-switch" layout="row" layout-align="space-between center">
-            Available Offline
-            <md-switch ng-model="vm.selected.offline" aria-label="offline switch"></md-switch>
+            <span translate="FM.AVAILABLE_OFFLINE">
+                Available Offline
+            </span>
+            <md-switch ng-model="vm.selected.offline" aria-label="Toggle offline" translate translate-attr-aria-label="FM.TOOGLE_OFFLINE"></md-switch>
         </div>
 
-        <div class="title">Info</div>
+        <div class="title" translate="FM.INFO">Info</div>
 
         <table>
             <tr class="type">
-                <th>Type</th>
+                <th translate="FM.TYPE">Type</th>
                 <td>{{vm.selected.type}}</td>
             </tr>
 
             <tr class="size">
-                <th>Size</th>
+                <th translate="FM.SIZE">Size</th>
                 <td>{{vm.selected.size === '' ? '-': vm.selected.size}}</td>
             </tr>
 
             <tr class="location">
-                <th>Location</th>
+                <th translate="FM.LOCATION">Location</th>
                 <td>{{vm.selected.location}}</td>
             </tr>
 
             <tr class="owner">
-                <th>Owner</th>
+                <th translate="FM.OWNER">Owner</th>
                 <td>{{vm.selected.owner}}</td>
             </tr>
 
             <tr class="modified">
-                <th>Modified</th>
+                <th translate="FM.MODIFIED">Modified</th>
                 <td>{{vm.selected.modified}}</td>
             </tr>
 
             <tr class="opened">
-                <th>Opened</th>
+                <th translate="FM.OPENED">Opened</th>
                 <td>{{vm.selected.opened}}</td>
             </tr>
 
             <tr class="created">
-                <th>Created</th>
+                <th translate="FM.CREATED">Created</th>
                 <td>{{vm.selected.created}}</td>
             </tr>
         </table>

@@ -3,11 +3,11 @@
     <thead>
         <tr>
             <th></th>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Owner</th>
-            <th>Size</th>
-            <th>Last Modified</th>
+            <th translate="FM.NAME">Name</th>
+            <th translate="FM.TYPE">Type</th>
+            <th translate="FM.OWNER">Owner</th>
+            <th translate="FM.SIZE">Size</th>
+            <th translate="FM.LAST_MODIFIED">Last Modified</th>
             <th hide-gt-md></th>
             <th></th>
         </tr>
@@ -44,7 +44,7 @@
             <td class="size">{{file.size === '' ? '-': file.size}}</td>
             <td class="last-modified">{{file.modified}}</td>
             <td class="show-details" hide-gt-md>
-                <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleDetails(file)" aria-label="Toggle details sidenav">
+                <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleDetails(file)" aria-label="Details" translate translate-attr-aria-label="FM.DETAILS">
                     <md-icon md-font-icon="icon-info"></md-icon>
                 </md-button>
             </td>

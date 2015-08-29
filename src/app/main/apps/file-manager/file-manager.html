@@ -16,26 +16,31 @@
             <div class="toolbar" layout="row" layout-align="space-between">
 
                 <md-button class="md-icon-button main-sidenav-toggle" ng-click="vm.toggleSidenav('main-sidenav')"
-                           aria-label="Toggle main sidenav">
+                           aria-label="Toggle Main Sidenav" translate
+                           translate-attr-aria-label="FILE.TOOGLE_MAIN_SIDENAV">
                     <i class="icon icon-menu"></i>
                 </md-button>
 
                 <div class="right-side" layout="row">
-                    <md-button class="md-icon-button" aria-label="Search">
+                    <md-button class="md-icon-button" aria-label="Search" translate
+                               translate-attr-aria-label="FM.SEARCH">
                         <md-icon md-font-icon="icon-search"></md-icon>
-                        <md-tooltip>Search</md-tooltip>
+                        <md-tooltip><span translate="FM.SEARCH">Search</span></md-tooltip>
                     </md-button>
 
-                    <md-button ng-if="vm.currentView === 'list'" class="md-icon-button" aria-label="view type"
-                               ng-click="vm.toggleView()">
+                    <md-button ng-if="vm.currentView === 'list'" class="md-icon-button"
+                               ng-click="vm.toggleView()"
+                               aria-label="view type" translate
+                               translate-attr-aria-label="FM.GRID_VIEW">
                         <md-icon md-font-icon="icon-view_comfortable"></md-icon>
-                        <md-tooltip>Grid View</md-tooltip>
+                        <md-tooltip><span translate="FM.GRID_VIEW">Grid View</span></md-tooltip>
                     </md-button>
 
                     <md-button ng-if="vm.currentView === 'grid'" class="md-icon-button" aria-label="view type"
-                               ng-click="vm.toggleView()">
+                               ng-click="vm.toggleView()" translate
+                               translate-attr-aria-label="FM.LIST_VIEW">
                         <md-icon md-font-icon="icon-list"></md-icon>
-                        <md-tooltip>List View</md-tooltip>
+                        <md-tooltip><span translate="FM.LIST_VIEW">List View</span></md-tooltip>
                     </md-button>
                 </div>
             </div>
@@ -43,15 +48,16 @@
 
             <!-- BREADCRUMB -->
             <div class="breadcrumb" layout="row" layout-align="start center">
-                <span>My Files</span>
-                <i class="icon icon-keyboard_arrow_right separator"></i>
-                <span>Documents</span>
+                <span data-ng-repeat="path in vm.path">{{path}}
+                    <i class="icon icon-keyboard_arrow_right separator"></i>
+                </span>
             </div>
             <!-- / BREADCRUMB -->
 
             <!-- ADD FILE BUTTON -->
-            <md-button class="add-file-button md-fab md-warn" aria-label="Add file"
-                       ng-click="vm.addFile($event)">
+            <md-button class="add-file-button md-fab md-warn"
+                       ng-click="vm.addFile($event)" aria-label="Add file" translate
+                       translate-attr-aria-label="FM.ADD_FILE">
                 <md-icon md-font-icon="icon-add" class="s20"></md-icon>
             </md-button>
             <!-- / ADD FILE BUTTON -->
@@ -74,7 +80,8 @@
     <!-- SIDENAV -->
     <md-sidenav class="sidenav details-sidenav md-sidenav-right" md-is-locked-open="$mdMedia('gt-md')"
                 md-component-id="details-sidenav"
-                ng-include="'app/main/apps/file-manager/sidenavs/details/details-sidenav.html'" ms-scroll ms-sidenav-helper>
+                ng-include="'app/main/apps/file-manager/sidenavs/details/details-sidenav.html'" ms-scroll
+                ms-sidenav-helper>
     </md-sidenav>
     <!-- / SIDENAV -->
 
