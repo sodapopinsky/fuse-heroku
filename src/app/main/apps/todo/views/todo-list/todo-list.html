@@ -26,12 +26,12 @@
         <md-button class="md-icon-button" ng-click="vm.toggleStarred(task, $event)"
                    aria-label="starred">
             <md-icon ng-if="task.starred" md-font-icon="icon-star" class="md-amber-fg"></md-icon>
-            <md-icon ng-if="!task.starred" md-font-icon="icon-star_outline"></md-icon>
+            <md-icon ng-if="!task.starred" md-font-icon="icon-star-outline"></md-icon>
         </md-button>
 
         <md-menu>
             <md-button class="md-icon-button" aria-label="More" translate translate-attr-aria-label="TODO.MORE">
-                <md-icon md-font-icon="icon-more_vert" ng-click="$mdOpenMenu($event)"></md-icon>
+                <md-icon md-font-icon="icon-dots-vertical" ng-click="$mdOpenMenu($event)"></md-icon>
             </md-button>
 
             <md-menu-content width="3">

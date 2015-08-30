@@ -19,11 +19,11 @@
             <div class="search-wrapper md-whiteframe-z2" flex layout="row" layout-align="start center">
                 <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleSidenav('main-sidenav')" hide-gt-md
                            aria-label="Toggle sidenav" translate translate-attr-aria-label="TODO.TOGGLE_SIDENAV">
-                    <i class="icon icon-menu"></i>
+                    <md-icon md-font-icon="icon-menu" class="icon"></md-icon>
                 </md-button>
 
                 <div class="search md-background-bg" flex layout="row" layout-align="start center">
-                    <md-icon md-font-icon="icon-search" class="icon s24"></md-icon>
+                    <md-icon md-font-icon="icon-magnify" class="icon s24"></md-icon>
                     <input flex ng-model="vm.search" type="text" placeholder="Search for a task or tag" translate
                            translate-attr-placeholder="TODO.SEARCH">
                 </div>
@@ -73,13 +73,13 @@
 
                     <md-button class="md-icon-button arrow" aria-label="Previous" translate
                                translate-attr-aria-label="TODO.PREVIOUS">
-                        <md-icon md-font-icon="icon-keyboard_arrow_left"></md-icon>
+                        <md-icon md-font-icon="icon-chevron-left"></md-icon>
                         <md-tooltip><span translate="MAIL.PREVIOUS">Previous</span></md-tooltip>
                     </md-button>
 
                     <md-button class="md-icon-button arrow" aria-label="Next" translate
                                translate-attr-aria-label="TODO.NEXT">
-                        <md-icon md-font-icon="icon-keyboard_arrow_right"></md-icon>
+                        <md-icon md-font-icon="icon-chevron-right"></md-icon>
                         <md-tooltip><span translate="MAIL.NEXT">Next</span></md-tooltip>
                     </md-button>
                 </div>

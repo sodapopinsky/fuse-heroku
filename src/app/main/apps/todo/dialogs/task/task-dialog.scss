@@ -1,4 +1,6 @@
 #task-dialog {
+    min-width: 720px;
+    width: 720px;
 
     md-toolbar {
 
@@ -6,18 +8,8 @@
             font-size: 17px;
         }
     }
-    md-dialog-content {
-        font-size: 15px;
-        min-width: 720px;
-        width: 720px;
-        padding: 8px 24px 24px 24px;
 
         md-input-container {
-            padding: 8px 0;
-
-            &.textarea-container {
-                padding: 2px;
-                padding-bottom: 26px;
 
                 textarea {
                     min-height: 150px;
@@ -70,7 +62,6 @@
 
                 &:last-child {
                     margin-bottom: 0;
-                }
             }
         }
     }
