@@ -2,7 +2,7 @@
     background-image: url('/assets/images/backgrounds/march.jpg');
     background-size: 100% auto;
 
-    md-whiteframe {
+    #lock-form {
         padding: 48px 32px 32px 32px;
         max-width: 390px;
 
@@ -12,7 +12,6 @@
         }
 
         .subtitle {
-            font-size: 13px;
             color: rgba(0, 0, 0, 0.54);
         }
 
@@ -28,11 +27,9 @@
         }
 
         form {
-            font-size: 15px;
             margin: 32px 0 0 0;
 
             md-input-container {
-                padding: 12px 0;
                 min-width: 320px;
                 width: 320px;
             }
