@@ -3,42 +3,41 @@
     bottom: 8px;
     right: 8px;
     z-index: 997;
+    width: 56px;
 
-    md-fab-speed-dial {
+    .menu-button {
+        margin: 0;
+    }
 
-        .md-fab-action-item {
-
-            opacity: 1 !important;
-            transform: scale(1) !important;
-            visibility: visible !important;
-
-            .md-button {
-                opacity: 0;
-                transform: scale(0);
-                visibility: hidden;
-                @for $item from 1 through 40 {
-                    &:nth-child(#{$item}) {
-                        animation-delay: -#{$item}s;
-                        transition: all #{0.4 - (0.3 / $item)}s cubic-bezier(0.55, 0, 0.55, 0.2);
-                    }
+    .themes {
+        opacity: 1 !important;
+        transform: scale(1) !important;
+        visibility: visible !important;
+        position: absolute;
+        bottom: 0;
+        transition: bottom 300ms cubic-bezier(0.55, 0, 0.55, 0.2);
+        .theme {
+            opacity: 0;
+            transform: scale(0);
+            visibility: hidden;
+            @for $item from 1 through 40 {
+                &:nth-child(#{$item}) {
+                    animation-delay: -#{$item}s;
+                    transition: all #{0.4 - (0.3 / $item)}s cubic-bezier(0.55, 0, 0.55, 0.2);
                 }
             }
         }
 
-        &.md-is-open {
-
-            .md-fab-action-item {
-
-                .md-button {
-                    opacity: 1;
-                    transform: scale(1);
-                    visibility: visible;
-                    @for $item from 1 through 40 {
-                        &:nth-child(#{$item}) {
-                            animation-delay: -#{$item}s;
-                            transition: all #{0.3 / $item}s cubic-bezier(0.55, 0, 0.55, 0.2);
-
-                        }
+        &.opened {
+            bottom: 60px;
+            .theme {
+                opacity: 1;
+                transform: scale(1);
+                visibility: visible;
+                @for $item from 1 through 40 {
+                    &:nth-child(#{$item}) {
+                        animation-delay: -#{$item}s;
+                        transition: all #{0.3 / $item}s cubic-bezier(0.55, 0, 0.55, 0.2);
                     }
                 }
             }
