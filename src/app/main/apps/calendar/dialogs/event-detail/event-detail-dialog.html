@@ -3,8 +3,9 @@
         <div class="md-toolbar-tools">
             <span class="title">{{vm.event.title}}</span>
             <span flex></span>
-            <md-button class="edit-event-button md-fab md-warn" aria-label="Add event"
-                       ng-click="vm.eventDialog('edit', $event, vm.event.start, vm.event)">
+            <md-button class="edit-event-button md-fab md-warn"
+                       ng-click="vm.eventDialog('edit', $event, vm.event.start, vm.event)" aria-label="Add event"
+                       translate translate-attr-aria-label="CALENDAR.ADD_EVENT">
                 <md-icon md-font-icon="icon-pencil" class="s20"></md-icon>
             </md-button>
         </div>
@@ -17,7 +18,8 @@
             <div class="event-detail-row" layout="row" layout-align="start start">
                 <md-icon md-font-icon="icon-clock"></md-icon>
                 <div layout="column" flex>
-                    <span class="h4">{{vm.event.start.format('MMMM Do YYYY, h:mm:ss a')}} <span ng-if="vm.event.end">-</span> {{vm.event.end.format('MMMM Do YYYY, h:mm:ss a')}}</span>
+                    <span class="h4">{{vm.event.start.format('MMMM Do YYYY, h:mm:ss a')}} <span
+                            ng-if="vm.event.end">-</span> {{vm.event.end.format('MMMM Do YYYY, h:mm:ss a')}}</span>
                     <span class="secondary-text">{{vm.event.repeat || 'Does not repeat'}}</span>
                 </div>
             </div>
@@ -25,9 +27,9 @@
             <div class="event-detail-row" layout="row" layout-align="start start">
                 <md-icon md-font-icon="icon-bell-ring-outline"></md-icon>
                 <div layout="column" flex>
-                    <span class="h4">30 minutes before</span>
-                    <span class="h4">15 minutes before</span>
-                    <span class="h4">30 minutes later</span>
+                    <span class="h4" translate="CALENDAR.30_MIN_BEFORE">30 minutes before</span>
+                    <span class="h4" translate="CALENDAR.15_MIN_BEFORE">15 minutes before</span>
+                    <span class="h4" translate="CALENDAR.30_MIN_LATER">30 minutes later</span>
                 </div>
             </div>
 

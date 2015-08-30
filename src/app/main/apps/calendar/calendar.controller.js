@@ -6,7 +6,7 @@
         .controller('CalendarController', CalendarController);
 
     /** @ngInject */
-    function CalendarController($mdDialog, $document)
+    function CalendarController($scope, $mdDialog, $document)
     {
         var vm = this;
 
@@ -15,6 +15,7 @@
         var d = date.getDate();
         var m = date.getMonth();
         var y = date.getFullYear();
+
         vm.events = [
             [
                 {
@@ -81,7 +82,7 @@
                 },
                 {
                     title: 'Conference',
-                    start: new Date(y, m, d + 17, 4, 0),
+                    start: new Date(y, m, d + 17, 4, 0)
                 },
                 {
                     title: 'Meeting',
@@ -93,24 +94,26 @@
 
         vm.calendarUiConfig = {
             calendar: {
-                editable    : true,
-                eventLimit  : true,
-                header      : '',
-                viewRender  : function (view)
+                editable     : true,
+                eventLimit   : true,
+                header       : '',
+                dayNames     : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                dayNamesShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                viewRender   : function (view)
                 {
                     vm.calendarView = view;
                     vm.calendar = vm.calendarView.calendar;
                     vm.currentMonthShort = vm.calendar.getDate().format('MMM');
                 },
-                columnFormat: {
+                columnFormat : {
                     month: 'ddd',
                     week : 'ddd M',
                     day  : 'ddd M'
                 },
-                eventClick  : eventDetailDialog,
-                selectable  : true,
-                selectHelper: true,
-                select      : dateSelection
+                eventClick   : eventDetailDialog,
+                selectable   : true,
+                selectHelper : true,
+                select       : dateSelection
             }
         };
 
