@@ -5,7 +5,7 @@
         <div class="header-top" layout="row" layout-align="space-between center">
             <div class="logo" layout="row" layout-align="start center">
                 <span class="logo-icon">
-                    <i class="icon-today"></i>
+                    <md-icon md-font-icon="icon-calendar-today"></md-icon>
                 </span>
 
                 <span class="logo-text">Calendar</span>
@@ -17,22 +17,22 @@
                 </md-button>
 
                 <md-button class="md-icon-button" aria-label="Today" ng-click="vm.calendar.today()">
-                    <md-icon md-font-icon="icon-today"></md-icon>
+                    <md-icon md-font-icon="icon-calendar-today"></md-icon>
                     <md-tooltip>Today</md-tooltip>
                 </md-button>
 
                 <md-button class="md-icon-button" aria-label="Day" ng-click="vm.calendar.changeView('agendaDay')">
-                    <md-icon md-font-icon="icon-view_headline"></md-icon>
+                    <md-icon md-font-icon="icon-view-day"></md-icon>
                     <md-tooltip>Day</md-tooltip>
                 </md-button>
 
                 <md-button class="md-icon-button" aria-label="Week" ng-click="vm.calendar.changeView('agendaWeek')">
-                    <md-icon md-font-icon="icon-view_week"></md-icon>
+                    <md-icon md-font-icon="icon-view-week"></md-icon>
                     <md-tooltip>Week</md-tooltip>
                 </md-button>
 
                 <md-button class="md-icon-button" aria-label="Month" ng-click="vm.calendar.changeView('month')">
-                    <md-icon md-font-icon="icon-view_module"></md-icon>
+                    <md-icon md-font-icon="icon-view-module"></md-icon>
                     <md-tooltip>Month</md-tooltip>
                 </md-button>
             </div>
@@ -40,11 +40,11 @@
 
         <div class="header-bottom" layout="row" layout-align="start center">
             <md-button class="md-icon-button arrow" aria-label="previous" ng-click="vm.calendar.prev()">
-                <md-icon md-font-icon="icon-keyboard_arrow_left"></md-icon>
+                <md-icon md-font-icon="icon-chevron-left"></md-icon>
             </md-button>
 
             <md-button class="md-icon-button arrow" aria-label="next">
-                <md-icon md-font-icon="icon-keyboard_arrow_right" ng-click=" vm.calendar.next()"></md-icon>
+                <md-icon md-font-icon="icon-chevron-right" ng-click=" vm.calendar.next()"></md-icon>
             </md-button>
 
             <div class="title">
@@ -53,8 +53,8 @@
         </div>
 
         <md-button class="add-event-button md-fab md-warn" aria-label="Add event"
-                   ng-click="vm.eventDialog('add',$event)">
-            <md-icon md-font-icon="icon-add" class="s20"></md-icon>
+                   ng-click="vm.eventDialog('add', $event)">
+            <md-icon md-font-icon="icon-plus" class="s20"></md-icon>
         </md-button>
     </div>
     <!-- / HEADER -->

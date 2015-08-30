@@ -8,6 +8,18 @@
         background-position: 0 50%;
         background-repeat: no-repeat;
         background-color: #FAFAFA;
+        color: $material-color-white;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.54), transparent);
+        }
 
         &.Jan {
             background-image: url('/assets/images/backgrounds/january.jpg');
@@ -59,6 +71,8 @@
         }
 
         .header-top {
+            position: relative;
+            z-index: 2;
 
             .logo {
 
@@ -69,25 +83,12 @@
                 .logo-text {
                     font-size: 24px;
                 }
-
-            }
-
-            .toolbar {
-
-                md-icon {
-                    color: $material-color-black;
-                }
             }
         }
 
         .header-bottom {
-
-            .arrow {
-
-                md-icon {
-                    color: $material-color-black;
-                }
-            }
+            position: relative;
+            z-index: 2;
 
             .title {
                 font-size: 15px;
@@ -100,6 +101,9 @@
             bottom: -32px;
         }
 
+        md-icon {
+            color: $material-color-white;
+        }
     }
 
     .content {
