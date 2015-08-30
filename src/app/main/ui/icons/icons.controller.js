@@ -35,8 +35,9 @@
                     locals             : {item: icon},
                     controller         : function DialogController($scope, $mdDialog, item)
                     {
+                        console.log(item);
                         $scope.icon = item;
-                        $scope.iconClass = 'icon-' + item.properties.name;
+                        $scope.iconClass = 'icon-' + item.name;
                     }
                 }
             );
