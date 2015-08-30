@@ -12,7 +12,7 @@
         </md-button>
 
         <div id="search" flex layout="row" layout-align="start center">
-            <md-icon class="icon s24" md-font-icon="icon-search"></md-icon>
+            <md-icon md-font-icon="icon-magnify" class="icon s24"></md-icon>
             <input type="text" ng-model="vm.search" placeholder="Click and type to search anywhere" flex>
         </div>
 
@@ -26,15 +26,14 @@
                 <div layout="row" layout-align="space-between center">
                     <img class="avatar" src="assets/images/avatars/profile-img.jpeg">
                     <span class="username">Mustafa</span>
-                    <md-icon md-menu-origin md-menu-align-target md-font-icon="icon-keyboard_arrow_down"
-                             class="s16"></md-icon>
+                    <md-icon md-menu-origin md-menu-align-target md-font-icon="icon-chevron-down" class="s16"></md-icon>
                 </div>
             </md-button>
 
             <md-menu-content width="4">
                 <md-menu-item ng-repeat="item in [1, 2, 3]">
                     <md-button ng-click="ctrl.announceClick($index)">
-                        <md-icon md-font-icon="icon-settings_applications"></md-icon>
+                        <md-icon md-font-icon="icon-cog" class="icon s16"></md-icon>
                         <p>Option {{item}}</p>
                     </md-button>
                 </md-menu-item>
@@ -43,8 +42,7 @@
 
         <md-button id="quick-panel-toggle" class="md-icon-button" aria-label="Toggle quick panel"
                    ng-click="vm.toggleSidenav('quick-panel')">
-            <md-icon class="icon s20" md-font-icon="icon-toc"></md-icon>
-            <div class="badge md-warn-bg"></div>
+            <md-icon md-font-icon="icon-format-list-bulleted" class="icon s20"></md-icon>
         </md-button>
     </div>
 </div>
