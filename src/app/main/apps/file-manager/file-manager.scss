@@ -8,17 +8,22 @@
             .breadcrumb {
                 font-size: 24px;
                 padding-left: 90px;
+
                 > span {
                     cursor: pointer;
+
                     i {
                         cursor: default;
                     }
+
                     &:last-child {
+
                         i {
                             display: none;
                         }
                     }
                 }
+
                 .separator {
                     margin-left: 8px;
                     margin-right: 8px;
@@ -38,31 +43,28 @@
         }
     }
 
-    .icon- {
-        text-align: center;
+    .file-icon {
 
-        &.folder {
+        .icon-folder {
 
             &:before {
-                content: "\e101";
                 color: #FFB300;
             }
         }
 
-        &.document {
+        .icon-document {
 
             &:before {
-                content: "\e288";
                 color: #1565C0;
             }
         }
 
-        &.spreadsheet {
+        .icon-spreadsheet {
 
             &:before {
-                content: "\e180";
                 color: #4CAF50;
             }
         }
     }
+
 }
