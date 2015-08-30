@@ -9,15 +9,15 @@
                 <footer class="mail-form-actions" layout="row" layout-align="space-between center">
                     <div layout="row" layout-align="start center">
                         <md-button class="md-icon-button" aria-label="insert photo">
-                            <md-icon md-font-icon="icon-insert_photo"></md-icon>
+                            <md-icon md-font-icon="icon-file-image-box"></md-icon>
                         </md-button>
 
                         <md-button class="md-icon-button" aria-label="add person">
-                            <md-icon md-font-icon="icon-person_add"></md-icon>
+                            <md-icon md-font-icon="icon-person-plus"></md-icon>
                         </md-button>
 
                         <md-button class="md-icon-button" aria-label="location">
-                            <md-icon md-font-icon="icon-location_on"></md-icon>
+                            <md-icon md-font-icon="icon-map-marker"></md-icon>
                         </md-button>
                     </div>
 
@@ -48,7 +48,7 @@
                 </div>
 
                 <md-button class="md-icon-button" aria-label="more">
-                    <md-icon md-font-icon="icon-more_vert"></md-icon>
+                    <md-icon md-font-icon="icon-dots-vertical"></md-icon>
                 </md-button>
             </header>
 
@@ -76,7 +76,7 @@
                 <div layout="row" layout-align="start center">
                     <md-button class="like-button">
                         <div layout="row" layout-align="start center">
-                            <md-icon md-font-icon="icon-favorite_outline" class="s16"></md-icon>
+                            <md-icon md-font-icon="icon-heart-outline" class="s16"></md-icon>
                             <span>Like ({{post.like}})</span>
                         </div>
                     </md-button>
@@ -98,16 +98,16 @@
                     <img ng-src="{{comment.user.avatar}}" class="avatar"/>
 
                     <div flex layout="column">
-                        <div>
+                        <div layout="row" layout-align="start center">
                             <span class="username">{{comment.user.name}}</span>
                             <span class="time">{{comment.time}}</span>
                         </div>
                         <div class="message">
                             {{comment.message}}
                         </div>
-                        <div class="actions" layout="row" layout-align="start center">
-                            <span class="md-accent-color reply-button">Reply</span>
-                            <md-icon flex md-font-icon="icon-flag" class="s16 report-button"></md-icon>
+                        <div class="actions" layout="row" layout-align="space-between center">
+                            <a href="#" class="reply-button md-accent-color">Reply</a>
+                            <md-icon flex md-font-icon="icon-flag" class="report-button s16"></md-icon>
                         </div>
                     </div>
                 </div>
@@ -135,18 +135,18 @@
             </header>
 
             <div class="content" layout="row" layout-wrap>
-                <md-list class="activities">
-                    <md-list-item class="activity md-2-line" ng-repeat="activity in vm.activities">
-                        <img ng-src="{{activity.user.avatar}}" class="md-avatar" alt="{{activity.user.name}}"/>
-
-                        <div class="md-list-item-text">
-                            <span class="username md-accent-color">{{activity.user.name}}</span>
-                            <span class="message">{{activity.message}}</span>
-
-                            <p class="time">{{activity.time}}</p>
+                <div class="activities">
+                    <div class="activity" layout="row" layout-align="start start" ng-repeat="activity in vm.activities">
+                        <img ng-src="{{activity.user.avatar}}" class="avatar" alt="{{activity.user.name}}"/>
+                        <div layout="column">
+                            <div>
+                                <span class="username md-accent-color">{{activity.user.name}}</span>
+                                <span class="message"> {{activity.message}}</span>
+                            </div>
+                            <span class="time secondary-text">{{activity.time}}</span>
                         </div>
-                    </md-list-item>
-                </md-list>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

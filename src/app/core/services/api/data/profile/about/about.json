@@ -1,7 +1,7 @@
 {
     "data": {
         "general": {
-            "gender": "female",
+            "gender": "Female",
             "birthday": "May 8th, 1988",
             "locations": [
                 "Istanbul, Turkey",
@@ -59,8 +59,8 @@
         ],
         "friends": [
             {
-                "name": "Sercan Yemen",
-                "avatar": "assets/images/avatars/sercan.jpg"
+                "name": "Garry Newman",
+                "avatar": "assets/images/avatars/garry.png"
             },
             {
                 "name": "Carl Henderson",
