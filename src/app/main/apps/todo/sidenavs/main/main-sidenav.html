@@ -5,11 +5,13 @@
         <span class="logo-icon">
             <md-icon md-font-icon="icon-check_box" class="s24"></md-icon>
         </span>
-        <span class="logo-text">To-Do</span>
+        <span class="logo-text" translate="TODO.TO_DO">To-Do</span>
     </div>
 
-    <md-select class="project-selection simplified" placeholder="Project Selection"
-               ng-model="vm.selectedProject">
+    <md-select class="project-selection simplified"
+               ng-model="vm.selectedProject"
+               placeholder="Select Project"
+               translate translte-attr-placeholder="TODO.SELECT_PROJECT">
         <md-option ng-repeat="(project, title) in vm.projects" value="{{project}}">
             {{title}}
         </md-option>
@@ -19,65 +21,66 @@
 <!-- / SIDENAV HEADER -->
 
 <!-- SIDENAV CONTENT -->
-<md-content class="content" flex  ms-scroll>
+<md-content class="content" flex ms-scroll>
 
     <div class="add-task-button">
-        <md-button class="md-accent md-raised" aria-label="add task" ng-click="vm.openTaskDialog($event)">
+        <md-button class="md-accent md-raised" ng-click="vm.openTaskDialog($event)" aria-label="ADD TASK"
+                   translate="TODO.ADD_TASK" translate-attr-aria-label="TODO.ADD_TASK">
             ADD TASK
         </md-button>
     </div>
 
     <div class="navigation-simple" layout="column">
-        <md-button class="item" aria-label="all tasks">
+        <md-button class="item" aria-label="All Tasks" translate translate-attr-aria-label="TODO.ALL_TASKS">
             <div layout="row" layout-align="start center">
                 <md-icon md-font-icon="icon-list" class="s16"></md-icon>
-                <span class="title">All Tasks</span>
+                <span class="title" translate="TODO.ALL_TASKS">All Tasks</span>
             </div>
         </md-button>
 
-        <md-button class="item" aria-label="starred">
+        <md-button class="item" aria-label="Starred" translate translate-attr-aria-label="TODO.STARRED">
             <div layout="row" layout-align="start center">
                 <md-icon md-font-icon="icon-star" class="s16"></md-icon>
-                <span class="title">Starred</span>
+                <span class="title" translate="TODO.STARRED">Starred</span>
             </div>
         </md-button>
 
-        <md-button class="item" aria-label="priority">
+        <md-button class="item" aria-label="Priority" translate translate-attr-aria-label="TODO.PRIORITY">
             <div layout="row" layout-align="start center">
                 <md-icon md-font-icon="icon-info" class="s16"></md-icon>
-                <span class="title">Priority</span>
+                <span class="title" translate="TODO.PRIORITY">Priority</span>
             </div>
         </md-button>
 
-        <md-button class="item" aria-label="scheduled">
+        <md-button class="item" aria-label="Scheduled" translate translate-attr-aria-label="TODO.SCHEDULED">
             <div layout="row" layout-align="start center">
                 <md-icon md-font-icon="icon-access_time" class="s16"></md-icon>
-                <span class="title">Scheduled</span>
+                <span class="title" translate="TODO.SCHEDULED">Scheduled</span>
             </div>
         </md-button>
 
-        <md-button class="item" aria-label="today">
+        <md-button class="item" aria-label="Today" translate translate-attr-aria-label="TODO.TODAY">
             <div layout="row" layout-align="start center">
                 <md-icon md-font-icon="icon-today" class="s16"></md-icon>
-                <span class="title">Today</span>
+                <span class="title" translate="TODO.TODAY">Today</span>
             </div>
         </md-button>
 
-        <md-button class="item" aria-label="done">
+        <md-button class="item" aria-label="Done" translate translate-attr-aria-label="TODO.DONE">
             <div layout="row" layout-align="start center">
                 <md-icon md-font-icon="icon-check" class="s16"></md-icon>
-                <span class="title">Done</span>
+                <span class="title" translate="TODO.DONE">Done</span>
             </div>
         </md-button>
 
-        <md-button class="item" aria-label="deleted">
+        <md-button class="item" aria-label="Deleted" translate translate-attr-aria-label="TODO.DELETED">
             <div layout="row" layout-align="start center">
                 <md-icon md-font-icon="icon-delete" class="s16"></md-icon>
-                <span class="title">Deleted</span>
+                <span class="title" translate="TODO.DELETED">Deleted</span>
             </div>
         </md-button>
 
-        <div class="item subheader">
+        <div class="item subheader" translate="TODO.TAGS">
             Tags
         </div>
 

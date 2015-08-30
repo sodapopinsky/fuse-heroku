@@ -13,7 +13,7 @@
         padding: 8px 24px 24px 24px;
 
         md-input-container {
-            padding: 4px 0;
+            padding: 8px 0;
 
             &.textarea-container {
                 padding: 2px;
@@ -21,6 +21,28 @@
 
                 textarea {
                     min-height: 150px;
+                }
+            }
+        }
+
+        .tags {
+            margin: 8px 0;
+            label {
+                font-size: 11px;
+                color: rgba(0,0,0,0.54);
+            }
+            .md-chips {
+                .md-chip {
+                    md-chip-template {
+                        .color {
+                            width: 16px;
+                            height: 16px;
+                            border-radius: 50%;
+                            display: inline-block;
+                            vertical-align: middle;
+                            margin: -2px 4px 0 0;
+                        }
+                    }
                 }
             }
         }

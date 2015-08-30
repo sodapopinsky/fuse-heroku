@@ -18,13 +18,14 @@
 
             <div class="search-wrapper md-whiteframe-z2" flex layout="row" layout-align="start center">
                 <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleSidenav('main-sidenav')" hide-gt-md
-                           aria-label="Toggle sidenav">
+                           aria-label="Toggle sidenav" translate translate-attr-aria-label="TODO.TOGGLE_SIDENAV">
                     <i class="icon icon-menu"></i>
                 </md-button>
 
                 <div class="search md-background-bg" flex layout="row" layout-align="start center">
                     <md-icon md-font-icon="icon-search" class="icon s24"></md-icon>
-                    <input flex ng-model="vm.search" type="text" placeholder="Search for a task or tag">
+                    <input flex ng-model="vm.search" type="text" placeholder="Search for a task or tag" translate
+                           translate-attr-placeholder="TODO.SEARCH">
                 </div>
             </div>
 
@@ -38,32 +39,48 @@
             <div class="toolbar" layout="row" layout-align="space-between center">
 
                 <div layout="row" layout-align="start center">
-                    <md-select class="simplified" ng-model="vm.selectedFilter.filter" placeholder="Filter">
-                        <md-option ng-repeat="filter in vm.filters.filter" value="{{filter}}">{{filter}}</md-option>
+                    <md-select class="simplified" ng-model="vm.selectedFilter.filter" placeholder="Filter" translate
+                               translate-attr-placeholder="TODO.FILTER">
+                        <md-option value="Start Date" translate="TODO.START_DATE">Start Date</md-option>
+                        <md-option value="Due Date" translate="TODO.DUE_DATE">Due Date</md-option>
+                        <md-option value="Manual" translate="TODO.MANUAL">Manual</md-option>
+                        <md-option value="Tag" translate="TODO.TAG">Tag</md-option>
+                        <md-option value="Title" translate="TODO.TITLE">Title</md-option>
                     </md-select>
 
                     <div class="divider-vertical"></div>
 
-                    <md-select class="simplified" ng-model="vm.selectedFilter.order" placeholder="Order">
-                        <md-option ng-repeat="order in vm.filters.order" value="{{order}}">{{order}}</md-option>
+                    <md-select class="simplified" ng-model="vm.selectedFilter.order" placeholder="Order" translate
+                               translate-attr-placeholder="TODO.ORDER">
+                        <md-option value="Ascending" translate="TODO.ASCENDING">Ascending</md-option>
+                        <md-option value="Descending" translate="TODO.DESCENDING">Descending</md-option>
                     </md-select>
 
                     <div class="divider-vertical"></div>
 
-                    <md-select class="simplified" ng-model="vm.selectedFilter.next" placeholder="Next..">
-                        <md-option ng-repeat="next in vm.filters.next" value="{{next}}">{{next}}</md-option>
+                    <md-select class="simplified" ng-model="vm.selectedFilter.next" placeholder="Interval" translate
+                               translate-attr-placeholder="TODO.INTERVAL">
+                        <md-option value="Next 3 days" translate="TODO.NEXT_3_DAYS">Next 3 days</md-option>
+                        <md-option value="Next 7 days" translate="TODO.NEXT_7_DAYS">Next 7 days</md-option>
+                        <md-option value="Next 2 weeks" translate="TODO.NEXT_2_WEEKS">Next 2 weeks</md-option>
+                        <md-option value="Next month" translate="TODO.NEXT_MONTH">Next month</md-option>
+
                     </md-select>
                 </div>
 
                 <div layout="row" layout-align="start center">
                     <span class="page-info">1 - 100 of 980</span>
 
-                    <md-button class="md-icon-button arrow" aria-label="previous">
+                    <md-button class="md-icon-button arrow" aria-label="Previous" translate
+                               translate-attr-aria-label="TODO.PREVIOUS">
                         <md-icon md-font-icon="icon-keyboard_arrow_left"></md-icon>
+                        <md-tooltip><span translate="MAIL.PREVIOUS">Previous</span></md-tooltip>
                     </md-button>
 
-                    <md-button class="md-icon-button arrow" aria-label="next">
+                    <md-button class="md-icon-button arrow" aria-label="Next" translate
+                               translate-attr-aria-label="TODO.NEXT">
                         <md-icon md-font-icon="icon-keyboard_arrow_right"></md-icon>
+                        <md-tooltip><span translate="MAIL.NEXT">Next</span></md-tooltip>
                     </md-button>
                 </div>
 
