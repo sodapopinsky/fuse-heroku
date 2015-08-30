@@ -9,12 +9,12 @@
             <!-- Front -->
             <ms-widget-front class="md-light-blue-bg" layout="column" flex>
                 <div class="padding-bottom-8" layout="row" layout-align="space-between center">
-                    <div class="h5 font-weight-500 secondary-text">{{vm.widget1.title}}</div>
+                    <div class="h4 font-weight-500 secondary-text">{{vm.widget1.title}}</div>
 
                     <md-menu>
                         <md-button aria-label="more" class="md-icon-button"
                                    ng-click="$mdOpenMenu($event)">
-                            <md-icon md-font-icon="icon-more_vert" class="s20"></md-icon>
+                            <md-icon md-font-icon="icon-dots-vertical" class="s20"></md-icon>
                         </md-button>
                         <md-menu-content width="2">
                             <md-menu-item>
@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="white-text" layout="column" layout-align="space-between" flex>
-                    <div class="h1" layout="row" layout-align="start center">
+                    <div class="md-display-1" layout="row" layout-align="start center">
                         <span>{{vm.widget1.value | number}}</span>
                         <md-icon md-font-icon="icon-trending_up" class="s36 margin-left-16"></md-icon>
                     </div>
@@ -68,12 +68,12 @@
             <!-- Front -->
             <ms-widget-front class="md-green-bg" layout="column" flex>
                 <div class="padding-bottom-8" layout="row" layout-align="space-between center">
-                    <div class="h5 font-weight-500 secondary-text">{{vm.widget2.title}}</div>
+                    <div class="h4 font-weight-500 secondary-text">{{vm.widget2.title}}</div>
 
                     <md-menu>
                         <md-button aria-label="more" class="md-icon-button"
                                    ng-click="$mdOpenMenu($event)">
-                            <md-icon md-font-icon="icon-more_vert" class="s20"></md-icon>
+                            <md-icon md-font-icon="icon-dots-vertical" class="s20"></md-icon>
                         </md-button>
                         <md-menu-content width="2">
                             <md-menu-item>
@@ -92,7 +92,7 @@
 
                 <div class="white-text" layout="column" layout-align="space-between" flex>
                     <div>
-                        <div class="h1 padding-bottom-16">{{vm.widget2.value}}%</div>
+                        <div class="md-display-1 padding-bottom-16">{{vm.widget2.value}}%</div>
 
                         <div class="padding-bottom-16">
                             <md-progress-linear md-mode="determinate" value="{{vm.widget2.value}}"></md-progress-linear>
@@ -130,12 +130,12 @@
             <!-- Front -->
             <ms-widget-front class="md-blue-grey-bg white-text" layout="column" flex>
                 <div class="padding-bottom-8" layout="row" layout-align="space-between center">
-                    <div class="h5 font-weight-500 secondary-text">{{vm.widget3.title}}</div>
+                    <div class="h4 font-weight-500 secondary-text">{{vm.widget3.title}}</div>
 
                     <md-menu>
                         <md-button aria-label="more" class="md-icon-button"
                                    ng-click="$mdOpenMenu($event)">
-                            <md-icon md-font-icon="icon-more_vert" class="s20"></md-icon>
+                            <md-icon md-font-icon="icon-dots-vertical" class="s20"></md-icon>
                         </md-button>
                         <md-menu-content width="2">
                             <md-menu-item>
@@ -154,7 +154,7 @@
 
                 <div layout="column" layout-align="space-between" flex>
                     <div>
-                        <div class="h1 padding-bottom-16">{{vm.widget3.value}}%</div>
+                        <div class="md-display-1 padding-bottom-16">{{vm.widget3.value}}%</div>
 
                         <div class="padding-bottom-8">
                             <md-progress-linear md-mode="determinate" value="{{vm.widget3.value}}"></md-progress-linear>
@@ -189,12 +189,12 @@
             <!-- Front -->
             <ms-widget-front class="md-deep-purple-bg white-text" layout="column" flex>
                 <div class="padding-bottom-8" layout="row" layout-align="space-between center">
-                    <div class="h5 font-weight-500 secondary-text">{{vm.widget4.title}}</div>
+                    <div class="h4 font-weight-500 secondary-text">{{vm.widget4.title}}</div>
 
                     <md-menu>
                         <md-button aria-label="more" class="md-icon-button"
                                    ng-click="$mdOpenMenu($event)">
-                            <md-icon md-font-icon="icon-more_vert" class="s20"></md-icon>
+                            <md-icon md-font-icon="icon-dots-vertical" class="s20"></md-icon>
                         </md-button>
                         <md-menu-content width="2">
                             <md-menu-item>
@@ -212,7 +212,7 @@
                 </div>
 
                 <div layout="column" layout-align="space-between" flex>
-                    <div class="h1 padding-bottom-8" layout="row" layout-align="start center">
+                    <div class="md-display-1 padding-bottom-8" layout="row" layout-align="start center">
                         <span>{{vm.widget4.value | number}}</span>
                         <md-icon md-font-icon="icon-trending_down" class="s36 margin-left-16"></md-icon>
                     </div>
@@ -252,7 +252,7 @@
             <!-- Front -->
             <ms-widget-front class="md-white-bg" layout="row" flex>
                 <div class="padding-top-8 padding-bottom-8" layout="column" layout-align="center center" flex>
-                    <div class="h1 padding-bottom-8">{{vm.widget5.value}}</div>
+                    <div class="md-display-1 padding-bottom-8">{{vm.widget5.value}}</div>
                     <div class="font-weight-500 secondary-text">{{vm.widget5.title}}</div>
                 </div>
             </ms-widget-front>
@@ -268,7 +268,7 @@
             <ms-widget-front class="md-white-bg" layout="row" flex>
                 <div class="padding-top-8 padding-bottom-8" layout="column" layout-align="center center" flex>
                     <div class="font-weight-500 secondary-text padding-bottom-8">{{vm.widget6.title}}</div>
-                    <div class="h1">{{vm.widget6.value}}</div>
+                    <div class="md-display-1">{{vm.widget6.value}}</div>
                 </div>
             </ms-widget-front>
             <!-- / Front -->
@@ -283,7 +283,7 @@
             <ms-widget-front class="md-white-bg" layout="row" flex>
                 <div class="padding-top-8 padding-bottom-8" layout="row" layout-align="space-between center" flex>
                     <div class="padding-left-8" layout="column" layout-align="center start">
-                        <span class="h1 padding-bottom-8">{{vm.widget7.value}}</span>
+                        <span class="md-display-1 padding-bottom-8">{{vm.widget7.value}}</span>
                         <span class="font-weight-500 secondary-text">{{vm.widget7.title}}</span>
                     </div>
 
@@ -308,7 +308,7 @@
                     </div>
 
                     <div class="padding-right-8" layout="column" layout-align="center end">
-                        <div class="h1 padding-bottom-8">{{vm.widget8.value}}</div>
+                        <div class="md-display-1 padding-bottom-8">{{vm.widget8.value}}</div>
                         <div class="font-weight-500 secondary-text">{{vm.widget8.title}}</div>
                     </div>
                 </div>
@@ -333,7 +333,7 @@
             <ms-widget-front class="md-deep-orange-bg white-text" layout="row" flex>
                 <div layout="column" layout-align="center center" flex>
                     <div class="md-display-3 padding-bottom-8">{{vm.widget9.value}}</div>
-                    <div class="h4 font-weight-500">{{vm.widget9.title}}</div>
+                    <div class="h3 font-weight-500">{{vm.widget9.title}}</div>
                 </div>
 
                 <div class="background-image-center">
@@ -353,7 +353,7 @@
             <ms-widget-front class="md-cyan-bg white-text" layout="row" flex>
                 <div layout="column" layout-align="center center" flex>
                     <div class="md-display-3 padding-bottom-8">{{vm.widget10.value}}</div>
-                    <div class="h4 font-weight-500">{{vm.widget10.title}}</div>
+                    <div class="h3 font-weight-500">{{vm.widget10.title}}</div>
                 </div>
 
                 <div class="background-image-center">
@@ -373,7 +373,7 @@
             <ms-widget-front class="md-teal-bg white-text" layout="row" flex>
                 <div layout="column" layout-align="center center" flex>
                     <div class="md-display-3 padding-bottom-8">{{vm.widget11.value}}</div>
-                    <div class="h4 font-weight-500">{{vm.widget11.title}}</div>
+                    <div class="h3 font-weight-500">{{vm.widget11.title}}</div>
                 </div>
 
                 <div class="background-image-center">
@@ -399,7 +399,7 @@
             <!-- Front -->
             <ms-widget-front class="md-light-blue-bg" layout="column" flex>
                 <div class="padding-bottom-8" layout="row" layout-align="space-between center">
-                    <div class="h5 secondary-text">
+                    <div class="h4 secondary-text">
                         <md-icon md-font-icon="icon-arrow_back" class="s16 margin-right-8"></md-icon>
                         <span class="font-weight-500">{{vm.widget12.date}}</span>
                         <md-icon md-font-icon="icon-arrow_forward" class="s16 margin-left-8"></md-icon>
@@ -408,7 +408,7 @@
                     <md-menu>
                         <md-button aria-label="more" class="md-icon-button"
                                    ng-click="$mdOpenMenu($event)">
-                            <md-icon md-font-icon="icon-more_vert" class="s20"></md-icon>
+                            <md-icon md-font-icon="icon-dots-vertical" class="s20"></md-icon>
                         </md-button>
                         <md-menu-content width="2">
                             <md-menu-item>
@@ -434,8 +434,8 @@
                         <div class="md-display-2">{{vm.widget12.temperature}}&deg;</div>
 
                         <div class="padding-left-16" layout="column">
-                            <div class="h2 semibold">{{vm.widget12.event}}</div>
-                            <div class="h5 secondary-text">{{vm.widget12.location}}</div>
+                            <div class="h1 semibold">{{vm.widget12.event}}</div>
+                            <div class="h4 secondary-text">{{vm.widget12.location}}</div>
                         </div>
                     </div>
 
@@ -463,14 +463,14 @@
                 </div>
 
                 <div class="padding-top-16 padding-bottom-16 white-text">
-                    <span class="h2">Next 5 days</span>
+                    <span class="h1">Next 5 days</span>
                 </div>
 
                 <div class="padding-left-8 padding-right-8" layout="row" layout-align="space-between">
                     <div layout="column" layout-align="start center" ng-repeat="detail in vm.widget12.detail">
-                        <div class="h5 padding-bottom-8 black-text secondary-text ">{{detail.day}}</div>
+                        <div class="h4 padding-bottom-8 black-text secondary-text ">{{detail.day}}</div>
                         <md-icon md-font-icon="{{detail.icon}}" class="s36 white-text"></md-icon>
-                        <div class="h4 padding-top-8 white-text">{{detail.temperature}}&deg;</div>
+                        <div class="h3 padding-top-8 white-text">{{detail.temperature}}&deg;</div>
                     </div>
                 </div>
             </ms-widget-back>
