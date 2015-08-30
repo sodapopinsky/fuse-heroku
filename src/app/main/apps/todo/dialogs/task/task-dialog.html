@@ -14,6 +14,7 @@
                 <label translate="TODO.TITLE">Title</label>
                 <input ng-model="vm.task.title">
             </md-input-container>
+
             <div class="tags">
                 <label translate="TODO.TAGS">Tags</label>
                 <md-chips ng-model="vm.task.tags" md-on-append="vm.newTag($chip)">
@@ -23,6 +24,7 @@
                     </md-chip-template>
                 </md-chips>
             </div>
+            
             <div layout="row">
                 <md-input-container flex>
                     <label translate="TODO.START_DATE">Start Date</label>
