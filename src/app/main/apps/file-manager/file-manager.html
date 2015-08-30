@@ -18,7 +18,7 @@
                 <md-button class="md-icon-button main-sidenav-toggle" ng-click="vm.toggleSidenav('main-sidenav')"
                            aria-label="Toggle Main Sidenav" translate
                            translate-attr-aria-label="FILE.TOOGLE_MAIN_SIDENAV">
-                    <i class="icon icon-menu"></i>
+                    <md-icon md-font-icon="icon-menu" class="icon"></md-icon>
                 </md-button>
 
                 <div class="right-side" layout="row">
@@ -49,7 +49,7 @@
             <!-- BREADCRUMB -->
             <div class="breadcrumb" layout="row" layout-align="start center">
                 <span data-ng-repeat="path in vm.path">{{path}}
-                    <i class="icon icon-chevron-right separator"></i>
+                    <md-icon md-font-icon="icon-chevron-right" class="icon separator"></md-icon>
                 </span>
             </div>
             <!-- / BREADCRUMB -->
