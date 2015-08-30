@@ -23,7 +23,7 @@
                 </md-button>
 
                 <div class="search md-background-bg" flex layout="row" layout-align="start center">
-                    <md-icon md-font-icon="icon-search" class="icon md-background-bg s24"></md-icon>
+                    <md-icon md-font-icon="icon-magnify" class="icon md-background-bg s24"></md-icon>
                     <input flex ng-model="vm.search" type="text" placeholder="Search for an e-mail or contact" translate
                            translate-attr-placeholder="MAIL.SEARCH_PLACEHOLDER">
                 </div>
@@ -46,7 +46,7 @@
                                    ng-click="$mdOpenMenu($event)"
                                    aria-label="Filters"
                                    translate translate-attr-aria-label="MAIL.FILTERS">
-                            <md-icon md-font-icon="icon-arrow_drop_down"></md-icon>
+                            <md-icon md-font-icon="icon-menu-down"></md-icon>
                         </md-button>
                         <md-menu-content width="3">
                             <md-menu-item>
@@ -92,7 +92,7 @@
 
                     <md-button class="md-icon-button" aria-label="Report Spam" translate
                                translate-attr-aria-label="MAIL.REPORT_SPAM">
-                        <md-icon md-font-icon="icon-report"></md-icon>
+                        <md-icon md-font-icon="icon-alert-octagon"></md-icon>
                         <md-tooltip><span translate="MAIL.REPORT_SPAM">Report Spam</span></md-tooltip>
                     </md-button>
 
@@ -117,7 +117,7 @@
                     </md-button>
                 </div>
 
-                <div layout="row" layout-align="start center" translate translate-attr-aria-label="MAIL.REFRESH">
+                <div layout="row" layout-align="start center" translate-attr-aria-label="MAIL.REFRESH">
                     <md-button class="md-icon-button" aria-label="Refresh">
                         <md-icon md-font-icon="icon-refresh"></md-icon>
                         <md-tooltip><span translate="MAIL.REFRESH">Refresh</span></md-tooltip>
@@ -127,13 +127,13 @@
 
                     <md-button class="md-icon-button arrow" aria-label="Previous" translate
                                translate-attr-aria-label="MAIL.PREVIOUS">
-                        <md-icon md-font-icon="icon-keyboard_arrow_left"></md-icon>
+                        <md-icon md-font-icon="icon-chevron-left"></md-icon>
                         <md-tooltip><span translate="MAIL.PREVIOUS">Previous</span></md-tooltip>
                     </md-button>
 
                     <md-button class="md-icon-button arrow" aria-label="Next" translate
                                translate-attr-aria-label="MAIL.NEXT">
-                        <md-icon md-font-icon="icon-keyboard_arrow_right"></md-icon>
+                        <md-icon md-font-icon="icon-chevron-right"></md-icon>
                         <md-tooltip><span translate="MAIL.NEXT">Next</span></md-tooltip>
                     </md-button>
                 </div>
