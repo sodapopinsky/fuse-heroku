@@ -1,8 +1,9 @@
-<div class="themes" ng-class="{'opened': vm.isOpen}">
+<div class="themes">
     <md-button ng-repeat="(themeName, theme) in vm.themes.list" aria-label="{{themeName}}"
                class="theme md-fab md-raised md-mini md-primary "
                ng-style="{'background-color': theme.primary.color}"
-               ng-click="vm.setActiveTheme(themeName)">
+               ng-click="vm.setActiveTheme(themeName)"
+               ng-show="vm.isOpen">
         <md-icon md-font-icon="icon-palette" class="s24"></md-icon>
     </md-button>
 </div>
