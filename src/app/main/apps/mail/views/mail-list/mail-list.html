@@ -19,8 +19,9 @@
         </div>
 
         <div class="info" flex layout="column">
-            <div class="name">
-                {{mail.from.name}}
+            <div class="name" layout="row" layout-align="start center">
+                <span>{{mail.from.name}}</span>
+                <md-icon md-font-icon="icon-paperclip" class="has-attachment s16" ng-if="mail.hasAttachments"></md-icon>
             </div>
 
             <div class="subject">
