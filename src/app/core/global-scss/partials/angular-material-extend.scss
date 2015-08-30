@@ -31,6 +31,17 @@ md-dialog {
     }
 }
 
+// Lists
+md-list-item {
+
+    .md-list-item-text {
+
+        p {
+            font-size: 13px !important;
+        }
+    }
+}
+
 // Menu
 .md-menu {
     padding: 0;
