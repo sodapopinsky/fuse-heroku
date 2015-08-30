@@ -2,7 +2,7 @@
     background-image: url('/assets/images/backgrounds/march.jpg');
     background-size: 100% auto;
 
-    md-whiteframe {
+    #coming-soon-form {
 
         .top {
             padding: 32px;
@@ -47,10 +47,8 @@
             }
         }
 
-
         form {
             background-color: rgba(0, 0, 0, 0.03);
-            font-size: 15px;
             width: 100%;
             padding: 32px;
 
@@ -61,7 +59,6 @@
             }
 
             md-input-container {
-                padding: 12px 0;
                 min-width: 320px;
                 width: 350px;
                 margin: 8px auto 16px auto;

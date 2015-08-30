@@ -1,4 +1,4 @@
-<md-dialog aria-label="New Message" id="event-dialog">
+<md-dialog id="event-dialog" aria-label="New Message">
     <form>
         <md-toolbar class="md-accent md-hue-2">
             <div class="md-toolbar-tools">
@@ -16,10 +16,12 @@
                 <input ng-model="vm.event.title">
             </md-input-container>
 
-            <div class="all-day" layout="row" layout-align="space-between center">
-                <div>All Day</div>
-                <md-switch class="md-secondary" ng-model="vm.event.allday" aria-label="allday"></md-switch>
-            </div>
+            <md-list class="all-day">
+                <md-list-item>
+                    <p>All Day</p>
+                    <md-switch class="md-secondary" ng-model="vm.event.allday" aria-label="allday"></md-switch>
+                </md-list-item>
+            </md-list>
 
             <div layout="row" class="date-row">
                 <md-input-container flex>
@@ -33,7 +35,7 @@
                 </md-input-container>
             </div>
 
-            <div layout="row"  class="date-row">
+            <div layout="row" class="date-row">
                 <md-input-container flex>
                     <label>End Date</label>
                     <input ng-model="vm.event.endDate">

@@ -1,4 +1,6 @@
 #compose-dialog {
+    min-width: 720px;
+    width: 720px;
 
     md-toolbar {
 
@@ -7,50 +9,36 @@
         }
     }
 
-    md-dialog-content {
-        font-size: 15px;
-        min-width: 720px;
-        width: 720px;
-        padding: 24px 24px 16px 24px;
+    md-input-container {
 
-        md-input-container {
-            padding: 4px 0;
-
-            &.textarea-container {
-                padding: 2px;
-                padding-bottom: 26px;
-
-                textarea {
-                    min-height: 150px;
-                }
-            }
+        textarea {
+            min-height: 150px;
         }
+    }
 
-        .attachment-list {
-            font-size: 13px;
+    .attachment-list {
 
-            .attachment {
-                background-color: rgba(0, 0, 0, 0.08);
-                border: 1px solid rgba(0, 0, 0, 0.16);
-                padding-left: 16px;
-                margin: 8px 0;
-                border-radius: 2px;
+        .attachment {
+            background-color: rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.16);
+            padding-left: 16px;
+            margin: 8px 0;
+            border-radius: 2px;
 
-                .filename {
-                    font-weight: 500;
-                }
+            .filename {
+                font-weight: 500;
+            }
 
-                .size {
+            .size {
 
-                }
+            }
 
-                .md-button {
-                    margin: 0;
-                }
+            .md-button {
+                margin: 0;
+            }
 
-                &:last-child {
-                    margin-bottom: 0;
-                }
+            &:last-child {
+                margin-bottom: 0;
             }
         }
     }
@@ -61,4 +49,3 @@
         background-color: rgba(0, 0, 0, 0.03);
     }
 }
-

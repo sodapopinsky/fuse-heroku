@@ -79,38 +79,38 @@
 
         vm.widget12 = {
             date       : 'June 27, Saturday',
-            temperature: 32,
+            temperature: 28,
             event      : 'Sunny',
-            icon       : 'icon-sun',
+            icon       : 'icon-weather-cloudy',
             location   : 'New York, NY',
             detail     : [
                 {
                     day        : 'Sun',
-                    icon       : 'icon-rainy2',
+                    icon       : 'icon-weather-rainy',
                     temperature: 24,
                     event      : 'Rainy'
                 },
                 {
                     day        : 'Mon',
-                    icon       : 'icon-rainy',
+                    icon       : 'icon-weather-pouring',
                     temperature: 23,
                     event      : 'Rainy'
                 },
                 {
                     day        : 'Tue',
-                    icon       : 'icon-cloud3',
+                    icon       : 'icon-weather-cloudy',
                     temperature: 29,
                     event      : 'Overcast'
                 },
                 {
                     day        : 'Wed',
-                    icon       : 'icon-sun',
+                    icon       : 'icon-weather-partlycloudy',
                     temperature: 28,
                     event      : 'Sunny'
                 },
                 {
                     day        : 'Thu',
-                    icon       : 'icon-sun',
+                    icon       : 'icon-weather-partlycloudy',
                     temperature: 31,
                     event      : 'Sunny'
                 }

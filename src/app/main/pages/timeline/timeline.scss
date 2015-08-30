@@ -25,6 +25,10 @@
         .timeline-card {
             padding-right: 84px;
             order: 1;
+
+            .ms-card {
+                max-width: none !important;
+            }
         }
 
         .timeline-point {

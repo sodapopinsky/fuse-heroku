@@ -9,7 +9,6 @@
             <th translate="FM.SIZE">Size</th>
             <th translate="FM.LAST_MODIFIED">Last Modified</th>
             <th hide-gt-md></th>
-            <th></th>
         </tr>
     </thead>
 
@@ -17,7 +16,7 @@
         <tr ng-repeat="folder in vm.folders" ng-click="vm.select(folder)"
             ng-class="{'selected' : vm.selected === folder}">
             <td class="file-icon">
-                <i class="icon-" ng-class="folder.type"></i>
+                <md-icon md-font-icon="icon-{{folder.type}}"></md-icon>
             </td>
             <td class="name">{{folder.name}}</td>
             <td class="type">{{folder.type}}</td>
@@ -26,17 +25,14 @@
             <td class="last-modified">{{folder.modified}}</td>
             <td class="show-details" hide-gt-md>
                 <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleDetails(folder)" aria-label="Toggle details sidenav">
-                    <md-icon md-font-icon="icon-info"></md-icon>
+                    <md-icon md-font-icon="icon-information-outline"></md-icon>
                 </md-button>
-            </td>
-            <td class="more">
-                <md-icon md-font-icon="icon-more_vert"></md-icon>
             </td>
         </tr>
 
         <tr ng-repeat="file in vm.files" ng-click="vm.select(file)" ng-class="{'selected' : vm.selected === file}">
             <td class="file-icon">
-                <i class="icon-" ng-class="file.type"></i>
+                <md-icon md-font-icon="icon-{{file.type}}"></md-icon>
             </td>
             <td class="name">{{file.name}}</td>
             <td class="type">{{file.type}}</td>
@@ -45,11 +41,8 @@
             <td class="last-modified">{{file.modified}}</td>
             <td class="show-details" hide-gt-md>
                 <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleDetails(file)" aria-label="Details" translate translate-attr-aria-label="FM.DETAILS">
-                    <md-icon md-font-icon="icon-info"></md-icon>
+                    <md-icon md-font-icon="icon-information-outline"></md-icon>
                 </md-button>
-            </td>
-            <td class="more">
-                <md-icon md-font-icon="icon-more_vert"></md-icon>
             </td>
         </tr>
     </tbody>

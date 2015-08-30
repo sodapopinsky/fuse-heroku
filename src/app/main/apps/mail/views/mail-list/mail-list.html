@@ -19,8 +19,9 @@
         </div>
 
         <div class="info" flex layout="column">
-            <div class="name">
-                {{mail.from.name}}
+            <div class="name" layout="row" layout-align="start center">
+                <span>{{mail.from.name}}</span>
+                <md-icon md-font-icon="icon-paperclip" class="has-attachment s16" ng-if="mail.hasAttachments"></md-icon>
             </div>
 
             <div class="subject">
@@ -39,7 +40,7 @@
                        aria-label="Toggle starred" translate translate-attr-toogle-starred="MAIL.TOGGLE_STARRED">
                 <md-icon ng-if="mail.starred" md-font-icon="icon-star"
                          class="md-amber-fg"></md-icon>
-                <md-icon ng-if="!mail.starred" md-font-icon="icon-star_outline"></md-icon>
+                <md-icon ng-if="!mail.starred" md-font-icon="icon-star-outline"></md-icon>
             </md-button>
         </div>
     </div>
