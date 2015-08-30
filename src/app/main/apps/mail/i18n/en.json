@@ -52,6 +52,8 @@
         "CC": "Cc",
         "BCC": "Bcc",
         "MESSAGE": "Message",
-        "DELETE_ATTACHMENT": "Delete Attachment"
+        "DELETE_ATTACHMENT": "Delete Attachment",
+        "NEXT": "Next",
+        "PREVIOUS": "Previous"
     }
 }
