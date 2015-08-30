@@ -4,14 +4,14 @@
             {
                 "name": "Alice Freeman",
                 "avatar": "assets/images/avatars/alice.png",
-                "message": "Alice Freeman uploaded new documents",
+                "message": "Alice uploaded a document",
                 "status": "online",
                 "time": "13 mins. ago"
             },
             {
                 "name": "Joyce Walters",
                 "avatar": "assets/images/avatars/joyce.png",
-                "message": "Joyce Walters sent you a message",
+                "message": "Joyce sent you a message",
                 "status": "away",
                 "time": "A day ago"
             }

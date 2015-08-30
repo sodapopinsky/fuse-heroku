@@ -43,14 +43,6 @@
                         background-color: #FF6D00;
                     }
                 }
-
-                .message {
-                    font-size: 13px;
-                }
-
-                .time {
-                    font-size: 11px;
-                }
             }
         }
 
@@ -58,15 +50,8 @@
 
             .server {
 
-                .md-list-item-text {
-
-                    > p {
-                        font-size: 13px;
-                    }
-                }
-
                 .status {
-                    margin-top: 24px;
+                    margin: 24px 20px 28px 8px;
 
                     &.normal {
                         color: #00C853;
@@ -84,13 +69,6 @@
         }
 
         .stat {
-
-            .md-list-item-text {
-
-                > span {
-                    font-size: 13px;
-                }
-            }
 
             md-progress-linear {
 
@@ -130,5 +108,3 @@
         }
     }
 }
-
-

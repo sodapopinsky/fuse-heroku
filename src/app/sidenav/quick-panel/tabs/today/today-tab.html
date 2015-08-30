@@ -1,7 +1,7 @@
 <md-list class="date">
     <md-subheader>Today</md-subheader>
     <md-list-item class="md-display-1 md-2-line" layout="column" layout-align="start start">
-        <div class="md-list-item-text">
+        <div class="md-list-item-text secondary-text">
             <div> {{vm.date | date:'EEEE'}}</div>
             <div layout="row" layout-align="start start">
                 <span> {{vm.date | date:'d'}}</span>
@@ -17,12 +17,11 @@
 <md-list>
     <md-subheader>Events</md-subheader>
 
-    <md-list-item class="md-2-line" ng-repeat="event in vm.events">
+    <md-list-item class="md-2-line" ng-repeat="event in vm.events" ng-click="dummyFunction()">
         <div class="md-list-item-text">
-            <span>{{event.title}}</span>
+            <h3>{{event.title}}</h3>
             <p>{{event.detail}}</p>
         </div>
-        <md-icon md-font-icon="icon-more_vert" class="s24"></md-icon>
     </md-list-item>
 </md-list>
 
@@ -30,12 +29,11 @@
 
 <md-list>
     <md-subheader>Notes</md-subheader>
-    <md-list-item class="md-2-line" ng-repeat="note in vm.notes">
+    <md-list-item class="md-2-line" ng-repeat="note in vm.notes" ng-click="dummyFunction()">
         <div class="md-list-item-text">
-            <span>{{note.title}}</span>
+            <h3>{{note.title}}</h3>
             <p>{{note.detail}}</p>
         </div>
-        <md-icon md-font-icon="icon-more_vert" class="s24"></md-icon>
     </md-list-item>
 </md-list>
 
@@ -45,17 +43,17 @@
     <md-subheader>Quick Settings</md-subheader>
 
     <md-list-item>
-        <p>Notifications</p>
-        <md-switch class="md-secondary" ng-model="vm.settings.notify"></md-switch>
+        <h3>Notifications</h3>
+        <md-switch class="md-secondary" ng-model="vm.settings.notify" aria-label="Notifications"></md-switch>
     </md-list-item>
 
     <md-list-item>
-        <p>Cloud Sync</p>
-        <md-switch class="md-secondary" ng-model="vm.settings.cloud"></md-switch>
+        <h3>Cloud Sync</h3>
+        <md-switch class="md-secondary" ng-model="vm.settings.cloud" aria-label="Cloud Sync"></md-switch>
     </md-list-item>
 
     <md-list-item>
-        <p>Retro Thrusters</p>
-        <md-switch class="md-secondary md-warn" ng-model="vm.settings.retro"></md-switch>
+        <h3>Retro Thrusters</h3>
+        <md-switch class="md-secondary md-warn" ng-model="vm.settings.retro" aria-label="Retro Thrusters"></md-switch>
     </md-list-item>
 </md-list>
