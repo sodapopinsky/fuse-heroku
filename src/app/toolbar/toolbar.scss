@@ -21,6 +21,11 @@ $toolbarHeight: 64px;
         margin: 0;
         border-right: 1px solid rgba(0, 0, 0, 0.13);
         border-radius: 0;
+
+        md-icon {
+            transition: 300ms ease all;
+        }
+
     }
 
     #search {
@@ -63,7 +68,8 @@ $toolbarHeight: 64px;
         #navigation-sidenav-mode-toggle {
 
             md-icon {
-                transform: rotate(180deg);
+                transition: 300ms ease all;
+                transform: rotate(-180deg);
             }
         }
     }
