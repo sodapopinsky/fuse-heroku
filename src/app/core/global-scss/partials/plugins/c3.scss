@@ -4,10 +4,9 @@
 
 .c3 {
     transition: all 300ms ease;
-//    width: 100%;
+
     svg {
         font: 12px RobotoDraft, Roboto, 'Helvetica Neue', sans-serif;
-//        max-width: 100%;
     }
 
     path, line {
@@ -55,8 +54,7 @@
     }
 
     .c3-selected-circle {
-        //        fill: white;
-        //        stroke-width: 1px;
+
     }
 
     .c3-chart-arc {
@@ -172,7 +170,6 @@
         padding: 4px 0;
         tr {
             border: none;
-            //            border: 1px solid #CCC;
         }
         th {
             background-color: transparent;
@@ -186,7 +183,6 @@
             font-size: 13px;
             padding: 4px 12px !important;
             background-color: #fff;
-            //            border-left: 1px dotted #999;
             border-left: none;
             color:rgba(0,0,0,0.84);
 
@@ -239,6 +235,5 @@
 
     .c3-chart-arc .c3-gauge-value {
         fill: #000;
-        /*  font-size: 28px !important;*/
     }
 }

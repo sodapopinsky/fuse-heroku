@@ -121,7 +121,6 @@
                         text-align: left;
                         border: none;
                         font-weight: 500;
-                        font-size: 13px;
                         padding: 8px;
                     }
                 }
@@ -143,8 +142,8 @@
                     .fc-time-grid-container {
                         overflow: hidden;
                         height: auto !important;
+
                         .fc-axis {
-                            font-size: 13px;
                             font-weight: 500;
                             border: none;
                         }
@@ -153,8 +152,8 @@
 
                 .fc-day-grid-event {
                     margin: 4px 8px 0 8px;
-                    font-size: 13px;
                     padding: 2px 4px;
+                    font-size: 13px;
                 }
 
                 .fc-month-view {
