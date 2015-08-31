@@ -60,6 +60,7 @@
         "document": false,
         "PerfectScrollbar": false,
         "MobileDetect": false,
-        "hljs": false
+        "hljs": false,
+        "d3": false
     }
 }
