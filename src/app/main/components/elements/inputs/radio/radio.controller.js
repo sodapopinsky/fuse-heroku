@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.components')
+    angular
+        .module('app.components.elements.inputs.radio')
         .controller('RadioController', RadioController);
 
     /** @ngInject */
@@ -17,6 +18,5 @@
 
         //////////
     }
+
 })();
-
-

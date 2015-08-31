@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.components')
+        .module('app.components.widgets.chart')
         .controller('ChartWidgetsController', ChartWidgetsController);
 
     /** @ngInject */
@@ -149,4 +149,5 @@
 
         //////////
     }
+
 })();

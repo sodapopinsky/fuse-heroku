@@ -1,11 +1,14 @@
-(function () {
+(function ()
+{
     'use strict';
 
-    angular.module('app.components')
+    angular
+        .module('app.components.elements.sidenav')
         .controller('SidenavController', SidenavController);
 
     /** @ngInject */
-    function SidenavController($mdSidenav) {
+    function SidenavController($mdSidenav)
+    {
         var vm = this;
 
         // Data
@@ -17,19 +20,21 @@
 
         //////////
 
-        function toggleLeftSidenav() {
+        function toggleLeftSidenav()
+        {
             $mdSidenav('left-sidenav').toggle();
         }
 
 
-        function toggleLeftSidenavLocked() {
+        function toggleLeftSidenavLocked()
+        {
             $mdSidenav('left-sidenav-locked').toggle();
         }
 
-        function toggleRightSidenav() {
+        function toggleRightSidenav()
+        {
             $mdSidenav('right-sidenav').toggle();
         }
     }
+
 })();
-
-

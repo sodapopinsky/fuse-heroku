@@ -1,11 +1,14 @@
-(function () {
+(function ()
+{
     'use strict';
 
-    angular.module('app.components')
+    angular
+        .module('app.components.elements.toast')
         .controller('ToastController', ToastController);
 
     /** @ngInject */
-    function ToastController($mdToast) {
+    function ToastController($mdToast)
+    {
         var vm = this;
 
         // Data
@@ -16,7 +19,8 @@
         vm.showCustomToast = showCustomToast;
 
         //////////
-        function showSimpleToast() {
+        function showSimpleToast()
+        {
             $mdToast.show(
                 $mdToast.simple()
                     .content('Simple Toast!')
@@ -25,32 +29,36 @@
             );
         }
 
-        function showActionToast() {
+        function showActionToast()
+        {
             var toast = $mdToast.simple()
                 .content('Action Toast!')
                 .action('OK')
                 .highlightAction(false)
                 .position('top left');
-            $mdToast.show(toast).then(function () {
+            $mdToast.show(toast).then(function ()
+            {
                 alert('You clicked \'OK\'.');
             });
         }
 
-        function showCustomToast() {
+        function showCustomToast()
+        {
             $mdToast.show({
-                controller: ToastCtrl,
+                controller : ToastCtrl,
                 templateUrl: 'toast-template.html',
-                hideDelay: 6000,
-                position: 'bottom right'
+                hideDelay  : 6000,
+                position   : 'bottom right'
             });
         }
 
-        function ToastCtrl($scope, $mdToast) {
-            $scope.closeToast = function () {
+        function ToastCtrl($scope, $mdToast)
+        {
+            $scope.closeToast = function ()
+            {
                 $mdToast.hide();
             };
         }
     }
+
 })();
-
-

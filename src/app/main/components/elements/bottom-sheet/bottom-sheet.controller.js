@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.components')
+    angular
+        .module('app.components.elements.bottom-sheet')
         .controller('BottomSheetController', BottomSheetController);
 
     /** @ngInject */
@@ -17,6 +18,7 @@
         // Methods
         vm.showGridBottomSheet = showGridBottomSheet;
         vm.showListBottomSheet = showListBottomSheet;
+
         //////////
 
         function showListBottomSheet($event)
@@ -101,6 +103,5 @@
             };
         }
     }
+
 })();
-
-

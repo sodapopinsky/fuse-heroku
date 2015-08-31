@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.components')
+        .module('app.components.cards')
         .controller('CardsController', CardsController);
 
     /** @ngInject */
@@ -21,4 +21,5 @@
 
         //////////
     }
+
 })();

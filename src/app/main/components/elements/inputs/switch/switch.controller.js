@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.components')
+    angular
+        .module('app.components.elements.inputs.switch')
         .controller('SwitchController', SwitchController);
 
     /** @ngInject */
@@ -17,6 +18,5 @@
 
         //////////
     }
+
 })();
-
-

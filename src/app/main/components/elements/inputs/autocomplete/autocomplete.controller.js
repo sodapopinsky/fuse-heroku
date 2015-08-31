@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.components')
+    angular
+        .module('app.components.elements.inputs.autocomplete')
         .controller('AutocompleteController', AutocompleteController);
 
     /** @ngInject */
@@ -72,4 +73,5 @@
             };
         }
     }
+
 })();

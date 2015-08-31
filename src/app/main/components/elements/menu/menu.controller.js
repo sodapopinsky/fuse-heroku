@@ -1,11 +1,13 @@
-(function () {
+(function ()
+{
     'use strict';
 
     angular
-        .module('app.components')
+        .module('app.components.elements.menu')
         .controller('MenuController', MenuController);
 
-    function MenuController($mdDialog) {
+    function MenuController($mdDialog)
+    {
         var vm = this;
 
         // Data
@@ -18,11 +20,13 @@
 
         //////////
 
-        function toggleNotifications() {
+        function toggleNotifications()
+        {
             vm.notificationsEnabled = !vm.notificationsEnabled;
         }
 
-        function redial(e) {
+        function redial(e)
+        {
             $mdDialog.show(
                 $mdDialog.alert()
                     .title('Suddenly, a redial')
@@ -31,8 +35,10 @@
             );
         }
 
-        function checkVoicemail() {
+        function checkVoicemail()
+        {
             // This never happens.
         }
     }
+
 })();

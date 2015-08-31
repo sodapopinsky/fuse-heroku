@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.components')
+    angular
+        .module('app.components.elements.dialog')
         .controller('DialogController', DialogController);
 
     /** @ngInject */
@@ -19,6 +20,7 @@
         vm.showConfirm = showConfirm;
 
         //////////
+
         function showAlert(ev)
         {
             // Appending dialog to document.body to cover sidenav in docs app
@@ -64,10 +66,12 @@
                     {
                         $mdDialog.hide();
                     };
+
                     $scope.cancel = function ()
                     {
                         $mdDialog.cancel();
                     };
+
                     $scope.answer = function (answer)
                     {
                         $mdDialog.hide(answer);
@@ -87,6 +91,5 @@
                 });
         }
     }
+
 })();
-
-

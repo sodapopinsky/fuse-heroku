@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.components')
+        .module('app.components.widgets.stat')
         .controller('StatWidgetsController', StatWidgetsController);
 
     /** @ngInject */
@@ -118,9 +118,9 @@
         };
 
         vm.widget13 = {
-            title        : 'AVAILABLE SPACE',
-            value        : 83,
-            detail       : 'This is the back side. You can show detailed information here.'
+            title : 'AVAILABLE SPACE',
+            value : 83,
+            detail: 'This is the back side. You can show detailed information here.'
         };
 
         // Methods
