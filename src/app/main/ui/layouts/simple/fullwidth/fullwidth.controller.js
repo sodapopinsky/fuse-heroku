@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.ui')
+    angular
+        .module('app.ui.layouts.simple.fullwidth')
         .controller('SimpleFullwidthController', SimpleFullwidthController);
 
     /** @ngInject */
@@ -16,4 +17,5 @@
 
         //////////
     }
+
 })();

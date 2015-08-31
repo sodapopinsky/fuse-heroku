@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.ui')
+    angular
+        .module('app.ui.layouts.carded.fullwidth-ii')
         .controller('CardedFullwidthIIController', CardedFullwidthIIController);
 
     /** @ngInject */
@@ -16,4 +17,5 @@
 
         //////////
     }
+
 })();

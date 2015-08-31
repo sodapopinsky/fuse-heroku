@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.ui')
+    angular
+        .module('app.ui.layouts.carded.right-sidenav')
         .controller('CardedRightSidenavController', CardedRightSidenavController);
 
     /** @ngInject */
@@ -27,4 +28,5 @@
             $mdSidenav(sidenavId).toggle();
         }
     }
+
 })();
