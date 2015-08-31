@@ -12,6 +12,7 @@
     }
 
     > .ps-scrollbar-x-rail {
+        background: none !important;
         margin: 4px 0;
         height: 4px;
         z-index: 99;
@@ -22,20 +23,13 @@
     }
 
     > .ps-scrollbar-y-rail {
+        background: none !important;
         margin: 4px 0;
         width: 4px;
         z-index: 99;
 
         > .ps-scrollbar-y {
             width: 4px;
-        }
-
-        &:hover, &:active {
-            width: 8px;
-
-            > .ps-scrollbar-y {
-                width: 8px;
-            }
         }
     }
 }
