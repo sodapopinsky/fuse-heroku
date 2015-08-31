@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider)
+    function config($stateProvider, $translatePartialLoaderProvider)
     {
         $stateProvider.state('app.pages_errors_error-500', {
             url  : '/error-500',
@@ -21,6 +21,9 @@
                 }
             }
         });
+
+        $translatePartialLoaderProvider.addPart('app/main/pages/errors/500');
+
     }
 
 })();
