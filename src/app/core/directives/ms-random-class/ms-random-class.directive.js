@@ -11,7 +11,7 @@
         return {
             restrict: 'A',
             scope   : {
-                msRandomClass: "="
+                msRandomClass: '='
             },
             link    : function (scope, iElement)
             {
