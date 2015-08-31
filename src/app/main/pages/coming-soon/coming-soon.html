@@ -5,43 +5,46 @@
                 <small>F</small>
             </div>
 
-            <div class="title">Hey! Thank you for checking out our app.</div>
-            <div class="subtitle">It’s not quite ready yet, but we are working hard and it will be ready in approximately:
+            <div class="title" translate="COMINGSOON.TITLE">Hey! Thank you for checking out our app.</div>
+            <div class="subtitle" translate="COMINGSOON.SUBTITLE">It’s not quite ready yet, but we are working hard and
+                it will be ready in approximately:
             </div>
 
             <timer start-time="vm.startTime" layout="row">
                 <div layout="column" layout-align="center center">
                     <span class="value">{{days}}</span>
-                    <span class="type">days</span>
+                    <span class="type" translate="COMINGSOON.DAYS">days</span>
                 </div>
 
                 <div layout="column" layout-align="center center">
                     <span class="value">{{hours}}</span>
-                    <span class="type">hours</span>
+                    <span class="type" translate="COMINGSOON.HOURS">hours</span>
                 </div>
 
                 <div layout="column" layout-align="center center">
                     <span class="value">{{minutes}}</span>
-                    <span class="type">minutes</span>
+                    <span class="type" translate="COMINGSOON.MINUTES">minutes</span>
                 </div>
 
                 <div layout="column" layout-align="center center">
                     <span class="value">{{seconds}}</span>
-                    <span class="type">seconds</span>
+                    <span class="type" translate="COMINGSOON.SECONDS">seconds</span>
                 </div>
             </timer>
         </div>
 
         <form layout="column">
-            <span class="message">
+            <span class="message" translate="COMINGSOON.MESSAGE">
                 If you would like to be notified when the app is ready, you can subscribe to our e-mail list.
             </span>
 
             <md-input-container flex md-no-float>
-                <input placeholder="Email address" type="password">
+                <input type="email" placeholder="Email address" translate
+                       translate-attr-placeholder="COMINGSOON.EMAIL_ADRESS">
             </md-input-container>
 
-            <md-button class="md-raised md-accent">
+            <md-button class="md-raised md-accent" aria-label="SUBSCRIBE" translate="COMINGSOON.SUBSCRIBE"
+                       translate-attr-aria-label="COMINGSOON.SUBSCRIBE">
                 SUBSCRIBE
             </md-button>
         </form>
