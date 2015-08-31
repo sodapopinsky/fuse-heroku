@@ -109,7 +109,7 @@
                     // Initialize the scrollbar
                     $timeout(function ()
                     {
-                        iElement.perfectScrollbar(options);
+                        PerfectScrollbar.initialize(iElement[0], options);
                     }, 0);
 
                     // Update the scrollbar on element mouseenter
@@ -135,14 +135,14 @@
                      */
                     function updateScrollbar()
                     {
-                        iElement.perfectScrollbar('update');
+                        PerfectScrollbar.update(iElement[0]);
                     }
 
                     // Cleanup on destroy
                     scope.$on('$destroy', function ()
                     {
                         iElement.off('mouseenter');
-                        iElement.perfectScrollbar('destroy');
+                        PerfectScrollbar.destroy(iElement[0]);
                     });
                 };
             }
