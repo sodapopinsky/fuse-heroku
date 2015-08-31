@@ -3,6 +3,24 @@
     'use strict';
 
     angular
-        .module('app.pages.coming-soon', []);
+        .module('app.pages.coming-soon', [])
+        .config(config);
+
+    /** @ngInject */
+    function config($stateProvider)
+    {
+        $stateProvider.state('app.pages_coming-soon', {
+            url  : '/pages/coming-soon',
+            views: {
+                'main@'                        : {
+                    templateUrl: 'app/core/layouts/basic.html'
+                },
+                'content@app.pages_coming-soon': {
+                    templateUrl: 'app/main/pages/coming-soon/coming-soon.html',
+                    controller : 'ComingSoonController as vm'
+                }
+            }
+        });
+    }
 
 })();
