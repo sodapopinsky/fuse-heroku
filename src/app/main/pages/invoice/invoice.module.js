@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider)
+    function config($stateProvider, $translatePartialLoaderProvider)
     {
         $stateProvider.state('app.pages_invoice', {
             url  : '/pages/invoice',
@@ -18,6 +18,9 @@
                 }
             }
         });
+
+        $translatePartialLoaderProvider.addPart('app/main/pages/invoice');
+
     }
 
 })();
