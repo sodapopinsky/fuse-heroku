@@ -18,12 +18,11 @@
     "quotmark": "single",
     "undef": true,
     "unused": false,
-    "strict": false,
+    "strict": true,
     "maxparams": 10,
     "maxdepth": 5,
     "maxstatements": 40,
     "maxcomplexity": 8,
-    "maxlen": 120,
     "asi": false,
     "boss": false,
     "debug": false,
@@ -50,7 +49,8 @@
     "validthis": true,
     "noyield": false,
     "browser": true,
-    "node": true,
+    "devel": false,
+    "node": false,
     "globals": {
         "angular": false,
         "$": false,
@@ -58,6 +58,8 @@
         "module": false,
         "window": false,
         "document": false,
-        "PerfectScrollbar": false
+        "PerfectScrollbar": false,
+        "MobileDetect": false,
+        "hljs": false
     }
 }
