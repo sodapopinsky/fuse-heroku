@@ -49,4 +49,5 @@
         $translateProvider.preferredLanguage('en');
         $translateProvider.useSanitizeValueStrategy('sanitize');
     }
+
 })();

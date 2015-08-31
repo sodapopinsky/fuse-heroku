@@ -73,7 +73,7 @@
             title        : 'WEEKLY VISITORS',
             value        : 30342,
             lastWeekValue: 30002,
-            lastWeekDiff : "1.12%",
+            lastWeekDiff : '1.12%',
             chart        : {
                 columns: [
                     {
@@ -91,7 +91,7 @@
             title   : 'Google Inc.',
             subtitle: 'NASDAQ: GOOG',
             value   : '531.69',
-            diff    : "2.29%",
+            diff    : '2.29%',
             chart   : {
                 columns: [
                     {
