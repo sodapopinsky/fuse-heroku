@@ -10,6 +10,7 @@
     }
 
     .themes {
+
         .theme {
             opacity: 1;
             transform: scale(1);
@@ -38,9 +39,7 @@
                         animation-delay: -#{$item}s;
                         transition: all #{0.3 / $item}s cubic-bezier(0.55, 0, 0.55, 0.2);
                     }
-
                 }
-
             }
         }
     }
