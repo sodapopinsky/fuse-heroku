@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider)
+    function config($stateProvider, $translatePartialLoaderProvider)
     {
         $stateProvider.state('app.pages_errors_error-404', {
             url  : '/pages/errors/error-404',
@@ -21,6 +21,9 @@
                 }
             }
         });
+
+        $translatePartialLoaderProvider.addPart('app/main/pages/errors/404');
+
     }
 
 })();
