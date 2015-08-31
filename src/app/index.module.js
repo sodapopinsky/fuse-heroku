@@ -27,7 +27,6 @@
             // Apps
             'app.dashboard',
             'app.calendar',
-            //'app.commerce',
             'app.mail',
             'app.file-manager',
             'app.todo',
