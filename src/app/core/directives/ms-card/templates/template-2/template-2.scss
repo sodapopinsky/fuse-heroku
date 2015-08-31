@@ -1,10 +1,6 @@
 .ms-card {
 
     &.template-2 {
-        position: relative;
-        border-radius: 2px;
-        overflow: hidden;
-        max-width: 400px;
 
         .header {
 
@@ -17,28 +13,6 @@
                     border-radius: 20px;
                 }
             }
-
-            .info {
-
-                .title {
-
-                }
-
-                .subtitle {
-
-                }
-            }
-        }
-
-        .media {
-
-            .image {
-
-            }
-        }
-
-        .text {
-
         }
     }
 }

@@ -1,6 +1,10 @@
 .ms-card {
+    position: relative;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+    max-width: 400px;
     border-radius: 2px;
     margin: 8px;
     background: rgba(255, 255, 255, 1);
