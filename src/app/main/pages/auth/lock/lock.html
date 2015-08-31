@@ -7,28 +7,35 @@
             </div>
 
             <div>
-                <div class="title">Your session is locked</div>
-                <div class="subtitle">Due to inactivity, your session is locked. Enter your password to continue.</div>
+                <div class="title" translate="LOCK.TITLE">Your session is locked</div>
+                <div class="subtitle" translate="LOCK.SUBTITLE">Due to inactivity, your session is locked. Enter your
+                    password to continue.
+                </div>
             </div>
         </div>
 
         <form layout="column">
             <md-input-container flex md-no-float>
-                <input placeholder="User Name" ng-model="vm.form.userName" disabled>
+                <input ng-model="vm.form.userName" disabled placeholder="User Name" translate
+                       translate-attr-placeholder="LOCK.USERNAME">
             </md-input-container>
 
             <md-input-container flex md-no-float>
-                <input placeholder="Password" ng-model="vm.form.password" type="password">
+                <input ng-model="vm.form.password" type="password" placeholder="Password" translate
+                       translate-attr-placeholder="LOCK.PASSWORD">
             </md-input-container>
 
-            <md-button class="md-raised md-accent">
+            <md-button class="md-raised md-accent" aria-label="UNLOCK" translate="LOCK.UNLOCK"
+                       translate-attr-aria-label="LOCK.UNLOCK">
                 UNLOCK
             </md-button>
         </form>
 
         <div class="message">
             <a ui-sref="app.pages.auth.login" class="md-accent-color">
-                Are you not John Doe?
+                <span translate="LOCK.ARE_YOU_NOT">Are you not </span>
+                <span>John Doe</span>
+                <span>?</span>
             </a>
         </div>
     </div>
