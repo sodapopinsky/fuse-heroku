@@ -32,8 +32,12 @@
             }
 
             .remember-me {
-                font-size: 13px;
+                font-size: 1.3rem;
                 margin: 16px 0;
+            }
+
+            .forgot-password {
+                font-size: 1.3rem;
             }
 
             .md-button {
@@ -49,7 +53,7 @@
             &.facebook {
                 text-transform: none;
                 color: $material-color-white;
-                font-size: 13px;
+                font-size: 1.3rem;
 
                 md-icon {
                     color: $material-color-white;
@@ -103,7 +107,6 @@
         }
 
         .register {
-            font-size: 13px;
             margin: 32px 0 24px 0;
             width: 250px;
             font-weight: 500;

@@ -17,10 +17,10 @@
         }
 
         .actions {
+
             .md-button {
                 text-transform: none;
                 padding: 0 16px;
-                font-size: 13px;
                 height: 32px;
                 line-height: 32px;
                 margin: 0 0 0 8px;
@@ -47,7 +47,6 @@
             }
 
             .more {
-                font-size: 13px;
                 cursor: pointer;
             }
         }
@@ -66,7 +65,6 @@
         &.info-box {
 
             .info-line {
-                font-size: 13px;
                 margin-bottom: 24px;
 
                 .title {
