@@ -1,5 +1,5 @@
 <md-list class="date">
-    <md-subheader><span translate="QUICKPANEL.TODAY">Today</span></md-subheader>
+    <md-subheader class="md-no-sticky"><span translate="QUICKPANEL.TODAY">Today</span></md-subheader>
     <md-list-item class="md-display-1 md-2-line" layout="column" layout-align="start start">
         <div class="md-list-item-text secondary-text">
             <div> {{vm.date | date:'EEEE'}}</div>
@@ -15,7 +15,7 @@
 <md-divider></md-divider>
 
 <md-list>
-    <md-subheader><span translate="QUICKPANEL.EVENTS">Events</span></md-subheader>
+    <md-subheader class="md-no-sticky"><span translate="QUICKPANEL.EVENTS">Events</span></md-subheader>
 
     <md-list-item class="md-2-line" ng-repeat="event in vm.events" ng-click="dummyFunction()">
         <div class="md-list-item-text">
@@ -29,7 +29,7 @@
 <md-divider></md-divider>
 
 <md-list>
-    <md-subheader><span translate="QUICKPANEL.NOTES">Notes</span></md-subheader>
+    <md-subheader class="md-no-sticky"><span translate="QUICKPANEL.NOTES">Notes</span></md-subheader>
     <md-list-item class="md-2-line" ng-repeat="note in vm.notes" ng-click="dummyFunction()">
         <div class="md-list-item-text">
             <h3>{{note.title}}</h3>
@@ -42,7 +42,7 @@
 <md-divider></md-divider>
 
 <md-list>
-    <md-subheader><span translate="QUICKPANEL.QUICK_SETTINGS">Quick Settings</span></md-subheader>
+    <md-subheader md-no-sticky><span translate="QUICKPANEL.QUICK_SETTINGS">Quick Settings</span></md-subheader>
 
     <md-list-item>
         <h3 translate="QUICKPANEL.NOTIFICATIONS">Notifications</h3>
