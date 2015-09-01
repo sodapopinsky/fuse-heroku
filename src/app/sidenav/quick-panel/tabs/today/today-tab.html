@@ -1,5 +1,5 @@
 <md-list class="date">
-    <md-subheader>Today</md-subheader>
+    <md-subheader><span translate="QUICKPANEL.TODAY">Today</span></md-subheader>
     <md-list-item class="md-display-1 md-2-line" layout="column" layout-align="start start">
         <div class="md-list-item-text secondary-text">
             <div> {{vm.date | date:'EEEE'}}</div>
@@ -15,11 +15,12 @@
 <md-divider></md-divider>
 
 <md-list>
-    <md-subheader>Events</md-subheader>
+    <md-subheader><span translate="QUICKPANEL.EVENTS">Events</span></md-subheader>
 
     <md-list-item class="md-2-line" ng-repeat="event in vm.events" ng-click="dummyFunction()">
         <div class="md-list-item-text">
             <h3>{{event.title}}</h3>
+
             <p>{{event.detail}}</p>
         </div>
     </md-list-item>
@@ -28,10 +29,11 @@
 <md-divider></md-divider>
 
 <md-list>
-    <md-subheader>Notes</md-subheader>
+    <md-subheader><span translate="QUICKPANEL.NOTES">Notes</span></md-subheader>
     <md-list-item class="md-2-line" ng-repeat="note in vm.notes" ng-click="dummyFunction()">
         <div class="md-list-item-text">
             <h3>{{note.title}}</h3>
+
             <p>{{note.detail}}</p>
         </div>
     </md-list-item>
@@ -40,20 +42,23 @@
 <md-divider></md-divider>
 
 <md-list>
-    <md-subheader>Quick Settings</md-subheader>
+    <md-subheader><span translate="QUICKPANEL.QUICK_SETTINGS">Quick Settings</span></md-subheader>
 
     <md-list-item>
-        <h3>Notifications</h3>
-        <md-switch class="md-secondary" ng-model="vm.settings.notify" aria-label="Notifications"></md-switch>
+        <h3 translate="QUICKPANEL.NOTIFICATIONS">Notifications</h3>
+        <md-switch class="md-secondary" ng-model="vm.settings.notify" aria-label="Notifications" translate
+                   translate-attr-aria-label="QUICKPANEL.NOTIFICATIONS"></md-switch>
     </md-list-item>
 
     <md-list-item>
-        <h3>Cloud Sync</h3>
-        <md-switch class="md-secondary" ng-model="vm.settings.cloud" aria-label="Cloud Sync"></md-switch>
+        <h3 translate="QUICKPANEL.CLOUD_SYNC">Cloud Sync</h3>
+        <md-switch class="md-secondary" ng-model="vm.settings.cloud" aria-label="Cloud Sync" translate
+                   translate-attr-aria-label="QUICKPANEL.CLOUD_SYNC"></md-switch>
     </md-list-item>
 
     <md-list-item>
-        <h3>Retro Thrusters</h3>
-        <md-switch class="md-secondary md-warn" ng-model="vm.settings.retro" aria-label="Retro Thrusters"></md-switch>
+        <h3 translate="QUICKPANEL.RETRO_THRUSTERS">Retro Thrusters</h3>
+        <md-switch class="md-secondary md-warn" ng-model="vm.settings.retro" aria-label="Retro Thrusters" translate
+                   translate-attr-aria-label="QUICKPANEL.RETRO_THRUSTERS"></md-switch>
     </md-list-item>
 </md-list>

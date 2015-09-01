@@ -24,6 +24,13 @@ $quickPanelWidth: 330px;
             md-tabs-content-wrapper {
 
                 md-tab-content {
+                    height: 100%;
+                    overflow: hidden;
+
+                    > div {
+                        overflow: hidden;
+                        height: 100%;
+                    }
 
                     md-list {
 

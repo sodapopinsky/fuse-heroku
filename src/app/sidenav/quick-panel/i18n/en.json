@@ -1,0 +1,18 @@
+{
+    "QUICKPANEL": {
+        "TODAY": "TODAY",
+        "CHAT": "CHAT",
+        "ACTIVITY": "ACTIVITY",
+        "FRIENDS": "Friends",
+        "APP_SERVERS": "Application Servers",
+        "USER_STATS": "User Stats",
+        "RECENT": "Recent",
+        "START_NEW_CHAT": "Start New Chat",
+        "EVENTS": "Events",
+        "NOTES": "Notes",
+        "QUICK_SETTINGS": "Quick Settings",
+        "NOTIFICATIONS": "Notifications",
+        "CLOUD_SYNC": "Cloud Sync",
+        "RETRO_THRUSTERS": "Retro Thrusters"
+    }
+}
