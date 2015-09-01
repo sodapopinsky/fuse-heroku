@@ -53,14 +53,14 @@
                         name  : 'Input',
                         color : fuseTheming.themes.active.theme.primary.color,
                         values: '30,75,290,400,150,250',
-                        type  : 'spline'
+                        type  : 'area-spline'
                     },
                     {
                         id    : 'Output',
                         name  : 'Output',
                         color : fuseTheming.themes.active.theme.accent.color,
                         values: '500,300,120,600,50,80',
-                        type  : 'spline'
+                        type  : 'area-spline'
                     }
                 ]
             },
@@ -178,34 +178,101 @@
 
         vm.widget7 = {
             title   : 'Visitor Demographics',
-            subtitle: 'Last 30 days',
-            genders: [
+            tabs: [
                 {
-                    title: 'Male',
-                    value: 40
+                    label: '30 days',
+                    genders: [
+                        {
+                            title: 'Male',
+                            value: 40
+                        },
+                        {
+                            title: 'Female',
+                            value: 41
+                        },
+                        {
+                            title: 'Not Specified',
+                            value: 19
+                        }
+                    ],
+                    ages: [
+                        {
+                            title: '25 - 34',
+                            value: 32
+                        },
+                        {
+                            title: '35 - 44',
+                            value: 85
+                        },
+                        {
+                            title: '45+',
+                            value: 48
+                        }
+                    ]
                 },
                 {
-                    title: 'Female',
-                    value: 41
+                    label: '10 days',
+                    genders: [
+                        {
+                            title: 'Male',
+                            value: 32
+                        },
+                        {
+                            title: 'Female',
+                            value: 49
+                        },
+                        {
+                            title: 'Not Specified',
+                            value: 19
+                        }
+                    ],
+                    ages: [
+                        {
+                            title: '25 - 34',
+                            value: 85
+                        },
+                        {
+                            title: '35 - 44',
+                            value: 60
+                        },
+                        {
+                            title: '45+',
+                            value: 36
+                        }
+                    ]
                 },
                 {
-                    title: 'Not Specified',
-                    value: 19
-                }
-            ],
-            ages: [
-                {
-                    title: '25 - 34',
-                    value: 32
+                    label: '1 day',
+                    genders: [
+                        {
+                            title: 'Male',
+                            value: 28
+                        },
+                        {
+                            title: 'Female',
+                            value: 62
+                        },
+                        {
+                            title: 'Not Specified',
+                            value: 10
+                        }
+                    ],
+                    ages: [
+                        {
+                            title: '25 - 34',
+                            value: 17
+                        },
+                        {
+                            title: '35 - 44',
+                            value: 64
+                        },
+                        {
+                            title: '45+',
+                            value: 72
+                        }
+                    ]
                 },
-                {
-                    title: '35 - 44',
-                    value: 85
-                },
-                {
-                    title: '45+',
-                    value: 48
-                }
+
             ]
         };
 
