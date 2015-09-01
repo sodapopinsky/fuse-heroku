@@ -10,8 +10,6 @@
     {
         var vm = this;
 
-        console.log(fuseTheming);
-
         // Data
         vm.widget1 = {
             title        : 'WEEKLY TRANSACTIONS',
@@ -46,35 +44,121 @@
         };
 
         vm.widget5 = {
-            title   : 'IO RATE',
-            subtitle: 'Showing last 5 hours',
-            chart   : {
-                labels : ['5', '4', '3', '2', '1'],
-                series : ['Input', 'Output'],
-                data   : [
-                    [65, 59, 80, 81, 56],
-                    [28, 48, 40, 19, 86]
-                ]/*,
-                colours: [
+            title           : 'IO RATE',
+            subtitle        : 'Showing last 5 hours',
+            chart           : {
+                columns: [
                     {
-                        fillColor           : 'rgba(220,220,220,0.2)',
-                        strokeColor         : 'rgba(220,220,220,1)',
-                        pointColor          : 'rgba(220,220,220,1)',
-                        pointStrokeColor    : '#fff',
-                        pointHighlightFill  : '#fff',
-                        pointHighlightStroke: 'rgba(220,220,220,1)'
+                        id    : 'Input',
+                        name  : 'Input',
+                        color : fuseTheming.themes.active.theme.primary.color,
+                        values: '30,75,290,400,150,250',
+                        type  : 'spline'
                     },
                     {
-                        fillColor           : 'rgba(151,187,205,0.2)',
-                        strokeColor         : 'rgba(151,187,205,1)',
-                        pointColor          : 'rgba(151,187,205,1)',
-                        pointStrokeColor    : '#fff',
-                        pointHighlightFill  : '#fff',
-                        pointHighlightStroke: 'rgba(151,187,205,1)'
+                        id    : 'Output',
+                        name  : 'Output',
+                        color : fuseTheming.themes.active.theme.accent.color,
+                        values: '500,300,120,600,50,80',
+                        type  : 'spline'
                     }
-                ]*/
-            }
+                ]
+            },
+            activityTitle   : 'Activity Log',
+            activitySubtitle: 'Showing last 100 entries',
+            activities      : [
+                {
+                    title: 'Input',
+                    value: '50KB'
+                },
+                {
+                    title: 'Input',
+                    value: '24.5Mb'
+                },
+                {
+                    title: 'Output',
+                    value: '887Kb'
+                },
+                {
+                    title: 'Input',
+                    value: '6.27Kb'
+                },
+                {
+                    title: 'Output',
+                    value: '13.8Kb'
+                },
+                {
+                    title: 'Output',
+                    value: '5.6Mb'
+                },
+                {
+                    title: 'Output',
+                    value: '44.6Kb'
+                },
+                {
+                    title: 'Input',
+                    value: '5Mb'
+                },
+                {
+                    title: 'Input',
+                    value: '5.3Kb'
+                },
+                {
+                    title: 'Output',
+                    value: '176Kb'
+                },
+                {
+                    title: 'Input',
+                    value: '4.3Mb'
+                },
+                {
+                    title: 'Input',
+                    value: '50KB'
+                },
+                {
+                    title: 'Input',
+                    value: '24.5Mb'
+                },
+                {
+                    title: 'Output',
+                    value: '887Kb'
+                },
+                {
+                    title: 'Input',
+                    value: '6.27Kb'
+                },
+                {
+                    title: 'Output',
+                    value: '13.8Kb'
+                },
+                {
+                    title: 'Output',
+                    value: '5.6Mb'
+                },
+                {
+                    title: 'Output',
+                    value: '44.6Kb'
+                },
+                {
+                    title: 'Input',
+                    value: '5Mb'
+                },
+                {
+                    title: 'Input',
+                    value: '5.3Kb'
+                },
+                {
+                    title: 'Output',
+                    value: '176Kb'
+                },
+                {
+                    title: 'Input',
+                    value: '4.3Mb'
+                }
+            ]
         };
+
+        vm.widget6 = {};
 
         //////////
 

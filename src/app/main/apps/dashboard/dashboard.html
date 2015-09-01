@@ -252,38 +252,73 @@
         <div class="widget-group" layout="row" flex="100" layout-wrap>
 
             <!-- WIDGET 5 -->
-            <ms-widget class="chart-widget" layout="column" flex="100" flex-gt-lg="50">
+            <ms-widget class="chart-widget" layout="column" flex="100">
 
                 <!-- Front -->
-                <ms-widget-front class="md-white-bg" layout="column" layout-align="space-between" flex>
-                    <div class="padding-bottom-16">
-                        <div class="h2 weight-500 padding-bottom-8">{{vm.widget5.title}}</div>
-                        <div class="secondary-text">{{vm.widget5.subtitle}}</div>
+                <ms-widget-front class="md-white-bg" layout="row" layout-wrap flex>
+
+                    <div layout="column" layout-align="space-between" flex="100" flex-gt-sm="50" flex-gt-md="70">
+                        <div class="padding-bottom-16">
+                            <div class="h2 weight-500 padding-bottom-8">{{vm.widget5.title}}</div>
+                            <div class="secondary-text">{{vm.widget5.subtitle}}</div>
+                        </div>
+
+                        <div flex>
+                            <c3chart class="c3 stroke-2" bindto-id="io-rate">
+                                <chart-column ng-repeat="column in vm.widget5.chart.columns"
+                                              column-id="{{column.id}}"
+                                              column-name="{{column.name}}"
+                                              column-color="{{column.color}}"
+                                              column-values="{{column.values}}"
+                                              column-type="{{column.type}}"
+                                        />
+                                <chart-size chart-height="200"/>
+                            </c3chart>
+                        </div>
                     </div>
 
-                    <div>
-                        <!--<c3chart bindto-id="io-rate">
-                            <chart-column ng-repeat="column in vm.widget5.chart.columns"
-                                          column-id="{{column.id}}"
-                                          column-name="{{column.name}}"
-                                          column-color="{{column.color}}"
-                                          column-values="{{column.values}}"
-                                          column-type="{{column.type}}"
-                                    />
-                            <chart-size chart-height="240"/>
-                        </c3chart>-->
-                        <canvas id="line"
-                                class="chart chart-line"
-                                chart-data="vm.widget5.chart.data"
-                                chart-labels="vm.widget5.chart.labels"
-                                chart-series="vm.widget5.chart.series">
-                        </canvas>
+                    <div class="padding-left-16" layout="column" layout-align="space-between" flex="100" flex-gt-sm="50" flex-gt-md="30">
+                        <div layout="column" class="padding-bottom-16">
+                            <div class="h2 weight-500 padding-bottom-8">{{vm.widget5.activityTitle}}</div>
+                            <div class="secondary-text">{{vm.widget5.activitySubtitle}}</div>
+                        </div>
+
+                        <div class="padding-right-16 scrollable height-200" ms-scroll layout="column" flex>
+                            <div ng-repeat="activity in vm.widget5.activities">
+                                <div class="padding-vertical-8" layout="row" layout-align="space-between">
+                                    <div class="h4">{{activity.title}}</div>
+                                    <div class="secondary-text">{{activity.value}}</div>
+                                </div>
+                                <md-divider></md-divider>
+                            </div>
+                        </div>
                     </div>
+
                 </ms-widget-front>
                 <!-- / Front -->
 
             </ms-widget>
             <!-- / WIDGET 5 -->
+
+
+            <!-- WIDGET 6 -->
+            <!--<ms-widget class="chart-widget" layout="column" flex="100" flex-gt-lg="50">
+
+                &lt;!&ndash; Front &ndash;&gt;
+                <ms-widget-front class="md-white-bg" layout="column" layout-align="space-between" flex>
+
+                    <div class="padding-bottom-16">
+                        <div class="h3 padding-bottom-16">{{vm.widget6.title}}</div>
+                        <md-divider></md-divider>
+                    </div>
+
+
+
+                </ms-widget-front>
+                &lt;!&ndash; / Front &ndash;&gt;
+
+            </ms-widget>-->
+            <!-- / WIDGET 6 -->
 
         </div>
         <!-- / WIDGET GROUP -->
