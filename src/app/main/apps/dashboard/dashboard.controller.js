@@ -158,7 +158,97 @@
             ]
         };
 
-        vm.widget6 = {};
+        vm.widget6 = {
+            title   : 'Google Inc.',
+            subtitle: 'NASDAQ: GOOG',
+            value   : '531.69',
+            diff    : '2.29%',
+            chart   : {
+                columns: [
+                    {
+                        id    : 'GOOG',
+                        name  : 'GOOG',
+                        color : 'orange',
+                        values: '30,75,290,400,150,250,75,210,125,92,30,75,290,400',
+                        type  : 'bar'
+                    }
+                ]
+            }
+        };
+
+        vm.widget7 = {
+            title   : 'Visitor Demographics',
+            subtitle: 'Last 30 days',
+            genders: [
+                {
+                    title: 'Male',
+                    value: 40
+                },
+                {
+                    title: 'Female',
+                    value: 41
+                },
+                {
+                    title: 'Not Specified',
+                    value: 19
+                }
+            ],
+            ages: [
+                {
+                    title: '25 - 34',
+                    value: 32
+                },
+                {
+                    title: '35 - 44',
+                    value: 85
+                },
+                {
+                    title: '45+',
+                    value: 48
+                }
+            ]
+        };
+
+        vm.widget8 = {
+            title   : 'SALES',
+            subtitle: 'Last 30 days',
+            chart   : {
+                columns: [
+                    {
+                        id    : 'Sales',
+                        name  : 'Sales',
+                        color : 'lightgrey',
+                        values: '30,75,290,400,150,250,75,210,125,92,30,75,290,400',
+                        type  : 'bar'
+                    },
+                    {
+                        id    : 'SalesTop',
+                        name  : 'Sales Top',
+                        color : 'green',
+                        values: '30,75,290,400,150,250,75,210,125,92,30,75,290,400',
+                        type  : 'spline'
+                    }
+                ]
+            }
+        };
+
+        vm.widget9 = {
+            title: 'ONLINE MEMBERS',
+            value: 658,
+            icon: 'icon-account'
+        };
+
+        vm.widget10 = {
+            title: 'MEMBERS FOR PAST 30 DAYS',
+            value: 55,
+            icon: 'icon-account-plus'
+        };
+
+        vm.widget11 = {
+            title: 'TOTAL MEMBERS',
+            value: 59962,
+            icon: 'icon-account-multiple'
+        };
 
         //////////
 
