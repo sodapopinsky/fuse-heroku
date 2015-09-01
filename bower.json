@@ -1,6 +1,6 @@
 {
   "name": "fuse",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "dependencies": {
     "angular-animate": "~1.4.0",
     "angular-cookies": "~1.4.0",
@@ -23,7 +23,7 @@
     "angular-masonry": "~0.11.1",
     "highlightjs": "~8.6.0",
     "angular-ui-ace": "bower",
-    "angular-chart.js": "~0.7.2",
+    "angular-chart.js": "~0.8.1",
     "angular-chartist.js": "~3.3.6",
     "angular-nvd3": "~0.1.1",
     "c3-angular": "~0.6.0",
