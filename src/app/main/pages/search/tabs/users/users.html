@@ -1,34 +1,48 @@
 <div class="result-info" layout="row" layout-align="space-between center">
     <div>
-        <span class="md-title">Users</span>
-        <span class="secondary-text">33 Results</span>
+        <span class="md-title" translate="SEARCH.USERS">Users</span>
+        <span class="secondary-text">
+            <span>87</span>
+            <span translate="SEARCH.RESULTS">Results</span>
+        </span>
     </div>
 
     <div class="pager">
-        <span class="secondary-text">Results:</span>
+        <span class="secondary-text">
+            <span translate="SEARCH.RESULTS">Results</span>
+            <span>:</span>
+        </span>
 
-        <span class="page-info">1 - 10 of 100</span>
+        <span class="page-info">
+            <span>1</span>
+            <span>-</span>
+            <span>10</span>
+            <span translate="SEARCH.OF">of</span>
+            <span>100</span>
+        </span>
 
-        <md-button class="md-icon-button" aria-label="previous page">
+        <md-button class="md-icon-button" aria-label="previous page" translate
+                   translate-attr-aria-label="SEARCH.PREVIOUS_PAGE">
             <md-icon md-font-icon="icon-chevron-left"></md-icon>
         </md-button>
 
-        <md-button class="md-icon-button" aria-label="next page">
+        <md-button class="md-icon-button" aria-label="next page" translate translate-attr-aria-label="SEARCH.NEXT_PAGE">
             <md-icon md-font-icon="icon-chevron-right"></md-icon>
         </md-button>
+
     </div>
 </div>
 
 <table class="results simple clickable">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th class="text-right">Age</th>
-            <th class="text-right">Start Date</th>
-            <th class="text-right">Salary</th>
-            <th class="text-left">Email</th>
+            <th translate="SEARCH.NAME">Name</th>
+            <th translate="SEARCH.POSITION">Position</th>
+            <th translate="SEARCH.OFFICE">Office</th>
+            <th class="text-right" translate="SEARCH.AGE">Age</th>
+            <th class="text-right" translate="SEARCH.START_DATE">Start Date</th>
+            <th class="text-right" translate="SEARCH.SALARY">Salary</th>
+            <th class="text-left" translate="SEARCH.EMAIL">Email</th>
         </tr>
     </thead>
     <tbody>
@@ -45,7 +59,8 @@
 </table>
 
 <div class="simple-pagination">
-    <md-button class="pagination-item disabled" md-no-ink ng-href="#" aria-label="Go to previous page">
+    <md-button class="pagination-item disabled" md-no-ink ng-href="#" aria-label="Go to previous page" translate
+               translate-attr-aria-label="SEARCH.GO_TO_PREVIOUS">
         <md-icon md-font-icon="icon-chevron-left"></md-icon>
     </md-button>
 
@@ -89,7 +104,8 @@
         <span>10</span>
     </md-button>
 
-    <md-button class="pagination-item" ng-href="#" aria-label="Go to next page">
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to next page" translate
+               translate-attr-aria-label="SEARCH.GO_TO_NEXT">
         <md-icon md-font-icon="icon-chevron-right"></md-icon>
     </md-button>
 </div>

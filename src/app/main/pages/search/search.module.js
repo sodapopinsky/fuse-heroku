@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider)
+    function config($stateProvider, $translatePartialLoaderProvider)
     {
         $stateProvider.state('app.pages_search', {
             url  : '/pages/search',
@@ -18,6 +18,9 @@
                 }
             }
         });
+
+        $translatePartialLoaderProvider.addPart('app/main/pages/search');
+
     }
 
 })();

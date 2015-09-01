@@ -5,29 +5,30 @@
         <div class="search" flex layout="row" layout-align="start center">
             <md-icon md-font-icon="icon-magnify" class="icon search-icon s24"></md-icon>
 
-            <input class="search-input" ng-model="vm.search" type="text" placeholder="Search.." flex>
+            <input class="search-input" ng-model="vm.search" type="text" placeholder="Search.." translate
+                   translate-attr-placeholder="SEARCH.SEARCH" flex>
 
-            <md-button class="md-icon-button refresh" aria-label="refresh">
+            <md-button class="md-icon-button refresh" aria-label="refresh" translate
+                       translate-attr-aria-label="SEARCH.REFRESH">
                 <md-icon md-font-icon="icon-refresh" class="icon s24"></md-icon>
             </md-button>
         </div>
 
-        <md-menu class="search-settings" md-position-mode="target-right target" >
-            <md-button aria-label="Search settings"
-                       ng-click="$mdOpenMenu()">
+        <md-menu class="search-settings" md-position-mode="target-right target">
+            <md-button ng-click="$mdOpenMenu()" aria-label="Search settings" translate translate-attr-aria-label="SEARCH.SEARCH_SETTINGS">
                 <md-icon md-menu-origin md-menu-align-target md-font-icon="icon-cog" class="icon s16"></md-icon>
             </md-button>
 
             <md-menu-content width="3">
                 <md-menu-item>
                     <md-button ng-click="vm.dummyFunction()">
-                        <p>Settings 1</p>
+                        <p translate="SEARCH.SETTINGS_1">Settings 1</p>
                     </md-button>
                 </md-menu-item>
 
                 <md-menu-item>
                     <md-button ng-click="vm.dummyFunction()">
-                        <p>Settings 2</p>
+                        <p translate="SEARCH.SETTINGS_2">Settings 2</p>
                     </md-button>
                 </md-menu-item>
             </md-menu-content>
