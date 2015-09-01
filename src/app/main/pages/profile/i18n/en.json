@@ -38,10 +38,6 @@
         "EMAILS": "Emails",
         "FRIENDS": "Friends",
         "SEE": "See",
-        "JOINED_GROUPS": "Joined Groups",
-        "": "",
-        "": "",
-        "": "",
-        "": ""
+        "JOINED_GROUPS": "Joined Groups"
     }
 }
