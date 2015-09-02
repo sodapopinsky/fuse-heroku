@@ -2,34 +2,34 @@
     'use strict';
 
     angular.module('fuse')
-        .filter('toTrusted', toTrusted)
-        .filter('htmlToPlaintext', htmlToPlaintext)
-        .filter('nospace', nospace)
-        .filter('humanizeDoc', humanizeDoc);
+        .filter('toTrusted', toTrustedFilter)
+        .filter('htmlToPlaintext', htmlToPlainTextFilter)
+        .filter('nospace', nospaceFilter)
+        .filter('humanizeDoc', humanizeDocFilter);
 
     /** @ngInject */
-    function toTrusted($sce) {
+    function toTrustedFilter($sce) {
         return function (value) {
             return $sce.trustAsHtml(value);
         };
     }
 
     /** @ngInject */
-    function htmlToPlaintext() {
+    function htmlToPlainTextFilter() {
         return function (text) {
             return String(text).replace(/<[^>]+>/gm, '');
         };
     }
 
     /** @ngInject */
-    function nospace() {
+    function nospaceFilter() {
         return function (value) {
             return (!value) ? '' : value.replace(/ /g, '');
         };
     }
 
     /** @ngInject */
-    function humanizeDoc() {
+    function humanizeDocFilter() {
         return function (doc) {
             if (!doc) {
                 return;
@@ -42,6 +42,5 @@
             return doc.label || doc.name;
         };
     }
-
 
 })();

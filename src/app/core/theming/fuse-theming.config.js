@@ -32,4 +32,5 @@
         fuseThemingProvider.setRegisteredPalettes($mdThemingProvider._PALETTES);
         fuseThemingProvider.setRegisteredThemes($mdThemingProvider._THEMES);
     }
+
 })();

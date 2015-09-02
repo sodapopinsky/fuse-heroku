@@ -4,10 +4,10 @@
 
     angular
         .module('app.core')
-        .provider('fuseConfig', fuseConfig);
+        .provider('fuseConfig', fuseConfigProvider);
 
     /** @ngInject */
-    function fuseConfig()
+    function fuseConfigProvider()
     {
         // Default configuration
         var fuseConfiguration = {
@@ -58,4 +58,5 @@
             }
         };
     }
+
 })();
