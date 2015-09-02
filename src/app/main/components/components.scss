@@ -99,15 +99,14 @@
             }
         }
         .content {
-            .methods, .attributes {
+            .method-param-table, .attributes {
+                overflow-x: auto;
                 table {
-                    thead {
-                        display: none;
-                    }
                     tbody {
-                        tr, td {
-                            display: block;
-                            width: 100%;
+                        td {
+                            &.description {
+                                min-width: 200px;
+                            }
                         }
                     }
                 }
