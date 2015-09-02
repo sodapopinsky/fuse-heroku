@@ -4,10 +4,10 @@
         <tr>
             <th></th>
             <th translate="FM.NAME">Name</th>
-            <th translate="FM.TYPE">Type</th>
-            <th translate="FM.OWNER">Owner</th>
-            <th translate="FM.SIZE">Size</th>
-            <th translate="FM.LAST_MODIFIED">Last Modified</th>
+            <th hide show-gt-lg translate="FM.TYPE">Type</th>
+            <th hide show-gt-sm translate="FM.OWNER">Owner</th>
+            <th hide show-gt-sm translate="FM.SIZE">Size</th>
+            <th hide show-gt-lg translate="FM.LAST_MODIFIED">Last Modified</th>
             <th hide-gt-md></th>
         </tr>
     </thead>
@@ -19,10 +19,10 @@
                 <md-icon md-font-icon="icon-{{folder.type}}"></md-icon>
             </td>
             <td class="name">{{folder.name}}</td>
-            <td class="type">{{folder.type}}</td>
-            <td class="owner">{{folder.owner}}</td>
-            <td class="size">{{folder.size === '' ? '-': folder.size}}</td>
-            <td class="last-modified">{{folder.modified}}</td>
+            <td class="type" hide show-gt-lg>{{folder.type}}</td>
+            <td class="owner" hide show-gt-sm>{{folder.owner}}</td>
+            <td class="size" hide show-gt-sm>{{folder.size === '' ? '-': folder.size}}</td>
+            <td class="last-modified" hide show-gt-lg>{{folder.modified}}</td>
             <td class="show-details" hide-gt-md>
                 <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleDetails(folder)" aria-label="Toggle details sidenav">
                     <md-icon md-font-icon="icon-information-outline"></md-icon>
@@ -35,10 +35,10 @@
                 <md-icon md-font-icon="icon-{{file.type}}"></md-icon>
             </td>
             <td class="name">{{file.name}}</td>
-            <td class="type">{{file.type}}</td>
-            <td class="owner">{{file.owner}}</td>
-            <td class="size">{{file.size === '' ? '-': file.size}}</td>
-            <td class="last-modified">{{file.modified}}</td>
+            <td class="type" hide show-gt-lg>{{file.type}}</td>
+            <td class="owner" hide show-gt-sm>{{file.owner}}</td>
+            <td class="size" hide show-gt-sm>{{file.size === '' ? '-': file.size}}</td>
+            <td class="last-modified" hide show-gt-lg>{{file.modified}}</td>
             <td class="show-details" hide-gt-md>
                 <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleDetails(file)" aria-label="Details" translate translate-attr-aria-label="FM.DETAILS">
                     <md-icon md-font-icon="icon-information-outline"></md-icon>
