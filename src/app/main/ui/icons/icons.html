@@ -17,27 +17,10 @@
     <!-- CONTENT -->
     <div class="content" layout="column">
 
-        <div id="icons-toolbar" flex="100" layout="row" layout-align="space-between center">
-            <div flex="50" class="search md-whiteframe-z1 md-background-bg" layout="row" layout-align="start center">
-                <md-icon flex md-font-icon="icon-magnify" class="name md-background-bg s24"></md-icon>
-                <input flex ng-model="vm.search" type="text" placeholder="Search for an icon">
-            </div>
-
-            <div layout="row" layout-align="center center">
-                <span>Icon Size: </span>
-                <md-select placeholder="Sizes" ng-model="vm.iconSize">
-                    <md-option ng-repeat="size in vm.iconSizes" value="{{size}}">{{size}}</md-option>
-                </md-select>
-            </div>
-        </div>
-
-        <div id="icons-list" layout="row" layout-wrap class="md-whiteframe-z1 md-background-bg">
-            <div class="item" flex="10" ng-repeat="icon in vm.icons | filter:vm.search track by icon.id">
-                <md-button class="r1" ng-click="vm.iconDetail($event, icon)" aria-label="{{::icon.name}}">
-                    <div layout="column" layout-align="center center" layout-padding>
-                        <i class="icon icon-{{::icon.name}} s{{vm.iconSize}}"></i>
-                    </div>
-                </md-button>
+        <div id="icons-list" class="md-whiteframe-z1 md-background-bg" layout="row" layout-wrap>
+            <div class="item" ng-repeat="icon in ::vm.icons track by icon.id" layout="column" layout-align="start center">
+                <i class="icon icon-{{::icon.name}} s40"></i>
+                <span class="icon-name text-center">icon-{{::icon.name}}</span>
             </div>
         </div>
 
