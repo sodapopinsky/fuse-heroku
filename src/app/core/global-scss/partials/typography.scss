@@ -55,12 +55,45 @@ a {
     }
 }
 
+// Abbr
+abbr {
+    cursor: help;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.54);
+}
+
 // Blockquote
 blockquote {
     border-left: 3px solid rgba(0, 0, 0, 0.12);
     font-style: italic;
-    margin-left: 0;
+    margin: 1em 0;
     padding-left: 16px;
+
+    footer {
+        font-style: normal;
+
+        &:before {
+            content: '\2014 \00A0';
+        }
+    }
+
+    &.reverse {
+        border-left: none;
+        border-right: 3px solid rgba(0, 0, 0, 0.12);
+        text-align: right;
+        padding-left: 0;
+        padding-right: 16px;
+
+        footer {
+
+            &:before {
+                content: '';
+            }
+
+            &:after {
+                content: '\2014 \00A0';
+            }
+        }
+    }
 }
 
 // Code
@@ -76,9 +109,32 @@ code {
     }
 }
 
+// Definition lists
+dl {
+
+    dt {
+        font-weight: bold;
+    }
+
+    dd {
+        margin-bottom: 1em;
+    }
+}
+
+// Mark
+mark {
+    background: #F7F49A;
+}
+
 // Pre
 pre {
+    line-height: 1.6;
     margin: 8px 16px;
+}
+
+// Small
+small {
+    font-size: 80%;
 }
 
 // Text format helpers
@@ -90,7 +146,7 @@ pre {
     font-weight: 500;
 }
 
-.bold {
+.bold, strong {
     font-weight: 700;
 }
 
