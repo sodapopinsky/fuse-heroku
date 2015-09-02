@@ -227,8 +227,7 @@
 .animate-repeat {
     line-height: 40px;
     list-style: none;
-    /*box-sizing:border-box;*/
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid $material-color-white;
     -webkit-transition: 1s linear all;
     transition: 1s linear all;
 }
