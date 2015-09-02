@@ -14,14 +14,15 @@
             'ngSanitize',
             'ngTouch',
             'ngMaterial',
-            'pascalprecht.translate',
-            'gridshore.c3js.chart',
-            'chart.js',
             'angular-chartist',
+            'chart.js',
+            'datatables',
+            'gridshore.c3js.chart',
             'nvd3',
+            'pascalprecht.translate',
+            'timer',
             'ui.router',
             'ui.ace',
-            'timer',
             'uiGmapgoogle-maps'
         ]);
 })();

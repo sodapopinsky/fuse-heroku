@@ -84,7 +84,10 @@
         };
 
         api.tables = {
-            employees: $resource(api.dataUrl + 'tables/employees.json', null, {
+            employees   : $resource(api.dataUrl + 'tables/employees.json', null, {
+                'get': {method: 'get'}
+            }),
+            employees100: $resource(api.dataUrl + 'tables/employees100.json', null, {
                 'get': {method: 'get'}
             })
         };

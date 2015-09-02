@@ -32,6 +32,7 @@
             'app.components.maps',
             'app.components.price-tables',
             'app.components.tables.simple-table',
+            'app.components.tables.datatable',
             'app.components.widgets.chart',
             'app.components.widgets.stat'
         ]);
