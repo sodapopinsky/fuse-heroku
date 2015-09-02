@@ -1,7 +1,7 @@
 <div id="sidenav" class="page-layout simple fullwidth doc-page element-doc-page">
 
     <!-- HEADER -->
-    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+    <div class="header md-accent-bg" layout="column" layout-gt-sm="row" layout-align="space-between">
 
         <div layout="column" layout-align="center start">
             <div class="breadcrumb" layout="row" layout-align="start center">
@@ -45,8 +45,8 @@
         </div>
 
         <div class="card md-background-bg md-whiteframe-z2" layout="column">
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2" layout="column">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview" layout="column">
                     <div class="md-caption">Left Sidenav</div>
                     <div layout="row" flex>
                         <md-sidenav class="md-sidenav-left md-whiteframe-z2" layout="column"
@@ -67,7 +67,7 @@
                         </md-content>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1" layout="column">
+                <div flex class="source-code" layout="column">
 
                     <md-tabs flex>
                         <md-tab label="HTML">
@@ -105,8 +105,8 @@
                 </div>
             </div>
 
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2" layout="column">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview" layout="column">
                     <div class="md-caption">Right Sidenav</div>
                     <div layout="row" flex>
                         <md-sidenav class="md-sidenav-right md-whiteframe-z2" layout="column"
@@ -127,7 +127,7 @@
                         </md-content>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1" layout="column">
+                <div flex class="source-code" layout="column">
 
                     <md-tabs flex>
                         <md-tab label="HTML">
@@ -165,8 +165,8 @@
                 </div>
             </div>
 
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2" layout="column">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview" layout="column">
                     <div class="md-caption">Left Sidenav Locked</div>
                     <div layout="row" flex>
                         <md-sidenav md-is-locked-open="$mdMedia('gt-md')"
@@ -198,7 +198,7 @@
                         </md-content>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1" layout="column">
+                <div flex class="source-code" layout="column">
 
                     <md-tabs flex>
                         <md-tab label="HTML">

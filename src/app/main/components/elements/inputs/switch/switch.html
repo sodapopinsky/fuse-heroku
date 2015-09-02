@@ -1,7 +1,7 @@
 <div id="switch" class="page-layout simple fullwidth doc-page element-doc-page">
 
     <!-- HEADER -->
-    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+    <div class="header md-accent-bg" layout="column" layout-gt-sm="row" layout-align="space-between">
 
         <div layout="column" layout-align="center start">
             <div class="breadcrumb" layout="row" layout-align="start center">
@@ -31,8 +31,8 @@
     <div class="content">
 
         <div class="card md-background-bg md-whiteframe-z2" layout="column">
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Accent Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-switch ng-model="vm.switch" aria-label="Switch">
@@ -40,7 +40,7 @@
                         </md-switch>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-switch ng-model="vm.switch" aria-label="Switch">
                             Switch: {{vm.switch}}
@@ -48,8 +48,8 @@
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Primary Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-switch ng-model="vm.switch" class="md-primary" aria-label="Switch">
@@ -57,7 +57,7 @@
                         </md-switch>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-switch ng-model="vm.switch" class="md-primary" aria-label="Switch">
                             Switch: {{vm.switch}}
@@ -65,8 +65,8 @@
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Warn Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-switch ng-model="vm.switch" class="md-warn" aria-label="Switch">
@@ -74,7 +74,7 @@
                         </md-switch>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-switch ng-model="vm.switch" class="md-warn" aria-label="Switch">
                             Switch: {{vm.switch}}
@@ -82,8 +82,8 @@
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Disabled</div>
                     <div layout="column" layout-align="center center">
                         <md-switch ng-disabled="true" ng-model="vm.switch" aria-label="Switch">
@@ -91,7 +91,7 @@
                         </md-switch>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-switch ng-disabled="true" ng-model="vm.switch" aria-label="Switch">
                             Switch: {{vm.switch}}
@@ -99,8 +99,8 @@
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">No Ink</div>
                     <div layout="row" layout-align="center center">
                         <md-switch md-no-ink ng-model="vm.switch" aria-label="Switch">
@@ -108,7 +108,7 @@
                         </md-switch>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-switch md-no-ink ng-model="vm.switch" aria-label="Switch">
                             Switch: {{vm.switch}}

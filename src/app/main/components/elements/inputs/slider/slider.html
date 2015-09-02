@@ -1,7 +1,7 @@
 <div id="slider" class="page-layout simple fullwidth doc-page element-doc-page">
 
     <!-- HEADER -->
-    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+    <div class="header md-accent-bg" layout="column" layout-gt-sm="row" layout-align="space-between">
 
         <div layout="column" layout-align="center start">
             <div class="breadcrumb" layout="row" layout-align="start center">
@@ -54,8 +54,8 @@
 
         <div class="card md-background-bg md-whiteframe-z2" layout="column">
 
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Accent Colored (default)</div>
                     <div layout="row" layout-align="center center" layout-fill layout-margin>
                         <md-slider flex min="0" max="255" ng-model="vm.sliderValue" aria-label="slider"></md-slider>
@@ -63,7 +63,7 @@
                                aria-controls="red-slider">
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-slider flex min="0" max="255" ng-model="vm.sliderValue" aria-label="slider"></md-slider>
                         <input flex="15" type="number" ng-model="vm.sliderValue" aria-label="red"
@@ -72,8 +72,8 @@
                 </div>
             </div>
 
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Primary Colored</div>
                     <div layout="row" layout-align="center center" layout-fill layout-margin>
                         <md-slider flex class="md-primary" min="0" max="255" ng-model="vm.sliderValue"
@@ -82,7 +82,7 @@
                                aria-controls="red-slider">
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-slider flex class="md-primary" min="0" max="255" ng-model="vm.sliderValue"
                                    aria-label="slider"></md-slider>
@@ -92,8 +92,8 @@
                 </div>
             </div>
 
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Warn Colored</div>
                     <div layout="row" layout-align="center center" layout-fill layout-margin>
                         <md-slider flex class="md-warn" min="0" max="255" ng-model="vm.sliderValue"
@@ -102,7 +102,7 @@
                                aria-controls="red-slider">
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-slider flex class="md-warn" min="0" max="255" ng-model="vm.sliderValue"
                                    aria-label="slider"></md-slider>
@@ -112,8 +112,8 @@
                 </div>
             </div>
 
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Disabled</div>
                     <div layout="row" layout-align="center center" layout-fill layout-margin>
                         <md-slider ng-disabled="true" flex min="0" max="255" ng-model="vm.sliderValue"
@@ -122,7 +122,7 @@
                                aria-controls="red-slider">
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-slider ng-disabled="true" flex min="0" max="255" ng-model="vm.sliderValue"
                                    aria-label="slider"></md-slider>
@@ -137,8 +137,8 @@
 
         <div class="card md-background-bg md-whiteframe-z2" layout="column">
 
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Accent Colored (default)</div>
                     <div layout="row" layout-align="center center" layout-fill layout-margin>
                         <md-slider md-discrete flex min="0" max="255" ng-model="vm.sliderValue"
@@ -147,7 +147,7 @@
                                aria-controls="red-slider">
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-slider md-discrete flex min="0" max="255" ng-model="vm.sliderValue"
                                    aria-label="slider"></md-slider>
@@ -157,8 +157,8 @@
                 </div>
             </div>
 
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Primary Colored</div>
                     <div layout="row" layout-align="center center" layout-fill layout-margin>
                         <md-slider md-discrete flex class="md-primary" min="0" max="255" ng-model="vm.sliderValue"
@@ -167,7 +167,7 @@
                                aria-controls="red-slider">
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-slider md-discrete flex class="md-primary" min="0" max="255" ng-model="vm.sliderValue"
                                    aria-label="slider"></md-slider>
@@ -177,8 +177,8 @@
                 </div>
             </div>
 
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Warn Colored</div>
                     <div layout="row" layout-align="center center" layout-fill layout-margin>
                         <md-slider md-discrete flex class="md-warn" min="0" max="255" ng-model="vm.sliderValue"
@@ -187,7 +187,7 @@
                                aria-controls="red-slider">
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-slider md-discrete flex class="md-warn" min="0" max="255" ng-model="vm.sliderValue"
                                    aria-label="slider"></md-slider>
@@ -197,8 +197,8 @@
                 </div>
             </div>
 
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Disabled</div>
                     <div layout="row" layout-align="center center" layout-fill layout-margin>
                         <md-slider md-discrete ng-disabled="true" flex min="0" max="255" ng-model="vm.sliderValue"
@@ -207,7 +207,7 @@
                                aria-controls="red-slider">
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-slider md-discrete ng-disabled="true" flex min="0" max="255" ng-model="vm.sliderValue"
                                    aria-label="slider"></md-slider>

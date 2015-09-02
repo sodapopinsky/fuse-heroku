@@ -1,7 +1,7 @@
 <div id="fields" class="page-layout simple fullwidth doc-page element-doc-page">
 
     <!-- HEADER -->
-    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+    <div class="header md-accent-bg" layout="column" layout-gt-sm="row" layout-align="space-between">
 
         <div layout="column" layout-align="center start">
             <div class="breadcrumb" layout="row" layout-align="start center">
@@ -45,8 +45,8 @@
 
         <div class="card md-background-bg md-whiteframe-z2" layout="column">
 
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Text</div>
                     <div layout="column" layout-align="center center">
                         <md-input-container>
@@ -55,7 +55,7 @@
                         </md-input-container>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-input-container>
                             <label>Title</label>
@@ -65,8 +65,8 @@
                 </div>
             </div>
 
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Email</div>
                     <div layout="column" layout-align="center center">
                         <md-input-container>
@@ -75,7 +75,7 @@
                         </md-input-container>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-input-container>
                             <label>Email</label>
@@ -85,8 +85,8 @@
                 </div>
             </div>
 
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Textarea</div>
                     <div layout="column" layout-align="center center">
                         <md-input-container flex>
@@ -95,7 +95,7 @@
                         </md-input-container>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-input-container flex>
                             <label>Biography</label>
@@ -105,8 +105,8 @@
                 </div>
             </div>
 
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Number</div>
                     <div layout="column" layout-align="center center">
                         <md-input-container>
@@ -116,7 +116,7 @@
                         </md-input-container>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-input-container>
                             <label>Hourly Rate ($)</label>
@@ -127,8 +127,8 @@
                 </div>
             </div>
 
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Required</div>
                     <div layout="column" layout-align="center center">
                         <md-input-container>
@@ -138,7 +138,7 @@
                         </md-input-container>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-input-container>
                             <label>Hourly Rate ($)</label>
@@ -155,8 +155,8 @@
 
         <div class="card md-background-bg md-whiteframe-z2" layout="column">
 
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Text</div>
                     <div layout="column" layout-align="center center">
                         <md-input-container md-no-float>
@@ -164,7 +164,7 @@
                         </md-input-container>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-input-container md-no-float>
                             <input placeholder="Title" ng-model="vm.user.title">
@@ -173,8 +173,8 @@
                 </div>
             </div>
 
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Email</div>
                     <div layout="column" layout-align="center center">
                         <md-input-container md-no-float>
@@ -182,7 +182,7 @@
                         </md-input-container>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-input-container md-no-float>
                             <input placeholder="Email" ng-model="vm.user.email" type="email">
@@ -191,8 +191,8 @@
                 </div>
             </div>
 
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Textarea</div>
                     <div layout="column" layout-align="center center">
                         <md-input-container md-no-float>
@@ -201,7 +201,7 @@
                         </md-input-container>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-input-container md-no-float>
                             <textarea placeholder="Biography" ng-model="vm.user.biography" columns="1"
@@ -211,8 +211,8 @@
                 </div>
             </div>
 
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Number</div>
                     <div layout="column" layout-align="center center">
                         <md-input-container md-no-float>
@@ -222,7 +222,7 @@
                         </md-input-container>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-input-container md-no-float>
                             <input placeholder="Hourly Rate ($)" type="number" step="any" name="rate"
@@ -233,8 +233,8 @@
                 </div>
             </div>
 
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Required</div>
                     <div layout="column" layout-align="center center">
                         <md-input-container md-no-float>
@@ -244,7 +244,7 @@
                         </md-input-container>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-input-container md-no-float>
                             <input required placeholder="Hourly Rate ($)" type="number" step="any" name="rate"

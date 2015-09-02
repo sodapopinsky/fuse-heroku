@@ -1,7 +1,7 @@
 <div id="fab-toolbar" class="page-layout simple fullwidth doc-page element-doc-page">
 
     <!-- HEADER -->
-    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+    <div class="header md-accent-bg" layout="column" layout-gt-sm="row" layout-align="space-between">
 
         <div layout="column" layout-align="center start">
             <div class="breadcrumb" layout="row" layout-align="start center">
@@ -43,8 +43,8 @@
         </div>
 
         <div class="card md-background-bg md-whiteframe-z2" layout="column">
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2" layout="column">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview" layout="column">
                     <div class="md-caption">Alert</div>
                     <md-fab-toolbar md-open="vm.demo.isOpen" count="vm.demo.count" ng-class="vm.demo.selectedAlignment">
                         <md-fab-trigger class="align-with-text">
@@ -85,7 +85,7 @@
                         </div>
                     </md-content>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
 
                     <md-tabs>
                         <md-tab label="HTML">

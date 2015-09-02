@@ -1,7 +1,7 @@
 <div id="buttons" class="page-layout simple fullwidth doc-page element-doc-page">
 
     <!-- HEADER -->
-    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+    <div class="header md-accent-bg" layout="column" layout-gt-sm="row" layout-align="space-between">
 
         <div layout="column" layout-align="center start">
             <div class="breadcrumb" layout="row" layout-align="start center">
@@ -45,8 +45,8 @@
 
         <div class="md-title">FLAT</div>
         <div class="card md-background-bg md-whiteframe-z2">
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Accent Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-button class="md-accent" aria-label="Use Android">
@@ -54,7 +54,7 @@
                         </md-button>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-button class="md-accent" aria-label="Use Android">
                             ACCENT
@@ -62,8 +62,8 @@
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Primary Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-button class="md-primary" aria-label="Use Android">
@@ -71,7 +71,7 @@
                         </md-button>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-button class="md-primary" aria-label="Use Android">
                             PRIMARY
@@ -79,8 +79,8 @@
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Warn Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-button class="md-warn" aria-label="Use Android">
@@ -88,7 +88,7 @@
                         </md-button>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-button class="md-warn" aria-label="Use Android">
                             WARN
@@ -96,8 +96,8 @@
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Disabled</div>
                     <div layout="row" layout-align="center center">
                         <md-button class="md-primary" aria-label="Use Android" ng-disabled="true">
@@ -105,7 +105,7 @@
                         </md-button>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-button class="md-primary" aria-label="Use Android" ng-disabled="true">
                             DISABLED
@@ -116,8 +116,8 @@
         </div>
         <div class="md-title">RAISED</div>
         <div class="card md-background-bg md-whiteframe-z2" layout="column">
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Accent Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-button class="md-raised md-accent" aria-label="Use Android">
@@ -125,7 +125,7 @@
                         </md-button>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-button class="md-raised md-accent" aria-label="Use Android">
                             ACCENT
@@ -133,8 +133,8 @@
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Primary Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-button class="md-raised md-primary" aria-label="Use Android">
@@ -142,7 +142,7 @@
                         </md-button>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-button class="md-raised md-primary" aria-label="Use Android">
                             PRIMARY
@@ -150,8 +150,8 @@
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Warn Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-button class="md-raised md-warn" aria-label="Use Android">
@@ -159,7 +159,7 @@
                         </md-button>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-button class="md-raised md-warn" aria-label="Use Android">
                             WARN
@@ -167,8 +167,8 @@
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Disabled</div>
                     <div layout="row" layout-align="center center">
                         <md-button class="md-raised md-primary" aria-label="Use Android" ng-disabled="true">
@@ -176,7 +176,7 @@
                         </md-button>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-button class="md-raised md-primary" aria-label="Use Android" ng-disabled="true">
                             DISABLED
@@ -187,8 +187,8 @@
         </div>
         <div class="md-title">FAB</div>
         <div class="card md-background-bg md-whiteframe-z2" layout="column">
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Accent Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-button class="md-fab md-accent" aria-label="Use Android">
@@ -196,7 +196,7 @@
                         </md-button>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-button class="md-fab md-accent" aria-label="Use Android">
                             <md-icon md-font-icon="icon-android"></md-icon>
@@ -204,8 +204,8 @@
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Primary Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-button class="md-fab md-primary" aria-label="Use Android">
@@ -213,7 +213,7 @@
                         </md-button>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-button class="md-fab md-primary" aria-label="Use Android">
                             <md-icon md-font-icon="icon-android"></md-icon>
@@ -221,8 +221,8 @@
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Warn Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-button class="md-fab md-warn" aria-label="Use Android">
@@ -230,7 +230,7 @@
                         </md-button>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-button class="md-fab md-warn" aria-label="Use Android">
                             <md-icon md-font-icon="icon-android"></md-icon>
@@ -238,8 +238,8 @@
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Disabled</div>
                     <div layout="row" layout-align="center center">
                         <md-button class="md-fab md-primary" aria-label="Use Android" ng-disabled="true">
@@ -247,7 +247,7 @@
                         </md-button>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-button class="md-fab md-primary" aria-label="Use Android" ng-disabled="true">
                             <md-icon md-font-icon="icon-android"></md-icon>
@@ -258,8 +258,8 @@
         </div>
         <div class="md-title">ICON BUTTON</div>
         <div class="card md-background-bg md-whiteframe-z2" layout="column">
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Accent Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-button class="md-icon-button md-accent" aria-label="Use Android">
@@ -267,7 +267,7 @@
                         </md-button>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-button class="md-icon-button md-accent" aria-label="Use Android">
                             <md-icon md-font-icon="icon-android"></md-icon>
@@ -275,8 +275,8 @@
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Primary Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-button class="md-icon-button md-primary" aria-label="Use Android">
@@ -284,7 +284,7 @@
                         </md-button>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-button class="md-icon-button md-primary" aria-label="Use Android">
                             <md-icon md-font-icon="icon-android"></md-icon>
@@ -292,8 +292,8 @@
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Warn Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-button class="md-icon-button md-warn" aria-label="Use Android">
@@ -301,7 +301,7 @@
                         </md-button>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-button class="md-icon-button md-warn" aria-label="Use Android">
                             <md-icon md-font-icon="icon-android"></md-icon>
@@ -309,8 +309,8 @@
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Disabled</div>
                     <div layout="row" layout-align="center center">
                         <md-button class="md-icon-button md-primary" aria-label="Use Android"
@@ -319,7 +319,7 @@
                         </md-button>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-button class="md-icon-button md-primary" aria-label="Use Android"
                                    ng-disabled="true">

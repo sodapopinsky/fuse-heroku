@@ -1,7 +1,7 @@
 <div id="toast" class="page-layout simple fullwidth doc-page element-doc-page">
 
     <!-- HEADER -->
-    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+    <div class="header md-accent-bg" layout="column" layout-gt-sm="row" layout-align="space-between">
 
         <div layout="column" layout-align="center start">
             <div class="breadcrumb" layout="row" layout-align="start center">
@@ -42,8 +42,8 @@
         </div>
 
         <div class="card md-background-bg md-whiteframe-z2" layout="column">
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2" layout="column">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview" layout="column">
                     <div class="md-caption">Simple - Position: "top right"</div>
                     <div flex layout="row" layout-align="center center">
                         <md-button class="md-accent md-raised" ng-click="vm.showSimpleToast()" flex="50">
@@ -51,7 +51,7 @@
                         </md-button>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
 
                     <md-tabs>
                         <md-tab label="HTML">
@@ -78,8 +78,8 @@
 
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2" layout="column">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview" layout="column">
                     <div class="md-caption">With Action - Position: "top left"</div>
                     <div flex layout="row" layout-align="center center">
                         <md-button class="md-primary md-raised" ng-click="vm.showActionToast()" flex="50">
@@ -87,7 +87,7 @@
                         </md-button>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
 
                     <md-tabs>
                         <md-tab label="HTML">
@@ -118,8 +118,8 @@
                 </div>
             </div>
 
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2" layout="column">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview" layout="column">
                     <div class="md-caption">Custom - Position:"bttom right"</div>
                     <div flex layout="row" layout-align="center center">
                         <md-button class="md-warn md-raised" ng-click="vm.showCustomToast()" flex="50">
@@ -127,7 +127,7 @@
                         </md-button>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
 
                     <md-tabs>
                         <md-tab label="HTML">

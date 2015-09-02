@@ -80,3 +80,39 @@
         }
     }
 }
+
+// RESPONSIVE
+@media screen and (max-width: $breakpoint-sm) {
+    .doc-page {
+
+        .source-code {
+            min-height: 120px;
+        }
+
+        > .header {
+            height: 200px !important;
+            min-height: 200px !important;
+            max-height: 200px !important;
+
+            .reference-button {
+                margin: 0;
+            }
+        }
+        .content {
+            .methods, .attributes {
+                table {
+                    thead {
+                        display: none;
+                    }
+                    tbody {
+                        tr, td {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

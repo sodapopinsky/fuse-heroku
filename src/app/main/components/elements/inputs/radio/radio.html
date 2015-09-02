@@ -1,7 +1,7 @@
 <div id="radio" class="page-layout simple fullwidth doc-page element-doc-page">
 
     <!-- HEADER -->
-    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+    <div class="header md-accent-bg" layout="column" layout-gt-sm="row" layout-align="space-between">
 
         <div layout="column" layout-align="center start">
             <div class="breadcrumb" layout="row" layout-align="start center">
@@ -60,8 +60,8 @@
                 supports use within named radio groups.</p>
         </div>
         <div class="card md-background-bg md-whiteframe-z2" layout="column">
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Accent Colored</div>
                     <div layout="column" layout-align="center center">
                         <div>Selected Value: <span class="radioValue">{{vm.groupValue}}</span></div>
@@ -72,7 +72,7 @@
                         </md-radio-group>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-radio-group ng-model="vm.groupValue">
                             <md-radio-button value="Apple">Apple</md-radio-button>
@@ -82,8 +82,8 @@
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Primary Colored</div>
                     <div layout="column" layout-align="center center">
                         <div>Selected Value: <span class="radioValue">{{vm.groupValue}}</span></div>
@@ -94,7 +94,7 @@
                         </md-radio-group>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-radio-group ng-model="vm.groupValue">
                             <md-radio-button value="Apple" class="md-primary">Apple</md-radio-button>
@@ -104,8 +104,8 @@
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Warn Colored</div>
                     <div layout="column" layout-align="center center">
                         <div>Selected Value: <span class="radioValue">{{vm.groupValue}}</span></div>
@@ -116,7 +116,7 @@
                         </md-radio-group>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-radio-group ng-model="vm.groupValue">
                             <md-radio-button value="Apple" class="md-warn">Apple</md-radio-button>

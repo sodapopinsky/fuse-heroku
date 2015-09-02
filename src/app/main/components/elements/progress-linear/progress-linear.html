@@ -1,7 +1,7 @@
 <div id="progress-linear" class="page-layout simple fullwidth doc-page element-doc-page">
 
     <!-- HEADER -->
-    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+    <div class="header md-accent-bg" layout="column" layout-gt-sm="row" layout-align="space-between">
 
         <div layout="column" layout-align="center start">
             <div class="breadcrumb" layout="row" layout-align="start center">
@@ -45,45 +45,45 @@
 
         <div class="md-title">Determinate</div>
         <div class="card md-background-bg md-whiteframe-z2">
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Accent Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-progress-linear md-mode="determinate"
                                             value="{{vm.determinateValue}}" class="md-accent"></md-progress-linear>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-progress-linear md-mode="determinate"
                                             value="{{vm.determinateValue}}" class="md-accent"></md-progress-linear>
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Primary Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-progress-linear md-mode="determinate" value="{{vm.determinateValue}}"
                                             class="md-primary"></md-progress-linear>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-progress-linear md-mode="determinate" value="{{vm.determinateValue}}"
                                             class="md-primary"></md-progress-linear>
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Warn Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-progress-linear md-mode="determinate" value="{{vm.determinateValue}}"
                                             class="md-warn"></md-progress-linear>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-progress-linear md-mode="determinate" value="{{vm.determinateValue}}"
                                             class="md-warn"></md-progress-linear>
@@ -94,40 +94,40 @@
 
         <div class="md-title">Indeterminate</div>
         <div class="card md-background-bg md-whiteframe-z2">
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Accent Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-progress-linear md-mode="indeterminate" class="md-accent"></md-progress-linear>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-progress-linear md-mode="indeterminate" class="md-accent"></md-progress-linear>
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Primary Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-progress-linear md-mode="indeterminate" class="md-primary"></md-progress-linear>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-progress-linear md-mode="indeterminate" class="md-primary"></md-progress-linear>
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Warn Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-progress-linear md-mode="indeterminate" class="md-warn"></md-progress-linear>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-progress-linear md-mode="indeterminate" class="md-warn"></md-progress-linear>
                     </hljs>
@@ -137,8 +137,8 @@
 
         <div class="md-title">Buffer</div>
         <div class="card md-background-bg md-whiteframe-z2">
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Accent Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-progress-linear md-mode="buffer"
@@ -147,7 +147,7 @@
                                             class="md-accent"></md-progress-linear>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-progress-linear md-mode="buffer"
                                             value="{{vm.determinateValue}}"
@@ -156,8 +156,8 @@
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Primary Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-progress-linear md-mode="buffer"
@@ -166,7 +166,7 @@
                                             class="md-primary"></md-progress-linear>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-progress-linear md-mode="buffer"
                                             value="{{vm.determinateValue}}"
@@ -175,8 +175,8 @@
                     </hljs>
                 </div>
             </div>
-            <div layout="row">
-                <div flex class="preview md-background-bg md-hue-2">
+            <div layout="column" layout-gt-sm="row">
+                <div flex class="preview">
                     <div class="md-caption">Warn Colored</div>
                     <div layout="row" layout-align="center center">
                         <md-progress-linear md-mode="buffer" value="{{vm.determinateValue}}"
@@ -184,7 +184,7 @@
                                             class="md-warn"></md-progress-linear>
                     </div>
                 </div>
-                <div flex class="source-code md-background-bg md-hue-1">
+                <div flex class="source-code">
                     <hljs lang="html" ms-scroll>
                         <md-progress-linear md-mode="buffer" value="{{vm.determinateValue}}"
                                             md-buffer-value="{{vm.determinateValue2}}"
