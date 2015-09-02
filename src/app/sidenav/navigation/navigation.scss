@@ -71,9 +71,11 @@ $navigationFoldedWidth: 64px;
                 cursor: pointer;
                 padding: 0 48px 0 24px;
                 color: rgba(255, 255, 255, 0.70);
+                text-decoration: none;
 
                 &:hover {
                     background: rgba(0, 0, 0, 0.1);
+                    text-decoration: none;
                 }
 
                 .ms-nav-label {
