@@ -99,8 +99,7 @@
             }
         }
         .content {
-            .method-param-table, .attributes {
-                overflow-x: auto;
+            .ms-responsive-table-wrapper {
                 table {
                     tbody {
                         td {
