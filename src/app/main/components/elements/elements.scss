@@ -1,40 +1,9 @@
 .element-doc-page {
 
-    .content {
-
-        .description {
-            margin-bottom: 32px;
-        }
+    > .content {
 
         .card {
             padding: 8px;
-
-            .preview,
-            .source-code {
-                margin: 8px;
-            }
-
-            .preview {
-                min-height: 90px;
-                padding: 8px 16px;
-            }
-
-            .source-code {
-                position: relative;
-
-                [hljs], hljs {
-                    background-color: transparent;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                }
-            }
-        }
-
-        .attributes {
-            margin: 16px 0 48px 0;
         }
     }
 }
