@@ -7,6 +7,7 @@
         }
 
         .main {
+
             .contact {
 
                 .unread-message-count,
@@ -60,6 +61,7 @@
                     padding: 8px;
                     background-color: rgb(236, 239, 241);
                     border: 1px solid rgb(220, 223, 225);
+
                     &:after,
                     &:before {
                         content: ' ';
@@ -67,6 +69,7 @@
                         width: 0;
                         height: 0;
                     }
+
                     &:after {
                         left: -7px;
                         right: auto;
@@ -75,6 +78,7 @@
                         border: 11px solid;
                         border-color: rgb(236, 239, 241) transparent transparent transparent;
                     }
+
                     &:before {
                         left: -9px;
                         right: auto;
@@ -91,16 +95,20 @@
                 }
 
                 &.contact {
+
                     .avatar {
                         margin: 0 16px 0 0;
                     }
                 }
+
                 &.user {
                     align-items: flex-end;
+
                     .avatar {
                         order: 2;
                         margin: 0 0 0 16px;
                     }
+
                     .bubble {
                         background-color: #E8F5E9;
                         border: 1px solid #DFEBE0;
@@ -113,6 +121,7 @@
                             bottom: 0px;
                             border-color: transparent transparent #E8F5E9 transparent;
                         }
+
                         &:before {
                             right: -9px;
                             left: auto;
@@ -123,12 +132,14 @@
                     }
                 }
             }
+
             .reply {
                 border-top: 1px solid rgba(0, 0, 0, 0.13);
+
                 textarea {
-                    padding: 24px 16px;
                     height: 96px;
                     max-height: 96px;
+                    padding: 24px 16px;
                 }
             }
         }
