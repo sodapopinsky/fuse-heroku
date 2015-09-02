@@ -9,15 +9,60 @@
     /** @ngInject */
     function config($stateProvider)
     {
-        $stateProvider.state('app.components_maps', {
-            url  : '/components/maps',
-            views: {
-                'content@app': {
-                    templateUrl: 'app/main/components/maps/maps.html',
-                    controller : 'MapsController as vm'
+        $stateProvider
+            .state('app.components_maps', {
+                url  : '/components/maps',
+                views: {
+                    'content@app': {
+                        templateUrl: 'app/main/components/maps/maps.html',
+                        controller : 'MapsController as vm'
+                    },
+                    'tab-content@app.components_maps': {
+                        templateUrl: 'app/main/components/maps/tabs/simple.html'
+                    }
                 }
-            }
-        });
+            })
+
+            .state('app.components_maps.satellite', {
+                url  : '/satellite',
+                views: {
+                    'tab-content': {
+                        templateUrl: 'app/main/components/maps/tabs/satellite.html'
+                    }
+                }
+            })
+            .state('app.components_maps.terrain', {
+                url  : '/terrain',
+                views: {
+                    'tab-content': {
+                        templateUrl: 'app/main/components/maps/tabs/terrain.html'
+                    }
+                }
+            })
+            .state('app.components_maps.simple-marker', {
+                url  : '/simple-marker',
+                views: {
+                    'tab-content': {
+                        templateUrl: 'app/main/components/maps/tabs/simple-marker.html'
+                    }
+                }
+            })
+            .state('app.components_maps.custom-marker', {
+                url  : '/custom-marker',
+                views: {
+                    'tab-content': {
+                        templateUrl: 'app/main/components/maps/tabs/custom-marker.html'
+                    }
+                }
+            })
+            .state('app.components_maps.info-window', {
+                url  : '/info-window',
+                views: {
+                    'tab-content': {
+                        templateUrl: 'app/main/components/maps/tabs/info-window.html'
+                    }
+                }
+            });
     }
 
 })();

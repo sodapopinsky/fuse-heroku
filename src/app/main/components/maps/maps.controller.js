@@ -6,7 +6,7 @@
         .module('app.components.maps')
         .controller('MapsController', MapsController);
 
-    function MapsController(uiGmapGoogleMapApi)
+    function MapsController(uiGmapGoogleMapApi, $scope, $state)
     {
         var vm = this;
 
