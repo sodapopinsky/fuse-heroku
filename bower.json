@@ -25,9 +25,9 @@
     "angular-ui-ace": "bower",
     "angular-chart.js": "~0.8.1",
     "angular-chartist.js": "~3.3.6",
+    "d3": "~3.5.6",
     "angular-nvd3": "~0.1.1",
     "c3-angular": "~0.6.0",
-    "d3": "~3.5.6",
     "angular-google-maps": "~2.1.5",
     "mobile-detect": "hgoebl/mobile-detect.js#~1.2.1",
     "perfect-scrollbar": "~0.6.4",
@@ -38,7 +38,8 @@
     "angular-mocks": "~1.4.0"
   },
   "resolutions": {
-    "angular": "~1.4.0"
+    "angular": "~1.4.0",
+    "d3": "~3.5.6"
   },
   "overrides": {
     "ace-builds": {
