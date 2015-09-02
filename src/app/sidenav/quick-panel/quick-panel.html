@@ -9,7 +9,8 @@
         <md-tab>
             <md-tab-label translate="QUICKPANEL.CHAT">CHAT</md-tab-label>
             <md-content class="chat-tab scrollable" ms-scroll
-                        ng-include="'app/sidenav/quick-panel/tabs/chat/chat-tab.html'">
+                        ng-include="'app/sidenav/quick-panel/tabs/chat/chat-tab.html'"
+                        ng-controller="ChatTabController as vm">
             </md-content>
         </md-tab>
         <md-tab>

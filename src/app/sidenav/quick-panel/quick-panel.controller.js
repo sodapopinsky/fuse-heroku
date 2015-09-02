@@ -28,11 +28,7 @@
             vm.notes = response.data;
         });
 
-        api.contacts.get({}, function (response)
-        {
-            vm.contacts = response.data;
-        });
-
+      
         api.activities.get({}, function (response)
         {
             vm.activities = response.data;
