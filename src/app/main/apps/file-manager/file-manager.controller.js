@@ -6,7 +6,7 @@
         .controller('FileManagerController', FileManagerController);
 
     /** @ngInject */
-    function FileManagerController(api, $mdSidenav)
+    function FileManagerController($mdSidenav, Documents)
     {
         var vm = this;
 
@@ -19,14 +19,10 @@
         vm.currentView = 'list';
         vm.showDetails = true;
 
-        api.fileManager.documents.get({}, function (response)
-        {
-
-            vm.path = response.data.path;
-            vm.folders = response.data.folders;
-            vm.files = response.data.files;
-            vm.selected = vm.files[0];
-        });
+        vm.path = Documents.data.path;
+        vm.folders = Documents.data.folders;
+        vm.files = Documents.data.files;
+        vm.selected = vm.files[0];
 
         // Methods
         vm.select = select;
