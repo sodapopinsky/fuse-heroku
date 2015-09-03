@@ -87,3 +87,29 @@
         }
     }
 }
+
+// RESPONSIVE
+@media screen and (max-width: $breakpoint-sm) {
+    #mail .center .content-card .content-wrapper .content.mail-read-pane {
+        .mail-header {
+
+            .subject {
+                margin-bottom: 16px;
+            }
+
+        }
+        .mail-content {
+            .info .avatar {
+                margin: 0;
+            }
+            .to {
+                margin: 16px 0 0 0;
+            }
+
+            .name {
+                margin: 16px 0;
+            }
+
+        }
+    }
+}
