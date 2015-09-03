@@ -14,7 +14,7 @@
                 template: '=',
                 card    : '=ngModel'
             },
-            template: '<div ng-include="templateDir" onload="cardTemplateLoaded()"></div>',
+            template: '<div class="ms-card-content-wrapper" ng-include="templateDir" onload="cardTemplateLoaded()"></div>',
             compile : function (tElement)
             {
                 // Add class
