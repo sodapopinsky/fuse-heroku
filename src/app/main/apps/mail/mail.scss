@@ -37,6 +37,7 @@
 
             .toolbar {
                 padding: 8px 16px;
+                position: relative;
 
                 &.mail-read-responsive-toolbar {
                     display: none;
@@ -45,6 +46,7 @@
                 .page-info {
                     font-weight: 500;
                     margin: 0 8px;
+                    white-space: nowrap;
                 }
             }
 
@@ -62,12 +64,20 @@
 
                     &.mail-read-pane {
                         padding: 24px;
+                        .mail-content {
+                            .to {
+                                margin: 8px;
+                                text-transform: lowercase;
+                            }
+                        }
                     }
                 }
             }
         }
     }
 }
+
+// RESPONSIVE
 
 @media screen and (max-width: $breakpoint-lg) {
 
@@ -76,14 +86,20 @@
         .content-card {
 
             &.responsive-mode {
+
                 .toolbar {
                     display: none;
+
                     &.mail-read-responsive-toolbar {
                         display: flex !important;
                     }
+
                 }
+
                 .content-wrapper {
+
                     .content {
+
                         &.mail-read-pane {
                             @include easingOutQuadTimingFunction();
                             @include transitionDuration(250ms);
@@ -92,6 +108,7 @@
                     }
                 }
             }
+
             .content-wrapper {
 
                 .content {
@@ -108,6 +125,29 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+    #mail .center .content-card .content-wrapper .content.mail-read-pane {
+        .mail-header {
+
+            .subject {
+                margin-bottom: 16px;
+            }
+
+        }
+        .mail-content {
+
+            .to {
+                margin: 16px 0 0 0;
+            }
+
+            .name {
+                margin: 16px 0;
+            }
+
         }
     }
 }
