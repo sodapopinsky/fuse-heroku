@@ -1,49 +1,46 @@
 /*----------------------------------------------------------------*/
 /*  @ Scrollbars
 /*----------------------------------------------------------------*/
-/*::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 15px;
-    height: 17px;
-    margin-left: 10px;
+    height: 15px;
 }
 
-/!* Background *!/
-::-webkit-scrollbar-track-piece {
+/* Background */
+::-webkit-scrollbar-track-piece:vertical {
     background: transparent none;
-    border: solid 0 transparent;
-    border-right-width: 0;
-    margin: 0;
+    border: 0 solid transparent;
 }
 
-/!* Bottom bar background *!/
+/* Bottom bar background */
 ::-webkit-scrollbar-track-piece:horizontal {
-    border-right-width: 4px;
-    border-bottom-width: 8px;
+    background: transparent none;
+    border: 0 solid transparent;
 }
 
-/!* Bar element (thumb) *!/
-::-webkit-scrollbar-thumb {
-    border: solid 0 rgba(0, 0, 0, 0);
+/* Vertical thumb */
+::-webkit-scrollbar-thumb:vertical {
+    border: 3px solid transparent;
     border-right-width: 5px;
     border-left-width: 5px;
-    -webkit-border-radius: 9px 6px;
-    -webkit-box-shadow: inset 0 0 0 6px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 0 12px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
 }
 
-/!* Darken rollover *!/
+/* Horizontal thumb */
+::-webkit-scrollbar-thumb:horizontal {
+    border: 3px solid transparent;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    box-shadow: inset 0 0 0 12px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+}
+
+/* Darken rollover */
 ::-webkit-scrollbar-thumb:hover {
     -webkit-box-shadow: inset 0 0 0 6px rgba(0, 0, 0, 0.4);
 }
 
-/!* Horizontal thumb *!/
-::-webkit-scrollbar-thumb:horizontal {
-    border-right-width: 0;
-    border-left-width: 0;
-    border-top-width: 5px;
-    border-bottom-width: 5px;
-    -webkit-border-radius: 6px 9px;
-}
-
 ::-webkit-scrollbar-corner {
     background-color: transparent;
-}*/
+}
