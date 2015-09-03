@@ -62,7 +62,7 @@
                 <ms-widget class="stat-widget height-185" flippable="true" layout="column">
 
                     <!-- Front -->
-                    <ms-widget-front class="padding-16 md-light-blue-bg" layout="column" flex>
+                    <ms-widget-front class="padding-16 md-red-bg" layout="column" flex>
                         <div class="padding-bottom-8" layout="row" layout-align="space-between center">
                             <div class="h4 font-weight-500 secondary-text">{{vm.widget2.title}}</div>
 
@@ -87,7 +87,10 @@
                         </div>
 
                         <div class="white-text" layout="column" layout-align="space-between" flex>
-                            <div class="md-display-2 padding-bottom-16">{{vm.widget2.value}}%</div>
+                            <div class="padding-bottom-16" layout="row" layout-align="start center">
+                                <div class="md-display-2">{{vm.widget2.value}}%</div>
+                                <md-icon md-font-icon="{{vm.widget2.icon}}" class="s32 margin-horizontal-8 icon"></md-icon>
+                            </div>
 
                             <div class="padding-bottom-8">
                                 <md-progress-linear md-mode="determinate"

@@ -33,7 +33,7 @@
                 ]
             },
             stats   : {
-                title: 'Stats',
+                title  : 'Stats',
                 column1: [
                     {
                         label: 'Visits:',
@@ -67,7 +67,8 @@
 
         vm.widget2 = {
             title : 'STORAGE CAPACITY',
-            value : 80,
+            value : 92,
+            icon  : 'icon-alert',
             detail: 'This is the back side. You can show detailed information here.',
         };
 
