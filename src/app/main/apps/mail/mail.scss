@@ -38,6 +38,10 @@
             .toolbar {
                 padding: 8px 16px;
 
+                &.mail-read-responsive-toolbar {
+                    display: none;
+                }
+
                 .page-info {
                     font-weight: 500;
                     margin: 0 8px;
@@ -46,6 +50,7 @@
 
             .content-wrapper {
                 overflow: hidden;
+                position: relative;
 
                 .content {
                     padding: 0;
@@ -57,6 +62,49 @@
 
                     &.mail-read-pane {
                         padding: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-lg) {
+
+    #mail {
+
+        .content-card {
+
+            &.responsive-mode {
+                .toolbar {
+                    display: none;
+                    &.mail-read-responsive-toolbar {
+                        display: flex !important;
+                    }
+                }
+                .content-wrapper {
+                    .content {
+                        &.mail-read-pane {
+                            @include easingOutQuadTimingFunction();
+                            @include transitionDuration(250ms);
+                            left: 0;
+                        }
+                    }
+                }
+            }
+            .content-wrapper {
+
+                .content {
+
+                    &.mail-read-pane {
+                        position: absolute;
+                        max-width: 100%;
+                        width: 100%;
+                        @include easingOutQuadTimingFunction();
+                        @include transitionDuration(250ms);
+                        top: 0;
+                        bottom: 0;
+                        left: 100%;
                     }
                 }
             }

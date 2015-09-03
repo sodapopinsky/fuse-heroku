@@ -33,7 +33,20 @@
         <!-- / CONTENT HEADER -->
 
         <!-- CONTENT CARD -->
-        <div class="content-card" layout="column" flex>
+        <div class="content-card" layout="column" flex ng-class="{'responsive-mode':vm.mailReadRes}">
+
+            <!-- CONTENT MAIL READ RESPONSIVE TOOLBAR  -->
+            <div class="toolbar mail-read-responsive-toolbar" layout="row" layout-align="space-between center">
+                <div>
+                    <md-button class="md-icon-button"
+                               ng-click="vm.mailReadRes = false"
+                               aria-label="Back"
+                               translate translate-attr-aria-label="MAIL.BACK">
+                        <md-icon md-font-icon="icon-keyboard-backspace"></md-icon>
+                    </md-button>
+                </div>
+
+            </div>
 
             <!-- CONTENT TOOLBAR -->
             <div class="toolbar" layout="row" layout-align="space-between center">
@@ -144,7 +157,7 @@
             <div class="content-wrapper" layout="row" flex>
 
                 <!-- MAIL LIST PANE -->
-                <md-content class="content mail-list-pane" flex="50"
+                <md-content class="content mail-list-pane" flex="100" flex-gt-lg="50"
                             ng-include="'app/main/apps/mail/views/mail-list/mail-list.html'" ms-scroll>
                 </md-content>
                 <!-- / MAIL LIST PANE -->
