@@ -16,6 +16,11 @@
             padding: 24px 0;
             border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
+            .to {
+                margin: 8px;
+                text-transform: lowercase;
+            }
+
             .info {
                 padding-bottom: 24px;
 
@@ -90,26 +95,44 @@
 
 // RESPONSIVE
 @media screen and (max-width: $breakpoint-sm) {
-    #mail .center .content-card .content-wrapper .content.mail-read-pane {
-        .mail-header {
+    #mail {
 
-            .subject {
-                margin-bottom: 16px;
-            }
+        .center {
 
-        }
-        .mail-content {
-            .info .avatar {
-                margin: 0;
-            }
-            .to {
-                margin: 16px 0 0 0;
-            }
+            .content-card {
 
-            .name {
-                margin: 16px 0;
-            }
+                .content-wrapper {
 
+                    .content.mail-read-pane {
+
+                        .mail-header {
+
+                            .subject {
+                                margin-bottom: 16px;
+                            }
+
+                        }
+
+                        .mail-content {
+
+                            .info {
+
+                                .avatar {
+                                    margin: 0;
+                                }
+                            }
+
+                            .to {
+                                margin: 16px 0 0 0;
+                            }
+
+                            .name {
+                                margin: 16px 0;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
