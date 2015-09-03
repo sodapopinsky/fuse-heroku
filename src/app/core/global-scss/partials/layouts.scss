@@ -481,3 +481,16 @@
         padding: 24px;
     }
 }
+
+@media screen and (max-width: $breakpoint-sm) {
+    .page-layout.carded {
+        &.right-sidenav,
+        &.left-sidenav,
+        &.fullwidth {
+            > .center {
+                margin-left: 16px;
+                margin-right: 16px;
+            }
+        }
+    }
+}
