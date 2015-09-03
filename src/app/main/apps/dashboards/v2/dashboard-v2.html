@@ -33,9 +33,9 @@
                     <div class="padding-top-24">
                         <div class="h3">{{vm.widget1.stats.title}}</div>
 
-                        <div class="padding-top-8" layout="row">
+                        <div class="padding-top-8" layout="row" layout-wrap>
 
-                            <div layout="column" flex="50">
+                            <div layout="column" flex="100" flex-gt-sm="50">
                                 <div class="padding-vertical-5" layout="row"
                                      ng-repeat="stat in vm.widget1.stats.column1">
                                     <div class="h4 padding-right-8 secondary-text">{{stat.label}}</div>
@@ -43,7 +43,7 @@
                                 </div>
                             </div>
 
-                            <div layout="column" flex="50">
+                            <div layout="column" flex="100" flex-gt-sm="50">
                                 <div class="padding-vertical-5" layout="row"
                                      ng-repeat="stat in vm.widget1.stats.column2">
                                     <div class="h4 padding-right-8 secondary-text">{{stat.label}}</div>
@@ -200,7 +200,7 @@
                 <h2 class="font-weight-600 secondary-text">Latest Posts (4)</h2>
             </div>
 
-            <div flex="50" flex-gt-md="25" ng-repeat="post in vm.latestPosts">
+            <div flex="100" flex-gt-sm="50" flex-gt-lg="25" ng-repeat="post in vm.latestPosts">
                 <!-- MS-CARD -->
                 <ms-card template="'template-2'" ng-model="post"></ms-card>
                 <!-- / MS-CARD -->

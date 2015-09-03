@@ -101,53 +101,53 @@
                 text    : 'Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.',
                 media   : {
                     image: {
-                        src: 'assets/images/photos/early_sunrise-2560x1440.jpg',
+                        src: 'assets/images/photos/early-sunrise.jpg',
                         alt: 'Early Sunrise'
                     }
                 }
             },
             {
                 avatar  : {
-                    src: 'assets/images/avatars/alice.png',
-                    alt: 'Alice Freeman'
+                    src: 'assets/images/avatars/garry.png',
+                    alt: 'Andrew Ryan'
                 },
-                title   : 'Alice Freeman posted on Nature',
-                subtitle: '32 minutes ago',
-                text    : 'Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.',
+                title   : 'Andrew Ryan posted on Gaming',
+                subtitle: '3 hours ago',
+                text    : 'Fallout 4 PipBoy edition will come with an actual PipBoy. You will be able to put your mobile device in it and it will work with the game!',
                 media   : {
                     image: {
-                        src: 'assets/images/photos/early_sunrise-2560x1440.jpg',
-                        alt: 'Early Sunrise'
+                        src: 'assets/images/photos/fallout.png',
+                        alt: 'Fallout 4'
                     }
                 }
             },
             {
                 avatar  : {
-                    src: 'assets/images/avatars/alice.png',
-                    alt: 'Alice Freeman'
+                    src: 'assets/images/avatars/katherine.png',
+                    alt: 'Katherine'
                 },
-                title   : 'Alice Freeman posted on Nature',
-                subtitle: '32 minutes ago',
-                text    : 'Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.',
+                title   : 'Katherine posted on Weather',
+                subtitle: '4 hours ago',
+                text    : 'Aliquam mauris magna, elementum eget lobortis ut, rutrum ut est. Integer auctor, velit at hendrerit aliquam, lacus mi tincidunt.',
                 media   : {
                     image: {
-                        src: 'assets/images/photos/early_sunrise-2560x1440.jpg',
-                        alt: 'Early Sunrise'
+                        src: 'assets/images/photos/snow.jpg',
+                        alt: 'Snow'
                     }
                 }
             },
             {
                 avatar  : {
-                    src: 'assets/images/avatars/alice.png',
-                    alt: 'Alice Freeman'
+                    src: 'assets/images/avatars/danielle.jpg',
+                    alt: 'Danielle'
                 },
-                title   : 'Alice Freeman posted on Nature',
-                subtitle: '32 minutes ago',
-                text    : 'Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.',
+                title   : 'Danielle posted on Holidays',
+                subtitle: '1 day ago',
+                text    : 'Proin nec lacus vestibulum, commodo ipsum eleifend, scelerisque magna. Vivamus ac turpis sagittis, feugiat neque eu, consectetur mauris.',
                 media   : {
                     image: {
-                        src: 'assets/images/photos/early_sunrise-2560x1440.jpg',
-                        alt: 'Early Sunrise'
+                        src: 'assets/images/photos/tropical-beach.jpg',
+                        alt: 'Tropical Beach'
                     }
                 }
             }
