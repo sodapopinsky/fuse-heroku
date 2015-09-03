@@ -13,7 +13,7 @@
         // Data
         vm.widget1 = {
             title   : 'ANALYTICS',
-            subtitle: 'Last 30 days',
+            subtitle: 'Last 12 hours',
             chart   : {
                 columns: [
                     {
@@ -31,31 +31,62 @@
                         type  : 'spline'
                     }
                 ]
+            },
+            stats   : {
+                title: 'Stats',
+                column1: [
+                    {
+                        label: 'Visits:',
+                        value: 856
+                    },
+                    {
+                        label: 'Pageviews:',
+                        value: 1588
+                    },
+                    {
+                        label: 'Pages/Visit:',
+                        value: 1.855
+                    }
+                ],
+                column2: [
+                    {
+                        label: 'Bounce Rate:',
+                        value: '83.58%'
+                    },
+                    {
+                        label: 'Average Visit Duration:',
+                        value: '1m 42s'
+                    },
+                    {
+                        label: 'New Visits:',
+                        value: '89.55%'
+                    }
+                ]
             }
         };
 
         vm.widget2 = {
-            title   : 'STORAGE CAPACITY',
-            value   : 80,
-            detail  : 'This is the back side. You can show detailed information here.',
+            title : 'STORAGE CAPACITY',
+            value : 80,
+            detail: 'This is the back side. You can show detailed information here.',
         };
 
         vm.widget3 = {
             title: 'ONLINE MEMBERS',
             value: 658,
-            icon: 'icon-account'
+            icon : 'icon-account'
         };
 
         vm.widget4 = {
             title: 'MEMBERS FOR PAST 30 DAYS',
             value: 55,
-            icon: 'icon-account-plus'
+            icon : 'icon-account-plus'
         };
 
         vm.widget5 = {
             title: 'TOTAL MEMBERS',
             value: 59962,
-            icon: 'icon-account-multiple'
+            icon : 'icon-account-multiple'
         };
 
         //////////

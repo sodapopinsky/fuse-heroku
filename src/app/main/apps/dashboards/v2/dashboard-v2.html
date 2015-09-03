@@ -10,23 +10,45 @@
             <ms-widget class="chart-widget height-785" layout="column" flex="100" flex-gt-md="60" flex-gt-lg="75">
 
                 <!-- Front -->
-                <ms-widget-front class="padding-16 md-white-bg" layout="column" layout-align="space-between" flex>
+                <ms-widget-front class="padding-16 md-white-bg" layout="column" flex>
                     <div class="padding-bottom-16">
-                        <div class="h3 weight-500 padding-bottom-1">{{vm.widget1.title}}</div>
+                        <div class="h2 weight-500 padding-bottom-1">{{vm.widget1.title}}</div>
                         <div class="secondary-text">{{vm.widget1.subtitle}}</div>
+                        <div class="margin-top-16">
+                            <c3chart class="c3 stroke-2" bindto-id="analytics">
+                                <chart-column ng-repeat="column in vm.widget1.chart.columns"
+                                              column-id="{{column.id}}"
+                                              column-name="{{column.name}}"
+                                              column-color="{{column.color}}"
+                                              column-values="{{column.values}}"
+                                              column-type="{{column.type}}"
+                                />
+                                <chart-size chart-height="330"/>
+                            </c3chart>
+                        </div>
                     </div>
 
-                    <div>
-                        <c3chart class="c3 stroke-2" bindto-id="analytics">
-                            <chart-column ng-repeat="column in vm.widget1.chart.columns"
-                                          column-id="{{column.id}}"
-                                          column-name="{{column.name}}"
-                                          column-color="{{column.color}}"
-                                          column-values="{{column.values}}"
-                                          column-type="{{column.type}}"
-                            />
-                            <chart-size chart-height="330"/>
-                        </c3chart>
+                    <md-divider></md-divider>
+
+                    <div class="padding-top-24">
+                        <div class="h3">{{vm.widget1.stats.title}}</div>
+
+                        <div class="padding-top-8" layout="row">
+
+                            <div layout="column" flex="50">
+                                <div class="padding-vertical-5" layout="row" ng-repeat="stat in vm.widget1.stats.column1">
+                                    <div class="h4 padding-right-8 secondary-text">{{stat.label}}</div>
+                                    <div class="h4">{{stat.value}}</div>
+                                </div>
+                            </div>
+
+                            <div layout="column" flex="50">
+                                <div class="padding-vertical-5" layout="row" ng-repeat="stat in vm.widget1.stats.column2">
+                                    <div class="h4 padding-right-8 secondary-text">{{stat.label}}</div>
+                                    <div class="h4">{{stat.value}}</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </ms-widget-front>
                 <!-- / Front -->
