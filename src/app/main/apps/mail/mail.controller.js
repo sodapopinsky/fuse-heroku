@@ -6,7 +6,7 @@
         .controller('MailController', MailController);
 
     /** @ngInject */
-    function MailController($document, $mdDialog, $mdSidenav, api)
+    function MailController($document, $mdDialog, $mdSidenav, Inbox)
     {
         var vm = this;
 
@@ -21,11 +21,8 @@
         vm.selectedMail = {};
         vm.toggleSidenav = toggleSidenav;
 
-        api.mail.inbox.get({}, function (response)
-        {
-            vm.inbox = response.data;
-            selectMail(vm.inbox[0]);
-        });
+        vm.inbox = Inbox.data;
+        selectMail(vm.inbox[0]);
 
         // Methods
         vm.selectMail = selectMail;

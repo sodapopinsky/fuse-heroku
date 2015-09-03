@@ -6,15 +6,12 @@
         .controller('IconsController', IconsController);
 
     /** @ngInject */
-    function IconsController(api)
+    function IconsController(Icons)
     {
         var vm = this;
 
         // Data
-        api.icons.get({}, function (response)
-        {
-            vm.icons = response.icons;
-        });
+        vm.icons = Icons.icons;
 
         // Methods
 

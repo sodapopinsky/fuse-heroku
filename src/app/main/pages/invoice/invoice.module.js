@@ -16,6 +16,12 @@
                     templateUrl: 'app/main/pages/invoice/invoice.html',
                     controller : 'InvoiceController as vm'
                 }
+            },
+            resolve: {
+                Invoice: function (apiResolver)
+                {
+                    return apiResolver.resolve('invoice@get');
+                }
             }
         });
 

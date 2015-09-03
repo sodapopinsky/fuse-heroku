@@ -6,15 +6,12 @@
         .controller('TimelineController', TimelineController);
 
     /** @ngInject */
-    function TimelineController(api)
+    function TimelineController(Timeline)
     {
         var vm = this;
 
         // Data
-        api.timeline.get({}, function (response)
-        {
-            vm.timeline = response.data;
-        });
+        vm.timeline = Timeline.data;
 
         // Methods
 

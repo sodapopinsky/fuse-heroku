@@ -53,18 +53,13 @@
         });
 
         api.profile = {
-            timeline    : {
-                posts     : $resource(api.dataUrl + 'profile/timeline/posts.json', null, {
-                    'get': {method: 'get'}
-                }),
-                activities: $resource(api.dataUrl + 'profile/timeline/activities.json', null, {
-                    'get': {method: 'get'}
-                })
-            },
-            about       : $resource(api.dataUrl + 'profile/about/about.json', null, {
+            timeline    : $resource(api.dataUrl + 'profile/timeline.json', null, {
                 'get': {method: 'get'}
             }),
-            photosVideos: $resource(api.dataUrl + 'profile/photos-videos/photos-videos.json', null, {
+            about       : $resource(api.dataUrl + 'profile/about.json', null, {
+                'get': {method: 'get'}
+            }),
+            photosVideos: $resource(api.dataUrl + 'profile/photos-videos.json', null, {
                 'get': {method: 'get'}
             })
         };
@@ -142,7 +137,6 @@
 
             // Get the correct api object from api service
             var apiObject = getApiObject(resource);
-
 
             if ( !apiObject )
             {

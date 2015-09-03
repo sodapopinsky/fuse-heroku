@@ -6,32 +6,17 @@
         .controller('SearchController', SearchController);
 
     /** @ngInject */
-    function SearchController(api)
+    function SearchController(Classic, Mails, Users, Contacts)
     {
         var vm = this;
 
         // Data
         vm.colors = ['md-blue-bg', 'md-blue-grey-bg', 'md-orange-bg', 'md-pink-bg', 'md-purple-bg'];
 
-        api.search.classic.get({}, function (response)
-        {
-            vm.classic = response.data;
-        });
-
-        api.search.mails.get({}, function (response)
-        {
-            vm.mails = response.data;
-        });
-
-        api.search.users.get({}, function (response)
-        {
-            vm.users = response.data;
-        });
-
-        api.search.contacts.get({}, function (response)
-        {
-            vm.contacts = response.data;
-        });
+        vm.classic = Classic.data;
+        vm.mails = Mails.data;
+        vm.users = Users.data;
+        vm.contacts = Contacts.data;
 
         // Methods
 

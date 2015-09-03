@@ -7,15 +7,12 @@
         .controller('SimpleTableController', SimpleTableController);
 
     /** @ngInject */
-    function SimpleTableController(api)
+    function SimpleTableController(Employees)
     {
         var vm = this;
 
         // Data
-        api.tables.employees.get({}, function (response)
-        {
-            vm.employees = response.data;
-        });
+        vm.employees = Employees.data;
 
         // Methods
 

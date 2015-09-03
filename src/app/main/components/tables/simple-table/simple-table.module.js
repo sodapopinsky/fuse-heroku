@@ -16,6 +16,12 @@
                     templateUrl: 'app/main/components/tables/simple-table/simple-table.html',
                     controller : 'SimpleTableController as vm'
                 }
+            },
+            resolve: {
+                Employees: function (apiResolver)
+                {
+                    return apiResolver.resolve('tables.employees@get');
+                }
             }
         });
     }

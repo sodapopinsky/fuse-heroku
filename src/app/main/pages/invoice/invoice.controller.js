@@ -6,15 +6,12 @@
         .controller('InvoiceController', InvoiceController);
 
     /** @ngInject */
-    function InvoiceController(api)
+    function InvoiceController(Invoice)
     {
         var vm = this;
 
         // Data
-        api.invoice.get({}, function (response)
-        {
-            vm.invoice = response.data;
-        });
+        vm.invoice = Invoice.data;
 
         // Methods
 

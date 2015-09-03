@@ -16,6 +16,24 @@
                     templateUrl: 'app/main/pages/search/search.html',
                     controller : 'SearchController as vm'
                 }
+            },
+            resolve: {
+                Classic: function (apiResolver)
+                {
+                    return apiResolver.resolve('search.classic@get');
+                },
+                Mails: function (apiResolver)
+                {
+                    return apiResolver.resolve('search.mails@get');
+                },
+                Users: function (apiResolver)
+                {
+                    return apiResolver.resolve('search.users@get');
+                },
+                Contacts: function (apiResolver)
+                {
+                    return apiResolver.resolve('search.contacts@get');
+                }
             }
         });
 

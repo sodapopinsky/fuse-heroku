@@ -1,5 +1,71 @@
 {
-    "data": [
+    "activities": [
+        {
+            "user": {
+                "name": "Alice Freeman",
+                "avatar": "assets/images/avatars/alice.png"
+            },
+            "message": "started following you.",
+            "time": "13 mins. ago"
+        },
+        {
+            "user": {
+                "name": "Andrew Green",
+                "avatar": "assets/images/avatars/andrew.png"
+            },
+            "message": "sent you a message.",
+            "time": "June 10,2015"
+        },
+        {
+            "user": {
+                "name": "Garry Newman",
+                "avatar": "assets/images/avatars/garry.png"
+            },
+            "message": "shared a public post with your group.",
+            "time": "June 9,2015"
+        },
+        {
+            "user": {
+                "name": "Carl Henderson",
+                "avatar": "assets/images/avatars/carl.png"
+            },
+            "message": "wants to play Fallout Shelter with you.",
+            "time": "June 8,2015"
+        },
+        {
+            "user": {
+                "name": "Jane Dean",
+                "avatar": "assets/images/avatars/jane.png"
+            },
+            "message": "started following you.",
+            "time": "June 7,2015"
+        },
+        {
+            "user": {
+                "name": "Juan Carpenter",
+                "avatar": "assets/images/avatars/james.png"
+            },
+            "message": "sent you a message.",
+            "time": "June 6,2015"
+        },
+        {
+            "user": {
+                "name": "Judith Burton",
+                "avatar": "assets/images/avatars/joyce.png"
+            },
+            "message": "shared a photo with you.",
+            "time": "June 5,2015"
+        },
+        {
+            "user": {
+                "name": "Vincent Munoz",
+                "avatar": "assets/images/avatars/vincent.png"
+            },
+            "message": "shared a photo with you.",
+            "time": "June 4,2015"
+        }
+    ],
+    "posts": [
         {
             "user": {
                 "name": "Garry Newman",

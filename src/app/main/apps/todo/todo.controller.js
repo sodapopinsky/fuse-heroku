@@ -6,7 +6,7 @@
         .controller('TodoController', TodoController);
 
     /** @ngInject */
-    function TodoController($document, $mdDialog, $mdSidenav, api)
+    function TodoController($document, $mdDialog, $mdSidenav, Tasks, Tags)
     {
         var vm = this;
 
@@ -27,15 +27,8 @@
 
         vm.selectedProject = 'creapond';
 
-        api.todo.tasks.get({}, function (response)
-        {
-            vm.tasks = response.data;
-        });
-
-        api.todo.tags.get({}, function (response)
-        {
-            vm.tags = response.data;
-        });
+        vm.tasks = Tasks.data;
+        vm.tags = Tags.data;
 
         // Methods
         vm.openTaskDialog = openTaskDialog;

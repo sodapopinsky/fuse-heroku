@@ -16,6 +16,20 @@
                     templateUrl: 'app/main/pages/profile/profile.html',
                     controller : 'ProfileController as vm'
                 }
+            },
+            resolve: {
+                Timeline: function (apiResolver)
+                {
+                    return apiResolver.resolve('profile.timeline@get');
+                },
+                About: function (apiResolver)
+                {
+                    return apiResolver.resolve('profile.about@get');
+                },
+                PhotosVideos: function (apiResolver)
+                {
+                    return apiResolver.resolve('profile.photosVideos@get');
+                }
             }
         });
 

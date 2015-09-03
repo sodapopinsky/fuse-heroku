@@ -16,6 +16,12 @@
                     templateUrl: 'app/main/components/cards/cards.html',
                     controller : 'CardsController as vm'
                 }
+            },
+            resolve: {
+                Cards: function (apiResolver)
+                {
+                    return apiResolver.resolve('cards@get');
+                }
             }
         });
     }

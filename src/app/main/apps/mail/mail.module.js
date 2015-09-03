@@ -16,6 +16,12 @@
                     templateUrl: 'app/main/apps/mail/mail.html',
                     controller : 'MailController as vm'
                 }
+            },
+            resolve: {
+                Inbox: function (apiResolver)
+                {
+                    return apiResolver.resolve('mail.inbox@get');
+                }
             }
         });
 
