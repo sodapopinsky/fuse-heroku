@@ -36,14 +36,16 @@
                         <div class="padding-top-8" layout="row">
 
                             <div layout="column" flex="50">
-                                <div class="padding-vertical-5" layout="row" ng-repeat="stat in vm.widget1.stats.column1">
+                                <div class="padding-vertical-5" layout="row"
+                                     ng-repeat="stat in vm.widget1.stats.column1">
                                     <div class="h4 padding-right-8 secondary-text">{{stat.label}}</div>
                                     <div class="h4">{{stat.value}}</div>
                                 </div>
                             </div>
 
                             <div layout="column" flex="50">
-                                <div class="padding-vertical-5" layout="row" ng-repeat="stat in vm.widget1.stats.column2">
+                                <div class="padding-vertical-5" layout="row"
+                                     ng-repeat="stat in vm.widget1.stats.column2">
                                     <div class="h4 padding-right-8 secondary-text">{{stat.label}}</div>
                                     <div class="h4">{{stat.value}}</div>
                                 </div>
@@ -55,9 +57,9 @@
 
             </ms-widget>
             <!-- / WIDGET 1 -->
-            
+
             <div layout="column" flex="100" flex-gt-md="40" flex-gt-lg="25">
-                
+
                 <!-- WIDGET 2 -->
                 <ms-widget class="stat-widget height-185" flippable="true" layout="column">
 
@@ -89,7 +91,8 @@
                         <div class="white-text" layout="column" layout-align="space-between" flex>
                             <div class="padding-bottom-16" layout="row" layout-align="start center">
                                 <div class="md-display-2">{{vm.widget2.value}}%</div>
-                                <md-icon md-font-icon="{{vm.widget2.icon}}" class="s32 margin-horizontal-8 icon"></md-icon>
+                                <md-icon md-font-icon="{{vm.widget2.icon}}"
+                                         class="s32 margin-horizontal-8 icon"></md-icon>
                             </div>
 
                             <div class="padding-bottom-8">
@@ -123,7 +126,8 @@
 
                     <!-- Front -->
                     <ms-widget-front class="padding-16 md-white-bg" layout="row" flex>
-                        <div class="padding-top-8 padding-bottom-8" layout="row" layout-align="space-between center" flex>
+                        <div class="padding-top-8 padding-bottom-8" layout="row" layout-align="space-between center"
+                             flex>
                             <div class="padding-left-8" layout="column" layout-align="center start">
                                 <span class="md-display-1 padding-bottom-8">{{vm.widget3.value}}</span>
                                 <span class="font-weight-500 secondary-text">{{vm.widget3.title}}</span>
@@ -144,7 +148,8 @@
 
                     <!-- Front -->
                     <ms-widget-front class="padding-16 md-white-bg" layout="row" flex>
-                        <div class="padding-top-8 padding-bottom-8" layout="row" layout-align="space-between center" flex>
+                        <div class="padding-top-8 padding-bottom-8" layout="row" layout-align="space-between center"
+                             flex>
                             <div class="padding-left-8" layout="column" layout-align="center start">
                                 <span class="md-display-1 padding-bottom-8">{{vm.widget4.value}}</span>
                                 <span class="font-weight-500 secondary-text">{{vm.widget4.title}}</span>
@@ -165,7 +170,8 @@
 
                     <!-- Front -->
                     <ms-widget-front class="padding-16 md-white-bg" layout="row" flex>
-                        <div class="padding-top-8 padding-bottom-8" layout="row" layout-align="space-between center" flex>
+                        <div class="padding-top-8 padding-bottom-8" layout="row" layout-align="space-between center"
+                             flex>
                             <div class="padding-left-8" layout="column" layout-align="center start">
                                 <span class="md-display-1 padding-bottom-8">{{vm.widget5.value}}</span>
                                 <span class="font-weight-500 secondary-text">{{vm.widget5.title}}</span>
@@ -181,10 +187,24 @@
                 </ms-widget>
                 <!-- / WIDGET 5 -->
 
-
             </div>
 
+        </div>
+        <!-- / WIDGET GROUP -->
 
+
+        <!-- WIDGET GROUP -->
+        <div class="widget-group" layout="row" flex="100" layout-wrap>
+
+            <div class="padding-top-24 padding-bottom-16 padding-horizontal-16" layout="row" flex="100">
+                <h2 class="font-weight-600 secondary-text">Latest Posts (4)</h2>
+            </div>
+
+            <div flex="50" flex-gt-md="25" ng-repeat="post in vm.latestPosts">
+                <!-- MS-CARD -->
+                <ms-card template="'template-2'" ng-model="post"></ms-card>
+                <!-- / MS-CARD -->
+            </div>
 
         </div>
         <!-- / WIDGET GROUP -->

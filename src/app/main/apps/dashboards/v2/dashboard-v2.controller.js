@@ -90,6 +90,68 @@
             icon : 'icon-account-multiple'
         };
 
+        vm.latestPosts = [
+            {
+                avatar  : {
+                    src: 'assets/images/avatars/alice.png',
+                    alt: 'Alice Freeman'
+                },
+                title   : 'Alice Freeman posted on Nature',
+                subtitle: '32 minutes ago',
+                text    : 'Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.',
+                media   : {
+                    image: {
+                        src: 'assets/images/photos/early_sunrise-2560x1440.jpg',
+                        alt: 'Early Sunrise'
+                    }
+                }
+            },
+            {
+                avatar  : {
+                    src: 'assets/images/avatars/alice.png',
+                    alt: 'Alice Freeman'
+                },
+                title   : 'Alice Freeman posted on Nature',
+                subtitle: '32 minutes ago',
+                text    : 'Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.',
+                media   : {
+                    image: {
+                        src: 'assets/images/photos/early_sunrise-2560x1440.jpg',
+                        alt: 'Early Sunrise'
+                    }
+                }
+            },
+            {
+                avatar  : {
+                    src: 'assets/images/avatars/alice.png',
+                    alt: 'Alice Freeman'
+                },
+                title   : 'Alice Freeman posted on Nature',
+                subtitle: '32 minutes ago',
+                text    : 'Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.',
+                media   : {
+                    image: {
+                        src: 'assets/images/photos/early_sunrise-2560x1440.jpg',
+                        alt: 'Early Sunrise'
+                    }
+                }
+            },
+            {
+                avatar  : {
+                    src: 'assets/images/avatars/alice.png',
+                    alt: 'Alice Freeman'
+                },
+                title   : 'Alice Freeman posted on Nature',
+                subtitle: '32 minutes ago',
+                text    : 'Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.',
+                media   : {
+                    image: {
+                        src: 'assets/images/photos/early_sunrise-2560x1440.jpg',
+                        alt: 'Early Sunrise'
+                    }
+                }
+            }
+        ];
         //////////
 
     }
