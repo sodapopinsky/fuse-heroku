@@ -11,11 +11,26 @@
         <span>FUSE</span>
     </ms-nav-item>
 
-    <ms-nav-item>
-        <a ms-nav-button ui-sref="app.dashboard" ui-sref-active="active" md-ink-ripple>
+    <ms-nav-item ms-nav-toggle>
+        <a ms-nav-button md-ink-ripple>
             <i class="icon-tile-four s16"></i>
-            <span class="ms-nav-label" translate="NAVIGATION.DASHBOARD">Dashboard</span>
+            <span class="ms-nav-label" translate="NAVIGATION.DASHBOARDS">Dashboards</span>
+            <i class="icon-chevron-down s16 arrow"></i>
         </a>
+
+        <ms-nav-toggle-items>
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.dashboard-v1" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label" translate="NAVIGATION.DASHBOARDV1">Dashboard v1</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.dashboard-v2" ui-sref-active="active" md-ink-ripple>
+                    <span class="ms-nav-label" translate="NAVIGATION.DASHBOARDV2">Dashboard v2</span>
+                </a>
+            </ms-nav-item>
+        </ms-nav-toggle-items>
     </ms-nav-item>
 
     <ms-nav-item>

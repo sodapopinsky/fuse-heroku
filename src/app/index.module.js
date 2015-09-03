@@ -26,7 +26,7 @@
             'app.quick-panel',
 
             // Apps
-            'app.dashboard',
+            'app.dashboards',
             'app.calendar',
             'app.mail',
             'app.file-manager',

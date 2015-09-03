@@ -2,11 +2,11 @@
 {
     'use strict';
 
-    angular.module('app.dashboard')
-        .controller('DashboardController', DashboardController);
+    angular.module('app.dashboard-v1')
+        .controller('DashboardV1Controller', DashboardV1Controller);
 
     /** @ngInject */
-    function DashboardController(fuseTheming)
+    function DashboardV1Controller(fuseTheming)
     {
         var vm = this;
 
