@@ -1,7 +1,10 @@
-#compose-dialog {
-    position: relative;
-    min-width: 720px;
-    width: 720px;
+md-dialog {
+
+    &.compose-dialog {
+        position: relative;
+        max-width: 720px;
+        width: 720px;
+    }
 
     md-toolbar {
 
@@ -49,5 +52,26 @@
         justify-content: space-between;
         border-top: 1px solid rgba(0, 0, 0, 0.12);
         background-color: rgba(0, 0, 0, 0.03);
+    }
+}
+
+// RESPONSIVE
+@media screen and (max-width: $breakpoint-md) {
+
+    md-dialog {
+
+        &.compose-dialog {
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+
+    md-dialog {
+
+        &.compose-dialog {
+            width: 90%;
+        }
     }
 }
