@@ -31,7 +31,7 @@
         vm.tags = Tags.data;
 
         // Methods
-        vm.openAddTaskDialog = openAddTaskDialog;
+        vm.openTaskDialog = openTaskDialog;
         vm.toggleStarred = toggleStarred;
         vm.toggleCheck = toggleCheck;
         vm.toggleSidenav = toggleSidenav;
@@ -56,12 +56,12 @@
          * @param ev
          * @param task
          */
-        function openAddTaskDialog(ev, task)
+        function openTaskDialog(ev, task)
         {
             $mdDialog.show({
-                controller         : 'AddTaskDialogController',
+                controller         : 'TaskDialogController',
                 controllerAs       : 'vm',
-                templateUrl        : 'app/main/apps/todo/dialogs/add-task/add-task-dialog.html',
+                templateUrl        : 'app/main/apps/todo/dialogs/task/task-dialog.html',
                 parent             : angular.element($document.body),
                 targetEvent        : ev,
                 clickOutsideToClose: true,

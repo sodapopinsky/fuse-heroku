@@ -1,6 +1,6 @@
 md-dialog {
 
-    &.add-task-dialog {
+    &.task-dialog {
         position: relative;
         max-width: 720px;
         width: 720px;
@@ -92,7 +92,7 @@ md-dialog {
 
     md-dialog {
 
-        &.add-task-dialog {
+        &.task-dialog {
             width: 80%;
         }
     }
@@ -102,7 +102,7 @@ md-dialog {
 
     md-dialog {
 
-        &.add-task-dialog {
+        &.task-dialog {
             width: 90%;
         }
     }

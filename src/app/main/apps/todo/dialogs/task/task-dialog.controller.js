@@ -3,10 +3,10 @@
     'use strict';
 
     angular.module('app.todo')
-        .controller('AddTaskDialogController', AddTaskDialogController);
+        .controller('TaskDialogController', TaskDialogController);
 
     /** @ngInject */
-    function AddTaskDialogController($mdDialog, task)
+    function TaskDialogController($mdDialog, task)
     {
         var vm = this;
 
