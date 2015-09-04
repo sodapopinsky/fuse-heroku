@@ -4,6 +4,7 @@
 
 html {
     font-size: $font-size-root;
+    font-family: $font-family;
     line-height: 1.4;
     letter-spacing: -0.1px;
 }
@@ -148,6 +149,10 @@ small {
 
 .bold, strong {
     font-weight: 700;
+}
+
+.text-strike {
+    text-decoration: line-through;
 }
 
 // Text align helpers
