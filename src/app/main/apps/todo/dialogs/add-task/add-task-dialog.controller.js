@@ -3,19 +3,16 @@
     'use strict';
 
     angular.module('app.todo')
-        .controller('TaskDialogController', TaskDialogController);
+        .controller('AddTaskDialogController', AddTaskDialogController);
 
     /** @ngInject */
-    function TaskDialogController($mdDialog, task)
+    function AddTaskDialogController($mdDialog, task)
     {
         var vm = this;
 
         // Data
         vm.title = 'Edit Task';
         vm.task = task;
-        vm.form = {
-            from: 'sercanyemen@creapond.com'
-        };
 
         if ( !vm.task )
         {
@@ -43,7 +40,5 @@
                 color: tagColors[Math.floor(Math.random() * (tagColors.length))]
             };
         }
-
-
     }
 })();

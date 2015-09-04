@@ -1,7 +1,10 @@
-#task-dialog {
-    position: relative;
-    min-width: 720px;
-    width: 720px;
+md-dialog {
+
+    &.add-task-dialog {
+        position: relative;
+        max-width: 720px;
+        width: 720px;
+    }
 
     md-toolbar {
 
@@ -78,5 +81,26 @@
         background-color: rgba(0, 0, 0, 0.03);
         justify-content: space-between;
         border-top: 1px solid rgba(0, 0, 0, 0.12);
+    }
+}
+
+// RESPONSIVE
+@media screen and (max-width: $breakpoint-md) {
+
+    md-dialog {
+
+        &.add-task-dialog {
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+
+    md-dialog {
+
+        &.add-task-dialog {
+            width: 90%;
+        }
     }
 }
