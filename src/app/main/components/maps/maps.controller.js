@@ -6,12 +6,44 @@
         .module('app.components.maps')
         .controller('MapsController', MapsController);
 
-    function MapsController(uiGmapGoogleMapApi, $scope, $state)
+    /** @ngInject */
+    function MapsController($state, uiGmapGoogleMapApi)
     {
         var vm = this;
 
         // Data
+        var currentState = $state.current.name;
 
+        switch ( currentState )
+        {
+            case 'app.components_maps':
+                vm.selectedIndex = 0;
+                break;
+
+            case 'app.components_maps.satellite':
+                vm.selectedIndex = 1;
+                break;
+
+            case 'app.components_maps.terrain':
+                vm.selectedIndex = 2;
+                break;
+
+            case 'app.components_maps.simple-marker':
+                vm.selectedIndex = 3;
+                break;
+
+            case 'app.components_maps.custom-marker':
+                vm.selectedIndex = 4;
+                break;
+
+            case 'app.components_maps.info-window':
+                vm.selectedIndex = 5;
+                break;
+
+            default:
+                vm.selectedIndex = 0;
+        }
+        
         // Methods
 
         //////////
