@@ -11,21 +11,21 @@
     <div layout="column" layout-align="center start" layout-align-gt-sm="start center" layout-gt-sm="row" flex>
 
         <div layout="column" class="info" flex>
-            <div class="title">{{task.title}}</div>
+            <div class="title text-truncate">{{task.title}}</div>
 
-            <div class="notes">
+            <div class="notes text-truncate">
                 {{task.notes}}
             </div>
         </div>
 
         <div class="tags-buttons" layout="row" layout-align="space-between center" layout-align-gt-sm="end center">
-
             <div class="tags" layout="row">
                 <div class="tag" data-ng-repeat="tag in task.tags"
                      ng-style="{'background-color': tag.color}">
                     {{tag.title}}
                 </div>
             </div>
+
             <div>
                 <md-button class="md-icon-button" ng-click="vm.toggleStarred(task, $event)"
                            aria-label="starred">

@@ -46,12 +46,6 @@
             .info {
                 margin: 0 16px 0 8px;
                 width: 100%;
-                .title,
-                .notes {
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
 
                 .title {
                     font-size: 15px;
@@ -65,14 +59,19 @@
 // RESPONSIVE
 @media screen and (max-width: $breakpoint-sm) {
     #todo {
-        .todo-list-pane .todo {
-            .info {
-                margin: 0;
-            }
-            .tags-buttons {
-                width: 100%;
+
+        .todo-list-pane {
+
+            .todo {
+
+                .info {
+                    margin: 0;
+                }
+
+                .tags-buttons {
+                    width: 100%;
+                }
             }
         }
-
     }
 }
