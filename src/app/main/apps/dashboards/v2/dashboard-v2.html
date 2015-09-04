@@ -196,8 +196,84 @@
         <!-- WIDGET GROUP -->
         <div class="widget-group" layout="row" flex="100" layout-wrap>
 
-            <div class="padding-top-24 padding-bottom-16 padding-horizontal-16" layout="row" flex="100">
-                <h2 class="font-weight-600 secondary-text">Latest Posts (4)</h2>
+            <!-- WIDGET 6 -->
+            <ms-widget layout="column" flex="100" flex-gt-sm="50">
+
+                <!-- Front -->
+                <ms-widget-front class="md-white-bg padding-16" layout="column" flex>
+                    <div class="h2 font-weight-500 padding-bottom-16">{{vm.widget6.title}} ({{vm.widget6.latestComments.length}})</div>
+
+                    <div class="padding-right-16 scrollable height-300" ms-scroll layout="column" flex>
+                        <div ng-repeat="comment in vm.widget6.latestComments">
+                            <div class="padding-vertical-16" layout="row" layout-align="start center">
+                                <img class="avatar" ng-if="comment.author.avatar" alt="{{comment.author.name}}"
+                                     ng-src="{{comment.author.avatar}}">
+
+                                <div class="avatar" ng-if="!comment.author.avatar" ms-random-class="vm.colors">
+                                    {{comment.author.name[0]}}
+                                </div>
+
+                                <div layout="column" flex>
+                                    <div layout="row" layout-align="start center">
+                                        <div class="h3 font-weight-500 text-truncate">{{comment.author.name}}</div>
+                                        <div class="h6 secondary-text padding-left-8">
+                                            {{comment.time}}
+                                        </div>
+                                    </div>
+
+                                    <div class="text-truncate">
+                                        {{comment.comment}}
+                                    </div>
+                                </div>
+                            </div>
+                            <md-divider></md-divider>
+                        </div>
+                    </div>
+
+                </ms-widget-front>
+                <!-- / Front -->
+
+            </ms-widget>
+            <!-- / WIDGET 6 -->
+
+            <!-- WIDGET 7 -->
+            <ms-widget layout="column" flex="100" flex-gt-sm="50">
+
+                <!-- Front -->
+                <ms-widget-front class="md-white-bg padding-16" layout="column" flex>
+                    <div class="h2 font-weight-500 padding-bottom-16">{{vm.widget7.title}} ({{vm.remainingTasks();}})</div>
+
+                    <div class="padding-right-16 scrollable height-300" ms-scroll layout="column" flex>
+                        <div ng-repeat="task in allTasks = vm.widget7.tasks">
+                            <div layout="row" layout-align="start center">
+                                <md-checkbox class="checkbox" ng-checked="task.checked"
+                                             ng-click="vm.toggleCheck(task)"
+                                             aria-label="{{task.checked ? 'unchecked' : 'checked'}}">
+                                </md-checkbox>
+
+                                <div class="text-truncate" ng-class="{'text-strike secondary-text': task.checked}">
+                                    {{task.title | htmlToPlaintext}}
+                                </div>
+                            </div>
+                            <md-divider></md-divider>
+                        </div>
+                    </div>
+
+                </ms-widget-front>
+                <!-- / Front -->
+
+            </ms-widget>
+            <!-- / WIDGET 6 -->
+
+        </div>
+        <!-- / WIDGET GROUP -->
+
+
+        <!-- WIDGET GROUP -->
+        <div class="widget-group" layout="row" flex="100" layout-wrap>
+
+            <div class="padding-top-24 padding-horizontal-16" layout="row" flex="100">
+                <h2 class="font-weight-600 secondary-text">Latest Posts ({{vm.latestPosts.length}})</h2>
             </div>
 
             <div flex="100" flex-gt-sm="50" flex-gt-lg="25" ng-repeat="post in vm.latestPosts">
