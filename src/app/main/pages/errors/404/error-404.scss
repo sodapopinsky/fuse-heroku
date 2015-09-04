@@ -1,10 +1,13 @@
 #error-404 {
 
     .content {
+        width: 90%;
+        max-width: 512px;
         margin-top: 128px;
 
         .error-code {
             font-size: 112px;
+            text-align: center;
             line-height: 1;
             margin-bottom: 16px;
             font-weight: 500;
@@ -12,15 +15,16 @@
 
         .message {
             font-size: 24px;
+            text-align: center;
             color: rgba(0, 0, 0, 0.54);
         }
 
         .search {
-            margin: 48px auto 16px auto;
+            width: 100%;
             height: 56px;
             line-height: 56px;
+            margin: 48px auto 16px auto;
             padding: 16px;
-            width: 512px;
 
             input {
                 padding: 0 0 0 16px;
@@ -29,6 +33,7 @@
 
         .back-link {
             font-size: 15px;
+            text-align: center;
         }
     }
 }

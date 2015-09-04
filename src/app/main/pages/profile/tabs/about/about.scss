@@ -80,3 +80,18 @@
         }
     }
 }
+
+// RESPONSIVE
+@media screen and (max-width: $breakpoint-md) {
+
+    #profile {
+
+        .about-tab {
+
+            .about-sidebar {
+                padding: 8px
+            }
+        }
+    }
+
+}

@@ -83,3 +83,21 @@
         }
     }
 }
+
+// RESPONSIVE
+@media screen and (max-width: $breakpoint-sm) {
+
+    #search {
+
+        .content {
+
+            .result-info {
+
+                .pager {
+                    margin-top: 16px;
+                }
+            }
+        }
+    }
+
+}

@@ -3,6 +3,7 @@
     background-size: cover;
 
     #register-form {
+        max-width: 384px;
         padding: 32px;
 
         .logo {
@@ -21,9 +22,9 @@
         }
 
         form {
+            width: 100%;
 
             md-input-container {
-                min-width: 320px;
                 width: 320px;
             }
 
@@ -61,4 +62,28 @@
             }
         }
     }
+}
+
+// RESPONSIVE
+@media screen and (max-width: $breakpoint-sm) {
+
+    #register {
+
+        #register-form {
+            padding: 24px;
+            width: 90%;
+
+            form {
+
+                md-input-container {
+                    width: 100%;
+                }
+
+                .md-button {
+                    width: 90%;
+                }
+            }
+        }
+    }
+
 }

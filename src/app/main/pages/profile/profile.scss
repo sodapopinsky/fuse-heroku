@@ -84,3 +84,23 @@
         }
     }
 }
+
+
+// RESPONSIVE
+@media screen and (max-width: $breakpoint-md) {
+
+    #profile {
+
+        .header {
+
+            .profile-image {
+                margin: 0 0 16px 0;
+            }
+
+            .name {
+                margin-bottom: 32px;
+            }
+        }
+    }
+
+}

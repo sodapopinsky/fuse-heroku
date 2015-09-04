@@ -1,14 +1,13 @@
 <div id="timeline" ms-timeline layout="column" layout-align="start center" layout-fill>
 
     <!-- TIMELINE ITEM -->
-    <div class="timeline-item animate" layout="row" layout-align="center start"
+    <div class="timeline-item animate" layout="column" layout-align="center center" layout-gt-md="row" layout-align-gt-md="center start"
          ng-repeat="timelineItem in vm.timeline | limitTo: timelineItemLimit">
-        <div class="timeline-card" layout="row" flex="50">
 
+        <div class="timeline-card" layout="row" flex="50">
             <!-- MS-CARD -->
             <ms-card template="timelineItem.card.template" ng-model="timelineItem.card"></ms-card>
             <!-- / MS-CARD -->
-
         </div>
 
         <div class="timeline-point">

@@ -3,6 +3,7 @@
     background-size: cover;
 
     #login-form {
+        max-width: 384px;
         padding: 32px;
 
         .logo {
@@ -21,9 +22,9 @@
         }
 
         form {
+            width: 100%;
 
             md-input-container {
-                min-width: 320px;
                 width: 320px;
             }
 
@@ -31,14 +32,19 @@
                 margin: 0;
             }
 
-            .remember-me {
+            .remember-forgot-password {
                 font-size: 13px;
-                margin: 16px 0;
-            }
+                margin-top: 8px;
 
-            .forgot-password {
-                font-size: 13px;
-                font-weight: 500;
+                .remember-me {
+                    margin-bottom: 16px
+                }
+
+                .forgot-password {
+                    font-size: 13px;
+                    font-weight: 500;
+                    margin-bottom: 16px
+                }
             }
 
             .md-button {
@@ -48,10 +54,10 @@
         }
 
         .md-button {
-            width: 192px;
 
             &.google,
             &.facebook {
+                width: 192px;
                 text-transform: none;
                 color: $material-color-white;
                 font-size: 13px;
@@ -121,4 +127,36 @@
             }
         }
     }
+}
+
+// RESPONSIVE
+@media screen and (max-width: $breakpoint-sm) {
+
+    #login {
+
+        #login-form {
+            padding: 24px;
+            width: 90%;
+
+            form {
+
+                md-input-container {
+                    width: 100%;
+                }
+
+                .md-button {
+                    width: 90%;
+                }
+            }
+
+            .md-button {
+
+                &.google,
+                &.facebook {
+                    width: 80%;
+                }
+            }
+        }
+    }
+
 }

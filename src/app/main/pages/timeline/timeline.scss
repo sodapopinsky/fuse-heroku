@@ -121,3 +121,71 @@
         }
     }
 }
+
+// RESPONSIVE
+@media screen and (max-width: $breakpoint-md) {
+
+    #timeline {
+
+        .timeline-item {
+
+            .timeline-card {
+                order: 3;
+                padding: 0;
+            }
+
+            .timeline-point {
+                order: 1;
+                position: relative;
+                left: auto;
+                margin: 0 0 16px 0;
+                padding: 0;
+            }
+
+            .timeline-detail {
+                order: 2;
+                padding: 0;
+                margin-bottom: 16px;
+
+                .time {
+                    text-align: center;
+                }
+
+                .event {
+                    text-align: center;
+                }
+            }
+
+            &:nth-child(even) {
+
+                .timeline-card {
+                    order: 3;
+                    padding: 0;
+                }
+
+                .timeline-point {
+                    order: 1;
+                    position: relative;
+                    left: auto;
+                    margin: 0 0 16px 0;
+                    padding: 0;
+                }
+
+                .timeline-detail {
+                    order: 2;
+                    padding: 0;
+                    margin-bottom: 16px;
+
+                    .time {
+                        text-align: center;
+                    }
+
+                    .event {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+}

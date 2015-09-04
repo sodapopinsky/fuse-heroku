@@ -4,7 +4,7 @@
 
     #lock-form {
         padding: 48px 32px 32px 32px;
-        max-width: 390px;
+        max-width: 384px;
 
         .title {
             margin-bottom: 8px;
@@ -27,10 +27,10 @@
         }
 
         form {
+            width: 100%;
             margin: 32px 0 0 0;
 
             md-input-container {
-                min-width: 320px;
                 width: 320px;
             }
 
@@ -44,4 +44,36 @@
             font-weight: 500;
         }
     }
+}
+
+// RESPONSIVE
+@media screen and (max-width: $breakpoint-sm) {
+
+    #lock {
+
+        #lock-form {
+            padding: 24px;
+            width: 90%;
+
+            .subtitle {
+                text-align: center;
+            }
+
+            .avatar-container {
+                margin-bottom: 10px;
+            }
+
+            form {
+
+                md-input-container {
+                    width: 100%;
+                }
+
+                .md-button {
+                    width: 90%;
+                }
+            }
+        }
+    }
+
 }

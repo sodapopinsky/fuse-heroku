@@ -3,8 +3,10 @@
     background-size: cover;
 
     #coming-soon-form {
+        max-width: 384px;
 
         .top {
+            width: 100%;
             padding: 32px;
 
             .logo {
@@ -36,7 +38,7 @@
                     margin: 0 16px;
 
                     .value {
-                        font-size: 45px;
+                        font-size: 34px;
                     }
 
                     .type {
@@ -47,19 +49,17 @@
         }
 
         form {
-            background-color: rgba(0, 0, 0, 0.03);
             width: 100%;
+            background-color: rgba(0, 0, 0, 0.03);
             padding: 32px;
 
             .message {
-                max-width: 350px;
                 font-weight: 500;
                 margin: 8px auto;
             }
 
             md-input-container {
-                min-width: 320px;
-                width: 350px;
+                width: 320px;
                 margin: 8px auto 16px auto;
             }
 
@@ -69,4 +69,42 @@
             }
         }
     }
+}
+
+// RESPONSIVE
+@media screen and (max-width: $breakpoint-sm) {
+
+    #coming-soon {
+
+        #coming-soon-form {
+            width: 90%;
+
+            .top {
+                padding: 24px;
+
+                timer {
+
+                    > div {
+
+                        .value {
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+
+            form {
+                padding: 24px;
+
+                md-input-container {
+                    width: 100%;
+                }
+
+                .md-button {
+                    width: 90%;
+                }
+            }
+        }
+    }
+
 }

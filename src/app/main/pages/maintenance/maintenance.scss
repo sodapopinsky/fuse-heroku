@@ -3,6 +3,7 @@
     background-size: cover;
 
     #maintenance-form {
+        max-width: 384px;
         padding: 32px;
 
         .logo {
@@ -15,6 +16,7 @@
         }
 
         .title {
+            text-align: center;
             font-size: 17px;
             margin-top: 16px;
         }
@@ -27,4 +29,17 @@
             font-size: 15px;
         }
     }
+}
+
+// RESPONSIVE
+@media screen and (max-width: $breakpoint-sm) {
+
+    #maintenance {
+
+        #maintenance-form {
+            padding: 24px;
+            width: 90%;
+        }
+    }
+
 }

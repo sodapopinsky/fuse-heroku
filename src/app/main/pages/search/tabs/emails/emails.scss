@@ -28,14 +28,6 @@
                         overflow: hidden;
                         margin: 0 12px;
 
-                        .name,
-                        .subject,
-                        .message {
-                            white-space: nowrap;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                        }
-
                         .name {
                             font-size: 15px;
                             font-weight: 500;

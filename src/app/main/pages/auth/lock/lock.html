@@ -1,12 +1,12 @@
 <div id="lock" layout="column" layout-fill layout-align="center center">
     <div id="lock-form" class="md-whiteframe-z1 md-background-bg" layout="column" layout-align="center center">
-        <div layout="row" layout-align="start center">
+        <div layout="row" layout-align="start center" layout-sm="column" layout-align-sm="center center">
             <div class="avatar-container">
                 <img class="avatar big" src="assets/images/avatars/katherine.png">
                 <md-icon md-font-icon="icon-lock" class="md-warn-fg s36 md-hue-2"></md-icon>
             </div>
 
-            <div>
+            <div layout="column" layout-align="start" layout-align-sm="center center">
                 <div class="title" translate="LOCK.TITLE">Your session is locked</div>
                 <div class="subtitle" translate="LOCK.SUBTITLE">Due to inactivity, your session is locked. Enter your
                     password to continue.
@@ -33,7 +33,7 @@
 
         <div class="message">
             <a ui-sref="app.pages_auth_login" class="md-accent-color">
-                <span translate="LOCK.ARE_YOU_NOT">Are you not</span><span> John Doe ?</span>
+                <span translate="LOCK.ARE_YOU_NOT">Are you not</span><span> Jane Doe?</span>
             </a>
         </div>
     </div>

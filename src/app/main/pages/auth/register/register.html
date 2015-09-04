@@ -27,10 +27,12 @@
                        translate-attr-placeholder="REGISTER.PASSWORD_CONFIRM">
             </md-input-container>
 
-            <div class="terms" layout="row" layout-align="start center">
+            <div class="terms" layout="row" layout-align="start center" layout-align-sm="center center">
                 <md-checkbox ng-model="data.cb1" aria-label="I read and accept"></md-checkbox>
-                <span translate="REGISTER.READ_ACCEPT">I read and accept</span>
-                <a href="#" class="md-accent-color" translate="REGISTER.TERMS_COND">terms and conditions</a>
+                <div layout="row" layout-sm="column" layout-align="start center">
+                    <span translate="REGISTER.READ_ACCEPT">I read and accept</span>
+                    <a href="#" class="md-accent-color" translate="REGISTER.TERMS_COND">terms and conditions</a>
+                </div>
             </div>
 
             <md-button class="md-raised md-accent" aria-label="CREATE MY ACCOUNT" translate="REGISTER.CREATE_ACCOUNT"
@@ -39,7 +41,7 @@
             </md-button>
         </form>
 
-        <div class="login" layout="row" layout-align="center center">
+        <div class="login" layout="row" layout-sm="column" layout-align="center center">
             <span class="text" translate="REGISTER.ALREADY_HAVE">Already have an account?</span>
             <a class="link" ui-sref="app.pages_auth_login" translate="REGISTER.LOGIN">Log in</a>
         </div>

@@ -249,3 +249,18 @@
         }
     }
 }
+
+// RESPONSIVE
+@media screen and (max-width: $breakpoint-md) {
+
+    #profile {
+
+        .timeline-tab {
+
+            .timeline-sidebar {
+                padding: 8px
+            }
+        }
+    }
+
+}
