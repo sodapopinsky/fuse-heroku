@@ -19,16 +19,16 @@
         </div>
 
         <div class="info" flex layout="column">
-            <div class="name" layout="row" layout-align="start center">
+            <div class="name text-truncate" layout="row" layout-align="start center">
                 <span>{{mail.from.name}}</span>
                 <md-icon md-font-icon="icon-paperclip" class="has-attachment s16" ng-if="mail.hasAttachments"></md-icon>
             </div>
 
-            <div class="subject">
+            <div class="subject text-truncate">
                 {{mail.subject}}
             </div>
 
-            <div class="message">
+            <div class="message text-truncate">
                 {{mail.message | htmlToPlaintext}}
             </div>
         </div>
