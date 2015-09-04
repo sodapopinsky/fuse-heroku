@@ -11,7 +11,7 @@
         var vm = this;
 
         // Data
-        vm.startTime = 1357020000000;
+        vm.endTime = 1472975790000;
 
         // Methods
 
