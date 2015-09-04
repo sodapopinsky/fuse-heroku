@@ -4,54 +4,57 @@ md-dialog {
         position: relative;
         max-width: 720px;
         width: 720px;
-    }
 
-    md-toolbar {
+        md-toolbar {
 
-        .title {
-            font-size: 17px;
-        }
-    }
-
-    md-input-container {
-
-        textarea {
-            min-height: 150px;
-        }
-    }
-
-    .attachment-list {
-
-        .attachment {
-            background-color: rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 0, 0, 0.16);
-            padding-left: 16px;
-            margin: 8px 0;
-            border-radius: 2px;
-            font-size: 13px;
-
-            .filename {
-                font-weight: 500;
-            }
-
-            .size {
-
-            }
-
-            .md-button {
-                margin: 0;
-            }
-
-            &:last-child {
-                margin-bottom: 0;
+            .title {
+                font-size: 17px;
             }
         }
-    }
 
-    .md-actions {
-        justify-content: space-between;
-        border-top: 1px solid rgba(0, 0, 0, 0.12);
-        background-color: rgba(0, 0, 0, 0.03);
+        md-input-container {
+
+            textarea {
+                min-height: 150px;
+            }
+        }
+
+        .attachment-list {
+
+            .attachment {
+                background-color: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.16);
+                padding-left: 16px;
+                margin: 8px 0;
+                border-radius: 2px;
+                font-size: 13px;
+
+                .filename {
+                    font-weight: 500;
+                }
+
+                .size {
+
+                }
+
+                .md-button {
+                    margin: 0;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .md-actions {
+            position: relative;
+            overflow-y: hidden;
+            overflow-x: auto;
+            justify-content: space-between;
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+            background-color: rgba(0, 0, 0, 0.03);
+        }
     }
 }
 

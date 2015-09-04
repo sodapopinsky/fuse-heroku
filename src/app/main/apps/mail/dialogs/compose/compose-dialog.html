@@ -63,7 +63,7 @@
             </div>
         </md-dialog-content>
 
-        <div class="md-actions" layout="row" layout-align="space-between center">
+        <div class="md-actions" layout="row" layout-align="space-between center" ms-scroll>
             <div layout="row" layout-align="start center">
                 <md-button ng-click="vm.closeDialog()" class="send-button md-accent md-raised" aria-label="Send"
                            translate="MAIL.SEND"
@@ -97,11 +97,13 @@
                 </md-button>
             </div>
 
-            <md-button class="md-icon-button" aria-label="Delete"
-                       translate-attr-aria-label="MAIL.DELETE">
-                <md-icon md-font-icon="icon-delete"></md-icon>
-                <md-tooltip><span translate="MAIL.DELETE"></span></md-tooltip>
-            </md-button>
+            <div layout="row">
+                <md-button class="md-icon-button" aria-label="Delete"
+                           translate-attr-aria-label="MAIL.DELETE">
+                    <md-icon md-font-icon="icon-delete"></md-icon>
+                    <md-tooltip><span translate="MAIL.DELETE"></span></md-tooltip>
+                </md-button>
+            </div>
         </div>
     </form>
 </md-dialog>
