@@ -1,51 +1,78 @@
-#event-dialog {
-    position: relative;
-    min-width: 560px;
-    width: 560px;
+md-dialog {
 
-    form {
-        overflow: hidden;
+    &.event-dialog {
+        position: relative;
+        max-width: 720px;
+        width: 720px;
 
-        md-toolbar {
+        form {
+            overflow: hidden;
 
-            .title {
-                font-size: 17px;
-            }
-        }
+            md-toolbar {
 
-        md-input-container {
-
-            textarea {
-                min-height: 150px;
-            }
-        }
-
-        .date-row {
-
-            > md-input-container {
-                margin: 0 16px;
-
-                &:first-child {
-                    margin-left: 0;
-                }
-
-                &:last-child {
-                    margin-right: 0;
+                .title {
+                    font-size: 17px;
                 }
             }
+
+            md-input-container {
+
+                textarea {
+                    min-height: 150px;
+                }
+            }
+
+            .date-row {
+
+                > md-input-container {
+                    margin: 0 16px;
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            .notifications {
+                margin: 16px 0;
+
+                > .md-button {
+                    margin: 0;
+                }
+            }
         }
 
-        .notifications {
-            margin: 16px 0;
-
-            > .md-button {
-                margin: 0;
-            }
+        .md-actions {
+            position: relative;
+            overflow-y: hidden;
+            overflow-x: auto;
+            justify-content: space-between;
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
         }
     }
+}
 
-    .md-actions {
-        justify-content: space-between;
-        border-top: 1px solid rgba(0, 0, 0, 0.12);
+// RESPONSIVE
+@media screen and (max-width: $breakpoint-md) {
+
+    md-dialog {
+
+        &.event-dialog {
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+
+    md-dialog {
+
+        &.event-dialog {
+            width: 90%;
+        }
     }
 }
