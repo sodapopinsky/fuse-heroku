@@ -43,7 +43,7 @@
             default:
                 vm.selectedIndex = 0;
         }
-        
+
         // Methods
 
         //////////
