@@ -9,6 +9,20 @@
     /** @ngInject */
     function config($mdThemingProvider, fusePalettes, fuseThemes, fuseThemingProvider)
     {
+        // Inject Cookies Service
+        var $cookies;
+        angular.injector(['ngCookies']).invoke(['$cookies', function (_$cookies_)
+        {
+            $cookies = _$cookies_;
+        }]);
+
+        // Check if custom theme exist in cookies
+        var customTheme = $cookies.getObject('customTheme');
+        if ( customTheme )
+        {
+            fuseThemes['custom'] = customTheme;
+        }
+
         $mdThemingProvider.alwaysWatchTheme(true);
 
         // Define custom palettes
@@ -21,10 +35,10 @@
         angular.forEach(fuseThemes, function (theme, themeName)
         {
             $mdThemingProvider.theme(themeName)
-                .primaryPalette(theme.primary.name, theme.primary.options)
-                .accentPalette(theme.accent.name, theme.accent.options)
-                .warnPalette(theme.warn.name, theme.warn.options)
-                .backgroundPalette(theme.background.name, theme.background.options);
+                .primaryPalette(theme.primary.name, theme.primary.hues)
+                .accentPalette(theme.accent.name, theme.accent.hues)
+                .warnPalette(theme.warn.name, theme.warn.hues)
+                .backgroundPalette(theme.background.name, theme.background.hues);
         });
 
         // Store generated PALETTES and THEMES objects from $mdThemingProvider

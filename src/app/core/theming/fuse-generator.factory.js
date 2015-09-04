@@ -12,7 +12,8 @@
         var themes = {};
 
         var service = {
-            generate: generate
+            generate: generate,
+            rgba    : rgba
         };
 
         return service;
@@ -141,7 +142,16 @@
 
             // Store themes and set selected theme for the first time
             fuseTheming.setThemesList(themes);
-            fuseTheming.setActiveTheme('default');
+
+            // If User generated custom theme exist set it otherwise set default
+            if ( themes.custom )
+            {
+                fuseTheming.setActiveTheme('custom');
+            }
+            else
+            {
+                fuseTheming.setActiveTheme('default');
+            }
         }
 
 

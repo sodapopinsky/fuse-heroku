@@ -1,0 +1,51 @@
+(function ()
+{
+    'use strict';
+
+    angular.module('app.ui.colors')
+        .controller('CustomThemeDialogController', CustomThemeDialogController);
+
+    /** @ngInject */
+    function CustomThemeDialogController(fuseTheming, $mdDialog, fuseGenerator, $cookies, $window)
+    {
+        // Data
+        var vm = this;
+        vm.palettes = fuseTheming.getRegisteredPalettes();
+        vm.themes = fuseTheming.getRegisteredThemes();
+
+        // Methods
+        vm.rgba = fuseGenerator.rgba;
+        vm.setTheme = setTheme;
+        vm.closeDialog = closeDialog;
+
+        //////////
+
+        // If custom theme exist keep using it otherwise set default as a custom
+        if ( !vm.themes.custom )
+        {
+            vm.theme = angular.copy(vm.themes['default'].colors);
+        }
+        else
+        {
+            vm.theme = vm.themes.custom.colors;
+        }
+
+        // Write Theme to the cookie and reload for generate styles
+        function setTheme()
+        {
+            $cookies.putObject('customTheme',
+                vm.theme
+            );
+            $window.location.reload();
+        }
+
+        // Close Dialog
+        function closeDialog()
+        {
+            $mdDialog.hide();
+        }
+
+    }
+})();
+
+

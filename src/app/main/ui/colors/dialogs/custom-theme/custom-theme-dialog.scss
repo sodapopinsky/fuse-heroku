@@ -1,0 +1,14 @@
+.custom-theme-dialog {
+    md-dialog-content {
+        .type {
+            width: 100px;
+        }
+        md-input-container {
+            width: 100px;
+        }
+    }
+    .md-actions{
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+}

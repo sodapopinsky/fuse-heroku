@@ -1,15 +1,24 @@
 <div id="colors" class="page-layout simple tabbed doc-page" layout="column">
 
     <!-- HEADER -->
-    <div class="header md-accent-bg" layout="column" layout-align="center start">
+    <div class="header md-accent-bg" layout="column" layout-gt-sm="row" layout-align="space-between">
+        <div layout="column" layout-align="center start">
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-home" class="s16"></md-icon>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">USER INTERFACE</span>
+            </div>
 
-        <div class="breadcrumb" layout="row" layout-align="start center">
-            <md-icon md-font-icon="icon-home" class="s16"></md-icon>
-            <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
-            <span class="parent">USER INTERFACE</span>
+            <div class="title">Colors</div>
         </div>
 
-        <div class="title">Colors</div>
+        <div layout="row" layout-align="start center">
+            <md-button class="md-raised md-warn" ng-click="vm.createTheme($event);">
+                <md-icon md-font-icon="icon-palette"></md-icon>
+                <span>Create Your Own Theme!</span>
+            </md-button>
+        </div>
+
 
     </div>
     <!-- / HEADER -->

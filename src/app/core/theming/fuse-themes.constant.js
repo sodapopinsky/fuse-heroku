@@ -3,10 +3,10 @@
     'use strict';
 
     var fuseThemes = {
-        'default': {
+        'default'  : {
             primary   : {
                 name   : 'fuse-pale-blue',
-                options: {
+                hues: {
                     'default': '500',
                     'hue-1'  : '400',
                     'hue-2'  : '700',
@@ -15,7 +15,7 @@
             },
             accent    : {
                 name   : 'light-blue',
-                options: {
+                hues: {
                     'default': '600',
                     'hue-1'  : '400',
                     'hue-2'  : '600',
@@ -25,7 +25,7 @@
             warn      : {name: 'red'},
             background: {
                 name   : 'grey',
-                options: {
+                hues: {
                     'default': 'A100',
                     'hue-1'  : '100',
                     'hue-2'  : '50',
