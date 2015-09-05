@@ -15,9 +15,9 @@
             <md-input-container>
                 <label>Palette</label>
                 <md-select ng-model="vm.theme[type].name"
-                           ng-style="{'background-color': vm.rgba(vm.palettes[vm.theme[type].name][vm.theme[type].hues.default].value), 'color': vm.rgba(vm.palettes[vm.theme[type].name][vm.theme[type].hues.default].contrast, 1)}">
+                           ng-style="{'background-color': vm.rgba(vm.palettes[vm.theme[type].name]['500'].value), 'color': vm.rgba(vm.palettes[vm.theme[type].name]['500'].contrast, 1)}">
                     <md-option ng-value="palette" ng-repeat="(palette, hues) in vm.palettes"
-                               ng-style="{'background-color': vm.rgba(hues[vm.theme[type].hues.default].value), 'color': vm.rgba(hues[vm.theme[type].hues.default].contrast, 1)}">
+                               ng-style="{'background-color': vm.rgba(hues['500'].value), 'color': vm.rgba(hues['500'].contrast, 1)}">
                         {{palette}}
                     </md-option>
                 </md-select>
