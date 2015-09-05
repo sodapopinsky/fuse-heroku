@@ -12,6 +12,14 @@ md-autocomplete-wrap {
     }
 }
 
+// Backdrop
+md-backdrop {
+
+    &.md-opaque {
+        background-color: rgba(33, 33, 33, 0.48) !important;
+    }
+}
+
 // Button
 .md-button {
 

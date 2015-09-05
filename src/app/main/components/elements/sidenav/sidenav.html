@@ -44,7 +44,7 @@
             </p>
         </div>
 
-        <div class="card md-background-bg md-whiteframe-z2" layout="column">
+        <div class="card md-whiteframe-z2" layout="column">
             <div layout="column" layout-gt-sm="row">
                 <div flex class="preview" layout="column">
                     <div class="md-caption">Left Sidenav</div>
@@ -54,17 +54,17 @@
                             <md-toolbar class="md-theme-indigo">
                                 <h1 class="md-toolbar-tools">Left Sidenav</h1>
                             </md-toolbar>
-                            <md-content flex layout="column" layout-align="center center">
+                            <div flex layout="column" layout-align="center center">
                                 <md-button class="md-raised md-primary" ng-click="vm.toggleLeftSidenav()">
                                     Close Left Sidenav
                                 </md-button>
-                            </md-content>
+                            </div>
                         </md-sidenav>
-                        <md-content flex layout="column" layout-align="center center">
+                        <div flex layout="column" layout-align="center center">
                             <md-button class="md-raised md-accent" ng-click="vm.toggleLeftSidenav()">
                                 Open Left Sidenav
                             </md-button>
-                        </md-content>
+                        </div>
                     </div>
                 </div>
                 <div flex class="source-code" layout="column">
@@ -78,17 +78,17 @@
                                         <md-toolbar class="md-theme-indigo">
                                             <h1 class="md-toolbar-tools">Left Sidenav</h1>
                                         </md-toolbar>
-                                        <md-content flex layout="column" layout-align="center center">
+                                        <div flex layout="column" layout-align="center center">
                                             <md-button class="md-raised md-primary" ng-click="vm.toggleLeftSidenav()">
                                                 Close Left Sidenav
                                             </md-button>
-                                        </md-content>
+                                        </div>
                                     </md-sidenav>
-                                    <md-content flex layout="column" layout-align="center center">
+                                    <div flex layout="column" layout-align="center center">
                                         <md-button class="md-raised md-accent" ng-click="vm.toggleLeftSidenav()">
                                             Open Left Sidenav
                                         </md-button>
-                                    </md-content>
+                                    </div>
                                 </div>
                             </hljs>
                         </md-tab>
@@ -114,17 +114,17 @@
                             <md-toolbar class="md-theme-indigo">
                                 <h1 class="md-toolbar-tools">Right Sidenav</h1>
                             </md-toolbar>
-                            <md-content flex layout="column" layout-align="center center">
+                            <div flex layout="column" layout-align="center center">
                                 <md-button class="md-raised md-primary" ng-click="vm.toggleRightSidenav()">
                                     Close Right Sidenav
                                 </md-button>
-                            </md-content>
+                            </div>
                         </md-sidenav>
-                        <md-content flex layout="column" layout-align="center center">
+                        <div flex layout="column" layout-align="center center">
                             <md-button class="md-raised md-accent" ng-click="vm.toggleRightSidenav()">
                                 Open Right Sidenav
                             </md-button>
-                        </md-content>
+                        </div>
                     </div>
                 </div>
                 <div flex class="source-code" layout="column">
@@ -138,17 +138,17 @@
                                         <md-toolbar class="md-theme-indigo">
                                             <h1 class="md-toolbar-tools">Right Sidenav</h1>
                                         </md-toolbar>
-                                        <md-content flex layout="column" layout-align="center center">
+                                        <div flex layout="column" layout-align="center center">
                                             <md-button class="md-raised md-primary" ng-click="vm.toggleRightSidenav()">
                                                 Close Right Sidenav
                                             </md-button>
-                                        </md-content>
+                                        </div>
                                     </md-sidenav>
-                                    <md-content flex layout="column" layout-align="center center">
+                                    <div flex layout="column" layout-align="center center">
                                         <md-button class="md-raised md-accent" ng-click="vm.toggleRightSidenav()">
                                             Open Right Sidenav
                                         </md-button>
-                                    </md-content>
+                                    </div>
                                 </div>
                             </hljs>
                         </md-tab>
@@ -175,19 +175,18 @@
                             <md-toolbar class="md-theme-indigo">
                                 <h1 class="md-toolbar-tools">Left Sidenav Locked</h1>
                             </md-toolbar>
-                            <md-content flex layout="column" layout-align="center center">
+                            <div class="md-padding" flex layout="column" layout-align="center center">
                                 <md-button class="md-raised md-primary" ng-click="vm.toggleLeftSidenavLocked()"
                                            hide-gt-md>
                                     Close Left Sidenav
                                 </md-button>
                                 <p hide-md show-gt-md>
-                                    This sidenav is locked open on your device. To go back to the default
-                                    behavior,
+                                    This sidenav is locked open on your device. To go back to the default behavior,
                                     narrow your display.
                                 </p>
-                            </md-content>
+                            </div>
                         </md-sidenav>
-                        <md-content flex layout="column" layout-align="center center">
+                        <div flex layout="column" layout-align="center center">
                             <p>
                                 The left sidenav will 'lock open' on a medium (>=960px wide) device.
                             </p>
@@ -195,7 +194,7 @@
                                        class="md-primary" hide-gt-md>
                                 Open Left Sidenav
                             </md-button>
-                        </md-content>
+                        </div>
                     </div>
                 </div>
                 <div flex class="source-code" layout="column">
@@ -210,7 +209,7 @@
                                         <md-toolbar class="md-theme-indigo">
                                             <h1 class="md-toolbar-tools">Left Sidenav Locked</h1>
                                         </md-toolbar>
-                                        <md-content flex layout="column" layout-align="center center">
+                                        <div class="md-padding" flex layout="column" layout-align="center center">
                                             <md-button class="md-raised md-primary"
                                                        ng-click="vm.toggleLeftSidenavLocked()"
                                                        hide-gt-md>
@@ -221,9 +220,9 @@
                                                 behavior,
                                                 narrow your display.
                                             </p>
-                                        </md-content>
+                                        </div>
                                     </md-sidenav>
-                                    <md-content flex layout="column" layout-align="center center">
+                                    <div flex layout="column" layout-align="center center">
                                         <p>
                                             The left sidenav will 'lock open' on a medium (>=960px wide) device.
                                         </p>
@@ -231,7 +230,7 @@
                                                    class="md-primary" hide-gt-md>
                                             Open Left Sidenav
                                         </md-button>
-                                    </md-content>
+                                    </div>
                                 </div>
                             </hljs>
                         </md-tab>
@@ -251,7 +250,7 @@
         </div>
 
         <div class="md-title">Attributes</div>
-        <div class="attributes md-background-bg md-whiteframe-z2" layout="column">
+        <div class="attributes card md-whiteframe-z2" layout="column">
             <table class="simple" ms-responsive-table>
                 <thead>
                     <tr>
