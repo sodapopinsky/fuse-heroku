@@ -6,7 +6,7 @@
         .controller('ThemeChangerController', ThemeChangerController);
 
     /** @ngInject */
-    function ThemeChangerController($route, fuseTheming)
+    function ThemeChangerController($route, fuseTheming, $cookies)
     {
         var vm = this;
 
@@ -28,6 +28,7 @@
         {
             // Set active theme
             fuseTheming.setActiveTheme(themeName);
+            $cookies.put('selectedTheme', themeName);
 
             // Reload route to make sure changes are going to apply
             $route.reload();

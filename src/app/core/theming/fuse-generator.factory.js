@@ -6,7 +6,7 @@
         .factory('fuseGenerator', fuseGeneratorService);
 
     /** @ngInject */
-    function fuseGeneratorService(fuseTheming)
+    function fuseGeneratorService(fuseTheming, $cookies)
     {
         // Storage for simplified themes object
         var themes = {};
@@ -143,10 +143,12 @@
             // Store themes and set selected theme for the first time
             fuseTheming.setThemesList(themes);
 
-            // If User generated custom theme exist set it otherwise set default
-            if ( themes.custom )
+            // Remember selected theme.
+            var selectedTheme = $cookies.get('selectedTheme');
+
+            if ( selectedTheme )
             {
-                fuseTheming.setActiveTheme('custom');
+                fuseTheming.setActiveTheme(selectedTheme);
             }
             else
             {

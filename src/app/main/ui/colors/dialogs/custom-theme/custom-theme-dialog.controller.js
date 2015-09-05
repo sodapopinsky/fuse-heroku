@@ -36,6 +36,7 @@
             $cookies.putObject('customTheme',
                 vm.theme
             );
+            $cookies.put('selectedTheme', 'custom');
             $window.location.reload();
         }
 
