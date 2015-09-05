@@ -15,9 +15,9 @@
             <md-input-container>
                 <label>Palette</label>
                 <md-select ng-model="vm.theme[type].name"
-                           ng-style="{'background-color': vm.rgba(vm.palettes[vm.theme[type].name][vm.theme[type].hues.default].value), 'color': vm.rgba(vm.palettes[vm.theme[type].name][vm.theme[type].hues.default].contrast)}">
+                           ng-style="{'background-color': vm.rgba(vm.palettes[vm.theme[type].name][vm.theme[type].hues.default].value), 'color': vm.rgba(vm.palettes[vm.theme[type].name][vm.theme[type].hues.default].contrast, 1)}">
                     <md-option ng-value="palette" ng-repeat="(palette, hues) in vm.palettes"
-                               ng-style="{'background-color': vm.rgba(hues[vm.theme[type].hues.default].value), 'color': vm.rgba(hues[vm.theme[type].hues.default].contrast)}">
+                               ng-style="{'background-color': vm.rgba(hues[vm.theme[type].hues.default].value), 'color': vm.rgba(hues[vm.theme[type].hues.default].contrast, 1)}">
                         {{ palette }}
                     </md-option>
                 </md-select>
@@ -27,9 +27,9 @@
                 <md-input-container>
                     <label>{{hueType}}</label>
                     <md-select ng-model="vm.theme[type].hues[hueType]"
-                               ng-style="{'background-color': vm.rgba(vm.palettes[vm.theme[type].name][vm.theme[type].hues[hueType]].value), 'color': vm.rgba(vm.palettes[vm.theme[type].name][vm.theme[type].hues[hueType]].contrast)}">
+                               ng-style="{'background-color': vm.rgba(vm.palettes[vm.theme[type].name][vm.theme[type].hues[hueType]].value), 'color': vm.rgba(vm.palettes[vm.theme[type].name][vm.theme[type].hues[hueType]].contrast, 1)}">
                         <md-option ng-value="hue" ng-repeat="(hue, opt) in vm.palettes[vm.theme[type].name]"
-                                   ng-style="{'background-color': vm.rgba(opt.value), 'color': vm.rgba(opt.contrast)}">
+                                   ng-style="{'background-color': vm.rgba(opt.value), 'color': vm.rgba(opt.contrast, 1)}">
                             {{ hue }}
                         </md-option>
                     </md-select>
