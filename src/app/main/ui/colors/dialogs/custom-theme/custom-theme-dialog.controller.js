@@ -30,23 +30,23 @@
             vm.theme = vm.themes.custom.colors;
         }
 
-        // Write Theme to the cookie and reload for generate styles
+        /**
+         * Put custom theme into the cookies
+         * and reload for generate styles
+         */
         function setTheme()
         {
-            $cookies.putObject('customTheme',
-                vm.theme
-            );
+            $cookies.putObject('customTheme', vm.theme);
             $cookies.put('selectedTheme', 'custom');
             $window.location.reload();
         }
 
-        // Close Dialog
+        /**
+         * Close dialog
+         */
         function closeDialog()
         {
             $mdDialog.hide();
         }
-
     }
 })();
-
-

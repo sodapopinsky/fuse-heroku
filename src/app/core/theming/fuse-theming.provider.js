@@ -9,6 +9,16 @@
     /** @ngInject */
     function fuseThemingProvider()
     {
+        // Inject Cookies Service
+        var $cookies;
+        
+        angular.injector(['ngCookies']).invoke([
+            '$cookies', function (_$cookies)
+            {
+                $cookies = _$cookies;
+            }
+        ]);
+
         var registeredPalettes,
             registeredThemes;
 
@@ -103,12 +113,14 @@
                     // Otherwise set theme to default theme
                     service.themes.active.name = 'default';
                     service.themes.active.theme = service.themes.list.default;
+                    $cookies.put('selectedTheme', service.themes.active.name);
 
                     return;
                 }
 
                 service.themes.active.name = themeName;
                 service.themes.active.theme = service.themes.list[themeName];
+                $cookies.put('selectedTheme', themeName);
             }
 
             /**

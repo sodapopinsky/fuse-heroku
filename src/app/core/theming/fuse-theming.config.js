@@ -11,10 +11,12 @@
     {
         // Inject Cookies Service
         var $cookies;
-        angular.injector(['ngCookies']).invoke(['$cookies', function (_$cookies_)
-        {
-            $cookies = _$cookies_;
-        }]);
+        angular.injector(['ngCookies']).invoke([
+            '$cookies', function (_$cookies)
+            {
+                $cookies = _$cookies;
+            }
+        ]);
 
         // Check if custom theme exist in cookies
         var customTheme = $cookies.getObject('customTheme');
