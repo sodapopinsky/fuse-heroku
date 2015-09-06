@@ -5,28 +5,32 @@
         .header {
             position: relative;
 
-            .breadcrumb {
-                font-size: 24px;
-                padding-left: 90px;
+            .header-content {
+                height: 100%;
 
-                span {
-                    cursor: pointer;
+                .breadcrumb {
+                    font-size: 24px;
+                    padding-left: 90px;
 
-                    md-icon {
-                        cursor: default;
-                    }
-
-                    &:last-child {
+                    span {
+                        cursor: pointer;
 
                         md-icon {
-                            display: none;
+                            cursor: default;
+                        }
+
+                        &:last-child {
+
+                            md-icon {
+                                display: none;
+                            }
                         }
                     }
-                }
 
-                .separator {
-                    margin-left: 8px;
-                    margin-right: 8px;
+                    .separator {
+                        margin-left: 8px;
+                        margin-right: 8px;
+                    }
                 }
             }
 
@@ -34,7 +38,6 @@
                 position: absolute;
                 bottom: -32px;
                 left: 16px;
-
             }
         }
 
