@@ -2,7 +2,6 @@
     background: $material-color-white;
 
     .header {
-        padding: 24px 24px 8px 24px;
         position: relative;
         background-size: 100% auto;
         background-position: 0 50%;
@@ -18,7 +17,7 @@
             bottom: 0;
             left: 0;
             z-index: 1;
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.27), transparent 60%);
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.27), transparent);
         }
 
         &.Jan {
@@ -70,28 +69,32 @@
             background-position: 0 43%;
         }
 
-        .header-top {
-            position: relative;
-            z-index: 2;
+        .header-content {
+            height: 100%;
 
-            .logo {
+            .header-top {
+                position: relative;
+                z-index: 2;
 
-                .logo-icon {
-                    margin-right: 16px;
-                }
+                .logo {
 
-                .logo-text {
-                    font-size: 24px;
+                    .logo-icon {
+                        margin-right: 16px;
+                    }
+
+                    .logo-text {
+                        font-size: 24px;
+                    }
                 }
             }
-        }
 
-        .header-bottom {
-            position: relative;
-            z-index: 2;
+            .header-bottom {
+                position: relative;
+                z-index: 2;
 
-            .title {
-                font-size: 15px;
+                .title {
+                    font-size: 15px;
+                }
             }
         }
 
