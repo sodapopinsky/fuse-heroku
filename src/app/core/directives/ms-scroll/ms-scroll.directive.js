@@ -98,9 +98,9 @@
                     // We don't want an isolated scope because
                     // we should be able to use this everywhere
                     // especially with other directives
-                    if ( iAttrs.msScrollDirective )
+                    if ( iAttrs.msScroll )
                     {
-                        options = scope.$eval(iAttrs.msScrollDirective);
+                        options = scope.$eval(iAttrs.msScroll);
                     }
 
                     // Extend the given config with the ones from provider
@@ -120,6 +120,21 @@
                     scope.$watch(function ()
                     {
                         return iElement.prop('scrollHeight');
+                    }, function (current, old)
+                    {
+                        if ( angular.isUndefined(current) || angular.equals(current, old) )
+                        {
+                            return;
+                        }
+
+                        updateScrollbar();
+                    });
+
+                    // Watch scrollWidth and update
+                    // the scrollbar if it changes
+                    scope.$watch(function ()
+                    {
+                        return iElement.prop('scrollWidth');
                     }, function (current, old)
                     {
                         if ( angular.isUndefined(current) || angular.equals(current, old) )
