@@ -99,7 +99,7 @@ blockquote {
 
 // Code
 code {
-    @include font-stack-code();
+    font-family: $font-family-code;
 
     &:not(.highlight) {
         background: rgba(0, 0, 0, 0.065);

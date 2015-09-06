@@ -2,11 +2,6 @@
 /*  Mixins
 /*----------------------------------------------------------------*/
 
-// Typography
-@mixin font-stack-code {
-    font-family: 'Monaco', 'Consolas', 'Ubuntu Mono', monospace;
-}
-
 // Maintain aspect ratio
 @mixin maintain-aspect-ratio($widthRatio, $heightRatio, $padding, $contentClass) {
     position: relative;
