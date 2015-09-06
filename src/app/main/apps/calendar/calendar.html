@@ -14,6 +14,7 @@
                     <span class="logo-text" translate="CALENDAR.CALENDAR">Calendar</span>
                 </div>
 
+                <!-- TOOLBAR -->
                 <div class="toolbar" layout="row" layout-align="start center">
                     <md-button class="md-icon-button" aria-label="Search" translate
                                translate-attr-aria-label="CALENDAR.SEARCH">
@@ -47,7 +48,9 @@
                     </md-button>
                 </div>
             </div>
+            <!-- / TOOLBAR -->
 
+            <!-- HEADER BOTTOM -->
             <div class="header-bottom" layout="row" layout-align="start center">
                 <div class="title">
                     {{vm.calendarView.title}}
@@ -63,12 +66,15 @@
                     <md-icon md-font-icon="icon-chevron-right" ng-click=" vm.calendar.next()"></md-icon>
                 </md-button>
             </div>
+            <!-- / HEADER BOTTOM -->
         </div>
 
+        <!-- ADD EVENT BUTTON -->
         <md-button class="add-event-button md-fab md-warn" ng-click="vm.eventDialog('add', $event)"
                    aria-label="Add event" translate translate-attr-aria-label="CALENDAR.ADD_EVENT">
             <md-icon md-font-icon="icon-plus"></md-icon>
         </md-button>
+        <!-- / ADD EVENT BUTTON -->
     </div>
     <!-- / HEADER -->
 
