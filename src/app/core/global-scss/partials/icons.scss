@@ -1,14 +1,12 @@
 /*----------------------------------------------------------------*/
 /*  Icons
 /*----------------------------------------------------------------*/
-[md-font-icon],
+md-icon[md-font-icon],
 i {
     font-size: 24px;
     width: 24px;
     height: 24px;
     line-height: 24px;
-    vertical-align: middle;
-    outline: 0;
 
     @for $size from 1 through 32 {
 
