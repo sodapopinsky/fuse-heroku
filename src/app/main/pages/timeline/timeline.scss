@@ -1,6 +1,7 @@
 #timeline {
     position: relative;
     padding-bottom: 160px;
+    height: auto;
 
     &:before {
         display: block;
@@ -21,6 +22,7 @@
         z-index: 20;
         padding: 32px;
         width: 100%;
+        margin: 0 auto;
         max-width: 1200px;
 
         .timeline-card {

@@ -18,7 +18,7 @@
             border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
             .to {
-                margin: 8px;
+                margin: 0 8px;
                 text-transform: lowercase;
             }
 
@@ -121,10 +121,6 @@
                                 .avatar {
                                     margin: 0;
                                 }
-                            }
-
-                            .to {
-                                margin: 16px 0 0 0;
                             }
 
                             .name {

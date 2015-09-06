@@ -7,7 +7,7 @@ $navigationFoldedWidth: 64px;
     min-width: $navigationWidth;
     max-width: $navigationWidth;
     overflow-x: hidden;
-    transition: width 0.1s linear, min-width 0.1s linear, max-width 0.1s linear;
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2), width 0.1s linear, min-width 0.1s linear, max-width 0.1s linear;
 
     .navigation-header {
         height: 64px;

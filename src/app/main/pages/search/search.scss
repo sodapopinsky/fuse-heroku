@@ -7,16 +7,11 @@
             max-width: 780px;
 
             .search-icon {
-                position: absolute;
-                left: 0;
-                top: 0;
-                padding: 12px;
-                width: 48px;
-                height: 48px;
+                margin: 0 -24px 0 0;
             }
 
             .search-input {
-                padding: 0 48px;
+                padding: 0 0 0 48px;
                 background: none;
                 font-size: 24px;
                 line-height: 48px;
@@ -31,15 +26,6 @@
                 &::-webkit-input-placeholder {
                     color: $material-color-white;
                 }
-            }
-
-            .refresh {
-                position: absolute;
-                right: 0;
-                line-height: 48px;
-                height: 48px;
-                width: 48px;
-                margin: 0;
             }
         }
     }
@@ -88,6 +74,10 @@
 @media screen and (max-width: $breakpoint-sm) {
 
     #search {
+
+        .header {
+            padding: 16px;
+        }
 
         .content {
 

@@ -64,13 +64,9 @@
                     {{vm.selectedMail.from.name[0]}}
                 </div>
 
-                <span class="name">
+                <div class="name">
                     {{vm.selectedMail.from.name}}
-                </span>
-
-                <span>
-                    &lt;{{vm.selectedMail.from.email}}&gt;
-                </span>
+                </div>
             </div>
 
             <div class="to" translate="MAIL.TO">
@@ -89,7 +85,7 @@
     </div>
 
     <div ng-bind-html="vm.selectedMail.message"></div>
-    
+
 </div>
 
 <div ng-if="vm.selectedMail.attachments" class="attachments">
