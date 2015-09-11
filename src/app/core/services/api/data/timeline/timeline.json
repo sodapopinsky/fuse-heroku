@@ -2,7 +2,7 @@
     "data": [
         {
             "card": {
-                "template": "template-1",
+                "template": "app/core/directives/ms-card/templates/template-1/template-1.html",
                 "media": {
                     "image": {
                         "src": "assets/images/photos/early-sunrise.jpg",
@@ -19,7 +19,7 @@
         },
         {
             "card": {
-                "template": "template-5",
+                "template": "app/core/directives/ms-card/templates/template-5/template-5.html",
                 "title": "Friends",
                 "event": "Gordon Freeman is now following you",
                 "media": {
@@ -35,7 +35,7 @@
         },
         {
             "card": {
-                "template": "template-2",
+                "template": "app/core/directives/ms-card/templates/template-2/template-2.html",
                 "avatar": {
                     "src": "assets/images/avatars/alice.png",
                     "alt": "Alice Freeman"
@@ -56,7 +56,7 @@
         },
         {
             "card": {
-                "template": "template-3",
+                "template": "app/core/directives/ms-card/templates/template-3/template-3.html",
                 "title": "Poison",
                 "subtitle": "Alice Cooper",
                 "cta": "LISTEN NOW",
@@ -73,7 +73,7 @@
         },
         {
             "card": {
-                "template": "template-4",
+                "template": "app/core/directives/ms-card/templates/template-4/template-4.html",
                 "title": "Nature",
                 "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.",
                 "media": {
@@ -89,7 +89,7 @@
         },
         {
             "card": {
-                "template": "template-5",
+                "template": "app/core/directives/ms-card/templates/template-5/template-5.html",
                 "title": "Friends",
                 "event": "Andrew Ryan is now following you",
                 "media": {
@@ -105,7 +105,7 @@
         },
         {
             "card": {
-                "template": "template-9",
+                "template": "app/core/directives/ms-card/templates/template-9/template-9.html",
                 "avatar": {
                     "src": "assets/images/avatars/alice.png",
                     "alt": "Alice Freeman"

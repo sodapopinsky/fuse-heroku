@@ -9,12 +9,12 @@
     function msCardDirective()
     {
         return {
-            restrict: 'AE',
+            restrict: 'E',
             scope   : {
-                template: '=',
-                card    : '=ngModel'
+                templatePath: '=template',
+                card        : '=ngModel'
             },
-            template: '<div class="ms-card-content-wrapper" ng-include="templateDir" onload="cardTemplateLoaded()"></div>',
+            template: '<div class="ms-card-content-wrapper" ng-include="templatePath" onload="cardTemplateLoaded()"></div>',
             compile : function (tElement)
             {
                 // Add class
@@ -22,12 +22,6 @@
 
                 return function postLink(scope, iElement)
                 {
-                    var baseDir = 'app/core/directives/ms-card/templates/';
-                    scope.templateDir = baseDir + scope.template + '/' + scope.template + '.html';
-
-                    // Add template name as a class
-                    iElement.addClass(scope.template);
-
                     // Methods
                     scope.cardTemplateLoaded = cardTemplateLoaded;
 
