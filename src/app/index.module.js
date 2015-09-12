@@ -3,12 +3,7 @@
     'use strict';
 
     /**
-     * @ngdoc overview
-     * @name fuse
-     * @description
-     * # fuse
-     *
-     * Main module of the application.
+     * Main module of the Fuse
      */
     angular
         .module('fuse', [
