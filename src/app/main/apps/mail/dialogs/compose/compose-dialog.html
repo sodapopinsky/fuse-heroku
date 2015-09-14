@@ -28,12 +28,17 @@
 
             <md-input-container>
                 <label translate="MAIL.BCC">Bcc</label>
-                <input ng-model="vm.form.bcc" type="email">
+                <input ng-model="vm.form.bcc" type="t">
+            </md-input-container>
+
+            <md-input-container>
+                <label translate="MAIL.SUBJECT">Subject</label>
+                <input ng-model="vm.form.subject" type="text">
             </md-input-container>
 
             <md-input-container flex class="textarea-container">
                 <label translate="MAIL.MESSAGE">Message</label>
-                <textarea ng-model="vm.form.message" md-maxlength="250"></textarea>
+                <textarea ng-bind-html="vm.form.message"></textarea>
             </md-input-container>
 
             <div class="attachment-list">

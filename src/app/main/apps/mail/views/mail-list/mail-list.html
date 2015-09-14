@@ -30,7 +30,7 @@
             </div>
 
             <div class="message">
-                {{mail.message | htmlToPlaintext | limitTo:100}}{{mail.message.length > 100 ? '...' : ''}}
+                {{mail.message | htmlToPlaintext | limitTo:90}}{{mail.message.length > 90 ? '...' : ''}}
             </div>
         </div>
 

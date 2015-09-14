@@ -14,6 +14,12 @@
 
             <md-menu-content width="3">
                 <md-menu-item>
+                    <md-button aria-label="Reply"
+                               translate="MAIL.REPLY" translate-aria-label="MAIL.REPLY" ng-click="vm.replyDialog($event)">Reply
+                    </md-button>
+                </md-menu-item>
+
+                <md-menu-item>
                     <md-button aria-label="Archive"
                                translate="MAIL.ARCHIVE" translate-aria-label="MAIL.ARCHIVE">Archive
                     </md-button>
@@ -58,30 +64,41 @@
     <div class="info" layout="column" layout-align="space-between center" layout-gt-sm="row">
         <div layout="column" layout-gt-sm="row" layout-align="start center">
 
-            <div layout="column" layout-gt-sm="row" layout-align="start center">
-
+            <div>
                 <img ng-if="vm.selectedMail.from.avatar" alt="{{vm.selectedMail.from.name}}"
                      ng-src="{{vm.selectedMail.from.avatar}}" class="avatar"/>
 
                 <div ng-if="!vm.selectedMail.from.avatar" class="avatar" ms-random-class="vm.colors">
                     {{vm.selectedMail.from.name[0]}}
                 </div>
+            </div>
 
-                <div class="name">
-                    {{vm.selectedMail.from.name}}
+            <div layout="column" layout-align="start">
+
+                <div layout="row" layout-wrap>
+                    <div class="name">
+                        {{vm.selectedMail.from.name}}
+                    </div>
+
+                    <div class="mail">
+                        <{{vm.selectedMail.from.email}}>
+                    </div>
+                </div>
+
+                <div layout="row" layout-align="start center">
+                    <div class="to" translate="MAIL.TO">
+                        to
+                    </div>
+
+                    <div class="name">
+                        {{vm.selectedMail.to[0].name}}
+                    </div>
                 </div>
             </div>
 
-            <div class="to" translate="MAIL.TO">
-                to
-            </div>
-
-            <div class="name">
-                {{vm.selectedMail.to[0].name}}
-            </div>
         </div>
 
-        <div class="time">
+        <div class="time text-nowrap">
             {{vm.selectedMail.time}}
         </div>
 
@@ -115,45 +132,76 @@
     <div class="form" flex>
         <textarea></textarea>
 
-        <div class="actions" layout="row" layout-align="space-between center">
-            <div layout="row" layout-align="start center">
-                <md-button class="send-button md-accent md-raised" aria-label="Send" translate="MAIL.SEND"
-                           translate-attr-aria-label="MAIL.SEND">
-                    SEND
-                </md-button>
+        <div class="actions" layout="row" layout-align="space-between center" layout-wrap>
+            <md-button class="send-button md-accent md-raised" aria-label="Send" translate="MAIL.SEND"
+                       translate-attr-aria-label="MAIL.SEND">
+                SEND
+            </md-button>
 
+            <div layout="row" layout-align="start center">
                 <md-button class="md-icon-button" aria-label="Text format"
-                           translate-attr-aria-label="MAIL.TEXT_FORMAT">
+                           translate-attr-aria-label="MAIL.TEXT_FORMAT" hide-sm>
                     <md-icon md-font-icon="icon-format-size"></md-icon>
                     <md-tooltip><span translate="MAIL.TEXT_FORMAT"></span></md-tooltip>
                 </md-button>
 
-                <div class="divider-vertical"></div>
-
                 <md-button class="md-icon-button" aria-label="Attach file"
-                           translate-attr-aria-label="MAIL.ATTACH_FILE">
+                           translate-attr-aria-label="MAIL.ATTACH_FILE" hide-sm>
                     <md-icon md-font-icon="icon-paperclip"></md-icon>
                     <md-tooltip><span translate="MAIL.ATTACH_FILE"></span></md-tooltip>
                 </md-button>
 
                 <md-button class="md-icon-button" aria-label="Insert picture"
-                           translate-attr-aria-label="MAIL.INSERT_PICTURE">
+                           translate-attr-aria-label="MAIL.INSERT_PICTURE" hide-sm>
                     <md-icon md-font-icon="icon-file-image-box"></md-icon>
                     <md-tooltip><span translate="MAIL.INSERT_PICTURE"></span></md-tooltip>
                 </md-button>
 
                 <md-button class="md-icon-button" aria-label="Insert emoticon"
-                           translate-attr-aria-label="MAIL.INSERT_EMOTICON">
+                           translate-attr-aria-label="MAIL.INSERT_EMOTICON" hide-sm>
                     <md-icon md-font-icon="icon-emoticon"></md-icon>
                     <md-tooltip><span translate="MAIL.INSERT_EMOTICON"></span></md-tooltip>
                 </md-button>
-            </div>
 
-            <md-button class="md-icon-button" aria-label="Delete"
-                       translate-attr-aria-label="MAIL.DELETE">
-                <md-icon md-font-icon="icon-delete"></md-icon>
-                <md-tooltip><span translate="MAIL.DELETE"></span></md-tooltip>
-            </md-button>
+                <md-menu hide-gt-sm>
+                    <md-button aria-label="More" class="md-icon-button"
+                               ng-click="$mdOpenMenu($event)"
+                               translate translate-aria-label="MAIL.MORE">
+                        <md-icon md-font-icon="icon-dots-vertical"></md-icon>
+                        <md-tooltip><span translate="MAIL.MORE"></span></md-tooltip>
+                    </md-button>
+
+                    <md-menu-content width="3">
+                        <md-menu-item>
+                            <md-button aria-label="Text Format"
+                                       translate="MAIL.TEXT_FORMAT" translate-aria-label="MAIL.TEXT_FORMAT">
+                                Text Format
+                            </md-button>
+                        </md-menu-item>
+
+                        <md-menu-item>
+                            <md-button aria-label="Attach file"
+                                       translate="MAIL.ATTACH_FILE" translate-aria-label="MAIL.ATTACH_FILE">
+                                Attach File
+                            </md-button>
+                        </md-menu-item>
+
+                        <md-menu-item>
+                            <md-button aria-label="Insert picture"
+                                       translate="MAIL.INSERT_PICTURE" translate-aria-label="MAIL.INSERT_PICTURE">
+                                Insert Picture
+                            </md-button>
+                        </md-menu-item>
+
+                        <md-menu-item>
+                            <md-button aria-label="Insert emoticon"
+                                       translate="MAIL.INSERT_EMOTICON" translate-aria-label="MAIL.INSERT_EMOTICON">
+                                Insert Emoticon
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </div>
         </div>
     </div>
 </div>
