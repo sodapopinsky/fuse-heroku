@@ -19,7 +19,7 @@
         if ( angular.isDefined(selectedMail) )
         {
             vm.form.to = selectedMail.from.email;
-            vm.form.subject = selectedMail.subject;
+            vm.form.subject = 'RE: ' + selectedMail.subject;
             vm.form.message = selectedMail.message;
         }
 
