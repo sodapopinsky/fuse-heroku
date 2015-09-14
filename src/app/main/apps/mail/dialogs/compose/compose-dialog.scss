@@ -15,11 +15,52 @@ md-dialog {
             }
         }
 
-
         .message-editor {
 
+        }
+
+        .to {
+            position: relative;
+
+            &.hidden-cc {
+
+                input {
+                    padding-right: 32px;
+                }
+
+                &.hidden-bcc {
+
+                    input {
+                        padding-right: 56px;
+                    }
+                }
+            }
+
+            &.hidden-bcc {
+
+                input {
+                    padding-right: 32px;
+                }
+            }
+
+            .cc-bcc {
+                position: absolute;
+                bottom: 32px;
+                right: 0;
+
+                .show-cc,
+                .show-bcc {
+                    cursor: pointer;
+                    font-size: 12px;
+                }
+
+                .show-bcc {
+                    margin-left: 8px;
+                }
+            }
 
         }
+
 
         .attachment-list {
 

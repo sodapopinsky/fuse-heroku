@@ -11,6 +11,9 @@
         var vm = this;
 
         // Data
+        vm.hiddenCC = true;
+        vm.hiddenBCC = true;
+
         vm.form = {
             from: 'johndoe@creapond.com'
         };
