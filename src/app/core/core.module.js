@@ -22,7 +22,6 @@
             'pascalprecht.translate',
             'timer',
             'ui.router',
-            'ui.ace',
             'uiGmapgoogle-maps'
         ]);
 })();
