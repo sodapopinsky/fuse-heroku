@@ -11,7 +11,7 @@
     "angular-datatables": "~0.4.3",
     "angular-google-maps": "~2.1.5",
     "angular-masonry": "~0.11.1",
-    "angular-material": "~0.10.1",
+    "angular-material": "~0.11",
     "angular-messages": "^1.4.0",
     "angular-resource": "~1.4.0",
     "angular-route": "~1.4.0",
