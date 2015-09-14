@@ -203,3 +203,23 @@
         }
     }
 }
+
+// RESPONSIVE
+
+@media screen and (max-width: $breakpoint-sm) {
+
+    #calendar {
+        .header {
+            .header-content {
+                .header-top {
+                    margin-bottom: 16px;
+
+                    .logo {
+                        margin-bottom: 16px;
+                    }
+                }
+            }
+        }
+
+    }
+}

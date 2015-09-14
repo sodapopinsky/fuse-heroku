@@ -5,7 +5,7 @@
 
         <div class="header-content" layout="column" layout-align="space-between">
 
-            <div class="header-top" layout="row" layout-align="space-between center">
+            <div class="header-top" layout-fill layout-gt-sm="row" layout="column" layout-align="space-between center">
                 <div class="logo" layout="row" layout-align="start center">
                     <span class="logo-icon">
                         <md-icon md-font-icon="icon-calendar-today"></md-icon>
@@ -51,20 +51,24 @@
             <!-- / TOOLBAR -->
 
             <!-- HEADER BOTTOM -->
-            <div class="header-bottom" layout="row" layout-align="start center">
+            <div class="header-bottom" layout-gt-sm="row" layout="column" layout-align="start center">
+
                 <div class="title">
                     {{vm.calendarView.title}}
                 </div>
 
-                <md-button class="md-icon-button arrow" ng-click="vm.calendar.prev()" aria-label="Previous" translate
-                           translate-attr-aria-label="CALENDAR.PREVIOUS">
-                    <md-icon md-font-icon="icon-chevron-left"></md-icon>
-                </md-button>
+                <div>
+                    <md-button class="md-icon-button arrow" ng-click="vm.calendar.prev()" aria-label="Previous"
+                               translate
+                               translate-attr-aria-label="CALENDAR.PREVIOUS">
+                        <md-icon md-font-icon="icon-chevron-left"></md-icon>
+                    </md-button>
 
-                <md-button class="md-icon-button arrow" aria-label="Next" translate
-                           translate-attr-aria-label="CALENDAR.NEXT">
-                    <md-icon md-font-icon="icon-chevron-right" ng-click=" vm.calendar.next()"></md-icon>
-                </md-button>
+                    <md-button class="md-icon-button arrow" aria-label="Next" translate
+                               translate-attr-aria-label="CALENDAR.NEXT">
+                        <md-icon md-font-icon="icon-chevron-right" ng-click=" vm.calendar.next()"></md-icon>
+                    </md-button>
+                </div>
             </div>
             <!-- / HEADER BOTTOM -->
         </div>
