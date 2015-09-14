@@ -2,7 +2,7 @@
 {
     'use strict';
 
-    angular.module('fuse')
+    angular.module('app.core')
         .provider('msScrollConfig', msScrollConfigProvider)
         .directive('msScroll', msScrollDirective);
 

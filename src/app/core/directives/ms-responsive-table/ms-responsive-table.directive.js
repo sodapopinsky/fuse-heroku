@@ -2,7 +2,7 @@
 {
     'use strict';
 
-    angular.module('fuse')
+    angular.module('app.core')
         .directive('msResponsiveTable', msResponsiveTableDirective);
 
     /** @ngInject */
