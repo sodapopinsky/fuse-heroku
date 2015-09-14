@@ -1,9 +1,12 @@
 md-dialog {
 
     &.task-dialog {
-        position: relative;
         max-width: 720px;
         width: 720px;
+
+        md-dialog-content {
+            position: relative;
+        }
 
         md-toolbar {
 

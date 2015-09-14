@@ -1,9 +1,12 @@
 md-dialog {
 
     &.event-detail-dialog {
-        position: relative;
         max-width: 560px;
         width: 560px;
+
+        md-dialog-content {
+            position: relative;
+        }
 
         md-toolbar {
 

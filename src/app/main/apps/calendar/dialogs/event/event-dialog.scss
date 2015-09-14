@@ -1,9 +1,12 @@
 md-dialog {
 
     &.event-dialog {
-        position: relative;
         max-width: 720px;
         width: 720px;
+
+        md-dialog-content {
+            position: relative;
+        }
 
         form {
             overflow: hidden;
