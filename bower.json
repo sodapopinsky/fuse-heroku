@@ -12,6 +12,7 @@
     "angular-google-maps": "~2.1.5",
     "angular-material": "~0.11",
     "angular-messages": "^1.4.0",
+    "angular-nvd3": "~0.1.1",
     "angular-resource": "~1.4.0",
     "angular-route": "~1.4.0",
     "angular-sanitize": "~1.4.0",
@@ -19,18 +20,17 @@
     "angular-touch": "~1.4.0",
     "angular-translate": "~2.7.2",
     "angular-translate-loader-partial": "~2.7.2",
-    "toastr": "~2.1.1",
-    "moment": "~2.10.3",
+    "angular-ui-calendar": "~1.0.0",
+    "angular-ui-router": "~0.2.15",
+    "c3-angular": "~0.6.0",
     "d3": "~3.5.6",
     "highlightjs": "~8.6.0",
     "jquery": "~2.1.4",
-    "angular-ui-calendar": "~1.0.0",
-    "angular-ui-router": "~0.2.15",
     "jquery-bridget": "~1.1.0",
-    "angular-nvd3": "~0.1.1",
-    "c3-angular": "~0.6.0",
     "mobile-detect": "hgoebl/mobile-detect.js#~1.2.1",
-    "perfect-scrollbar": "~0.6.4"
+    "moment": "~2.10.3",
+    "perfect-scrollbar": "~0.6.4",
+    "toastr": "~2.1.1"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0"

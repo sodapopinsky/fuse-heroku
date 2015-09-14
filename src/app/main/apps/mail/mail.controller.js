@@ -33,6 +33,7 @@
         vm.isChecked = isChecked;
         vm.checkAll = checkAll;
         vm.composeDialog = composeDialog;
+        vm.replyDialog = replyDialog;
 
         //////////
 
@@ -129,6 +130,29 @@
             $mdDialog.show({
                 controller         : 'ComposeDialogController',
                 controllerAs       : 'vm',
+                locals             : {
+                    selectedMail: undefined
+                },
+                templateUrl        : 'app/main/apps/mail/dialogs/compose/compose-dialog.html',
+                parent             : angular.element($document.body),
+                targetEvent        : ev,
+                clickOutsideToClose: true
+            });
+        }
+
+        /**
+         * Open reply dialog
+         *
+         * @param ev
+         */
+        function replyDialog(ev)
+        {
+            $mdDialog.show({
+                controller         : 'ComposeDialogController',
+                controllerAs       : 'vm',
+                locals             : {
+                    selectedMail: vm.selectedMail
+                },
                 templateUrl        : 'app/main/apps/mail/dialogs/compose/compose-dialog.html',
                 parent             : angular.element($document.body),
                 targetEvent        : ev,
