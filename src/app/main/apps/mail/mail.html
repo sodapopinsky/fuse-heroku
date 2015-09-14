@@ -33,23 +33,21 @@
         <!-- / CONTENT HEADER -->
 
         <!-- CONTENT CARD -->
-        <div class="content-card" layout="column" flex ng-class="{'responsive-mode':vm.mailReadRes}">
+        <div class="content-card" layout="column" flex ng-class="{'responsive-read-pane' : vm.responsiveReadPane}">
 
-            <!-- CONTENT MAIL READ RESPONSIVE TOOLBAR  -->
-            <div class="toolbar mail-read-responsive-toolbar" layout="row" layout-align="space-between center">
-                <div>
-                    <md-button class="md-icon-button"
-                               ng-click="vm.mailReadRes = false"
-                               aria-label="Back"
-                               translate translate-attr-aria-label="MAIL.BACK">
-                        <md-icon md-font-icon="icon-keyboard-backspace"></md-icon>
-                    </md-button>
-                </div>
-
+            <!-- MAIL READ PANE TOOLBAR -->
+            <div class="toolbar mail-read-pane-toolbar" layout="row" layout-align="space-between center">
+                <md-button class="md-icon-button"
+                           ng-click="vm.responsiveReadPane = false"
+                           aria-label="Back"
+                           translate translate-attr-aria-label="MAIL.BACK">
+                    <md-icon md-font-icon="icon-keyboard-backspace"></md-icon>
+                </md-button>
             </div>
+            <!-- / MAIL READ PANE TOOLBAR -->
 
             <!-- CONTENT TOOLBAR -->
-            <div class="toolbar" layout="row" layout-align="space-between center" ms-scroll>
+            <div class="toolbar" layout="row" layout-align="space-between center">
 
                 <div layout="row" layout-align="start center">
                     <md-checkbox aria-label="{{vm.allChecked?'Uncheck All':'Check All'}}" ng-checked="vm.allChecked"
@@ -95,22 +93,22 @@
                         </md-menu-content>
                     </md-menu>
 
-                    <div class="divider-vertical"></div>
+                    <div class="divider-vertical" hide-sm></div>
 
                     <md-button class="md-icon-button" aria-label="Archive" translate
-                               translate-attr-aria-label="MAIL.ARCHIVE">
+                               translate-attr-aria-label="MAIL.ARCHIVE" hide-sm>
                         <md-icon md-font-icon="icon-archive"></md-icon>
                         <md-tooltip><span translate="MAIL.ARCHIVE">Archive</span></md-tooltip>
                     </md-button>
 
-                    <md-button class="md-icon-button" aria-label="Report Spam" translate
-                               translate-attr-aria-label="MAIL.REPORT_SPAM">
+                    <md-button class="md-icon-button" aria-label="Spam" translate
+                               translate-attr-aria-label="MAIL.SPAM" hide-sm>
                         <md-icon md-font-icon="icon-alert-octagon"></md-icon>
-                        <md-tooltip><span translate="MAIL.REPORT_SPAM">Report Spam</span></md-tooltip>
+                        <md-tooltip><span translate="MAIL.SPAM">Spam</span></md-tooltip>
                     </md-button>
 
                     <md-button class="md-icon-button" aria-label="Delete" translate
-                               translate-attr-aria-label="MAIL.DELETE">
+                               translate-attr-aria-label="MAIL.DELETE" hide-sm>
                         <md-icon md-font-icon="icon-delete"></md-icon>
                         <md-tooltip><span translate="MAIL.DELETE">Delete</span></md-tooltip>
                     </md-button>
@@ -118,25 +116,56 @@
                     <div class="divider-vertical"></div>
 
                     <md-button class="md-icon-button" aria-label="Move to" translate
-                               translate-attr-aria-label="MAIL.MOVE_TO">
+                               translate-attr-aria-label="MAIL.MOVE_TO" hide-sm>
                         <md-icon md-font-icon="icon-folder"></md-icon>
                         <md-tooltip><span translate="MAIL.MOVE_TO">Move to</span></md-tooltip>
                     </md-button>
 
                     <md-button class="md-icon-button" aria-label="Labels" translate
-                               translate-attr-aria-label="MAIL.LABELS">
+                               translate-attr-aria-label="MAIL.LABELS" hide-sm>
                         <md-icon md-font-icon="icon-label"></md-icon>
                         <md-tooltip><span translate="MAIL.LABELS">Labels</span></md-tooltip>
                     </md-button>
+
+                    <md-menu hide-gt-sm>
+                        <md-button class="md-icon-button"
+                                   ng-click="$mdOpenMenu($event)"
+                                   aria-label="Mail Actions"
+                                   translate translate-attr-aria-label="MAIL.ACTIONS">
+                            <md-icon md-font-icon="icon-dots-horizontal"></md-icon>
+                        </md-button>
+                        <md-menu-content width="3">
+                            <md-menu-item>
+                                <md-button aria-label="Archive" translate="MAIL.ARCHIVE" translate-attr-aria-label="MAIL.ARCHIVE">
+                                    Archive
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button aria-label="Spam" translate="MAIL.SPAM" translate-attr-aria-label="MAIL.SPAM">
+                                    Spam
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button aria-label="Delete" translate="MAIL.DELETE" translate-attr-aria-label="MAIL.DELETE">
+                                    Delete
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button aria-label="Move To" translate="MAIL.MOVE_TO" translate-attr-aria-label="MAIL.MOVE_TO">
+                                    Move To
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button aria-label="Labels" translate="MAIL.LABELS" translate-attr-aria-label="MAIL.LABELS">
+                                    Labels
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
                 </div>
 
                 <div layout="row" layout-align="start center" translate-attr-aria-label="MAIL.REFRESH">
-                    <md-button class="md-icon-button" aria-label="Refresh">
-                        <md-icon md-font-icon="icon-refresh"></md-icon>
-                        <md-tooltip><span translate="MAIL.REFRESH">Refresh</span></md-tooltip>
-                    </md-button>
-
-                    <span class="page-info">1 - 100 of 980</span>
+                    <span class="page-info" hide-sm>1 - 100 of 980</span>
 
                     <md-button class="md-icon-button arrow" aria-label="Previous" translate
                                translate-attr-aria-label="MAIL.PREVIOUS">

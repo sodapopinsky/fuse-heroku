@@ -4,21 +4,6 @@
     <div class="subject" flex>{{vm.selectedMail.subject}}</div>
 
     <div layout="row" layout-align="end center">
-        <md-button class="md-icon-button" aria-label="Archive" translate translate-aria-label="MAIL.ARCHIVE">
-            <md-icon md-font-icon="icon-archive"></md-icon>
-            <md-tooltip><span translate="MAIL.ARCHIVE"></span></md-tooltip>
-        </md-button>
-
-        <md-button class="md-icon-button" aria-label="Report Spam" translate translate-aria-label="MAIL.REPORT_SPAM">
-            <md-icon md-font-icon="icon-alert-octagon"></md-icon>
-            <md-tooltip><span translate="MAIL.REPORT_SPAM"></span></md-tooltip>
-        </md-button>
-
-        <md-button class="md-icon-button" aria-label="Delete" translate translate-aria-label="MAIL.DELETE">
-            <md-icon md-font-icon="icon-delete"></md-icon>
-            <md-tooltip><span translate="MAIL.DELETE"></span></md-tooltip>
-        </md-button>
-
         <md-menu>
             <md-button aria-label="More" class="md-icon-button"
                        ng-click="$mdOpenMenu($event)"
@@ -28,6 +13,24 @@
             </md-button>
 
             <md-menu-content width="3">
+                <md-menu-item>
+                    <md-button aria-label="Archive"
+                               translate="MAIL.ARCHIVE" translate-aria-label="MAIL.ARCHIVE">Archive
+                    </md-button>
+                </md-menu-item>
+
+                <md-menu-item>
+                    <md-button aria-label="Spam"
+                               translate="MAIL.SPAM" translate-aria-label="MAIL.SPAM">Spam
+                    </md-button>
+                </md-menu-item>
+
+                <md-menu-item>
+                    <md-button aria-label="Delete"
+                               translate="MAIL.DELETE" translate-aria-label="MAIL.DELETE">Delete
+                    </md-button>
+                </md-menu-item>
+
                 <md-menu-item>
                     <md-button aria-label="Mark as unread"
                                translate="MAIL.MARK_AS_UNREAD" translate-aria-label="MAIL.MARK_AS_UNREAD">Mark as unread

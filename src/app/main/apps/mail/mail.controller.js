@@ -23,7 +23,8 @@
 
         vm.inbox = Inbox.data;
         selectMail(vm.inbox[0]);
-        vm.mailReadRes = false;
+
+        vm.responsiveReadPane = false;
 
         // Methods
         vm.selectMail = selectMail;
@@ -43,7 +44,7 @@
         function selectMail(mail)
         {
             vm.selectedMail = mail;
-            vm.mailReadRes = true;
+            vm.responsiveReadPane = true;
         }
 
         /**

@@ -37,12 +37,10 @@
         .content-card {
 
             .toolbar {
-                padding: 8px 16px;
                 position: relative;
-                overflow-y: hidden;
-                overflow-x: auto;
+                padding: 8px 16px;
 
-                &.mail-read-responsive-toolbar {
+                &.mail-read-pane-toolbar {
                     display: none;
                 }
 
@@ -75,22 +73,36 @@
 }
 
 // RESPONSIVE
-
 @media screen and (max-width: $breakpoint-lg) {
 
     #mail {
 
-        .content-card {
+        .center {
 
-            &.responsive-mode {
+            .content-card {
 
-                .toolbar {
-                    display: none;
+                &.responsive-read-pane {
 
-                    &.mail-read-responsive-toolbar {
-                        display: flex !important;
+                    .toolbar {
+                        display: none;
+
+                        &.mail-read-pane-toolbar {
+                            display: flex !important;
+                        }
+
                     }
 
+                    .content-wrapper {
+
+                        .content {
+
+                            &.mail-read-pane {
+                                @include easingOutQuadTimingFunction();
+                                @include transitionDuration(250ms);
+                                left: 0;
+                            }
+                        }
+                    }
                 }
 
                 .content-wrapper {
@@ -98,27 +110,53 @@
                     .content {
 
                         &.mail-read-pane {
+                            position: absolute;
+                            width: 100%;
+                            max-width: 100%;
+                            top: 0;
+                            bottom: 0;
+                            left: 100%;
                             @include easingOutQuadTimingFunction();
                             @include transitionDuration(250ms);
-                            left: 0;
+                        }
+                    }
+                }
+
+                .toolbar {
+                    padding: 8px;
+
+                    md-checkbox {
+                        padding-left: 0;
+                    }
+
+                    .md-button {
+
+                        &.md-icon-button {
+                            width: 30px;
+                            margin: 0 3px;
                         }
                     }
                 }
             }
+        }
+    }
+}
 
-            .content-wrapper {
+@media screen and (max-width: $breakpoint-md) {
 
-                .content {
+    #mail {
 
-                    &.mail-read-pane {
-                        position: absolute;
-                        max-width: 100%;
-                        width: 100%;
-                        @include easingOutQuadTimingFunction();
-                        @include transitionDuration(250ms);
-                        top: 0;
-                        bottom: 0;
-                        left: 100%;
+        .center {
+
+            .content-card {
+
+                .toolbar {
+
+                    .md-button {
+
+                        &.md-icon-button {
+                            margin: 0 6px;
+                        }
                     }
                 }
             }
