@@ -4,6 +4,7 @@ md-dialog {
         position: relative;
         max-width: 720px;
         width: 720px;
+        overflow: hidden;
 
         md-toolbar {
 
@@ -14,8 +15,11 @@ md-dialog {
 
         .message-editor {
             #content-container {
-                min-height: 200px;
+                margin-bottom: 16px;
                 border: 1px solid rgba(0, 0, 0, 0.13);
+                .advanced-wrapper {
+                    min-height: 300px;
+                }
             }
         }
 
