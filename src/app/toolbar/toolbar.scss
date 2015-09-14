@@ -80,3 +80,20 @@ $toolbarHeight: 64px;
         }
     }
 }
+
+// RESPONSIVE
+
+@media screen and (max-width: $breakpoint-sm) {
+
+    #toolbar {
+        #user-menu {
+            .user-button {
+                min-width: 40px;
+                padding: 0;
+            }
+        }
+        #search label {
+            padding: 0 8px 0 12px;
+        }
+    }
+}
