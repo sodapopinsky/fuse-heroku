@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($ariaProvider, $logProvider, msScrollConfigProvider, uiGmapGoogleMapApiProvider, $translateProvider)
+    function config($ariaProvider, $logProvider, msScrollConfigProvider, uiGmapGoogleMapApiProvider, $translateProvider, fuseConfigProvider)
     {
         // ng-aria configuration
         $ariaProvider.config({
@@ -41,5 +41,12 @@
         });
         $translateProvider.preferredLanguage('en');
         $translateProvider.useSanitizeValueStrategy('sanitize');
+
+        // Fuse theme configurations
+        fuseConfigProvider.config({
+            'disableCustomScrollbars'        : false,
+            'disableCustomScrollbarsOnMobile': true,
+            'disableMdInkRippleOnMobile'     : true
+        });
     }
 })();

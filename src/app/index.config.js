@@ -7,14 +7,9 @@
         .config(config);
 
     /** @ngInject */
-    function config(fuseConfigProvider)
+    function config()
     {
-        // Fuse theme configurations
-        fuseConfigProvider.config({
-            'disableCustomScrollbars'        : false,
-            'disableCustomScrollbarsOnMobile': true,
-            'disableMdInkRippleOnMobile'     : true
-        });
+
     }
 
 })();
