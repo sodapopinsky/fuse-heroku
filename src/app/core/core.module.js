@@ -22,6 +22,7 @@
             'pascalprecht.translate',
             'timer',
             'ui.router',
-            'uiGmapgoogle-maps'
+            'uiGmapgoogle-maps',
+            'ngQuill'
         ]);
 })();

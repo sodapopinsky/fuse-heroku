@@ -36,10 +36,9 @@
                 <input ng-model="vm.form.subject" type="text">
             </md-input-container>
 
-            <md-input-container flex class="textarea-container">
-                <label translate="MAIL.MESSAGE">Message</label>
-                <textarea ng-bind-html="vm.form.message"></textarea>
-            </md-input-container>
+            <ng-quill-editor ng-model="vm.form.message" toolbar="true" link-tooltip="true" image-tooltip="true"
+                             toolbar-entries="font size bold list bullet italic underline strike align color background link image"
+                             error-class="input-error" class="message-editor"></ng-quill-editor>
 
             <div class="attachment-list">
                 <div class="attachment" layout="row" layout-align="space-between center">

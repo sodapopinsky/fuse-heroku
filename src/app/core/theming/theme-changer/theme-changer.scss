@@ -7,10 +7,18 @@
     .menu-button {
         margin: 0;
     }
-    .md-button{
+    .md-button {
         line-height: 1;
     }
     .themes {
-
+        .theme {
+            .md-button {
+                &.custom {
+                    md-icon:before {
+                        content: "\e611";
+                    }
+                }
+            }
+        }
     }
 }
