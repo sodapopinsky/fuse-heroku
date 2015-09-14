@@ -12,10 +12,10 @@ md-dialog {
             }
         }
 
-        md-input-container {
-
-            textarea {
-                min-height: 150px;
+        .message-editor {
+            #content-container {
+                min-height: 200px;
+                border: 1px solid rgba(0, 0, 0, 0.13);
             }
         }
 
