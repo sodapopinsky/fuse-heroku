@@ -22,6 +22,7 @@
     "angular-translate-loader-partial": "~2.7.2",
     "angular-ui-calendar": "~1.0.0",
     "angular-ui-router": "~0.2.15",
+    "angular-ui-tinymce": "~0.0.9",
     "c3-angular": "~0.6.0",
     "d3": "~3.5.6",
     "highlightjs": "~8.6.0",
@@ -30,7 +31,6 @@
     "mobile-detect": "hgoebl/mobile-detect.js#~1.2.1",
     "moment": "~2.10.3",
     "perfect-scrollbar": "~0.6.4",
-    "textAngular": "~1.4.4",
     "toastr": "~2.1.1"
   },
   "devDependencies": {
