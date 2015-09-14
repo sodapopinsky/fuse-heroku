@@ -21,7 +21,6 @@
 
         vm.selectedFilter = {
             filter: 'Start Date',
-            order : 'Ascending',
             next  : 'Next 3 days'
         };
 
@@ -32,23 +31,10 @@
 
         // Methods
         vm.openTaskDialog = openTaskDialog;
-        vm.toggleStarred = toggleStarred;
         vm.toggleCheck = toggleCheck;
         vm.toggleSidenav = toggleSidenav;
 
         //////////
-
-        /**
-         * Toggle starred
-         *
-         * @param task
-         * @param event
-         */
-        function toggleStarred(task, event)
-        {
-            event.stopPropagation();
-            task.starred = !task.starred;
-        }
 
         /**
          * Open new task dialog

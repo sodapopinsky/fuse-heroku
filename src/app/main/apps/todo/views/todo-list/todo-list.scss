@@ -23,8 +23,8 @@
 
                 .tag {
                     border-radius: 2px;
-                    margin: 0 4px 0 0;
-                    padding: 4px 6px;
+                    margin: 0 0 4px 0;
+                    padding: 3px 5px;
                     color: $material-color-white;
                     font-weight: 500;
                 }
@@ -57,18 +57,23 @@
 
 // RESPONSIVE
 @media screen and (max-width: $breakpoint-sm) {
+
     #todo {
 
         .todo-list-pane {
 
             .todo {
 
+                .tags {
+                    margin-top: 8px;
+                }
+
                 .info {
                     margin: 0;
                 }
 
                 .tags-buttons {
-                    width: 100%;
+
                 }
             }
         }

@@ -36,7 +36,7 @@
         <div class="content-card" layout="column" flex>
 
             <!-- CONTENT TOOLBAR -->
-            <div class="toolbar" layout="row" layout-align="space-between center" ms-scroll>
+            <div class="toolbar" layout="row" layout-align="space-between center">
 
                 <div layout="row" layout-align="start center">
                     <md-select class="simplified" ng-model="vm.selectedFilter.filter" placeholder="Filter" translate
@@ -46,14 +46,6 @@
                         <md-option value="Manual" translate="TODO.MANUAL">Manual</md-option>
                         <md-option value="Tag" translate="TODO.TAG">Tag</md-option>
                         <md-option value="Title" translate="TODO.TITLE">Title</md-option>
-                    </md-select>
-
-                    <div class="divider-vertical"></div>
-
-                    <md-select class="simplified" ng-model="vm.selectedFilter.order" placeholder="Order" translate
-                               translate-attr-placeholder="TODO.ORDER">
-                        <md-option value="Ascending" translate="TODO.ASCENDING">Ascending</md-option>
-                        <md-option value="Descending" translate="TODO.DESCENDING">Descending</md-option>
                     </md-select>
 
                     <div class="divider-vertical"></div>
@@ -69,7 +61,7 @@
                 </div>
 
                 <div layout="row" layout-align="start center">
-                    <span class="page-info">1 - 100 of 980</span>
+                    <span class="page-info" hide-sm>1 - 100 of 980</span>
 
                     <md-button class="md-icon-button arrow" aria-label="Previous" translate
                                translate-attr-aria-label="TODO.PREVIOUS">

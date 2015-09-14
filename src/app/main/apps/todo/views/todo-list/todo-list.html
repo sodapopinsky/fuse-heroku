@@ -8,18 +8,20 @@
                  ng-click="vm.toggleCheck(task, $event)" aria-label="{{task.checked? 'Uncheck':'check'}}">
     </md-checkbox>
 
-    <div layout="column" layout-align="center start" layout-align-gt-sm="start center" layout-gt-sm="row" flex>
+    <div layout-gt-sm="row" layout-align-gt-sm="start center" flex>
 
-        <div class="info" layout="column" flex>
-            <div class="title text-truncate">{{task.title}}</div>
+        <div class="info" flex>
+            <div class="title text-truncate">
+                {{task.title}}
+            </div>
 
-            <div class="notes text-truncate">
-                {{task.notes}}
+            <div class="notes">
+                {{task.notes | limitTo:90}}{{task.notes.length > 90 ? '...' : ''}}
             </div>
         </div>
 
-        <div class="tags-buttons" layout="row" layout-align="space-between center" layout-align-gt-sm="end center">
-            <div class="tags" layout="row">
+        <div class="tags-buttons" layout="row" layout-align="space-between center">
+            <div class="tags" layout="column" layout-align="center end" layout-align-sm="center start">
                 <div class="tag" data-ng-repeat="tag in task.tags"
                      ng-style="{'background-color': tag.color}">
                     {{tag.title}}
@@ -27,12 +29,6 @@
             </div>
 
             <div>
-                <md-button class="md-icon-button" ng-click="vm.toggleStarred(task, $event)"
-                           aria-label="starred">
-                    <md-icon ng-if="task.starred" md-font-icon="icon-star" class="md-amber-fg"></md-icon>
-                    <md-icon ng-if="!task.starred" md-font-icon="icon-star-outline"></md-icon>
-                </md-button>
-
                 <md-menu>
                     <md-button class="md-icon-button" aria-label="More" translate translate-attr-aria-label="TODO.MORE">
                         <md-icon md-font-icon="icon-dots-vertical" ng-click="$mdOpenMenu($event)"></md-icon>
