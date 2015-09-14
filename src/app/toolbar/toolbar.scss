@@ -30,14 +30,24 @@ $toolbarHeight: 64px;
 
     #search {
         font-size: 13px;
+
         label {
             min-height: 64px;
             padding: 0 16px 0 24px;
         }
+
         #search-input {
             min-height: 64px;
             background-color: transparent;
         }
+    }
+
+    #toolbar-progress {
+        position: relative;
+        top: -10px;
+        height: 32px;
+        min-height: 32px;
+        max-height: 32px;
     }
 
     #user-menu {
