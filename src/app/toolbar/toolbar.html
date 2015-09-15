@@ -17,9 +17,8 @@
             <label for="search-input" layout="column">
                 <md-icon md-font-icon="icon-magnify" class="icon s24"></md-icon>
             </label>
-            <input id="search-input" type="text" ng-model="vm.search" placeholder="Click and type to search anywhere"
-                   translate
-                   translate-attr-placeholder="TOOLBAR.SEARCH" flex>
+            <input id="search-input" type="text" ng-model="global.search" placeholder="Search"
+                   translate translate-attr-placeholder="TOOLBAR.SEARCH" flex>
         </div>
 
         <md-progress-circular id="toolbar-progress" ng-if="$root.loadingProgress" class="md-accent" md-mode="indeterminate" md-diameter="32">
@@ -35,7 +34,7 @@
                     <img class="avatar" src="assets/images/avatars/profile-img.jpeg">
                     <span class="username" hide-sm>Mustafa</span>
                     <md-icon md-menu-origin md-menu-align-target md-font-icon="icon-chevron-down"
-                             class="icon s16"  hide-sm></md-icon>
+                             class="icon s16" hide-sm></md-icon>
                 </div>
             </md-button>
 

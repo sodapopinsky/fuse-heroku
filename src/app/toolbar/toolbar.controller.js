@@ -6,11 +6,14 @@
         .controller('ToolbarController', ToolbarController);
 
     /** @ngInject */
-    function ToolbarController($mdSidenav, msNavFoldService)
+    function ToolbarController($rootScope, $mdSidenav, msNavFoldService)
     {
         var vm = this;
 
         // Data
+        $rootScope.global = {
+            search: ''
+        };
 
         // Methods
         vm.toggleSidenav = toggleSidenav;

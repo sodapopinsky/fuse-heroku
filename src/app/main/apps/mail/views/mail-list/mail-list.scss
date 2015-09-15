@@ -70,17 +70,3 @@
         }
     }
 }
-
-// RESPONSIVE
-@media screen and (max-width: $breakpoint-lg) {
-
-    #mail {
-
-        .mail-list-pane {
-
-            .mail-list-item {
-                padding: 16px 8px;
-            }
-        }
-    }
-}

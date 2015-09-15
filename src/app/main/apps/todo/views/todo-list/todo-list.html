@@ -1,5 +1,5 @@
 <!-- TODO LIST ITEMS -->
-<div class="todo" ng-repeat="task in vm.tasks | filter: vm.search" md-ink-ripple
+<div class="todo" ng-repeat="task in vm.tasks | filter: global.search" md-ink-ripple
      ng-click="vm.openTaskDialog($event, task)"
      ng-class="{'starred': task.starred, 'selected': task.selected, 'checked': task.checked}"
      layout="row" layout-align="start center">
