@@ -21,6 +21,21 @@
             vm.task.tags = [];
         }
 
+        vm.tinymceOptions = {
+            resize : true,
+            menubar: false,
+            statusbar: true,
+            min_height: 200,
+            content_css: '/app/core/global-scss/partials/plugins/tinymce-content.css',
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table contextmenu paste',
+                'textcolor colorpicker'
+            ],
+            toolbar: 'fontselect | fontsizeselect | bold italic underline | blockquote | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | undo redo '
+        };
+
         // Methods
         vm.closeDialog = closeDialog;
         vm.newTag = newTag;

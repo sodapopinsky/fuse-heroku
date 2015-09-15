@@ -36,11 +36,10 @@
                     <input ng-model="vm.task.dueDate">
                 </md-input-container>
             </div>
-
-            <md-input-container flex class="textarea-container">
+            <div class="notes">
                 <label translate="TODO.NOTES">Notes</label>
-                <textarea ng-model="vm.task.notes" md-maxlength="250"></textarea>
-            </md-input-container>
+                <textarea ui-tinymce="vm.tinymceOptions" ng-model="vm.task.notes" class="notes-editor"></textarea>
+            </div>
 
             <div class="attachment-list">
                 <div class="attachment" layout="row" layout-align="space-between center">
