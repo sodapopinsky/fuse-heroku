@@ -28,6 +28,11 @@ md-backdrop {
         line-height: 40px;
         width: 40px;
     }
+
+    // Fab
+    &.md-fab {
+        line-height: 1;
+    }
 }
 
 // Dialog
