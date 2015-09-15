@@ -15,9 +15,9 @@
         }
 
         .header {
-            height: 200px;
-            min-height: 200px;
-            max-height: 200px;
+            height: 160px;
+            min-height: 160px;
+            max-height: 160px;
             padding: 24px 24px;
 
             .title {
@@ -99,6 +99,22 @@
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+// RESPONSIVE
+@media screen and (max-width: $breakpoint-sm) {
+
+    #file-manager {
+
+        .sidenav {
+
+            .header {
+                height: 120px;
+                min-height: 120px;
+                max-height: 120px;
             }
         }
     }

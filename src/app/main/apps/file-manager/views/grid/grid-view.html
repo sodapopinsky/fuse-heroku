@@ -1,7 +1,7 @@
 <!-- GRID VIEW -->
 <div class="grid-view" layout="column">
     <div class="folders" layout="row" layout-wrap>
-        <div class="md-background-bg md-hue-1 md-whiteframe-z1 item folder" ng-click="vm.select(folder)" ng-repeat="folder in vm.folders" layout="row" layout-align="space-between center">
+        <div class="md-background-bg md-hue-1 md-whiteframe-z1 item folder" ng-click="vm.select(folder)" ng-repeat="folder in vm.folders | filter:global.search" layout="row" layout-align="space-between center">
             <div layout="row" class="title" layout-align="start center">
                 <span class="file-icon">
                     <md-icon md-font-icon="icon-{{folder.type}}"></md-icon>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="files" layout="row" layout-wrap>
-        <div ng-click="vm.select(file)" class="md-whiteframe-z1 item file" ng-repeat="file in vm.files" layout="column">
+        <div ng-click="vm.select(file)" class="md-whiteframe-z1 item file" ng-repeat="file in vm.files | filter:global.search" layout="column">
             <div class="preview">
                 <img ng-src="{{file.preview}}">
             </div>
