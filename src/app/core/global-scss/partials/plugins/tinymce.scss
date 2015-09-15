@@ -1,0 +1,32 @@
+.mce-panel {
+    background: #F3F4F5 none !important;
+    border: none !important;
+}
+
+.mce-tinymce {
+    border: 1px solid rgba(0, 0, 0, 0.12) !important;
+}
+
+.mce-toolbar-grp {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
+}
+
+.mce-btn {
+    background: #FFFFFF none !important;
+    border: 1px solid rgba(0, 0, 0, 0.12) !important;
+}
+
+.mce-btn-group {
+
+    .mce-btn {
+        border-width: 1px 0 1px 0 !important;
+    }
+
+    .mce-first {
+        border-left-width: 1px !important;
+    }
+
+    .mce-last {
+        border-right-width: 1px !important;
+    }
+}

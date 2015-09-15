@@ -10,25 +10,27 @@
     {
         var vm = this;
 
+        // Data
+        vm.form = {
+            from: 'johndoe@creapond.com'
+        };
+
+        vm.hiddenCC = true;
+        vm.hiddenBCC = true;
+
         vm.tinymceOptions = {
-            resize : false,
+            resize : true,
             menubar: false,
-            statusbar: false,
+            statusbar: true,
+            min_height: 200,
+            content_css: '/app/core/global-scss/partials/plugins/tinymce-content.css',
             plugins: [
                 'advlist autolink lists link image charmap print preview anchor',
                 'searchreplace visualblocks code fullscreen',
                 'insertdatetime media table contextmenu paste',
                 'textcolor colorpicker'
             ],
-            toolbar: 'fontselect | fontsizeselect | bold italic underline | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | undo redo '
-        };
-
-        // Data
-        vm.hiddenCC = true;
-        vm.hiddenBCC = true;
-
-        vm.form = {
-            from: 'johndoe@creapond.com'
+            toolbar: 'fontselect | fontsizeselect | bold italic underline | blockquote | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | undo redo '
         };
 
         // If replying
@@ -36,7 +38,7 @@
         {
             vm.form.to = selectedMail.from.email;
             vm.form.subject = 'RE: ' + selectedMail.subject;
-            vm.form.message = selectedMail.message;
+            vm.form.message = '<blockquote>' + selectedMail.message + '</blockquote>';
         }
 
         // Methods
