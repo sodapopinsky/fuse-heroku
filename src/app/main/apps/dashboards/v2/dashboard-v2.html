@@ -11,21 +11,19 @@
 
                 <!-- Front -->
                 <ms-widget-front class="padding-16 md-white-bg" layout="column" flex>
-                    <div class="padding-bottom-16">
+                    <div flex class="padding-bottom-16">
                         <div class="h2 weight-500 padding-bottom-1">{{vm.widget1.title}}</div>
                         <div class="secondary-text">{{vm.widget1.subtitle}}</div>
-                        <div class="margin-top-16">
-                            <c3chart class="c3 stroke-2" bindto-id="analytics">
-                                <chart-column ng-repeat="column in vm.widget1.chart.columns"
-                                              column-id="{{column.id}}"
-                                              column-name="{{column.name}}"
-                                              column-color="{{column.color}}"
-                                              column-values="{{column.values}}"
-                                              column-type="{{column.type}}"
-                                />
-                                <chart-size chart-height="330"/>
-                            </c3chart>
-                        </div>
+                        <c3chart class="c3 margin-top-16 stroke-2" bindto-id="analytics">
+                            <chart-column ng-repeat="column in vm.widget1.chart.columns"
+                                          column-id="{{column.id}}"
+                                          column-name="{{column.name}}"
+                                          column-color="{{column.color}}"
+                                          column-values="{{column.values}}"
+                                          column-type="{{column.type}}"
+                                    />
+                            <chart-size chart-height="330"/>
+                        </c3chart>
                     </div>
 
                     <md-divider></md-divider>
@@ -197,11 +195,13 @@
         <div class="widget-group" layout="row" flex="100" layout-wrap>
 
             <!-- WIDGET 6 -->
-            <ms-widget layout="column" flex="100" flex-gt-sm="50">
+            <ms-widget layout="column" flex="100" flex-gt-sm="50" class="height-400">
 
                 <!-- Front -->
                 <ms-widget-front class="md-white-bg padding-16" layout="column" flex>
-                    <div class="h2 font-weight-500 padding-bottom-16">{{vm.widget6.title}} ({{vm.widget6.latestComments.length}})</div>
+                    <div class="h2 font-weight-500 padding-bottom-16">{{vm.widget6.title}}
+                        ({{vm.widget6.latestComments.length}})
+                    </div>
 
                     <div class="padding-right-16 scrollable height-300" ms-scroll layout="column" flex>
                         <div ng-repeat="comment in vm.widget6.latestComments">
@@ -237,11 +237,12 @@
             <!-- / WIDGET 6 -->
 
             <!-- WIDGET 7 -->
-            <ms-widget layout="column" flex="100" flex-gt-sm="50">
+            <ms-widget layout="column" flex="100" flex-gt-sm="50" class="height-400">
 
                 <!-- Front -->
                 <ms-widget-front class="md-white-bg padding-16" layout="column" flex>
-                    <div class="h2 font-weight-500 padding-bottom-16">{{vm.widget7.title}} ({{vm.remainingTasks();}})</div>
+                    <div class="h2 font-weight-500 padding-bottom-16">{{vm.widget7.title}} ({{vm.remainingTasks();}})
+                    </div>
 
                     <div class="padding-right-16 scrollable height-300" ms-scroll layout="column" flex>
                         <div ng-repeat="task in allTasks = vm.widget7.tasks">
@@ -278,7 +279,8 @@
 
             <div flex="100" flex-gt-sm="50" flex-gt-lg="25" ng-repeat="post in vm.latestPosts">
                 <!-- MS-CARD -->
-                <ms-card template="'app/core/directives/ms-card/templates/template-2/template-2.html'" ng-model="post"></ms-card>
+                <ms-card template="'app/core/directives/ms-card/templates/template-2/template-2.html'"
+                         ng-model="post" class="height-400"></ms-card>
                 <!-- / MS-CARD -->
             </div>
 

@@ -7,7 +7,7 @@
         <div class="widget-group" layout="row" flex="100" layout-wrap>
 
             <!-- WIDGET 1 -->
-            <ms-widget flippable="true" layout="column" flex="100" flex-gt-sm="50" flex-gt-lg="25">
+            <ms-widget flippable="true" layout="column" flex="100" flex-gt-sm="50" flex-gt-lg="25" class="height-200">
 
                 <!-- Front -->
                 <ms-widget-front class="padding-16 md-light-blue-bg" layout="column" flex>
@@ -66,7 +66,7 @@
             <!-- / WIDGET 1 -->
 
             <!-- WIDGET 2 -->
-            <ms-widget flippable="true" layout="column" flex="100" flex-gt-sm="50" flex-gt-lg="25">
+            <ms-widget flippable="true" layout="column" flex="100" flex-gt-sm="50" flex-gt-lg="25"  class="height-200">
 
                 <!-- Front -->
                 <ms-widget-front class="padding-16 md-deep-purple-bg white-text" layout="column" flex>
@@ -129,7 +129,7 @@
             <!-- / WIDGET 2 -->
 
             <!-- WIDGET 3 -->
-            <ms-widget flippable="true" layout="column" flex="100" flex-gt-sm="50" flex-gt-lg="25">
+            <ms-widget flippable="true" layout="column" flex="100" flex-gt-sm="50" flex-gt-lg="25"  class="height-200">
 
                 <!-- Front -->
                 <ms-widget-front class="padding-16 md-white-bg" layout="column" flex>
@@ -189,7 +189,7 @@
             <!-- / WIDGET 3 -->
 
             <!-- WIDGET 4 -->
-            <ms-widget flippable="true" layout="column" flex="100" flex-gt-sm="50" flex-gt-lg="25">
+            <ms-widget flippable="true" layout="column" flex="100" flex-gt-sm="50" flex-gt-lg="25"  class="height-200">
 
                 <!-- Front -->
                 <ms-widget-front class="padding-16 md-white-bg" layout="column" flex>
@@ -252,12 +252,13 @@
         <div class="widget-group" layout="row" flex="100" layout-wrap>
 
             <!-- WIDGET 5 -->
-            <ms-widget layout="column" flex="100">
+            <ms-widget layout="column" flex="100"  class="height-425">
 
                 <!-- Front -->
                 <ms-widget-front class="md-white-bg" layout="row" layout-wrap flex>
 
-                    <div class="padding-16" layout="column" layout-align="space-between" flex="100" flex-gt-sm="50" flex-gt-md="70">
+                    <div class="padding-16" layout="column" layout-align="space-between" flex="100" flex-gt-sm="50"
+                         flex-gt-md="70">
                         <div class="padding-bottom-16">
                             <div class="h2 weight-500 padding-bottom-8">{{vm.widget5.title}}</div>
                             <div class="secondary-text">{{vm.widget5.subtitle}}</div>
@@ -277,7 +278,8 @@
                         </div>
                     </div>
 
-                    <div class="padding-16 md-teal-bg white-text" layout="column" layout-align="space-between" flex="100" flex-gt-sm="50"
+                    <div class="padding-16 md-teal-bg white-text" layout="column" layout-align="space-between"
+                         flex="100" flex-gt-sm="50"
                          flex-gt-md="30">
                         <div layout="column" class="padding-bottom-16">
                             <div class="h2 weight-500 padding-bottom-8">{{vm.widget5.activityTitle}}</div>
@@ -309,10 +311,11 @@
         <div class="widget-group" layout="row" flex="100" layout-wrap>
 
             <!-- WIDGET 6 -->
-            <ms-widget layout="column" flex="100" flex-gt-lg="50">
+            <ms-widget layout="column" flex="100" flex-gt-lg="50" class="height-330">
 
                 <!-- Front -->
-                <ms-widget-front class="padding-16 md-white-bg" layout="row" layout-align="space-between" flex layout-wrap>
+                <ms-widget-front class="padding-16 md-white-bg" layout="row" layout-align="space-between" flex
+                                 layout-wrap>
                     <div class="margin-right-16" flex="100" flex-gt-sm="25">
                         <div class="h1 weight-500 padding-bottom-8">{{vm.widget6.title}}</div>
                         <div class="h4 secondary-text weight-500 padding-bottom-16">{{vm.widget6.subtitle}}</div>
@@ -324,7 +327,7 @@
                     </div>
 
                     <div flex>
-                        <c3chart bindto-id="goog-nasdaq">
+                        <c3chart class="c3" bindto-id="goog-nasdaq">
                             <chart-column ng-repeat="column in vm.widget6.chart.columns"
                                           column-id="{{column.id}}"
                                           column-name="{{column.name}}"
@@ -344,11 +347,12 @@
             <!-- / WIDGET 6 -->
 
             <!-- WIDGET 7 -->
-            <ms-widget layout="column" flex="100" flex-gt-lg="50">
+            <ms-widget layout="column" flex="100" flex-gt-lg="50"  class="height-330">
 
                 <!-- Front -->
                 <ms-widget-front class="md-accent-bg" flex>
-                    <div class="white-text padding-horizontal-16 padding-top-16 padding-bottom-8" flex="100" flex-gt-sm="25">
+                    <div class="white-text padding-horizontal-16 padding-top-16 padding-bottom-8" flex="100"
+                         flex-gt-sm="25">
                         <div class="h2 weight-500">{{vm.widget7.title}}</div>
                     </div>
 
@@ -363,7 +367,8 @@
                                             <span class="h4">{{gender.title}}</span>
                                             <span class="secondary-text">{{gender.value}}%</span>
                                         </div>
-                                        <md-progress-linear class="md-accent" md-mode="determinate" value="{{gender.value}}"></md-progress-linear>
+                                        <md-progress-linear class="md-accent" md-mode="determinate"
+                                                            value="{{gender.value}}"></md-progress-linear>
                                     </div>
                                 </div>
 
@@ -374,7 +379,8 @@
                                             <span class="h4">{{age.title}}</span>
                                             <span class="secondary-text">{{age.value}}%</span>
                                         </div>
-                                        <md-progress-linear class="md-warn" md-mode="determinate" value="{{age.value}}"></md-progress-linear>
+                                        <md-progress-linear class="md-warn" md-mode="determinate"
+                                                            value="{{age.value}}"></md-progress-linear>
                                     </div>
                                 </div>
                             </div>
@@ -405,7 +411,7 @@
                         <div class="secondary-text">{{vm.widget8.subtitle}}</div>
                     </div>
 
-                    <div>
+                    <div flex>
                         <c3chart class="c3 stroke-2" bindto-id="sales">
                             <chart-column ng-repeat="column in vm.widget8.chart.columns"
                                           column-id="{{column.id}}"
@@ -431,7 +437,8 @@
 
                     <!-- Front -->
                     <ms-widget-front class="padding-16 md-white-bg" layout="row" flex>
-                        <div class="padding-top-8 padding-bottom-8" layout="row" layout-align="space-between center" flex>
+                        <div class="padding-top-8 padding-bottom-8" layout="row" layout-align="space-between center"
+                             flex>
                             <div class="padding-left-8" layout="column" layout-align="center start">
                                 <span class="md-display-1 padding-bottom-8">{{vm.widget9.value}}</span>
                                 <span class="font-weight-500 secondary-text">{{vm.widget9.title}}</span>
@@ -452,7 +459,8 @@
 
                     <!-- Front -->
                     <ms-widget-front class="padding-16 md-white-bg" layout="row" flex>
-                        <div class="padding-top-8 padding-bottom-8" layout="row" layout-align="space-between center" flex>
+                        <div class="padding-top-8 padding-bottom-8" layout="row" layout-align="space-between center"
+                             flex>
                             <div class="padding-left-8" layout="column" layout-align="center start">
                                 <span class="md-display-1 padding-bottom-8">{{vm.widget10.value}}</span>
                                 <span class="font-weight-500 secondary-text">{{vm.widget10.title}}</span>
@@ -473,7 +481,8 @@
 
                     <!-- Front -->
                     <ms-widget-front class="padding-16 md-white-bg" layout="row" flex>
-                        <div class="padding-top-8 padding-bottom-8" layout="row" layout-align="space-between center" flex>
+                        <div class="padding-top-8 padding-bottom-8" layout="row" layout-align="space-between center"
+                             flex>
                             <div class="padding-left-8" layout="column" layout-align="center start">
                                 <span class="md-display-1 padding-bottom-8">{{vm.widget11.value}}</span>
                                 <span class="font-weight-500 secondary-text">{{vm.widget11.title}}</span>
