@@ -6,6 +6,7 @@ $toolbarHeight: 64px;
     min-height: $toolbarHeight;
     max-height: $toolbarHeight;
     z-index: 55;
+    overflow: hidden;
 
     #navigation-toggle {
         width: $toolbarHeight;
@@ -32,12 +33,14 @@ $toolbarHeight: 64px;
         font-size: 13px;
 
         label {
-            min-height: 64px;
             padding: 0 16px 0 24px;
+            md-icon {
+                line-height: $toolbarHeight;
+            }
         }
 
         #search-input {
-            min-height: 64px;
+            min-height: $toolbarHeight;
             background-color: transparent;
         }
     }
