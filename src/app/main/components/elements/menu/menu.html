@@ -57,7 +57,7 @@
                             <md-menu-content width="4">
                                 <md-menu-item>
                                     <md-button ng-click="vm.redial($event)">
-                                        <md-icon md-font-icon="icon-dialpad" md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-phone" md-menu-align-target></md-icon>
                                         Redial
                                     </md-button>
                                 </md-menu-item>
@@ -70,9 +70,10 @@
                                 <md-menu-divider></md-menu-divider>
                                 <md-menu-item>
                                     <md-button ng-click="vm.toggleNotifications()">
-                                        <md-icon
-                                                md-font-icon="icon-notifications_{{vm.notificationsEnabled ? 'off' : 'active'}}"
-                                                md-menu-align-targetss></md-icon>
+                                        <md-icon md-font-icon="icon-bell-off"
+                                                 md-menu-align-target ng-if="vm.notificationsEnabled"></md-icon>
+                                        <md-icon md-font-icon="icon-bell"
+                                                 md-menu-align-target ng-if="!vm.notificationsEnabled"></md-icon>
                                         {{vm.notificationsEnabled ? 'Disable' : 'Enable'}} notifications
                                     </md-button>
                                 </md-menu-item>
@@ -90,7 +91,7 @@
                             <md-menu-content width="4">
                                 <md-menu-item>
                                     <md-button ng-click="vm.redial($event)">
-                                        <md-icon md-font-icon="icon-dialpad" md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-phone" md-menu-align-target></md-icon>
                                         Redial
                                     </md-button>
                                 </md-menu-item>
@@ -103,9 +104,10 @@
                                 <md-menu-divider></md-menu-divider>
                                 <md-menu-item>
                                     <md-button ng-click="vm.toggleNotifications()">
-                                        <md-icon
-                                                md-font-icon="icon-notifications_{{vm.notificationsEnabled ? 'off' : 'active'}}"
-                                                md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-bell-off"
+                                                 md-menu-align-target ng-if="vm.notificationsEnabled"></md-icon>
+                                        <md-icon md-font-icon="icon-bell"
+                                                 md-menu-align-target ng-if="!vm.notificationsEnabled"></md-icon>
                                         {{vm.notificationsEnabled ? 'Disable' : 'Enable'}} notifications
                                     </md-button>
                                 </md-menu-item>
@@ -164,7 +166,7 @@
                             <md-menu-content width="4">
                                 <md-menu-item>
                                     <md-button ng-click="vm.redial($event)">
-                                        <md-icon md-font-icon="icon-dialpad" md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-phone" md-menu-align-target></md-icon>
                                         Redial
                                     </md-button>
                                 </md-menu-item>
@@ -177,9 +179,10 @@
                                 <md-menu-divider></md-menu-divider>
                                 <md-menu-item>
                                     <md-button ng-click="vm.toggleNotifications()">
-                                        <md-icon
-                                                md-font-icon="icon-notifications_{{vm.notificationsEnabled ? 'off' : 'active'}}"
-                                                md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-bell-off"
+                                                 md-menu-align-target ng-if="vm.notificationsEnabled"></md-icon>
+                                        <md-icon md-font-icon="icon-bell"
+                                                 md-menu-align-target ng-if="!vm.notificationsEnabled"></md-icon>
                                         {{vm.notificationsEnabled ? 'Disable' : 'Enable'}} notifications
                                     </md-button>
                                 </md-menu-item>
@@ -197,7 +200,7 @@
                             <md-menu-content width="4">
                                 <md-menu-item>
                                     <md-button ng-click="vm.redial($event)">
-                                        <md-icon md-font-icon="icon-dialpad" md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-phone" md-menu-align-target></md-icon>
                                         Redial
                                     </md-button>
                                 </md-menu-item>
@@ -210,9 +213,10 @@
                                 <md-menu-divider></md-menu-divider>
                                 <md-menu-item>
                                     <md-button ng-click="vm.toggleNotifications()">
-                                        <md-icon
-                                                md-font-icon="icon-notifications_{{vm.notificationsEnabled ? 'off' : 'active'}}"
-                                                md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-bell-off"
+                                                 md-menu-align-target ng-if="vm.notificationsEnabled"></md-icon>
+                                        <md-icon md-font-icon="icon-bell"
+                                                 md-menu-align-target ng-if="!vm.notificationsEnabled"></md-icon>
                                         {{vm.notificationsEnabled ? 'Disable' : 'Enable'}} notifications
                                     </md-button>
                                 </md-menu-item>
@@ -233,7 +237,7 @@
                             <md-menu-content width="4">
                                 <md-menu-item>
                                     <md-button ng-click="vm.redial($event)">
-                                        <md-icon md-font-icon="icon-dialpad" md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-phone" md-menu-align-target></md-icon>
                                         Redial
                                     </md-button>
                                 </md-menu-item>
@@ -246,9 +250,10 @@
                                 <md-menu-divider></md-menu-divider>
                                 <md-menu-item>
                                     <md-button ng-click="vm.toggleNotifications()">
-                                        <md-icon
-                                                md-font-icon="icon-notifications_{{vm.notificationsEnabled ? 'off' : 'active'}}"
-                                                md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-bell-off"
+                                                 md-menu-align-target ng-if="vm.notificationsEnabled"></md-icon>
+                                        <md-icon md-font-icon="icon-bell"
+                                                 md-menu-align-target ng-if="!vm.notificationsEnabled"></md-icon>
                                         {{vm.notificationsEnabled ? 'Disable' : 'Enable'}} notifications
                                     </md-button>
                                 </md-menu-item>
@@ -266,7 +271,7 @@
                             <md-menu-content width="4">
                                 <md-menu-item>
                                     <md-button ng-click="vm.redial($event)">
-                                        <md-icon md-font-icon="icon-dialpad" md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-phone" md-menu-align-target></md-icon>
                                         Redial
                                     </md-button>
                                 </md-menu-item>
@@ -279,9 +284,10 @@
                                 <md-menu-divider></md-menu-divider>
                                 <md-menu-item>
                                     <md-button ng-click="vm.toggleNotifications()">
-                                        <md-icon
-                                                md-font-icon="icon-notifications_{{vm.notificationsEnabled ? 'off' : 'active'}}"
-                                                md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-bell-off"
+                                                 md-menu-align-target ng-if="vm.notificationsEnabled"></md-icon>
+                                        <md-icon md-font-icon="icon-bell"
+                                                 md-menu-align-target ng-if="!vm.notificationsEnabled"></md-icon>
                                         {{vm.notificationsEnabled ? 'Disable' : 'Enable'}} notifications
                                     </md-button>
                                 </md-menu-item>
@@ -302,7 +308,7 @@
                             <md-menu-content width="4">
                                 <md-menu-item>
                                     <md-button ng-click="vm.redial($event)">
-                                        <md-icon md-font-icon="icon-dialpad"></md-icon>
+                                        <md-icon md-font-icon="icon-phone"></md-icon>
                                         Redial
                                     </md-button>
                                 </md-menu-item>
@@ -315,8 +321,10 @@
                                 <md-menu-divider></md-menu-divider>
                                 <md-menu-item>
                                     <md-button ng-click="vm.toggleNotifications()">
-                                        <md-icon md-menu-align-target
-                                                 md-font-icon="icon-notifications_{{vm.notificationsEnabled ? 'off' : 'active'}}"></md-icon>
+                                        <md-icon md-font-icon="icon-bell-off"
+                                                 md-menu-align-target ng-if="vm.notificationsEnabled"></md-icon>
+                                        <md-icon md-font-icon="icon-bell"
+                                                 md-menu-align-target ng-if="!vm.notificationsEnabled"></md-icon>
                                         {{vm.notificationsEnabled ? 'Disable' : 'Enable'}} notifications
                                     </md-button>
                                 </md-menu-item>
@@ -334,7 +342,7 @@
                             <md-menu-content width="4">
                                 <md-menu-item>
                                     <md-button ng-click="vm.redial($event)">
-                                        <md-icon md-font-icon="icon-dialpad"></md-icon>
+                                        <md-icon md-font-icon="icon-phone"></md-icon>
                                         Redial
                                     </md-button>
                                 </md-menu-item>
@@ -347,8 +355,10 @@
                                 <md-menu-divider></md-menu-divider>
                                 <md-menu-item>
                                     <md-button ng-click="vm.toggleNotifications()">
-                                        <md-icon md-menu-align-target
-                                                 md-font-icon="icon-notifications_{{vm.notificationsEnabled ? 'off' : 'active'}}"></md-icon>
+                                        <md-icon md-font-icon="icon-bell-off"
+                                                 md-menu-align-target ng-if="vm.notificationsEnabled"></md-icon>
+                                        <md-icon md-font-icon="icon-bell"
+                                                 md-menu-align-target ng-if="!vm.notificationsEnabled"></md-icon>
                                         {{vm.notificationsEnabled ? 'Disable' : 'Enable'}} notifications
                                     </md-button>
                                 </md-menu-item>
@@ -378,7 +388,7 @@
                             <md-menu-content width="6">
                                 <md-menu-item>
                                     <md-button ng-click="vm.redial($event)">
-                                        <md-icon md-font-icon="icon-dialpad" md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-phone" md-menu-align-target></md-icon>
                                         Redial
                                     </md-button>
                                 </md-menu-item>
@@ -391,9 +401,10 @@
                                 <md-menu-divider></md-menu-divider>
                                 <md-menu-item>
                                     <md-button ng-click="vm.toggleNotifications()">
-                                        <md-icon
-                                                md-font-icon="icon-notifications_{{vm.notificationsEnabled ? 'off' : 'active'}}"
-                                                md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-bell-off"
+                                                 md-menu-align-target ng-if="vm.notificationsEnabled"></md-icon>
+                                        <md-icon md-font-icon="icon-bell"
+                                                 md-menu-align-target ng-if="!vm.notificationsEnabled"></md-icon>
                                         {{vm.notificationsEnabled ? 'Disable' : 'Enable'}} notifications
                                     </md-button>
                                 </md-menu-item>
@@ -411,7 +422,7 @@
                             <md-menu-content width="6">
                                 <md-menu-item>
                                     <md-button ng-click="vm.redial($event)">
-                                        <md-icon md-font-icon="icon-dialpad" md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-phone" md-menu-align-target></md-icon>
                                         Redial
                                     </md-button>
                                 </md-menu-item>
@@ -424,9 +435,10 @@
                                 <md-menu-divider></md-menu-divider>
                                 <md-menu-item>
                                     <md-button ng-click="vm.toggleNotifications()">
-                                        <md-icon
-                                                md-font-icon="icon-notifications_{{vm.notificationsEnabled ? 'off' : 'active'}}"
-                                                md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-bell-off"
+                                                 md-menu-align-target ng-if="vm.notificationsEnabled"></md-icon>
+                                        <md-icon md-font-icon="icon-bell"
+                                                 md-menu-align-target ng-if="!vm.notificationsEnabled"></md-icon>
                                         {{vm.notificationsEnabled ? 'Disable' : 'Enable'}} notifications
                                     </md-button>
                                 </md-menu-item>
@@ -447,7 +459,7 @@
                             <md-menu-content width="4">
                                 <md-menu-item>
                                     <md-button ng-click="vm.redial($event)">
-                                        <md-icon md-font-icon="icon-dialpad" md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-phone" md-menu-align-target></md-icon>
                                         Redial
                                     </md-button>
                                 </md-menu-item>
@@ -460,9 +472,10 @@
                                 <md-menu-divider></md-menu-divider>
                                 <md-menu-item>
                                     <md-button ng-click="vm.toggleNotifications()">
-                                        <md-icon
-                                                md-font-icon="icon-notifications_{{vm.notificationsEnabled ? 'off' : 'active'}}"
-                                                md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-bell-off"
+                                                 md-menu-align-target ng-if="vm.notificationsEnabled"></md-icon>
+                                        <md-icon md-font-icon="icon-bell"
+                                                 md-menu-align-target ng-if="!vm.notificationsEnabled"></md-icon>
                                         {{vm.notificationsEnabled ? 'Disable' : 'Enable'}} notifications
                                     </md-button>
                                 </md-menu-item>
@@ -480,7 +493,7 @@
                             <md-menu-content width="4">
                                 <md-menu-item>
                                     <md-button ng-click="vm.redial($event)">
-                                        <md-icon md-font-icon="icon-dialpad" md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-phone" md-menu-align-target></md-icon>
                                         Redial
                                     </md-button>
                                 </md-menu-item>
@@ -493,9 +506,10 @@
                                 <md-menu-divider></md-menu-divider>
                                 <md-menu-item>
                                     <md-button ng-click="vm.toggleNotifications()">
-                                        <md-icon
-                                                md-font-icon="icon-notifications_{{vm.notificationsEnabled ? 'off' : 'active'}}"
-                                                md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-bell-off"
+                                                 md-menu-align-target ng-if="vm.notificationsEnabled"></md-icon>
+                                        <md-icon md-font-icon="icon-bell"
+                                                 md-menu-align-target ng-if="!vm.notificationsEnabled"></md-icon>
                                         {{vm.notificationsEnabled ? 'Disable' : 'Enable'}} notifications
                                     </md-button>
                                 </md-menu-item>
@@ -516,7 +530,7 @@
                             <md-menu-content width="2">
                                 <md-menu-item>
                                     <md-button ng-click="vm.redial($event)">
-                                        <md-icon md-font-icon="icon-dialpad" md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-phone" md-menu-align-target></md-icon>
                                         Redial
                                     </md-button>
                                 </md-menu-item>
@@ -529,9 +543,10 @@
                                 <md-menu-divider></md-menu-divider>
                                 <md-menu-item>
                                     <md-button ng-click="vm.toggleNotifications()">
-                                        <md-icon
-                                                md-font-icon="icon-notifications_{{vm.notificationsEnabled ? 'off' : 'active'}}"
-                                                md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-bell-off"
+                                                 md-menu-align-target ng-if="vm.notificationsEnabled"></md-icon>
+                                        <md-icon md-font-icon="icon-bell"
+                                                 md-menu-align-target ng-if="!vm.notificationsEnabled"></md-icon>
                                         {{vm.notificationsEnabled ? 'Disable' : 'Enable'}} notifications
                                     </md-button>
                                 </md-menu-item>
@@ -549,7 +564,7 @@
                             <md-menu-content width="2">
                                 <md-menu-item>
                                     <md-button ng-click="vm.redial($event)">
-                                        <md-icon md-font-icon="icon-dialpad" md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-phone" md-menu-align-target></md-icon>
                                         Redial
                                     </md-button>
                                 </md-menu-item>
@@ -562,9 +577,10 @@
                                 <md-menu-divider></md-menu-divider>
                                 <md-menu-item>
                                     <md-button ng-click="vm.toggleNotifications()">
-                                        <md-icon
-                                                md-font-icon="icon-notifications_{{vm.notificationsEnabled ? 'off' : 'active'}}"
-                                                md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-bell-off"
+                                                 md-menu-align-target ng-if="vm.notificationsEnabled"></md-icon>
+                                        <md-icon md-font-icon="icon-bell"
+                                                 md-menu-align-target ng-if="!vm.notificationsEnabled"></md-icon>
                                         {{vm.notificationsEnabled ? 'Disable' : 'Enable'}} notifications
                                     </md-button>
                                 </md-menu-item>

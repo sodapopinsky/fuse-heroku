@@ -58,15 +58,15 @@
                 },
                 {
                     name: 'Upload',
-                    icon: 'icon-cloud_upload'
+                    icon: 'icon-upload'
                 },
                 {
                     name: 'Copy',
-                    icon: 'icon-content_copy'
+                    icon: 'icon-content-copy'
                 },
                 {
                     name: 'Print this page',
-                    icon: 'icon-print'
+                    icon: 'icon-printer'
                 },
             ];
             $scope.listItemClick = function ($index)
@@ -85,15 +85,15 @@
                 },
                 {
                     name: 'Upload',
-                    icon: 'icon-cloud_upload'
+                    icon: 'icon-upload'
                 },
                 {
                     name: 'Copy',
-                    icon: 'icon-content_copy'
+                    icon: 'icon-content-copy'
                 },
                 {
                     name: 'Print this page',
-                    icon: 'icon-print'
+                    icon: 'icon-printer'
                 }
             ];
             $scope.listItemClick = function ($index)
