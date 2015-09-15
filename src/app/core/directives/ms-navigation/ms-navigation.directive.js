@@ -304,7 +304,7 @@
                     $rootScope.$on('$stateChangeSuccess', function ()
                     {
                         $rootScope.$broadcast('msNav::expandMatchingToggles');
-                        $mdSidenav('navigation').toggle();
+                        $mdSidenav('navigation').close();
                     });
                 };
             }
