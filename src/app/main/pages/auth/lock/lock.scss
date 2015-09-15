@@ -1,6 +1,8 @@
 #lock {
     background: url('/assets/images/backgrounds/march.jpg') no-repeat;
     background-size: cover;
+    height: 100%;
+
 
     #lock-form {
         padding: 48px 32px 32px 32px;
@@ -39,6 +41,7 @@
             .md-button {
                 width: 220px;
                 margin: 32px auto;
+                display: block;
             }
         }
 

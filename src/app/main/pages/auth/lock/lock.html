@@ -1,12 +1,12 @@
 <div id="lock" layout="column" layout-fill layout-align="center center">
     <div id="lock-form" class="md-whiteframe-z1" layout="column" layout-align="center center">
-        <div layout="row" layout-align="start center" layout-sm="column" layout-align-sm="center center">
+        <div layout="row" layout-align="start center" layout-sm="column" layout-fill layout-align-sm="center center">
             <div class="avatar-container">
                 <img class="avatar big" src="assets/images/avatars/katherine.png">
                 <md-icon md-font-icon="icon-lock" class="md-warn-fg s36 md-hue-2"></md-icon>
             </div>
 
-            <div layout="column" layout-align="start" layout-align-sm="center center">
+            <div flex layout="column" layout-align="start" layout-align-sm="center center">
                 <div class="title" translate="LOCK.TITLE">Your session is locked</div>
                 <div class="subtitle" translate="LOCK.SUBTITLE">Due to inactivity, your session is locked. Enter your
                     password to continue.
@@ -14,7 +14,7 @@
             </div>
         </div>
 
-        <form layout="column">
+        <form>
             <md-input-container flex md-no-float>
                 <input ng-model="vm.form.userName" disabled placeholder="User Name" translate
                        translate-attr-placeholder="LOCK.USERNAME">

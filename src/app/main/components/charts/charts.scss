@@ -2,6 +2,11 @@
 
     .content {
         max-width: 800px;
+        .c3 {
+            > svg {
+                min-height: 300px;
+            }
+        }
     }
 
 }

@@ -2,7 +2,7 @@
 
     <div class="timeline" layout="column" flex="100" flex-gt-md="65" flex-order="2" flex-order-gt-md="1">
 
-        <div class="profile-box add-post md-whiteframe-z1" layout="column">
+        <div class="profile-box add-post md-whiteframe-z1">
             <div class="form" flex>
                 <textarea placeholder="Write something.." translate
                           translate-attr-placeholder="PROFILE.WRITE_SOMETHING"></textarea>
@@ -38,7 +38,7 @@
 
         <md-divider></md-divider>
 
-        <div class="timeline-item md-whiteframe-z1" layout="column" ng-repeat="post in vm.posts">
+        <div class="timeline-item md-whiteframe-z1" ng-repeat="post in vm.posts">
             <header layout="row" layout-align="space-between start">
                 <div class="user" layout="row" layout-align="start center">
                     <img class="avatar" ng-src="{{post.user.avatar}}">
