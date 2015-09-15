@@ -285,7 +285,7 @@
     }
 
     /** @ngInject */
-    function msNavDirective($rootScope)
+    function msNavDirective($rootScope, $mdSidenav)
     {
         return {
             restrict  : 'E',
@@ -304,6 +304,7 @@
                     $rootScope.$on('$stateChangeSuccess', function ()
                     {
                         $rootScope.$broadcast('msNav::expandMatchingToggles');
+                        $mdSidenav('navigation').toggle();
                     });
                 };
             }

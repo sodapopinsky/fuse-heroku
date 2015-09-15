@@ -1,13 +1,14 @@
 #invoice {
     padding: 0;
+    overflow: auto;
 
     .invoice-container {
         padding: 64px;
 
         .card {
-            width: 100%;
-            min-width: 1024px;
-            max-width: 1280px;
+            width: 1020px;
+            min-width: 1020px;
+            max-width: 1020px;
             padding: 88px;
             overflow: hidden;
             background: $material-color-white;

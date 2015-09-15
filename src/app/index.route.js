@@ -13,17 +13,13 @@
         $locationProvider.html5Mode(true);
 
         $stateProvider
-
-        /**
-         * App
-         */
             .state('app', {
                 abstract: true,
                 views   : {
                     'main@'         : {
                         templateUrl: 'app/core/layouts/default.html'
                     },
-                    'toolbar@app'   : {
+                    'toolbar@app': {
                         templateUrl: 'app/toolbar/toolbar.html',
                         controller : 'ToolbarController as vm'
                     },
