@@ -10,6 +10,19 @@
     {
         var vm = this;
 
+        vm.tinymceOptions = {
+            resize : false,
+            menubar: false,
+            statusbar: false,
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table contextmenu paste',
+                'textcolor colorpicker'
+            ],
+            toolbar: 'fontselect | fontsizeselect | bold italic underline | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | undo redo '
+        };
+
         // Data
         vm.hiddenCC = true;
         vm.hiddenBCC = true;
