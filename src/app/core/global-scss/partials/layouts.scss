@@ -1,6 +1,13 @@
 /*----------------------------------------------------------------*/
 /*  Layouts
 /*----------------------------------------------------------------*/
+$header-height: 160px;
+$card-toolbar-height: 64px;
+$card-header-height: $header-height - $card-toolbar-height;
+
+$header-height-sm: 120px;
+$card-header-height-sm: $header-height-sm - $card-toolbar-height;
+
 .page-layout {
     position: relative;
     overflow: hidden;
@@ -11,7 +18,7 @@
         top: 0;
         right: 0;
         left: 0;
-        height: 200px;
+        height: $header-height;
         background-image: url('/assets/images/backgrounds/mail-bg.png');
         background-size: cover;
     }
@@ -51,9 +58,9 @@
                 margin-right: 32px;
 
                 .header {
-                    height: 136px;
-                    min-height: 136px;
-                    max-height: 136px;
+                    height: $card-header-height;
+                    min-height: $card-header-height;
+                    max-height: $card-header-height;
                     padding: 24px;
                 }
 
@@ -64,9 +71,9 @@
 
                     .toolbar {
                         padding: 8px 24px;
-                        height: 64px;
-                        min-height: 64px;
-                        max-height: 64px;
+                        height: $card-toolbar-height;
+                        min-height: $card-toolbar-height;
+                        max-height: $card-toolbar-height;
                         border-bottom: 1px solid rgba(0, 0, 0, 0.12);
                     }
 
@@ -109,9 +116,9 @@
                 z-index: 51;
 
                 .header {
-                    height: 200px;
-                    min-height: 200px;
-                    max-height: 200px;
+                    height: $header-height;
+                    min-height: $header-height;
+                    max-height: $header-height;
                     padding: 24px;
                 }
 
@@ -153,9 +160,9 @@
                 margin-right: 32px;
 
                 .header {
-                    height: 136px;
-                    min-height: 136px;
-                    max-height: 136px;
+                    height: $card-header-height;
+                    min-height: $card-header-height;
+                    max-height: $card-header-height;
                     padding: 24px;
                 }
 
@@ -166,13 +173,17 @@
 
                     .toolbar {
                         padding: 8px 24px;
-                        height: 64px;
-                        min-height: 64px;
-                        max-height: 64px;
+                        height: $card-toolbar-height;
+                        min-height: $card-toolbar-height;
+                        max-height: $card-toolbar-height;
                         border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
                         .sidenav-toggle {
-                            margin: 0 16px 0 0;
+                            height: $card-toolbar-height;
+                            line-height: $card-toolbar-height;
+                            margin: 0 !important;
+                            padding: 0 8px 0 0 !important;
+                            border-radius: 0;
                         }
                     }
 
@@ -215,9 +226,9 @@
                 z-index: 51;
 
                 .header {
-                    height: 200px;
-                    min-height: 200px;
-                    max-height: 200px;
+                    height: $header-height;
+                    min-height: $header-height;
+                    max-height: $header-height;
                     padding: 24px 24px 24px 0;
                 }
 
@@ -257,9 +268,9 @@
                 margin-right: 32px;
 
                 .header {
-                    height: 136px;
-                    min-height: 136px;
-                    max-height: 136px;
+                    height: $card-header-height;
+                    min-height: $card-header-height;
+                    max-height: $card-header-height;
                     padding: 24px;
                 }
 
@@ -270,13 +281,17 @@
 
                     .toolbar {
                         padding: 8px 24px;
-                        height: 64px;
-                        min-height: 64px;
-                        max-height: 64px;
+                        height: $card-toolbar-height;
+                        min-height: $card-toolbar-height;
+                        max-height: $card-toolbar-height;
                         border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
                         .sidenav-toggle {
-                            margin: 0 0 0 16px;
+                            height: $card-toolbar-height;
+                            line-height: $card-toolbar-height;
+                            margin: 0 !important;
+                            padding: 0 0 0 8px !important;
+                            border-radius: 0;
                         }
                     }
 
@@ -297,9 +312,9 @@
             min-height: 100%;
 
             > .header {
-                height: 200px;
-                min-height: 200px;
-                max-height: 200px;
+                height: $header-height;
+                min-height: $header-height;
+                max-height: $header-height;
                 padding: 24px;
                 background-image: url('/assets/images/backgrounds/mail-bg.png');
                 background-size: cover;
@@ -353,9 +368,9 @@
                 box-shadow: $whiteframe-shadow-z3;
 
                 .header {
-                    height: 200px;
-                    min-height: 200px;
-                    max-height: 200px;
+                    height: $header-height;
+                    min-height: $header-height;
+                    max-height: $header-height;
                     padding: 24px;
                     background-image: url('/assets/images/backgrounds/mail-bg.png');
                     background-size: cover;
@@ -393,9 +408,9 @@
                 box-shadow: $whiteframe-shadow-z3;
 
                 .header {
-                    height: 200px;
-                    min-height: 200px;
-                    max-height: 200px;
+                    height: $header-height;
+                    min-height: $header-height;
+                    max-height: $header-height;
                     padding: 24px;
                     background-image: url('/assets/images/backgrounds/mail-bg.png');
                     background-size: cover;
@@ -431,9 +446,9 @@
             min-height: 100%;
 
             > .header {
-                height: 200px;
-                min-height: 200px;
-                max-height: 200px;
+                height: $header-height;
+                min-height: $header-height;
+                max-height: $header-height;
                 padding: 24px;
                 background-image: url('/assets/images/backgrounds/mail-bg.png');
                 background-size: cover;
@@ -489,15 +504,29 @@
 
 @media screen and (max-width: $breakpoint-sm) {
 
-    .page-layout.carded {
+    .page-layout {
 
-        &.right-sidenav,
-        &.left-sidenav,
-        &.fullwidth {
+        .top-bg {
+            height: $header-height-sm;
+        }
 
-            > .center {
-                margin-left: 16px;
-                margin-right: 16px;
+        &.carded {
+
+            &.right-sidenav,
+            &.left-sidenav,
+            &.fullwidth {
+
+                > .center {
+                    margin-left: 16px;
+                    margin-right: 16px;
+
+                    .header {
+                        height: $card-header-height-sm;
+                        min-height: $card-header-height-sm;
+                        max-height: $card-header-height-sm;
+                        padding: 16px;
+                    }
+                }
             }
         }
     }
