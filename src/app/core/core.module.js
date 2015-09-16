@@ -23,6 +23,6 @@
             'timer',
             'ui.router',
             'uiGmapgoogle-maps',
-            'ui.tinymce'
+            'textAngular'
         ]);
 })();
