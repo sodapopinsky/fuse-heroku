@@ -1,5 +1,5 @@
 <!-- MAIL LIST ITEMS -->
-<div class="mail-list-item {{mail.status}}" ng-repeat="mail in vm.inbox | filter: global.search"
+<div class="mail-list-item {{mail.status}}" ng-repeat="mail in vm.inbox | filter: vm.search | filter: global.search"
      md-ink-ripple
      ng-click="vm.selectMail(mail)"
      ng-class="{'starred': mail.starred, 'selected': vm.selectedMail === mail, 'checked': vm.isChecked(mail)}">

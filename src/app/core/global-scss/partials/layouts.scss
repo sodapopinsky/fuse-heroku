@@ -1,11 +1,11 @@
 /*----------------------------------------------------------------*/
 /*  Layouts
 /*----------------------------------------------------------------*/
-$header-height: 160px;
+$header-height: 200px;
 $card-toolbar-height: 64px;
 $card-header-height: $header-height - $card-toolbar-height;
 
-$header-height-sm: 120px;
+$header-height-sm: 160px;
 $card-header-height-sm: $header-height-sm - $card-toolbar-height;
 
 .page-layout {
@@ -526,8 +526,88 @@ $card-header-height-sm: $header-height-sm - $card-toolbar-height;
                         max-height: $card-header-height-sm;
                         padding: 16px;
                     }
+
+                }
+            }
+
+            // Turn carded layouts into single-scroll
+            &.fullwidth {
+                height: auto;
+
+                > .center {
+
+                    .content-card {
+
+                        .content {
+                            overflow: hidden;
+                        }
+                    }
+                }
+            }
+
+            &.right-sidenav,
+            &.left-sidenav {
+                height: auto;
+
+                &.sidenav-open {
+                    height: 100%;
+                }
+
+                > .center {
+
+                    .content-card {
+
+                        .content {
+                            overflow: hidden;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.simple {
+
+            &.fullwidth {
+
+                > .header {
+                    height: $header-height-sm;
+                    min-height: $header-height-sm;
+                    max-height: $header-height-sm;
+                    padding: 16px;
+                }
+            }
+
+            &.right-sidenav,
+            &.left-sidenav {
+
+                > .center {
+
+                    .header {
+                        height: $header-height-sm;
+                        min-height: $header-height-sm;
+                        max-height: $header-height-sm;
+                        padding: 16px;
+                    }
+                }
+            }
+        }
+
+        // Turn simple layouts into single-scroll
+        &.simple {
+
+            &.left-sidenav,
+            &.right-sidenav {
+                height: auto;
+
+                &.sidenav-open {
+                    height: 100%;
+                }
+
+                > .center {
+                    overflow: hidden;
                 }
             }
         }
     }
+
 }

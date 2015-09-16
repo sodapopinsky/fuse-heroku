@@ -104,18 +104,3 @@
         }
     }
 }
-
-@media screen and (max-width: $breakpoint-sm) {
-
-    #file-manager {
-
-        .center {
-
-            .header {
-                height: 120px;
-                min-height: 120px;
-                max-height: 120px;
-            }
-        }
-    }
-}

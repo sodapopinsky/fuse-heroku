@@ -1,6 +1,7 @@
 {
     "TODO": {
         "TOGGLE_SIDENAV": "Toggle sidenav",
+        "SEARCH": "Search for a task or tag",
         "FILTER": "Filter",
         "ORDER": "Order",
         "INTERVAL": "Interval",

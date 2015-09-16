@@ -21,19 +21,22 @@
         vm.selectedMail = {};
         vm.toggleSidenav = toggleSidenav;
 
-        vm.inbox = Inbox.data;
-        selectMail(vm.inbox[0]);
-
         vm.responsiveReadPane = false;
+        vm.scrollPos = 0;
+        vm.scrollEl = angular.element('#content > md-content');
+
+        vm.inbox = Inbox.data;
+        vm.selectedMail = vm.inbox[0];
 
         // Methods
+        vm.checkAll = checkAll;
+        vm.closeReadPane = closeReadPane;
+        vm.composeDialog = composeDialog;
+        vm.isChecked = isChecked;
+        vm.replyDialog = replyDialog;
         vm.selectMail = selectMail;
         vm.toggleStarred = toggleStarred;
         vm.toggleCheck = toggleCheck;
-        vm.isChecked = isChecked;
-        vm.checkAll = checkAll;
-        vm.composeDialog = composeDialog;
-        vm.replyDialog = replyDialog;
 
         //////////
 
@@ -46,6 +49,24 @@
         {
             vm.selectedMail = mail;
             vm.responsiveReadPane = true;
+
+            // Store the current scrollPos
+            vm.scrollPos = vm.scrollEl.scrollTop();
+
+            // Scroll to the top
+            vm.scrollEl.scrollTop(96);
+        }
+
+        /**
+         * Close read pane
+         */
+        function closeReadPane()
+        {
+            if ( vm.responsiveReadPane )
+            {
+                vm.responsiveReadPane = false;
+                vm.scrollEl.scrollTop(vm.scrollPos);
+            }
         }
 
         /**
