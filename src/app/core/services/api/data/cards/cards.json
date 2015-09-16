@@ -13,7 +13,7 @@
         },
         {
             "avatar": {
-                "src": "assets/images/avatars/alice.png",
+                "src": "assets/images/avatars/alice.jpg",
                 "alt": "Alice Freeman"
             },
             "title": "Alice Freeman posted on Nature",
@@ -52,7 +52,7 @@
             "event": "Andrew Ryan is now following you",
             "media": {
                 "image": {
-                    "src": "assets/images/avatars/vincent.png",
+                    "src": "assets/images/avatars/vincent.jpg",
                     "alt": "Andrew Ryan"
                 }
             }
@@ -88,7 +88,7 @@
         },
         {
             "avatar": {
-                "src": "assets/images/avatars/alice.png",
+                "src": "assets/images/avatars/alice.jpg",
                 "alt": "Alice Freeman"
             },
             "title": "Alice Freeman posted on Nature",
@@ -106,7 +106,7 @@
             "subtitle": "Stimpaks are good for you",
             "media": {
                 "image": {
-                    "src": "assets/images/logos/fallout.png",
+                    "src": "assets/images/logos/fallout.jpg",
                     "alt": "Andrew Ryan"
                 }
             },

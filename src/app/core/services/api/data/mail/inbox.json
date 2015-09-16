@@ -3,7 +3,7 @@
         {
             "from": {
                 "name": "Alice Freeman",
-                "avatar": "assets/images/avatars/alice.png",
+                "avatar": "assets/images/avatars/alice.jpg",
                 "email": "alicefreeman@creapond.com"
             },
             "to": [
@@ -45,7 +45,7 @@
         {
             "from": {
                 "name": "Lawrence Collins",
-                "avatar": "assets/images/avatars/vincent.png",
+                "avatar": "assets/images/avatars/vincent.jpg",
                 "email": "lawrencecollins@creapond.com"
             },
             "to": [
@@ -64,7 +64,7 @@
         {
             "from": {
                 "name": "Judith Burton",
-                "avatar": "assets/images/avatars/joyce.png",
+                "avatar": "assets/images/avatars/joyce.jpg",
                 "email": "lawrencecollins@creapond.com"
             },
             "to": [
@@ -83,7 +83,7 @@
         {
             "from": {
                 "name": "Danielle Obrien",
-                "avatar": "assets/images/avatars/danielle.png",
+                "avatar": "assets/images/avatars/danielle.jpg",
                 "email": "danielleobrien@creapond.com"
             },
             "to": [
@@ -121,7 +121,7 @@
         {
             "from": {
                 "name": "Charles Kim",
-                "avatar": "assets/images/avatars/garry.png",
+                "avatar": "assets/images/avatars/garry.jpg",
                 "email": "danielleobrien@creapond.com"
             },
             "to": [
@@ -159,7 +159,7 @@
         {
             "from": {
                 "name": "Juan Carpenter",
-                "avatar": "assets/images/avatars/james.png",
+                "avatar": "assets/images/avatars/james.jpg",
                 "email": "danielleobrien@creapond.com"
             },
             "to": [
@@ -178,7 +178,7 @@
         {
             "from": {
                 "name": "Maria Gilbert",
-                "avatar": "assets/images/avatars/danielle.png",
+                "avatar": "assets/images/avatars/danielle.jpg",
                 "email": "danielleobrien@creapond.com"
             },
             "to": [

@@ -24,7 +24,7 @@
                 "event": "Gordon Freeman is now following you",
                 "media": {
                     "image": {
-                        "src": "assets/images/avatars/garry.png",
+                        "src": "assets/images/avatars/garry.jpg",
                         "alt": "Andrew Ryan"
                     }
                 }
@@ -37,7 +37,7 @@
             "card": {
                 "template": "app/core/directives/ms-card/templates/template-2/template-2.html",
                 "avatar": {
-                    "src": "assets/images/avatars/alice.png",
+                    "src": "assets/images/avatars/alice.jpg",
                     "alt": "Alice Freeman"
                 },
                 "title": "Alice Freeman posted on Nature",
@@ -94,7 +94,7 @@
                 "event": "Andrew Ryan is now following you",
                 "media": {
                     "image": {
-                        "src": "assets/images/avatars/vincent.png",
+                        "src": "assets/images/avatars/vincent.jpg",
                         "alt": "Andrew Ryan"
                     }
                 }
@@ -107,7 +107,7 @@
             "card": {
                 "template": "app/core/directives/ms-card/templates/template-9/template-9.html",
                 "avatar": {
-                    "src": "assets/images/avatars/alice.png",
+                    "src": "assets/images/avatars/alice.jpg",
                     "alt": "Alice Freeman"
                 },
                 "title": "Alice Freeman posted on Nature",

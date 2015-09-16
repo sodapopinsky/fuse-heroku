@@ -111,7 +111,7 @@
                         icon: {
                             anchor: new maps.Point(36, 36),
                             origin: new maps.Point(0, 0),
-                            url   : '//developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+                            url   : '//developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.jpg'
                         }
                     }
                 }
