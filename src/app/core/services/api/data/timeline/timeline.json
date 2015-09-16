@@ -5,7 +5,7 @@
                 "template": "app/core/directives/ms-card/templates/template-1/template-1.html",
                 "media": {
                     "image": {
-                        "src": "assets/images/photos/early-sunrise.jpg",
+                        "src": "assets/images/etc/early-sunrise.jpg",
                         "alt": "Early Sunrise"
                     }
                 },
@@ -44,7 +44,7 @@
                 "subtitle": "32 minutes ago",
                 "media": {
                     "image": {
-                        "src": "assets/images/photos/early-sunrise.jpg",
+                        "src": "assets/images/etc/early-sunrise.jpg",
                         "alt": "Early Sunrise"
                     }
                 },
@@ -78,7 +78,7 @@
                 "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.",
                 "media": {
                     "image": {
-                        "src": "assets/images/photos/avenue.jpg",
+                        "src": "assets/images/etc/avenue.jpg",
                         "alt": "Avenue"
                     }
                 }
@@ -115,7 +115,7 @@
                 "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.",
                 "media": {
                     "image": {
-                        "src": "assets/images/photos/early-sunrise.jpg",
+                        "src": "assets/images/etc/early-sunrise.jpg",
                         "alt": "Early Sunrise"
                     }
                 }

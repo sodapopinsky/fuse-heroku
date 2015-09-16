@@ -103,7 +103,7 @@
                 text    : 'Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.',
                 media   : {
                     image: {
-                        src: 'assets/images/photos/early-sunrise.jpg',
+                        src: 'assets/images/etc/early-sunrise.jpg',
                         alt: 'Early Sunrise'
                     }
                 }
@@ -118,7 +118,7 @@
                 text    : 'Fallout 4 PipBoy edition will come with an actual PipBoy. You will be able to put your mobile device in it and it will work with the game!',
                 media   : {
                     image: {
-                        src: 'assets/images/photos/fallout.png',
+                        src: 'assets/images/etc/fallout.png',
                         alt: 'Fallout 4'
                     }
                 }
@@ -133,7 +133,7 @@
                 text    : 'Aliquam mauris magna, elementum eget lobortis ut, rutrum ut est. Integer auctor, velit at hendrerit aliquam, lacus mi tincidunt.',
                 media   : {
                     image: {
-                        src: 'assets/images/photos/snow.jpg',
+                        src: 'assets/images/etc/snow.jpg',
                         alt: 'Snow'
                     }
                 }
@@ -148,7 +148,7 @@
                 text    : 'Proin nec lacus vestibulum, commodo ipsum eleifend, scelerisque magna. Vivamus ac turpis sagittis, feugiat neque eu, consectetur mauris.',
                 media   : {
                     image: {
-                        src: 'assets/images/photos/tropical-beach.jpg',
+                        src: 'assets/images/etc/tropical-beach.jpg',
                         alt: 'Tropical Beach'
                     }
                 }
