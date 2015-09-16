@@ -83,7 +83,7 @@
         {
             "from": {
                 "name": "Danielle Obrien",
-                "avatar": "assets/images/avatars/danielle.jpg",
+                "avatar": "assets/images/avatars/danielle.png",
                 "email": "danielleobrien@creapond.com"
             },
             "to": [
@@ -178,7 +178,7 @@
         {
             "from": {
                 "name": "Maria Gilbert",
-                "avatar": "assets/images/avatars/danielle.jpg",
+                "avatar": "assets/images/avatars/danielle.png",
                 "email": "danielleobrien@creapond.com"
             },
             "to": [
