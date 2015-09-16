@@ -5,7 +5,7 @@
     var fuseThemes = {
         'default'  : {
             primary   : {
-                name   : 'fuse-pale-blue',
+                name: 'fuse-pale-blue',
                 hues: {
                     'default': '500',
                     'hue-1'  : '400',
@@ -14,7 +14,7 @@
                 }
             },
             accent    : {
-                name   : 'light-blue',
+                name: 'light-blue',
                 hues: {
                     'default': '600',
                     'hue-1'  : '400',
@@ -24,7 +24,7 @@
             },
             warn      : {name: 'red'},
             background: {
-                name   : 'grey',
+                name: 'grey',
                 hues: {
                     'default': 'A100',
                     'hue-1'  : '100',
@@ -34,10 +34,20 @@
             }
         },
         'indigo'   : {
-            primary   : {name: 'indigo'},
+            primary   : {
+                name: 'indigo'
+            },
             accent    : {name: 'pink'},
-            warn      : {name: 'red'},
-            background: {name: 'grey'}
+            warn      : {name: 'blue'},
+            background: {
+                name: 'grey',
+                hues: {
+                    'default': 'A100',
+                    'hue-1'  : '100',
+                    'hue-2'  : '50',
+                    'hue-3'  : '300'
+                }
+            }
         },
         'blue-grey': {
             primary   : {name: 'blue-grey'},
