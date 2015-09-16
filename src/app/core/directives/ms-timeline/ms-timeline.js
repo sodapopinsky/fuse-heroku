@@ -65,10 +65,19 @@
                     // Increase the limit onScroll if needed
                     scrollEl.on('scroll', function ()
                     {
+                        console.log('scrolled');
+                        console.log( scrollEl.scrollTop());
+                        console.log( scrollEl.height());
+                        console.log( iElement.outerHeight());
+
                         if ( scrollEl.scrollTop() + scrollEl.height() >= iElement.outerHeight() )
                         {
+                            console.log('scrolled and add new');
+
                             scope.$evalAsync(function ()
                             {
+                                console.log('scrolled and add new with eval');
+
                                 scope.timelineItemLimit++;
                             });
                         }
