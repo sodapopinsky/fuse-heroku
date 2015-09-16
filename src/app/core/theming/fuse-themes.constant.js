@@ -51,8 +51,14 @@
         },
         'blue-grey': {
             primary   : {name: 'blue-grey'},
-            accent    : {name: 'blue'},
-            warn      : {name: 'green'},
+            accent    : {name: 'teal',
+                hues: {
+                    'default': '700',
+                    'hue-1'  : '400',
+                    'hue-2'  : '800',
+                    'hue-3'  : '300'
+                }},
+            warn      : {name: 'blue'},
             background: {name: 'grey'}
         }
     };
