@@ -21,15 +21,6 @@
             vm.task.tags = [];
         }
 
-        vm.tinymceOptions = {
-            resize : true,
-            menubar: false,
-            statusbar: true,
-            min_height: 200,
-            content_css: '/app/core/global-scss/partials/plugins/tinymce-content.css',
-            toolbar: 'fontselect | fontsizeselect | bold italic underline | blockquote | alignleft aligncenter alignright alignjustify | undo redo '
-        };
-
         // Methods
         vm.closeDialog = closeDialog;
         vm.newTag = newTag;
