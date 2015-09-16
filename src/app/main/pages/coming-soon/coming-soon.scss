@@ -36,9 +36,10 @@
 
             timer {
                 margin: 48px 0;
-
+                width: 100%;
                 > div {
                     margin: 0 16px;
+                    text-align: center;
 
                     .value {
                         font-size: 34px;

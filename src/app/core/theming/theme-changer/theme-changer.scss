@@ -21,4 +21,12 @@
             }
         }
     }
+
+    // ie 10 fix
+    md-fab-speed-dial.md-up {
+        md-fab-actions,
+        md-fab-trigger {
+            -ms-flex-order: 0;
+        }
+    }
 }

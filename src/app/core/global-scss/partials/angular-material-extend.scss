@@ -60,6 +60,15 @@ md-list-item {
     padding: 0;
 }
 
+// ie fix
+md-menu-content {
+    md-menu-item {
+        .md-button {
+            text-align: left;
+        }
+    }
+}
+
 // Progress
 md-progress-linear {
 
