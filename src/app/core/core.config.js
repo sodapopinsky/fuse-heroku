@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($ariaProvider, $logProvider, msScrollConfigProvider, uiGmapGoogleMapApiProvider, $translateProvider, fuseConfigProvider, $provide)
+    function config($ariaProvider, $logProvider, msScrollConfigProvider, uiGmapGoogleMapApiProvider, $translateProvider, $provide, fuseConfigProvider)
     {
         // ng-aria configuration
         $ariaProvider.config({
@@ -42,13 +42,7 @@
         $translateProvider.preferredLanguage('en');
         $translateProvider.useSanitizeValueStrategy('sanitize');
 
-        // Fuse theme configurations
-        fuseConfigProvider.config({
-            'disableCustomScrollbars'        : false,
-            'disableCustomScrollbarsOnMobile': true,
-            'disableMdInkRippleOnMobile'     : true
-        });
-
+        // Text Angular options
         $provide.decorator('taOptions', [
             '$delegate', function (taOptions)
             {
@@ -71,6 +65,7 @@
             }
         ]);
 
+        // Text Angular tools
         $provide.decorator('taTools', [
             '$delegate', function (taTools)
             {
@@ -84,5 +79,12 @@
                 return taTools;
             }
         ]);
+
+        // Fuse theme configurations
+        fuseConfigProvider.config({
+            'disableCustomScrollbars'        : false,
+            'disableCustomScrollbarsOnMobile': true,
+            'disableMdInkRippleOnMobile'     : true
+        });
     }
 })();
