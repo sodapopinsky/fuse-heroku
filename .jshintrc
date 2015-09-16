@@ -62,6 +62,8 @@
         "PerfectScrollbar": false,
         "MobileDetect": false,
         "hljs": false,
-        "d3": false
+        "d3": false,
+        "console": false,
+        "alert": false
     }
 }
