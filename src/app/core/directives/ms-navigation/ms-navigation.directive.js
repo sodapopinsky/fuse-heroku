@@ -285,7 +285,7 @@
     }
 
     /** @ngInject */
-    function msNavDirective($rootScope, $mdSidenav)
+    function msNavDirective($rootScope, $mdComponentRegistry)
     {
         return {
             restrict  : 'E',
@@ -304,7 +304,12 @@
                     $rootScope.$on('$stateChangeSuccess', function ()
                     {
                         $rootScope.$broadcast('msNav::expandMatchingToggles');
-                        $mdSidenav('navigation').close();
+
+                        // Close navigation sidenav on stateChangeSuccess
+                        $mdComponentRegistry.when('navigation').then(function (navigation)
+                        {
+                            navigation.close();
+                        });
                     });
                 };
             }
