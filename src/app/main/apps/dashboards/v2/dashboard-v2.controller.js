@@ -103,7 +103,7 @@
                 text    : 'Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.',
                 media   : {
                     image: {
-                        src: 'assets/images/photos/early-sunrise.jpg',
+                        src: 'assets/images/etc/early-sunrise.jpg',
                         alt: 'Early Sunrise'
                     }
                 }
@@ -118,7 +118,7 @@
                 text    : 'Fallout 4 PipBoy edition will come with an actual PipBoy. You will be able to put your mobile device in it and it will work with the game!',
                 media   : {
                     image: {
-                        src: 'assets/images/photos/fallout.png',
+                        src: 'assets/images/etc/fallout.png',
                         alt: 'Fallout 4'
                     }
                 }
@@ -133,14 +133,14 @@
                 text    : 'Aliquam mauris magna, elementum eget lobortis ut, rutrum ut est. Integer auctor, velit at hendrerit aliquam, lacus mi tincidunt.',
                 media   : {
                     image: {
-                        src: 'assets/images/photos/snow.jpg',
+                        src: 'assets/images/etc/snow.jpg',
                         alt: 'Snow'
                     }
                 }
             },
             {
                 avatar  : {
-                    src: 'assets/images/avatars/danielle.jpg',
+                    src: 'assets/images/avatars/danielle.png',
                     alt: 'Danielle'
                 },
                 title   : 'Danielle posted on Holidays',
@@ -148,7 +148,7 @@
                 text    : 'Proin nec lacus vestibulum, commodo ipsum eleifend, scelerisque magna. Vivamus ac turpis sagittis, feugiat neque eu, consectetur mauris.',
                 media   : {
                     image: {
-                        src: 'assets/images/photos/tropical-beach.jpg',
+                        src: 'assets/images/etc/tropical-beach.jpg',
                         alt: 'Tropical Beach'
                     }
                 }
@@ -185,7 +185,7 @@
                 {
                     author : {
                         name  : 'Danielle Obrien',
-                        avatar: 'assets/images/avatars/danielle.jpg'
+                        avatar: 'assets/images/avatars/danielle.png'
                     },
                     comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem diam, pulvinar id nisl non, ultrices maximus nibh. Suspendisse ut justo velit. Nullam ac ultrices risus, quis auctor orci. Vestibulum volutpat nisi et neque porta ullamcorper. Maecenas porttitor porta erat ac suscipit. Sed cursus leo ut elementum fringilla. Maecenas semper viverra erat, vel ullamcorper dui efficitur in. Vestibulum placerat imperdiet tellus, et tincidunt eros posuere eget. Proin sit amet facilisis libero. Nulla eget est ut erat aliquet rhoncus. Quisque ac urna vitae dui hendrerit sollicitudin vel id sem. In eget ante sapien. Quisque consequat velit non ante finibus, vel placerat erat ultricies. Aliquam bibendum justo erat, ultrices vehicula dolor elementum a. Mauris eu nisl feugiat ligula molestie eleifend. Aliquam efficitur venenatis velit ac porta. Vivamus vitae pulvinar tellus. Donec odio enim, auctor eget nibh mattis, ultricies dignissim lacus. Phasellus non tincidunt dui. Nulla eu arcu lorem. Donec non hendrerit augue, lobortis sollicitudin odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis sit amet euismod enim, eget vestibulum justo. Fusce a placerat lectus, eget feugiat purus. Cras risus ante, faucibus eget justo commodo, volutpat tempor ante. Donec sit amet leo venenatis, gravida quam sit amet, blandit dui. In quam ante, elementum ut faucibus nec, tristique vitae dui. Praesent vel erat at enim placerat luctus vel ut ipsum. In congue tempor mi, non ornare lectus condimentum at. Aenean libero diam, finibus eget sapien et, tristique fermentum lorem.',
                     time   : '2 hours ago'
@@ -225,7 +225,7 @@
                 {
                     author : {
                         name  : 'Maria Gilbert',
-                        avatar: 'assets/images/avatars/danielle.jpg'
+                        avatar: 'assets/images/avatars/danielle.png'
                     },
                     comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem diam, pulvinar id nisl non, ultrices maximus nibh. Suspendisse ut justo velit. Nullam ac ultrices risus, quis auctor orci. Vestibulum volutpat nisi et neque porta ullamcorper. Maecenas porttitor porta erat ac suscipit. Sed cursus leo ut elementum fringilla. Maecenas semper viverra erat, vel ullamcorper dui efficitur in. Vestibulum placerat imperdiet tellus, et tincidunt eros posuere eget. Proin sit amet facilisis libero. Nulla eget est ut erat aliquet rhoncus. Quisque ac urna vitae dui hendrerit sollicitudin vel id sem. In eget ante sapien. Quisque consequat velit non ante finibus, vel placerat erat ultricies. Aliquam bibendum justo erat, ultrices vehicula dolor elementum a. Mauris eu nisl feugiat ligula molestie eleifend. Aliquam efficitur venenatis velit ac porta. Vivamus vitae pulvinar tellus. Donec odio enim, auctor eget nibh mattis, ultricies dignissim lacus. Phasellus non tincidunt dui. Nulla eu arcu lorem. Donec non hendrerit augue, lobortis sollicitudin odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis sit amet euismod enim, eget vestibulum justo. Fusce a placerat lectus, eget feugiat purus. Cras risus ante, faucibus eget justo commodo, volutpat tempor ante. Donec sit amet leo venenatis, gravida quam sit amet, blandit dui. In quam ante, elementum ut faucibus nec, tristique vitae dui. Praesent vel erat at enim placerat luctus vel ut ipsum. In congue tempor mi, non ornare lectus condimentum at. Aenean libero diam, finibus eget sapien et, tristique fermentum lorem.',
                     time   : '5 Jun'
