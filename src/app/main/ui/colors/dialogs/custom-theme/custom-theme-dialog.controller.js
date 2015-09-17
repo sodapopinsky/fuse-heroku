@@ -13,6 +13,9 @@
         vm.palettes = fuseTheming.getRegisteredPalettes();
         vm.themes = fuseTheming.getRegisteredThemes();
 
+        // Delete Unnecessary hue value
+        delete vm.palettes.grey['1000'];
+
         // Methods
         vm.rgba = fuseGenerator.rgba;
         vm.setTheme = setTheme;
