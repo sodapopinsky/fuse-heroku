@@ -27,10 +27,10 @@
     <div class="content" layout="column">
 
         <div id="icons-list" class="card md-whiteframe-z1" layout="row" layout-wrap>
-            <div class="item" ng-repeat="icon in ::vm.icons track by icon.properties.id" layout="column"
+            <div class="item" ng-repeat="icon in ::vm.icons track by icon.properties.id"
                  layout-align="start center">
                 <i class="icon icon-{{::icon.properties.name}} s40"></i>
-                <span class="name secondary-text text-center">icon-{{::icon.properties.name}}</span>
+                <div class="name secondary-text text-center">icon-{{::icon.properties.name}}</div>
             </div>
         </div>
 
