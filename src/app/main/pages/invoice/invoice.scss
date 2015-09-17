@@ -138,7 +138,10 @@
                     font-weight: 500;
                     margin-bottom: 24px;
                 }
-
+                //ie 10 fix
+                .logo, .small-note {
+                    -ms-flex: 0 1 auto;
+                }
                 .logo {
                     width: 32px;
                     min-width: 32px;
