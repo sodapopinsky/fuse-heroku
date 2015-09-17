@@ -118,11 +118,144 @@
         };
 
         vm.widget13 = {
-            title : 'AVAILABLE SPACE',
-            value : 83,
-            detail: 'This is the back side. You can show detailed information here.'
+            date       : 'June 28, Saturday',
+            temperature: 16,
+            event      : 'Rainy',
+            icon       : 'icon-weather-rainy',
+            location   : 'Moscow',
+            detail     : [
+                {
+                    day        : 'Sun',
+                    icon       : 'icon-weather-rainy',
+                    temperature: 24,
+                    event      : 'Rainy'
+                },
+                {
+                    day        : 'Mon',
+                    icon       : 'icon-weather-pouring',
+                    temperature: 23,
+                    event      : 'Rainy'
+                },
+                {
+                    day        : 'Tue',
+                    icon       : 'icon-weather-cloudy',
+                    temperature: 29,
+                    event      : 'Overcast'
+                },
+                {
+                    day        : 'Wed',
+                    icon       : 'icon-weather-partlycloudy',
+                    temperature: 28,
+                    event      : 'Sunny'
+                },
+                {
+                    day        : 'Thu',
+                    icon       : 'icon-weather-partlycloudy',
+                    temperature: 31,
+                    event      : 'Sunny'
+                }
+            ]
         };
 
+        vm.widget14 = {
+            title   : 'Visitor Demographics',
+            tabs: [
+                {
+                    label: '30 days',
+                    genders: [
+                        {
+                            title: 'Male',
+                            value: 40
+                        },
+                        {
+                            title: 'Female',
+                            value: 41
+                        },
+                        {
+                            title: 'Not Specified',
+                            value: 19
+                        }
+                    ],
+                    ages: [
+                        {
+                            title: '25 - 34',
+                            value: 32
+                        },
+                        {
+                            title: '35 - 44',
+                            value: 85
+                        },
+                        {
+                            title: '45+',
+                            value: 48
+                        }
+                    ]
+                },
+                {
+                    label: '10 days',
+                    genders: [
+                        {
+                            title: 'Male',
+                            value: 32
+                        },
+                        {
+                            title: 'Female',
+                            value: 49
+                        },
+                        {
+                            title: 'Not Specified',
+                            value: 19
+                        }
+                    ],
+                    ages: [
+                        {
+                            title: '25 - 34',
+                            value: 85
+                        },
+                        {
+                            title: '35 - 44',
+                            value: 60
+                        },
+                        {
+                            title: '45+',
+                            value: 36
+                        }
+                    ]
+                },
+                {
+                    label: '1 day',
+                    genders: [
+                        {
+                            title: 'Male',
+                            value: 28
+                        },
+                        {
+                            title: 'Female',
+                            value: 62
+                        },
+                        {
+                            title: 'Not Specified',
+                            value: 10
+                        }
+                    ],
+                    ages: [
+                        {
+                            title: '25 - 34',
+                            value: 17
+                        },
+                        {
+                            title: '35 - 44',
+                            value: 64
+                        },
+                        {
+                            title: '45+',
+                            value: 72
+                        }
+                    ]
+                },
+
+            ]
+        };
         // Methods
 
         //////////

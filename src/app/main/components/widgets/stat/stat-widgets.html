@@ -504,6 +504,141 @@
             </ms-widget>
             <!-- / WIDGET 12 -->
 
+            <!-- WIDGET 13 -->
+            <ms-widget class="stat-widget height-350" flippable="true" layout="column" flex="100" flex-gt-sm="50"
+                       flex-gt-lg="25">
+
+                <!-- Front -->
+                <ms-widget-front class="padding-16 md-white-bg" layout="column" flex>
+                    <div class="padding-bottom-8" layout="row" layout-align="space-between center">
+                        <div class="h4 secondary-text">
+                            <md-icon md-font-icon="icon-arrow-left" class="s16 margin-right-8"></md-icon>
+                            <span class="font-weight-500">{{vm.widget13.date}}</span>
+                            <md-icon md-font-icon="icon-arrow-right" class="s16 margin-left-8"></md-icon>
+                        </div>
+
+                        <md-menu>
+                            <md-button aria-label="more" class="md-icon-button"
+                                       ng-click="$mdOpenMenu($event)">
+                                <md-icon md-font-icon="icon-dots-vertical"></md-icon>
+                            </md-button>
+                            <md-menu-content width="2">
+                                <md-menu-item>
+                                    <md-button ng-click="flipWidget()" aria-label="Flip widget">
+                                        Details
+                                    </md-button>
+                                </md-menu-item>
+                                <md-menu-item>
+                                    <md-button ng-click="refreshWidget()" aria-label="Refresh widget">
+                                        Refresh
+                                    </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </div>
+
+                    <div layout="column" layout-align="center center" flex>
+                        <div>
+                            <md-icon md-font-icon="{{vm.widget13.icon}}" class="s96"></md-icon>
+                        </div>
+
+                        <div class="padding-top-16" layout="row" layout-align="center center">
+                            <div class="md-display-2">{{vm.widget13.temperature}}&deg;</div>
+
+                            <div class="padding-left-16" layout="column">
+                                <div class="h1 text-semibold">{{vm.widget13.event}}</div>
+                                <div class="h4 secondary-text">{{vm.widget13.location}}</div>
+                            </div>
+                        </div>
+
+                        <div class="padding-top-32" layout="row" layout-align="center center">
+                            <div layout="row" layout-align="start center">
+                                <md-icon md-font-icon="icon-weather-windy" class="s16"></md-icon>
+                                <span class="padding-left-8">22 km/h</span>
+                            </div>
+
+                            <div class="padding-left-16" layout="row" layout-align="start center">
+                                <md-icon md-font-icon="icon-compass" class="s16"></md-icon>
+                                <span class="padding-left-8">NW</span>
+                            </div>
+                        </div>
+                    </div>
+                </ms-widget-front>
+                <!-- / Front -->
+
+                <!-- Back -->
+                <ms-widget-back class="padding-16 md-light-blue-bg" layout="column" flex>
+                    <div class="flip-to-front">
+                        <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip widget">
+                            <md-icon md-font-icon="icon-close" class="s16"></md-icon>
+                        </md-button>
+                    </div>
+
+                    <div class="padding-top-16 padding-bottom-16 white-text">
+                        <span class="h1">Next 5 days</span>
+                    </div>
+
+                    <div class="padding-left-8 padding-right-8" layout="row" layout-align="space-between">
+                        <div layout="column" layout-align="start center" ng-repeat="detail in vm.widget13.detail">
+                            <div class="h4 padding-bottom-8 black-text secondary-text ">{{detail.day}}</div>
+                            <md-icon md-font-icon="{{detail.icon}}" class="s36 white-text"></md-icon>
+                            <div class="h3 padding-top-8 white-text">{{detail.temperature}}&deg;</div>
+                        </div>
+                    </div>
+                </ms-widget-back>
+                <!-- / Back -->
+
+            </ms-widget>
+            <!-- / WIDGET 13 -->
+
+            <!-- WIDGET 14 -->
+            <ms-widget class="height-350" layout="column" flex="100" flex-gt-lg="50">
+
+                <!-- Front -->
+                <ms-widget-front class="md-white-bg" flex>
+                    <div class="md-accent-bg padding-horizontal-16 padding-top-16 padding-bottom-8" flex="100"
+                         flex-gt-sm="25">
+                        <div class="h2 weight-500">{{vm.widget14.title}}</div>
+                    </div>
+
+                    <md-tabs class="md-accent no-radius" md-dynamic-height>
+                        <md-tab label="{{tab.label}}" ng-repeat="tab in vm.widget14.tabs">
+
+                            <div class="md-white-bg black-text" layout="row" flex layout-wrap>
+                                <div class="padding-16" flex="100" flex-gt-md="50">
+                                    <div class="h3 padding-bottom-8">Gender</div>
+                                    <div class="padding-8" ng-repeat="gender in tab.genders">
+                                        <div class="padding-bottom-8" layout="row" layout-align="space-between">
+                                            <span class="h4">{{gender.title}}</span>
+                                            <span class="secondary-text">{{gender.value}}%</span>
+                                        </div>
+                                        <md-progress-linear class="md-accent" md-mode="determinate"
+                                                            value="{{gender.value}}"></md-progress-linear>
+                                    </div>
+                                </div>
+
+                                <div class="padding-16" flex="100" flex-gt-md="50">
+                                    <div class="h3 padding-bottom-8">Age</div>
+                                    <div class="padding-8" ng-repeat="age in tab.ages" flex="50">
+                                        <div class="padding-bottom-8" layout="row" layout-align="space-between">
+                                            <span class="h4">{{age.title}}</span>
+                                            <span class="secondary-text">{{age.value}}%</span>
+                                        </div>
+                                        <md-progress-linear class="md-warn" md-mode="determinate"
+                                                            value="{{age.value}}"></md-progress-linear>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </md-tab>
+                    </md-tabs>
+
+                </ms-widget-front>
+                <!-- / Front -->
+
+            </ms-widget>
+            <!-- / WIDGET 14 -->
+
         </div>
         <!-- / WIDGET GROUP -->
 
