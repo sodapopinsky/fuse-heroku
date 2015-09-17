@@ -9,8 +9,9 @@
     /** @ngInject */
     function routeConfig($stateProvider, $urlRouterProvider, $locationProvider)
     {
-        $urlRouterProvider.otherwise('/dashboard');
         $locationProvider.html5Mode(true);
+
+        $urlRouterProvider.otherwise('/dashboard');
 
         $stateProvider
             .state('app', {
