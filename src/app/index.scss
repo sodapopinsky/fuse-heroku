@@ -4,15 +4,6 @@
  */
 // bower:scss
 // endbower
-html, body, #main-wrapper {
-    overflow: hidden !important;
-    height: 100%;
-    min-height: 100%;
-}
-
-#content {
-    position: relative;
-}
 
 /**
  *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
@@ -20,4 +11,3 @@ html, body, #main-wrapper {
  */
 // injector
 // endinjector
-

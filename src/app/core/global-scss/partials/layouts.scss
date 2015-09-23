@@ -1,6 +1,35 @@
 /*----------------------------------------------------------------*/
 /*  Layouts
 /*----------------------------------------------------------------*/
+
+// Global
+html,
+body {
+    overflow: hidden !important;
+    height: 100%;
+    min-height: 100%;
+}
+
+#content {
+    position: relative;
+}
+
+// Boxed Layout
+body {
+
+    &.boxed {
+        background: #DCDDDE;
+
+        #main {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+        }
+    }
+}
+
+// Page Layouts
 $header-height: 200px;
 $card-toolbar-height: 64px;
 $card-header-height: $header-height - $card-toolbar-height;
