@@ -47,8 +47,7 @@
 *:not(md-input-container) {
     > input[type="button"],
     > button,
-    > input[type="submit"],
-     {
+    > input[type="submit"] {
         background: none;
     }
 }
