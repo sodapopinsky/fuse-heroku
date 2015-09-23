@@ -46,21 +46,21 @@
         vm.widget5 = {
             title           : 'IO RATE',
             subtitle        : 'Showing last 5 hours',
-            chart           : {
+            chart   : {
                 columns: [
                     {
-                        id    : 'Input',
-                        name  : 'Input',
-                        color : fuseTheming.themes.active.theme.primary.color,
-                        values: '30,75,290,400,150,250',
-                        type  : 'area-spline'
+                        id    : 'Sales',
+                        name  : 'Sales',
+                        color : 'lightgrey',
+                        values: '30,75,290,400,150,250,75,210,125,92,30,75,290,400',
+                        type  : 'bar'
                     },
                     {
-                        id    : 'Output',
-                        name  : 'Output',
-                        color : fuseTheming.themes.active.theme.accent.color,
-                        values: '500,300,120,600,50,80',
-                        type  : 'area-spline'
+                        id    : 'SalesTop',
+                        name  : 'Sales Top',
+                        color : 'green',
+                        values: '30,75,290,400,150,250,75,210,125,92,30,75,290,400',
+                        type  : 'spline'
                     }
                 ]
             },
@@ -279,21 +279,21 @@
         vm.widget8 = {
             title   : 'SALES',
             subtitle: 'Last 30 days',
-            chart   : {
+            chart           : {
                 columns: [
                     {
-                        id    : 'Sales',
-                        name  : 'Sales',
-                        color : 'lightgrey',
-                        values: '30,75,290,400,150,250,75,210,125,92,30,75,290,400',
-                        type  : 'bar'
+                        id    : 'Input',
+                        name  : 'Input',
+                        color : fuseTheming.themes.active.theme.primary.color,
+                        values: '30,75,290,400,150,250',
+                        type  : 'area-spline'
                     },
                     {
-                        id    : 'SalesTop',
-                        name  : 'Sales Top',
-                        color : 'green',
-                        values: '30,75,290,400,150,250,75,210,125,92,30,75,290,400',
-                        type  : 'spline'
+                        id    : 'Output',
+                        name  : 'Output',
+                        color : fuseTheming.themes.active.theme.accent.color,
+                        values: '500,300,120,600,50,80',
+                        type  : 'area-spline'
                     }
                 ]
             }
