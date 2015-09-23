@@ -17,8 +17,11 @@
         var foldable = {};
 
         var service = {
-            setFoldable: setFoldable,
-            toggleFold : toggleFold
+            setFoldable    : setFoldable,
+            isNavFoldedOpen: isNavFoldedOpen,
+            toggleFold     : toggleFold,
+            openFolded     : openFolded,
+            closeFolded    : closeFolded
         };
 
         return service;
@@ -40,6 +43,14 @@
         }
 
         /**
+         * Is folded open
+         */
+        function isNavFoldedOpen()
+        {
+            return foldable.scope.isNavFoldedOpen();
+        }
+
+        /**
          * Toggle fold
          */
         function toggleFold()
@@ -47,6 +58,21 @@
             foldable.scope.toggleFold();
         }
 
+        /**
+         * Open folded navigation
+         */
+        function openFolded()
+        {
+            foldable.scope.openFolded();
+        }
+
+        /**
+         * Close folded navigation
+         */
+        function closeFolded()
+        {
+            foldable.scope.closeFolded();
+        }
     }
 
     /** @ngInject */
@@ -57,6 +83,7 @@
             link    : function (scope, iElement, iAttrs)
             {
                 var isFolded = (iAttrs.msNavIsFoldedDirective === 'true'),
+                    isFoldedOpen = false,
                     body = angular.element($document[0].body),
                     openOverlay = angular.element('<div id="navigation-fold-open-overlay"></div>'),
                     closeOverlay = angular.element('<div id="navigation-fold-close-overlay"></div>');
@@ -72,6 +99,14 @@
                 else
                 {
                     unfold();
+                }
+
+                /**
+                 * Is nav folded open
+                 */
+                function isNavFoldedOpen()
+                {
+                    return isFoldedOpen;
                 }
 
                 /**
@@ -111,54 +146,63 @@
                     openOverlay.on('mouseenter touchstart', function (event)
                     {
                         openFolded(event);
+                        isFoldedOpen = true;
                     });
+                }
 
-                    /**
-                     * Open folded navigation
-                     */
-                    function openFolded(event)
+                /**
+                 * Open folded navigation
+                 */
+                function openFolded(event)
+                {
+                    if ( angular.isDefined(event) )
                     {
                         event.preventDefault();
-
-                        iElement.addClass('folded-open');
-
-                        // Update the location
-                        $rootScope.$broadcast('msNav::expandMatchingToggles');
-
-                        // Remove open overlay
-                        iElement.find(openOverlay).remove();
-
-                        // Append close overlay and bind its events
-                        iElement.parent().append(closeOverlay);
-                        closeOverlay.on('mouseenter touchstart', function (event)
-                        {
-                            closeFolded(event);
-                        });
                     }
 
-                    /**
-                     * Close folded navigation
-                     */
-                    function closeFolded(event)
+                    iElement.addClass('folded-open');
+
+                    // Update the location
+                    $rootScope.$broadcast('msNav::expandMatchingToggles');
+
+                    // Remove open overlay
+                    iElement.find(openOverlay).remove();
+
+                    // Append close overlay and bind its events
+                    iElement.parent().append(closeOverlay);
+                    closeOverlay.on('mouseenter touchstart', function (event)
+                    {
+                        closeFolded(event);
+                        isFoldedOpen = false;
+                    });
+                }
+
+                /**
+                 * Close folded navigation
+                 */
+                function closeFolded(event)
+                {
+                    if ( angular.isDefined(event) )
                     {
                         event.preventDefault();
-
-                        // Collapse everything and scroll to the top
-                        $rootScope.$broadcast('msNav::forceCollapse');
-                        iElement.find('ms-nav').scrollTop(0);
-
-                        iElement.removeClass('folded-open');
-
-                        // Remove close overlay
-                        iElement.parent().find(closeOverlay).remove();
-
-                        // Append open overlay and bind its events
-                        iElement.append(openOverlay);
-                        openOverlay.on('mouseenter touchstart', function (event)
-                        {
-                            openFolded(event);
-                        });
                     }
+
+                    // Collapse everything and scroll to the top
+                    $rootScope.$broadcast('msNav::forceCollapse');
+                    iElement.find('ms-nav').scrollTop(0);
+
+                    iElement.removeClass('folded-open');
+
+                    // Remove close overlay
+                    iElement.parent().find(closeOverlay).remove();
+
+                    // Append open overlay and bind its events
+                    iElement.append(openOverlay);
+                    openOverlay.on('mouseenter touchstart', function (event)
+                    {
+                        openFolded(event);
+                        isFoldedOpen = true;
+                    });
                 }
 
                 /**
@@ -177,6 +221,9 @@
 
                 // Expose functions to the scope
                 scope.toggleFold = toggleFold;
+                scope.openFolded = openFolded;
+                scope.closeFolded = closeFolded;
+                scope.isNavFoldedOpen = isNavFoldedOpen;
 
                 // Cleanup
                 scope.$on('$destroy', function ()
@@ -285,7 +332,7 @@
     }
 
     /** @ngInject */
-    function msNavDirective($rootScope, $mdComponentRegistry)
+    function msNavDirective($rootScope, $mdComponentRegistry, msNavFoldService)
     {
         return {
             restrict  : 'E',
@@ -309,6 +356,11 @@
                         $mdComponentRegistry.when('navigation').then(function (navigation)
                         {
                             navigation.close();
+
+                            if ( msNavFoldService.isNavFoldedOpen() )
+                            {
+                                msNavFoldService.closeFolded();
+                            }
                         });
                     });
                 };
