@@ -7,7 +7,7 @@
             'app.components.cards',
             'app.components.charts.c3',
             'app.components.charts.chartist',
-            'app.components.charts.chartjs',
+            'app.components.charts.chart-js',
             'app.components.charts.nvd3',
             'app.components.elements.bottom-sheet',
             'app.components.elements.buttons',

@@ -3,10 +3,10 @@
     'use strict';
 
     angular
-        .module('app.components.charts.chartjs')
-        .controller('ChartjsController', ChartjsController);
+        .module('app.components.charts.chart-js')
+        .controller('ChartJsController', ChartJsController);
 
-    function ChartjsController(fuseTheming)
+    function ChartJsController(fuseTheming)
     {
         var vm = this;
 
