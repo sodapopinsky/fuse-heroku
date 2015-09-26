@@ -12,6 +12,7 @@
             'app.components.elements.bottom-sheet',
             'app.components.elements.buttons',
             'app.components.elements.card',
+            'app.components.elements.date',
             'app.components.elements.dialog',
             'app.components.elements.fab-speed-dial',
             'app.components.elements.fab-toolbar',
