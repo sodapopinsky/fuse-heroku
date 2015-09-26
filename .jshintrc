@@ -63,6 +63,7 @@
         "MobileDetect": false,
         "hljs": false,
         "d3": false,
+        "moment": false,
         "console": false,
         "alert": false
     }
