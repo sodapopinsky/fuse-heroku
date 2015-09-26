@@ -28,7 +28,7 @@
         else
         {
             vm.event = {
-                start        : start ? start : '',
+                start        : start ? start : new Date(),
                 notifications: ['']
             };
         }
