@@ -6,7 +6,7 @@ $toolbarHeight: 64px;
     min-height: $toolbarHeight;
     max-height: $toolbarHeight;
     z-index: 55;
-    overflow: hidden;
+    //overflow: hidden;
 
     #navigation-toggle {
         width: $toolbarHeight;
@@ -55,6 +55,18 @@ $toolbarHeight: 64px;
 
     #user-menu {
         height: $toolbarHeight;
+        padding: 0;
+        md-menu-item .md-button {
+            font-size: 15px;
+            md-icon {
+                margin: auto 16px auto 0;
+            }
+        }
+        #user-status-menu {
+            md-menu-item.selected {
+                opacity: .3;
+            }
+        }
         .user-button {
             margin: 0;
             padding: 0 16px;

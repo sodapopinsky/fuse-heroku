@@ -27,28 +27,63 @@
     </div>
 
     <div layout="row" layout-align="start center">
-        <md-menu id="user-menu" md-offset="17 40" md-position-mode="target-right target">
-            <md-button class="user-button md-background-bg" ng-click="$mdOpenMenu()" aria-label="User settings"
-                       translate
-                       translate-attr-aria-label="TOOLBAR.USER_SETTINGS">
-                <div layout="row" layout-align="space-between center">
-                    <img class="avatar" src="assets/images/avatars/profile.jpg">
-                    <span class="username" hide-sm>John Doe</span>
-                    <md-icon md-menu-origin md-menu-align-target md-font-icon="icon-chevron-down"
-                             class="icon s16" hide-sm></md-icon>
-                </div>
-            </md-button>
+        <md-menu-bar id="user-menu">
+            <md-menu md-offset="0 80" md-position-mode="target-right target">
+                <md-button class="user-button md-background-bg" ng-click="$mdOpenMenu()"
+                           aria-label="User settings"
+                           translate md-menu-origin
+                           translate-attr-aria-label="TOOLBAR.USER_SETTINGS">
+                    <div layout="row" layout-align="space-between center">
+                        <img md-menu-align-target class="avatar" src="assets/images/avatars/profile.jpg">
+                        <span class="username" hide-sm>John Doe</span>
+                        <md-icon md-font-icon="icon-chevron-down"
+                                 class="icon s16" hide-sm></md-icon>
+                    </div>
+                </md-button>
 
-            <md-menu-content  width="3">
-                <md-menu-item ng-repeat="item in [1, 2, 3]">
-                    <md-button ng-click="ctrl.announceClick($index)">
-                        <md-icon md-font-icon="icon-cog" class="icon s16"></md-icon>
-                        <p>Option {{item}}</p>
-                    </md-button>
-                </md-menu-item>
-            </md-menu-content>
-        </md-menu>
+                <md-menu-content width="3">
+                    <md-menu-item ui-sref="app.pages_profile">
+                        <md-button>
+                            <md-icon md-font-icon="icon-account" class="icon s16"></md-icon>
+                            <span>My Profile</span>
+                        </md-button>
+                    </md-menu-item>
 
+                    <md-menu-divider></md-menu-divider>
+
+                    <md-menu-item>
+                        <md-menu id="user-status-menu">
+                            <md-button ng-click="$mdOpenMenu()" class="status" ng-class="vm.userStatus.class">
+                                <md-icon md-font-icon ng-class="vm.userStatus.icon"
+                                         ng-style="{'color': vm.userStatus.color }"
+                                         class="icon s16"></md-icon>
+                                <span>{{vm.userStatus.title}}</span>
+                            </md-button>
+                            <md-menu-content width="2">
+                                <md-menu-item class="status"
+                                              ng-class="{'selected': status === vm.userStatus}"
+                                              ng-repeat="status in vm.userStatusOptions">
+                                    <md-button ng-click="vm.setUserStatus(status)">
+                                        <md-icon md-font-icon="{{status.icon}}" ng-style="{'color': status.color }"
+                                                 class="icon s16"></md-icon>
+                                        {{status.title}}
+                                    </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </md-menu-item>
+
+                    <md-menu-divider></md-menu-divider>
+
+                    <md-menu-item>
+                        <md-button ng-click="vm.logout()">
+                            <md-icon md-font-icon="icon-logout" class="icon s16"></md-icon>
+                            <span>Logout</span>
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </md-menu-bar>
         <md-button id="quick-panel-toggle" class="md-icon-button" ng-click="vm.toggleSidenav('quick-panel')"
                    aria-label="Toggle quick panel" translate translate-attr-aria-label="TOOLBAR.TOGGLE_QUICK_PANEL">
             <md-icon md-font-icon="icon-format-list-bulleted" class="icon"></md-icon>
