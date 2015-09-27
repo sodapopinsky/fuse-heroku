@@ -6,77 +6,82 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>Fuse - Admin Theme</title>
-        <style>@charset "UTF-8";
 
-        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
-            display: none !important;
-        }
-
-        ng\:form {
-            display: block;
-        }
-
-        /* some naive styles for a splash page */
-        #splash-screen {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgb(60, 66, 82);
-            z-index: 99999;
-        }
-
-        [ng-cloak]#splash-screen {
-            display: block !important;
-        }
-
-        #splash-screen .logo {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-top: -64px;
-            margin-left: -64px;
-            border: none;
-            font: 500 86px/1 Arial, Helvetica, sans-serif;
-            text-align: center;
-            border-radius: 2px;
-            height: 128px;
-            line-height: 128px;
-            width: 128px;
-            background-color: rgb(3, 155, 229);
-            color: rgba(255, 255, 255, 1);
-            animation: scaleFadeIn 500ms ease-in backwards;
-            animation-delay: 0s;
-        }
-
-        #splash-screen .title {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            top: auto;
-            width: 100%;
-            color: rgba(255, 255, 255, .13);
-            text-align: center;
-            padding: 24px;
-            font: normal 48px/1 Arial, Helvetica, sans-serif;
-            animation: scaleFadeIn 300ms ease-in backwards;
-            animation-delay: 300ms;
-        }
-
-        @keyframes scaleFadeIn {
-            0% {
-                opacity: 0;
-                transform: scale(5);
+        <style>
+            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
+                display: none !important;
             }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
 
+            ng\:form {
+                display: block;
+            }
+
+            #splash-screen {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #3C4252;
+                z-index: 99999;
+            }
+
+            [ng-cloak]#splash-screen {
+                display: block !important;
+            }
+
+            #splash-screen .center {
+                display: block;
+                width: 100%;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            #splash-screen .logo {
+                width: 96px;
+                height: 96px;
+                line-height: 96px;
+                margin: 0 auto 20px auto;
+                font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+                font-size: 56px;
+                text-align: center;
+                border-radius: 2px;
+                background-color: #039BE5;
+                color: #FFFFFF;
+            }
+
+            #splash-screen .preloader {
+                position: relative;
+                text-align: center;
+            }
+
+            #splash-screen .preloader .loader-img{
+                width: 36px;
+                height: 36px;
+                -webkit-animation: animatePreloader 2s linear infinite;
+                -moz-animation: animatePreloader 2s linear infinite;
+                -o-animation: animatePreloader 2s linear infinite;
+                animation: animatePreloader 2s linear infinite;
+            }
+
+            @keyframes animatePreloader {
+                from {
+                    -webkit-transform: rotate(0deg);
+                    -moz-transform: rotate(0deg);
+                    -ms-transform: rotate(0deg);
+                    -o-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                }
+                to {
+                    -webkit-transform: rotate(360deg);
+                    -moz-transform: rotate(360deg);
+                    -ms-transform: rotate(360deg);
+                    -o-transform: rotate(360deg);
+                    transform: rotate(360deg);
+                }
+            }
         </style>
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -105,11 +110,13 @@
     <body md-theme="{{vm.themes.active.name}}" md-theme-watch ng-controller="AppController as vm">
 
         <div ng-cloak id="splash-screen">
-            <div class="logo">
-                <span>F</span>
-            </div>
-            <div class="title">
-                FUSE
+            <div class="center">
+                <div class="logo">
+                    <span>F</span>
+                </div>
+                <div class="preloader">
+                    <img class="loader-img" src="assets/images/etc/loading.png">
+                </div>
             </div>
         </div>
 
