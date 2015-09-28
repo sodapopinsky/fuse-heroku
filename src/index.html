@@ -43,7 +43,7 @@
                 width: 96px;
                 height: 96px;
                 line-height: 96px;
-                margin: 0 auto 32px auto;
+                margin: 0 auto 64px auto;
                 font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
                 font-size: 56px;
                 text-align: center;
@@ -52,12 +52,52 @@
                 color: #FFFFFF;
             }
 
+            #splash-screen .spinner,
+            #splash-screen .spinner:before,
+            #splash-screen .spinner:after {
+                border-radius: 50%;
+            }
+
+            #splash-screen .spinner:before,
+            #splash-screen .spinner:after {
+                position: absolute;
+                content: '';
+                background: #3C4252;
+                top: -2px;
+                bottom: -2px;
+
+            }
+
+            #splash-screen .spinner:before {
+                border-radius: 50% 0 0 50%;
+                left: -2px;
+                right: 50%;
+                -webkit-transform-origin: 18px 18px;
+                transform-origin: 18px 18px;
+                -webkit-animation: rotator 2s infinite ease 1.5s;
+                animation: rotator 2s infinite ease 1.5s;
+            }
+
             #splash-screen .spinner {
-                -webkit-animation: rotator 1.4s linear infinite;
-                animation: rotator 1.4s linear infinite;
+                margin: 0 auto;
+                position: relative;
                 width: 32px;
                 height: 32px;
-                margin: 0 auto;
+                box-shadow: inset 0 0 0 4px #039BE5;
+                -webkit-transform: translateZ(0);
+                -ms-transform: translateZ(0);
+                transform: translateZ(0);
+                animation: colors 10s ease infinite;
+            }
+
+            #splash-screen .spinner:after {
+                border-radius: 0 50% 50% 0;
+                left: 50%;
+                right: -2px;
+                -webkit-transform-origin: 0px 18px;
+                transform-origin: 0px 18px;
+                -webkit-animation: rotator 2s infinite ease;
+                animation: rotator 2s infinite ease;
             }
 
             @-webkit-keyframes rotator {
@@ -66,8 +106,8 @@
                     transform: rotate(0deg);
                 }
                 100% {
-                    -webkit-transform: rotate(270deg);
-                    transform: rotate(270deg);
+                    -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg);
                 }
             }
 
@@ -77,88 +117,47 @@
                     transform: rotate(0deg);
                 }
                 100% {
-                    -webkit-transform: rotate(270deg);
-                    transform: rotate(270deg);
+                    -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg);
                 }
-            }
-
-            #splash-screen .spinner .path {
-                stroke-dasharray: 187;
-                stroke-dashoffset: 0;
-                -webkit-transform-origin: center;
-                -ms-transform-origin: center;
-                transform-origin: center;
-                -webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
-                animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
             }
 
             @-webkit-keyframes colors {
                 0% {
-                    stroke: #4285F4;
+                    box-shadow: inset 0 0 0 4px #4285F4;
                 }
                 25% {
-                    stroke: #DE3E35;
+                    box-shadow: inset 0 0 0 4px #DE3E35;
                 }
                 50% {
-                    stroke: #F7C223;
+                    box-shadow: inset 0 0 0 4px #F7C223;
                 }
                 75% {
-                    stroke: #1B9A59;
+                    box-shadow: inset 0 0 0 4px #1B9A59;
                 }
-                100% {
-                    stroke: #4285F4;
+                40% {
+                    box-shadow: inset 0 0 0 4px #4285F4;
                 }
             }
 
             @keyframes colors {
                 0% {
-                    stroke: #4285F4;
+                    box-shadow: inset 0 0 0 4px #4285F4;
                 }
                 25% {
-                    stroke: #DE3E35;
+                    box-shadow: inset 0 0 0 4px #DE3E35;
                 }
                 50% {
-                    stroke: #F7C223;
+                    box-shadow: inset 0 0 0 4px #F7C223;
                 }
                 75% {
-                    stroke: #1B9A59;
+                    box-shadow: inset 0 0 0 4px #1B9A59;
                 }
-                100% {
-                    stroke: #4285F4;
-                }
-            }
-
-            @-webkit-keyframes dash {
-                0% {
-                    stroke-dashoffset: 187;
-                }
-                50% {
-                    stroke-dashoffset: 46.75;
-                    -webkit-transform: rotate(135deg);
-                    transform: rotate(135deg);
-                }
-                100% {
-                    stroke-dashoffset: 187;
-                    -webkit-transform: rotate(450deg);
-                    transform: rotate(450deg);
+                40% {
+                    box-shadow: inset 0 0 0 4px #4285F4;
                 }
             }
 
-            @keyframes dash {
-                0% {
-                    stroke-dashoffset: 187;
-                }
-                50% {
-                    stroke-dashoffset: 46.75;
-                    -webkit-transform: rotate(135deg);
-                    transform: rotate(135deg);
-                }
-                100% {
-                    stroke-dashoffset: 187;
-                    -webkit-transform: rotate(450deg);
-                    transform: rotate(450deg);
-                }
-            }
 
         </style>
 
@@ -192,11 +191,7 @@
                 <div class="logo">
                     <span>F</span>
                 </div>
-                <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66"
-                     xmlns="http://www.w3.org/2000/svg">
-                    <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33"
-                            r="30"></circle>
-                </svg>
+                <div class="spinner"></div>
             </div>
         </div>
 
