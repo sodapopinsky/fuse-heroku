@@ -130,18 +130,76 @@
             }
         }
     }
+    &.left-aligned {
+        .timeline-item {
+            .timeline-card {
+                order: 1;
+                ms-card {
+                    padding-right: 68px;
+                    padding-left: 0;
+                    margin-left: auto;
+                }
+            }
+
+            .timeline-detail {
+                order: 3;
+                text-align: left;
+            }
+            &.animate {
+                .timeline-card {
+                    animation: slide-in-left 0.4s;
+                }
+                .timeline-detail {
+                    animation: slide-in-right 0.4s;
+                }
+            }
+        }
+    }
+    &.right-aligned {
+        .timeline-item {
+            .timeline-card {
+                order: 3;
+                ms-card {
+                    padding-left: 68px;
+                    padding-right: 0;
+                    margin-right: auto;
+                }
+            }
+
+            .timeline-detail {
+                order: 1;
+                text-align: right;
+                .time, .event {
+                    padding-right: 68px;
+                    padding-left: 0;
+                }
+            }
+            &.animate {
+                .timeline-card {
+                    animation: slide-in-right 0.4s;
+                }
+                .timeline-detail {
+                    animation: slide-in-left 0.4s;
+                }
+            }
+        }
+    }
 }
 
 // RESPONSIVE
 @media screen and (max-width: $breakpoint-md) {
 
-    #timeline {
+    #timeline,
+    #timeline.left-aligned,
+    #timeline.right-aligned {
 
         .timeline-item {
 
             .timeline-card {
                 order: 3;
-                padding: 0;
+                ms-card {
+                    padding: 0;
+                }
             }
 
             .timeline-point {
@@ -156,12 +214,9 @@
                 order: 2;
                 padding: 0;
                 margin-bottom: 16px;
-
-                .time {
-                    text-align: center;
-                }
-
-                .event {
+                .time, .event {
+                    padding-right: 0;
+                    padding-left: 0;
                     text-align: center;
                 }
             }
@@ -170,7 +225,9 @@
 
                 .timeline-card {
                     order: 3;
-                    padding: 0;
+                    ms-card {
+                        padding: 0;
+                    }
                 }
 
                 .timeline-point {
@@ -186,11 +243,9 @@
                     padding: 0;
                     margin-bottom: 16px;
 
-                    .time {
-                        text-align: center;
-                    }
-
-                    .event {
+                    .time, .event {
+                        padding-right: 0;
+                        padding-left: 0;
                         text-align: center;
                     }
                 }
