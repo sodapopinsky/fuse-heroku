@@ -15,12 +15,6 @@
             search: ''
         };
 
-        // Methods
-        vm.toggleSidenav = toggleSidenav;
-        vm.toggleNavigationSidenavFold = toggleNavigationSidenavFold;
-        vm.logout = logout;
-        vm.changeLanguage = changeLanguage;
-        vm.setUserStatus = setUserStatus;
         vm.userStatusOptions = [
             {
                 'title': 'Online',
@@ -49,8 +43,6 @@
             }
         ];
 
-        vm.userStatus = vm.userStatusOptions[0];
-
         vm.languages = [
             {
                 'title'      : 'English',
@@ -72,9 +64,17 @@
             }
         ];
 
-        vm.selectedLanguage = vm.languages[0];
+        // Methods
+        vm.toggleSidenav = toggleSidenav;
+        vm.toggleNavigationSidenavFold = toggleNavigationSidenavFold;
+        vm.logout = logout;
+        vm.changeLanguage = changeLanguage;
+        vm.setUserStatus = setUserStatus;
 
         //////////
+
+        vm.userStatus = vm.userStatusOptions[0];
+        vm.selectedLanguage = vm.languages[0];
 
         /**
          * Toggle sidenav
@@ -110,7 +110,7 @@
          */
         function logout()
         {
-            console.log('Logout Clicked');
+
         }
 
         /**
@@ -123,7 +123,8 @@
             // Show temporary message if user selects a language other than English
             if ( lang.code !== 'en' )
             {
-                var message = '<p>Fuse supports translations through angular-translate module,</p>\n<p>but currently we do not have any translations other than English language.</p>\n<p>If you want to help us, send us a message through ThemeForest profile page.</p>';
+                var message = '<p>Fuse supports translations through angular-translate module, but currently we do not have any translations other than English language. If you want to help us, send us a message through ThemeForest profile page.</p>';
+
                 $mdToast.show({
                     template : '<md-toast id="language-message" layout="column" layout-align="center start">' + message + '</md-toast>',
                     hideDelay: 7000,
