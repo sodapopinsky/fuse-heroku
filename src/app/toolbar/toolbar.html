@@ -51,8 +51,6 @@
                         </md-button>
                     </md-menu-item>
 
-                    <md-menu-divider></md-menu-divider>
-
                     <md-menu-item>
                         <md-menu id="user-status-menu">
                             <md-button ng-click="$mdOpenMenu()" class="status" ng-class="vm.userStatus.class">
@@ -79,8 +77,6 @@
                         </md-menu>
                     </md-menu-item>
 
-                    <md-menu-divider></md-menu-divider>
-
                     <md-menu-item>
                         <md-button ng-click="vm.logout()">
                             <span layout="row" layout-align="start center">
@@ -97,8 +93,10 @@
         <md-menu id="language-menu" md-offset="0 72" md-position-mode="target-right target">
             <md-button class="language-button md-icon-button" ng-click="$mdOpenMenu()"
                        aria-label="Language" md-menu-origin md-menu-align-target>
-                <md-icon md-font-icon="icon-flag"></md-icon>
-                <img class="flag" ng-src="assets/images/flags/{{vm.selectedLanguage.flag}}.png">
+                <div layout="row" layout-align="center center">
+                    <img class="flag" ng-src="assets/images/flags/{{vm.selectedLanguage.flag}}.png">
+                    <span class="iso">{{vm.selectedLanguage.code}}</span>
+                </div>
             </md-button>
 
             <md-menu-content width="3" id="language-menu-content" class="md-background-bg">

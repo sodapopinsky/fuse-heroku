@@ -118,17 +118,16 @@
          */
         function changeLanguage(lang)
         {
-            //Set Selected Language
             vm.selectedLanguage = lang;
 
-            // Show Message if selected other than English
+            // Show temporary message if user selects a language other than English
             if ( lang.code !== 'en' )
             {
                 $mdToast.show(
                     $mdToast.simple()
-                        .content('Fuse supports Multi Language, but there is no other language file despite English for now.')
+                        .content('Fuse supports translations through angular-translate module, but currently we do not have any translations other than English language. If you want to help us, send us a message through ThemeForest profile page.')
                         .position('top right')
-                        .hideDelay(6000)
+                        .hideDelay(9000)
                         .parent('#content')
                 );
                 return;

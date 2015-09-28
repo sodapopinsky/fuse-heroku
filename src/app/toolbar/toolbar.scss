@@ -6,7 +6,6 @@ $toolbarHeight: 64px;
     min-height: $toolbarHeight;
     max-height: $toolbarHeight;
     z-index: 55;
-    //overflow: hidden;
 
     #navigation-toggle {
         width: $toolbarHeight;
@@ -56,24 +55,38 @@ $toolbarHeight: 64px;
     #user-menu {
         height: $toolbarHeight;
         padding: 0;
+
         md-menu-item .md-button {
             font-size: 15px;
+
             md-icon {
                 margin: auto 16px auto 0;
             }
         }
-        md-menu-content.md-menu-bar-menu.md-dense {
-            .md-button, md-menu-item {
-                height: auto;
+
+        md-menu-content {
+
+            &.md-menu-bar-menu {
+
+                &.md-dense {
+                    padding: 0;
+
+                    .md-button,
+                    md-menu-item {
+                        height: 48px;
+                        line-height: 48px;
+                    }
+                }
             }
         }
 
         #user-status-menu {
+
             md-menu-item {
+
                 &.selected {
                     opacity: .3;
                 }
-
             }
         }
 
@@ -88,18 +101,27 @@ $toolbarHeight: 64px;
             }
         }
     }
+
     #language-menu {
+
         .language-button {
+            width: $toolbarHeight + 8px;
+            height: $toolbarHeight;
+            margin: 0;
+            border-left: 1px solid rgba(0, 0, 0, 0.13);
+            border-radius: 0;
+
+            .iso {
+                text-transform: uppercase;
+            }
+
             .flag {
-                position: absolute;
-                bottom: 16px;
-                right: 12px;
+                margin-right: 8px;
             }
         }
     }
 
-    #quick-panel-toggle,
-    #language-menu .language-button {
+    #quick-panel-toggle {
         width: $toolbarHeight;
         height: $toolbarHeight;
         margin: 0;
@@ -109,7 +131,9 @@ $toolbarHeight: 64px;
 }
 
 #language-menu-content {
+
     md-menu-item {
+
         .flag {
             margin-right: 16px;
         }
@@ -135,12 +159,15 @@ $toolbarHeight: 64px;
 @media screen and (max-width: $breakpoint-sm) {
 
     #toolbar {
+
         #user-menu {
+
             .user-button {
                 min-width: 40px;
                 padding: 0;
             }
         }
+
         #search label {
             padding: 0 8px 0 12px;
         }
