@@ -6,7 +6,7 @@
         .controller('ToolbarController', ToolbarController);
 
     /** @ngInject */
-    function ToolbarController($rootScope, $mdSidenav, msNavFoldService)
+    function ToolbarController($rootScope, $mdSidenav, msNavFoldService, $translate, $mdToast)
     {
         var vm = this;
 
@@ -19,6 +19,7 @@
         vm.toggleSidenav = toggleSidenav;
         vm.toggleNavigationSidenavFold = toggleNavigationSidenavFold;
         vm.logout = logout;
+        vm.changeLanguage = changeLanguage;
         vm.setUserStatus = setUserStatus;
         vm.userStatusOptions = [
             {
@@ -47,8 +48,31 @@
                 'color': '#616161'
             }
         ];
-
+        
         vm.userStatus = vm.userStatusOptions[0];
+
+        vm.languages = [
+            {
+                'title'      : 'English',
+                'translation': 'TOOLBAR.ENGLISH',
+                'code'       : 'en',
+                'flag'       : 'gb'
+            },
+            {
+                'title'      : 'Spanish',
+                'translation': 'TOOLBAR.SPANISH',
+                'code'       : 'es',
+                'flag'       : 'es'
+            },
+            {
+                'title'      : 'Turkish',
+                'translation': 'TOOLBAR.TURKISH',
+                'code'       : 'tr',
+                'flag'       : 'tr'
+            }
+        ];
+
+        vm.selectedLanguage = vm.languages[0];
 
         //////////
 
@@ -87,6 +111,31 @@
         function logout()
         {
             console.log('Logout Clicked');
+        }
+
+        /**
+         * Change Language
+         */
+        function changeLanguage(lang)
+        {
+            //Set Selected Language
+            vm.selectedLanguage = lang;
+
+            // Show Message if selected other than English
+            if ( lang.code !== 'en' )
+            {
+                $mdToast.show(
+                    $mdToast.simple()
+                        .content('Fuse supports Multi Language, but there is no other language file despite English for now.')
+                        .position('top right')
+                        .hideDelay(6000)
+                        .parent('#content')
+                );
+                return;
+            }
+
+            //Change the language
+            $translate.use(lang.code);
         }
     }
 

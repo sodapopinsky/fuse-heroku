@@ -76,6 +76,7 @@ $toolbarHeight: 64px;
 
             }
         }
+
         .user-button {
             margin: 0;
             padding: 0 16px;
@@ -87,15 +88,32 @@ $toolbarHeight: 64px;
             }
         }
     }
+    #language-menu {
+        .language-button {
+            .flag {
+                position: absolute;
+                bottom: 16px;
+                right: 12px;
+            }
+        }
+    }
 
-    #quick-panel-toggle {
+    #quick-panel-toggle,
+    #language-menu .language-button {
         width: $toolbarHeight;
         height: $toolbarHeight;
         margin: 0;
         border-left: 1px solid rgba(0, 0, 0, 0.13);
         border-radius: 0;
     }
+}
 
+#language-menu-content {
+    md-menu-item {
+        .flag {
+            margin-right: 16px;
+        }
+    }
 }
 
 .navigation-folded {
