@@ -140,6 +140,14 @@ $toolbarHeight: 64px;
     }
 }
 
+#language-message {
+    padding: 8px 16px;
+
+    > p {
+        margin: 8px 0;
+    }
+}
+
 .navigation-folded {
 
     #toolbar {

@@ -48,7 +48,7 @@
                 'color': '#616161'
             }
         ];
-        
+
         vm.userStatus = vm.userStatusOptions[0];
 
         vm.languages = [
@@ -123,13 +123,14 @@
             // Show temporary message if user selects a language other than English
             if ( lang.code !== 'en' )
             {
-                $mdToast.show(
-                    $mdToast.simple()
-                        .content('Fuse supports translations through angular-translate module, but currently we do not have any translations other than English language. If you want to help us, send us a message through ThemeForest profile page.')
-                        .position('top right')
-                        .hideDelay(9000)
-                        .parent('#content')
-                );
+                var message = '<p>Fuse supports translations through angular-translate module,</p>\n<p>but currently we do not have any translations other than English language.</p>\n<p>If you want to help us, send us a message through ThemeForest profile page.</p>';
+                $mdToast.show({
+                    template : '<md-toast id="language-message" layout="column" layout-align="center start">' + message + '</md-toast>',
+                    hideDelay: 7000,
+                    position : 'top right',
+                    parent   : '#content'
+                });
+
                 return;
             }
 
