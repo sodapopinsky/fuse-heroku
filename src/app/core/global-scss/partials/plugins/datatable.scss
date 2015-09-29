@@ -7,7 +7,7 @@ table.dataTable {
     thead {
 
         tr {
-            background: $material-color-white;
+            background: #FFFFFF;
         }
 
         th {
@@ -248,7 +248,7 @@ table.dataTable {
     tbody {
 
         tr {
-            background-color: $material-color-white;
+            background-color: #FFFFFF;
 
             &.selected {
                 background-color: #B0BED9;
@@ -261,7 +261,7 @@ table.dataTable {
                     &.detail-column {
 
                         i {
-                            background: $material-color-white;
+                            background: #FFFFFF;
                         }
                     }
 
@@ -274,7 +274,7 @@ table.dataTable {
                 &.odd {
 
                     tr {
-                        background: $material-color-white;
+                        background: #FFFFFF;
                     }
 
                 }
@@ -486,7 +486,7 @@ table.dataTable {
             tr {
 
                 &.odd {
-                    background-color: $material-color-white;
+                    background-color: #FFFFFF;
 
                     &.selected {
                         background-color: #ABB9D3;
@@ -902,7 +902,7 @@ table.dataTable {
     .dataTables_paginate {
 
         .paginate_button {
-            background: $material-color-white;
+            background: #FFFFFF;
             color: rgba(0, 0, 0, 0.87);
             border: 1px solid rgba(0, 0, 0, 0.12);
             padding: 9px 12px;
@@ -925,7 +925,7 @@ table.dataTable {
             &.current, &.disabled, &.disabled:hover, &.disabled:active {
                 color: rgba(0, 0, 0, 0.54) !important;
                 border-color: rgba(0, 0, 0, 0.12) !important;
-                background: $material-color-white !important;
+                background: #FFFFFF !important;
                 box-shadow: none !important;
                 cursor: default;
             }
@@ -982,7 +982,7 @@ table.dataTable {
             display: flex;
             min-height: 95px;
             box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.095), 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 2px 1px 0 rgba(0, 0, 0, 0.05);
-            background: $material-color-white;
+            background: #FFFFFF;
             overflow: visible !important;
 
             tr {

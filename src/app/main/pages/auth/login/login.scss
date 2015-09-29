@@ -7,7 +7,7 @@
         max-width: 384px;
         padding: 32px;
         margin: 32px;
-        background: $material-color-white;
+        background: #FFFFFF;
 
         .logo {
             border-radius: 2px;
@@ -63,11 +63,11 @@
             &.facebook {
                 width: 192px;
                 text-transform: none;
-                color: $material-color-white;
+                color: #FFFFFF;
                 font-size: 13px;
 
                 md-icon {
-                    color: $material-color-white;
+                    color: #FFFFFF;
                     margin: 0 8px 0 0;
                 }
             }
