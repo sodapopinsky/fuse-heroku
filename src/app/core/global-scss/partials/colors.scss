@@ -70,16 +70,43 @@
     }
 }
 
-// Material colors
-$colors: map_keys($materialColorsMap);
+// Material colors with all available hue values
+@each $colorName, $colorMap in $materialColorsMap {
 
-@each $color in $colors {
+    @each $label, $value in $colorMap {
 
-    .md-#{$color}-bg {
-        background-color: map_get($materialColorsMap, $color);
+        .md-#{$colorName}-#{$label}-bg {
+            background-color: $value;
+        }
+
+        .md-#{$colorName}-#{$label}-fg {
+            color: $value;
+        }
+
+        @if ($label == '500') {
+            .md-#{$colorName}-bg {
+                background-color: $value;
+            }
+
+            .md-#{$colorName}-fg {
+                color: $value;
+            }
+        }
     }
+}
 
-    .md-#{$color}-fg {
-        color: map_get($materialColorsMap, $color);
+// Function for getting material color and their hue values in scss
+@function material-color($color, $hue: '500') {
+
+    @if (map_has_key($materialColorsMap, $color)) {
+        @if (map_has_key(map_get($materialColorsMap, $color), $hue)){
+            @return map_get(map_get($materialColorsMap, $color), $hue);
+        }
+        @else {
+            @error "'#{$hue}' is not a valid hue value for '#{$color}'!";
+        }
+    }
+    @else {
+        @error "'#{$color}' is not a valid Material Design color!";
     }
 }

@@ -13,13 +13,13 @@
                     .title {
                         font-size: 17px;
                         font-weight: 500;
-                        color: $material-color-blue;
+                        color: material-color('blue');
                         cursor: pointer;
                     }
 
                     .url {
                         margin-bottom: 4px;
-                        color: $material-color-green;
+                        color: material-color('green');
                     }
 
                     .excerpt {
