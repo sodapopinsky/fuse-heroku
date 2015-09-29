@@ -26,10 +26,11 @@
         max-width: 1200px;
 
         .timeline-card {
+            order: 1;
+
             ms-card {
                 padding-right: 84px;
             }
-            order: 1;
         }
 
         .timeline-point {
@@ -46,15 +47,14 @@
             padding-top: 28px;
             order: 3;
 
-            .time, .event {
-                padding-left: 68px;
-            }
             .time {
                 font-size: 15px;
+                padding-left: 68px;
             }
 
             .event {
                 color: rgba(0, 0, 0, 0.54);
+                padding-left: 68px;
             }
         }
 
@@ -130,10 +130,15 @@
             }
         }
     }
-    &.left-aligned {
+
+    // Timeline Left
+    &.timeline-left {
+
         .timeline-item {
+
             .timeline-card {
                 order: 1;
+
                 ms-card {
                     padding-right: 68px;
                     padding-left: 0;
@@ -145,20 +150,28 @@
                 order: 3;
                 text-align: left;
             }
+
             &.animate {
+
                 .timeline-card {
                     animation: slide-in-left 0.4s;
                 }
+
                 .timeline-detail {
                     animation: slide-in-right 0.4s;
                 }
             }
         }
     }
-    &.right-aligned {
+
+    // Timeline Right
+    &.timeline-right {
+
         .timeline-item {
+
             .timeline-card {
                 order: 3;
+
                 ms-card {
                     padding-left: 68px;
                     padding-right: 0;
@@ -169,15 +182,20 @@
             .timeline-detail {
                 order: 1;
                 text-align: right;
-                .time, .event {
+
+                .time,
+                .event {
                     padding-right: 68px;
                     padding-left: 0;
                 }
             }
+
             &.animate {
+
                 .timeline-card {
                     animation: slide-in-right 0.4s;
                 }
+
                 .timeline-detail {
                     animation: slide-in-left 0.4s;
                 }
@@ -190,13 +208,14 @@
 @media screen and (max-width: $breakpoint-md) {
 
     #timeline,
-    #timeline.left-aligned,
-    #timeline.right-aligned {
+    #timeline.timeline-left,
+    #timeline.timeline-right {
 
         .timeline-item {
 
             .timeline-card {
                 order: 3;
+
                 ms-card {
                     padding: 0;
                 }
@@ -214,7 +233,9 @@
                 order: 2;
                 padding: 0;
                 margin-bottom: 16px;
-                .time, .event {
+
+                .time,
+                .event {
                     padding-right: 0;
                     padding-left: 0;
                     text-align: center;
@@ -225,6 +246,7 @@
 
                 .timeline-card {
                     order: 3;
+
                     ms-card {
                         padding: 0;
                     }
@@ -243,7 +265,8 @@
                     padding: 0;
                     margin-bottom: 16px;
 
-                    .time, .event {
+                    .time,
+                    .event {
                         padding-right: 0;
                         padding-left: 0;
                         text-align: center;
@@ -252,5 +275,4 @@
             }
         }
     }
-
 }
