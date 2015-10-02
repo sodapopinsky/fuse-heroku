@@ -10,7 +10,7 @@
 }
 
 .divider-vertical {
-    background: rgba(0, 0, 0, 0.13);
+    background: rgba(0, 0, 0, 0.12);
     height: 24px;
     width: 1px;
     margin: 0 8px;
@@ -221,4 +221,35 @@ img {
         min-height: #{($i * 5) + 'px'} !important;
         max-height: #{($i * 5) + 'px'} !important;
     }
+}
+
+// Border helpers
+.border {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.border-top {
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.border-right {
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.border-bottom {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.border-left {
+    border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.border-horizontal {
+    border-left: 1px solid rgba(0, 0, 0, 0.12);
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.border-vertical {
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
