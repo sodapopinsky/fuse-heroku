@@ -5,31 +5,17 @@
         .friends {
 
             .friend {
+                position: relative;
 
-                .unread-message-count,
                 .status {
                     position: absolute;
-                    border-radius: 50%;
-                    content: '';
-                    z-index: 10;
-                }
-
-                .unread-message-count {
-                    left: 16px;
-                    bottom: 16px;
-                    width: 18px;
-                    height: 18px;
-                    text-align: center;
-                    line-height: 18px;
-                    font-size: 11px;
-                }
-
-                .status {
                     top: 8px;
                     left: 44px;
-                    border: 3px solid #FFFFFF;
                     width: 18px;
                     height: 18px;
+                    z-index: 10;
+                    border-radius: 50%;
+                    border: 3px solid #FFFFFF;
 
                     &.online {
                         background-color: #00C853;
@@ -42,6 +28,19 @@
                     &.away {
                         background-color: #FF6D00;
                     }
+                }
+
+                .unread-message-count {
+                    position: absolute;
+                    left: 16px;
+                    bottom: 16px;
+                    width: 18px;
+                    height: 18px;
+                    z-index: 10;
+                    border-radius: 50%;
+                    text-align: center;
+                    line-height: 18px;
+                    font-size: 11px;
                 }
             }
         }
