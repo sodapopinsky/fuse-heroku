@@ -20,6 +20,14 @@
     }
 }
 
+body {
+
+    * {
+        // Force hardware rendering
+        transform: translate3d(0, 0, 0);
+    }
+}
+
 // Reset non angular-material input's default browser/os styles
 *:not(md-input-container) {
     > input[type="text"],
