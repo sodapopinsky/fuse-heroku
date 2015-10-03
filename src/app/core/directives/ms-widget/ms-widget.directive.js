@@ -50,7 +50,7 @@
     }
 
     /** @ngInject */
-    function msWidgetDirective($compile)
+    function msWidgetDirective()
     {
         return {
             restrict  : 'E',
@@ -68,6 +68,7 @@
                     // Custom transclusion
                     transcludeFn(function (clone)
                     {
+                        iElement.empty();
                         iElement.append(clone);
                     });
 
@@ -93,6 +94,7 @@
                     // Custom transclusion
                     transcludeFn(function (clone)
                     {
+                        iElement.empty();
                         iElement.append(clone);
                     });
 
@@ -119,6 +121,7 @@
                     // Custom transclusion
                     transcludeFn(function (clone)
                     {
+                        iElement.empty();
                         iElement.append(clone);
                     });
 

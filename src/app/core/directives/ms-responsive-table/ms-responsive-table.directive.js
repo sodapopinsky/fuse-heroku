@@ -9,23 +9,15 @@
     function msResponsiveTableDirective()
     {
         return {
-            restrict  : 'A',
-            transclude: 'element',
-            compile   : function (tElement)
+            restrict: 'A',
+            link    : function (scope, iElement)
             {
+                // Wrap the table
                 var wrapper = angular.element('<div class="ms-responsive-table-wrapper"></div>');
-                tElement.after(wrapper);
+                iElement.after(wrapper);
+                wrapper.append(iElement);
 
-                return function postLink(scope, iElement, iAttrs, ctrl, transcludeFn)
-                {
-                    // Custom transclusion
-                    transcludeFn(function (clone)
-                    {
-                        wrapper.append(clone);
-                    });
-
-                    //////////
-                };
+                //////////
             }
         };
     }
