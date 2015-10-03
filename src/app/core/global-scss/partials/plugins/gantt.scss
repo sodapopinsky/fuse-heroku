@@ -1,0 +1,112 @@
+.gantt {
+
+    .gantt-row-background {
+        background-color: transparent;
+    }
+
+    .gantt-row {
+        border-bottom: 1px solid #E6E6E6;
+        .gantt-row-label {
+            padding: 0 16px;
+        }
+    }
+
+    .gantt-row-height {
+        height: 48px !important;
+    }
+
+    .gantt-foreground-col,
+    .gantt-foreground-col-nonworkhour,
+    .gantt-foreground-col-current-date {
+        border-right: none;
+    }
+
+    .gantt-scrollable-header,
+    .gantt-side {
+        background-color: rgb(250, 250, 250);
+        border: none;
+    }
+    .gantt-header {
+        .gantt-header-row-first {
+            border-top: none;
+        }
+    }
+    .gantt-side {
+        .gantt-side-header-row {
+            height: 100%;
+            border: none;
+            border-bottom: 1px solid #E6E6E6;
+        }
+        .gantt-tree-header-row,
+        .gantt-table-header-row {
+            span.gantt-label-text {
+                font-weight: normal;
+                color: rgb(168, 168, 168);
+                padding: 0 16px;
+            }
+        }
+    }
+
+    .gantt-task {
+        padding: 0 2px;
+        overflow: hidden;
+        .gantt-task-content {
+            line-height: 38px;
+        }
+        .gantt-task-background {
+            border-radius: 0;
+            .gantt-task-progress{
+                bottom: 0px;
+                top: 0px;
+                height: auto;
+                border-radius: 0;
+            }
+        }
+    }
+
+    .gantt-tree-body {
+        ol {
+            .hidden {
+                display: none;
+            }
+        }
+
+        .gantt-row-label {
+
+            padding-left: 16px;
+
+            a.gantt-tree-handle-button {
+                text-decoration: none;
+                color: inherit;
+                padding-right: 8px;
+                &[disabled] {
+                    opacity: 0.3;
+                }
+                span.gantt-tree-handle {
+                    &.glyphicon {
+                        position: relative;
+                        font-family: 'icomoon';
+                        speak: none;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-variant: normal;
+                        text-transform: none;
+                        line-height: 1;
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                        &.glyphicon-chevron-down {
+                            &:before {
+                                content: "\e715";
+                            }
+                        }
+                        &.glyphicon-chevron-right {
+                            &:before {
+                                content: "\e717";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

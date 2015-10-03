@@ -101,6 +101,15 @@
             })
         };
 
+        api.ganttChart = {
+            tasks: $resource(api.dataUrl + 'gantt-chart/tasks.json', null, {
+                'get': {method: 'get'}
+            }),
+            timespans : $resource(api.dataUrl + 'gantt-chart/timespans.json', null, {
+                'get': {method: 'get'}
+            })
+        };
+
         return api;
     }
 
