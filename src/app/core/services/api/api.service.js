@@ -10,103 +10,110 @@
     function apiService($resource)
     {
         var api = {};
+
         api.dataUrl = 'app/core/services/api/data/';
 
         api.activities = $resource(api.dataUrl + 'notifications/activities.json', null, {
-            'get': {method: 'get'}
+            get: {method: 'get'}
         });
 
+        api.dashboard = {
+            teamMembers: $resource(api.dataUrl + 'dashboard/team-members.json', null, {
+                get: {method: 'get'}
+            })
+        };
+
         api.cards = $resource(api.dataUrl + 'cards/cards.json', null, {
-            'get': {method: 'get'}
+            get: {method: 'get'}
         });
 
         api.contacts = $resource(api.dataUrl + 'notifications/contacts.json', null, {
-            'get': {method: 'get'}
+            get: {method: 'get'}
         });
 
         api.events = $resource(api.dataUrl + 'notifications/events.json', null, {
-            'get': {method: 'get'}
+            get: {method: 'get'}
         });
 
         api.fileManager = {
             documents: $resource(api.dataUrl + 'file-manager/documents.json', null, {
-                'get': {method: 'get'}
+                get: {method: 'get'}
+            })
+        };
+
+        api.ganttChart = {
+            tasks    : $resource(api.dataUrl + 'gantt-chart/tasks.json', null, {
+                get: {method: 'get'}
+            }),
+            timespans: $resource(api.dataUrl + 'gantt-chart/timespans.json', null, {
+                get: {method: 'get'}
             })
         };
 
         api.icons = $resource('assets/icons/selection.json', null, {
-            'get': {method: 'get'}
+            get: {method: 'get'}
         });
 
         api.invoice = $resource(api.dataUrl + 'invoice/invoice.json', null, {
-            'get': {method: 'get'}
+            get: {method: 'get'}
         });
 
         api.mail = {
             inbox: $resource(api.dataUrl + 'mail/inbox.json', null, {
-                'get': {method: 'get'}
+                get: {method: 'get'}
             })
         };
 
         api.notes = $resource(api.dataUrl + 'notifications/notes.json', null, {
-            'get': {method: 'get'}
+            get: {method: 'get'}
         });
 
         api.profile = {
             timeline    : $resource(api.dataUrl + 'profile/timeline.json', null, {
-                'get': {method: 'get'}
+                get: {method: 'get'}
             }),
             about       : $resource(api.dataUrl + 'profile/about.json', null, {
-                'get': {method: 'get'}
+                get: {method: 'get'}
             }),
             photosVideos: $resource(api.dataUrl + 'profile/photos-videos.json', null, {
-                'get': {method: 'get'}
+                get: {method: 'get'}
             })
         };
 
         api.search = {
             classic : $resource(api.dataUrl + 'search/classic.json', null, {
-                'get': {method: 'get'}
+                get: {method: 'get'}
             }),
             mails   : $resource(api.dataUrl + 'search/mails.json', null, {
-                'get': {method: 'get'}
+                get: {method: 'get'}
             }),
             users   : $resource(api.dataUrl + 'search/users.json', null, {
-                'get': {method: 'get'}
+                get: {method: 'get'}
             }),
             contacts: $resource(api.dataUrl + 'search/contacts.json', null, {
-                'get': {method: 'get'}
+                get: {method: 'get'}
             })
         };
 
         api.tables = {
             employees   : $resource(api.dataUrl + 'tables/employees.json', null, {
-                'get': {method: 'get'}
+                get: {method: 'get'}
             }),
             employees100: $resource(api.dataUrl + 'tables/employees100.json', null, {
-                'get': {method: 'get'}
+                get: {method: 'get'}
             })
         };
 
         api.timeline = $resource(api.dataUrl + 'timeline/timeline.json', null, {
-            'get': {method: 'get'}
+            get: {method: 'get'}
         });
 
         api.todo = {
             tasks: $resource(api.dataUrl + 'todo/tasks.json', null, {
-                'get': {method: 'get'}
+                get: {method: 'get'}
             }),
             tags : $resource(api.dataUrl + 'todo/tags.json', null, {
-                'get': {method: 'get'}
-            })
-        };
-
-        api.ganttChart = {
-            tasks: $resource(api.dataUrl + 'gantt-chart/tasks.json', null, {
-                'get': {method: 'get'}
-            }),
-            timespans : $resource(api.dataUrl + 'gantt-chart/timespans.json', null, {
-                'get': {method: 'get'}
+                get: {method: 'get'}
             })
         };
 
