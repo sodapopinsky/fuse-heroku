@@ -3,7 +3,7 @@
 /*----------------------------------------------------------------*/
 
 // Black text
-.md-black-fg,
+.fg-black,
 .black-text {
     color: rgba(0, 0, 0, 0.87) !important;
 
@@ -30,8 +30,8 @@
 }
 
 // White text
-.md-white-fg,
-.white-text {
+.fg-white,
+.fg-white {
     color: rgb(255, 255, 255) !important;
 
     &.secondary-text,
@@ -75,23 +75,63 @@
 // Material colors with all available hue values
 @each $colorName, $colorMap in $materialColorsMap {
 
-    @each $label, $value in $colorMap {
+    @each $hue, $hexValue in $colorMap {
 
-        .md-#{$colorName}-#{$label}-bg {
-            background-color: $value;
+        .bg-#{$colorName}-#{$hue} {
+            background-color: $hexValue !important;
         }
 
-        .md-#{$colorName}-#{$label}-fg {
-            color: $value;
+        .fg-#{$colorName}-#{$hue} {
+            color: $hexValue !important;
         }
 
-        @if ($label == '500') {
-            .md-#{$colorName}-bg {
-                background-color: $value;
+        .border-#{$colorName}-#{$hue} {
+            border-color: $hexValue !important;
+        }
+
+        .border-top-#{$colorName}-#{$hue} {
+            border-top-color: $hexValue !important;
+        }
+
+        .border-right-#{$colorName}-#{$hue} {
+            border-right-color: $hexValue !important;
+        }
+
+        .border-bottom-#{$colorName}-#{$hue} {
+            border-bottom-color: $hexValue !important;
+        }
+
+        .border-left-#{$colorName}-#{$hue} {
+            border-left-color: $hexValue !important;
+        }
+
+        @if ($hue == '500') {
+            .bg-#{$colorName} {
+                background-color: $hexValue !important;
             }
 
-            .md-#{$colorName}-fg {
-                color: $value;
+            .fg-#{$colorName} {
+                color: $hexValue !important;
+            }
+
+            .border-#{$colorName} {
+                border-color: $hexValue !important;
+            }
+
+            .border-top-#{$colorName} {
+                border-top-color: $hexValue !important;
+            }
+
+            .border-right-#{$colorName} {
+                border-right-color: $hexValue !important;
+            }
+
+            .border-bottom-#{$colorName} {
+                border-bottom-color: $hexValue !important;
+            }
+
+            .border-left-#{$colorName} {
+                border-left-color: $hexValue !important;
             }
         }
     }
