@@ -5,13 +5,15 @@
         "angular": "~1.4.0",
         "angular-animate": "~1.4.0",
         "angular-aria": "^1.4.0",
-        "angular-chart.js": "~0.8.1",
+        "angular-chart.js": "~0.8.4",
         "angular-chartist.js": "~3.3.6",
         "angular-cookies": "~1.4.0",
         "angular-datatables": "~0.4.3",
         "angular-google-maps": "~2.1.5",
         "angular-material": "0.11.2",
         "angular-messages": "^1.4.0",
+        "angular-native-dragdrop": "~1.2.0",
+        "angular-gantt": "~1.2.6",
         "angular-nvd3": "~0.1.1",
         "angular-resource": "~1.4.0",
         "angular-route": "~1.4.0",
@@ -24,7 +26,8 @@
         "angular-ui-router": "~0.2.15",
         "angular-ui-tree": "~2.9.0",
         "bower": "*",
-        "c3-angular": "~0.6.0",
+        "c3-angular": "~0.7.0",
+        "css-element-queries": "~0.3.0",
         "d3": "~3.5.6",
         "highlightjs": "~8.6.0",
         "install": "~1.0.4",
@@ -34,10 +37,7 @@
         "moment": "~2.10.3",
         "perfect-scrollbar": "~0.6.4",
         "textAngular": "~1.4.5",
-        "toastr": "~2.1.1",
-        "css-element-queries": "~0.3.0",
-        "angular-native-dragdrop": "~1.2.0",
-        "angular-gantt": "~1.2.6"
+        "toastr": "~2.1.1"
     },
     "devDependencies": {
         "angular-mocks": "~1.4.0"
