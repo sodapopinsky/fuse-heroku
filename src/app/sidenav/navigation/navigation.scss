@@ -215,6 +215,7 @@ $navigationFoldedWidth: 64px;
     }
 
     &:not(.md-locked-open) {
+        box-shadow: $whiteframe-shadow-8dp;
 
         ms-nav {
             overflow: hidden
