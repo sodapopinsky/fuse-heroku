@@ -1,7 +1,7 @@
 <div class="template-9">
-    <div class="header padding-16" layout="row" layout-align="start center">
+    <div class="header p-16" layout="row" layout-align="start center">
         <div ng-if="card.avatar">
-            <img class="avatar margin-right-16" ng-src="{{card.avatar.src}}" alt="{{card.avatar.alt}}">
+            <img class="avatar mr-16" ng-src="{{card.avatar.src}}" alt="{{card.avatar.alt}}">
         </div>
 
         <div class="info">
@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <div class="text padding-horizontal-16 padding-bottom-16" ng-if="card.text">
+    <div class="text ph-16 pb-16" ng-if="card.text">
         {{card.text}}
     </div>
 
@@ -24,8 +24,8 @@
         <img class="image" ng-src="{{card.media.image.src}}" alt="{{card.media.image.alt}}" ng-show="card.media.image">
     </div>
 
-    <div class="buttons margin-8">
-        <md-button class="md-icon-button margin-right-16" aria-label="Favorite">
+    <div class="buttons m-8">
+        <md-button class="md-icon-button mr-16" aria-label="Favorite">
             <md-icon md-font-icon="icon-heart-outline" class="s24"></md-icon>
         </md-button>
         <md-button class="md-icon-button" aria-label="Share">

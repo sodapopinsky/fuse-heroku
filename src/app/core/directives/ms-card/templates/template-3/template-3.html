@@ -1,4 +1,4 @@
-<div class="template-3 padding-16 bg-teal fg-white" layout="row" layout-align="space-between">
+<div class="template-3 p-16 bg-teal fg-white" layout="row" layout-align="space-between">
     <div layout="column" layout-align="space-between">
         <div class="info">
             <div class="title h1" ng-if="card.title">
@@ -11,11 +11,11 @@
         </div>
 
         <div class="cta">
-            <md-button class="margin-0">{{card.cta}}</md-button>
+            <md-button class="m-0">{{card.cta}}</md-button>
         </div>
     </div>
 
-    <div class="media padding-left-16">
+    <div class="media pl-16">
         <img class="image" ng-src="{{card.media.image.src}}" alt="{{card.media.image.alt}}" ng-show="card.media.image">
     </div>
 </div>

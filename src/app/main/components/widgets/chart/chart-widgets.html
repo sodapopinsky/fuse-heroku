@@ -18,7 +18,7 @@
     <!-- CONTENT -->
     <div class="content">
 
-        <p class="h4 margin-16">
+        <p class="h4 m-16">
             Here you can see some of the stat widget styles. These are just tiny example of what you can do with using
             widget directive and helper classes. You are not limited to
             these styles or widgets, you can easily create wide variety of widgets.
@@ -28,16 +28,16 @@
         <div class="widget-group" layout="row" flex="100" layout-wrap>
 
             <!-- WIDGET 1 -->
-            <ms-widget class="chart-widget height-250" layout="column" flex="100" flex-gt-sm="50" flex-gt-lg="25">
+            <ms-widget class="chart-widget h-250" layout="column" flex="100" flex-gt-sm="50" flex-gt-lg="25">
 
                 <!-- Front -->
-                <ms-widget-front class="padding-16 bg-red fg-white" layout="column" layout-align="space-between"
+                <ms-widget-front class="p-16 bg-red fg-white" layout="column" layout-align="space-between"
                                  flex>
-                    <div class="padding-bottom-16">
-                        <div class="h4 weight-500 padding-bottom-8">{{vm.widget1.title}}</div>
+                    <div class="pb-16">
+                        <div class="h4 weight-500 pb-8">{{vm.widget1.title}}</div>
 
                         <div layout="row" layout-align="start center">
-                            <div class="padding-right-8">
+                            <div class="pr-8">
                                 <md-icon md-font-icon="icon-alert" class="s24 hint-text"></md-icon>
                             </div>
 
@@ -68,15 +68,15 @@
             <!-- / WIDGET 1 -->
 
             <!-- WIDGET 2 -->
-            <ms-widget class="chart-widget height-250" layout="column" flex="100" flex-gt-sm="50" flex-gt-lg="25">
+            <ms-widget class="chart-widget h-250" layout="column" flex="100" flex-gt-sm="50" flex-gt-lg="25">
 
                 <!-- Front -->
-                <ms-widget-front class="padding-16 bg-white" layout="column" layout-align="space-between" flex>
-                    <div class="padding-bottom-16">
-                        <div class="h4 weight-500 padding-bottom-8">{{vm.widget2.title}}</div>
+                <ms-widget-front class="p-16 bg-white" layout="column" layout-align="space-between" flex>
+                    <div class="pb-16">
+                        <div class="h4 weight-500 pb-8">{{vm.widget2.title}}</div>
                         <div layout="row" layout-align="start center">
                             <div class="h1 secondary-text">{{vm.widget2.value}}</div>
-                            <md-icon md-font-icon="icon-trending-up" class="margin-horizontal-8"></md-icon>
+                            <md-icon md-font-icon="icon-trending-up" class="mh-8"></md-icon>
                         </div>
                     </div>
 
@@ -104,12 +104,12 @@
             <!-- / WIDGET 2 -->
 
             <!-- WIDGET 3 -->
-            <ms-widget class="chart-widget height-250" layout="column" flex="100" flex-gt-lg="50">
+            <ms-widget class="chart-widget h-250" layout="column" flex="100" flex-gt-lg="50">
 
                 <!-- Front -->
-                <ms-widget-front class="padding-16 bg-white" layout="column" layout-align="space-between" flex>
-                    <div class="padding-bottom-16">
-                        <div class="h4 weight-500 padding-bottom-8">{{vm.widget3.title}}</div>
+                <ms-widget-front class="p-16 bg-white" layout="column" layout-align="space-between" flex>
+                    <div class="pb-16">
+                        <div class="h4 weight-500 pb-8">{{vm.widget3.title}}</div>
                         <div class="secondary-text">{{vm.widget3.subtitle}}</div>
                     </div>
 
@@ -142,14 +142,14 @@
         <div class="widget-group" layout="row" flex="100" layout-wrap>
 
             <!-- WIDGET 4 -->
-            <ms-widget class="chart-widget height-300" layout="column" flex="100" flex-gt-lg="50">
+            <ms-widget class="chart-widget h-300" layout="column" flex="100" flex-gt-lg="50">
 
                 <!-- Front -->
-                <ms-widget-front class="padding-16 bg-white" layout="row" layout-align="space-between" flex>
-                    <div class="margin-right-16">
-                        <div class="h4 weight-500 padding-bottom-8">{{vm.widget4.title}}</div>
+                <ms-widget-front class="p-16 bg-white" layout="row" layout-align="space-between" flex>
+                    <div class="mr-16">
+                        <div class="h4 weight-500 pb-8">{{vm.widget4.title}}</div>
                         <div class="h1 secondary-text">{{vm.widget4.value | number}}</div>
-                        <div class="padding-top-8" layout="row" layout-align="start center">
+                        <div class="pt-8" layout="row" layout-align="start center">
                             <div>LW: {{vm.widget4.lastWeekValue | number}}</div>
                             <div class="text-boxed">{{vm.widget4.lastWeekDiff}}</div>
                         </div>
@@ -174,16 +174,16 @@
             <!-- / WIDGET 4 -->
 
             <!-- WIDGET 5 -->
-            <ms-widget class="chart-widget height-300" layout="column" flex="100" flex-gt-lg="50">
+            <ms-widget class="chart-widget h-300" layout="column" flex="100" flex-gt-lg="50">
 
                 <!-- Front -->
-                <ms-widget-front class="padding-16 bg-light-blue fg-white" layout="row"
+                <ms-widget-front class="p-16 bg-light-blue fg-white" layout="row"
                                  layout-align="space-between" flex>
-                    <div class="margin-right-16">
-                        <div class="h1 weight-500 padding-bottom-8">{{vm.widget5.title}}</div>
-                        <div class="h4 secondary-text weight-500 padding-bottom-8">{{vm.widget5.subtitle}}</div>
+                    <div class="mr-16">
+                        <div class="h1 weight-500 pb-8">{{vm.widget5.title}}</div>
+                        <div class="h4 secondary-text weight-500 pb-8">{{vm.widget5.subtitle}}</div>
                         <div layout="row" layout-align="start center">
-                            <div class="md-display-1 padding-right-8">{{vm.widget5.value}}</div>
+                            <div class="md-display-1 pr-8">{{vm.widget5.value}}</div>
                             <md-icon md-font-icon="icon-trending-up" class="s24"></md-icon>
                         </div>
                     </div>
@@ -211,15 +211,15 @@
 
 
         <!-- WIDGET GROUP -->
-        <div class="widget-group height-300" layout="row" flex="100" layout-wrap>
+        <div class="widget-group h-300" layout="row" flex="100" layout-wrap>
 
             <!-- WIDGET 6 -->
             <ms-widget class="chart-widget" layout="column" flex="100">
 
                 <!-- Front -->
-                <ms-widget-front class="padding-16 bg-white" layout="column" layout-align="space-between" flex>
-                    <div class="padding-bottom-16">
-                        <div class="h3 weight-500 padding-bottom-8">{{vm.widget6.title}}</div>
+                <ms-widget-front class="p-16 bg-white" layout="column" layout-align="space-between" flex>
+                    <div class="pb-16">
+                        <div class="h3 weight-500 pb-8">{{vm.widget6.title}}</div>
                         <div class="secondary-text">{{vm.widget6.subtitle}}</div>
                     </div>
 
@@ -240,7 +240,7 @@
                         </c3chart>
                     </div>
 
-                    <md-divider class="margin-vertical-16"></md-divider>
+                    <md-divider class="mv-16"></md-divider>
 
                     <div>{{vm.widget6.text}}</div>
                 </ms-widget-front>
@@ -257,12 +257,12 @@
         <div class="widget-group" layout="row" flex="100" layout-wrap>
 
             <!-- WIDGET 7 -->
-            <ms-widget class="chart-widget height-500" layout="column" flex="100">
+            <ms-widget class="chart-widget h-500" layout="column" flex="100">
 
                 <!-- Front -->
-                <ms-widget-front class="padding-16 bg-white" layout="column" layout-align="space-between" flex>
-                    <div class="padding-bottom-16">
-                        <div class="h3 weight-500 padding-bottom-8">{{vm.widget7.title}}</div>
+                <ms-widget-front class="p-16 bg-white" layout="column" layout-align="space-between" flex>
+                    <div class="pb-16">
+                        <div class="h3 weight-500 pb-8">{{vm.widget7.title}}</div>
                         <div class="secondary-text">{{vm.widget7.subtitle}}</div>
                     </div>
 
