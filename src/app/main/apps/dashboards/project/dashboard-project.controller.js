@@ -547,6 +547,54 @@
             }
         };
 
+        vm.weatherWidget = {
+            locations      : {
+                'NewYork': {
+                    name           : 'New York',
+                    icon           : 'icon-weather-pouring',
+                    temp           : {
+                        C: '22',
+                        F: '72'
+                    },
+                    windSpeed      : {
+                        KMH: 12,
+                        MPH: 7.5
+                    },
+                    windDirection  : 'NW',
+                    rainProbability: '98%',
+                    next3Days      : [
+                        {
+                            name: 'Sunday',
+                            icon: 'icon-weather-pouring',
+                            temp: {
+                                C: '21',
+                                F: '70'
+                            }
+                        },
+                        {
+                            name: 'Sunday',
+                            icon: 'icon-weather-pouring',
+                            temp: {
+                                C: '19',
+                                F: '66'
+                            }
+                        },
+                        {
+                            name: 'Tuesday',
+                            icon: 'icon-weather-partlycloudy',
+                            temp: {
+                                C: '24',
+                                F: '75'
+                            }
+                        }
+                    ]
+                }
+            },
+            currentLocation: 'NewYork',
+            tempUnit       : 'C',
+            speedUnit      : 'KMH'
+        };
+
         // Methods
         vm.toggleSidenav = toggleSidenav;
         vm.selectProject = selectProject;

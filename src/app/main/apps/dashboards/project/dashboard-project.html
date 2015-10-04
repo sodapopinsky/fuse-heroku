@@ -274,7 +274,8 @@
                                 </div>
 
                                 <div class="pb-24" layout="column" layout-align="center center">
-                                    <div class="fg-blue-grey font-size-72 font-weight-500">{{vm.widget4.data.count}}</div>
+                                    <div class="fg-blue-grey font-size-72 font-weight-500">{{vm.widget4.data.count}}
+                                    </div>
                                     <div class="h3 secondary-text">{{vm.widget4.data.label}}</div>
                                 </div>
 
@@ -738,7 +739,7 @@
                 <!-- Front -->
                 <ms-widget-front flex>
 
-                    <div class="p-16 bg-teal-600 fg-white" layout="row" layout-align="space-between center">
+                    <div class="p-16" layout="row" layout-align="space-between center">
                         <span class="h3">{{vm.nowWidget.now.weekDay}}, {{vm.nowWidget.now.hour}}:{{vm.nowWidget.now.minute}}:{{vm.nowWidget.now.second}}</span>
 
                         <md-menu>
@@ -765,12 +766,12 @@
                         </md-menu>
                     </div>
 
-                    <div class="p-16 bg-teal fg-white" layout="column" layout-align="center center">
+                    <div class="p-16" layout="column" layout-align="center center">
                         <div class="h1 secondary-text">
                             <span>{{vm.nowWidget.now.month}}</span>
                         </div>
 
-                        <div class="md-display-4 font-weight-400">
+                        <div class="md-display-4 secondary-text font-weight-400">
                             {{vm.nowWidget.now.day}}
                         </div>
 
@@ -786,6 +787,97 @@
 
             </ms-widget>
             <!-- / NOW WIDGET -->
+
+
+            <!-- WEATHER WIDGET -->
+            <ms-widget class="sidenav-widget" layout="column" flex="100">
+
+                <!-- Front -->
+                <ms-widget-front flex>
+
+                    <div class="p-16" layout="row" layout-align="space-between center">
+                        <span class="h4">
+                            <md-icon md-font-icon="icon-map-marker" class="icon mr-8"></md-icon>
+                            {{vm.weatherWidget.locations[vm.weatherWidget.currentLocation].name}}
+                        </span>
+
+                        <md-menu>
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu()" md-menu-origin
+                                       md-menu-align-target
+                                       aria-label="Options">
+                                <md-icon md-font-icon="icon-dots-vertical" class="icon"></md-icon>
+                            </md-button>
+
+                            <md-menu-content width="3">
+                                <md-menu-item>
+                                    <md-button ng-click="vm.nowWidget.dummyFunction()">
+                                        <md-icon md-font-icon="icon-refresh" class="icon"></md-icon>
+                                        Refresh
+                                    </md-button>
+                                </md-menu-item>
+                                <md-menu-item>
+                                    <md-button ng-click="vm.nowWidget.dummyFunction()">
+                                        <md-icon md-font-icon="icon-cog" class="icon"></md-icon>
+                                        Settings
+                                    </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </div>
+
+                    <div class="p-16 pb-32" layout="column" layout-align="center center">
+                        <div layout="row" layout-align="center center">
+                            <md-icon
+                                    md-font-icon="{{vm.weatherWidget.locations[vm.weatherWidget.currentLocation].icon}}"
+                                    class="icon s56 mr-16"></md-icon>
+                            <span class="md-display-3 font-weight-300 secondary-text">
+                                {{vm.weatherWidget.locations[vm.weatherWidget.currentLocation].temp[vm.weatherWidget.tempUnit]}}
+                            </span>
+                            <span class="font-size-56 font-weight-300 hint-text text-super ml-8">&deg;</span>
+                            <span class="md-display-3 font-weight-300 hint-text">{{vm.weatherWidget.tempUnit}}</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-grey-300 pv-16 ph-24" layout="row" layout-align="space-between center">
+                        <div layout="row" layout-align="start center">
+                            <md-icon md-font-icon="icon-weather-windy" class="icon mr-8"></md-icon>
+                            <span>
+                                {{vm.weatherWidget.locations[vm.weatherWidget.currentLocation].windSpeed[vm.weatherWidget.speedUnit]}}
+                            </span>
+                            <span class="secondary-text"> {{vm.weatherWidget.speedUnit}}</span>
+                        </div>
+
+                        <div layout="row" layout-align="start center">
+                            <md-icon md-font-icon="icon-compass-outline" class="icon mr-8"></md-icon>
+                            <span>{{vm.weatherWidget.locations[vm.weatherWidget.currentLocation].windDirection}}</span>
+                        </div>
+
+                        <div layout="row" layout-align="start center">
+                            <md-icon md-font-icon="icon-umbrella" class="icon mr-8"></md-icon>
+                            <span>{{vm.weatherWidget.locations[vm.weatherWidget.currentLocation].rainProbability}}</span>
+                        </div>
+                    </div>
+
+                    <div class="pv-16">
+                        <div class="pv-16 ph-24" layout="row" layout-align="space-between center"
+                             ng-repeat="day in vm.weatherWidget.locations[vm.weatherWidget.currentLocation].next3Days">
+                            <span class="h4">{{day.name}}</span>
+                            <div layout="row" layout-align="start center">
+                                <md-icon class="mr-16" md-font-icon="{{day.icon}}" class="icon"></md-icon>
+                                <span class="h2">{{day.temp[vm.weatherWidget.tempUnit]}}</span>
+                                <span class="h2 font-weight-300 secondary-text text-super">&deg;</span>
+                                <span class="h2 font-weight-300 secondary-text">{{vm.weatherWidget.tempUnit}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <md-divider></md-divider>
+
+                </ms-widget-front>
+                <!-- / Front -->
+
+            </ms-widget>
+            <!-- / WEATHER WIDGET -->
 
         </div>
         <!-- / WIDGET GROUP -->
