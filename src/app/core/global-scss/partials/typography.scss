@@ -13,6 +13,10 @@ body {
     font-size: $font-size-base;
 }
 
+html, body {
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto; }
+
 form {
     font-size: 1.5rem;
 }
