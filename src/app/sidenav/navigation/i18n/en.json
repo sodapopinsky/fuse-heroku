@@ -1,8 +1,9 @@
 {
     "NAVIGATION": {
         "DASHBOARDS": "Dashboards",
-        "DASHBOARDV1": "Dashboard v1",
-        "DASHBOARDV2": "Dashboard v2",
+        "PROJECT_DASHBOARD": "Project",
+        "SERVER_DASHBOARD": "Server",
+        "CONTENT_MANAGEMENT_DASHBOARD": "Content Management",
         "CALENDAR": "Calendar",
         "MAIL": "Mail",
         "FILE_MANAGER": "File Manager",

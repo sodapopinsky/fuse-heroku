@@ -4,8 +4,9 @@
 
     angular
         .module('app.dashboards', [
-            'app.dashboard-v1',
-            'app.dashboard-v2'
+            'app.dashboard-project',
+            'app.dashboard-server',
+            'app.dashboard-content-management'
         ]);
 
 })();

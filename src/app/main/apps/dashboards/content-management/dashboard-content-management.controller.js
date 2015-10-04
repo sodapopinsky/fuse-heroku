@@ -2,16 +2,16 @@
 {
     'use strict';
 
-    angular.module('app.dashboard-v2')
-        .controller('DashboardV2Controller', DashboardV2Controller);
+    angular.module('app.dashboard-content-management')
+        .controller('DashboardContentManagementController', DashboardContentManagementController);
 
     /** @ngInject */
-    function DashboardV2Controller()
+    function DashboardContentManagementController()
     {
         var vm = this;
 
         // Data
-        vm.colors = ['md-blue-bg', 'md-blue-grey-bg', 'md-orange-bg', 'md-pink-bg', 'md-purple-bg'];
+        vm.colors = ['bg-blue', 'bg-blue-grey', 'bg-orange', 'bg-pink', 'bg-purple'];
 
         vm.widget1 = {
             title   : 'ANALYTICS',

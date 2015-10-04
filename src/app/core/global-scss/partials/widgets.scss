@@ -10,6 +10,13 @@
     .ms-widget-back {
         box-shadow: $whiteframe-shadow-1dp;
     }
+
+    &.sidenav-widget {
+
+        .ms-widget-front,
+        .ms-widget-back {
+            box-shadow: none;
+        }
     }
 
     // Flip to front button
@@ -22,23 +29,5 @@
     // ie fix
     .c3 {
         height: 100%;
-    }
-
-}
-
-/*----------------------------------------------------------------*/
-/*  Stat Widget
-/*----------------------------------------------------------------*/
-.ms-widget {
-
-    &.stat-widget {
-
-        .ms-widget-front {
-
-        }
-
-        .ms-widget-back {
-
-        }
     }
 }
