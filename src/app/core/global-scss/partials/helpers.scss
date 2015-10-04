@@ -93,12 +93,12 @@ img {
         padding-right: #{($i * 5) + 'px'};
     }
 
-    .padding-bottom-#{$i * 5}
+    .padding-bottom-#{$i * 5},
     .pb-#{$i * 5} {
         padding-bottom: #{($i * 5) + 'px'};
     }
 
-    .padding-left-#{$i * 5}
+    .padding-left-#{$i * 5},
     .pl-#{$i * 5} {
         padding-left: #{($i * 5) + 'px'};
     }
@@ -134,12 +134,12 @@ img {
         padding-right: #{($i * 8) + 'px'};
     }
 
-    .padding-bottom-#{$i * 8}
+    .padding-bottom-#{$i * 8},
     .pb-#{$i * 8} {
         padding-bottom: #{($i * 8) + 'px'};
     }
 
-    .padding-left-#{$i * 8}
+    .padding-left-#{$i * 8},
     .pl-#{$i * 8} {
         padding-left: #{($i * 8) + 'px'};
     }

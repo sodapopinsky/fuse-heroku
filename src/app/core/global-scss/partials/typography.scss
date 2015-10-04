@@ -188,6 +188,22 @@ small {
     }
 }
 
+// Font size helpers
+@for $size from 1 through 15 {
+
+    .font-size-#{$size * 8} {
+        font-size: #{$size * 8}px;
+    }
+}
+
+// Line height helpers
+@for $lineHeight from 1 through 15 {
+
+    .line-height-#{$lineHeight * 8} {
+        line-height: #{$lineHeight * 8}px;
+    }
+}
+
 // Boxed text
 .text-boxed {
     border-radius: 2px;
