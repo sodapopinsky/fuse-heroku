@@ -8,13 +8,13 @@ i {
     height: 24px;
     line-height: 24px;
 
-    @for $size from 1 through 32 {
+    @for $size from 1 through 64 {
 
-        &.s#{$size * 8} {
-            font-size: #{($size * 8) + 'px'} !important;
-            width: #{($size * 8) + 'px'} !important;
-            height: #{($size * 8) + 'px'} !important;
-            line-height: #{($size * 8) + 'px'} !important;
+        &.s#{$size * 4} {
+            font-size: #{($size * 4) + 'px'} !important;
+            width: #{($size * 4) + 'px'} !important;
+            height: #{($size * 4) + 'px'} !important;
+            line-height: #{($size * 4) + 'px'} !important;
         }
     }
 }
