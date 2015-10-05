@@ -116,44 +116,47 @@ img {
     }
 }
 
-// Multiples of 8, Max: 96, Excluding 0
+// Multiples of 8, Max: 96, Excluding 0 and multiples of 5
 @for $i from 1 through 12 {
 
-    .padding-#{$i * 8},
-    .p-#{$i * 8} {
-        padding: #{($i * 8) + 'px'};
-    }
+    @if (($i * 8) % 5 != 0) {
 
-    .padding-top-#{$i * 8},
-    .pt-#{$i * 8} {
-        padding-top: #{($i * 8) + 'px'};
-    }
+        .padding-#{$i * 8},
+        .p-#{$i * 8} {
+            padding: #{($i * 8) + 'px'};
+        }
 
-    .padding-right-#{$i * 8},
-    .pr-#{$i * 8} {
-        padding-right: #{($i * 8) + 'px'};
-    }
+        .padding-top-#{$i * 8},
+        .pt-#{$i * 8} {
+            padding-top: #{($i * 8) + 'px'};
+        }
 
-    .padding-bottom-#{$i * 8},
-    .pb-#{$i * 8} {
-        padding-bottom: #{($i * 8) + 'px'};
-    }
+        .padding-right-#{$i * 8},
+        .pr-#{$i * 8} {
+            padding-right: #{($i * 8) + 'px'};
+        }
 
-    .padding-left-#{$i * 8},
-    .pl-#{$i * 8} {
-        padding-left: #{($i * 8) + 'px'};
-    }
+        .padding-bottom-#{$i * 8},
+        .pb-#{$i * 8} {
+            padding-bottom: #{($i * 8) + 'px'};
+        }
 
-    .padding-horizontal-#{$i * 8},
-    .ph-#{$i * 8} {
-        padding-left: #{($i * 8) + 'px'};
-        padding-right: #{($i * 8) + 'px'};
-    }
+        .padding-left-#{$i * 8},
+        .pl-#{$i * 8} {
+            padding-left: #{($i * 8) + 'px'};
+        }
 
-    .padding-vertical-#{$i * 8},
-    .pv-#{$i * 8} {
-        padding-top: #{($i * 8) + 'px'};
-        padding-bottom: #{($i * 8) + 'px'};
+        .padding-horizontal-#{$i * 8},
+        .ph-#{$i * 8} {
+            padding-left: #{($i * 8) + 'px'};
+            padding-right: #{($i * 8) + 'px'};
+        }
+
+        .padding-vertical-#{$i * 8},
+        .pv-#{$i * 8} {
+            padding-top: #{($i * 8) + 'px'};
+            padding-bottom: #{($i * 8) + 'px'};
+        }
     }
 }
 
@@ -199,50 +202,53 @@ img {
     }
 }
 
-// Multiples of 8, Max: 96, Excluding 0
+// Multiples of 8, Max: 96, Excluding 0 and multiples of 5
 @for $i from 1 through 12 {
 
-    .margin-#{$i * 8},
-    .m-#{$i * 8} {
-        margin: #{($i * 8) + 'px'};
-    }
+    @if (($i * 8) % 5 != 0) {
 
-    .margin-top-#{$i * 8},
-    .mt-#{$i * 8} {
-        margin-top: #{($i * 8) + 'px'};
-    }
+        .margin-#{$i * 8},
+        .m-#{$i * 8} {
+            margin: #{($i * 8) + 'px'};
+        }
 
-    .margin-right-#{$i * 8},
-    .mr-#{$i * 8} {
-        margin-right: #{($i * 8) + 'px'};
-    }
+        .margin-top-#{$i * 8},
+        .mt-#{$i * 8} {
+            margin-top: #{($i * 8) + 'px'};
+        }
 
-    .margin-bottom-#{$i * 8},
-    .mb-#{$i * 8} {
-        margin-bottom: #{($i * 8) + 'px'};
-    }
+        .margin-right-#{$i * 8},
+        .mr-#{$i * 8} {
+            margin-right: #{($i * 8) + 'px'};
+        }
 
-    .margin-left-#{$i * 8},
-    .ml-#{$i * 8} {
-        margin-left: #{($i * 8) + 'px'};
-    }
+        .margin-bottom-#{$i * 8},
+        .mb-#{$i * 8} {
+            margin-bottom: #{($i * 8) + 'px'};
+        }
 
-    .margin-horizontal-#{$i * 8},
-    .mh-#{$i * 8} {
-        margin-left: #{($i * 8) + 'px'};
-        margin-right: #{($i * 8) + 'px'};
-    }
+        .margin-left-#{$i * 8},
+        .ml-#{$i * 8} {
+            margin-left: #{($i * 8) + 'px'};
+        }
 
-    .margin-vertical-#{$i * 8},
-    .mv-#{$i * 8} {
-        margin-top: #{($i * 8) + 'px'};
-        margin-bottom: #{($i * 8) + 'px'};
+        .margin-horizontal-#{$i * 8},
+        .mh-#{$i * 8} {
+            margin-left: #{($i * 8) + 'px'};
+            margin-right: #{($i * 8) + 'px'};
+        }
+
+        .margin-vertical-#{$i * 8},
+        .mv-#{$i * 8} {
+            margin-top: #{($i * 8) + 'px'};
+            margin-bottom: #{($i * 8) + 'px'};
+        }
     }
 }
 
 // Height and width helpers
 // Multiples of 5, Max: 500
-@for $i from 1 through 100 {
+@for $i from 0 through 100 {
 
     .height-#{$i * 5},
     .h-#{$i * 5} {
@@ -253,9 +259,31 @@ img {
 
     .width-#{$i * 5},
     .w-#{$i * 5} {
-        height: #{($i * 5) + 'px'} !important;
-        min-height: #{($i * 5) + 'px'} !important;
-        max-height: #{($i * 5) + 'px'} !important;
+        width: #{($i * 5) + 'px'} !important;
+        min-width: #{($i * 5) + 'px'} !important;
+        max-width: #{($i * 5) + 'px'} !important;
+    }
+}
+
+// Height and width helpers
+// Multiples of 8, Max: 800, Excluding 0 and multiples of 5
+@for $i from 1 through 100 {
+
+    @if (($i * 8) % 5 != 0) {
+
+        .height-#{$i * 8},
+        .h-#{$i * 8} {
+            height: #{($i * 8) + 'px'} !important;
+            min-height: #{($i * 8) + 'px'} !important;
+            max-height: #{($i * 8) + 'px'} !important;
+        }
+
+        .width-#{$i * 8},
+        .w-#{$i * 8} {
+            width: #{($i * 8) + 'px'} !important;
+            min-width: #{($i * 8) + 'px'} !important;
+            max-width: #{($i * 8) + 'px'} !important;
+        }
     }
 }
 
@@ -297,4 +325,12 @@ $border-style: 1px solid rgba(0, 0, 0, 0.12);
 .bv {
     border-top: $border-style;
     border-bottom: $border-style;
+}
+
+// Border-radius helpers
+@for $i from 1 through 12 {
+
+    .brad-#{$i} {
+        border-radius: #{$i + 'px'}
+    }
 }
