@@ -224,7 +224,7 @@ $navigationFoldedWidth: 64px;
 }
 
 // Folded navigation
-@media only screen and (min-width: $breakpoint-md) {
+@media only screen and (min-width: $layout-breakpoint-md) {
 
     body {
 

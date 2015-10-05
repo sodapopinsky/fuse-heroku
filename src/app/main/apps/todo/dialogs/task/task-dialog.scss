@@ -103,7 +103,7 @@ md-dialog {
 }
 
 // RESPONSIVE
-@media screen and (max-width: $breakpoint-md) {
+@media screen and (max-width: $layout-breakpoint-md) {
 
     md-dialog {
 
@@ -113,7 +113,7 @@ md-dialog {
     }
 }
 
-@media screen and (max-width: $breakpoint-sm) {
+@media screen and (max-width: $layout-breakpoint-sm) {
 
     md-dialog {
 

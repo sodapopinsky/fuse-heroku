@@ -73,7 +73,7 @@
 }
 
 // RESPONSIVE
-@media screen and (max-width: $breakpoint-lg) {
+@media screen and (max-width: $layout-breakpoint-lg) {
 
     #mail {
 
@@ -141,7 +141,7 @@
     }
 }
 
-@media screen and (max-width: $breakpoint-md) {
+@media screen and (max-width: $layout-breakpoint-md) {
 
     #mail {
 
