@@ -26,7 +26,6 @@
             'app.mail',
             'app.file-manager',
             'app.todo',
-            'app.gantt-chart',
 
             // Pages
             'app.pages.auth.login',
