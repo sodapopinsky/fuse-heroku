@@ -6,7 +6,7 @@
         .controller('GanttChartController', GanttChartController);
 
     /** @ngInject */
-    function GanttChartController($scope, $timeout, $log, ganttUtils, GanttObjectModel, ganttMouseOffset, ganttDebounce, moment, Tasks, Timespans, $window, $mdSidenav, api)
+    function GanttChartController($mdDialog, $document, $animate, $scope, $timeout, $log, ganttUtils, GanttObjectModel, ganttMouseOffset, ganttDebounce, moment, Tasks, Timespans, $window, $mdSidenav, api)
     {
         var vm = this;
         var objectModel;
@@ -20,12 +20,13 @@
             maxHeight               : 300,
             width                   : true,
             zoom                    : 1,
+            rowSortable             : true,
             columns                 : ['model.name', 'from', 'to'],
             treeTableColumns        : ['from', 'to'],
             columnsHeaders          : {
                 'model.name': 'Name',
-                'from'      : 'From',
-                'to'        : 'To'
+                'from'      : 'Start Time',
+                'to'        : 'End Time'
             },
             columnsClasses          : {
                 'model.name': 'gantt-column-name',
@@ -52,13 +53,14 @@
             taskOutOfRange          : 'truncate',
             fromDate                : undefined,
             toDate                  : undefined,
-            rowContent              : '{{row.model.name}}',
+            rowContentEnabled       :true,
+            rowContent              : '<md-button class="md-icon-button" aria-label="minus" ng-click="scope.vm.handleRowIconClick(row.model)"\n           ng-click="vm.options.zoom  = vm.options.zoom - 0.1">\n    <md-icon md-font-icon="icon-pencil" class="s16"></md-icon>\n</md-button>\n{{row.model.name}}',
             taskContent             : '{{task.model.name}}',
             allowSideResizing       : true,
             labelsEnabled           : true,
             currentDate             : 'line',
             currentDateValue        : new Date(2013, 9, 23, 11, 20, 0),
-            draw                    : false,
+            draw                    : true,
             readOnly                : false,
             groupDisplayMode        : 'group',
             filterTask              : '',
@@ -117,90 +119,91 @@
                     color: '#AA8833' // Color of the task in HEX format (Optional).
                 };
             },
-            api                     : function (api)
+            api                     : function (ganttApi)
             {
                 // API Object is used to control methods and events from angular-gantt.
-                vm.api = api;
+                vm.api = ganttApi;
 
-                api.core.on.ready($scope, function ()
+                vm.api.core.on.ready($scope, function ()
                 {
                     // Log various events to console
-                    api.scroll.on.scroll($scope, logScrollEvent);
-                    api.core.on.ready($scope, logReadyEvent);
+                    vm.api.scroll.on.scroll($scope, logScrollEvent);
+                    vm.api.core.on.ready($scope, logReadyEvent);
 
-                    api.data.on.remove($scope, addEventName('data.on.remove', logDataEvent));
-                    api.data.on.load($scope, addEventName('data.on.load', logDataEvent));
-                    api.data.on.clear($scope, addEventName('data.on.clear', logDataEvent));
+                    vm.api.data.on.remove($scope, addEventName('data.on.remove', logDataEvent));
+                    vm.api.data.on.load($scope, addEventName('data.on.load', logDataEvent));
+                    vm.api.data.on.clear($scope, addEventName('data.on.clear', logDataEvent));
 
-                    api.tasks.on.add($scope, addEventName('tasks.on.add', logTaskEvent));
-                    api.tasks.on.change($scope, addEventName('tasks.on.change', logTaskEvent));
-                    api.tasks.on.rowChange($scope, addEventName('tasks.on.rowChange', logTaskEvent));
-                    api.tasks.on.remove($scope, addEventName('tasks.on.remove', logTaskEvent));
+                    vm.api.tasks.on.add($scope, addEventName('tasks.on.add', logTaskEvent));
+                    vm.api.tasks.on.change($scope, addEventName('tasks.on.change', logTaskEvent));
+                    vm.api.tasks.on.rowChange($scope, addEventName('tasks.on.rowChange', logTaskEvent));
+                    vm.api.tasks.on.remove($scope, addEventName('tasks.on.remove', logTaskEvent));
 
-                    if ( api.tasks.on.moveBegin )
+                    if ( vm.api.tasks.on.moveBegin )
                     {
-                        api.tasks.on.moveBegin($scope, addEventName('tasks.on.moveBegin', logTaskEvent));
-                        //api.tasks.on.move($scope, addEventName('tasks.on.move', logTaskEvent));
-                        api.tasks.on.moveEnd($scope, addEventName('tasks.on.moveEnd', logTaskEvent));
+                        vm.api.tasks.on.moveBegin($scope, addEventName('tasks.on.moveBegin', logTaskEvent));
+                        //vm.api.tasks.on.move($scope, addEventName('tasks.on.move', logTaskEvent));
+                        vm.api.tasks.on.moveEnd($scope, addEventName('tasks.on.moveEnd', logTaskEvent));
 
-                        api.tasks.on.resizeBegin($scope, addEventName('tasks.on.resizeBegin', logTaskEvent));
-                        //api.tasks.on.resize($scope, addEventName('tasks.on.resize', logTaskEvent));
-                        api.tasks.on.resizeEnd($scope, addEventName('tasks.on.resizeEnd', logTaskEvent));
+                        vm.api.tasks.on.resizeBegin($scope, addEventName('tasks.on.resizeBegin', logTaskEvent));
+                        //vm.api.tasks.on.resize($scope, addEventName('tasks.on.resize', logTaskEvent));
+                        vm.api.tasks.on.resizeEnd($scope, addEventName('tasks.on.resizeEnd', logTaskEvent));
                     }
 
-                    api.rows.on.add($scope, addEventName('rows.on.add', logRowEvent));
-                    api.rows.on.change($scope, addEventName('rows.on.change', logRowEvent));
-                    api.rows.on.move($scope, addEventName('rows.on.move', logRowEvent));
-                    api.rows.on.remove($scope, addEventName('rows.on.remove', logRowEvent));
+                    vm.api.rows.on.add($scope, addEventName('rows.on.add', logRowEvent));
+                    vm.api.rows.on.change($scope, addEventName('rows.on.change', logRowEvent));
+                    vm.api.rows.on.move($scope, addEventName('rows.on.move', logRowEvent));
+                    vm.api.rows.on.remove($scope, addEventName('rows.on.remove', logRowEvent));
 
-                    api.side.on.resizeBegin($scope, addEventName('labels.on.resizeBegin', logLabelsEvent));
-                    //api.side.on.resize($scope, addEventName('labels.on.resize', logLabelsEvent));
-                    api.side.on.resizeEnd($scope, addEventName('labels.on.resizeEnd', logLabelsEvent));
+                    vm.api.side.on.resizeBegin($scope, addEventName('labels.on.resizeBegin', logLabelsEvent));
+                    //vm.api.side.on.resize($scope, addEventName('labels.on.resize', logLabelsEvent));
+                    vm.api.side.on.resizeEnd($scope, addEventName('labels.on.resizeEnd', logLabelsEvent));
 
-                    api.timespans.on.add($scope, addEventName('timespans.on.add', logTimespanEvent));
-                    api.columns.on.generate($scope, logColumnsGenerateEvent);
+                    vm.api.timespans.on.add($scope, addEventName('timespans.on.add', logTimespanEvent));
+                    vm.api.columns.on.generate($scope, logColumnsGenerateEvent);
 
-                    api.rows.on.filter($scope, logRowsFilterEvent);
-                    api.tasks.on.filter($scope, logTasksFilterEvent);
+                    vm.api.rows.on.filter($scope, logRowsFilterEvent);
+                    vm.api.tasks.on.filter($scope, logTasksFilterEvent);
 
-                    api.data.on.change($scope, function (newData)
+                    vm.api.data.on.change($scope, function (newData)
                     {
-                        if ( dataToRemove === undefined )
-                        {
-                            dataToRemove = [
-                                {'id': newData.data[2].id}, // Remove Kickoff row
-                                {
-                                    'id'   : newData.data[0].id,
-                                    'tasks': [
-                                        {'id': newData.data[0].tasks[0].id},
-                                        {'id': newData.data[0].tasks[3].id}
-                                    ]
-                                }, // Remove some Milestones
-                                {
-                                    'id'   : newData.data[6].id,
-                                    'tasks': [
-                                        {'id': newData.data[6].tasks[0].id}
-                                    ]
-                                } // Remove order basket from Sprint 2
-                            ];
-                        }
+                        /* if ( dataToRemove === undefined )
+                         {
+                         dataToRemove = [
+                         {'id': newData.data[2].id}, // Remove Kickoff row
+                         {
+                         'id'   : newData.data[0].id,
+                         'tasks': [
+                         {'id': newData.data[0].tasks[0].id},
+                         {'id': newData.data[0].tasks[3].id}
+                         ]
+                         }, // Remove some Milestones
+                         {
+                         'id'   : newData.data[6].id,
+                         'tasks': [
+                         {'id': newData.data[6].tasks[0].id}
+                         ]
+                         } // Remove order basket from Sprint 2
+                         ];
+                         }*/
                     });
 
                     // When gantt is ready, load data.
                     // `data` attribute could have been used too.
                     vm.load();
-
+                    var count = 0;
                     // Add some DOM events
-                    api.directives.on.new($scope, function (directiveName, directiveScope, element)
+                    vm.api.directives.on.new($scope, function (directiveName, directiveScope, element)
                     {
+
                         if ( directiveName === 'ganttTask' )
                         {
-                            element.bind('click', function (event)
+                            element.on('click', function (event)
                             {
                                 event.stopPropagation();
                                 logTaskEvent('task-click', directiveScope.task);
                             });
-                            element.bind('mousedown touchstart', function (event)
+                            element.on('mousedown touchstart', function (event)
                             {
                                 event.stopPropagation();
                                 vm.live.row = directiveScope.task.row.model;
@@ -217,25 +220,27 @@
                         }
                         else if ( directiveName === 'ganttRow' )
                         {
-                            element.bind('click', function (event)
+                            element.on('click', function (event)
                             {
                                 event.stopPropagation();
+
                                 logRowEvent('row-click', directiveScope.row);
                             });
-                            element.bind('mousedown touchstart', function (event)
+                            element.on('mousedown touchstart', function (event)
                             {
                                 event.stopPropagation();
+
                                 vm.live.row = directiveScope.row.model;
                                 $scope.$digest();
                             });
                         }
                         else if ( directiveName === 'ganttRowLabel' )
                         {
-                            element.bind('click', function ()
+                            element.on('click', function ()
                             {
                                 logRowEvent('row-label-click', directiveScope.row);
                             });
-                            element.bind('mousedown touchstart', function ()
+                            element.on('mousedown touchstart', function ()
                             {
                                 vm.live.row = directiveScope.row.model;
                                 $scope.$digest();
@@ -243,12 +248,12 @@
                         }
                     });
 
-                    api.tasks.on.rowChange($scope, function (task)
+                    vm.api.tasks.on.rowChange($scope, function (task)
                     {
                         vm.live.row = task.row.model;
                     });
 
-                    objectModel = new GanttObjectModel(api);
+                    objectModel = new GanttObjectModel(vm.api);
                 });
             }
         };
@@ -258,10 +263,32 @@
         // Methods
         vm.toggleSidenav = toggleSidenav;
         vm.search = search;
+        vm.setSortMode = setSortMode;
+        vm.addRow = addRow;
         //////////
 
         // Set Gantt Chart height for init
         calculateHeight();
+
+        /**
+         * Add New Row
+         */
+        function addRow(ev, row)
+        {
+            $mdDialog.show({
+                controller         : 'RowDialogController',
+                controllerAs       : 'vm',
+                templateUrl        : 'app/main/apps/gantt-chart/dialogs/row/row-dialog.html',
+                parent             : angular.element($document.body),
+                targetEvent        : ev,
+                clickOutsideToClose: true,
+                locals             : {
+                    row : row,
+                    data: vm.data
+                }
+            });
+
+        }
 
         /**
          * Toggle sidenav
@@ -289,6 +316,19 @@
             }
         }
 
+        function setSortMode(mode)
+        {
+            vm.options.sortMode = mode;
+            if ( mode === undefined )
+            {
+                vm.options.rowSortable = true;
+            }
+            else
+            {
+                vm.options.rowSortable = false;
+            }
+        }
+
         vm.handleTaskIconClick = function (taskModel)
         {
             alert('Icon from ' + taskModel.name + ' task has been clicked.');
@@ -296,7 +336,7 @@
 
         vm.handleRowIconClick = function (rowModel)
         {
-            alert('Icon from ' + rowModel.name + ' row has been clicked.');
+            console.log('Icon from ' + rowModel.name + ' row has been clicked.');
         };
 
         vm.expandAll = function ()
@@ -366,6 +406,11 @@
             vm.data = Tasks.data;
             vm.timespans = Timespans.data;
             dataToRemove = undefined;
+
+            // Fix for Angular-chart issue
+            $animate.enabled(true);
+            $animate.enabled($('#gantt'), false);
+
         };
 
         vm.reload = function ()
@@ -503,7 +548,7 @@
         {
             if ( date !== undefined )
             {
-                $log.info('[Event] api.on.scroll: ' + left + ', ' + (date === undefined ? 'undefined' : date.format()) + ', ' + direction);
+                $log.info('[Event] vm.api.on.scroll: ' + left + ', ' + (date === undefined ? 'undefined' : date.format()) + ', ' + direction);
             }
         };
 

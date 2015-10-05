@@ -102,8 +102,8 @@
 
                 <div layout="row" layout-align="start center">
 
-                    <md-button class="md-icon-button add-task-button" aria-label="Add Task" translate
-                               translate-attr-aria-label="GANTT.ADD_TASK">
+                    <md-button ng-click="vm.addRow($event)" class="md-icon-button add-row-button" aria-label="Add Row" translate
+                               translate-attr-aria-label="GANTT.ADD_ROW">
                         <md-icon md-font-icon="icon-plus"></md-icon>
                     </md-button>
 
@@ -143,7 +143,7 @@
                         <md-option value="year" translate="GANTT.YEAR">year</md-option>
                     </md-select>
 
-                    <div class="divider-vertical"></div>
+                 <!--   <div class="divider-vertical"></div>
                     <md-menu>
                         <md-button class="md-icon-button"
                                    ng-click="$mdOpenMenu($event)"
@@ -154,34 +154,34 @@
                         <md-menu-content width="3">
                             <md-menu-item>
                                 <md-button aria-label="disabled"
-                                           ng-click="vm.options.sortMode = ''"
+                                           ng-click="vm.setSortMode(undefined)"
                                            translate="GANTT.DISABLED" translate-attr-aria-label="GANTT.DISABLED">
                                     disabled
                                 </md-button>
                             </md-menu-item>
                             <md-menu-item>
                                 <md-button aria-label="disabled"
-                                           ng-click="vm.options.sortMode = 'from'"
+                                           ng-click="vm.setSortMode('from')"
                                            translate="GANTT.FROM" translate-attr-aria-label="GANTT.FROM">
                                     from
                                 </md-button>
                             </md-menu-item>
                             <md-menu-item>
                                 <md-button aria-label="disabled"
-                                           ng-click="vm.options.sortMode = 'to'"
+                                           ng-click="vm.setSortMode('to')"
                                            translate="GANTT.TO" translate-attr-aria-label="GANTT.TO">
                                     to
                                 </md-button>
                             </md-menu-item>
                             <md-menu-item>
                                 <md-button aria-label="disabled"
-                                           ng-click="vm.options.sortMode = 'name'"
+                                           ng-click="vm.setSortMode('name')"
                                            translate="GANTT.NAME" translate-attr-aria-label="GANTT.NAME">
                                     name
                                 </md-button>
                             </md-menu-item>
                         </md-menu-content>
-                    </md-menu>
+                    </md-menu>-->
 
                 </div>
             </div>
@@ -190,6 +190,7 @@
             <!-- CONTENT -->
             <md-content id="chart-container" class="content" flex layout="column">
                 <div flex layout-fill
+                     id="gantt"
                      gantt
                      data="vm.data"
                      timespans="vm.timespans"
@@ -247,7 +248,6 @@
                 </div>
             </md-content>
             <!-- / CONTENT -->
-
         </div>
         <!-- / CONTENT CARD -->
 
