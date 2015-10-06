@@ -281,13 +281,14 @@
             },
             currentRange        : 'TW',
             miniLineChartOptions: {
-                scaleOverride  : true,
-                scaleSteps     : 9,
-                scaleStepWidth : 1,
-                scaleStartValue: 0,
-                showScale      : false,
-                pointDot       : false,
-                showTooltips   : false
+                maintainAspectRatio: false,
+                scaleOverride      : true,
+                scaleSteps         : 9,
+                scaleStepWidth     : 1,
+                scaleStartValue    : 0,
+                showScale          : false,
+                pointDot           : false,
+                showTooltips       : false
             }
         };
 
@@ -458,13 +459,14 @@
             },
             currentRange        : 'TW',
             miniLineChartOptions: {
-                scaleOverride  : true,
-                scaleSteps     : 9,
-                scaleStepWidth : 1,
-                scaleStartValue: 0,
-                showScale      : false,
-                pointDot       : false,
-                showTooltips   : false
+                maintainAspectRatio: false,
+                scaleOverride      : true,
+                scaleSteps         : 9,
+                scaleStepWidth     : 1,
+                scaleStartValue    : 0,
+                showScale          : false,
+                pointDot           : false,
+                showTooltips       : false
             }
         };
 
