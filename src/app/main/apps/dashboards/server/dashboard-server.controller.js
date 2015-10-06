@@ -6,47 +6,132 @@
         .controller('DashboardServerController', DashboardServerController);
 
     /** @ngInject */
-    function DashboardServerController(fuseTheming)
+    function DashboardServerController($scope, $interval, fuseTheming)
     {
         var vm = this;
 
         // Data
         vm.widget1 = {
-            title        : 'WEEKLY TRANSACTIONS',
-            value        : 30342,
-            lastWeekValue: 30002,
-            lastWeekDiff : '+ 1,12%',
-            detail       : 'This is the back side. You can show detailed information here.'
+            memoryChartTitle: 'Memory Usage',
+            memoryChart     : {
+                data   : [
+                    [500, 700, 500, 700, 800, 500],
+                    [100, 400, 300, 400, 200, 300],
+                    [300, 100, 200, 200, 300, 400]
+                ],
+                series : ['Physical Memory', 'Virtual Memory', 'Swap'],
+                labels : ['30s', '25s', '20s', '15s', '10s', '5s'],
+                color  : ['#4caf50', '#3f51b5', '#ff5722'],
+                options: {
+                    datasetFill           : false,
+                    maintainAspectRatio   : false,
+                    scaleShowVerticalLines: false
+                }
+            },
+            cpuChartTitle   : 'Average CPU Usage',
+            cpuChart        : {
+                data   : [
+                    [72, 26, 51, 36, 66, 69, 50, 35, 49, 64, 37, 78, 54, 8, 52, 50, 56, 71, 31, 37, 15, 45, 35, 28, 7, 36, 7, 79, 12, 5]
+                ],
+                series : ['Average CPU Usage'],
+                labels : ['150s', '145s', '140s', '135s', '130s', '125s', '120s', '115s', '110s', '105s', '100s', '95s', '90s', '85s', '80s', '75s', '70s', '65s', '60s', '55s', '50s', '45s', '40s', '35s', '30s', '25s', '30s', '15s', '10s', '5s'],
+                color  : [
+                    {
+                        fillColor           : '#009688',
+                        strokeColor         : '#009688',
+                        pointColor          : '#009688',
+                        pointStrokeColor    : '#009688',
+                        pointHighlightFill  : '#009688',
+                        pointHighlightStroke: '#009688'
+                    }
+                ],
+                options: {
+                    animation: false,
+                    maintainAspectRatio   : false,
+                    scaleShowVerticalLines: false,
+                    scaleOverride      : true,
+                    scaleSteps         : 4,
+                    scaleStepWidth     : 30,
+                    scaleStartValue    : 0,
+                    pointDot              : false
+                }
+            }
         };
 
         vm.widget2 = {
-            title        : 'SALES QUOTA',
-            value        : 40,
-            lastWeekValue: 85,
-            lastWeekDiff : '- 45%',
-            detail       : 'This is the back side. You can show detailed information here.'
+            title : 'Storage',
+            value : {
+                used      : '74.2Gb',
+                total     : '110Gb',
+                percentage: 67.45,
+                lastWeek  : {
+                    used: '73.9Gb',
+                    diff: '+ 0.3Gb',
+                }
+            },
+            detail: 'This is the back side. You can show detailed information here.'
         };
 
         vm.widget3 = {
-            title   : 'BOUNCE RATE',
-            value   : 80,
-            detail  : 'This is the back side. You can show detailed information here.',
-            footnote: '50% lower than yesterday'
+            title : 'Bandwidth',
+            value : {
+                used      : '221Gb',
+                total     : '3.5Tb',
+                percentage: 6.31,
+                lastWeek  : {
+                    used: 38,
+                    diff: '+ 2%',
+                }
+            },
+            detail: 'This is the back side. You can show detailed information here.'
         };
 
         vm.widget4 = {
-            title        : 'STOCK COUNT',
-            value        : 5583,
-            lastWeekValue: 5583,
-            lastWeekDiff : '- 0%',
-            detail       : 'This is the back side. You can show detailed information here.',
-            footnote     : 'New items shipping tomorrow'
+            title   : 'Latency',
+            value   : '21ms',
+            chart   : {
+                data   : [
+                    [1, 4, 1, 2, 3, 4, 3, 2, 3, 1, 1, 4, 1, 2, 3, 4, 3, 2, 3, 1, 1, 4, 1, 2, 3]
+                ],
+                series : ['Latency'],
+                labels : ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+                color  : [
+                    {
+                        fillColor           : 'rgba(0, 0, 0, 0.27)',
+                        strokeColor         : 'rgba(255, 255, 255, 0)',
+                        pointColor          : 'rgba(255, 255, 255, 0)',
+                        pointStrokeColor    : 'rgba(255, 255, 255, 0)',
+                        pointHighlightFill  : 'rgba(255, 255, 255, 0)',
+                        pointHighlightStroke: 'rgba(255, 255, 255, 0)'
+                    }
+                ],
+                options: {
+                    animation          : false,
+                    maintainAspectRatio: false,
+                    scaleOverride      : true,
+                    scaleSteps         : 4,
+                    scaleStepWidth     : 1,
+                    scaleStartValue    : 0,
+                    showScale          : false,
+                    showTooltips       : false,
+                    pointDot           : false
+                }
+            },
+            footnote: 'Higher than average',
+            detail  : 'This is the back side. You can show detailed information here.'
         };
 
         vm.widget5 = {
+            title   : 'Cluster Load',
+            value   : '75%',
+            detail  : 'This is the back side. You can show detailed information here.',
+            footnote: 'Lower than average'
+        };
+
+        vm.widget55 = {
             title           : 'IO RATE',
             subtitle        : 'Showing last 5 hours',
-            chart   : {
+            chart           : {
                 columns: [
                     {
                         id    : 'Sales',
@@ -177,10 +262,10 @@
         };
 
         vm.widget7 = {
-            title   : 'Visitor Demographics',
-            tabs: [
+            title: 'Visitor Demographics',
+            tabs : [
                 {
-                    label: '30 days',
+                    label  : '30 days',
                     genders: [
                         {
                             title: 'Male',
@@ -195,7 +280,7 @@
                             value: 19
                         }
                     ],
-                    ages: [
+                    ages   : [
                         {
                             title: '25 - 34',
                             value: 32
@@ -211,7 +296,7 @@
                     ]
                 },
                 {
-                    label: '10 days',
+                    label  : '10 days',
                     genders: [
                         {
                             title: 'Male',
@@ -226,7 +311,7 @@
                             value: 19
                         }
                     ],
-                    ages: [
+                    ages   : [
                         {
                             title: '25 - 34',
                             value: 85
@@ -242,7 +327,7 @@
                     ]
                 },
                 {
-                    label: '1 day',
+                    label  : '1 day',
                     genders: [
                         {
                             title: 'Male',
@@ -257,7 +342,7 @@
                             value: 10
                         }
                     ],
-                    ages: [
+                    ages   : [
                         {
                             title: '25 - 34',
                             value: 17
@@ -279,7 +364,7 @@
         vm.widget8 = {
             title   : 'SALES',
             subtitle: 'Last 30 days',
-            chart           : {
+            chart   : {
                 columns: [
                     {
                         id    : 'Input',
@@ -302,23 +387,58 @@
         vm.widget9 = {
             title: 'ONLINE MEMBERS',
             value: 658,
-            icon: 'icon-account'
+            icon : 'icon-account'
         };
 
         vm.widget10 = {
             title: 'MEMBERS FOR PAST 30 DAYS',
             value: 55,
-            icon: 'icon-account-plus'
+            icon : 'icon-account-plus'
         };
 
         vm.widget11 = {
             title: 'TOTAL MEMBERS',
             value: 59962,
-            icon: 'icon-account-multiple'
+            icon : 'icon-account-multiple'
         };
+
+        // Methods
 
         //////////
 
+        function widget1Ticker(min, max)
+        {
+            var newVal = Math.floor(Math.random() * (max - min + 1)) + min;
+
+            vm.widget1.cpuChart.data[0].shift();
+            vm.widget1.cpuChart.data[0].push(newVal);
+        }
+
+        function widget4Ticker(min, max)
+        {
+            var newVal = Math.floor(Math.random() * (max - min + 1)) + min;
+
+            vm.widget4.value = parseInt(newVal + 20) + 'ms';
+            vm.widget4.chart.data[0].shift();
+            vm.widget4.chart.data[0].push(newVal);
+        }
+
+        var w1ticker = $interval(function ()
+        {
+            widget1Ticker(0, 100);
+        }, 5000);
+
+        var w4ticker = $interval(function ()
+        {
+            widget4Ticker(1, 4);
+        }, 1000);
+
+        // Cleanup
+        $scope.$on('$destroy', function ()
+        {
+            $interval.cancel(w1ticker);
+            $interval.cancel(w4ticker);
+        });
     }
 
 })();
