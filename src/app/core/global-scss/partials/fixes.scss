@@ -17,3 +17,10 @@ md-card > :not(md-card-content) img {
     height: inherit;
     height: initial;
 }
+
+// Date picker box-sizing Fix
+.md-datepicker-calendar-pane {
+    * {
+        box-sizing: initial;
+    }
+}
