@@ -10,12 +10,21 @@
 
     .todo-list-pane {
 
+        .angular-ui-tree-placeholder {
+            background: rgba(0, 0, 0, 0.06);
+            border: 1px dashed #CCCCCC;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 8px;
+        }
+
         .todo {
             position: relative;
 
             .todo-content {
                 padding: 16px;
-                border: 1px solid rgba(0, 0, 0, 0.12);
+                border: 1px solid rgba(0, 0, 0, 0.08);
                 text-transform: none;
                 cursor: pointer;
             }

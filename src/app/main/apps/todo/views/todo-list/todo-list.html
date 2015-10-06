@@ -3,16 +3,13 @@
     <ol ui-tree-nodes="" ng-model="vm.tasks">
         <li ng-include="'nodes_renderer.html'"
             ui-tree-node class="todo" ng-repeat="task in vm.tasks | filter: vm.search | filter: global.search"
-            md-ink-ripple
-            ng-click="vm.openTaskDialog($event, task)"
-            ng-class="{'starred': task.starred, 'selected': task.selected, 'checked': task.checked}"
-                >
+            ng-class="{'starred': task.starred, 'selected': task.selected, 'checked': task.checked}">
         </li>
     </ol>
 </div>
 <!-- Nested node template -->
 <script type="text/ng-template" id="nodes_renderer.html">
-    <div class="todo-content" layout="row" layout-align="start center">
+    <div class="todo-content" md-ink-ripple layout="row" layout-align="start center" ng-click="vm.openTaskDialog($event, task)">
         <i ui-tree-handle class="icon-cursor-move s18"></i>
         <md-checkbox class="checkbox" ng-checked="task.checked"
                      ng-click="vm.toggleCheck(task, $event)" aria-label="{{task.checked? 'Uncheck':'check'}}">
