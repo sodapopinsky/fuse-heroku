@@ -18,23 +18,23 @@
         vm.userStatusOptions = [
             {
                 'title': 'Online',
-                'icon' : 'icon-check-circle',
-                'color': '#7DBC00'
+                'icon' : 'icon-checkbox-marked-circle',
+                'color': '#4CAF50'
             },
             {
                 'title': 'Away',
                 'icon' : 'icon-clock',
-                'color': '#F9CE15'
+                'color': '#FFC107'
             },
             {
                 'title': 'Do not Disturb',
                 'icon' : 'icon-minus-circle',
-                'color': '#EB0615'
+                'color': '#F44336'
             },
             {
                 'title': 'Invisible',
                 'icon' : 'icon-checkbox-blank-circle-outline',
-                'color': '#d7d7d7'
+                'color': '#BDBDBD'
             },
             {
                 'title': 'Offline',

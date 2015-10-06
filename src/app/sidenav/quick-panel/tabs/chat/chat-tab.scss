@@ -2,7 +2,8 @@
 
     .chat-tab {
 
-        .main, .chat {
+        .main,
+        .chat {
             position: absolute;
             width: 100%;
             top: 0;
@@ -17,7 +18,7 @@
                 .status {
                     position: absolute;
                     top: 8px;
-                    left: 28px;
+                    left: 44px;
                     width: 18px;
                     height: 18px;
                     border: 3px solid #FFFFFF;
@@ -39,7 +40,7 @@
 
                 .unread-message-count {
                     position: absolute;
-                    left: 0;
+                    left: 16px;
                     bottom: 16px;
                     width: 18px;
                     height: 18px;
@@ -48,6 +49,16 @@
                     text-align: center;
                     line-height: 18px;
                     font-size: 11px;
+                }
+            }
+
+            .recent {
+
+                .contact {
+
+                    .status {
+                        top: 18px;
+                    }
                 }
             }
         }
