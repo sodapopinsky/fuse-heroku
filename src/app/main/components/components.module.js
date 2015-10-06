@@ -29,6 +29,7 @@
             'app.components.elements.progress-circular',
             'app.components.elements.progress-linear',
             'app.components.elements.sidenav',
+            'app.components.elements.swipe',
             'app.components.elements.tabs',
             'app.components.elements.toast',
             'app.components.elements.whiteframe',
