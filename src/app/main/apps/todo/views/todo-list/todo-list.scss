@@ -11,11 +11,14 @@
     .todo-list-pane {
 
         .todo {
-            padding: 16px;
             position: relative;
-            text-transform: none;
-            cursor: pointer;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+            .todo-content {
+                padding: 16px;
+                border: 1px solid rgba(0, 0, 0, 0.12);
+                text-transform: none;
+                cursor: pointer;
+            }
 
             .tags {
                 font-size: 11px;

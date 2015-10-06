@@ -11,7 +11,8 @@
                     "title": "Meeting Planning",
                     "color": "#388E3C"
                 }
-            ]
+            ],
+            "nodes": []
         },
         {
             "title": "Vestibulum ante ipsum primis in faucibus",
@@ -24,7 +25,8 @@
                     "title": "Personal Project",
                     "color": "#F44336"
                 }
-            ]
+            ],
+            "nodes": []
         },
         {
             "title": "Aenean sed volutpat felis",
@@ -37,7 +39,8 @@
                     "title": "Github Client",
                     "color": "#FF9800"
                 }
-            ]
+            ],
+            "nodes": []
         },
         {
             "title": "Nulla sit amet condimentum orci, luctus volutpat nisl. Fusce quis odio feugiat, maximus mauris sit amet, porta arcu",
@@ -50,7 +53,8 @@
                     "title": "Server",
                     "color": "#0091EA"
                 }
-            ]
+            ],
+            "nodes": []
         },
         {
             "title": "Duis viverra in nisi sed ultrices",
@@ -63,7 +67,8 @@
                     "title": "Personal Project",
                     "color": "#F44336"
                 }
-            ]
+            ],
+            "nodes": []
         },
         {
             "title": "Duis dolor enim, pellentesque vel nibh a, egestas sagittis massa",
@@ -80,7 +85,8 @@
                     "title": "Personal Project",
                     "color": "#F44336"
                 }
-            ]
+            ],
+            "nodes": []
         },
         {
             "title": "Praesent sed nulla metus, proin at viverra neque",
@@ -97,7 +103,8 @@
                     "title": "Github Client",
                     "color": "#FF9800"
                 }
-            ]
+            ],
+            "nodes": []
         },
         {
             "title": "Morbi scelerisque malesuada quam sit amet pretium",
@@ -110,7 +117,8 @@
                     "title": "Meeting Planning",
                     "color": "#388E3C"
                 }
-            ]
+            ],
+            "nodes": []
         },
         {
             "title": "Vestibulum ante ipsum primis in faucibus",
@@ -123,7 +131,8 @@
                     "title": "Personal Project",
                     "color": "#F44336"
                 }
-            ]
+            ],
+            "nodes": []
         },
         {
             "title": "Aenean sed volutpat felis",
@@ -136,7 +145,8 @@
                     "title": "Github Client",
                     "color": "#FF9800"
                 }
-            ]
+            ],
+            "nodes": []
         },
         {
             "title": "Nulla sit amet condimentum orci, luctus volutpat nisl. Fusce quis odio feugiat, maximus mauris sit amet, porta arcu",
@@ -149,7 +159,8 @@
                     "title": "Server",
                     "color": "#0091EA"
                 }
-            ]
+            ],
+            "nodes": []
         },
         {
             "title": "Duis viverra in nisi sed ultrices",
@@ -162,7 +173,8 @@
                     "title": "Personal Project",
                     "color": "#F44336"
                 }
-            ]
+            ],
+            "nodes": []
         },
         {
             "title": "Duis dolor enim, pellentesque vel nibh a, egestas sagittis massa",
@@ -179,7 +191,8 @@
                     "title": "Personal Project",
                     "color": "#F44336"
                 }
-            ]
+            ],
+            "nodes": []
         },
         {
             "title": "Praesent sed nulla metus, proin at viverra neque",
@@ -196,7 +209,8 @@
                     "title": "Github Client",
                     "color": "#FF9800"
                 }
-            ]
+            ],
+            "nodes": []
         }
     ]
 }

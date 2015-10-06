@@ -22,6 +22,7 @@
                 'pascalprecht.translate',
                 'timer',
                 'ui.router',
+                'ui.tree',
                 'uiGmapgoogle-maps',
                 'textAngular'
             ]);
