@@ -25,6 +25,7 @@
             'app.components.elements.inputs.slider',
             'app.components.elements.inputs.switch',
             'app.components.elements.menu',
+            'app.components.elements.menu-bar',
             'app.components.elements.progress-circular',
             'app.components.elements.progress-linear',
             'app.components.elements.sidenav',
