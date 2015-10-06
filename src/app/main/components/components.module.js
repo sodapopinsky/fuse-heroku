@@ -31,6 +31,7 @@
             'app.components.elements.sidenav',
             'app.components.elements.tabs',
             'app.components.elements.toast',
+            'app.components.elements.whiteframe',
             'app.components.maps',
             'app.components.price-tables',
             'app.components.tables.simple-table',
