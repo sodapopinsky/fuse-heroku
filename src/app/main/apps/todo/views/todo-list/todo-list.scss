@@ -10,70 +10,88 @@
 
     .todo-list-pane {
 
-    }
-}
+        .todo-item {
+            position: relative;
+            padding: 16px 16px 16px 48px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            text-transform: none;
+            cursor: pointer;
 
-// Keep todo class outside for angular-ui-tree
-.todo-item {
-    position: relative;
+            &.todo-item-ghost {
+                opacity: 1 !important;
+                background: #FFFFFF;
+                box-shadow: $whiteframe-shadow-14dp;
+                border: none;
 
-    .todo-content {
-        position: relative;
-        padding: 16px;
-        border: 1px solid rgba(0, 0, 0, 0.08);
-        text-transform: none;
-        cursor: pointer;
-
-        .tree-handle {
-            margin-right: 8px;
-        }
-    }
-
-    .tags {
-        font-size: 12px;
-        margin-top: 8px;
-
-        .tag {
-            border-radius: 2px;
-            margin: 0 4px 0 0;
-            padding: 3px 8px;
-            background-color: rgba(0, 0, 0, 0.12);
-
-            .tag-color {
-                width: 8px;
-                height: 8px;
-                margin-right: 8px;
-                border-radius: 50%;
+                .md-ripple-container {
+                    display: none;
+                }
             }
-        }
-    }
 
-    &.checked {
+            &.todo-item-placeholder {
+                background: rgba(0, 0, 0, 0.12);
 
-        > .todo-content {
-            background: #EEEEEE;
-
-            .title,
-            .notes {
-                color: rgba(0, 0, 0, 0.54);
-                text-decoration: line-through;
+                * {
+                    opacity: 0;
+                }
             }
-        }
-    }
 
-    &.selected {
+            .handle {
+                position: absolute;
+                height: 100%;
+                width: 48px;
+                top: 0;
+                left: 0;
+                cursor: move;
+                text-align: center;
 
-        > .todo-content {
-            background: #FFF8E1;
-        }
-    }
+                md-icon {
+                    position: relative;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
 
-    .info {
-        margin: 0 16px 0 8px;
+            .tags {
+                font-size: 12px;
 
-        .title {
-            font-size: 15px;
-            font-weight: 500;
+                .tag {
+                    border-radius: 2px;
+                    margin: 8px 4px 0 0;
+                    padding: 3px 8px;
+                    background-color: rgba(0, 0, 0, 0.08);
+
+                    .tag-color {
+                        width: 8px;
+                        height: 8px;
+                        margin-right: 8px;
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+            &.completed {
+                background: #EEEEEE;
+
+                .title,
+                .notes {
+                    color: rgba(0, 0, 0, 0.54);
+                    text-decoration: line-through;
+                }
+            }
+
+            &.selected {
+                background: #FFF8E1;
+            }
+
+            .info {
+                margin: 0 16px 0 8px;
+
+                .title {
+                    font-size: 15px;
+                    font-weight: 500;
+                }
+            }
         }
     }
 }

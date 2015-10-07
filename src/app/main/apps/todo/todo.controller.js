@@ -6,12 +6,15 @@
         .controller('TodoController', TodoController);
 
     /** @ngInject */
-    function TodoController($document, $filter, $mdDialog, $mdSidenav, Tasks, Tags)
+    function TodoController($document, $mdDialog, $mdSidenav, Tasks, Tags)
     {
         var vm = this;
 
         // Data
-        vm.checked = [];
+        vm.tasks = Tasks.data;
+        vm.tags = Tags.data;
+
+        vm.completed = [];
         vm.colors = ['blue', 'blue-grey', 'orange', 'pink', 'purple'];
         vm.projects = {
             'creapond'    : 'Project Creapond',
@@ -22,8 +25,6 @@
             next  : 'Next 3 days'
         };
         vm.selectedProject = 'creapond';
-        vm.tasks = Tasks.data;
-        vm.tags = Tags.data;
 
         // Tasks will be filtered against these models
         vm.taskFilters = {
@@ -31,34 +32,34 @@
             tags  : []
         };
 
+        vm.sortableOptions = {
+            'ghostClass' : 'todo-item-placeholder',
+            'handle'     : '.handle',
+            //'scroll' : false,
+            forceFallback: true,
+            fallbackClass: 'todo-item-ghost',
+            //fallbackOnBody: false
+        };
+
         // Methods
-        vm.filterTask = filterTask;
         vm.openTaskDialog = openTaskDialog;
-        vm.toggleCheck = toggleCheck;
+        vm.toggleCompleted = toggleCompleted;
         vm.toggleSidenav = toggleSidenav;
         vm.toggleTagFilter = toggleTagFilter;
         vm.isTagFilterExists = isTagFilterExists;
+        vm.preventDefault = preventDefault;
 
         //////////
 
-        function filterTask(task)
+        /**
+         * Prevent default
+         *
+         * @param e
+         */
+        function preventDefault(e)
         {
-            var match = true,
-                result = [];
-
-            if ( vm.taskFilters.search )
-            {
-                result = $filter('filter')([task.title, task.notes, task.tags], vm.taskFilters.search);
-                match = (match && result.length > 0);
-            }
-
-            if ( vm.taskFilters.tags.length > 0 )
-            {
-                result = $filter('filterSingleByTags')(task.tags, vm.taskFilters.tags);
-                match = (match && result.length > 0);
-            }
-
-            return match;
+            e.preventDefault();
+            e.stopPropagation();
         }
 
         /**
@@ -113,15 +114,15 @@
         }
 
         /**
-         * Toggle checked status of the task
+         * Toggle completed status of the task
          *
          * @param task
          * @param event
          */
-        function toggleCheck(task, event)
+        function toggleCompleted(task, event)
         {
             event.stopPropagation();
-            task.checked = !task.checked;
+            task.completed = !task.completed;
         }
 
         /**
@@ -133,6 +134,6 @@
         {
             $mdSidenav(sidenavId).toggle();
         }
-    }
 
+    }
 })();

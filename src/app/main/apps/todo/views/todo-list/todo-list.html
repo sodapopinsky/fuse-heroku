@@ -1,23 +1,17 @@
 <!-- TODO LIST ITEMS -->
-<div ui-tree>
-    <ol ui-tree-nodes="" ng-model="vm.tasks">
-        <li ng-include="'nodes_renderer.html'"
-            ui-tree-node class="todo-item"
-            ng-repeat="task in vm.tasks"
-            ng-class="{'starred': task.starred, 'selected': task.selected, 'checked': task.checked}">
-        </li>
-    </ol>
-</div>
+<div ng-sortable="vm.sortableOptions">
+    <div class="todo-item" md-ink-ripple layout="row" layout-align="start center"
+         ng-click="vm.openTaskDialog($event, task)"
+         ng-repeat="task in vm.tasks | filter:vm.taskFilters.search | filter:global.search | filterByTags:vm.taskFilters.tags track by $index"
+         ng-class="{'starred': task.starred, 'selected': task.selected, 'completed': task.completed}">
 
-<!-- Nested node template -->
-<script type="text/ng-template" id="nodes_renderer.html">
-    <div class="todo-content" md-ink-ripple layout="row" layout-align="start center"
-         ng-if="vm.filterTask(task)"
-         ng-click="vm.openTaskDialog($event, task)">
-        <i ui-tree-handle class="tree-handle icon icon-drag-vertical"></i>
+        <div class="handle" ng-click="vm.preventDefault($event)">
+            <md-icon md-font-icon="icon-drag-vertical" class="icon"></md-icon>
+        </div>
 
-        <md-checkbox class="checkbox" ng-checked="task.checked"
-                     ng-click="vm.toggleCheck(task, $event)" aria-label="{{task.checked? 'Uncheck':'check'}}">
+        <md-checkbox class="checkbox" ng-checked="task.completed"
+                     ng-click="vm.toggleCompleted(task, $event)"
+                     aria-label="{{task.completed ? 'Uncheck' : 'check'}}">
         </md-checkbox>
 
         <div layout-gt-sm="row" layout-align-gt-sm="start center" flex>
@@ -72,14 +66,5 @@
             </div>
         </div>
     </div>
-
-    <ol ui-tree-nodes="" ng-model="task.nodes">
-        <li class="todo-item" ng-class="{'starred': task.starred, 'selected': task.selected, 'checked': task.checked}"
-            ng-repeat="task in task.nodes | filter: vm.search | filter: global.search | filterByTags:vm.tagsFilter"
-            ui-tree-node ng-include="'nodes_renderer.html'">
-        </li>
-    </ol>
-
-</script>
-
+</div>
 <!-- / TODO LIST ITEMS -->

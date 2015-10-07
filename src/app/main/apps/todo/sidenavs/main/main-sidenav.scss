@@ -33,7 +33,14 @@
                     margin: 0;
                 }
             }
+
             .tag {
+                cursor: pointer;
+
+                label {
+                    cursor: pointer;
+                }
+
                 &.selected {
                     background-color: rgba(0, 0, 0, 0.06);
                 }

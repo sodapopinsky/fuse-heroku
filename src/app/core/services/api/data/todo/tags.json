@@ -1,21 +1,25 @@
 {
     "data": [
         {
+            "id": 1,
             "name": "meeting-planning",
             "label": "Meeting Planning",
             "color": "#388E3C"
         },
         {
+            "id": 2,
             "name": "personal-project",
             "label": "Personal Project",
             "color": "#F44336"
         },
         {
+            "id": 3,
             "name": "github-client",
             "label": "Github Client",
             "color": "#FF9800"
         },
         {
+            "id": 4,
             "name": "server",
             "label": "Server",
             "color": "#0091EA"
