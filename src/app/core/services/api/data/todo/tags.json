@@ -1,19 +1,23 @@
 {
     "data": [
         {
-            "title": "Meeting Planning",
+            "name": "meeting-planning",
+            "label": "Meeting Planning",
             "color": "#388E3C"
         },
         {
-            "title": "Personal Project",
+            "name": "personal-project",
+            "label": "Personal Project",
             "color": "#F44336"
         },
         {
-            "title": "Github Client",
+            "name": "github-client",
+            "label": "Github Client",
             "color": "#FF9800"
         },
         {
-            "title": "Server",
+            "name": "server",
+            "label": "Server",
             "color": "#0091EA"
         }
     ]

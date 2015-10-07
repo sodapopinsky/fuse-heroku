@@ -84,14 +84,14 @@
             Tags
         </div>
 
-        <md-button class="tag item" aria-label="tag {{tag.title}}" ng-repeat="tag in vm.tags"
-                   ng-class="{'selected':vm.exists(tag.title, vm.tagFilter)}">
+        <md-button class="tag item" aria-label="tag {{tag.label}}" ng-repeat="tag in vm.tags"
+                   ng-class="{'selected':vm.isTagFilterExists(tag)}">
             <label layout="row" layout-align="start center">
-                <input class="ng-hide" type="checkbox" ng-checked="vm.exists(tag.title, vm.tagFilter)"
-                       ng-click="vm.toggle(tag.title, vm.tagFilter)">
+                <input class="ng-hide" type="checkbox" ng-checked="vm.isTagFilterExists(tag)"
+                       ng-click="vm.toggleTagFilter(tag)">
                 </input>
                 <md-icon md-font-icon="icon-label" class="s16" ng-style="{'color' : tag.color}"></md-icon>
-                <span class="title">{{tag.title}}</span>
+                <span class="title">{{tag.label}}</span>
             </label>
         </md-button>
     </div>

@@ -10,59 +10,70 @@
 
     .todo-list-pane {
 
-        .angular-ui-tree-placeholder {
-            background: rgba(0, 0, 0, 0.06);
-            border: 1px dashed #CCCCCC;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            margin: 8px;
+    }
+}
+
+// Keep todo class outside for angular-ui-tree
+.todo-item {
+    position: relative;
+
+    .todo-content {
+        position: relative;
+        padding: 16px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        text-transform: none;
+        cursor: pointer;
+
+        .tree-handle {
+            margin-right: 8px;
         }
+    }
 
-        .todo {
-            position: relative;
+    .tags {
+        font-size: 12px;
+        margin-top: 8px;
 
-            .todo-content {
-                padding: 16px;
-                border: 1px solid rgba(0, 0, 0, 0.08);
-                text-transform: none;
-                cursor: pointer;
+        .tag {
+            border-radius: 2px;
+            margin: 0 4px 0 0;
+            padding: 3px 8px;
+            background-color: rgba(0, 0, 0, 0.12);
+
+            .tag-color {
+                width: 8px;
+                height: 8px;
+                margin-right: 8px;
+                border-radius: 50%;
             }
+        }
+    }
 
-            .tags {
-                font-size: 11px;
-                margin-right: 12px;
+    &.checked {
 
-                .tag {
-                    border-radius: 2px;
-                    margin: 0 0 4px 0;
-                    padding: 3px 5px;
-                    color: #FFFFFF;
-                    font-weight: 500;
-                }
-            }
+        > .todo-content {
+            background: #EEEEEE;
 
-            &.checked {
-                background: #EEEEEE;
+            .title,
+            .notes {
                 color: rgba(0, 0, 0, 0.54);
-
-                .info {
-                    text-decoration: line-through;
-                }
+                text-decoration: line-through;
             }
+        }
+    }
 
-            &.selected {
-                background: #FFF8E1;
-            }
+    &.selected {
 
-            .info {
-                margin: 0 16px 0 8px;
+        > .todo-content {
+            background: #FFF8E1;
+        }
+    }
 
-                .title {
-                    font-size: 15px;
-                    font-weight: 500;
-                }
-            }
+    .info {
+        margin: 0 16px 0 8px;
+
+        .title {
+            font-size: 15px;
+            font-weight: 500;
         }
     }
 }
@@ -74,7 +85,7 @@
 
         .todo-list-pane {
 
-            .todo {
+            .todo-item {
 
                 .tags {
                     margin-top: 8px;
@@ -84,7 +95,7 @@
                     margin: 0;
                 }
 
-                .tags-buttons {
+                .buttons {
 
                 }
             }

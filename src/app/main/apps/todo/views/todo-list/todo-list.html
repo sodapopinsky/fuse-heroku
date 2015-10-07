@@ -2,17 +2,20 @@
 <div ui-tree>
     <ol ui-tree-nodes="" ng-model="vm.tasks">
         <li ng-include="'nodes_renderer.html'"
-            ui-tree-node class="todo"
-            ng-repeat="task in vm.tasks | filterTags:vm.tagFilter| filter: vm.search | filter: global.search track by $index"
+            ui-tree-node class="todo-item"
+            ng-repeat="task in vm.tasks"
             ng-class="{'starred': task.starred, 'selected': task.selected, 'checked': task.checked}">
         </li>
     </ol>
 </div>
+
 <!-- Nested node template -->
 <script type="text/ng-template" id="nodes_renderer.html">
     <div class="todo-content" md-ink-ripple layout="row" layout-align="start center"
+         ng-if="vm.filterTask(task)"
          ng-click="vm.openTaskDialog($event, task)">
-        <i ui-tree-handle class="icon-cursor-move s18"></i>
+        <i ui-tree-handle class="tree-handle icon icon-drag-vertical"></i>
+
         <md-checkbox class="checkbox" ng-checked="task.checked"
                      ng-click="vm.toggleCheck(task, $event)" aria-label="{{task.checked? 'Uncheck':'check'}}">
         </md-checkbox>
@@ -27,15 +30,16 @@
                 <div class="notes">
                     {{task.notes | limitTo:90}}{{task.notes.length > 90 ? '...' : ''}}
                 </div>
-            </div>
 
-            <div class="tags-buttons" layout="row" layout-align="space-between center">
-                <div class="tags" layout="column" layout-align="center end" layout-align-sm="center start">
-                    <div class="tag" data-ng-repeat="tag in task.tags"
-                         ng-style="{'background-color': tag.color}">
-                        {{tag.title}}
+                <div class="tags" layout="row" layout-align="start center">
+                    <div class="tag" layout="row" layout-align="start center" data-ng-repeat="tag in task.tags">
+                        <div class="tag-color" ng-style="{'background-color': tag.color}"></div>
+                        <div class="tag-label">{{tag.label}}</div>
                     </div>
                 </div>
+            </div>
+
+            <div class="buttons" layout="row" layout-align="space-between center">
 
                 <div>
                     <md-menu>
@@ -70,13 +74,12 @@
     </div>
 
     <ol ui-tree-nodes="" ng-model="task.nodes">
-        <li ng-repeat="task in task.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
+        <li class="todo-item" ng-class="{'starred': task.starred, 'selected': task.selected, 'checked': task.checked}"
+            ng-repeat="task in task.nodes | filter: vm.search | filter: global.search | filterByTags:vm.tagsFilter"
+            ui-tree-node ng-include="'nodes_renderer.html'">
         </li>
     </ol>
 
-    </li>
 </script>
 
-</ol>
-</div>
 <!-- / TODO LIST ITEMS -->

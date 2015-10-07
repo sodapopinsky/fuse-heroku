@@ -23,7 +23,7 @@
 
                 <div class="search" flex layout="row" layout-align="start center">
                     <md-icon md-font-icon="icon-magnify" class="icon s24"></md-icon>
-                    <input flex ng-model="vm.search" type="text" placeholder="Search for a task or tag" translate
+                    <input flex ng-model="vm.taskFilters.search" type="text" placeholder="Search for a task or tag" translate
                            translate-attr-placeholder="TODO.SEARCH">
                 </div>
             </div>
@@ -84,7 +84,7 @@
                 <md-content class="todo-list-pane" flex
                             ng-include="'app/main/apps/todo/views/todo-list/todo-list.html'" ms-scroll>
                 </md-content>
-                <!-- Todo list pane -->
+                <!-- / Todo list pane -->
 
             </div>
             <!-- / CONTENT -->

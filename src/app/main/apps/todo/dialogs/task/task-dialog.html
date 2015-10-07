@@ -20,7 +20,7 @@
                 <md-chips ng-model="vm.task.tags" md-on-append="vm.newTag($chip)">
                     <md-chip-template>
                         <span ng-if="$chip.color" class="color" ng-style="{'background-color':$chip.color}"></span>
-                        <span>{{$chip.title}}</span>
+                        <span>{{$chip.label}}</span>
                     </md-chip-template>
                 </md-chips>
             </div>
