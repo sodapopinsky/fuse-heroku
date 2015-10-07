@@ -3,7 +3,8 @@
     'use strict';
 
     angular.module('app.todo')
-        .controller('TodoController', TodoController);
+        .controller('TodoController', TodoController)
+        .filter('filterTags', filterTags);
 
     /** @ngInject */
     function TodoController($document, $mdDialog, $mdSidenav, Tasks, Tags)
@@ -28,6 +29,7 @@
 
         vm.tasks = Tasks.data;
         vm.tags = Tags.data;
+        vm.tagFilter = [];
 
         // Methods
         vm.openTaskDialog = openTaskDialog;
@@ -35,6 +37,23 @@
         vm.toggleSidenav = toggleSidenav;
 
         //////////
+
+        vm.toggle = function (item, list)
+        {
+            var idx = list.indexOf(item);
+            if ( idx > -1 )
+            {
+                list.splice(idx, 1);
+            }
+            else
+            {
+                list.push(item);
+            }
+        };
+        vm.exists = function (item, list)
+        {
+            return list.indexOf(item) > -1;
+        };
 
         /**
          * Open new task dialog
@@ -78,5 +97,42 @@
         {
             $mdSidenav(sidenavId).toggle();
         }
+    }
+
+    /**
+     * Tag Filter
+     * @returns {Function}
+     */
+    function filterTags()
+    {
+        return function (items, tagFilter)
+        {
+            if ( tagFilter.length <= 0 )
+            {
+                return items;
+            }
+            var filtered = [];
+
+            for ( var i = 0; i < items.length; i++ )
+            {
+                var item = items[i];
+
+                for ( var j = 0; j < tagFilter.length; j++ )
+                {
+                    var filter = tagFilter[j];
+
+                    for ( var k = 0; k < item.tags.length; k++ )
+                    {
+                        var tag = item.tags[k];
+
+                        if ( tag.title === filter )
+                        {
+                            filtered.push(item);
+                        }
+                    }
+                }
+            }
+            return filtered;
+        };
     }
 })();

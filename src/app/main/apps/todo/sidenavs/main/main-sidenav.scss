@@ -33,6 +33,11 @@
                     margin: 0;
                 }
             }
+            .tag {
+                &.selected {
+                    background-color: rgba(0, 0, 0, 0.06);
+                }
+            }
         }
 
         &.md-locked-open {
