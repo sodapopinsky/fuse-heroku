@@ -48,20 +48,35 @@
 
                         <md-menu-content width="3">
                             <md-menu-item>
-                                <md-button aria-label="Mark as done" translate="TODO.MARK_AS_DONE"
-                                           translate-attr-aria-label="TODO.MARK_AS_DONE">Mark as done
+                                <md-button ng-click="task.completed = !task.completed" aria-label="Toggle done"
+                                           translate-attr-aria-label="TODO.TOGGLE_DONE">
+                                    <md-icon ng-class="task.completed === false ?'fg-grey':'fg-blue'"
+                                             md-font-icon="icon-checkbox-marked-circle" class="s18"></md-icon>
+                                    <span ng-show="!task.completed" translate="TODO.MARK_AS_DONE">Mark as done</span>
+                                    <span ng-show="task.completed" translate="TODO.MARK_AS_UNDONE">Mark as undone</span>
                                 </md-button>
                             </md-menu-item>
 
                             <md-menu-item>
-                                <md-button aria-label="Mark as important" translate="TODO.MARK_AS_IMPORTANT"
-                                           translate-attr-aria-label="TODO.MARK_AS_IMPORTANT">Mark as important
+                                <md-button ng-click="task.important = !task.important" aria-label="Toggle important"
+                                           translate-attr-aria-label="TODO.TOGGLE_IMPORTANT">
+                                    <md-icon ng-class="task.important === false ?'fg-grey':'fg-red-600'"
+                                             md-font-icon="icon-alert-circle" class="s18"></md-icon>
+                                    <span ng-show="!task.important" translate="TODO.MARK_AS_IMPORTANT"> Mark as
+                                        important</span>
+                                    <span ng-show="task.important" translate="TODO.REMOVE_IMPORTANT">Remove
+                                        important</span>
                                 </md-button>
                             </md-menu-item>
 
                             <md-menu-item>
-                                <md-button aria-label="Add star" translate="TODO.ADD_STAR"
-                                           translate-attr-aria-label="TODO.ADD_STAR">Add star
+                                <md-button ng-click="task.starred = !task.starred" aria-label="Toggle star"
+                                           translate-attr-aria-label="TODO.TOGGLE_STAR">
+                                    <md-icon ng-class="task.starred === false ?'fg-grey':'fg-amber-600'"
+                                             md-font-icon="icon-star"
+                                             class="s18"></md-icon>
+                                    <span ng-show="!task.starred" translate="TODO.ADD_STAR">Add star</span>
+                                    <span ng-show="task.starred" translate="TODO.REMOVE_STAR">Remove star</span>
                                 </md-button>
                             </md-menu-item>
                         </md-menu-content>
