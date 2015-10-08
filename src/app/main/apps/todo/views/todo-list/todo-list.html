@@ -1,5 +1,5 @@
 <!-- TODO LIST ITEMS -->
-<div ng-sortable="vm.sortableOptions">
+<div ng-sortable="vm.sortableOptions" ng-class="{sortable:vm.taskOrder === ''}">
     <div class="todo-item" md-ink-ripple layout="row" layout-align="start center"
          ng-click="vm.openTaskDialog($event, task)"
          ng-repeat="task in vm.tasks  | orderBy:vm.taskOrder:vm.orderReverse  | filter:vm.taskFilters.search | filter:global.search | filterByTags:vm.taskFilters.tags | filter:{'completed': vm.taskFilters.completed} | filter:{'deleted': vm.taskFilters.deleted}| filter:{'important': vm.taskFilters.important}| filter:{'starred':vm.taskFilters.starred}| filter:vm.taskFilterStartDate | filter:vm.taskFilterDueDate track by $index"
@@ -20,7 +20,6 @@
                 <div>
                     <span class="title">
                         {{task.title}}
-                        {{task.startDateHex}}
                     </span>
                     <md-icon md-font-icon="icon-star" class="is-starred s16 fg-amber-600"
                              ng-if="task.starred"></md-icon>

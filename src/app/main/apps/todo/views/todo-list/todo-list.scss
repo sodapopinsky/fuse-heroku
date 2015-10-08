@@ -10,9 +10,14 @@
 
     .todo-list-pane {
 
+        .sortable {
+            .todo-item {
+                padding: 16px 16px 16px 48px;
+            }
+        }
         .todo-item {
             position: relative;
-            padding: 16px 16px 16px 48px;
+            padding: 16px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.08);
             text-transform: none;
             cursor: pointer;
