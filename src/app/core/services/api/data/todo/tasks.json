@@ -5,10 +5,11 @@
             "title": "Proident tempor est nulla irure ad est",
             "notes": "Id nulla nulla proident deserunt deserunt proident in quis. Cillum reprehenderit labore id anim laborum. Exercitation nulla consectetur labore esse ullamco aute nostrud laboris et sit mollit. Ut incididunt amet minim tempor velit id ullamco nisi sit.",
             "startDate": "Wednesday, January 29, 2014 3:17 PM",
-            "dueDate": "Tuesday, October 31, 2017 7:34 PM",
+            "dueDate": "",
             "completed": false,
             "starred": false,
-            "important": true,
+            "important": false,
+            "deleted": false,
             "tags": [
                 {
                     "id": 1,
@@ -27,6 +28,7 @@
             "completed": false,
             "starred": false,
             "important": true,
+            "deleted": false,
             "tags": [
                 {
                     "id": 2,
@@ -45,6 +47,7 @@
             "completed": false,
             "starred": true,
             "important": true,
+            "deleted": false,
             "tags": [
                 {
                     "id": 3,
@@ -60,9 +63,10 @@
             "notes": "Nostrud anim mollit incididunt qui qui sit commodo duis. Anim amet irure aliquip duis nostrud sit quis fugiat ullamco non dolor labore. Lorem sunt voluptate laboris culpa proident. Aute eiusmod aliqua exercitation irure exercitation qui laboris mollit occaecat eu occaecat fugiat.",
             "startDate": "Wednesday, May 7, 2014 4:14 AM",
             "dueDate": "Friday, December 15, 2017 4:01 AM",
-            "completed": false,
+            "completed": true,
             "starred": true,
             "important": false,
+            "deleted": false,
             "tags": [
                 {
                     "id": 4,
@@ -80,7 +84,8 @@
             "dueDate": "Friday, July 8, 2016 10:49 AM",
             "completed": false,
             "starred": false,
-            "important": true,
+            "important": false,
+            "deleted": false,
             "tags": [
                 {
                     "id": 3,
@@ -102,9 +107,10 @@
             "notes": "Esse nisi mollit aliquip mollit aute consequat adipisicing. Do excepteur dolore proident cupidatat pariatur irure consequat incididunt. Id labore Lorem ipsum reprehenderit adipisicing enim proident aliquip non labore velit. Id id consequat voluptate nisi quis. Esse ullamco consectetur dolor sint laboris quis.",
             "startDate": "Sunday, June 7, 2015 10:49 AM",
             "dueDate": "Monday, January 9, 2017 8:34 AM",
-            "completed": true,
-            "starred": false,
-            "important": true,
+            "completed": false,
+            "starred": true,
+            "important": false,
+            "deleted": false,
             "tags": [
                 {
                     "id": 2,
@@ -127,8 +133,9 @@
             "startDate": "Saturday, October 18, 2014 4:25 AM",
             "dueDate": "Sunday, August 21, 2016 10:48 PM",
             "completed": true,
-            "starred": true,
+            "starred": false,
             "important": false,
+            "deleted": false,
             "tags": [
                 {
                     "id": 1,
@@ -152,7 +159,8 @@
             "dueDate": "Wednesday, June 15, 2016 1:53 PM",
             "completed": true,
             "starred": false,
-            "important": false,
+            "important": true,
+            "deleted": false,
             "tags": [
                 {
                     "id": 1,
@@ -177,6 +185,7 @@
             "completed": false,
             "starred": false,
             "important": false,
+            "deleted": false,
             "tags": [
                 {
                     "id": 2,
@@ -195,6 +204,7 @@
             "completed": false,
             "starred": false,
             "important": false,
+            "deleted": false,
             "tags": [
                 {
                     "id": 3,
@@ -213,6 +223,7 @@
             "completed": false,
             "starred": false,
             "important": true,
+            "deleted": false,
             "tags": [
                 {
                     "id": 3,
@@ -231,6 +242,7 @@
             "completed": false,
             "starred": true,
             "important": true,
+            "deleted": false,
             "tags": [
                 {
                     "id": 3,
@@ -248,7 +260,8 @@
             "dueDate": "Thursday, January 26, 2017 3:10 PM",
             "completed": false,
             "starred": false,
-            "important": true,
+            "important": false,
+            "deleted": false,
             "tags": [
                 {
                     "id": 4,
@@ -266,7 +279,8 @@
             "dueDate": "Wednesday, August 23, 2017 5:35 PM",
             "completed": false,
             "starred": false,
-            "important": true,
+            "important": false,
+            "deleted": false,
             "tags": [
                 {
                     "id": 4,
@@ -284,7 +298,8 @@
             "dueDate": "Saturday, July 8, 2017 11:54 PM",
             "completed": false,
             "starred": true,
-            "important": true,
+            "important": false,
+            "deleted": false,
             "tags": [
                 {
                     "id": 2,
@@ -303,6 +318,7 @@
             "completed": true,
             "starred": false,
             "important": false,
+            "deleted": false,
             "tags": [
                 {
                     "id": 1,
@@ -321,6 +337,7 @@
             "completed": false,
             "starred": false,
             "important": true,
+            "deleted": false,
             "tags": [
                 {
                     "id": 1,
@@ -337,8 +354,9 @@
             "startDate": "Monday, February 2, 2015 3:07 PM",
             "dueDate": "Saturday, October 14, 2017 6:57 AM",
             "completed": false,
-            "starred": true,
+            "starred": false,
             "important": false,
+            "deleted": false,
             "tags": [
                 {
                     "id": 4,
@@ -355,8 +373,9 @@
             "startDate": "Sunday, June 14, 2015 4:40 AM",
             "dueDate": "Wednesday, February 10, 2016 10:47 AM",
             "completed": true,
-            "starred": false,
-            "important": false,
+            "starred": true,
+            "important": true,
+            "deleted": false,
             "tags": [
                 {
                     "id": 4,
@@ -375,6 +394,7 @@
             "completed": true,
             "starred": false,
             "important": true,
+            "deleted": true,
             "tags": [
                 {
                     "id": 2,

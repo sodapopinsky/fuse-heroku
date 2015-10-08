@@ -31,53 +31,78 @@
     </div>
 
     <div class="navigation-simple" layout="column">
-        <md-button class="item" aria-label="All Tasks" translate translate-attr-aria-label="TODO.ALL_TASKS">
+        <md-button class="item" aria-label="All Tasks" translate translate-attr-aria-label="TODO.ALL_TASKS"
+                   ng-class="{'selected':vm.showAllTasks}" ng-click="vm.resetFilters()">
             <div layout="row" layout-align="start center">
                 <md-icon md-font-icon="icon-view-headline" class="s16"></md-icon>
                 <span class="title" translate="TODO.ALL_TASKS">All Tasks</span>
             </div>
         </md-button>
 
-        <md-button class="item" aria-label="Starred" translate translate-attr-aria-label="TODO.STARRED">
-            <div layout="row" layout-align="start center">
+        <md-button class="item" aria-label="Starred" translate translate-attr-aria-label="TODO.STARRED"
+                   ng-class="{'selected':vm.taskFilters.starred}">
+            <label layout="row" layout-align="start center">
+                <input class="ng-hide" type="checkbox" ng-checked="vm.taskFilters.starred"
+                       ng-click="vm.toggleFilter('starred','undefined')">
+                </input>
                 <md-icon md-font-icon="icon-star" class="s16"></md-icon>
                 <span class="title" translate="TODO.STARRED">Starred</span>
-            </div>
+            </label>
         </md-button>
 
-        <md-button class="item" aria-label="Priority" translate translate-attr-aria-label="TODO.PRIORITY">
-            <div layout="row" layout-align="start center">
+        <md-button class="item" aria-label="Priority" translate translate-attr-aria-label="TODO.PRIORITY"
+                   ng-class="{'selected':vm.taskFilters.important}">
+            <label layout="row" layout-align="start center">
+                <input class="ng-hide" type="checkbox" ng-checked="vm.taskFilters.important"
+                       ng-click="vm.toggleFilter('important','undefined')">
+                </input>
                 <md-icon md-font-icon="icon-alert-circle" class="s16"></md-icon>
                 <span class="title" translate="TODO.PRIORITY">Priority</span>
-            </div>
+            </label>
         </md-button>
 
-        <md-button class="item" aria-label="Scheduled" translate translate-attr-aria-label="TODO.SCHEDULED">
-            <div layout="row" layout-align="start center">
+        <md-button class="item" aria-label="Scheduled" translate translate-attr-aria-label="TODO.SCHEDULED"
+                   ng-class="{'selected':vm.taskFilters.dueDate}">
+            <label layout="row" layout-align="start center">
+                <input class="ng-hide" type="checkbox" ng-checked="vm.taskFilters.dueDate"
+                       ng-click="vm.toggleFilter('dueDate','undefined')">
+                </input>
                 <md-icon md-font-icon="icon-clock" class="s16"></md-icon>
                 <span class="title" translate="TODO.SCHEDULED">Scheduled</span>
-            </div>
+            </label>
         </md-button>
 
-        <md-button class="item" aria-label="Today" translate translate-attr-aria-label="TODO.TODAY">
-            <div layout="row" layout-align="start center">
+        <md-button class="item" aria-label="Today" translate translate-attr-aria-label="TODO.TODAY"
+                   ng-class="{'selected':vm.taskFilters.startDate}">
+            <label layout="row" layout-align="start center">
+                <input class="ng-hide" type="checkbox" ng-checked="vm.taskFilters.startDate"
+                       ng-click="vm.toggleFilter('startDate','undefined')">
+                </input>
                 <md-icon md-font-icon="icon-calendar-today" class="s16"></md-icon>
                 <span class="title" translate="TODO.TODAY">Today</span>
-            </div>
+            </label>
         </md-button>
 
-        <md-button class="item" aria-label="Done" translate translate-attr-aria-label="TODO.DONE">
-            <div layout="row" layout-align="start center">
+        <md-button class="item" aria-label="Done" translate translate-attr-aria-label="TODO.DONE"
+                   ng-class="{'selected':vm.taskFilters.completed}">
+            <label layout="row" layout-align="start center">
+                <input class="ng-hide" type="checkbox" ng-checked="vm.taskFilters.completed"
+                       ng-click="vm.toggleFilter('completed','undefined')">
+                </input>
                 <md-icon md-font-icon="icon-check" class="s16"></md-icon>
                 <span class="title" translate="TODO.DONE">Done</span>
-            </div>
+            </label>
         </md-button>
 
-        <md-button class="item" aria-label="Deleted" translate translate-attr-aria-label="TODO.DELETED">
-            <div layout="row" layout-align="start center">
+        <md-button class="item" aria-label="Deleted" translate translate-attr-aria-label="TODO.DELETED"
+                   ng-class="{'selected':vm.taskFilters.deleted}">
+            <label layout="row" layout-align="start center">
+                <input class="ng-hide" type="checkbox" ng-checked="vm.taskFilters.deleted"
+                       ng-click="vm.toggleFilter('deleted')">
+                </input>
                 <md-icon md-font-icon="icon-delete" class="s16"></md-icon>
                 <span class="title" translate="TODO.DELETED">Deleted</span>
-            </div>
+            </label>
         </md-button>
 
         <div class="item subheader" translate="TODO.TAGS">

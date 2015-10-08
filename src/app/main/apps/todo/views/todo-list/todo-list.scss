@@ -91,6 +91,13 @@
                     font-size: 15px;
                     font-weight: 500;
                 }
+
+                .is-starred,
+                .is-important {
+                    margin: 0 0 0 8px;
+                    vertical-align: top;
+                    line-height: 18px !important;
+                }
             }
         }
     }
