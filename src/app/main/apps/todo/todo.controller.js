@@ -13,7 +13,11 @@
         // Data
         vm.tasks = Tasks.data;
         vm.tags = Tags.data;
-
+        angular.forEach(vm.tasks, function (task)
+        {
+            task.startDateHex = new Date(task.startDate).getTime();
+            task.dueDateHex = new Date(task.dueDate).getTime();
+        });
         vm.completed = [];
         vm.colors = ['blue', 'blue-grey', 'orange', 'pink', 'purple'];
         vm.projects = {
@@ -39,6 +43,9 @@
         };
         vm.taskFiltersDefaults = angular.copy(vm.taskFilters);
         vm.showAllTasks = true;
+
+        vm.taskOrder = '';
+        vm.orderReverse = false;
 
         vm.sortableOptions = {
             'ghostClass' : 'todo-item-placeholder',
@@ -225,6 +232,7 @@
                 return item.startDate === new Date();
             }
         }
+
 
     }
 })();

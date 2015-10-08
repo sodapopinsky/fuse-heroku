@@ -2,10 +2,10 @@
 <div ng-sortable="vm.sortableOptions">
     <div class="todo-item" md-ink-ripple layout="row" layout-align="start center"
          ng-click="vm.openTaskDialog($event, task)"
-         ng-repeat="task in vm.tasks | filter:vm.taskFilters.search | filter:global.search | filterByTags:vm.taskFilters.tags | filter:{'completed': vm.taskFilters.completed} | filter:{'deleted': vm.taskFilters.deleted}| filter:{'important': vm.taskFilters.important}| filter:{'starred': vm.taskFilters.starred}| filter:vm.taskFilterStartDate | filter: vm.taskFilterDueDate track by $index"
+         ng-repeat="task in vm.tasks  | orderBy:vm.taskOrder:vm.orderReverse  | filter:vm.taskFilters.search | filter:global.search | filterByTags:vm.taskFilters.tags | filter:{'completed': vm.taskFilters.completed} | filter:{'deleted': vm.taskFilters.deleted}| filter:{'important': vm.taskFilters.important}| filter:{'starred':vm.taskFilters.starred}| filter:vm.taskFilterStartDate | filter:vm.taskFilterDueDate track by $index"
          ng-class="{'starred': task.starred, 'selected': task.selected, 'completed': task.completed}">
 
-        <div class="handle" ng-click="vm.preventDefault($event)">
+        <div ng-if="vm.taskOrder === ''" class="handle" ng-click="vm.preventDefault($event)">
             <md-icon md-font-icon="icon-drag-vertical" class="icon"></md-icon>
         </div>
 
@@ -20,8 +20,10 @@
                 <div>
                     <span class="title">
                         {{task.title}}
+                        {{task.startDateHex}}
                     </span>
-                    <md-icon md-font-icon="icon-star" class="is-starred s16 fg-amber-600" ng-if="task.starred"></md-icon>
+                    <md-icon md-font-icon="icon-star" class="is-starred s16 fg-amber-600"
+                             ng-if="task.starred"></md-icon>
                     <md-icon md-font-icon="icon-alert-circle fg-red-600" class="is-important s16"
                              ng-if="task.important"></md-icon>
                 </div>
