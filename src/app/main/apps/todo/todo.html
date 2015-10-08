@@ -37,6 +37,14 @@
             <!-- CONTENT TOOLBAR -->
             <div class="toolbar" layout="row" layout-align="space-between center">
 
+                <md-select class="simplified" ng-model="vm.selectedFilter.next" placeholder="Interval" translate
+                           translate-attr-placeholder="TODO.INTERVAL">
+                    <md-option value="Next 3 days" translate="TODO.NEXT_3_DAYS">Next 3 days</md-option>
+                    <md-option value="Next 7 days" translate="TODO.NEXT_7_DAYS">Next 7 days</md-option>
+                    <md-option value="Next 2 weeks" translate="TODO.NEXT_2_WEEKS">Next 2 weeks</md-option>
+                    <md-option value="Next month" translate="TODO.NEXT_MONTH">Next month</md-option>
+                </md-select>
+
                 <div layout="row" layout-align="start center">
                     <md-select class="simplified" ng-model="vm.taskOrder" placeholder="Order" translate
                                translate-attr-placeholder="TODO.ORDER"
@@ -47,8 +55,8 @@
                         <md-option value="title" translate="TODO.TITLE">Title</md-option>
                     </md-select>
 
-                    <md-menu ng-if="vm.taskOrder !== ''">
-                        <md-button class="md-icon-button arrow"
+                    <md-menu>
+                        <md-button ng-disabled="vm.taskOrder === ''" class="md-icon-button arrow"
                                    ng-click="$mdOpenMenu($event)"
                                    aria-label="Sort Direction" translate
                                    translate-attr-aria-label="TODO.SORT_DIRECTION">
@@ -80,32 +88,6 @@
                         </md-menu-content>
                     </md-menu>
 
-                    <div class="divider-vertical"></div>
-
-                    <md-select class="simplified" ng-model="vm.selectedFilter.next" placeholder="Interval" translate
-                               translate-attr-placeholder="TODO.INTERVAL">
-                        <md-option value="Next 3 days" translate="TODO.NEXT_3_DAYS">Next 3 days</md-option>
-                        <md-option value="Next 7 days" translate="TODO.NEXT_7_DAYS">Next 7 days</md-option>
-                        <md-option value="Next 2 weeks" translate="TODO.NEXT_2_WEEKS">Next 2 weeks</md-option>
-                        <md-option value="Next month" translate="TODO.NEXT_MONTH">Next month</md-option>
-
-                    </md-select>
-                </div>
-
-                <div layout="row" layout-align="start center">
-                    <span class="page-info" hide-sm>1 - 100 of 980</span>
-
-                    <md-button class="md-icon-button arrow" aria-label="Previous" translate
-                               translate-attr-aria-label="TODO.PREVIOUS">
-                        <md-icon md-font-icon="icon-chevron-left"></md-icon>
-                        <md-tooltip><span translate="TODO.PREVIOUS">Previous</span></md-tooltip>
-                    </md-button>
-
-                    <md-button class="md-icon-button arrow" aria-label="Next" translate
-                               translate-attr-aria-label="TODO.NEXT">
-                        <md-icon md-font-icon="icon-chevron-right"></md-icon>
-                        <md-tooltip><span translate="TODO.NEXT">Next</span></md-tooltip>
-                    </md-button>
                 </div>
 
             </div>

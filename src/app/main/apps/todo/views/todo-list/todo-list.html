@@ -2,9 +2,8 @@
 <div ng-sortable="vm.sortableOptions" ng-class="{sortable:vm.taskOrder === ''}">
     <div class="todo-item" md-ink-ripple layout="row" layout-align="start center"
          ng-click="vm.openTaskDialog($event, task)"
-         ng-repeat="task in vm.tasks  | orderBy:vm.taskOrder:vm.orderReverse  | filter:vm.taskFilters.search | filter:global.search | filterByTags:vm.taskFilters.tags | filter:{'completed': vm.taskFilters.completed} | filter:{'deleted': vm.taskFilters.deleted}| filter:{'important': vm.taskFilters.important}| filter:{'starred':vm.taskFilters.starred}| filter:vm.taskFilterStartDate | filter:vm.taskFilterDueDate track by $index"
+         ng-repeat="task in vm.tasks  | orderBy:vm.taskOrder:vm.orderReverse  | filter:vm.taskFilters.search | filter:global.search | filterByTags:vm.taskFilters.tags | filter:{'completed': vm.taskFilters.completed} | filter:{'deleted': vm.taskFilters.deleted}| filter:{'important': vm.taskFilters.important}| filter:{'starred':vm.taskFilters.starred}| filter:vm.taskFilterStartDate | filter:vm.taskFilterDueDate  as test track by $index"
          ng-class="{'starred': task.starred, 'selected': task.selected, 'completed': task.completed}">
-
         <div ng-if="vm.taskOrder === ''" class="handle" ng-click="vm.preventDefault($event)">
             <md-icon md-font-icon="icon-drag-vertical" class="icon"></md-icon>
         </div>
@@ -13,7 +12,6 @@
                      ng-click="vm.toggleCompleted(task, $event)"
                      aria-label="{{task.completed ? 'Uncheck' : 'check'}}">
         </md-checkbox>
-
         <div layout-gt-sm="row" layout-align-gt-sm="start center" flex>
 
             <div class="info" flex>

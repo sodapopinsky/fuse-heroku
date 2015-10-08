@@ -6,7 +6,7 @@
         .controller('TodoController', TodoController);
 
     /** @ngInject */
-    function TodoController($document, $mdDialog, $mdSidenav, Tasks, Tags)
+    function TodoController($scope, $document, $mdDialog, $mdSidenav, Tasks, Tags)
     {
         var vm = this;
 
@@ -15,8 +15,8 @@
         vm.tags = Tags.data;
         angular.forEach(vm.tasks, function (task)
         {
-            task.startDateHex = new Date(task.startDate).getTime();
-            task.dueDateHex = new Date(task.dueDate).getTime();
+            task.startDateTimestamp = new Date(task.startDate).getTime();
+            task.dueDateTimestamp = new Date(task.dueDate).getTime();
         });
         vm.completed = [];
         vm.colors = ['blue', 'blue-grey', 'orange', 'pink', 'purple'];
@@ -69,7 +69,11 @@
         vm.taskFilterDueDate = taskFilterDueDate;
 
         //////////
+        vm.getResultCount = function ()
+        {
+            console.log($scope.results);
 
+        };
         /**
          * Prevent default
          *
@@ -130,7 +134,9 @@
                 targetEvent        : ev,
                 clickOutsideToClose: true,
                 locals             : {
-                    task: task
+                    task : task,
+                    tasks: vm.tasks,
+                    event: ev
                 }
             });
         }

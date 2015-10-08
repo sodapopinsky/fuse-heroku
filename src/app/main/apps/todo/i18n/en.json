@@ -5,8 +5,6 @@
         "FILTER": "Filter",
         "ORDER": "Order",
         "INTERVAL": "Interval",
-        "NEXT": "Next",
-        "PREVIOUS": "Previous",
         "START_DATE": "Start Date",
         "DUE_DATE": "Due Date",
         "MANUAL_ORDER": "Manual Order",
@@ -44,6 +42,7 @@
         "CLOSE":"Close",
         "DELETE_ATTACHMENT":"Delete attachment",
         "SAVE":"SAVE",
+        "ADD_TASK":"ADD TASK",
         "ATTACH_FILE":"Attach file",
         "INSERT_PICTURE":"Insert picture",
         "DELETE":"Delete"

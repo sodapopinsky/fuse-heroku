@@ -1,5 +1,5 @@
 <md-dialog class="task-dialog" aria-label="New Task">
-    <form>
+    <form name="taskForm" novalidate>
         <md-toolbar class="md-accent md-hue-2">
             <div class="md-toolbar-tools" layout="row" layout-align="space-between">
                 <span class="title">{{vm.title}}</span>
@@ -10,9 +10,11 @@
         </md-toolbar>
 
         <md-dialog-content ms-scroll>
+            <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+
             <md-input-container>
                 <label translate="TODO.TITLE">Title</label>
-                <input ng-model="vm.task.title">
+                <input required ng-model="vm.task.title">
             </md-input-container>
 
             <div class="tags">
@@ -26,16 +28,17 @@
             </div>
 
             <div layout="row">
-                <md-input-container flex>
+                <div flex class="date-container">
                     <label translate="TODO.START_DATE">Start Date</label>
-                    <input ng-model="vm.task.startDate">
-                </md-input-container>
+                    <md-datepicker flex ng-model="task.startDate" md-placeholder="Start Date"></md-datepicker>
+                </div>
 
-                <md-input-container flex>
+                <div flex class="date-container">
                     <label translate="TODO.DUE_DATE">Due Date</label>
-                    <input ng-model="vm.task.dueDate">
-                </md-input-container>
+                    <md-datepicker flex ng-model="task.dueDate" md-placeholder="Start Date"></md-datepicker>
+                </div>
             </div>
+
             <div class="notes">
                 <label translate="TODO.NOTES">Notes</label>
                 <text-angular ng-model="vm.task.notes"></text-angular>
@@ -69,9 +72,16 @@
 
         <div class="md-actions mail-form-actions" layout="row" layout-align="space-between center" ms-scroll>
             <div layout="row" layout-align="start center">
-                <md-button ng-click="vm.closeDialog()" class="send-button md-accent md-raised"
+                <md-button type="submit" ng-disabled="taskForm.$invalid" ng-if="!vm.newTask" ng-click="vm.saveTask()"
+                           class="send-button md-accent md-raised"
                            aria-label="SAVE" translate="TODO.SAVE" translate-attr-aria-label="TODO.SAVE">
                     SAVE
+                </md-button>
+
+                <md-button type="submit" ng-disabled="taskForm.$invalid" ng-if="vm.newTask" ng-click="vm.addNewTask()"
+                           class="send-button md-accent md-raised"
+                           aria-label="Add Task" translate="TODO.ADD_TASK" translate-attr-aria-label="TODO.ADD_TASK">
+                    ADD TASK
                 </md-button>
 
                 <md-button class="md-icon-button" aria-label="Attach file" translate
@@ -86,7 +96,8 @@
             </div>
 
             <div layout="row">
-                <md-button class="md-icon-button" aria-label="Delete" translate translate-attr-aria-label="TODO.DELETE">
+                <md-button class="md-icon-button" ng-click="vm.deleteTask($event)" aria-label="Delete" translate
+                           translate-attr-aria-label="TODO.DELETE">
                     <md-icon md-font-icon="icon-delete"></md-icon>
                     <md-tooltip><span translate="TODO.DELETE">DELETE</span></md-tooltip>
                 </md-button>
