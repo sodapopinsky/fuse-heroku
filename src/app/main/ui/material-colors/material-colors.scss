@@ -26,6 +26,10 @@
                 overflow: hidden;
                 margin-bottom: 24px;
             }
+
+            .colored-bg {
+                transition: background-color 400ms ease;
+            }
         }
     }
 }

@@ -36,7 +36,7 @@
         </md-tabs>
 
         <md-content class="color-tab">
-            <div class="color-header md-whiteframe-1dp fg-white" layout="row" layout-align="start center"
+            <div class="color-header colored-bg md-whiteframe-1dp fg-white" layout="row" layout-align="start center"
                  ng-class="'bg-'+vm.selected" layout-padding>
                 <div flex layout-fill layout="column">
                     <div flex layout="column" layout-align="start start">
@@ -51,7 +51,7 @@
                 </div>
             </div>
             <div class="color md-whiteframe-1dp" layout="row" layout-wrap layout-align="center center">
-                <div ng-repeat="(hue, hueValue) in vm.selectedPalette" flex="100" layout="row" layout-padding
+                <div class="colored-bg" ng-repeat="(hue, hueValue) in vm.selectedPalette" flex="100" layout="row" layout-padding
                      ng-class="'bg-'+vm.selected+'-'+hue">
                     <div flex>{{hue}}</div>
                     <div flex>.{{'bg-'+vm.selected+'-'+hue}}</div>
