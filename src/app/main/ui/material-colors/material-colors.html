@@ -30,20 +30,34 @@
             <md-tab ng-repeat="(paletteName, palette) in vm.palettes"
                     md-on-select="vm.selected = paletteName; vm.selectedPalette = palette">
                 <md-tab-label>
-                    <div class="fg-white tab-title" ng-class="'bg-'+paletteName">{{paletteName}}</div>
+                    <span>{{paletteName}}</span>
                 </md-tab-label>
             </md-tab>
         </md-tabs>
 
         <md-content class="color-tab">
-            <div class="color" layout="row" layout-wrap layout-align="center center">
+            <div class="color-header md-whiteframe-1dp fg-white" layout="row" layout-align="start center"
+                 ng-class="'bg-'+vm.selected" layout-padding>
+                <div flex layout-fill layout="column">
+                    <div flex layout="column" layout-align="start start">
+                        <h3>{{vm.selected}}</h3>
+                    </div>
+                    <div layout="row" layout-align="space-beetween center">
+                        <div flex>500</div>
+                        <div>
+                            rgb({{vm.selectedPalette['500'].value[0]}},{{vm.selectedPalette['500'].value[1]}},{{vm.selectedPalette['500'].value[2]}})
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="color md-whiteframe-1dp" layout="row" layout-wrap layout-align="center center">
                 <div ng-repeat="(hue, hueValue) in vm.selectedPalette" flex="100" layout="row" layout-padding
                      ng-class="'bg-'+vm.selected+'-'+hue">
                     <div flex>{{hue}}</div>
                     <div flex>.{{'bg-'+vm.selected+'-'+hue}}</div>
-                    <div flex class="fg-white">.{{'bg-'+vm.selected+'-'+hue}}.fg-white</div>
-                    <div flex class="fg-balck">.{{'bg-'+vm.selected+'-'+hue}}.fg-black</div>
-                    <div flex class="bg-white md-whiteframe-2dp" ng-class="'fg-'+vm.selected+'-'+hue">.{{'fg-'+vm.selected+'-'+hue}}</div>
+                    <div flex class="bg-white md-whiteframe-2dp" ng-class="'fg-'+vm.selected+'-'+hue">
+                        .{{'fg-'+vm.selected+'-'+hue}}
+                    </div>
                 </div>
             </div>
         </md-content>
