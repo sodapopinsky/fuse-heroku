@@ -15,7 +15,8 @@ body {
 
 html, body {
     -webkit-font-smoothing: auto;
-    -moz-osx-font-smoothing: auto; }
+    -moz-osx-font-smoothing: auto;
+}
 
 form {
     font-size: 1.5rem;
@@ -165,6 +166,18 @@ small {
 
 .text-sub {
     vertical-align: sub;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
 }
 
 // Text align helpers
