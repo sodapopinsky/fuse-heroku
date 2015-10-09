@@ -30,7 +30,7 @@
             <md-tab ng-repeat="(paletteName, palette) in vm.palettes"
                     md-on-select="vm.selected = paletteName; vm.selectedPalette = palette">
                 <md-tab-label>
-                    <span>{{paletteName}}</span>
+                    <span class="text-capitalize">{{paletteName}}</span>
                 </md-tab-label>
             </md-tab>
         </md-tabs>
@@ -51,7 +51,8 @@
                 </div>
             </div>
             <div class="color md-whiteframe-1dp" layout="row" layout-wrap layout-align="center center">
-                <div class="colored-bg" ng-repeat="(hue, hueValue) in vm.selectedPalette" flex="100" layout="row" layout-padding
+                <div class="colored-bg" ng-repeat="(hue, hueValue) in vm.selectedPalette" flex="100" layout="row"
+                     layout-padding
                      ng-class="'bg-'+vm.selected+'-'+hue">
                     <div flex>{{hue}}</div>
                     <div flex>.{{'bg-'+vm.selected+'-'+hue}}</div>
