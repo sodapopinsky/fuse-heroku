@@ -1,0 +1,53 @@
+<div id="material-colors" class="page-layout simple tabbed doc-page" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between" layout-sm="column">
+        <div layout="column" layout-align="center start">
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-home" class="s16"></md-icon>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">USER INTERFACE</span>
+            </div>
+
+            <div class="title">Material Colors</div>
+        </div>
+
+        <div layout="row" layout-align="start center">
+            <md-button class="md-raised reference-button"
+                       href="https://www.google.com/design/spec/style/color.html#color-color-palette"
+                       target="_blank">
+                <md-icon md-font-icon="icon-link"></md-icon>
+                <span>Reference</span>
+            </md-button>
+        </div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <md-tabs class="color-tabs" md-dynamic-height md-swipe-content>
+            <md-tab ng-repeat="(paletteName, palette) in vm.palettes"
+                    md-on-select="vm.selected = paletteName; vm.selectedPalette = palette">
+                <md-tab-label>
+                    <div class="fg-white tab-title" ng-class="'bg-'+paletteName">{{paletteName}}</div>
+                </md-tab-label>
+            </md-tab>
+        </md-tabs>
+
+        <md-content class="color-tab">
+            <div class="color" layout="row" layout-wrap layout-align="center center">
+                <div ng-repeat="(hue, hueValue) in vm.selectedPalette" flex="100" layout="row" layout-padding
+                     ng-class="'bg-'+vm.selected+'-'+hue">
+                    <div flex>{{hue}}</div>
+                    <div flex>.{{'bg-'+vm.selected+'-'+hue}}</div>
+                    <div flex class="fg-white">.{{'bg-'+vm.selected+'-'+hue}}.fg-white</div>
+                    <div flex class="fg-balck">.{{'bg-'+vm.selected+'-'+hue}}.fg-black</div>
+                    <div flex class="bg-white md-whiteframe-2dp" ng-class="'fg-'+vm.selected+'-'+hue">.{{'fg-'+vm.selected+'-'+hue}}</div>
+                </div>
+            </div>
+        </md-content>
+    </div>
+    <!-- / CONTENT -->
+
+</div>

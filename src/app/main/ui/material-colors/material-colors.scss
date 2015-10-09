@@ -1,0 +1,32 @@
+#material-colors {
+
+    .content {
+        max-width: none !important;
+        .color-tabs {
+
+            md-tabs-content-wrapper {
+                display: none;
+            }
+
+            md-tabs-wrapper md-tabs-canvas .md-tab {
+                padding: 0;
+                margin: 2px 2px 0 0;
+
+                .tab-title {
+                    padding: 16px 24px;
+                    margin-bottom: -6px;
+                }
+            }
+        }
+        .color-tab {
+            padding: 24px;
+            background: none;
+
+            .color {
+                overflow: hidden;
+                margin-bottom: 24px;
+                border: 1px solid rgba(0, 0, 0, 0.12);
+            }
+        }
+    }
+}
