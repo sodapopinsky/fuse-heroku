@@ -1,0 +1,506 @@
+{
+    "projects": [
+        {
+            "name": "ACME Corp. Backend App"
+        },
+        {
+            "name": "ACME Corp. Frontend App"
+        },
+        {
+            "name": "Creapond"
+        },
+        {
+            "name": "Withinpixels"
+        }
+    ],
+    "widget1": {
+        "ranges": {
+            "DY": "Yesterday", "DT": "Today", "DTM": "Tomorrow"
+        },
+        "currentRange": "DT",
+        "data": {
+            "label": "DUE TASKS",
+            "count": {
+                "DY": 21, "DT": 25, "DTM": 19
+            },
+            "extra": {
+                "label": "Completed",
+                "count": {
+                    "DY": 6, "DT": 7, "DTM": "-"
+                }
+            }
+        },
+        "detail": "You can show some detailed information about this widget in here."
+    },
+    "widget2": {
+        "title": "Overdue",
+        "data": {
+            "label": "TASKS",
+            "count": 4,
+            "extra": {
+                "label": "Yesterday's overdue",
+                "count": 2
+            }
+        },
+        "detail": "You can show some detailed information about this widget in here."
+    },
+    "widget3": {
+        "title": "Issues",
+        "data": {
+            "label": "OPEN",
+            "count": 32,
+            "extra": {
+                "label": "Closed today",
+                "count": 0
+            }
+        },
+        "detail": "You can show some detailed information about this widget in here."
+    },
+    "widget4": {
+        "title": "Features",
+        "data": {
+            "label": "PROPOSALS",
+            "count": 42,
+            "extra": {
+                "label": "Implemented",
+                "count": 8
+            }
+        },
+        "detail": "You can show some detailed information about this widget in here."
+    },
+    "widget5": {
+        "title": "Github Issues",
+        "ranges": {
+            "2W": "2 Weeks Ago",
+            "LW": "Last Week",
+            "TW": "This Week"
+        },
+        "mainChart": [
+            {
+                "key": "Closed Issues",
+                "values": {
+                    "2W": [
+                        {"x": "Mon", "y": 9},
+                        {"x": "Tue", "y": 12},
+                        {"x": "Wed", "y": 9},
+                        {"x": "Thu", "y": 12},
+                        {"x": "Fri", "y": 7},
+                        {"x": "Sat", "y": 8},
+                        {"x": "Sun", "y": 16}
+                    ],
+                    "LW": [
+                        {"x": "Mon", "y": 12},
+                        {"x": "Tue", "y": 8},
+                        {"x": "Wed", "y": 7},
+                        {"x": "Thu", "y": 13},
+                        {"x": "Fri", "y": 7},
+                        {"x": "Sat", "y": 6},
+                        {"x": "Sun", "y": 10}
+                    ],
+                    "TW": [
+                        {"x": "Mon", "y": 11},
+                        {"x": "Tue", "y": 10},
+                        {"x": "Wed", "y": 8},
+                        {"x": "Thu", "y": 11},
+                        {"x": "Fri", "y": 8},
+                        {"x": "Sat", "y": 10},
+                        {"x": "Sun", "y": 17}
+                    ]
+                }
+            },
+            {
+                "key": "Issues",
+                "values": {
+                    "2W": [
+                        {"x": "Mon", "y": 37},
+                        {"x": "Tue", "y": 32},
+                        {"x": "Wed", "y": 39},
+                        {"x": "Thu", "y": 27},
+                        {"x": "Fri", "y": 18},
+                        {"x": "Sat", "y": 24},
+                        {"x": "Sun", "y": 20}
+                    ],
+                    "LW": [
+                        {"x": "Mon", "y": 37},
+                        {"x": "Tue", "y": 24},
+                        {"x": "Wed", "y": 51},
+                        {"x": "Thu", "y": 31},
+                        {"x": "Fri", "y": 29},
+                        {"x": "Sat", "y": 17},
+                        {"x": "Sun", "y": 31}
+                    ],
+                    "TW": [
+                        {"x": "Mon", "y": 42},
+                        {"x": "Tue", "y": 28},
+                        {"x": "Wed", "y": 43},
+                        {"x": "Thu", "y": 34},
+                        {"x": "Fri", "y": 20},
+                        {"x": "Sat", "y": 25},
+                        {"x": "Sun", "y": 22}
+                    ]
+                }
+            }
+        ],
+        "supporting": {
+            "created": {
+                "label": "CREATED",
+                "count": {
+                    "2W": 48,
+                    "LW": 46,
+                    "TW": 54
+                },
+                "chart": {
+                    "key": "Created",
+                    "values": {
+                        "2W": [
+                            {"x": 0, "y": 5},
+                            {"x": 1, "y": 8},
+                            {"x": 2, "y": 5},
+                            {"x": 3, "y": 6},
+                            {"x": 4, "y": 7},
+                            {"x": 5, "y": 8},
+                            {"x": 6, "y": 7}
+                        ],
+                        "LW": [
+                            {"x": 0, "y": 6},
+                            {"x": 1, "y": 3},
+                            {"x": 2, "y": 7},
+                            {"x": 3, "y": 5},
+                            {"x": 4, "y": 5},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 7}
+                        ],
+                        "TW": [
+                            {"x": 0, "y": 3},
+                            {"x": 1, "y": 2},
+                            {"x": 2, "y": 1},
+                            {"x": 3, "y": 4},
+                            {"x": 4, "y": 8},
+                            {"x": 5, "y": 8},
+                            {"x": 6, "y": 4}
+                        ]
+                    }
+                }
+            },
+            "closed": {
+                "label": "CLOSED",
+                "count": {
+                    "2W": 27,
+                    "LW": 31,
+                    "TW": 26
+                },
+                "chart": {
+                    "key": "Closed",
+                    "values": {
+                        "2W": [
+                            {"x": 0, "y": 3},
+                            {"x": 1, "y": 2},
+                            {"x": 2, "y": 1},
+                            {"x": 3, "y": 4},
+                            {"x": 4, "y": 8},
+                            {"x": 5, "y": 8},
+                            {"x": 6, "y": 4}
+                        ],
+                        "LW": [
+                            {"x": 0, "y": 6},
+                            {"x": 1, "y": 5},
+                            {"x": 2, "y": 4},
+                            {"x": 3, "y": 5},
+                            {"x": 4, "y": 7},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 7}
+                        ],
+                        "TW": [
+                            {"x": 0, "y": 6},
+                            {"x": 1, "y": 3},
+                            {"x": 2, "y": 7},
+                            {"x": 3, "y": 5},
+                            {"x": 4, "y": 5},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 7}
+                        ]
+                    }
+                }
+            },
+            "reOpened": {
+                "label": "RE-OPENED",
+                "count": {
+                    "2W": 4,
+                    "LW": 5,
+                    "TW": 2
+                },
+                "chart": {
+                    "key": "Re-Opened",
+                    "values": {
+                        "2W": [
+                            {"x": 0, "y": 6},
+                            {"x": 1, "y": 3},
+                            {"x": 2, "y": 7},
+                            {"x": 3, "y": 5},
+                            {"x": 4, "y": 5},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 7}
+                        ],
+                        "LW": [
+                            {"x": 0, "y": 5},
+                            {"x": 1, "y": 7},
+                            {"x": 2, "y": 8},
+                            {"x": 3, "y": 8},
+                            {"x": 4, "y": 6},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 1}
+                        ],
+                        "TW": [
+                            {"x": 0, "y": 3},
+                            {"x": 1, "y": 2},
+                            {"x": 2, "y": 1},
+                            {"x": 3, "y": 4},
+                            {"x": 4, "y": 8},
+                            {"x": 5, "y": 8},
+                            {"x": 6, "y": 4}
+                        ]
+                    }
+                }
+            },
+            "wontFix": {
+                "label": "WONT'T FIX",
+                "count": {
+                    "2W": 6,
+                    "LW": 3,
+                    "TW": 4
+                },
+                "chart": {
+                    "key": "Won't Fix",
+                    "values": {
+                        "2W": [
+                            {"x": 0, "y": 5},
+                            {"x": 1, "y": 7},
+                            {"x": 2, "y": 4},
+                            {"x": 3, "y": 6},
+                            {"x": 4, "y": 5},
+                            {"x": 5, "y": 3},
+                            {"x": 6, "y": 2}
+                        ],
+                        "LW": [
+                            {"x": 0, "y": 6},
+                            {"x": 1, "y": 3},
+                            {"x": 2, "y": 7},
+                            {"x": 3, "y": 5},
+                            {"x": 4, "y": 5},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 7}
+                        ],
+                        "TW": [
+                            {"x": 0, "y": 6},
+                            {"x": 1, "y": 5},
+                            {"x": 2, "y": 4},
+                            {"x": 3, "y": 5},
+                            {"x": 4, "y": 7},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 7}
+                        ]
+                    }
+                }
+            },
+            "needsTest": {
+                "label": "NEEDS TEST",
+                "count": {
+                    "2W": 10,
+                    "LW": 7,
+                    "TW": 8
+                },
+                "chart": {
+                    "key": "Needs Test",
+                    "values": {
+                        "2W": [
+                            {"x": 0, "y": 6},
+                            {"x": 1, "y": 5},
+                            {"x": 2, "y": 4},
+                            {"x": 3, "y": 5},
+                            {"x": 4, "y": 7},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 7}
+                        ],
+                        "LW": [
+                            {"x": 0, "y": 5},
+                            {"x": 1, "y": 7},
+                            {"x": 2, "y": 8},
+                            {"x": 3, "y": 8},
+                            {"x": 4, "y": 6},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 1}
+                        ],
+                        "TW": [
+                            {"x": 0, "y": 6},
+                            {"x": 1, "y": 3},
+                            {"x": 2, "y": 7},
+                            {"x": 3, "y": 5},
+                            {"x": 4, "y": 5},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 7}
+                        ]
+                    }
+                }
+            },
+            "fixed": {
+                "label": "FIXED",
+                "count": {
+                    "2W": 21,
+                    "LW": 17,
+                    "TW": 14
+                },
+                "chart": {
+                    "key": "Fixed",
+                    "values": {
+                        "2W": [
+                            {"x": 0, "y": 5},
+                            {"x": 1, "y": 7},
+                            {"x": 2, "y": 8},
+                            {"x": 3, "y": 8},
+                            {"x": 4, "y": 6},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 1}
+                        ],
+                        "LW": [
+                            {"x": 0, "y": 6},
+                            {"x": 1, "y": 5},
+                            {"x": 2, "y": 4},
+                            {"x": 3, "y": 5},
+                            {"x": 4, "y": 7},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 7}
+                        ],
+                        "TW": [
+                            {"x": 0, "y": 5},
+                            {"x": 1, "y": 7},
+                            {"x": 2, "y": 4},
+                            {"x": 3, "y": 6},
+                            {"x": 4, "y": 5},
+                            {"x": 5, "y": 3},
+                            {"x": 6, "y": 2}
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "widget6": {
+        "title": "Task Distribution",
+        "ranges": {
+            "2W": "2 Weeks Ago",
+            "LW": "Last Week",
+            "TW": "This Week"
+        },
+        "mainChart": [
+            {
+                "key": "Frontend",
+                "values": {
+                    "2W": 18,
+                    "LW": 19,
+                    "TW": 15
+                }
+            },
+            {
+                "key": "Backend",
+                "values": {
+                    "2W": 17,
+                    "LW": 16,
+                    "TW": 20
+                }
+            },
+            {
+                "key": "API",
+                "values": {
+                    "2W": 40,
+                    "LW": 42,
+                    "TW": 38
+                }
+            },
+            {
+                "key": "Issues",
+                "values": {
+                    "2W": 25,
+                    "LW": 23,
+                    "TW": 27
+                }
+            }
+        ],
+        "footerLeft": {
+            "title": "Tasks Added",
+            "count": {
+                "2W": 487,
+                "LW": 526,
+                "TW": 594
+            }
+        },
+        "footerRight": {
+            "title": "Tasks Completed",
+            "count": {
+                "2W": 193,
+                "LW": 260,
+                "TW": 287
+            }
+        }
+    }, "teamMembers": [
+    {
+        "name": "Jack Gilbert", "position": "Analog Circuit Design manager", "office": "Johor Bahru", "email": "jgilbert48@mail.com", "phone": "+16 298 032 7774"
+    },
+    {
+        "name": "Kathy Anderson", "position": "Recruiting Manager", "office": "Solţānābād", "email": "kanderson49@mail.com.br", "phone": "+23 572 311 1136"
+    },
+    {
+        "name": "Mark Turner", "position": "Recruiting Manager", "office": "Neftegorsk", "email": "mturner4a@mail.com", "phone": "+01 139 803 9263"
+    },
+    {
+        "name": "Kathryn Martinez", "position": "Director of Sales", "office": "Palekastro", "email": "kmartinez4b@mail.com", "phone": "+25 467 022 5393"
+    },
+    {
+        "name": "Annie Gonzales", "position": "Actuary", "office": "Candon", "email": "agonzales4c@mail.edu", "phone": "+99 891 619 7138"
+    },
+    {
+        "name": "Howard King", "position": "Human Resources Assistant", "office": "Bergen op Zoom", "email": "hking4d@mail.gov", "phone": "+46 984 348 1409"
+    },
+    {
+        "name": "Elizabeth Dixon", "position": "Electrical Engineer", "office": "Písečná", "email": "edixon4e@mail.gov", "phone": "+33 332 067 9063"
+    },
+    {
+        "name": "Dorothy Morris", "position": "Office Assistant III", "office": "Magsaysay", "email": "dmorris4f@mail.com", "phone": "+05 490 958 6120"
+    },
+    {
+        "name": "Mark Gonzales", "position": "Quality Control Specialist", "office": "Matsue-shi", "email": "mgonzales4g@mail.com", "phone": "+03 168 394 9935"
+    },
+    {
+        "name": "Catherine Rogers", "position": "Programmer Analyst I", "office": "Kangar", "email": "crogers4h@mail.com", "phone": "+86 235 407 5373"
+    },
+    {
+        "name": "Ruth Grant", "position": "Community Outreach Specialist", "office": "Beaune", "email": "rgrant4i@mail.pl", "phone": "+36 288 083 8460"
+    },
+    {
+        "name": "Phyllis Gutierrez", "position": "Administrative Assistant II", "office": "Shlissel’burg", "email": "pgutierrez4j@mail.net", "phone": "+52 749 861 9304"
+    },
+    {
+        "name": "Lillian Morris", "position": "Assistant Media Planner", "office": "Berlin", "email": "lmorris4k@mail.de", "phone": "+59 695 110 3856"
+    },
+    {
+        "name": "Jeremy Anderson", "position": "Mechanical Systems Engineer", "office": "Lũng Hồ", "email": "janderson4l@mail.uk", "phone": "+40 384 115 1448"
+    },
+    {
+        "name": "Arthur Lawrence", "position": "Nurse Practicioner", "office": "Sarkanjut", "email": "alawrence4m@mail.com", "phone": "+36 631 599 7867"
+    },
+    {
+        "name": "David Simmons", "position": "Social Worker", "office": "Ushumun", "email": "dsimmons4n@mail.com", "phone": "+01 189 681 4417"
+    },
+    {
+        "name": "Daniel Johnston", "position": "Help Desk Operator", "office": "São Carlos", "email": "djohnston4o@mail.gov", "phone": "+60 028 943 7919"
+    },
+    {
+        "name": "Ann King", "position": "Internal Auditor", "office": "Liren", "email": "aking4p@mail.com", "phone": "+91 103 932 6545"
+    },
+    {
+        "name": "Phillip Franklin", "position": "VP Accounting", "office": "Soba", "email": "pfranklin4q@mail.com", "phone": "+25 820 986 7626"
+    },
+    {
+        "name": "Gary Gonzalez", "position": "Speech Pathologist", "office": "Gangkou", "email": "ggonzalez4r@mail.cc", "phone": "+10 862 046 7916"
+    }
+]
+}

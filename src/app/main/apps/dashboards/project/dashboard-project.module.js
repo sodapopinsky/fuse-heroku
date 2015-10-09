@@ -18,9 +18,9 @@
                 }
             },
             resolve: {
-                TeamMembers: function (apiResolver)
+                DashboardData  : function (apiResolver)
                 {
-                    return apiResolver.resolve('dashboard.teamMembers@get');
+                    return apiResolver.resolve('dashboard.projectData@get');
                 }
             }
         });

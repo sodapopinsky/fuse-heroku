@@ -6,325 +6,338 @@
         .controller('DashboardProjectController', DashboardProjectController);
 
     /** @ngInject */
-    function DashboardProjectController($scope, $interval, $mdSidenav, TeamMembers)
+    function DashboardProjectController($scope, $interval, $mdSidenav, DashboardData, api)
     {
         var vm = this;
 
         // Data
-        vm.projects = [
-            {
-                'name': 'ACME Corp. Backend App'
-            },
-            {
-                'name': 'ACME Corp. Frontend App'
-            },
-            {
-                'name': 'Creapond'
-            },
-            {
-                'name': 'Withinpixels'
-            }
-        ];
+        vm.dashboardData = DashboardData;
+        vm.projects = vm.dashboardData.projects;
 
-        vm.widget1 = {
-            ranges      : {
-                'DY' : 'Yesterday',
-                'DT' : 'Today',
-                'DTM': 'Tomorrow'
-            },
-            currentRange: 'DT',
-            data        : {
-                label: 'DUE TASKS',
-                count: {
-                    'DY' : 21,
-                    'DT' : 25,
-                    'DTM': 19
-                },
-                extra: {
-                    label: 'Completed',
-                    count: {
-                        'DY' : 6,
-                        'DT' : 7,
-                        'DTM': '-'
-                    }
-                }
-            },
-            detail      : 'You can show some detailed information about this widget in here.'
-        };
+        // Widget 1
+        vm.widget1 = vm.dashboardData.widget1;
 
-        vm.widget2 = {
-            title : 'Overdue',
-            data  : {
-                label: 'TASKS',
-                count: 4,
-                extra: {
-                    label: 'Yesterday\'s overdue',
-                    count: 2
-                }
-            },
-            detail: 'You can show some detailed information about this widget in here.'
-        };
+        // Widget 2
+        vm.widget2 = vm.dashboardData.widget2;
 
-        vm.widget3 = {
-            title : 'Issues',
-            data  : {
-                label: 'OPEN',
-                count: 32,
-                extra: {
-                    label: 'Closed today',
-                    count: 0
-                }
-            },
-            detail: 'You can show some detailed information about this widget in here.'
-        };
+        // Widget 3
+        vm.widget3 = vm.dashboardData.widget3;
 
-        vm.widget4 = {
-            title : 'Features',
-            data  : {
-                label: 'PROPOSALS',
-                count: 42,
-                extra: {
-                    label: 'Implemented',
-                    count: 8
-                }
-            },
-            detail: 'You can show some detailed information about this widget in here.'
-        };
+        // Widget 4
+        vm.widget4 = vm.dashboardData.widget4;
 
+        // Widget 5
         vm.widget5 = {
-            title               : 'GitHub Issues',
-            chart               : {
-                data   : {
-                    '2W': [
-                        [9, 12, 9, 12, 7, 8, 16],
-                        [37, 32, 39, 27, 18, 24, 20]
-                    ],
-                    'LW': [
-                        [12, 8, 7, 13, 7, 6, 10],
-                        [37, 24, 51, 31, 29, 17, 31]
-                    ],
-                    'TW': [
-                        [11, 10, 8, 11, 8, 10, 17],
-                        [42, 28, 43, 34, 20, 25, 22]
-                    ]
+            title       : vm.dashboardData.widget5.title,
+            mainChart   : {
+                config : {
+                    refreshDataOnly: true,
+                    deepWatchData  : true
                 },
-                series : ['Closed Issues', 'Issues'],
-                labels : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
                 options: {
-                    responsive: true
-                },
-                colors : [
-                    {
-                        fillColor      : '#03a9f4',
-                        strokeColor    : 'rgba(0,0,0,0)',
-                        highlightFill  : '#03a9f4',
-                        highlightStroke: 'rgba(0,0,0,0)'
-                    },
-                    {
-                        fillColor      : '#b3e5fc',
-                        strokeColor    : 'rgba(0,0,0,0)',
-                        highlightFill  : '#b3e5fc',
-                        highlightStroke: 'rgba(0,0,0,0)'
+                    chart: {
+                        type        : 'multiBarChart',
+                        color       : ['#03a9f4', '#b3e5fc'],
+                        height      : 424,
+                        margin      : {
+                            top   : 8,
+                            right : 16,
+                            bottom: 32,
+                            left  : 32
+                        },
+                        clipEdge    : true,
+                        groupSpacing: 0.3,
+                        reduceXTicks: false,
+                        stacked     : true,
+                        duration    : 500,
+                        x           : function (d)
+                        {
+                            return d.x;
+                        },
+                        y           : function (d)
+                        {
+                            return d.y;
+                        },
+                        yAxis       : {
+                            tickFormat: function (d)
+                            {
+                                return d;
+                            }
+                        },
+                        legend      : {
+                            margin: {
+                                top   : 8,
+                                bottom: 32
+                            }
+                        },
+                        controls    : {
+                            margin: {
+                                top   : 8,
+                                bottom: 32
+                            }
+                        },
+                        tooltip     : {
+                            gravity: 's',
+                            classes: 'gravity-s'
+                        }
                     }
-                ]
+                },
+                data   : []
             },
-            extraData           : [
-                {
-                    label: 'CREATED',
-                    count: {
-                        '2W': 48,
-                        'LW': 46,
-                        'TW': 54
-                    },
-                    chart: {
-                        data  : {
-                            '2W': [
-                                [5, 8, 5, 6, 7, 8, 7]
-                            ],
-                            'LW': [
-                                [6, 3, 7, 5, 5, 4, 7]
-                            ],
-                            'TW': [
-                                [3, 2, 1, 4, 8, 8, 4]
+            supporting  : {
+                widgets: {
+                    created  : {
+                        data : vm.dashboardData.widget5.supporting.created,
+                        chart: {
+                            data: [
+                                {
+                                    key   : '',
+                                    values: []
+                                }
                             ]
-                        },
-                        series: ['Created Issues'],
-                        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                        color : ['#03a9f4']
+                        }
+                    },
+                    closed   : {
+                        data : vm.dashboardData.widget5.supporting.closed,
+                        chart: {
+                            data: [
+                                {
+                                    key   : '',
+                                    values: []
+                                }
+                            ]
+                        }
+                    },
+                    reOpened : {
+                        data : vm.dashboardData.widget5.supporting.reOpened,
+                        chart: {
+                            data: [
+                                {
+                                    key   : '',
+                                    values: []
+                                }
+                            ]
+                        }
+                    },
+                    wontFix  : {
+                        data : vm.dashboardData.widget5.supporting.wontFix,
+                        chart: {
+                            data: [
+                                {
+                                    key   : '',
+                                    values: []
+                                }
+                            ]
+                        }
+                    },
+                    needsTest: {
+                        data : vm.dashboardData.widget5.supporting.needsTest,
+                        chart: {
+                            data: [
+                                {
+                                    key   : '',
+                                    values: []
+                                }
+                            ]
+                        }
+                    },
+                    fixed    : {
+                        data : vm.dashboardData.widget5.supporting.fixed,
+                        chart: {
+                            data: [
+                                {
+                                    key   : '',
+                                    values: []
+                                }
+                            ]
+                        }
                     }
                 },
-                {
-                    label: 'CLOSED',
-                    count: {
-                        '2W': 27,
-                        'LW': 31,
-                        'TW': 26
+                chart  : {
+                    config : {
+                        refreshDataOnly: true,
+                        deepWatchData  : true
                     },
-                    chart: {
-                        data  : {
-                            '2W': [
-                                [3, 2, 1, 4, 8, 8, 4]
-                            ],
-                            'LW': [
-                                [6, 5, 4, 5, 7, 4, 7]
-                            ],
-                            'TW': [
-                                [6, 3, 7, 5, 5, 4, 7]
-                            ]
-                        },
-                        series: ['Created Issues'],
-                        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                        color : ['#03a9f4']
-                    }
-                },
-                {
-                    label: 'RE-OPENED',
-                    count: {
-                        '2W': 4,
-                        'LW': 5,
-                        'TW': 2
+                    options: {
+                        chart: {
+                            type                   : 'lineChart',
+                            color                  : ['#03a9f4'],
+                            height                 : 48,
+                            margin                 : {
+                                top   : 8,
+                                right : 0,
+                                bottom: 0,
+                                left  : 0
+                            },
+                            isArea                 : true,
+                            interpolate            : 'cardinal',
+                            clipEdge               : true,
+                            duration               : 500,
+                            showXAxis              : false,
+                            showYAxis              : false,
+                            showLegend             : false,
+                            useInteractiveGuideline: true,
+                            x                      : function (d)
+                            {
+                                return d.x;
+                            },
+                            y                      : function (d)
+                            {
+                                return d.y;
+                            },
+                            yDomain                : [0, 9],
+                            xAxis                  : {
+                                tickFormat: function (d)
+                                {
+                                    return vm.widget5.days[d];
+                                }
+                            },
+                            interactiveLayer       : {
+                                tooltip: {
+                                    gravity: 'e',
+                                    classes: 'gravity-e'
+                                }
+                            }
+                        }
                     },
-                    chart: {
-                        data  : {
-                            '2W': [
-                                [6, 3, 7, 5, 5, 4, 7]
-                            ],
-                            'LW': [
-                                [5, 7, 8, 8, 6, 4, 1]
-                            ],
-                            'TW': [
-                                [3, 2, 1, 4, 8, 8, 4]
-                            ]
-                        },
-                        series: ['Created Issues'],
-                        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                        color : ['#03a9f4']
-                    }
-                },
-                {
-                    label: 'WON\'T FIX',
-                    count: {
-                        '2W': 6,
-                        'LW': 3,
-                        'TW': 4
-                    },
-                    chart: {
-                        data  : {
-                            '2W': [
-                                [5, 7, 4, 6, 5, 3, 2]
-                            ],
-                            'LW': [
-                                [6, 3, 7, 5, 5, 4, 7]
-                            ],
-                            'TW': [
-                                [6, 5, 4, 5, 7, 4, 7]
-                            ]
-                        },
-                        series: ['Created Issues'],
-                        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                        color : ['#03a9f4']
-                    }
-                },
-                {
-                    label: 'NEEDS TEST',
-                    count: {
-                        '2W': 10,
-                        'LW': 7,
-                        'TW': 8
-                    },
-                    chart: {
-                        data  : {
-                            '2W': [
-                                [6, 5, 4, 5, 7, 4, 7]
-                            ],
-                            'LW': [
-                                [5, 7, 8, 8, 6, 4, 1]
-                            ],
-                            'TW': [
-                                [6, 3, 7, 5, 5, 4, 7]
-                            ]
-                        },
-                        series: ['Created Issues'],
-                        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                        color : ['#03a9f4']
-                    }
-                },
-                {
-                    label: 'FIXED',
-                    count: {
-                        '2W': 21,
-                        'LW': 17,
-                        'TW': 14
-                    },
-                    chart: {
-                        data  : {
-                            '2W': [
-                                [5, 7, 8, 8, 6, 4, 1]
-                            ],
-                            'LW': [
-                                [6, 5, 4, 5, 7, 4, 7]
-                            ],
-                            'TW': [
-                                [5, 7, 4, 6, 5, 3, 2]
-                            ]
-                        },
-                        series: ['Created Issues'],
-                        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                        color : ['#03a9f4']
-                    }
+                    data   : []
                 }
-            ],
-            ranges              : {
-                '2W': '2 Weeks Ago',
-                'LW': 'Last Week',
-                'TW': 'This Week'
             },
-            currentRange        : 'TW',
-            miniLineChartOptions: {
-                maintainAspectRatio: false,
-                scaleOverride      : true,
-                scaleSteps         : 9,
-                scaleStepWidth     : 1,
-                scaleStartValue    : 0,
-                showScale          : false,
-                pointDot           : false,
-                showTooltips       : false
+            days        : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            ranges      : vm.dashboardData.widget5.ranges,
+            currentRange: '',
+            changeRange : function (range)
+            {
+                vm.widget5.currentRange = range;
+
+                /**
+                 * Update main chart data by iterating through the
+                 * chart dataset and separately adding every single
+                 * dataset by hand.
+                 *
+                 * You MUST NOT swap the entire data object by doing
+                 * something similar to this:
+                 * vm.widget.mainChart.data = chartData
+                 *
+                 * It would be easier but it won't work with the
+                 * live updating / animated charts due to how d3
+                 * works.
+                 *
+                 * If you don't need animated / live updating charts,
+                 * you can simplify these greatly.
+                 */
+                angular.forEach(vm.dashboardData.widget5.mainChart, function (chartData, index)
+                {
+                    vm.widget5.mainChart.data[index] = {
+                        key   : chartData.key,
+                        values: chartData.values[range]
+                    };
+                });
+
+                /**
+                 * Do the same thing for the supporting widgets but they
+                 * only have 1 dataset so we can do [0] without needing to
+                 * iterate through in their data arrays
+                 */
+                angular.forEach(vm.dashboardData.widget5.supporting, function (widget, name)
+                {
+                    vm.widget5.supporting.widgets[name].chart.data[0] = {
+                        key   : widget.chart.key,
+                        values: widget.chart.values[range]
+                    };
+                });
+            },
+            init        : function ()
+            {
+                // Run this function once to initialize widget
+
+                /**
+                 * Update the range for the first time
+                 */
+                vm.widget5.changeRange('TW');
             }
         };
 
+        // Widget 6
         vm.widget6 = {
-            title       : 'Task Distribution',
-            chart       : {
-                data  : {
-                    '2W': [18, 17, 40, 25],
-                    'LW': [19, 16, 42, 23],
-                    'TW': [15, 20, 38, 27]
+            title       : vm.dashboardData.widget6.title,
+            mainChart   : {
+                config : {
+                    refreshDataOnly: true,
+                    deepWatchData  : true
                 },
-                series: ['Task Distribution'],
-                labels: ['Frontend', 'Backend', 'API', 'Issues'],
-                colors: ['#f44336', '#9c27b0', '#03a9f4', '#e91e63']
+                options: {
+                    chart: {
+                        type        : 'pieChart',
+                        color       : ['#f44336', '#9c27b0', '#03a9f4', '#e91e63'],
+                        height      : 400,
+                        margin      : {
+                            top   : 0,
+                            right : 0,
+                            bottom: 0,
+                            left  : 0
+                        },
+                        donut       : true,
+                        clipEdge    : true,
+                        cornerRadius: 0,
+                        labelType   : 'percent',
+                        padAngle    : 0.02,
+                        x           : function (d)
+                        {
+                            return d.key;
+                        },
+                        y           : function (d)
+                        {
+                            return d.value;
+                        },
+                        tooltip     : {
+                            gravity: 's',
+                            classes: 'gravity-s'
+                        }
+                    }
+                },
+                data   : []
             },
-            ranges      : {
-                '2W': '2 Weeks Ago',
-                'LW': 'Last Week',
-                'TW': 'This Week'
+            footerLeft  : vm.dashboardData.widget6.footerLeft,
+            footerRight : vm.dashboardData.widget6.footerRight,
+            ranges      : vm.dashboardData.widget6.ranges,
+            currentRange: '',
+            changeRange : function (key)
+            {
+                vm.widget6.currentRange = key;
+
+                /**
+                 * Update main chart data by iterating through the
+                 * chart dataset and separately adding every single
+                 * dataset by hand.
+                 *
+                 * You MUST NOT swap the entire data object by doing
+                 * something similar to this:
+                 * vm.widget.mainChart.data = chartData
+                 *
+                 * It would be easier but it won't work with the
+                 * live updating / animated charts due to how d3
+                 * works.
+                 *
+                 * If you don't need animated / live updating charts,
+                 * you can simplify these greatly.
+                 */
+                angular.forEach(vm.dashboardData.widget6.mainChart, function (data, index)
+                {
+                    vm.widget6.mainChart.data[index] = {
+                        key  : data.key,
+                        value: data.values[key]
+                    };
+                });
             },
-            currentRange: 'TW',
-            footerLeft  : {
-                title: 'Tasks Added',
-                count: {
-                    '2W': 487,
-                    'LW': 526,
-                    'TW': 594
-                }
-            },
-            footerRight : {
-                title: 'Tasks Completed',
-                count: {
-                    '2W': 193,
-                    'LW': 260,
-                    'TW': 287
-                }
+            init        : function ()
+            {
+                // Run this function once to initialize widget
+
+                /**
+                 * Update the range for the first time
+                 */
+                vm.widget6.changeRange('TW');
             }
         };
 
@@ -471,7 +484,7 @@
         };
 
         vm.widget10 = {
-            'title'  : 'Budget Details',
+            title    : 'Budget Details',
             tableData: [
                 {
                     budgetType         : 'Wireframing',
@@ -518,7 +531,7 @@
 
         vm.widget11 = {
             title      : 'Team Members',
-            teamMembers: TeamMembers.data,
+            teamMembers: vm.dashboardData.teamMembers,
             dtOptions  : {
                 dom       : '<"top"f>rt<"bottom"<"left"<"length"l>><"right"<"info"i><"pagination"p>>>',
                 pagingType: 'simple'
@@ -613,6 +626,12 @@
         {
             $interval.cancel(nowWidgetTicker);
         });
+
+        // Initialize widget5
+        vm.widget5.init();
+
+        // Initialize widget6
+        vm.widget6.init();
 
         /**
          * Toggle sidenav

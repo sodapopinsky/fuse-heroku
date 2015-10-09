@@ -18,7 +18,7 @@
         });
 
         api.dashboard = {
-            teamMembers: $resource(api.dataUrl + 'dashboard/team-members.json', null, {
+            projectData  : $resource(api.dataUrl + 'dashboard/project/data.json', null, {
                 get: {method: 'get'}
             })
         };

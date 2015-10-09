@@ -85,11 +85,11 @@
                                     </md-menu>
                                 </div>
 
-                                <div class="pb-32" layout="column" layout-align="center center">
-                                    <div class="fg-light-blue font-size-72 font-weight-500">
+                                <div class="pt-16 pb-32" layout="column" layout-align="center center">
+                                    <div class="fg-light-blue font-size-72 line-height-72">
                                         {{vm.widget1.data.count[vm.widget1.currentRange]}}
                                     </div>
-                                    <div class="h3 secondary-text">{{vm.widget1.data.label}}</div>
+                                    <div class="h3 secondary-text font-weight-500">{{vm.widget1.data.label}}</div>
                                 </div>
 
                                 <div class="p-16 bg-grey-50 border-top" layout="row" layout-align="start center">
@@ -148,11 +148,11 @@
                                     </md-menu>
                                 </div>
 
-                                <div class="pb-32" layout="column" layout-align="center center">
-                                    <div class="fg-red font-size-72 font-weight-500">
+                                <div class="pt-16 pb-32" layout="column" layout-align="center center">
+                                    <div class="fg-red font-size-72 line-height-72">
                                         {{vm.widget2.data.count}}
                                     </div>
-                                    <div class="h3 secondary-text">{{vm.widget2.data.label}}</div>
+                                    <div class="h3 secondary-text font-weight-500">{{vm.widget2.data.label}}</div>
                                 </div>
 
                                 <div class="p-16 bg-grey-50 border-top" layout="row" layout-align="start center">
@@ -211,11 +211,11 @@
                                     </md-menu>
                                 </div>
 
-                                <div class="pb-32" layout="column" layout-align="center center">
-                                    <div class="fg-orange font-size-72 font-weight-500">
+                                <div class="pt-16 pb-32" layout="column" layout-align="center center">
+                                    <div class="fg-orange font-size-72 line-height-72">
                                         {{vm.widget3.data.count}}
                                     </div>
-                                    <div class="h3 secondary-text">{{vm.widget3.data.label}}</div>
+                                    <div class="h3 secondary-text font-weight-500">{{vm.widget3.data.label}}</div>
                                 </div>
 
                                 <div class="p-16 bg-grey-50 border-top" layout="row" layout-align="start center">
@@ -273,10 +273,10 @@
                                     </md-menu>
                                 </div>
 
-                                <div class="pb-32" layout="column" layout-align="center center">
-                                    <div class="fg-blue-grey font-size-72 font-weight-500">{{vm.widget4.data.count}}
+                                <div class="pt-16 pb-32" layout="column" layout-align="center center">
+                                    <div class="fg-blue-grey font-size-72 line-height-72">{{vm.widget4.data.count}}
                                     </div>
-                                    <div class="h3 secondary-text">{{vm.widget4.data.label}}</div>
+                                    <div class="h3 secondary-text font-weight-500">{{vm.widget4.data.label}}</div>
                                 </div>
 
                                 <div class="p-16 bg-grey-50 border-top" layout="row" layout-align="start center">
@@ -322,52 +322,45 @@
                                     <div class="h2 weight-500">{{vm.widget5.title}}</div>
                                 </div>
 
-                                <div class="ph-16" flex="100">
+                                <div class="mh-16 border-bottom" flex="100">
                                     <div layout="row" layout-align="space-between center" flex="100">
                                         <div class="h3">Backend App Issues</div>
 
                                         <div class="pv-8">
                                             <md-button class="ph-16"
                                                        ng-repeat="(key, range) in vm.widget5.ranges"
-                                                       ng-click="vm.widget5.currentRange = key"
+                                                       ng-click="vm.widget5.changeRange(key)"
                                                        ng-disabled="vm.widget5.currentRange == key">
                                                 {{range}}
                                             </md-button>
                                         </div>
                                     </div>
-
-                                    <md-divider flex="100"></md-divider>
                                 </div>
 
                                 <div layout="row" layout-align="start center" layout-wrap flex>
                                     <div class="p-16" layout="row" layout-align="start center" flex="100"
                                          flex-gt-md="50">
                                         <div flex>
-                                            <canvas class="chart chart-bar"
-                                                    chart-data="vm.widget5.chart.data[vm.widget5.currentRange]"
-                                                    chart-labels="vm.widget5.chart.labels" chart-legend="true"
-                                                    chart-series="vm.widget5.chart.series"
-                                                    chart-option="vm.widget5.chart.options"
-                                                    chart-colours="vm.widget5.chart.colors">
-                                            </canvas>
+                                            <nvd3 class="remove-x-lines"
+                                                  config="vm.widget5.mainChart.config"
+                                                  options="vm.widget5.mainChart.options"
+                                                  data="vm.widget5.mainChart.data"></nvd3>
                                         </div>
                                     </div>
 
-                                    <div class="p-8" layout="row" layout-align="space-between center"
+                                    <div class="p-16" layout="row" layout-align="space-between center"
                                          layout-wrap flex="100" flex-gt-md="50">
-                                        <div class="ph-8 pv-16" layout="column"
-                                             flex="33" ng-repeat="extraData in vm.widget5.extraData">
-                                            <div class="secondary-text">{{extraData.label}}</div>
+                                        <div class="p-16" layout="column" flex="50"
+                                             ng-repeat="(name, widget) in vm.widget5.supporting.widgets">
+                                            <div class="h4">{{widget.data.label}}</div>
                                             <div class="md-display-1">
-                                                {{extraData.count[vm.widget5.currentRange]}}
+                                                {{widget.data.count[vm.widget5.currentRange]}}
                                             </div>
-                                            <canvas class="chart chart-line h-45 mt-8 mb-16"
-                                                    chart-data="extraData.chart.data[vm.widget5.currentRange]"
-                                                    chart-labels="extraData.chart.labels" chart-legend="false"
-                                                    chart-series="extraData.chart.series"
-                                                    chart-options="vm.widget5.miniLineChartOptions"
-                                                    chart-colours="extraData.chart.color">
-                                            </canvas>
+                                            <div flex>
+                                                <nvd3 config="vm.widget5.supporting.chart.config"
+                                                      options="vm.widget5.supporting.chart.options"
+                                                      data="widget.chart.data"></nvd3>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -388,13 +381,13 @@
                         <ms-widget class="" layout="column" flex="100" flex-gt-lg="50">
 
                             <!-- Front -->
-                            <ms-widget-front class="bg-white" flex>
-                                <div class="ph-16" layout="row" layout-align="space-between center"
+                            <ms-widget-front class="bg-white" layout="column" flex>
+                                <div class="ph-16 border-bottom" layout="row" layout-align="space-between center"
                                      flex="100">
                                     <div class="h3">{{vm.widget6.title}}</div>
-
                                     <div class="pv-16">
                                         <md-select class="simplified" ng-model="vm.widget6.currentRange"
+                                                   ng-change="vm.widget6.changeRange(vm.widget6.currentRange)"
                                                    aria-label="Change range">
                                             <md-option ng-repeat="(key, range) in vm.widget6.ranges"
                                                        value="{{key}}">
@@ -404,32 +397,27 @@
                                     </div>
                                 </div>
 
-                                <md-divider flex="100"></md-divider>
-
-                                <div class="p-16" layout="row" layout-align="start center" flex="100">
-                                    <div flex>
-                                        <canvas class="chart chart-doughnut"
-                                                chart-data="vm.widget6.chart.data[vm.widget6.currentRange]"
-                                                chart-labels="vm.widget6.chart.labels" chart-legend="true"
-                                                chart-series="vm.widget6.chart.series"
-                                                chart-colours="vm.widget6.chart.colors">
-                                        </canvas>
-                                    </div>
-                                </div>
-
-                                <div class="ph-16">
-                                    <md-divider></md-divider>
-                                </div>
-
-                                <div class="p-16" layout="row" layout-align="start center" flex="100">
-                                    <div class="border-right" layout="column" layout-align="center center" flex>
-                                        <span class="md-display-1">{{vm.widget6.footerLeft.count[vm.widget6.currentRange]}}</span>
-                                        <span class="secondary-text">{{vm.widget6.footerLeft.title}}</span>
+                                <div layout="column" layout-align="space-between" flex>
+                                    <div class="p-16" layout="row" layout-align="start center" flex="100">
+                                        <div flex>
+                                            <nvd3 config="vm.widget6.mainChart.config"
+                                                  options="vm.widget6.mainChart.options"
+                                                  data="vm.widget6.mainChart.data"></nvd3>
+                                        </div>
                                     </div>
 
-                                    <div layout="column" layout-align="center center" flex>
-                                        <span class="md-display-1">{{vm.widget6.footerRight.count[vm.widget6.currentRange]}}</span>
-                                        <span class="h3 secondary-text">{{vm.widget6.footerRight.title}}</span>
+                                    <div class="pv-16 mh-16 border-top" layout="row" layout-align="start center"
+                                         flex="100">
+
+                                        <div class="border-right" layout="column" layout-align="center center" flex>
+                                            <span class="font-size-32">{{vm.widget6.footerLeft.count[vm.widget6.currentRange]}}</span>
+                                            <span class="h4">{{vm.widget6.footerLeft.title}}</span>
+                                        </div>
+
+                                        <div layout="column" layout-align="center center" flex>
+                                            <span class="font-size-32">{{vm.widget6.footerRight.count[vm.widget6.currentRange]}}</span>
+                                            <span class="h4">{{vm.widget6.footerRight.title}}</span>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -444,7 +432,7 @@
 
                             <!-- Front -->
                             <ms-widget-front class="bg-white" flex>
-                                <div class="ph-16" layout="row" layout-align="space-between center"
+                                <div class="ph-16 border-bottom" layout="row" layout-align="space-between center"
                                      flex="100">
                                     <div class="h3">{{vm.widget7.title}}</div>
 
@@ -458,8 +446,6 @@
                                         </md-select>
                                     </div>
                                 </div>
-
-                                <md-divider flex="100"></md-divider>
 
                                 <div class="p-16" layout="row" layout-align="space-between center"
                                      ng-repeat="event in vm.widget7.schedule[vm.widget7.currentRange]">
