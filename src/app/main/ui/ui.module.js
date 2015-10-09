@@ -4,7 +4,7 @@
 
     angular
         .module('app.ui', [
-            'app.ui.colors',
+            'app.ui.theme-colors',
             'app.ui.material-colors',
             'app.ui.icons',
             'app.ui.layouts.blank',

@@ -2,11 +2,11 @@
 {
     'use strict';
 
-    angular.module('app.ui.colors')
-        .controller('ColorsController', ColorsController);
+    angular.module('app.ui.theme-colors')
+        .controller('ThemeColorsController', ThemeColorsController);
 
     /** @ngInject */
-    function ColorsController(fuseTheming, $mdDialog, $document)
+    function ThemeColorsController(fuseTheming, $mdDialog, $document)
     {
         var vm = this;
         // Data
