@@ -15,6 +15,7 @@
             }
         }
         .color-tab {
+            max-width: 800px;
             padding: 24px;
             background: none;
             .color-header {
@@ -25,6 +26,10 @@
             .color {
                 overflow: hidden;
                 margin-bottom: 24px;
+                .fg-box {
+                    min-width: 128px;
+                    padding: 8px;
+                }
             }
 
             .colored-bg {
