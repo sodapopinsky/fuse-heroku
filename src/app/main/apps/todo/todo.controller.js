@@ -6,7 +6,7 @@
         .controller('TodoController', TodoController);
 
     /** @ngInject */
-    function TodoController($scope, $document, $mdDialog, $mdSidenav, Tasks, Tags)
+    function TodoController($document, $mdDialog, $mdSidenav, Tasks, Tags)
     {
         var vm = this;
 
