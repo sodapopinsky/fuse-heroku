@@ -13,11 +13,6 @@
         // Data
         vm.tasks = Tasks.data;
         vm.tags = Tags.data;
-        angular.forEach(vm.tasks, function (task)
-        {
-            task.startDateTimestamp = new Date(task.startDate).getTime();
-            task.dueDateTimestamp = new Date(task.dueDate).getTime();
-        });
         vm.completed = [];
         vm.colors = ['blue', 'blue-grey', 'orange', 'pink', 'purple'];
         vm.projects = {
@@ -32,48 +27,57 @@
 
         // Tasks will be filtered against these models
         vm.taskFilters = {
-            search   : undefined,
+            search   : '',
             tags     : [],
-            completed: undefined,
+            completed: '',
             deleted  : false,
-            important: undefined,
-            starred  : undefined,
-            startDate: undefined,
-            dueDate  : undefined
+            important: '',
+            starred  : '',
+            startDate: '',
+            dueDate  : ''
         };
         vm.taskFiltersDefaults = angular.copy(vm.taskFilters);
         vm.showAllTasks = true;
 
         vm.taskOrder = '';
-        vm.orderReverse = false;
+        vm.taskOrderReverse = false;
 
         vm.sortableOptions = {
-            'ghostClass' : 'todo-item-placeholder',
-            'handle'     : '.handle',
-            //'scroll' : false,
+            ghostClass   : 'todo-item-placeholder',
+            handle       : '.handle',
             forceFallback: true,
             fallbackClass: 'todo-item-ghost',
-            //fallbackOnBody: false
         };
 
         // Methods
+        vm.preventDefault = preventDefault;
         vm.openTaskDialog = openTaskDialog;
         vm.toggleCompleted = toggleCompleted;
         vm.toggleSidenav = toggleSidenav;
         vm.toggleFilter = toggleFilter;
+        vm.toggleFilterWithEmpty = toggleFilterWithEmpty;
+        vm.filterByStartDate = filterByStartDate;
+        vm.filterByDueDate = filterByDueDate;
+        vm.resetFilters = resetFilters;
         vm.toggleTagFilter = toggleTagFilter;
         vm.isTagFilterExists = isTagFilterExists;
-        vm.preventDefault = preventDefault;
-        vm.resetFilters = resetFilters;
-        vm.taskFilterStartDate = taskFilterStartDate;
-        vm.taskFilterDueDate = taskFilterDueDate;
+
+        init();
 
         //////////
-        vm.getResultCount = function ()
-        {
-            console.log($scope.results);
 
-        };
+        /**
+         * Initialize the controller
+         */
+        function init()
+        {
+            angular.forEach(vm.tasks, function (task)
+            {
+                task.startDateTimestamp = new Date(task.startDate).getTime();
+                task.dueDateTimestamp = new Date(task.dueDate).getTime();
+            });
+        }
+
         /**
          * Prevent default
          *
@@ -83,39 +87,6 @@
         {
             e.preventDefault();
             e.stopPropagation();
-        }
-
-        /**
-         * Toggles tag filter
-         *
-         * @param tag
-         */
-        function toggleTagFilter(tag)
-        {
-            var i = vm.taskFilters.tags.indexOf(tag);
-
-            if ( i > -1 )
-            {
-                vm.taskFilters.tags.splice(i, 1);
-            }
-            else
-            {
-                vm.taskFilters.tags.push(tag);
-            }
-
-            checkAllTasks();
-
-        }
-
-        /**
-         * Returns if tag exists in the tagsFilter
-         *
-         * @param tag
-         * @returns {boolean}
-         */
-        function isTagFilterExists(tag)
-        {
-            return vm.taskFilters.tags.indexOf(tag) > -1;
         }
 
         /**
@@ -134,8 +105,8 @@
                 targetEvent        : ev,
                 clickOutsideToClose: true,
                 locals             : {
-                    task : task,
-                    tasks: vm.tasks,
+                    Task : task,
+                    Tasks: vm.tasks,
                     event: ev
                 }
             });
@@ -164,22 +135,37 @@
         }
 
         /**
-         * Toggle Filter
+         * Toggles filter with true or false
          *
          * @param filter
-         * @param toggleWith
          */
-        function toggleFilter(filter, toggleWith)
+        function toggleFilter(filter)
         {
-            toggleWith = toggleWith === 'undefined' ? undefined : !vm.taskFilters[filter];
+            vm.taskFilters[filter] = !vm.taskFilters[filter];
 
-            vm.taskFilters[filter] = vm.taskFilters[filter] === toggleWith ? true : toggleWith;
-
-            checkAllTasks();
+            checkFilters();
         }
 
         /**
-         * Reset All Filters
+         * Toggles filter with true or empty string
+         * @param filter
+         */
+        function toggleFilterWithEmpty(filter)
+        {
+            if ( vm.taskFilters[filter] === '' )
+            {
+                vm.taskFilters[filter] = true;
+            }
+            else
+            {
+                vm.taskFilters[filter] = '';
+            }
+
+            checkFilters();
+        }
+
+        /**
+         * Reset filters
          */
         function resetFilters()
         {
@@ -188,18 +174,28 @@
         }
 
         /**
-         * Check Tasks Filtered
+         * Check filters and mark showAllTasks
+         * as true if no filters selected
          */
-        function checkAllTasks()
+        function checkFilters()
         {
-            if ( angular.equals(vm.taskFiltersDefaults, vm.taskFilters) )
+            vm.showAllTasks = !!angular.equals(vm.taskFiltersDefaults, vm.taskFilters);
+        }
+
+        /**
+         * Filter by startDate
+         *
+         * @param item
+         * @returns {boolean}
+         */
+        function filterByStartDate(item)
+        {
+            if ( vm.taskFilters.startDate === true )
             {
-                vm.showAllTasks = true;
+                return item.startDate === new Date();
             }
-            else
-            {
-                vm.showAllTasks = false;
-            }
+
+            return true;
         }
 
         /**
@@ -208,37 +204,46 @@
          * @param item
          * @returns {boolean}
          */
-        function taskFilterDueDate(item)
+        function filterByDueDate(item)
         {
-            if ( vm.taskFilters.dueDate === undefined )
-            {
-                return true;
-
-            }
-            else if ( vm.taskFilters.dueDate === true )
+            if ( vm.taskFilters.dueDate === true )
             {
                 return !(item.dueDate === null || item.dueDate.length === 0);
             }
+
+            return true;
         }
 
         /**
-         * Filter Start Date
+         * Toggles tag filter
          *
-         * @param item
-         * @returns {boolean}
+         * @param tag
          */
-        function taskFilterStartDate(item)
+        function toggleTagFilter(tag)
         {
-            if ( vm.taskFilters.startDate === undefined )
+            var i = vm.taskFilters.tags.indexOf(tag);
+
+            if ( i > -1 )
             {
-                return true;
+                vm.taskFilters.tags.splice(i, 1);
             }
-            else if ( vm.taskFilters.startDate === true )
+            else
             {
-                return item.startDate === new Date();
+                vm.taskFilters.tags.push(tag);
             }
+
+            checkFilters();
         }
 
-
+        /**
+         * Returns if tag exists in the tagsFilter
+         *
+         * @param tag
+         * @returns {boolean}
+         */
+        function isTagFilterExists(tag)
+        {
+            return vm.taskFilters.tags.indexOf(tag) > -1;
+        }
     }
 })();

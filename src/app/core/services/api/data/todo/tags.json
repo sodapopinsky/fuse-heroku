@@ -2,27 +2,33 @@
     "data": [
         {
             "id": 1,
-            "name": "meeting-planning",
-            "label": "Meeting Planning",
+            "name": "frontend",
+            "label": "Frontend",
             "color": "#388E3C"
         },
         {
             "id": 2,
-            "name": "personal-project",
-            "label": "Personal Project",
+            "name": "backend",
+            "label": "Backend",
             "color": "#F44336"
         },
         {
             "id": 3,
-            "name": "github-client",
-            "label": "Github Client",
+            "name": "API",
+            "label": "API",
             "color": "#FF9800"
         },
         {
             "id": 4,
-            "name": "server",
-            "label": "Server",
+            "name": "issue",
+            "label": "Issue",
             "color": "#0091EA"
+        },
+        {
+            "id": 5,
+            "name": "mobile",
+            "label": "Mobile",
+            "color": "#9C27B0"
         }
     ]
 }

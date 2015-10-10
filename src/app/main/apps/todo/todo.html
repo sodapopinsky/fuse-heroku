@@ -48,10 +48,10 @@
                 <div layout="row" layout-align="start center">
                     <md-select class="simplified" ng-model="vm.taskOrder" placeholder="Order" translate
                                translate-attr-placeholder="TODO.ORDER"
-                               ng-change="vm.orderReverse = vm.taskOrder === ''? false :vm.orderReverse">
-                        <md-option value="startDateHex" translate="TODO.START_DATE">Start Date</md-option>
-                        <md-option value="dueDateHex" translate="TODO.DUE_DATE">Due Date</md-option>
-                        <md-option value="" translate="TODO.MANUAL_ORDER">Manual Order</md-option>
+                               ng-change="vm.taskOrderReverse = vm.taskOrder === '' ? false : vm.taskOrderReverse">
+                        <md-option value="startDateTimestamp" translate="TODO.START_DATE">Start Date</md-option>
+                        <md-option value="dueDateTimestamp" translate="TODO.DUE_DATE">Due Date</md-option>
+                        <md-option value="" translate="TODO.MANUAL">Manual</md-option>
                         <md-option value="title" translate="TODO.TITLE">Title</md-option>
                     </md-select>
 
@@ -67,20 +67,20 @@
                         <md-menu-content width="3">
                             <md-menu-item>
                                 <md-button aria-label="Ascending" translate-aria-label="TODO.ASCENDING"
-                                           ng-click="vm.orderReverse = false">
-                                    <md-icon ng-if="vm.orderReverse === false"
+                                           ng-click="vm.taskOrderReverse = false">
+                                    <md-icon ng-if="vm.taskOrderReverse === false"
                                              md-font-icon="icon-checkbox-marked-circle"></md-icon>
-                                    <md-icon ng-if="vm.orderReverse === true"
+                                    <md-icon ng-if="vm.taskOrderReverse === true"
                                              md-font-icon="icon-checkbox-blank-circle-outline"></md-icon>
                                     <span translate="TODO.ASCENDING">Ascending</span>
                                 </md-button>
                             </md-menu-item>
                             <md-menu-item>
                                 <md-button aria-label="Descending" translate-aria-label="TODO.DESCENDING"
-                                           ng-click="vm.orderReverse = true">
-                                    <md-icon ng-if="vm.orderReverse === true"
+                                           ng-click="vm.taskOrderReverse = true">
+                                    <md-icon ng-if="vm.taskOrderReverse === true"
                                              md-font-icon="icon-checkbox-marked-circle"></md-icon>
-                                    <md-icon ng-if="vm.orderReverse === false"
+                                    <md-icon ng-if="vm.taskOrderReverse === false"
                                              md-font-icon="icon-checkbox-blank-circle-outline"></md-icon>
                                     <span translate="TODO.DESCENDING">Descending</span>
                                 </md-button>

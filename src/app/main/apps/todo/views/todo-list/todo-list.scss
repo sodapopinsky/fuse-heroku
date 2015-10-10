@@ -11,10 +11,16 @@
     .todo-list-pane {
 
         .sortable {
+
             .todo-item {
                 padding: 16px 16px 16px 48px;
+
+                .handle {
+                    display: block;
+                }
             }
         }
+
         .todo-item {
             position: relative;
             padding: 16px;
@@ -42,6 +48,7 @@
             }
 
             .handle {
+                display: none;
                 position: absolute;
                 height: 100%;
                 width: 48px;
@@ -97,11 +104,19 @@
                     font-weight: 500;
                 }
 
-                .is-starred,
+                .notes {
+                    margin-top: 4px;
+                }
+            }
+
+            .buttons {
+
+                .is-starred {
+                    margin: 0 0 0 16px;
+                }
+
                 .is-important {
-                    margin: 0 0 0 8px;
-                    vertical-align: top;
-                    line-height: 18px !important;
+                    margin: 0;
                 }
             }
         }
@@ -115,18 +130,17 @@
 
         .todo-list-pane {
 
+            .sortable {
+
+                .todo-item {
+                    padding-left: 32px;
+                }
+            }
+
             .todo-item {
 
-                .tags {
-                    margin-top: 8px;
-                }
-
-                .info {
-                    margin: 0;
-                }
-
-                .buttons {
-
+                .handle {
+                    width: 32px;
                 }
             }
         }

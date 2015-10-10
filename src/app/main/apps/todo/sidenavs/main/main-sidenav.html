@@ -39,11 +39,15 @@
             </div>
         </md-button>
 
+        <div class="item subheader" translate="TODO.FILTERS">
+            Filters
+        </div>
+
         <md-button class="item" aria-label="Starred" translate translate-attr-aria-label="TODO.STARRED"
                    ng-class="{'selected':vm.taskFilters.starred}">
             <label layout="row" layout-align="start center">
                 <input class="ng-hide" type="checkbox" ng-checked="vm.taskFilters.starred"
-                       ng-click="vm.toggleFilter('starred','undefined')">
+                       ng-click="vm.toggleFilterWithEmpty('starred')">
                 </input>
                 <md-icon md-font-icon="icon-star" class="s16"></md-icon>
                 <span class="title" translate="TODO.STARRED">Starred</span>
@@ -54,7 +58,7 @@
                    ng-class="{'selected':vm.taskFilters.important}">
             <label layout="row" layout-align="start center">
                 <input class="ng-hide" type="checkbox" ng-checked="vm.taskFilters.important"
-                       ng-click="vm.toggleFilter('important','undefined')">
+                       ng-click="vm.toggleFilterWithEmpty('important')">
                 </input>
                 <md-icon md-font-icon="icon-alert-circle" class="s16"></md-icon>
                 <span class="title" translate="TODO.PRIORITY">Priority</span>
@@ -65,7 +69,7 @@
                    ng-class="{'selected':vm.taskFilters.dueDate}">
             <label layout="row" layout-align="start center">
                 <input class="ng-hide" type="checkbox" ng-checked="vm.taskFilters.dueDate"
-                       ng-click="vm.toggleFilter('dueDate','undefined')">
+                       ng-click="vm.toggleFilterWithEmpty('dueDate')">
                 </input>
                 <md-icon md-font-icon="icon-clock" class="s16"></md-icon>
                 <span class="title" translate="TODO.SCHEDULED">Scheduled</span>
@@ -76,7 +80,7 @@
                    ng-class="{'selected':vm.taskFilters.startDate}">
             <label layout="row" layout-align="start center">
                 <input class="ng-hide" type="checkbox" ng-checked="vm.taskFilters.startDate"
-                       ng-click="vm.toggleFilter('startDate','undefined')">
+                       ng-click="vm.toggleFilterWithEmpty('startDate')">
                 </input>
                 <md-icon md-font-icon="icon-calendar-today" class="s16"></md-icon>
                 <span class="title" translate="TODO.TODAY">Today</span>
@@ -87,7 +91,7 @@
                    ng-class="{'selected':vm.taskFilters.completed}">
             <label layout="row" layout-align="start center">
                 <input class="ng-hide" type="checkbox" ng-checked="vm.taskFilters.completed"
-                       ng-click="vm.toggleFilter('completed','undefined')">
+                       ng-click="vm.toggleFilterWithEmpty('completed')">
                 </input>
                 <md-icon md-font-icon="icon-check" class="s16"></md-icon>
                 <span class="title" translate="TODO.DONE">Done</span>
