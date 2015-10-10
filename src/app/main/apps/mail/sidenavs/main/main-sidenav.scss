@@ -12,8 +12,7 @@
                 }
 
                 .logo-text {
-                    font-size: 20px;
-                    font-weight: 500;
+                    font-size: 24px;
                 }
             }
 
@@ -53,10 +52,14 @@
             .header {
                 color: #FFFFFF;
 
-                .logo-icon {
+                .logo {
+                    padding-top: 27px;
 
-                    md-icon {
-                        color: #FFFFFF;
+                    .logo-icon {
+
+                        md-icon {
+                            color: #FFFFFF;
+                        }
                     }
                 }
             }
