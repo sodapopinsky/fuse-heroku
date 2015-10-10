@@ -36,8 +36,8 @@
         </md-tabs>
 
         <md-content class="color-tab">
-            <div class="color-header colored-bg md-whiteframe-1dp fg-white" layout="row" layout-align="start center"
-                 ng-class="'bg-'+vm.selected" layout-padding>
+            <div class="color-header colored-bg md-whiteframe-1dp" layout="row" layout-align="start center"
+                 ng-class="'md-'+vm.selected+'-bg'" layout-padding>
                 <div flex layout-fill layout="column">
                     <div flex layout="column" layout-align="start start">
                         <h3>{{vm.selected}}</h3>
@@ -53,11 +53,12 @@
             <div class="color md-whiteframe-1dp" layout="row" layout-wrap layout-align="center center">
                 <div class="colored-bg" ng-repeat="(hue, hueValue) in vm.selectedPalette" flex="100" layout="row"
                      layout-sm="column" layout-padding
-                     ng-class="'bg-'+vm.selected+'-'+hue">
+                     ng-class="vm.selected+'-'+hue+'-bg'">
                     <div flex>{{hue}}</div>
-                    <div flex>.{{'bg-'+vm.selected+'-'+hue}}</div>
-                    <div class="fg-box bg-white md-whiteframe-2dp" ng-class="'fg-'+vm.selected+'-'+hue">
-                        .{{'fg-'+vm.selected+'-'+hue}}
+                    <div ng-class="'md-'+vm.selected+'-'+hue+'-bg'" flex>.{{'md-'+vm.selected+'-'+hue+'-bg'}}</div>
+                    <div flex>.{{vm.selected+'-'+hue+'-bg'}}</div>
+                    <div class="fg-box white-bg md-whiteframe-2dp" ng-class="vm.selected+'-'+hue+'-fg'">
+                        .{{vm.selected+'-'+hue+'-fg'}}
                     </div>
                 </div>
             </div>

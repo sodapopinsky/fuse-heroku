@@ -3,7 +3,7 @@
 /*----------------------------------------------------------------*/
 
 // Black text
-.fg-black,
+.black-fg,
 .black-text {
     color: rgba(0, 0, 0, 0.87) !important;
 
@@ -30,8 +30,8 @@
 }
 
 // White text
-.fg-white,
-.fg-white {
+.white-fg,
+.white-text {
     color: rgb(255, 255, 255) !important;
 
     &.secondary-text,
@@ -72,16 +72,35 @@
     }
 }
 
+@function getContrastColor($options, $hue) {
+    @if (map_has_key($options, 'contrastColors')) {
+        $contrastColors: map-get($options, 'contrastColors');
+
+        @if (map_has_key($contrastColors, $hue)) {
+            @return map-get($contrastColor, map-get($contrastColors, $hue));
+        } @else {
+            @return map-get($contrastColor, map-get($contrastColors, 'default'));
+        }
+
+    }
+    @return black;
+}
+
 // Material colors with all available hue values
-@each $colorName, $colorMap in $materialColorsMap {
+@each $colorName, $options in $materialColorsMap {
 
-    @each $hue, $hexValue in $colorMap {
+    @each $hue, $hexValue in map-get($options, 'colorMap') {
 
-        .bg-#{$colorName}-#{$hue} {
+        .#{$colorName}-#{$hue}-bg {
             background-color: $hexValue !important;
         }
 
-        .fg-#{$colorName}-#{$hue} {
+        .md-#{$colorName}-#{$hue}-bg {
+            background-color: $hexValue !important;
+            color: getContrastColor($options, $hue);
+        }
+
+        .#{$colorName}-#{$hue}-fg {
             color: $hexValue !important;
         }
 
@@ -106,11 +125,17 @@
         }
 
         @if ($hue == '500') {
-            .bg-#{$colorName} {
+
+            .md-#{$colorName}-bg {
+                background-color: $hexValue !important;
+                color: getContrastColor($options, $hue);
+            }
+
+            .#{$colorName}-bg {
                 background-color: $hexValue !important;
             }
 
-            .fg-#{$colorName} {
+            .#{$colorName}-fg {
                 color: $hexValue !important;
             }
 
@@ -141,14 +166,13 @@
 @function material-color($color, $hue: '500') {
 
     @if (map_has_key($materialColorsMap, $color)) {
-        @if (map_has_key(map_get($materialColorsMap, $color), $hue)){
-            @return map_get(map_get($materialColorsMap, $color), $hue);
-        }
-        @else {
+        $selectedColor: map_get($materialColorsMap, $color);
+        @if (map_has_key(map_get($selectedColor, 'colorMap'), $hue)) {
+            @return map_get(map_get($selectedColor, 'colorMap'), $hue);
+        } @else {
             @error "'#{$hue}' is not a valid hue value for '#{$color}'!";
         }
-    }
-    @else {
+    } @else {
         @error "'#{$color}' is not a valid Material Design color!";
     }
 }
