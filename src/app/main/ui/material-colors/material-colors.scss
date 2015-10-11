@@ -2,30 +2,29 @@
 
     .content {
         max-width: none !important;
+
         .color-tabs {
 
             md-tabs-content-wrapper {
                 display: none;
             }
-
-            md-tabs-wrapper md-tabs-canvas .md-tab {
-
-                .tab-title {
-                }
-            }
         }
+
         .color-tab {
             max-width: 800px;
             padding: 24px;
             background: none;
+
             .color-header {
                 margin-bottom: 8px;
                 overflow: hidden;
                 height: 126px;
             }
+
             .color {
                 overflow: hidden;
                 margin-bottom: 24px;
+
                 .fg-box {
                     min-width: 128px;
                     padding: 8px;
