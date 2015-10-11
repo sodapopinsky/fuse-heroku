@@ -868,16 +868,16 @@
                     "title": "Office"
                 },
                 {
-                    "title": "Phone"
+                    "title": "E-Mail"
                 },
                 {
-                    "title": "E-Mail"
+                    "title": "Phone"
                 }
             ],
             "rows": [
                 [
                     "Jack Gilbert",
-                    "Analog Circuit Design manager",
+                    "Design Manager",
                     "Johor Bahru",
                     "jgilbert48@mail.com",
                     "+16 298 032 7774"
@@ -912,7 +912,7 @@
                 ],
                 [
                     "Howard King",
-                    "Human Resources Assistant",
+                    "Human Resources",
                     "Bergen op Zoom",
                     "hking4d@mail.gov",
                     "+46 984 348 1409"
@@ -926,49 +926,49 @@
                 ],
                 [
                     "Dorothy Morris",
-                    "Office Assistant III",
+                    "Office Assistant",
                     "Magsaysay",
                     "dmorris4f@mail.com",
                     "+05 490 958 6120"
                 ],
                 [
                     "Mark Gonzales",
-                    "Quality Control Specialist",
+                    "Quality Control",
                     "Matsue-shi",
                     "mgonzales4g@mail.com",
                     "+03 168 394 9935"
                 ],
                 [
                     "Catherine Rogers",
-                    "Programmer Analyst I",
+                    "Programmer Analyst",
                     "Kangar",
                     "crogers4h@mail.com",
                     "+86 235 407 5373"
                 ],
                 [
                     "Ruth Grant",
-                    "Community Outreach Specialist",
+                    "Community Outreach",
                     "Beaune",
                     "rgrant4i@mail.pl",
                     "+36 288 083 8460"
                 ],
                 [
                     "Phyllis Gutierrez",
-                    "Administrative Assistant II",
+                    "Administrative Assistant",
                     "Shlissel’burg",
                     "pgutierrez4j@mail.net",
                     "+52 749 861 9304"
                 ],
                 [
                     "Lillian Morris",
-                    "Assistant Media Planner",
+                    "Media Planner",
                     "Berlin",
                     "lmorris4k@mail.de",
                     "+59 695 110 3856"
                 ],
                 [
                     "Jeremy Anderson",
-                    "Mechanical Systems Engineer",
+                    "Systems Engineer",
                     "Lũng Hồ",
                     "janderson4l@mail.uk",
                     "+40 384 115 1448"
@@ -989,7 +989,7 @@
                 ],
                 [
                     "Daniel Johnston",
-                    "Help Desk Operator",
+                    "Help Desk",
                     "São Carlos",
                     "djohnston4o@mail.gov",
                     "+60 028 943 7919"

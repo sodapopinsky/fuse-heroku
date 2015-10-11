@@ -20,7 +20,7 @@
             resolve: {
                 DashboardData  : function (apiResolver)
                 {
-                    return apiResolver.resolve('dashboard.projectData@get');
+                    return apiResolver.resolve('dashboard.project@get');
                 }
             }
         });
