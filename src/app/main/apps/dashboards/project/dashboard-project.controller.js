@@ -6,7 +6,7 @@
         .controller('DashboardProjectController', DashboardProjectController);
 
     /** @ngInject */
-    function DashboardProjectController($scope, $interval, $mdSidenav, DashboardData, api)
+    function DashboardProjectController($scope, $interval, $mdSidenav, DashboardData)
     {
         var vm = this;
 
@@ -49,7 +49,7 @@
                         groupSpacing: 0.3,
                         reduceXTicks: false,
                         stacked     : true,
-                        duration    : 500,
+                        duration    : 250,
                         x           : function (d)
                         {
                             return d.x;
@@ -89,67 +89,37 @@
                     created  : {
                         data : vm.dashboardData.widget5.supporting.created,
                         chart: {
-                            data: [
-                                {
-                                    key   : '',
-                                    values: []
-                                }
-                            ]
+                            data: []
                         }
                     },
                     closed   : {
                         data : vm.dashboardData.widget5.supporting.closed,
                         chart: {
-                            data: [
-                                {
-                                    key   : '',
-                                    values: []
-                                }
-                            ]
+                            data: []
                         }
                     },
                     reOpened : {
                         data : vm.dashboardData.widget5.supporting.reOpened,
                         chart: {
-                            data: [
-                                {
-                                    key   : '',
-                                    values: []
-                                }
-                            ]
+                            data: []
                         }
                     },
                     wontFix  : {
                         data : vm.dashboardData.widget5.supporting.wontFix,
                         chart: {
-                            data: [
-                                {
-                                    key   : '',
-                                    values: []
-                                }
-                            ]
+                            data: []
                         }
                     },
                     needsTest: {
                         data : vm.dashboardData.widget5.supporting.needsTest,
                         chart: {
-                            data: [
-                                {
-                                    key   : '',
-                                    values: []
-                                }
-                            ]
+                            data: []
                         }
                     },
                     fixed    : {
                         data : vm.dashboardData.widget5.supporting.fixed,
                         chart: {
-                            data: [
-                                {
-                                    key   : '',
-                                    values: []
-                                }
-                            ]
+                            data: []
                         }
                     }
                 },
@@ -161,7 +131,7 @@
                     options: {
                         chart: {
                             type                   : 'lineChart',
-                            color                  : ['#03a9f4'],
+                            color                  : ['#607D8B'],
                             height                 : 48,
                             margin                 : {
                                 top   : 8,
@@ -284,7 +254,7 @@
                         padAngle    : 0.02,
                         x           : function (d)
                         {
-                            return d.key;
+                            return d.label;
                         },
                         y           : function (d)
                         {
@@ -302,9 +272,9 @@
             footerRight : vm.dashboardData.widget6.footerRight,
             ranges      : vm.dashboardData.widget6.ranges,
             currentRange: '',
-            changeRange : function (key)
+            changeRange : function (range)
             {
-                vm.widget6.currentRange = key;
+                vm.widget6.currentRange = range;
 
                 /**
                  * Update main chart data by iterating through the
@@ -325,8 +295,8 @@
                 angular.forEach(vm.dashboardData.widget6.mainChart, function (data, index)
                 {
                     vm.widget6.mainChart.data[index] = {
-                        key  : data.key,
-                        value: data.values[key]
+                        label: data.label,
+                        value: data.values[range]
                     };
                 });
             },
@@ -341,203 +311,167 @@
             }
         };
 
+        // Widget 7
         vm.widget7 = {
-            title       : 'Schedule',
-            schedule    : {
-                'T' : [
-                    {
-                        title   : 'Group Meeting',
-                        time    : 'In 32 minutes',
-                        location: 'Room 1B'
-                    },
-                    {
-                        title: 'Public Beta Release',
-                        time : '11:00 AM'
-                    },
-                    {
-                        title: 'Public Beta Release',
-                        time : '11:00 AM'
-                    },
-                    {
-                        title: 'Dinner with David',
-                        time : '17:30 PM'
-                    },
-                    {
-                        title: 'Jane\'s Birthday Party',
-                        time : '19:30 PM'
-                    },
-                    {
-                        title: 'Overseer\'s Retirement Party',
-                        time : '21:30 PM'
-                    }
-                ],
-                'TM': [
-                    {
-                        title: 'Marketing Meeting',
-                        time : '09:00 AM'
-                    },
-                    {
-                        title: 'Public Announcement',
-                        time : '11:00 AM'
-                    },
-                    {
-                        title: 'Meeting with Beta Testers',
-                        time : '15:00 AM'
-                    },
-                    {
-                        title: 'Live Stream',
-                        time : '17:30 PM'
-                    },
-                    {
-                        title: 'Release Party',
-                        time : '19:30 PM'
-                    }
-                ]
-            },
-            ranges      : {
-                'T' : 'Today',
-                'TM': 'Tomorrow'
-            },
+            title       : vm.dashboardData.widget7.title,
+            ranges      : vm.dashboardData.widget7.ranges,
+            schedule    : vm.dashboardData.widget7.schedule,
             currentRange: 'T'
         };
 
+        // Widget 8
         vm.widget8 = {
-            title: 'Budget Distribution',
-            chart: {
-                data  : [12, 17, 28, 28, 15],
-                series: ['Budget Distribution'],
-                labels: ['Wireframing', 'Design', 'Coding', 'Marketing', 'Extra'],
-                colors: ['#f44336', '#9c27b0', '#03a9f4', '#e91e63', '#ffeb3b']
+            title    : vm.dashboardData.widget8.title,
+            mainChart: {
+                options: {
+                    chart: {
+                        type     : 'pieChart',
+                        color    : ['#f44336', '#9c27b0', '#03a9f4', '#e91e63', '#ffc107'],
+                        height   : 400,
+                        margin   : {
+                            top   : 0,
+                            right : 0,
+                            bottom: 0,
+                            left  : 0
+                        },
+                        labelType: 'percent',
+                        x        : function (d)
+                        {
+                            return d.label;
+                        },
+                        y        : function (d)
+                        {
+                            return d.value;
+                        },
+                        tooltip  : {
+                            gravity: 's',
+                            classes: 'gravity-s'
+                        }
+                    }
+                },
+                data   : vm.dashboardData.widget8.mainChart
             }
         };
 
+        // Widget 9
         vm.widget9 = {
-            title               : 'Spent',
-            totalSpent          : {
-                title: 'TOTAL SPENT',
-                count: {
-                    '2W': '$29,682.85',
-                    'LW': '$31,128.19',
-                    'TW': '$34,758.34'
+            title       : vm.dashboardData.widget9.title,
+            weeklySpent : {
+                title    : vm.dashboardData.widget9.weeklySpent.title,
+                count    : vm.dashboardData.widget9.weeklySpent.count,
+                chartData: []
+            },
+            totalSpent  : {
+                title    : vm.dashboardData.widget9.totalSpent.title,
+                count    : vm.dashboardData.widget9.totalSpent.count,
+                chartData: []
+            },
+            remaining   : {
+                title    : vm.dashboardData.widget9.remaining.title,
+                count    : vm.dashboardData.widget9.remaining.count,
+                chartData: []
+            },
+            totalBudget : vm.dashboardData.widget9.totalBudget,
+            chart       : {
+                config : {
+                    refreshDataOnly: true,
+                    deepWatchData  : true
                 },
-                chart: {
-                    data  : {
-                        '2W': [
-                            [3, 2, 2, 4, 7, 7, 4]
-                        ],
-                        'LW': [
-                            [5, 7, 8, 8, 6, 4, 1]
-                        ],
-                        'TW': [
-                            [6, 3, 7, 5, 5, 4, 7]
-                        ]
-                    },
-                    series: ['Total Spent'],
-                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                    color : ['#03a9f4']
+                options: {
+                    chart: {
+                        type                   : 'lineChart',
+                        color                  : ['#03A9F4'],
+                        height                 : 48,
+                        margin                 : {
+                            top   : 8,
+                            right : 0,
+                            bottom: 0,
+                            left  : 0
+                        },
+                        isArea                 : true,
+                        interpolate            : 'cardinal',
+                        clipEdge               : true,
+                        duration               : 500,
+                        showXAxis              : false,
+                        showYAxis              : false,
+                        showLegend             : false,
+                        useInteractiveGuideline: true,
+                        x                      : function (d)
+                        {
+                            return d.x;
+                        },
+                        y                      : function (d)
+                        {
+                            return d.y;
+                        },
+                        yDomain                : [0, 9],
+                        xAxis                  : {
+                            tickFormat: function (d)
+                            {
+                                return vm.widget9.days[d];
+                            }
+                        },
+                        interactiveLayer       : {
+                            tooltip: {
+                                gravity: 'e',
+                                classes: 'gravity-e'
+                            }
+                        }
+                    }
                 }
             },
-            remaining           : {
-                title: 'REMAINING',
-                count: {
-                    '2W': '$94.317,15',
-                    'LW': '$92.871,81',
-                    'TW': '$89.241,66'
-                },
-                chart: {
-                    data  : {
-                        '2W': [
-                            [6, 3, 7, 5, 5, 4, 7]
-                        ],
-                        'LW': [
-                            [3, 2, 1, 4, 8, 8, 4]
-                        ],
-                        'TW': [
-                            [5, 7, 8, 8, 6, 4, 1]
-                        ]
-                    },
-                    series: ['Total Spent'],
-                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                    color : ['#03a9f4']
-                }
+            days        : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            ranges      : vm.dashboardData.widget9.ranges,
+            currentRange: '',
+            changeRange : function (range)
+            {
+                vm.widget9.currentRange = range;
+
+                /**
+                 * Update mini charts. They only have 1 dataset
+                 * so we can do [0] without needing to iterate
+                 * through in their data arrays
+                 */
+                vm.widget9.weeklySpent.chartData[0] = {
+                    key   : vm.dashboardData.widget9.weeklySpent.chart.label,
+                    values: vm.dashboardData.widget9.weeklySpent.chart.values[range]
+                };
+
+                vm.widget9.totalSpent.chartData[0] = {
+                    key   : vm.dashboardData.widget9.totalSpent.chart.label,
+                    values: vm.dashboardData.widget9.totalSpent.chart.values[range]
+                };
+
+                vm.widget9.remaining.chartData[0] = {
+                    key   : vm.dashboardData.widget9.remaining.chart.label,
+                    values: vm.dashboardData.widget9.remaining.chart.values[range]
+                };
             },
-            totalBudget         : {
-                title: 'TOTAL BUDGET',
-                count: '$124.000,00'
-            },
-            ranges              : {
-                '2W': '2 Weeks Ago',
-                'LW': 'Last Week',
-                'TW': 'This Week'
-            },
-            currentRange        : 'TW',
-            miniLineChartOptions: {
-                maintainAspectRatio: false,
-                scaleOverride      : true,
-                scaleSteps         : 9,
-                scaleStepWidth     : 1,
-                scaleStartValue    : 0,
-                showScale          : false,
-                pointDot           : false,
-                showTooltips       : false
+            init        : function ()
+            {
+                // Run this function once to initialize widget
+
+                /**
+                 * Update the range for the first time
+                 */
+                vm.widget9.changeRange('TW');
             }
         };
 
-        vm.widget10 = {
-            title    : 'Budget Details',
-            tableData: [
-                {
-                    budgetType         : 'Wireframing',
-                    totalBudget        : '$14,880.00',
-                    spentAmount        : '$14,000.00',
-                    spentPercentage    : '%94.08',
-                    remainingAmount    : '$880.00',
-                    remainingPercentage: '%5.92'
-                },
-                {
-                    budgetType         : 'Design',
-                    totalBudget        : '$21,080.00',
-                    spentAmount        : '$17,240.34',
-                    spentPercentage    : '%81.78',
-                    remainingAmount    : '$3,839.66',
-                    remainingPercentage: '%18.22'
-                },
-                {
-                    budgetType         : 'Coding',
-                    totalBudget        : '$34,720.00',
-                    spentAmount        : '$3,518.00',
-                    spentPercentage    : '%10.13',
-                    remainingAmount    : '$31,202.00',
-                    remainingPercentage: '%89.87'
-                },
-                {
-                    budgetType         : 'Marketing',
-                    totalBudget        : '$34,720.00',
-                    spentAmount        : '$0.00',
-                    spentPercentage    : '%0.00',
-                    remainingAmount    : '$34,720.00',
-                    remainingPercentage: '%100.00'
-                },
-                {
-                    budgetType         : 'Extra',
-                    totalBudget        : '$18,600.00',
-                    spentAmount        : '$0.00',
-                    spentPercentage    : '%0.00',
-                    remainingAmount    : '$0.00',
-                    remainingPercentage: '%100.00'
-                }
-            ]
-        };
+        // Widget 10
+        vm.widget10 = vm.dashboardData.widget10;
 
+        // Widget 11
         vm.widget11 = {
-            title      : 'Team Members',
-            teamMembers: vm.dashboardData.teamMembers,
-            dtOptions  : {
+            title       : vm.dashboardData.widget11.title,
+            table       : vm.dashboardData.widget11.table,
+            dtOptions   : {
                 dom       : '<"top"f>rt<"bottom"<"left"<"length"l>><"right"<"info"i><"pagination"p>>>',
-                pagingType: 'simple'
+                pagingType: 'simple',
             }
         };
 
+        // Now widget
         vm.nowWidget = {
             now   : {
                 second: '',
@@ -562,53 +496,8 @@
             }
         };
 
-        vm.weatherWidget = {
-            locations      : {
-                'NewYork': {
-                    name           : 'New York',
-                    icon           : 'icon-weather-pouring',
-                    temp           : {
-                        C: '22',
-                        F: '72'
-                    },
-                    windSpeed      : {
-                        KMH: 12,
-                        MPH: 7.5
-                    },
-                    windDirection  : 'NW',
-                    rainProbability: '98%',
-                    next3Days      : [
-                        {
-                            name: 'Sunday',
-                            icon: 'icon-weather-pouring',
-                            temp: {
-                                C: '21',
-                                F: '70'
-                            }
-                        },
-                        {
-                            name: 'Sunday',
-                            icon: 'icon-weather-pouring',
-                            temp: {
-                                C: '19',
-                                F: '66'
-                            }
-                        },
-                        {
-                            name: 'Tuesday',
-                            icon: 'icon-weather-partlycloudy',
-                            temp: {
-                                C: '24',
-                                F: '75'
-                            }
-                        }
-                    ]
-                }
-            },
-            currentLocation: 'NewYork',
-            tempUnit       : 'C',
-            speedUnit      : 'KMH'
-        };
+        // Weather widget
+        vm.weatherWidget = vm.dashboardData.weatherWidget;
 
         // Methods
         vm.toggleSidenav = toggleSidenav;
@@ -616,6 +505,15 @@
 
         //////////
         vm.selectedProject = vm.projects[0];
+
+        // Initialize Widget 5
+        vm.widget5.init();
+
+        // Initialize Widget 6
+        vm.widget6.init();
+
+        // Initialize Widget 9
+        vm.widget9.init();
 
         // Now widget ticker
         vm.nowWidget.ticker();
@@ -626,12 +524,6 @@
         {
             $interval.cancel(nowWidgetTicker);
         });
-
-        // Initialize widget5
-        vm.widget5.init();
-
-        // Initialize widget6
-        vm.widget6.init();
 
         /**
          * Toggle sidenav
