@@ -21,6 +21,7 @@
             project: $resource(api.dataUrl + 'dashboard/project/data.json', null, {
                 get: {method: 'get'}
             }),
+            server : $resource(api.dataUrl + 'dashboard/server/data.json', null, {
                 get: {method: 'get'}
             })
         };

@@ -2,131 +2,280 @@
 {
     'use strict';
 
-    angular.module('app.dashboard-server')
+    angular
+        .module('app.dashboard-server')
         .controller('DashboardServerController', DashboardServerController);
 
     /** @ngInject */
-    function DashboardServerController($scope, $interval, fuseTheming)
+    function DashboardServerController($scope, $interval, fuseTheming, DashboardData)
     {
         var vm = this;
 
         // Data
+        vm.dashboardData = DashboardData;
+
+        // Widget 1
         vm.widget1 = {
-            memoryChartTitle: 'Memory Usage',
-            memoryChart     : {
-                data   : [
-                    [500, 700, 500, 700, 800, 500],
-                    [100, 400, 300, 400, 200, 300],
-                    [300, 100, 200, 200, 300, 400]
-                ],
-                series : ['Physical Memory', 'Virtual Memory', 'Swap'],
-                labels : ['30s', '25s', '20s', '15s', '10s', '5s'],
-                color  : ['#4caf50', '#3f51b5', '#ff5722'],
-                options: {
-                    datasetFill           : false,
-                    maintainAspectRatio   : false,
-                    scaleShowVerticalLines: false
+            memoryChart: {
+                title: vm.dashboardData.widget1.memoryChart.title,
+                chart: {
+                    config : {
+                        refreshDataOnly: true,
+                        deepWatchData  : true
+                    },
+                    options: {
+                        chart: {
+                            type                   : 'lineChart',
+                            color                  : ['#4caf50', '#3f51b5', '#ff5722'],
+                            height                 : 350,
+                            margin                 : {
+                                top   : 32,
+                                right : 32,
+                                bottom: 32,
+                                left  : 48
+                            },
+                            useInteractiveGuideline: true,
+                            clipVoronoi            : false,
+                            x                      : function (d)
+                            {
+                                return d.x;
+                            },
+                            y                      : function (d)
+                            {
+                                return d.y;
+                            },
+                            xAxis                  : {
+                                tickFormat: function (d)
+                                {
+                                    return d + ' min.';
+                                },
+                                showMaxMin: false
+                            },
+                            yAxis                  : {
+                                tickFormat: function (d)
+                                {
+                                    return d + ' MB';
+                                }
+                            },
+                            interactiveLayer       : {
+                                tooltip: {
+                                    gravity: 's',
+                                    classes: 'gravity-s'
+                                }
+                            },
+                            legend                 : {
+                                margin    : {
+                                    top   : 8,
+                                    right : 0,
+                                    bottom: 32,
+                                    left  : 0
+                                },
+                                rightAlign: false
+                            }
+                        }
+                    },
+                    data   : vm.dashboardData.widget1.memoryChart.chart
                 }
             },
-            cpuChartTitle   : 'Average CPU Usage',
-            cpuChart        : {
-                data   : [
-                    [72, 26, 51, 36, 66, 69, 50, 35, 49, 64, 37, 78, 54, 8, 52, 50, 56, 71, 31, 37, 15, 45, 35, 28, 7, 36, 7, 79, 12, 5]
-                ],
-                series : ['Average CPU Usage'],
-                labels : ['150s', '145s', '140s', '135s', '130s', '125s', '120s', '115s', '110s', '105s', '100s', '95s', '90s', '85s', '80s', '75s', '70s', '65s', '60s', '55s', '50s', '45s', '40s', '35s', '30s', '25s', '30s', '15s', '10s', '5s'],
-                color  : [
-                    {
-                        fillColor           : '#009688',
-                        strokeColor         : '#009688',
-                        pointColor          : '#009688',
-                        pointStrokeColor    : '#009688',
-                        pointHighlightFill  : '#009688',
-                        pointHighlightStroke: '#009688'
-                    }
-                ],
-                options: {
-                    animation: false,
-                    maintainAspectRatio   : false,
-                    scaleShowVerticalLines: false,
-                    scaleOverride      : true,
-                    scaleSteps         : 4,
-                    scaleStepWidth     : 30,
-                    scaleStartValue    : 0,
-                    pointDot              : false
+            cpuChart   : {
+                title: vm.dashboardData.widget1.cpuChart.title,
+                chart: {
+                    config : {
+                        refreshDataOnly: true,
+                        deepWatchData  : true
+                    },
+                    options: {
+                        chart: {
+                            type                   : 'lineChart',
+                            color                  : ['#03A9F4'],
+                            height                 : 120,
+                            margin                 : {
+                                top   : 8,
+                                right : 32,
+                                bottom: 16,
+                                left  : 48
+                            },
+                            duration               : 1,
+                            clipEdge               : true,
+                            clipVoronoi            : false,
+                            interpolate            : 'cardinal',
+                            isArea                 : true,
+                            useInteractiveGuideline: true,
+                            showLegend             : false,
+                            showControls           : false,
+                            x                      : function (d)
+                            {
+                                return d.x;
+                            },
+                            y                      : function (d)
+                            {
+                                return d.y;
+                            },
+                            yDomain                : [0, 100],
+                            xAxis                  : {
+                                tickFormat: function (d)
+                                {
+                                    return d + ' sec.';
+                                },
+                                showMaxMin: false
+                            },
+                            yAxis                  : {
+                                tickFormat: function (d)
+                                {
+                                    return d + '%';
+                                }
+                            },
+                            interactiveLayer       : {
+                                tooltip: {
+                                    gravity: 's',
+                                    classes: 'gravity-s'
+                                }
+                            }
+                        }
+                    },
+                    data   : vm.dashboardData.widget1.cpuChart.chart
                 }
+            },
+            init       : function ()
+            {
+                // Run this function once to initialize the widget
+
+                // Grab the x value
+                var lastIndex = vm.dashboardData.widget1.cpuChart.chart[0].values.length - 1,
+                    x = vm.dashboardData.widget1.cpuChart.chart[0].values[lastIndex].x;
+
+                /**
+                 * Emulate constant data flow
+                 *
+                 * @param min
+                 * @param max
+                 */
+                function cpuTicker(min, max)
+                {
+                    // Increase the x value
+                    x = x + 5;
+
+                    var newValue = {
+                        x: x,
+                        y: Math.floor(Math.random() * (max - min + 1)) + min
+                    };
+
+                    vm.widget1.cpuChart.chart.data[0].values.shift();
+                    vm.widget1.cpuChart.chart.data[0].values.push(newValue);
+                }
+
+                // Set interval
+                var cpuTickerInterval = $interval(function ()
+                {
+                    cpuTicker(0, 100);
+                }, 5000);
+
+                // Cleanup
+                $scope.$on('$destroy', function ()
+                {
+                    $interval.cancel(cpuTickerInterval);
+                });
             }
         };
 
-        vm.widget2 = {
-            title : 'Storage',
-            value : {
-                used      : '74.2Gb',
-                total     : '110Gb',
-                percentage: 67.45,
-                lastWeek  : {
-                    used: '73.9Gb',
-                    diff: '+ 0.3Gb',
-                }
-            },
-            detail: 'This is the back side. You can show detailed information here.'
-        };
+        // Widget 2
+        vm.widget2 = vm.dashboardData.widget2;
 
-        vm.widget3 = {
-            title : 'Bandwidth',
-            value : {
-                used      : '221Gb',
-                total     : '3.5Tb',
-                percentage: 6.31,
-                lastWeek  : {
-                    used: 38,
-                    diff: '+ 2%',
-                }
-            },
-            detail: 'This is the back side. You can show detailed information here.'
-        };
+        // Widget 3
+        vm.widget3 = vm.dashboardData.widget3;
 
+        // Widget 4
         vm.widget4 = {
-            title   : 'Latency',
-            value   : '21ms',
+            title   : vm.dashboardData.widget4.title,
+            value   : vm.dashboardData.widget4.value,
+            footnote: vm.dashboardData.widget4.footnote,
+            detail  : vm.dashboardData.widget4.detail,
             chart   : {
-                data   : [
-                    [1, 4, 1, 2, 3, 4, 3, 2, 3, 1, 1, 4, 1, 2, 3, 4, 3, 2, 3, 1, 1, 4, 1, 2, 3]
-                ],
-                series : ['Latency'],
-                labels : ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
-                color  : [
-                    {
-                        fillColor           : 'rgba(0, 0, 0, 0.27)',
-                        strokeColor         : 'rgba(255, 255, 255, 0)',
-                        pointColor          : 'rgba(255, 255, 255, 0)',
-                        pointStrokeColor    : 'rgba(255, 255, 255, 0)',
-                        pointHighlightFill  : 'rgba(255, 255, 255, 0)',
-                        pointHighlightStroke: 'rgba(255, 255, 255, 0)'
-                    }
-                ],
+                config : {
+                    refreshDataOnly: true,
+                    deepWatchData  : true
+                },
                 options: {
-                    animation          : false,
-                    maintainAspectRatio: false,
-                    scaleOverride      : true,
-                    scaleSteps         : 4,
-                    scaleStepWidth     : 1,
-                    scaleStartValue    : 0,
-                    showScale          : false,
-                    showTooltips       : false,
-                    pointDot           : false
-                }
+                    chart: {
+                        type        : 'stackedAreaChart',
+                        color       : ['rgba(0, 0, 0, 0.27)'],
+                        height      : 48,
+                        margin      : {
+                            top   : 8,
+                            right : 0,
+                            bottom: 0,
+                            left  : 0
+                        },
+                        duration    : 1,
+                        clipEdge    : true,
+                        interpolate : 'cardinal',
+                        interactive : false,
+                        showLegend  : false,
+                        showControls: false,
+                        showXAxis   : false,
+                        showYAxis   : false,
+                        x           : function (d)
+                        {
+                            return d.x;
+                        },
+                        y           : function (d)
+                        {
+                            return d.y;
+                        },
+                        yDomain     : [0, 4]
+                    }
+                },
+                data   : vm.dashboardData.widget4.chart
             },
-            footnote: 'Higher than average',
-            detail  : 'This is the back side. You can show detailed information here.'
+            init    : function ()
+            {
+                // Run this function once to initialize the widget
+
+                // Grab the x value
+                var lastIndex = vm.dashboardData.widget4.chart[0].values.length - 1,
+                    x = vm.dashboardData.widget4.chart[0].values[lastIndex].x;
+
+                /**
+                 * Emulate constant data flow
+                 *
+                 * @param min
+                 * @param max
+                 */
+                function latencyTicker(min, max)
+                {
+                    // Increase the x value
+                    x++;
+
+                    var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+                    var newValue = {
+                        x: x,
+                        y: randomNumber
+                    };
+
+                    vm.widget4.chart.data[0].values.shift();
+                    vm.widget4.chart.data[0].values.push(newValue);
+
+                    // Randomize the value
+                    vm.widget4.value = 20 + randomNumber + 'ms';
+                }
+
+                // Set interval
+                var latencyTickerInterval = $interval(function ()
+                {
+                    latencyTicker(1, 4);
+                }, 1000);
+
+                // Cleanup
+                $scope.$on('$destroy', function ()
+                {
+                    $interval.cancel(latencyTickerInterval);
+                });
+            }
         };
 
-        vm.widget5 = {
-            title   : 'Cluster Load',
-            value   : '75%',
-            detail  : 'This is the back side. You can show detailed information here.',
-            footnote: 'Lower than average'
-        };
+        // Widget 5
+        vm.widget5 = vm.dashboardData.widget5;
 
         vm.widget55 = {
             title           : 'IO RATE',
@@ -406,39 +555,11 @@
 
         //////////
 
-        function widget1Ticker(min, max)
-        {
-            var newVal = Math.floor(Math.random() * (max - min + 1)) + min;
+        // Init Widget 1
+        vm.widget1.init();
 
-            vm.widget1.cpuChart.data[0].shift();
-            vm.widget1.cpuChart.data[0].push(newVal);
-        }
-
-        function widget4Ticker(min, max)
-        {
-            var newVal = Math.floor(Math.random() * (max - min + 1)) + min;
-
-            vm.widget4.value = parseInt(newVal + 20) + 'ms';
-            vm.widget4.chart.data[0].shift();
-            vm.widget4.chart.data[0].push(newVal);
-        }
-
-        var w1ticker = $interval(function ()
-        {
-            widget1Ticker(0, 100);
-        }, 5000);
-
-        var w4ticker = $interval(function ()
-        {
-            widget4Ticker(1, 4);
-        }, 1000);
-
-        // Cleanup
-        $scope.$on('$destroy', function ()
-        {
-            $interval.cancel(w1ticker);
-            $interval.cancel(w4ticker);
-        });
+        // Init Widget 4
+        vm.widget4.init();
     }
 
 })();

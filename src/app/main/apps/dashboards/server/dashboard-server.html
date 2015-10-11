@@ -12,7 +12,7 @@
                 <!-- Front -->
                 <ms-widget-front class="p-16 white-bg" layout="column" flex>
                     <div class="pb-16" layout="row" layout-align="space-between center">
-                        <div class="h3">{{vm.widget1.memoryChartTitle}}</div>
+                        <div class="h3">{{vm.widget1.memoryChart.title}}</div>
 
                         <md-menu>
                             <md-button aria-label="more" class="md-icon-button"
@@ -30,27 +30,19 @@
                     </div>
 
                     <div flex>
-                        <canvas class="chart chart-line h-250"
-                                chart-data="vm.widget1.memoryChart.data"
-                                chart-labels="vm.widget1.memoryChart.labels"
-                                chart-legend="false"
-                                chart-series="vm.widget1.memoryChart.series"
-                                chart-options="vm.widget1.memoryChart.options"
-                                chart-colours="vm.widget1.memoryChart.color">
-                        </canvas>
+                        <nvd3 class="remove-x-lines"
+                              config="vm.widget1.memoryChart.chart.config"
+                              options="vm.widget1.memoryChart.chart.options"
+                              data="vm.widget1.memoryChart.chart.data"></nvd3>
                     </div>
 
-                    <div class="h3 mt-48">{{vm.widget1.cpuChartTitle}}</div>
+                    <div class="h3 mt-48">{{vm.widget1.cpuChart.title}}</div>
 
                     <div class="mt-32" flex>
-                        <canvas class="chart chart-line h-120"
-                                chart-data="vm.widget1.cpuChart.data"
-                                chart-labels="vm.widget1.cpuChart.labels"
-                                chart-legend="false"
-                                chart-series="vm.widget1.cpuChart.series"
-                                chart-options="vm.widget1.cpuChart.options"
-                                chart-colours="vm.widget1.cpuChart.color">
-                        </canvas>
+                        <nvd3 class="remove-x-lines"
+                              config="vm.widget1.cpuChart.chart.config"
+                              options="vm.widget1.cpuChart.chart.options"
+                              data="vm.widget1.cpuChart.chart.data"></nvd3>
                     </div>
 
                 </ms-widget-front>
@@ -58,6 +50,13 @@
 
             </ms-widget>
             <!-- / WIDGET 1 -->
+
+        </div>
+        <!-- / WIDGET GROUP -->
+
+
+        <!-- WIDGET GROUP -->
+        <div class="widget-group" layout="row" flex="100" layout-wrap>
 
             <!-- WIDGET 2 -->
             <ms-widget flippable="true" layout="column" flex="100" flex-gt-sm="50" flex-gt-lg="25">
@@ -96,7 +95,7 @@
                             <div class="h2 secondary-text pl-8">/ {{vm.widget2.value.total}}</div>
                         </div>
 
-                        <md-progress-linear class="" md-mode="determinate"
+                        <md-progress-linear md-mode="determinate"
                                             value="{{vm.widget2.value.percentage}}"></md-progress-linear>
                     </div>
                 </ms-widget-front>
@@ -153,10 +152,10 @@
                     <div class="pb-8" layout="column" flex>
                         <div class="pb-16" layout="row" layout-align="start end">
                             <div class="h2">{{vm.widget3.value.used}}</div>
-                            <div class="h2 pl-8">/ {{vm.widget3.value.total}}</div>
+                            <div class="h2 pl-8 secondary-text">/ {{vm.widget3.value.total}}</div>
                         </div>
 
-                        <md-progress-linear class="" md-mode="determinate"
+                        <md-progress-linear md-mode="determinate"
                                             value="{{vm.widget3.value.percentage}}"></md-progress-linear>
                     </div>
                 </ms-widget-front>
@@ -211,36 +210,14 @@
                     </div>
 
                     <div layout="row" layout-align="start center" flex>
-
                         <div layout="column" flex>
-
-                            <div class="pb-16" layout="row" layout-align="start center" flex>
-                                <div class="h1">{{vm.widget4.value}}</div>
-                                <div class="ml-16" flex>
-                                    <!--<canvas class="chart chart-line h-35"
-                                            chart-data="vm.widget4.chart.data"
-                                            chart-labels="vm.widget4.chart.labels"
-                                            chart-legend="false"
-                                            chart-series="vm.widget4.chart.series"
-                                            chart-options="vm.widget4.chart.options"
-                                            chart-colours="vm.widget4.chart.color">
-                                    </canvas>-->
-                                </div>
-                            </div>
-
-                            <!--<div class="secondary-text">{{vm.widget4.footnote}}</div>-->
+                            <div class="pb-8 h1">{{vm.widget4.value}}</div>
 
                             <div class="chart-fill-16" flex>
-                            <canvas class="chart chart-line h-40 fill"
-                                    chart-data="vm.widget4.chart.data"
-                                    chart-labels="vm.widget4.chart.labels"
-                                    chart-legend="false"
-                                    chart-series="vm.widget4.chart.series"
-                                    chart-options="vm.widget4.chart.options"
-                                    chart-colours="vm.widget4.chart.color">
-                            </canvas>
+                                <nvd3 config="vm.widget4.chart.config"
+                                      options="vm.widget4.chart.options"
+                                      data="vm.widget4.chart.data"></nvd3>
                             </div>
-
                         </div>
                     </div>
                 </ms-widget-front>
@@ -343,7 +320,7 @@
                         </div>
 
                         <div flex>
-                            <c3chart class="c3 stroke-2" bindto-id="io-rate">
+                            <!--<c3chart class="c3 stroke-2" bindto-id="io-rate">
                                 <chart-column ng-repeat="column in vm.widget5.chart.columns"
                                               column-id="{{column.id}}"
                                               column-name="{{column.name}}"
@@ -352,7 +329,7 @@
                                               column-type="{{column.type}}"
                                 />
                                 <chart-size chart-height="300"/>
-                            </c3chart>
+                            </c3chart>-->
                         </div>
                     </div>
 
@@ -405,7 +382,7 @@
                     </div>
 
                     <div flex>
-                        <c3chart class="c3" bindto-id="goog-nasdaq">
+                        <!--<c3chart class="c3" bindto-id="goog-nasdaq">
                             <chart-column ng-repeat="column in vm.widget6.chart.columns"
                                           column-id="{{column.id}}"
                                           column-name="{{column.name}}"
@@ -416,7 +393,7 @@
                             <chart-legend show-legend="false"/>
                             <chart-bar width="15"/>
                             <chart-size chart-height="270"/>
-                        </c3chart>
+                        </c3chart>-->
                     </div>
                 </ms-widget-front>
                 <!-- / Front -->
@@ -491,14 +468,14 @@
 
                     <div flex>
                         <c3chart class="c3 stroke-2" bindto-id="sales">
-                            <chart-column ng-repeat="column in vm.widget8.chart.columns"
+                            <!--<chart-column ng-repeat="column in vm.widget8.chart.columns"
                                           column-id="{{column.id}}"
                                           column-name="{{column.name}}"
                                           column-color="{{column.color}}"
                                           column-values="{{column.values}}"
                                           column-type="{{column.type}}"
                             />
-                            <chart-size chart-height="330"/>
+                            <chart-size chart-height="330"/>-->
                         </c3chart>
                     </div>
                 </ms-widget-front>

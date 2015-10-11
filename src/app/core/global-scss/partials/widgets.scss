@@ -31,11 +31,11 @@
         height: 100%;
     }
 
-    // chart.js canvas fill
+    // chart fill
     @for $i from 1 through 10 {
 
         .chart-fill-#{$i * 8} {
-            margin: 0 #{((-$i * 8) - 5) + 'px'} #{((-$i * 8) - 10) + 'px'} #{((-$i * 8) - 5) + 'px'};
+            margin: 0 #{(-$i * 8) + 'px'} #{(-$i * 8) + 'px'} #{(-$i * 8) + 'px'};
         }
     }
 }
