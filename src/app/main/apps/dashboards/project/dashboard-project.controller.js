@@ -131,7 +131,7 @@
                     options: {
                         chart: {
                             type                   : 'lineChart',
-                            color                  : ['#607D8B'],
+                            color                  : ['#03A9F4'],
                             height                 : 48,
                             margin                 : {
                                 top   : 8,
@@ -380,7 +380,7 @@
                 options: {
                     chart: {
                         type                   : 'lineChart',
-                        color                  : ['#03A9F4'],
+                        color                  : ['#00BCD4'],
                         height                 : 48,
                         margin                 : {
                             top   : 8,

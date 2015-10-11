@@ -312,12 +312,10 @@
 
                             <!-- Front -->
                             <ms-widget-front class="white-bg" flex>
-                                <div class="light-blue-bg white-fg p-16" layout="row" layout-align="start center" flex="100">
-                                    <div class="h3">{{vm.widget5.title}}</div>
-                                </div>
+                                <div class="ph-16 pv-8 border-bottom" layout="row" layout-align="space-between center" layout-wrap flex="100">
+                                    <div class="pv-8 h3">{{vm.widget5.title}}</div>
 
-                                <div class="mh-16 border-bottom" layout="row" layout-align="start center" flex="100">
-                                    <div class="pv-8">
+                                    <div class="pv-8" layout="row" layout-align="start center" layout-align-sm="end" flex-sm="100">
                                         <md-button class="ph-16"
                                                    ng-repeat="(key, range) in vm.widget5.ranges"
                                                    ng-click="vm.widget5.changeRange(key)"
@@ -326,6 +324,9 @@
                                         </md-button>
                                     </div>
                                 </div>
+
+                                <!--<div class="mh-16 border-bottom" layout="row" layout-align="end center" flex="100">
+                                </div>-->
 
                                 <div layout="row" layout-align="start center" layout-wrap flex>
                                     <div class="p-16" layout="row" layout-align="start center" flex="100"
