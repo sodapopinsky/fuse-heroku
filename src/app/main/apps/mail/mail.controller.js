@@ -16,7 +16,7 @@
             'withinpixels': 'johndoe@withinpixels.com'
         };
         vm.checked = [];
-        vm.colors = ['bg-blue', 'bg-blue-grey', 'bg-orange', 'bg-pink', 'bg-purple'];
+        vm.colors = ['blue-bg', 'blue-grey-bg', 'orange-bg', 'pink-bg', 'purple-bg'];
         vm.selectedAccount = 'creapond';
         vm.selectedMail = {};
         vm.toggleSidenav = toggleSidenav;

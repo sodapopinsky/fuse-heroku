@@ -11,7 +11,7 @@
         var vm = this;
 
         // Data
-        vm.colors = ['bg-blue', 'bg-blue-grey', 'bg-orange', 'bg-pink', 'bg-purple'];
+        vm.colors = ['blue-bg', 'blue-grey-bg', 'orange-bg', 'pink-bg', 'purple-bg'];
 
         vm.widget1 = {
             title   : 'ANALYTICS',
