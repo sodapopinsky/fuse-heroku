@@ -863,6 +863,9 @@
         "table": {
             "columns": [
                 {
+                    "title": ""
+                },
+                {
                     "title": "Name"
                 },
                 {
@@ -880,6 +883,7 @@
             ],
             "rows": [
                 [
+                    "james.jpg",
                     "Jack Gilbert",
                     "Design Manager",
                     "Johor Bahru",
@@ -887,6 +891,7 @@
                     "+16 298 032 7774"
                 ],
                 [
+                    "katherine.jpg",
                     "Kathy Anderson",
                     "Recruiting Manager",
                     "Solţānābād",
@@ -894,6 +899,7 @@
                     "+23 572 311 1136"
                 ],
                 [
+                    "andrew.jpg",
                     "Mark Turner",
                     "Recruiting Manager",
                     "Neftegorsk",
@@ -901,6 +907,7 @@
                     "+01 139 803 9263"
                 ],
                 [
+                    "jane.jpg",
                     "Kathryn Martinez",
                     "Director of Sales",
                     "Palekastro",
@@ -908,6 +915,7 @@
                     "+25 467 022 5393"
                 ],
                 [
+                    "alice.jpg",
                     "Annie Gonzales",
                     "Actuary",
                     "Candon",
@@ -915,6 +923,7 @@
                     "+99 891 619 7138"
                 ],
                 [
+                    "vincent.jpg",
                     "Howard King",
                     "Human Resources",
                     "Bergen op Zoom",
@@ -922,6 +931,7 @@
                     "+46 984 348 1409"
                 ],
                 [
+                    "joyce.jpg",
                     "Elizabeth Dixon",
                     "Electrical Engineer",
                     "Písečná",
@@ -929,6 +939,7 @@
                     "+33 332 067 9063"
                 ],
                 [
+                    "danielle.jpg",
                     "Dorothy Morris",
                     "Office Assistant",
                     "Magsaysay",
@@ -936,6 +947,7 @@
                     "+05 490 958 6120"
                 ],
                 [
+                    "carl.jpg",
                     "Mark Gonzales",
                     "Quality Control",
                     "Matsue-shi",
@@ -943,6 +955,7 @@
                     "+03 168 394 9935"
                 ],
                 [
+                    "profile.jpg",
                     "Catherine Rogers",
                     "Programmer Analyst",
                     "Kangar",
@@ -950,6 +963,7 @@
                     "+86 235 407 5373"
                 ],
                 [
+                    "garry.jpg",
                     "Ruth Grant",
                     "Community Outreach",
                     "Beaune",
@@ -957,6 +971,7 @@
                     "+36 288 083 8460"
                 ],
                 [
+                    "james.jpg",
                     "Phyllis Gutierrez",
                     "Administrative Assistant",
                     "Shlissel’burg",
@@ -964,6 +979,7 @@
                     "+52 749 861 9304"
                 ],
                 [
+                    "alice.jpg",
                     "Lillian Morris",
                     "Media Planner",
                     "Berlin",
@@ -971,6 +987,7 @@
                     "+59 695 110 3856"
                 ],
                 [
+                    "vincent.jpg",
                     "Jeremy Anderson",
                     "Systems Engineer",
                     "Lũng Hồ",
@@ -978,6 +995,7 @@
                     "+40 384 115 1448"
                 ],
                 [
+                    "carl.jpg",
                     "Arthur Lawrence",
                     "Nurse Practicioner",
                     "Sarkanjut",
@@ -985,6 +1003,7 @@
                     "+36 631 599 7867"
                 ],
                 [
+                    "andrew.jpg",
                     "David Simmons",
                     "Social Worker",
                     "Ushumun",
@@ -992,6 +1011,7 @@
                     "+01 189 681 4417"
                 ],
                 [
+                    "danielle.jpg",
                     "Daniel Johnston",
                     "Help Desk",
                     "São Carlos",
@@ -999,6 +1019,7 @@
                     "+60 028 943 7919"
                 ],
                 [
+                    "joyce.jpg",
                     "Ann King",
                     "Internal Auditor",
                     "Liren",
@@ -1006,6 +1027,7 @@
                     "+91 103 932 6545"
                 ],
                 [
+                    "james.jpg",
                     "Phillip Franklin",
                     "VP Accounting",
                     "Soba",
@@ -1013,6 +1035,7 @@
                     "+25 820 986 7626"
                 ],
                 [
+                    "garry.jpg",
                     "Gary Gonzalez",
                     "Speech Pathologist",
                     "Gangkou",

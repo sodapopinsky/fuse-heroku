@@ -471,10 +471,16 @@
                 pagingType: 'simple',
                 autoWidth : false,
                 responsive: true,
+                order     : [1, 'asc'],
                 columnDefs: [
                     {
+                        width    : '40',
+                        orderable: false,
+                        targets  : [0]
+                    },
+                    {
                         width  : '20%',
-                        targets: [0, 1, 2, 3, 4]
+                        targets: [1, 2, 3, 4, 5]
                     }
                 ]
             }
