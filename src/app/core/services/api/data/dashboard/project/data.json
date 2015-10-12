@@ -462,6 +462,10 @@
                     "location": "Room 1B"
                 },
                 {
+                    "title": "Coffee Break",
+                    "time": "10:30 AM"
+                },
+                {
                     "title": "Public Beta Release",
                     "time": "11:00 AM"
                 },

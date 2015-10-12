@@ -28,6 +28,29 @@ nvd3 {
             }
         }
     }
+
+    &.remove-line-stroke {
+
+        .nv-groups {
+
+            path {
+
+                &.nv-line {
+                    stroke-width: 0 !important;
+                }
+            }
+        }
+    }
+
+    &.remove-opacity {
+
+        .nv-groups {
+
+            .nv-group {
+                fill-opacity: 1 !important;
+            }
+        }
+    }
 }
 
 // NVD3 style overrides

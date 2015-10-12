@@ -850,7 +850,7 @@ table.dataTable {
         .left {
             display: flex;
             align-self: center;
-            margin-left: 16px;
+            padding: 0 8px;
 
             .length {
                 display: block;
@@ -864,16 +864,15 @@ table.dataTable {
         .right {
             display: flex;
             align-self: center;
-            margin-right: 16px;
+            padding: 0 8px;
 
             .info {
                 display: block;
                 align-self: center;
 
                 .dataTables_info {
-                    padding: 0;
+                    padding: 0 8px;
                     font-weight: 600;
-                    margin-right: 16px;
                 }
             }
 
@@ -883,6 +882,7 @@ table.dataTable {
 
                 .dataTables_paginate {
                     padding: 0;
+                    margin: 0 !important;
                 }
             }
         }
@@ -1138,6 +1138,29 @@ table.dataTable.dtr-inline.collapsed {
                         padding-bottom: 0;
                     }
                 }
+            }
+        }
+    }
+}
+
+// Custom responsive code
+@media screen and (max-width: $layout-breakpoint-md) {
+
+    .dataTables_wrapper {
+
+        .bottom {
+            flex-wrap: wrap;
+
+            .left {
+                flex: 0 0 100%;
+                padding-top: 8px;
+                padding-bottom: 8px;
+            }
+
+            .right {
+                flex: 0 0 100%;
+                padding-top: 8px;
+                padding-bottom: 8px;
             }
         }
     }
