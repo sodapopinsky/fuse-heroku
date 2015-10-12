@@ -470,6 +470,7 @@
                 dom       : '<"top"f>rt<"bottom"<"left"<"length"l>><"right"<"info"i><"pagination"p>>>',
                 pagingType: 'simple',
                 autoWidth : false,
+                responsive: true,
                 columnDefs: [
                     {
                         width  : '20%',
