@@ -7,7 +7,7 @@
         .controller('DashboardServerController', DashboardServerController);
 
     /** @ngInject */
-    function DashboardServerController($scope, $interval, fuseTheming, DashboardData)
+    function DashboardServerController($scope, $interval, DashboardData)
     {
         var vm = this;
 
@@ -18,10 +18,6 @@
         vm.widget1 = {
             title: vm.dashboardData.widget1.title,
             chart: {
-                config : {
-                    refreshDataOnly: true,
-                    deepWatchData  : true
-                },
                 options: {
                     chart: {
                         type                   : 'lineChart',
