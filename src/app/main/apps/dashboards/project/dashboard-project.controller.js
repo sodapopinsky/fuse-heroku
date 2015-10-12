@@ -464,11 +464,18 @@
 
         // Widget 11
         vm.widget11 = {
-            title       : vm.dashboardData.widget11.title,
-            table       : vm.dashboardData.widget11.table,
-            dtOptions   : {
+            title    : vm.dashboardData.widget11.title,
+            table    : vm.dashboardData.widget11.table,
+            dtOptions: {
                 dom       : '<"top"f>rt<"bottom"<"left"<"length"l>><"right"<"info"i><"pagination"p>>>',
                 pagingType: 'simple',
+                autoWidth : false,
+                columnDefs: [
+                    {
+                        width  : '20%',
+                        targets: [0, 1, 2, 3, 4]
+                    }
+                ]
             }
         };
 
