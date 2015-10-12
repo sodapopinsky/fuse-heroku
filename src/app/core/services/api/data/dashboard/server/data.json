@@ -480,7 +480,7 @@
                     {"value": 0},
                     {
                         "value": 23,
-                        "classes": "amber-fg"
+                        "classes": "amber-700-fg"
                     }
                 ],
                 [
@@ -496,7 +496,7 @@
                     {"value": 27},
                     {
                         "value": 28,
-                        "classes": "amber-fg"
+                        "classes": "amber-700-fg"
                     }
                 ],
                 [
@@ -525,7 +525,7 @@
                     {"value": 0},
                     {
                         "value": 21,
-                        "classes": "amber-fg"
+                        "classes": "amber-700-fg"
                     }
                 ],
                 [
@@ -628,7 +628,7 @@
                     {"value": 0},
                     {
                         "value": 19,
-                        "classes": "amber-fg"
+                        "classes": "amber-700-fg"
                     }
                 ],
                 [
@@ -741,7 +741,7 @@
                     {"value": 0.03},
                     {
                         "value": 18,
-                        "classes": "amber-fg"
+                        "classes": "amber-700-fg"
                     }
                 ]
             ]
