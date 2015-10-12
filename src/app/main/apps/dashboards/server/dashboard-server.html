@@ -12,7 +12,7 @@
                 <!-- Front -->
                 <ms-widget-front class="p-16 white-bg" layout="column" flex>
                     <div class="pb-16" layout="row" layout-align="space-between center">
-                        <div class="h3">{{vm.widget1.memoryChart.title}}</div>
+                        <div class="h3">{{vm.widget1.title}}</div>
 
                         <md-menu>
                             <md-button aria-label="more" class="md-icon-button"
@@ -31,18 +31,9 @@
 
                     <div flex>
                         <nvd3 class="remove-x-lines"
-                              config="vm.widget1.memoryChart.chart.config"
-                              options="vm.widget1.memoryChart.chart.options"
-                              data="vm.widget1.memoryChart.chart.data"></nvd3>
-                    </div>
-
-                    <div class="h3 mt-48">{{vm.widget1.cpuChart.title}}</div>
-
-                    <div class="mt-32" flex>
-                        <nvd3 class="remove-x-lines"
-                              config="vm.widget1.cpuChart.chart.config"
-                              options="vm.widget1.cpuChart.chart.options"
-                              data="vm.widget1.cpuChart.chart.data"></nvd3>
+                              config="vm.widget1.chart.config"
+                              options="vm.widget1.chart.options"
+                              data="vm.widget1.chart.data"></nvd3>
                     </div>
 
                 </ms-widget-front>
@@ -89,8 +80,8 @@
                         </md-menu>
                     </div>
 
-                    <div class="pb-8" layout="column" flex>
-                        <div class="pb-16" layout="row" layout-align="start center">
+                    <div layout="column" flex>
+                        <div class="pb-24" layout="row" layout-align="start center">
                             <div class="h2">{{vm.widget2.value.used}}</div>
                             <div class="h2 secondary-text pl-8">/ {{vm.widget2.value.total}}</div>
                         </div>
@@ -149,8 +140,8 @@
                         </md-menu>
                     </div>
 
-                    <div class="pb-8" layout="column" flex>
-                        <div class="pb-16" layout="row" layout-align="start end">
+                    <div layout="column" flex>
+                        <div class="pb-24" layout="row" layout-align="start end">
                             <div class="h2">{{vm.widget3.value.used}}</div>
                             <div class="h2 pl-8 secondary-text">/ {{vm.widget3.value.total}}</div>
                         </div>
@@ -214,7 +205,8 @@
                             <div class="pb-8 h1">{{vm.widget4.value}}</div>
 
                             <div class="chart-fill-16" flex>
-                                <nvd3 config="vm.widget4.chart.config"
+                                <nvd3 class="remove-opacity remove-line-stroke"
+                                      config="vm.widget4.chart.config"
                                       options="vm.widget4.chart.options"
                                       data="vm.widget4.chart.data"></nvd3>
                             </div>
@@ -306,57 +298,41 @@
         <!-- WIDGET GROUP -->
         <div class="widget-group" layout="row" flex="100" layout-wrap>
 
-            <!-- WIDGET 5 -->
-            <ms-widget class="h-425" layout="column" flex="100">
+            <!-- WIDGET 6 -->
+            <ms-widget flippable="false" layout="column" flex="100">
 
                 <!-- Front -->
-                <ms-widget-front class="white-bg" layout="row" layout-wrap flex>
+                <ms-widget-front class="p-16 white-bg" layout="column" flex>
+                    <div class="pb-16" layout="row" layout-align="space-between center">
+                        <div class="h3">{{vm.widget6.title}}</div>
 
-                    <div class="p-16" layout="column" layout-align="space-between" flex="100" flex-gt-sm="50"
-                         flex-gt-md="70">
-                        <div class="pb-16">
-                            <div class="h2 weight-500 pb-8">{{vm.widget5.title}}</div>
-                            <div class="secondary-text">{{vm.widget5.subtitle}}</div>
-                        </div>
-
-                        <div flex>
-                            <!--<c3chart class="c3 stroke-2" bindto-id="io-rate">
-                                <chart-column ng-repeat="column in vm.widget5.chart.columns"
-                                              column-id="{{column.id}}"
-                                              column-name="{{column.name}}"
-                                              column-color="{{column.color}}"
-                                              column-values="{{column.values}}"
-                                              column-type="{{column.type}}"
-                                />
-                                <chart-size chart-height="300"/>
-                            </c3chart>-->
-                        </div>
+                        <md-menu>
+                            <md-button aria-label="more" class="md-icon-button"
+                                       ng-click="$mdOpenMenu($event)">
+                                <md-icon md-font-icon="icon-dots-vertical"></md-icon>
+                            </md-button>
+                            <md-menu-content width="2">
+                                <md-menu-item>
+                                    <md-button ng-click="refreshWidget()" aria-label="Refresh widget">
+                                        Refresh
+                                    </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
                     </div>
 
-                    <div class="p-16" layout="column" layout-align="space-between"
-                         flex="100" flex-gt-sm="50"
-                         flex-gt-md="30">
-                        <div layout="column" class="pb-16">
-                            <div class="h2 weight-500 pb-8">{{vm.widget5.activityTitle}}</div>
-                            <div class="secondary-text">{{vm.widget5.activitySubtitle}}</div>
-                        </div>
-
-                        <div class="pr-16 scrollable h-300" ms-scroll layout="column" flex>
-                            <div ng-repeat="activity in vm.widget5.activities">
-                                <div class="pv-8" layout="row" layout-align="space-between">
-                                    <div class="h4">{{activity.title}}</div>
-                                    <div class="secondary-text">{{activity.value}}</div>
-                                </div>
-                                <md-divider></md-divider>
-                            </div>
-                        </div>
+                    <div flex>
+                        <nvd3 class="remove-x-lines remove-opacity"
+                              config="vm.widget6.chart.config"
+                              options="vm.widget6.chart.options"
+                              data="vm.widget6.chart.data"></nvd3>
                     </div>
 
                 </ms-widget-front>
                 <!-- / Front -->
 
             </ms-widget>
-            <!-- / WIDGET 5 -->
+            <!-- / WIDGET 6 -->
 
         </div>
         <!-- / WIDGET GROUP -->
@@ -365,83 +341,55 @@
         <!-- WIDGET GROUP -->
         <div class="widget-group" layout="row" flex="100" layout-wrap>
 
-            <!-- WIDGET 6 -->
-            <ms-widget class="h-330" layout="column" flex="100" flex-gt-lg="50">
-
-                <!-- Front -->
-                <ms-widget-front class="p-16 white-bg" layout="row" layout-align="space-between" flex
-                                 layout-wrap>
-                    <div class="mr-16" flex="100" flex-gt-sm="25">
-                        <div class="h1 weight-500 pb-8">{{vm.widget6.title}}</div>
-                        <div class="h4 secondary-text weight-500 pb-16">{{vm.widget6.subtitle}}</div>
-                        <div class="md-display-1 pr-8">{{vm.widget6.value}}</div>
-                        <div class="pt-8" layout="row" layout-align="start center">
-                            <div class="text-boxed m-0 mr-8">{{vm.widget6.diff}}</div>
-                            <md-icon md-font-icon="icon-trending-up" class="s24 m-0"></md-icon>
-                        </div>
-                    </div>
-
-                    <div flex>
-                        <!--<c3chart class="c3" bindto-id="goog-nasdaq">
-                            <chart-column ng-repeat="column in vm.widget6.chart.columns"
-                                          column-id="{{column.id}}"
-                                          column-name="{{column.name}}"
-                                          column-color="{{column.color}}"
-                                          column-values="{{column.values}}"
-                                          column-type="{{column.type}}"
-                            />
-                            <chart-legend show-legend="false"/>
-                            <chart-bar width="15"/>
-                            <chart-size chart-height="270"/>
-                        </c3chart>-->
-                    </div>
-                </ms-widget-front>
-                <!-- / Front -->
-
-            </ms-widget>
-            <!-- / WIDGET 6 -->
-
             <!-- WIDGET 7 -->
-            <ms-widget class="h-330" layout="column" flex="100" flex-gt-lg="50">
+            <ms-widget flippable="false" layout="column" flex="100" flex-gt-lg="60">
 
                 <!-- Front -->
                 <ms-widget-front class="white-bg" flex>
-                    <div class="md-accent-bg ph-16 pt-16 pb-8" flex="100"
-                         flex-gt-sm="25">
-                        <div class="h2 weight-500">{{vm.widget7.title}}</div>
+
+                    <div class="ph-16 pv-24 border-bottom" layout="row" layout-align="space-between center">
+                        <div layout="row" layout-align="start center">
+                            <span class="h2">{{vm.widget7.title}}</span>
+                            <span class="h3 ml-16 text-boxed pink-bg white-fg">{{vm.widget7.table.rows.length}} processes</span>
+                        </div>
+
+                        <md-menu>
+                            <md-button aria-label="more" class="md-icon-button"
+                                       ng-click="$mdOpenMenu($event)">
+                                <md-icon md-font-icon="icon-dots-vertical"></md-icon>
+                            </md-button>
+                            <md-menu-content width="2">
+                                <md-menu-item>
+                                    <md-button ng-click="refreshWidget()" aria-label="Refresh widget">
+                                        Refresh
+                                    </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
                     </div>
 
-                    <md-tabs class="md-accent no-radius" md-dynamic-height>
-                        <md-tab label="{{tab.label}}" ng-repeat="tab in vm.widget7.tabs">
-
-                            <div class="white-bg black-fg" layout="row" flex layout-wrap>
-                                <div class="p-16" flex="100" flex-gt-md="50">
-                                    <div class="h3 pb-8">Gender</div>
-                                    <div class="p-8" ng-repeat="gender in tab.genders">
-                                        <div class="pb-8" layout="row" layout-align="space-between">
-                                            <span class="h4">{{gender.title}}</span>
-                                            <span class="secondary-text">{{gender.value}}%</span>
-                                        </div>
-                                        <md-progress-linear class="md-accent" md-mode="determinate"
-                                                            value="{{gender.value}}"></md-progress-linear>
+                    <table class="dataTable row-border hover" datatable="ng"
+                           dt-options="vm.widget7.dtOptions">
+                        <thead>
+                            <tr>
+                                <th class="secondary-text"
+                                    ng-repeat="column in ::vm.widget7.table.columns">
+                                    <div class="table-header">
+                                        <span class="column-title">{{column.title}}</span>
                                     </div>
-                                </div>
-
-                                <div class="p-16" flex="100" flex-gt-md="50">
-                                    <div class="h3 pb-8">Age</div>
-                                    <div class="p-8" ng-repeat="age in tab.ages" flex="50">
-                                        <div class="pb-8" layout="row" layout-align="space-between">
-                                            <span class="h4">{{age.title}}</span>
-                                            <span class="secondary-text">{{age.value}}%</span>
-                                        </div>
-                                        <md-progress-linear class="md-warn" md-mode="determinate"
-                                                            value="{{age.value}}"></md-progress-linear>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </md-tab>
-                    </md-tabs>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="row in ::vm.widget7.table.rows">
+                                <td ng-repeat="cell in row">
+                                    <span class="{{cell.classes}}">
+                                        {{cell.value}}
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                 </ms-widget-front>
                 <!-- / Front -->
@@ -449,111 +397,51 @@
             </ms-widget>
             <!-- / WIDGET 7 -->
 
-        </div>
-        <!-- / WIDGET GROUP -->
-
-
-        <!-- WIDGET GROUP -->
-        <div class="widget-group" layout="row" flex="100" layout-wrap>
-
             <!-- WIDGET 8 -->
-            <ms-widget class="h-450" layout="column" flex="100" flex-gt-md="60" flex-gt-lg="75">
+            <ms-widget flippable="false" layout="column" flex="100" flex-gt-lg="40">
 
                 <!-- Front -->
-                <ms-widget-front class="p-16 white-bg" layout="column" layout-align="space-between" flex>
-                    <div class="pb-16">
-                        <div class="h3 weight-500 pb-8">{{vm.widget8.title}}</div>
-                        <div class="secondary-text">{{vm.widget8.subtitle}}</div>
+                <ms-widget-front class="white-bg" flex>
+
+                    <div class="ph-16 pv-24 border-bottom" layout="row" layout-align="space-between center">
+                        <div layout="row" layout-align="start center">
+                            <span class="h2">{{vm.widget8.title}}</span>
+                            <span class="h3 ml-16 text-boxed blue-bg white-fg">Showing last {{vm.widget8.activities.length}} activity</span>
+                        </div>
+
+                        <md-menu>
+                            <md-button aria-label="more" class="md-icon-button"
+                                       ng-click="$mdOpenMenu($event)">
+                                <md-icon md-font-icon="icon-dots-vertical"></md-icon>
+                            </md-button>
+                            <md-menu-content width="2">
+                                <md-menu-item>
+                                    <md-button ng-click="refreshWidget()" aria-label="Refresh widget">
+                                        Refresh
+                                    </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
                     </div>
 
-                    <div flex>
-                        <c3chart class="c3 stroke-2" bindto-id="sales">
-                            <!--<chart-column ng-repeat="column in vm.widget8.chart.columns"
-                                          column-id="{{column.id}}"
-                                          column-name="{{column.name}}"
-                                          column-color="{{column.color}}"
-                                          column-values="{{column.values}}"
-                                          column-type="{{column.type}}"
-                            />
-                            <chart-size chart-height="330"/>-->
-                        </c3chart>
+                    <div>
+                        <div class="ph-16 pv-10 border-bottom" layout="row" layout-align="space-between center" ng-repeat="activity in vm.widget8.activities">
+                            <div layout="column">
+                                <span class="h3">{{activity.process}}</span>
+                                <div class="pt-5" layout="row" layout-align="start center">
+                                    <i class="icon mr-8 s16" ng-class="{'icon-arrow-down red-fg':activity.type === 'Input', 'icon-arrow-up green-fg':activity.type === 'Output'}"></i>
+                                    <span class="font-weight-500 secondary-text">{{activity.type}}</span>
+                                </div>
+                            </div>
+                            <span class="h4 font-weight-500 secondary-text">{{activity.value}}</span>
+                        </div>
                     </div>
+
                 </ms-widget-front>
                 <!-- / Front -->
 
             </ms-widget>
             <!-- / WIDGET 8 -->
-
-
-            <div layout="column" flex="100" flex-gt-md="40" flex-gt-lg="25">
-
-                <!-- WIDGET 9 -->
-                <ms-widget class="h-150" layout="column">
-
-                    <!-- Front -->
-                    <ms-widget-front class="p-16 white-bg" layout="row" flex>
-                        <div class="pt-8 pb-8" layout="row" layout-align="space-between center"
-                             flex>
-                            <div class="pl-8" layout="column" layout-align="center start">
-                                <span class="md-display-1 pb-8">{{vm.widget9.value}}</span>
-                                <span class="font-weight-500 secondary-text">{{vm.widget9.title}}</span>
-                            </div>
-
-                            <div>
-                                <md-icon md-font-icon="{{vm.widget9.icon}}" class="s48 hint-text"></md-icon>
-                            </div>
-                        </div>
-                    </ms-widget-front>
-                    <!-- / Front -->
-
-                </ms-widget>
-                <!-- / WIDGET 9 -->
-
-                <!-- WIDGET 10 -->
-                <ms-widget class="h-150" layout="column">
-
-                    <!-- Front -->
-                    <ms-widget-front class="p-16 white-bg" layout="row" flex>
-                        <div class="pt-8 pb-8" layout="row" layout-align="space-between center"
-                             flex>
-                            <div class="pl-8" layout="column" layout-align="center start">
-                                <span class="md-display-1 pb-8">{{vm.widget10.value}}</span>
-                                <span class="font-weight-500 secondary-text">{{vm.widget10.title}}</span>
-                            </div>
-
-                            <div>
-                                <md-icon md-font-icon="{{vm.widget10.icon}}" class="s48 hint-text"></md-icon>
-                            </div>
-                        </div>
-                    </ms-widget-front>
-                    <!-- / Front -->
-
-                </ms-widget>
-                <!-- / WIDGET 10 -->
-
-                <!-- WIDGET 11 -->
-                <ms-widget class="h-150" layout="column">
-
-                    <!-- Front -->
-                    <ms-widget-front class="p-16 white-bg" layout="row" flex>
-                        <div class="pt-8 pb-8" layout="row" layout-align="space-between center"
-                             flex>
-                            <div class="pl-8" layout="column" layout-align="center start">
-                                <span class="md-display-1 pb-8">{{vm.widget11.value}}</span>
-                                <span class="font-weight-500 secondary-text">{{vm.widget11.title}}</span>
-                            </div>
-
-                            <div>
-                                <md-icon md-font-icon="{{vm.widget11.icon}}" class="s48 hint-text"></md-icon>
-                            </div>
-                        </div>
-                    </ms-widget-front>
-                    <!-- / Front -->
-
-                </ms-widget>
-                <!-- / WIDGET 11 -->
-
-            </div>
 
         </div>
         <!-- / WIDGET GROUP -->

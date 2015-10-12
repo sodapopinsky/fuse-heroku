@@ -16,165 +16,65 @@
 
         // Widget 1
         vm.widget1 = {
-            memoryChart: {
-                title: vm.dashboardData.widget1.memoryChart.title,
-                chart: {
-                    config : {
-                        refreshDataOnly: true,
-                        deepWatchData  : true
-                    },
-                    options: {
-                        chart: {
-                            type                   : 'lineChart',
-                            color                  : ['#4caf50', '#3f51b5', '#ff5722'],
-                            height                 : 350,
-                            margin                 : {
-                                top   : 32,
-                                right : 32,
-                                bottom: 32,
-                                left  : 48
-                            },
-                            useInteractiveGuideline: true,
-                            clipVoronoi            : false,
-                            x                      : function (d)
+            title: vm.dashboardData.widget1.title,
+            chart: {
+                config : {
+                    refreshDataOnly: true,
+                    deepWatchData  : true
+                },
+                options: {
+                    chart: {
+                        type                   : 'lineChart',
+                        color                  : ['#4caf50', '#3f51b5', '#ff5722'],
+                        height                 : 320,
+                        margin                 : {
+                            top   : 32,
+                            right : 32,
+                            bottom: 32,
+                            left  : 48
+                        },
+                        useInteractiveGuideline: true,
+                        clipVoronoi            : false,
+                        interpolate            : 'cardinal',
+                        x                      : function (d)
+                        {
+                            return d.x;
+                        },
+                        y                      : function (d)
+                        {
+                            return d.y;
+                        },
+                        xAxis                  : {
+                            tickFormat: function (d)
                             {
-                                return d.x;
+                                return d + ' min.';
                             },
-                            y                      : function (d)
+                            showMaxMin: false
+                        },
+                        yAxis                  : {
+                            tickFormat: function (d)
                             {
-                                return d.y;
-                            },
-                            xAxis                  : {
-                                tickFormat: function (d)
-                                {
-                                    return d + ' min.';
-                                },
-                                showMaxMin: false
-                            },
-                            yAxis                  : {
-                                tickFormat: function (d)
-                                {
-                                    return d + ' MB';
-                                }
-                            },
-                            interactiveLayer       : {
-                                tooltip: {
-                                    gravity: 's',
-                                    classes: 'gravity-s'
-                                }
-                            },
-                            legend                 : {
-                                margin    : {
-                                    top   : 8,
-                                    right : 0,
-                                    bottom: 32,
-                                    left  : 0
-                                },
-                                rightAlign: false
+                                return d + ' MB';
                             }
-                        }
-                    },
-                    data   : vm.dashboardData.widget1.memoryChart.chart
-                }
-            },
-            cpuChart   : {
-                title: vm.dashboardData.widget1.cpuChart.title,
-                chart: {
-                    config : {
-                        refreshDataOnly: true,
-                        deepWatchData  : true
-                    },
-                    options: {
-                        chart: {
-                            type                   : 'lineChart',
-                            color                  : ['#03A9F4'],
-                            height                 : 120,
-                            margin                 : {
+                        },
+                        interactiveLayer       : {
+                            tooltip: {
+                                gravity: 's',
+                                classes: 'gravity-s'
+                            }
+                        },
+                        legend                 : {
+                            margin    : {
                                 top   : 8,
-                                right : 32,
-                                bottom: 16,
-                                left  : 48
+                                right : 0,
+                                bottom: 32,
+                                left  : 0
                             },
-                            duration               : 1,
-                            clipEdge               : true,
-                            clipVoronoi            : false,
-                            interpolate            : 'cardinal',
-                            isArea                 : true,
-                            useInteractiveGuideline: true,
-                            showLegend             : false,
-                            showControls           : false,
-                            x                      : function (d)
-                            {
-                                return d.x;
-                            },
-                            y                      : function (d)
-                            {
-                                return d.y;
-                            },
-                            yDomain                : [0, 100],
-                            xAxis                  : {
-                                tickFormat: function (d)
-                                {
-                                    return d + ' sec.';
-                                },
-                                showMaxMin: false
-                            },
-                            yAxis                  : {
-                                tickFormat: function (d)
-                                {
-                                    return d + '%';
-                                }
-                            },
-                            interactiveLayer       : {
-                                tooltip: {
-                                    gravity: 's',
-                                    classes: 'gravity-s'
-                                }
-                            }
+                            rightAlign: false
                         }
-                    },
-                    data   : vm.dashboardData.widget1.cpuChart.chart
-                }
-            },
-            init       : function ()
-            {
-                // Run this function once to initialize the widget
-
-                // Grab the x value
-                var lastIndex = vm.dashboardData.widget1.cpuChart.chart[0].values.length - 1,
-                    x = vm.dashboardData.widget1.cpuChart.chart[0].values[lastIndex].x;
-
-                /**
-                 * Emulate constant data flow
-                 *
-                 * @param min
-                 * @param max
-                 */
-                function cpuTicker(min, max)
-                {
-                    // Increase the x value
-                    x = x + 5;
-
-                    var newValue = {
-                        x: x,
-                        y: Math.floor(Math.random() * (max - min + 1)) + min
-                    };
-
-                    vm.widget1.cpuChart.chart.data[0].values.shift();
-                    vm.widget1.cpuChart.chart.data[0].values.push(newValue);
-                }
-
-                // Set interval
-                var cpuTickerInterval = $interval(function ()
-                {
-                    cpuTicker(0, 100);
-                }, 5000);
-
-                // Cleanup
-                $scope.$on('$destroy', function ()
-                {
-                    $interval.cancel(cpuTickerInterval);
-                });
+                    }
+                },
+                data   : vm.dashboardData.widget1.chart
             }
         };
 
@@ -197,7 +97,7 @@
                 },
                 options: {
                     chart: {
-                        type        : 'stackedAreaChart',
+                        type        : 'lineChart',
                         color       : ['rgba(0, 0, 0, 0.27)'],
                         height      : 48,
                         margin      : {
@@ -210,6 +110,7 @@
                         clipEdge    : true,
                         interpolate : 'cardinal',
                         interactive : false,
+                        isArea      : true,
                         showLegend  : false,
                         showControls: false,
                         showXAxis   : false,
@@ -277,289 +178,184 @@
         // Widget 5
         vm.widget5 = vm.dashboardData.widget5;
 
-        vm.widget55 = {
-            title           : 'IO RATE',
-            subtitle        : 'Showing last 5 hours',
-            chart           : {
-                columns: [
-                    {
-                        id    : 'Sales',
-                        name  : 'Sales',
-                        color : 'lightgrey',
-                        values: '30,75,290,400,150,250,75,210,125,92,30,75,290,400',
-                        type  : 'bar'
-                    },
-                    {
-                        id    : 'SalesTop',
-                        name  : 'Sales Top',
-                        color : 'green',
-                        values: '30,75,290,400,150,250,75,210,125,92,30,75,290,400',
-                        type  : 'spline'
-                    }
-                ]
-            },
-            activityTitle   : 'Activity Log',
-            activitySubtitle: 'Showing last 100 entries',
-            activities      : [
-                {
-                    title: 'Input',
-                    value: '50KB'
-                },
-                {
-                    title: 'Input',
-                    value: '24.5Mb'
-                },
-                {
-                    title: 'Output',
-                    value: '887Kb'
-                },
-                {
-                    title: 'Input',
-                    value: '6.27Kb'
-                },
-                {
-                    title: 'Output',
-                    value: '13.8Kb'
-                },
-                {
-                    title: 'Output',
-                    value: '5.6Mb'
-                },
-                {
-                    title: 'Output',
-                    value: '44.6Kb'
-                },
-                {
-                    title: 'Input',
-                    value: '5Mb'
-                },
-                {
-                    title: 'Input',
-                    value: '5.3Kb'
-                },
-                {
-                    title: 'Output',
-                    value: '176Kb'
-                },
-                {
-                    title: 'Input',
-                    value: '4.3Mb'
-                },
-                {
-                    title: 'Input',
-                    value: '50KB'
-                },
-                {
-                    title: 'Input',
-                    value: '24.5Mb'
-                },
-                {
-                    title: 'Output',
-                    value: '887Kb'
-                },
-                {
-                    title: 'Input',
-                    value: '6.27Kb'
-                },
-                {
-                    title: 'Output',
-                    value: '13.8Kb'
-                },
-                {
-                    title: 'Output',
-                    value: '5.6Mb'
-                },
-                {
-                    title: 'Output',
-                    value: '44.6Kb'
-                },
-                {
-                    title: 'Input',
-                    value: '5Mb'
-                },
-                {
-                    title: 'Input',
-                    value: '5.3Kb'
-                },
-                {
-                    title: 'Output',
-                    value: '176Kb'
-                },
-                {
-                    title: 'Input',
-                    value: '4.3Mb'
-                }
-            ]
-        };
-
+        // Widget 6
         vm.widget6 = {
-            title   : 'Google Inc.',
-            subtitle: 'NASDAQ: GOOG',
-            value   : '531.69',
-            diff    : '2.29%',
-            chart   : {
-                columns: [
-                    {
-                        id    : 'GOOG',
-                        name  : 'GOOG',
-                        color : 'orange',
-                        values: '30,75,290,400,150,250,75,210,125,92,30,75,290,400',
-                        type  : 'bar'
+            title: vm.dashboardData.widget6.title,
+            chart: {
+                config : {
+                    refreshDataOnly: true,
+                    deepWatchData  : true
+                },
+                options: {
+                    chart: {
+                        type                   : 'lineChart',
+                        color                  : ['#03A9F4'],
+                        height                 : 140,
+                        margin                 : {
+                            top   : 8,
+                            right : 32,
+                            bottom: 16,
+                            left  : 48
+                        },
+                        duration               : 1,
+                        clipEdge               : true,
+                        clipVoronoi            : false,
+                        interpolate            : 'cardinal',
+                        isArea                 : true,
+                        useInteractiveGuideline: true,
+                        showLegend             : false,
+                        showControls           : false,
+                        x                      : function (d)
+                        {
+                            return d.x;
+                        },
+                        y                      : function (d)
+                        {
+                            return d.y;
+                        },
+                        yDomain                : [0, 100],
+                        xAxis                  : {
+                            tickFormat: function (d)
+                            {
+                                return d + ' sec.';
+                            },
+                            showMaxMin: false
+                        },
+                        yAxis                  : {
+                            tickFormat: function (d)
+                            {
+                                return d + '%';
+                            }
+                        },
+                        interactiveLayer       : {
+                            tooltip: {
+                                gravity: 's',
+                                classes: 'gravity-s'
+                            }
+                        }
                     }
-                ]
+                },
+                data   : vm.dashboardData.widget6.chart
+            },
+            init : function ()
+            {
+                // Run this function once to initialize the widget
+
+                // Grab the x value
+                var lastIndex = vm.dashboardData.widget6.chart[0].values.length - 1,
+                    x = vm.dashboardData.widget6.chart[0].values[lastIndex].x;
+
+                /**
+                 * Emulate constant data flow
+                 *
+                 * @param min
+                 * @param max
+                 */
+                function cpuTicker(min, max)
+                {
+                    // Increase the x value
+                    x = x + 5;
+
+                    var newValue = {
+                        x: x,
+                        y: Math.floor(Math.random() * (max - min + 1)) + min
+                    };
+
+                    vm.widget6.chart.data[0].values.shift();
+                    vm.widget6.chart.data[0].values.push(newValue);
+                }
+
+                // Set interval
+                var cpuTickerInterval = $interval(function ()
+                {
+                    cpuTicker(0, 100);
+                }, 5000);
+
+                // Cleanup
+                $scope.$on('$destroy', function ()
+                {
+                    $interval.cancel(cpuTickerInterval);
+                });
             }
         };
 
+        // Widget 7
         vm.widget7 = {
-            title: 'Visitor Demographics',
-            tabs : [
-                {
-                    label  : '30 days',
-                    genders: [
-                        {
-                            title: 'Male',
-                            value: 40
-                        },
-                        {
-                            title: 'Female',
-                            value: 41
-                        },
-                        {
-                            title: 'Not Specified',
-                            value: 19
-                        }
-                    ],
-                    ages   : [
-                        {
-                            title: '25 - 34',
-                            value: 32
-                        },
-                        {
-                            title: '35 - 44',
-                            value: 85
-                        },
-                        {
-                            title: '45+',
-                            value: 48
-                        }
-                    ]
-                },
-                {
-                    label  : '10 days',
-                    genders: [
-                        {
-                            title: 'Male',
-                            value: 32
-                        },
-                        {
-                            title: 'Female',
-                            value: 49
-                        },
-                        {
-                            title: 'Not Specified',
-                            value: 19
-                        }
-                    ],
-                    ages   : [
-                        {
-                            title: '25 - 34',
-                            value: 85
-                        },
-                        {
-                            title: '35 - 44',
-                            value: 60
-                        },
-                        {
-                            title: '45+',
-                            value: 36
-                        }
-                    ]
-                },
-                {
-                    label  : '1 day',
-                    genders: [
-                        {
-                            title: 'Male',
-                            value: 28
-                        },
-                        {
-                            title: 'Female',
-                            value: 62
-                        },
-                        {
-                            title: 'Not Specified',
-                            value: 10
-                        }
-                    ],
-                    ages   : [
-                        {
-                            title: '25 - 34',
-                            value: 17
-                        },
-                        {
-                            title: '35 - 44',
-                            value: 64
-                        },
-                        {
-                            title: '45+',
-                            value: 72
-                        }
-                    ]
-                },
-
-            ]
-        };
-
-        vm.widget8 = {
-            title   : 'SALES',
-            subtitle: 'Last 30 days',
-            chart   : {
-                columns: [
+            title    : vm.dashboardData.widget7.title,
+            table    : vm.dashboardData.widget7.table,
+            dtOptions: {
+                dom       : '<"top"f>rt<"bottom"<"left"<"length"l>><"right"<"info"i><"pagination"p>>>',
+                pagingType: 'simple',
+                pageLength: 10,
+                lengthMenu: [10, 20, 50, 100],
+                autoWidth : false,
+                responsive: true,
+                columnDefs: [
                     {
-                        id    : 'Input',
-                        name  : 'Input',
-                        color : fuseTheming.themes.active.theme.primary.color,
-                        values: '30,75,290,400,150,250',
-                        type  : 'area-spline'
+                        width  : '20%',
+                        targets: [0, 1, 2, 3, 4]
+                    }
+                ],
+                columns   : [
+                    {},
+                    {},
+                    {
+                        render: function (data, type, row, meta)
+                        {
+                            if ( type === 'display' )
+                            {
+                                return data + ' KB/s';
+                            }
+                            else
+                            {
+                                return data;
+                            }
+                        }
                     },
                     {
-                        id    : 'Output',
-                        name  : 'Output',
-                        color : fuseTheming.themes.active.theme.accent.color,
-                        values: '500,300,120,600,50,80',
-                        type  : 'area-spline'
+                        render: function (data, type, row, meta)
+                        {
+                            if ( type === 'display' )
+                            {
+                                return data + '%';
+                            }
+                            else
+                            {
+                                return data;
+                            }
+                        }
+                    },
+                    {
+                        render: function (data, type, row, meta)
+                        {
+                            if ( type === 'display' )
+                            {
+                                var el = angular.element(data);
+                                el.html(el.text() + ' MB');
+
+                                return el[0].outerHTML;
+                            }
+                            else
+                            {
+                                return data;
+                            }
+                        }
                     }
                 ]
             }
         };
 
-        vm.widget9 = {
-            title: 'ONLINE MEMBERS',
-            value: 658,
-            icon : 'icon-account'
-        };
-
-        vm.widget10 = {
-            title: 'MEMBERS FOR PAST 30 DAYS',
-            value: 55,
-            icon : 'icon-account-plus'
-        };
-
-        vm.widget11 = {
-            title: 'TOTAL MEMBERS',
-            value: 59962,
-            icon : 'icon-account-multiple'
-        };
+        // Widget 8
+        vm.widget8 = vm.dashboardData.widget8;
 
         // Methods
 
         //////////
 
-        // Init Widget 1
-        vm.widget1.init();
-
         // Init Widget 4
         vm.widget4.init();
-    }
 
+        // Init Widget 6
+        vm.widget6.init();
+    }
 })();
