@@ -202,18 +202,18 @@ small {
 }
 
 // Font size helpers
-@for $size from 1 through 15 {
+@for $size from 1 through 60 {
 
-    .font-size-#{$size * 8} {
-        font-size: #{$size * 8}px;
+    .font-size-#{$size * 2} {
+        font-size: #{$size * 2}px;
     }
 }
 
 // Line height helpers
-@for $lineHeight from 1 through 15 {
+@for $lineHeight from 1 through 60 {
 
-    .line-height-#{$lineHeight * 8} {
-        line-height: #{$lineHeight * 8}px;
+    .line-height-#{$lineHeight * 2} {
+        line-height: #{$lineHeight * 2}px;
     }
 }
 
