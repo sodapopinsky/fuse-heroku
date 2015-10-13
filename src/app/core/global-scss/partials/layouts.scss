@@ -56,6 +56,28 @@ $card-header-height-sm: $header-height-sm - $card-toolbar-height;
         z-index: 50;
     }
 
+    // Global header styles
+    > .header {
+
+        .breadcrumb {
+            margin-bottom: 24px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.54);
+
+            md-icon {
+                margin: 0;
+            }
+
+            .separator {
+                margin: 0 8px;
+            }
+        }
+
+        .title {
+            font-size: 34px;
+        }
+    }
+
     // Carded layout
     &.carded {
         min-height: 100%;
@@ -457,7 +479,7 @@ $card-header-height-sm: $header-height-sm - $card-toolbar-height;
                 max-width: 240px;
                 padding: 24px;
                 z-index: 51;
-                    box-shadow: $whiteframe-shadow-7dp;
+                box-shadow: $whiteframe-shadow-7dp;
 
                 &.md-locked-open {
                     width: 220px;
