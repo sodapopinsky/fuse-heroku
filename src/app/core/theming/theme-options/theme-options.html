@@ -9,12 +9,16 @@
 
     <md-menu-content width="3" class="md-background-bg" id="theme-options-menu-content">
         <span class="option-title">Layout Mode:</span>
-        <md-switch ng-model="vm.layoutWide" aria-label="Wide" ng-change="$root.layoutBoxed = !$root.layoutBoxed;">
-            Wide
-        </md-switch>
-        <md-switch ng-model="$root.layoutBoxed" aria-label="Boxed" ng-change="vm.layoutWide= !$root.layoutBoxed">
-            Boxed
-        </md-switch>
+
+        <div layout="row" layout-align="space-between center">
+            <md-checkbox flex ng-model="vm.layoutWide" aria-label="Wide" ng-change="$root.layoutBoxed = !$root.layoutBoxed">
+                Wide
+            </md-checkbox>
+            <md-checkbox flex ng-model="$root.layoutBoxed" aria-label="Boxed" ng-change="vm.layoutWide= !$root.layoutBoxed">
+                Boxed
+            </md-checkbox>
+        </div>
+
         <md-menu-divider></md-menu-divider>
         <span class="option-title">Theme Palette:</span>
         <md-menu-item ng-repeat="(themeName, theme) in vm.themes.list" class="theme">
