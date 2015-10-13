@@ -3,16 +3,17 @@
     'use strict';
 
     angular.module('app.core')
-        .controller('ThemeChangerController', ThemeChangerController);
+        .controller('ThemeOptionsController', ThemeOptionsController);
 
     /** @ngInject */
-    function ThemeChangerController($route, fuseTheming)
+    function ThemeOptionsController($route, fuseTheming, $rootScope)
     {
         var vm = this;
 
         // Data
         vm.isOpen = false;
         vm.themes = fuseTheming.themes;
+        vm.layoutWide = !$rootScope.layoutBoxed;
 
         // Methods
         vm.setActiveTheme = setActiveTheme;

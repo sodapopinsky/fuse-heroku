@@ -51,16 +51,16 @@
                 ];
 
                 taOptions.classes = {
-                    focussed: 'focussed',
-                    toolbar: 'ta-toolbar',
-                    toolbarGroup: 'ta-group',
-                    toolbarButton: 'md-button',
+                    focussed           : 'focussed',
+                    toolbar            : 'ta-toolbar',
+                    toolbarGroup       : 'ta-group',
+                    toolbarButton      : 'md-button',
                     toolbarButtonActive: 'active',
-                    disabled: '',
-                    textEditor: 'form-control',
-                    htmlEditor: 'form-control'
+                    disabled           : '',
+                    textEditor         : 'form-control',
+                    htmlEditor         : 'form-control'
                 };
-                
+
                 return taOptions;
             }
         ]);
@@ -84,7 +84,8 @@
         fuseConfigProvider.config({
             'disableCustomScrollbars'        : false,
             'disableCustomScrollbarsOnMobile': true,
-            'disableMdInkRippleOnMobile'     : true
+            'disableMdInkRippleOnMobile'     : true,
+            'enableBoxedLayout'                    : false
         });
     }
 })();

@@ -1,0 +1,38 @@
+#theme-options {
+    position: absolute;
+    top: 128px;
+    right: 0;
+    z-index: 50;
+    background-color: white;
+
+    .theme-options-menu {
+        width: 48px;
+        height: 48px;
+        display: block;
+        position: relative;
+        .theme-options-menu-button {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            border-radius: 0;
+        }
+    }
+}
+
+#theme-options-menu-content {
+    max-height: 400px;
+    md-switch {
+        margin: 8px;
+    }
+    .option-title {
+        font-size: 14px;
+        padding: 8px;
+    }
+    .theme {
+        padding: 4px 8px;
+        .theme-button {
+            border-right: 8px;
+            border-style: solid;
+        }
+    }
+}
