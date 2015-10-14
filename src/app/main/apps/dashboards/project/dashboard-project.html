@@ -637,7 +637,10 @@
                             <!-- Front -->
                             <ms-widget-front class="white-bg" flex>
 
-                                <div class="md-title p-24">{{vm.widget11.title}}</div>
+                                <div class="p-24 mb-8 border-bottom" layout="row" layout-align="space-between center">
+                                    <div class="h2">{{vm.widget11.title}}</div>
+                                    <div class="text-boxed red-bg white-fg m-0">{{vm.widget11.table.rows.length}} members</div>
+                                </div>
 
                                 <table class="dataTable row-border hover" datatable="ng"
                                        dt-options="vm.widget11.dtOptions">

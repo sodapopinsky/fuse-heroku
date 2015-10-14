@@ -302,7 +302,7 @@
 
                 <!-- Front -->
                 <ms-widget-front class="p-16 white-bg" layout="column" flex>
-                    <div class="pb-16" layout="row" layout-align="space-between center">
+                    <div class="pb-24" layout="row" layout-align="space-between center">
                         <div class="h3">{{vm.widget6.title}}</div>
 
                         <md-menu>
@@ -348,8 +348,8 @@
 
                     <div class="ph-16 pv-24 border-bottom" layout="row" layout-align="space-between center">
                         <div layout="row" layout-align="start center">
-                            <span class="h2">{{vm.widget7.title}}</span>
-                            <span class="h3 ml-16 text-boxed pink-bg white-fg">{{vm.widget7.table.rows.length}} processes</span>
+                            <span class="h3">{{vm.widget7.title}}</span>
+                            <span class="ml-16 text-boxed pink-bg white-fg">{{vm.widget7.table.rows.length}} processes</span>
                         </div>
 
                         <md-menu>
@@ -404,8 +404,8 @@
 
                     <div class="ph-16 pv-24 border-bottom" layout="row" layout-align="space-between center">
                         <div layout="row" layout-align="start center">
-                            <span class="h2">{{vm.widget8.title}}</span>
-                            <span class="h3 ml-16 text-boxed blue-bg white-fg">Showing last {{vm.widget8.activities.length}} activity</span>
+                            <span class="h3">{{vm.widget8.title}}</span>
+                            <span class="ml-16 text-boxed blue-bg white-fg">Showing last {{vm.widget8.activities.length}} activity</span>
                         </div>
 
                         <md-menu>
@@ -430,7 +430,7 @@
                             <div class="pt-5" layout="row" layout-align="start center">
                                 <i class="icon mr-8 s16"
                                    ng-class="{'icon-arrow-down red-fg':activity.type === 'Input', 'icon-arrow-up green-fg':activity.type === 'Output'}"></i>
-                                <span class="font-weight-500 secondary-text">{{activity.type}}</span>
+                                <span class="secondary-text">{{activity.type}}</span>
                             </div>
                         </div>
                         <span class="h4 font-weight-500 secondary-text">{{activity.value}}</span>
