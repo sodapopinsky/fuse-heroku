@@ -1,7 +1,7 @@
 $theme-panel-width: 220px;
 
 #theme-options {
-    position: absolute;
+    position: fixed;
     top: 128px;
     right: 0;
     z-index: 50;
@@ -9,13 +9,18 @@ $theme-panel-width: 220px;
     #theme-options-panel {
         position: absolute;
         top: 0;
-        right: -$theme-panel-width;
-        transition: right 0.225s ease-in-out;
+        right: 0;
+        transform: translateX($theme-panel-width);
+        transition: transform 0.225s ease-in-out;
         pointer-events: none;
 
         &.open {
-            right: 0;
+            transform: translateX(0);
             pointer-events: auto;
+
+            #theme-options-list {
+                box-shadow: $whiteframe-shadow-4dp;
+            }
         }
 
         #theme-options-panel-button {
@@ -34,7 +39,6 @@ $theme-panel-width: 220px;
             min-width: $theme-panel-width;
             max-width: $theme-panel-width;
             max-height: 400px;
-            box-shadow: $whiteframe-shadow-4dp;
             background: #FFFFFF;
             z-index: 12;
 
