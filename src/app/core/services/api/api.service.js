@@ -18,10 +18,13 @@
         });
 
         api.dashboard = {
-            project: $resource(api.dataUrl + 'dashboard/project/data.json', null, {
+            project  : $resource(api.dataUrl + 'dashboard/project/data.json', null, {
                 get: {method: 'get'}
             }),
-            server : $resource(api.dataUrl + 'dashboard/server/data.json', null, {
+            server   : $resource(api.dataUrl + 'dashboard/server/data.json', null, {
+                get: {method: 'get'}
+            }),
+            analytics: $resource(api.dataUrl + 'dashboard/analytics/data.json', null, {
                 get: {method: 'get'}
             })
         };
