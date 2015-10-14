@@ -37,7 +37,7 @@
         this.$get = function ()
         {
             var service = {
-                config: getConfig
+                getConfig: getConfig
             };
 
             return service;

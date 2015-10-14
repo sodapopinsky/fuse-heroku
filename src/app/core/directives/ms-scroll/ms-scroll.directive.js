@@ -72,14 +72,14 @@
             {
                 // Do not replace scrollbars if
                 // 'disableCustomScrollbars' config enabled
-                if ( fuseConfig.config('disableCustomScrollbars') )
+                if ( fuseConfig.getConfig('disableCustomScrollbars') )
                 {
                     return false;
                 }
 
                 // Do not replace scrollbars on mobile devices
                 // if 'disableCustomScrollbarsOnMobile' config enabled
-                if ( fuseConfig.config('disableCustomScrollbarsOnMobile') && fuseHelper.isMobile() )
+                if ( fuseConfig.getConfig('disableCustomScrollbarsOnMobile') && fuseHelper.isMobile() )
                 {
                     return false;
                 }
