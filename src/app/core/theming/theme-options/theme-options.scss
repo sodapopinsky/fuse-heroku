@@ -1,42 +1,64 @@
+$theme-panel-width: 220px;
+
 #theme-options {
     position: absolute;
     top: 128px;
     right: 0;
     z-index: 50;
-    background-color: white;
 
-    .theme-options-menu {
-        width: 48px;
-        height: 48px;
-        display: block;
-        position: relative;
+    #theme-options-panel {
+        position: absolute;
+        top: 0;
+        right: -$theme-panel-width;
+        transition: right 0.225s ease-in-out;
+        pointer-events: none;
 
-        .theme-options-menu-button {
-            height: 100%;
-            width: 100%;
-            margin: 0;
-            border-radius: 0;
+        &.open {
+            right: 0;
+            pointer-events: auto;
         }
-    }
-}
 
-#theme-options-menu-content {
-    max-height: 400px;
+        #theme-options-panel-button {
+            background: #FFFFFF;
+            box-shadow: $whiteframe-shadow-4dp;
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            margin: 0;
+            padding: 5px 15px;
+            pointer-events: auto;
+        }
 
-    md-switch {
-        margin: 8px;
-    }
+        #theme-options-list {
+            width: $theme-panel-width;
+            min-width: $theme-panel-width;
+            max-width: $theme-panel-width;
+            max-height: 400px;
+            box-shadow: $whiteframe-shadow-4dp;
+            background: #FFFFFF;
+            z-index: 12;
 
-    .option-title {
-        font-size: 14px;
-        padding: 8px;
-    }
+            .theme-option {
+                padding: 16px;
 
-    .theme {
-        padding: 4px 8px;
+                md-radio-button {
+                    margin: 8px;
+                }
 
-        .theme-button {
-            border-right: 8px solid;
+                .option-title {
+                    font-size: 14px;
+                    font-weight: 500;
+                    padding: 0 8px 12px 8px;
+                }
+
+                .theme {
+                    padding: 4px 8px;
+
+                    .theme-button {
+                        border-right: 8px solid;
+                    }
+                }
+            }
         }
     }
 }

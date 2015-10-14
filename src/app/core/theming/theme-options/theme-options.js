@@ -12,15 +12,24 @@
         var vm = this;
 
         // Data
-        vm.isOpen = false;
+        vm.panelOpen = false;
         vm.themes = fuseTheming.themes;
         vm.layoutMode = 'wide';
 
         // Methods
+        vm.toggleOptionsPanel = toggleOptionsPanel;
         vm.setActiveTheme = setActiveTheme;
         vm.updateLayoutMode = updateLayoutMode;
 
         //////////
+
+        /**
+         * Toggle options panel
+         */
+        function toggleOptionsPanel()
+        {
+            vm.panelOpen = !vm.panelOpen;
+        }
 
         /**
          * Set active theme
