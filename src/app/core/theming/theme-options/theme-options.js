@@ -2,21 +2,23 @@
 {
     'use strict';
 
-    angular.module('app.core')
+    angular
+        .module('app.core')
         .controller('ThemeOptionsController', ThemeOptionsController);
 
     /** @ngInject */
-    function ThemeOptionsController($route, fuseTheming, $rootScope)
+    function ThemeOptionsController(fuseTheming)
     {
         var vm = this;
 
         // Data
         vm.isOpen = false;
         vm.themes = fuseTheming.themes;
-        vm.layoutWide = !$rootScope.layoutBoxed;
+        vm.layoutMode = 'wide';
 
         // Methods
         vm.setActiveTheme = setActiveTheme;
+        vm.updateLayoutMode = updateLayoutMode;
 
         //////////
 
@@ -29,9 +31,17 @@
         {
             // Set active theme
             fuseTheming.setActiveTheme(themeName);
+        }
 
-            // Reload route to make sure changes are going to apply
-            $route.reload();
+        /**
+         * Update layout mode
+         */
+        function updateLayoutMode()
+        {
+            var bodyEl = angular.element('body');
+
+            // Update class on body element
+            bodyEl.toggleClass('boxed', (vm.layoutMode === 'boxed'));
         }
     }
 })();

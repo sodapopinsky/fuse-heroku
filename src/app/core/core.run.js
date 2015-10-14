@@ -7,7 +7,7 @@
         .run(runBlock);
 
     /** @ngInject */
-    function runBlock(fuseGenerator, fuseConfig, fuseHelper, $rootScope)
+    function runBlock(fuseGenerator, fuseConfig, fuseHelper)
     {
         /**
          * Generate extra classes based on registered themes so we
@@ -24,7 +24,5 @@
             var body = angular.element(document.body);
             body.attr('md-no-ink', true);
         }
-
-        $rootScope.layoutBoxed = fuseConfig.config('enableBoxedLayout');
     }
 })();

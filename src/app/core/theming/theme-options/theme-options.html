@@ -1,26 +1,23 @@
-<md-menu md-offset="0 64" md-position-mode="target-right target" class="theme-options-menu md-whiteframe-2dp">
+<md-menu md-offset="-48 8" md-position-mode="target-right target" class="theme-options-menu md-whiteframe-2dp">
     <md-button class="md-icon-button theme-options-menu-button" ng-click="$mdOpenMenu()" md-menu-origin
                md-menu-align-target
-               aria-label="theme options menu button"
-               translate
-               translate-attr-aria-label="TOOLBAR.USER_SETTINGS">
+               aria-label="theme options menu button">
         <md-icon md-font-icon="icon-cog" class="icon"></md-icon>
     </md-button>
 
     <md-menu-content width="3" class="md-background-bg" id="theme-options-menu-content">
         <span class="option-title">Layout Mode:</span>
 
-        <div layout="row" layout-align="space-between center">
-            <md-checkbox flex ng-model="vm.layoutWide" aria-label="Wide" ng-change="$root.layoutBoxed = !$root.layoutBoxed">
-                Wide
-            </md-checkbox>
-            <md-checkbox flex ng-model="$root.layoutBoxed" aria-label="Boxed" ng-change="vm.layoutWide= !$root.layoutBoxed">
-                Boxed
-            </md-checkbox>
-        </div>
+        <md-radio-group layout="row" layout-align="start center" ng-model="vm.layoutMode"
+                        ng-change="vm.updateLayoutMode()">
+            <md-radio-button value="boxed">Boxed</md-radio-button>
+            <md-radio-button value="wide">Wide</md-radio-button>
+        </md-radio-group>
 
         <md-menu-divider></md-menu-divider>
-        <span class="option-title">Theme Palette:</span>
+
+        <span class="option-title">Color Palette:</span>
+
         <md-menu-item ng-repeat="(themeName, theme) in vm.themes.list" class="theme">
             <md-button class="md-raised theme-button"
                        aria-label="{{themeName}}" ng-click="vm.setActiveTheme(themeName)"
@@ -30,31 +27,8 @@
                     <md-icon ng-style="{'color': theme.primary.contrast1}" md-font-icon="icon-palette"></md-icon>
                     <span>{{themeName}}</span>
                 </span>
-
             </md-button>
         </md-menu-item>
+
     </md-menu-content>
 </md-menu>
-
-
-<!--
-<md-fab-speed-dial md-open="vm.isOpen" md-direction="up"
-                   class="md-scale" ng-mouseleave="vm.isOpen=false">
-    <md-fab-actions class="themes">
-        <div ng-repeat="(themeName, theme) in vm.themes.list" class="theme">
-            <md-button class="md-fab md-raised md-mini"
-                       aria-label="{{themeName}}" ng-click="vm.setActiveTheme(themeName)"
-                       ng-style="{'background-color': theme.primary.color}"
-                       ng-class="themeName">
-                <md-icon md-font-icon="icon-palette"></md-icon>
-            </md-button>
-        </div>
-    </md-fab-actions>
-
-    <md-fab-trigger>
-        <md-button ng-mouseenter="vm.isOpen=true" aria-label="menu" class="menu-button md-fab md-primary">
-            <md-icon md-font-icon="icon-palette"></md-icon>
-        </md-button>
-    </md-fab-trigger>
-
-</md-fab-speed-dial>-->

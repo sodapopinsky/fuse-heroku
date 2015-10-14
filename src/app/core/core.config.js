@@ -84,8 +84,7 @@
         fuseConfigProvider.config({
             'disableCustomScrollbars'        : false,
             'disableCustomScrollbarsOnMobile': true,
-            'disableMdInkRippleOnMobile'     : true,
-            'enableBoxedLayout'                    : false
+            'disableMdInkRippleOnMobile'     : true
         });
     }
 })();
