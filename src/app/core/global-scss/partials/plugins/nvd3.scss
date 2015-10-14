@@ -51,6 +51,23 @@ nvd3 {
             }
         }
     }
+
+    &.show-line-points {
+
+        .nv-line {
+
+            .nv-scatter {
+
+                .nv-groups {
+
+                    .nv-point {
+                        fill-opacity: 1 !important;
+                        stroke-opacity: 1 !important;
+                    }
+                }
+            }
+        }
+    }
 }
 
 // NVD3 style overrides
