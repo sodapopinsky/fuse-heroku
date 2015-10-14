@@ -2,19 +2,20 @@
 {
     'use strict';
 
-    angular.module('app.calendar')
+    angular
+        .module('app.calendar')
         .controller('EventDetailDialogController', EventDetailDialogController);
 
     /** @ngInject */
-    function EventDetailDialogController($mdDialog, event, eventDialog)
+    function EventDetailDialogController($mdDialog, calendarEvent, showEventFormDialog)
     {
         var vm = this;
 
         // Data
-        vm.event = event;
-        vm.eventDialog = eventDialog;
+        vm.calendarEvent = calendarEvent;
 
         // Methods
+        vm.editEvent = editEvent;
         vm.closeDialog = closeDialog;
 
         //////////
@@ -22,6 +23,11 @@
         function closeDialog()
         {
             $mdDialog.hide();
+        }
+
+        function editEvent(calendarEvent, e)
+        {
+            showEventFormDialog('edit', calendarEvent, false, false, e);
         }
     }
 })();

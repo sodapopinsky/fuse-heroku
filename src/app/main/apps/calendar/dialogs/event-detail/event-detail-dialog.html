@@ -1,11 +1,11 @@
 <md-dialog class="event-detail-dialog" aria-label="New Message">
     <md-toolbar class="md-accent md-hue-2">
         <div class="md-toolbar-tools">
-            <span class="title">{{vm.event.title}}</span>
+            <span class="title">{{vm.calendarEvent.title}}</span>
             <span flex></span>
             <md-button class="edit-event-button md-fab md-warn"
-                       ng-click="vm.eventDialog('edit', $event, vm.event.start, vm.event)" aria-label="Add event"
-                       translate translate-attr-aria-label="CALENDAR.ADD_EVENT">
+                       ng-click="vm.editEvent(vm.calendarEvent, $event)" aria-label="Edit event"
+                       translate translate-attr-aria-label="CALENDAR.EDIT_EVENT">
                 <md-icon md-font-icon="icon-pencil"></md-icon>
             </md-button>
         </div>
@@ -18,9 +18,9 @@
             <div class="event-detail-row" layout="row" layout-align="start start">
                 <md-icon md-font-icon="icon-clock"></md-icon>
                 <div layout="column" flex>
-                    <span class="h4">{{vm.event.start.format('MMMM Do YYYY, h:mm:ss a')}} <span
-                            ng-if="vm.event.end">-</span> {{vm.event.end.format('MMMM Do YYYY, h:mm:ss a')}}</span>
-                    <span class="secondary-text">{{vm.event.repeat || 'Does not repeat'}}</span>
+                    <span class="h4">{{vm.calendarEvent.start.format('MMMM Do YYYY, h:mm:ss a')}} <span
+                            ng-if="vm.calendarEvent.end">-</span> {{vm.calendarEvent.end.format('MMMM Do YYYY, h:mm:ss a')}}</span>
+                    <span class="secondary-text">{{vm.calendarEvent.repeat || 'Does not repeat'}}</span>
                 </div>
             </div>
 

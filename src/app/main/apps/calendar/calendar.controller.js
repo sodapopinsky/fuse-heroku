@@ -2,11 +2,12 @@
 {
     'use strict';
 
-    angular.module('app.calendar')
+    angular
+        .module('app.calendar')
         .controller('CalendarController', CalendarController);
 
     /** @ngInject */
-    function CalendarController($scope, $mdDialog, $document)
+    function CalendarController($mdDialog, $document)
     {
         var vm = this;
 
@@ -19,72 +20,91 @@
         vm.events = [
             [
                 {
+                    id   : 1,
                     title: 'All Day Event',
-                    start: new Date(y, m, 1)
+                    start: new Date(y, m, 1),
+                    end  : null
                 },
                 {
+                    id   : 2,
                     title: 'Long Event',
                     start: new Date(y, m, d - 5),
                     end  : new Date(y, m, d - 2)
                 },
                 {
-                    id    : 999,
-                    title : 'Repeating Event',
-                    start : new Date(y, m, d - 3, 16, 0),
-                    allDay: false
+                    id   : 3,
+                    title: 'Some Event',
+                    start: new Date(y, m, d - 3, 16, 0),
+                    end  : null
                 },
                 {
-                    id    : 999,
-                    title : 'Repeating Event',
-                    start : new Date(y, m, d + 4, 16, 0),
-                    allDay: false
+                    id   : 4,
+                    title: 'Repeating Event',
+                    start: new Date(y, m, d + 4, 16, 0),
+                    end  : null
                 },
                 {
-                    title : 'Birthday Party',
-                    start : new Date(y, m, d + 1, 19, 0),
-                    end   : new Date(y, m, d + 1, 22, 30),
-                    allDay: false
+                    id   : 5,
+                    title: 'Birthday Party',
+                    start: new Date(y, m, d + 1, 19, 0),
+                    end  : new Date(y, m, d + 1, 22, 30)
                 },
                 {
+                    id   : 6,
                     title: 'All Day Event',
-                    start: new Date(y, m, d + 8, 16, 0)
+                    start: new Date(y, m, d + 8, 16, 0),
+                    end  : null
                 },
                 {
+                    id   : 7,
                     title: 'Long Event',
-                    start: new Date(y, m, d + 12, 16, 0)
+                    start: new Date(y, m, d + 12, 16, 0),
+                    end  : null
                 },
                 {
+                    id   : 8,
                     title: 'Repeating Event',
-                    start: new Date(y, m, d + 14, 2, 0)
+                    start: new Date(y, m, d + 14, 2, 0),
+                    end  : null
                 },
                 {
-                    id   : 999,
+                    id   : 9,
                     title: 'Repeating Event',
-                    start: new Date(y, m, d + 14, 4, 0)
+                    start: new Date(y, m, d + 14, 4, 0),
+                    end  : null
                 },
                 {
+                    id   : 10,
                     title: 'Repeating Event',
-                    start: new Date(y, m, d + 14, 2, 0)
+                    start: new Date(y, m, d + 14, 2, 0),
+                    end  : null
                 },
                 {
-                    id   : 999,
+                    id   : 11,
                     title: 'Repeating Event',
-                    start: new Date(y, m, d + 14, 4, 0)
+                    start: new Date(y, m, d + 14, 4, 0),
+                    end  : null
                 },
                 {
+                    id   : 12,
                     title: 'Repeating Event',
-                    start: new Date(y, m, d + 14, 2, 0)
+                    start: new Date(y, m, d + 14, 2, 0),
+                    end  : null
                 },
                 {
-                    id   : 999,
+                    id   : 13,
                     title: 'Repeating Event',
-                    start: new Date(y, m, d + 14, 4, 0)
+                    start: new Date(y, m, d + 14, 4, 0),
+                    end  : null
                 },
                 {
+                    id   : 14,
                     title: 'Conference',
-                    start: new Date(y, m, d + 17, 4, 0)
+                    start: new Date(y, m, d + 17, 4, 0),
+                    end  : null
                 },
                 {
+                    id   : 15,
                     title: 'Meeting',
                     start: new Date(y, m, d + 22, 4, 0),
                     end  : new Date(y, m, d + 24, 4, 0)
@@ -110,68 +130,153 @@
                     week : 'ddd M',
                     day  : 'ddd M'
                 },
-                eventClick   : eventDetailDialog,
+                eventClick   : eventDetail,
                 selectable   : true,
                 selectHelper : true,
-                select       : dateSelection
+                select       : select
             }
         };
 
         // Methods
-        vm.eventDialog = eventDialog;
+        vm.addEvent = addEvent;
         vm.next = next;
         vm.prev = prev;
 
         //////////
 
+        /**
+         * Go to next on current view (week, month etc.)
+         */
         function next()
         {
             vm.calendarView.calendar.next();
         }
 
+        /**
+         * Go to previous on current view (week, month etc.)
+         */
         function prev()
         {
             vm.calendarView.calendar.prev();
         }
 
-        function dateSelection(start, end, jsEvent)
+        /**
+         * Show event detail
+         *
+         * @param calendarEvent
+         * @param e
+         */
+        function eventDetail(calendarEvent, e)
         {
-            eventDialog('add', jsEvent, start);
+            showEventDetailDialog(calendarEvent, e);
         }
 
-        function eventDialog(type, ev, start, event)
+        /**
+         * Add new event in between selected dates
+         *
+         * @param start
+         * @param end
+         * @param e
+         */
+        function select(start, end, e)
         {
-            var title = (type === 'add') ? 'Add Event' : 'Edit Event';
-            $mdDialog.show({
-                controller         : 'EventDialogController',
-                controllerAs       : 'vm',
-                templateUrl        : 'app/main/apps/calendar/dialogs/event/event-dialog.html',
-                parent             : angular.element($document.body),
-                targetEvent        : ev,
-                clickOutsideToClose: true,
-                locals             : {
-                    start: start,
-                    title: title,
-                    event: event
-                }
-            });
+            showEventFormDialog('add', false, start, end, e);
         }
 
-        function eventDetailDialog(event, jsEvent)
+        /**
+         * Add event
+         *
+         * @param e
+         */
+        function addEvent(e)
+        {
+            var start = new Date(),
+                end = new Date();
+
+            showEventFormDialog('add', false, start, end, e);
+        }
+
+        /**
+         * Show event detail dialog
+         * @param calendarEvent
+         * @param e
+         */
+        function showEventDetailDialog(calendarEvent, e)
         {
             $mdDialog.show({
                 controller         : 'EventDetailDialogController',
                 controllerAs       : 'vm',
                 templateUrl        : 'app/main/apps/calendar/dialogs/event-detail/event-detail-dialog.html',
                 parent             : angular.element($document.body),
-                targetEvent        : jsEvent,
+                targetEvent        : e,
                 clickOutsideToClose: true,
                 locals             : {
-                    event      : event,
-                    eventDialog: eventDialog
+                    calendarEvent      : calendarEvent,
+                    showEventFormDialog: showEventFormDialog
                 }
             });
         }
+
+        /**
+         * Show event add/edit form dialog
+         *
+         * @param type
+         * @param calendarEvent
+         * @param start
+         * @param end
+         * @param e
+         */
+        function showEventFormDialog(type, calendarEvent, start, end, e)
+        {
+            var dialogData = {
+                type         : type,
+                calendarEvent: calendarEvent,
+                start        : start,
+                end          : end
+            };
+
+            $mdDialog.show({
+                controller         : 'EventFormDialogController',
+                controllerAs       : 'vm',
+                templateUrl        : 'app/main/apps/calendar/dialogs/event-form/event-form-dialog.html',
+                parent             : angular.element($document.body),
+                targetEvent        : e,
+                clickOutsideToClose: true,
+                locals             : {
+                    dialogData: dialogData
+                }
+            }).then(function (response)
+            {
+                if ( response.type === 'add' )
+                {
+                    // Add new
+                    vm.events[0].push({
+                        id   : vm.events[0].length + 20,
+                        title: response.calendarEvent.title,
+                        start: response.calendarEvent.start,
+                        end  : response.calendarEvent.end
+                    });
+                }
+                else
+                {
+                    for ( var i = 0; i < vm.events[0].length; i++ )
+                    {
+                        // Update
+                        if ( vm.events[0][i].id === response.calendarEvent.id )
+                        {
+                            vm.events[0][i] = {
+                                title: response.calendarEvent.title,
+                                start: response.calendarEvent.start,
+                                end  : response.calendarEvent.end
+                            };
+
+                            break;
+                        }
+                    }
+                }
+            });
+        }
+
     }
 
 })();
