@@ -37,7 +37,8 @@
         this.$get = function ()
         {
             var service = {
-                getConfig: getConfig
+                getConfig: getConfig,
+                setConfig: setConfig
             };
 
             return service;
@@ -45,7 +46,7 @@
             //////////
 
             /**
-             * Return a config value
+             * Returns a config value
              */
             function getConfig(configName)
             {
@@ -55,6 +56,17 @@
                 }
 
                 return fuseConfiguration[configName];
+            }
+
+            /**
+             * Creates or updates config object
+             *
+             * @param configName
+             * @param configValue
+             */
+            function setConfig(configName, configValue)
+            {
+                fuseConfiguration[configName] = configValue;
             }
         };
     }

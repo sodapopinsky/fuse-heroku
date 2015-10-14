@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.toolbar')
+    angular
+        .module('app.toolbar')
         .controller('ToolbarController', ToolbarController);
 
     /** @ngInject */
@@ -141,5 +142,3 @@
     }
 
 })();
-
-

@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('fuse')
+    angular
+        .module('fuse')
         .controller('AppController', AppController);
 
     /** @ngInject */
