@@ -313,7 +313,7 @@
                             <!-- Front -->
                             <ms-widget-front class="white-bg" layout="column" flex>
                                 <div class="ph-16 pv-8 border-bottom" layout="row" layout-align="space-between center"
-                                     layout-wrap flex>
+                                     layout-wrap>
                                     <div class="pv-8 h3">{{vm.widget5.title}}</div>
 
                                     <div class="pv-8" layout="row" layout-align="start center" layout-align-sm="end"
@@ -327,30 +327,25 @@
                                     </div>
                                 </div>
 
-                                <div layout="row" layout-align="start center" layout-wrap flex>
-                                    <div class="p-16" layout="row" layout-align="start center" flex="100"
-                                         flex-gt-md="50">
-                                        <div flex>
-                                            <nvd3 class="remove-x-lines"
-                                                  config="vm.widget5.mainChart.config"
-                                                  options="vm.widget5.mainChart.options"
-                                                  data="vm.widget5.mainChart.data"></nvd3>
-                                        </div>
+                                <div layout="row" layout-align="start center" layout-wrap>
+                                    <div class="p-16" layout="row" flex="100" flex-gt-md="50">
+                                        <nvd3 class="h-420 remove-x-lines"
+                                              config="vm.widget5.mainChart.config"
+                                              options="vm.widget5.mainChart.options"
+                                              data="vm.widget5.mainChart.data"></nvd3>
                                     </div>
 
-                                    <div class="p-16" layout="row" layout-align="space-between center"
-                                         layout-wrap flex="100" flex-gt-md="50">
-                                        <div class="p-16" layout="column" flex="50"
+                                    <div class="p-16" layout="row" layout-wrap flex="100" flex-gt-md="50">
+                                        <div class="p-16" flex="50"
                                              ng-repeat="(name, widget) in vm.widget5.supporting.widgets">
                                             <div class="h4 secondary-text">{{widget.data.label}}</div>
                                             <div class="md-display-1">
                                                 {{widget.data.count[vm.widget5.currentRange]}}
                                             </div>
-                                            <div flex>
-                                                <nvd3 config="vm.widget5.supporting.chart.config"
-                                                      options="vm.widget5.supporting.chart.options"
-                                                      data="widget.chart.data"></nvd3>
-                                            </div>
+                                            <nvd3 class="h-50"
+                                                  config="vm.widget5.supporting.chart.config"
+                                                  options="vm.widget5.supporting.chart.options"
+                                                  data="widget.chart.data"></nvd3>
                                         </div>
                                     </div>
                                 </div>
@@ -372,8 +367,8 @@
 
                             <!-- Front -->
                             <ms-widget-front class="white-bg" layout="column" flex>
-                                <div class="ph-16 border-bottom" layout="row" layout-align="space-between center"
-                                     flex="100">
+
+                                <div class="ph-16 border-bottom" layout="row" layout-align="space-between center">
                                     <div class="h3">{{vm.widget6.title}}</div>
                                     <div class="pv-16">
                                         <md-select class="simplified" ng-model="vm.widget6.currentRange"
@@ -387,27 +382,24 @@
                                     </div>
                                 </div>
 
-                                <div layout="column" layout-align="space-between" flex>
-                                    <div class="p-16" layout="row" layout-align="start center" flex="100">
-                                        <div flex>
-                                            <nvd3 config="vm.widget6.mainChart.config"
-                                                  options="vm.widget6.mainChart.options"
-                                                  data="vm.widget6.mainChart.data"></nvd3>
-                                        </div>
+                                <div class="p-16">
+                                    <nvd3 class="h-400"
+                                          config="vm.widget6.mainChart.config"
+                                          options="vm.widget6.mainChart.options"
+                                          data="vm.widget6.mainChart.data"></nvd3>
+                                </div>
+
+                                <div class="pv-8 mh-16 border-top" layout="row" layout-align="start center" layout-wrap>
+                                    <div class="pv-8 border-right" layout="column" layout-align="center center"
+                                         flex="100" flex-gt-sm="50">
+                                        <span class="font-size-32">{{vm.widget6.footerLeft.count[vm.widget6.currentRange]}}</span>
+                                        <span class="h4">{{vm.widget6.footerLeft.title}}</span>
                                     </div>
 
-                                    <div class="pv-16 mh-16 border-top" layout="row" layout-align="start center"
-                                         flex="100">
-
-                                        <div class="border-right" layout="column" layout-align="center center" flex>
-                                            <span class="font-size-32">{{vm.widget6.footerLeft.count[vm.widget6.currentRange]}}</span>
-                                            <span class="h4">{{vm.widget6.footerLeft.title}}</span>
-                                        </div>
-
-                                        <div layout="column" layout-align="center center" flex>
-                                            <span class="font-size-32">{{vm.widget6.footerRight.count[vm.widget6.currentRange]}}</span>
-                                            <span class="h4">{{vm.widget6.footerRight.title}}</span>
-                                        </div>
+                                    <div class="pv-8" layout="column" layout-align="center center" flex="100"
+                                         flex-gt-sm="50">
+                                        <span class="font-size-32">{{vm.widget6.footerRight.count[vm.widget6.currentRange]}}</span>
+                                        <span class="h4">{{vm.widget6.footerRight.title}}</span>
                                     </div>
                                 </div>
 
@@ -418,12 +410,12 @@
                         <!-- / WIDGET 6 -->
 
                         <!-- WIDGET 7 -->
-                        <ms-widget flex="100" flex-gt-lg="50">
+                        <!--<ms-widget flex="100" flex-gt-lg="50">
 
-                            <!-- Front -->
+                            &lt;!&ndash; Front &ndash;&gt;
                             <ms-widget-front class="white-bg" layout="column" flex>
-                                <div class="ph-16 border-bottom" layout="row" layout-align="space-between center"
-                                     flex="100">
+
+                                <div class="ph-16 border-bottom" layout="row" layout-align="space-between center">
                                     <div class="h3">{{vm.widget7.title}}</div>
 
                                     <div class="pv-16">
@@ -453,9 +445,9 @@
                                 </div>
 
                             </ms-widget-front>
-                            <!-- / Front -->
+                            &lt;!&ndash; / Front &ndash;&gt;
 
-                        </ms-widget>
+                        </ms-widget>-->
                         <!-- / WIDGET 7 -->
 
                     </div>
@@ -639,7 +631,9 @@
 
                                 <div class="p-24 mb-8 border-bottom" layout="row" layout-align="space-between center">
                                     <div class="h2">{{vm.widget11.title}}</div>
-                                    <div class="text-boxed red-bg white-fg m-0">{{vm.widget11.table.rows.length}} members</div>
+                                    <div class="text-boxed red-bg white-fg m-0">{{vm.widget11.table.rows.length}}
+                                        members
+                                    </div>
                                 </div>
 
                                 <table class="dataTable row-border hover" datatable="ng"
@@ -657,7 +651,8 @@
                                     <tbody>
                                         <tr ng-repeat="row in ::vm.widget11.table.rows">
                                             <td ng-repeat="cell in row">
-                                                <img class="avatar" ng-if="$index === 0" ng-src="assets/images/avatars/{{cell}}">
+                                                <img class="avatar" ng-if="$index === 0"
+                                                     ng-src="assets/images/avatars/{{cell}}">
                                                 <span ng-if="$index != 0">
                                                     {{cell}}
                                                 </span>

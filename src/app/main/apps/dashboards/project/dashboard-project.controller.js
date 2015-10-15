@@ -39,7 +39,7 @@
                     chart: {
                         type        : 'multiBarChart',
                         color       : ['#03a9f4', '#b3e5fc'],
-                        height      : 424,
+                        height      : 420,
                         margin      : {
                             top   : 8,
                             right : 16,
@@ -133,7 +133,7 @@
                         chart: {
                             type                   : 'lineChart',
                             color                  : ['#03A9F4'],
-                            height                 : 48,
+                            height                 : 50,
                             margin                 : {
                                 top   : 8,
                                 right : 0,
