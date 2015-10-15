@@ -51,7 +51,7 @@
                     <div class="widget-group" layout="row" flex="100" layout-wrap>
 
                         <!-- WIDGET 1 -->
-                        <ms-widget flippable="true" layout="column" flex="100" flex-gt-sm="50" flex-gt-lg="25">
+                        <ms-widget flippable="true" flex="100" flex-gt-sm="50" flex-gt-lg="25">
 
                             <!-- Front -->
                             <ms-widget-front class="white-bg" layout="column" flex>
@@ -85,7 +85,7 @@
                                     </md-menu>
                                 </div>
 
-                                <div class="pt-16 pb-32" layout="column" layout-align="center center">
+                                <div class="pt-8 pb-32" layout="column" layout-align="center center">
                                     <div class="light-blue-fg font-size-72 line-height-72">
                                         {{vm.widget1.data.count[vm.widget1.currentRange]}}
                                     </div>
@@ -119,7 +119,7 @@
 
 
                         <!-- WIDGET 2 -->
-                        <ms-widget flippable="true" layout="column" flex="100" flex-gt-sm="50" flex-gt-lg="25">
+                        <ms-widget flippable="true" flex="100" flex-gt-sm="50" flex-gt-lg="25">
 
                             <!-- Front -->
                             <ms-widget-front class="white-bg" layout="column" flex>
@@ -147,7 +147,7 @@
                                     </md-menu>
                                 </div>
 
-                                <div class="pt-16 pb-32" layout="column" layout-align="center center">
+                                <div class="pt-8 pb-32" layout="column" layout-align="center center">
                                     <div class="red-fg font-size-72 line-height-72">
                                         {{vm.widget2.data.count}}
                                     </div>
@@ -181,7 +181,7 @@
 
 
                         <!-- WIDGET 3 -->
-                        <ms-widget flippable="true" layout="column" flex="100" flex-gt-sm="50" flex-gt-lg="25">
+                        <ms-widget flippable="true" flex="100" flex-gt-sm="50" flex-gt-lg="25">
 
                             <!-- Front -->
                             <ms-widget-front class="white-bg" layout="column" flex>
@@ -209,7 +209,7 @@
                                     </md-menu>
                                 </div>
 
-                                <div class="pt-16 pb-32" layout="column" layout-align="center center">
+                                <div class="pt-8 pb-32" layout="column" layout-align="center center">
                                     <div class="orange-fg font-size-72 line-height-72">
                                         {{vm.widget3.data.count}}
                                     </div>
@@ -242,7 +242,7 @@
                         <!-- / WIDGET 3 -->
 
                         <!-- WIDGET 4 -->
-                        <ms-widget flippable="true" layout="column" flex="100" flex-gt-sm="50" flex-gt-lg="25">
+                        <ms-widget flippable="true" flex="100" flex-gt-sm="50" flex-gt-lg="25">
 
                             <!-- Front -->
                             <ms-widget-front class="white-bg" layout="column" flex>
@@ -270,7 +270,7 @@
                                     </md-menu>
                                 </div>
 
-                                <div class="pt-16 pb-32" layout="column" layout-align="center center">
+                                <div class="pt-8 pb-32" layout="column" layout-align="center center">
                                     <div class="blue-grey-fg font-size-72 line-height-72">{{vm.widget4.data.count}}
                                     </div>
                                     <div class="h3 secondary-text font-weight-500">{{vm.widget4.data.label}}</div>
@@ -308,12 +308,12 @@
                     <div class="widget-group" layout="row" flex="100" layout-wrap>
 
                         <!-- WIDGET 5 -->
-                        <ms-widget layout="column" flex="100">
+                        <ms-widget flex="100">
 
                             <!-- Front -->
-                            <ms-widget-front class="white-bg" flex>
+                            <ms-widget-front class="white-bg" layout="column" flex>
                                 <div class="ph-16 pv-8 border-bottom" layout="row" layout-align="space-between center"
-                                     layout-wrap flex="100">
+                                     layout-wrap flex>
                                     <div class="pv-8 h3">{{vm.widget5.title}}</div>
 
                                     <div class="pv-8" layout="row" layout-align="start center" layout-align-sm="end"
@@ -368,7 +368,7 @@
                     <div class="widget-group" layout="row" flex="100" layout-wrap>
 
                         <!-- WIDGET 6 -->
-                        <ms-widget class="" layout="column" flex="100" flex-gt-lg="50">
+                        <ms-widget flex="100" flex-gt-lg="50">
 
                             <!-- Front -->
                             <ms-widget-front class="white-bg" layout="column" flex>
@@ -418,10 +418,10 @@
                         <!-- / WIDGET 6 -->
 
                         <!-- WIDGET 7 -->
-                        <ms-widget class="" layout="column" flex="100" flex-gt-lg="50">
+                        <ms-widget flex="100" flex-gt-lg="50">
 
                             <!-- Front -->
-                            <ms-widget-front class="white-bg" flex>
+                            <ms-widget-front class="white-bg" layout="column" flex>
                                 <div class="ph-16 border-bottom" layout="row" layout-align="space-between center"
                                      flex="100">
                                     <div class="h3">{{vm.widget7.title}}</div>
@@ -689,13 +689,13 @@
                 ms-scroll ms-sidenav-helper>
 
         <!-- WIDGET GROUP -->
-        <div class="widget-group" layout="row" flex="100" layout-wrap>
+        <div class="widget-group">
 
             <!-- NOW WIDGET -->
             <ms-widget class="sidenav-widget" layout="column" flex="100">
 
                 <!-- Front -->
-                <ms-widget-front flex>
+                <ms-widget-front layout="column">
 
                     <div class="p-16" layout="row" layout-align="space-between center">
                         <span class="h3">{{vm.nowWidget.now.weekDay}}, {{vm.nowWidget.now.hour}}:{{vm.nowWidget.now.minute}}:{{vm.nowWidget.now.second}}</span>
@@ -751,7 +751,7 @@
             <ms-widget class="sidenav-widget" layout="column" flex="100">
 
                 <!-- Front -->
-                <ms-widget-front flex>
+                <ms-widget-front layout="column">
 
                     <div class="p-16" layout="row" layout-align="space-between center">
                         <span class="h4">
