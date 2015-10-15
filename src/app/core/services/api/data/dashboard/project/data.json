@@ -269,7 +269,7 @@
                 }
             },
             "wontFix": {
-                "label": "WONT'T FIX",
+                "label": "WON'T FIX",
                 "count": {
                     "2W": 6,
                     "LW": 3,

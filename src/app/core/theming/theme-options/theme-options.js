@@ -15,7 +15,6 @@
         vm.panelOpen = false;
         vm.themes = fuseTheming.themes;
         vm.layoutMode = 'wide';
-        vm.animateIcon = true;
 
         // Methods
         vm.toggleOptionsPanel = toggleOptionsPanel;
@@ -29,13 +28,6 @@
          */
         function toggleOptionsPanel()
         {
-            // Disable animation of the icon with the first user interaction
-            if ( vm.animateIcon )
-            {
-                angular.element('#theme-options-panel-button > md-icon').removeClass('animate-rotate');
-                vm.animateIcon = false;
-            }
-
             vm.panelOpen = !vm.panelOpen;
         }
 
