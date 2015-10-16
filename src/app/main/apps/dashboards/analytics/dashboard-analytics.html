@@ -224,15 +224,13 @@
                                      ng-repeat="group in tab.groups">
                                     <div class="h2 m-16 pb-16 border-bottom">{{group.title}}</div>
 
-                                    <div class="p-16">
-                                        <div class="pb-32" ng-repeat="data in group.data">
-                                            <div class="pb-8" layout="row" layout-align="space-between start">
-                                                <span class="h3">{{data.title}}</span>
-                                                <span class="h3 secondary-text font-weight-500">{{data.value}}%</span>
-                                            </div>
-                                            <md-progress-linear class="{{data.progressColor}}" md-mode="determinate"
-                                                                value="{{data.value}}"></md-progress-linear>
+                                    <div class="p-16 pb-32" ng-repeat="data in group.data">
+                                        <div class="pb-8" layout="row" layout-align="space-between start">
+                                            <span class="h3">{{data.title}}</span>
+                                            <span class="h3 secondary-text font-weight-500">{{data.value}}%</span>
                                         </div>
+                                        <md-progress-linear class="{{data.progressColor}}" md-mode="determinate"
+                                                            value="{{data.value}}"></md-progress-linear>
                                     </div>
                                 </div>
 
