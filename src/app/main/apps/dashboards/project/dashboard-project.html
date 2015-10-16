@@ -54,7 +54,7 @@
                         <ms-widget flippable="true" flex="100" flex-gt-sm="50" flex-gt-lg="25">
 
                             <!-- Front -->
-                            <ms-widget-front class="white-bg" layout="column" flex>
+                            <ms-widget-front class="white-bg">
                                 <div class="ph-8 pv-16 h-55" layout="row" layout-align="space-between center">
                                     <md-select class="simplified font-size-16" ng-model="vm.widget1.currentRange"
                                                aria-label="Change range">
@@ -93,14 +93,14 @@
                                 </div>
 
                                 <div class="p-16 grey-50-bg border-top" layout="row" layout-align="start center">
-                                    <span class="h4 secondary-text">{{vm.widget1.data.extra.label}}:</span>
+                                    <span class="h4 secondary-text text-truncate">{{vm.widget1.data.extra.label}}:</span>
                                     <span class="h4 ml-8">{{vm.widget1.data.extra.count[vm.widget1.currentRange]}}</span>
                                 </div>
                             </ms-widget-front>
                             <!-- / Front -->
 
                             <!-- Back -->
-                            <ms-widget-back class="p-16 white-bg" layout="column" flex>
+                            <ms-widget-back class="p-16 white-bg">
                                 <div class="flip-to-front">
                                     <md-button class="md-icon-button" ng-click="flipWidget()"
                                                aria-label="Flip widget">
@@ -122,7 +122,7 @@
                         <ms-widget flippable="true" flex="100" flex-gt-sm="50" flex-gt-lg="25">
 
                             <!-- Front -->
-                            <ms-widget-front class="white-bg" layout="column" flex>
+                            <ms-widget-front class="white-bg">
                                 <div class="p-16 h-55" layout="row" layout-align="space-between center">
                                     <span class="h3">{{vm.widget2.title}}</span>
 
@@ -155,14 +155,14 @@
                                 </div>
 
                                 <div class="p-16 grey-50-bg border-top" layout="row" layout-align="start center">
-                                    <span class="h4 secondary-text">{{vm.widget2.data.extra.label}}:</span>
+                                    <span class="h4 secondary-text text-truncate">{{vm.widget2.data.extra.label}}:</span>
                                     <span class="h4 ml-8">{{vm.widget2.data.extra.count}}</span>
                                 </div>
                             </ms-widget-front>
                             <!-- / Front -->
 
                             <!-- Back -->
-                            <ms-widget-back class="p-16 white-bg" layout="column" flex>
+                            <ms-widget-back class="p-16 white-bg">
                                 <div class="flip-to-front">
                                     <md-button class="md-icon-button" ng-click="flipWidget()"
                                                aria-label="Flip widget">
@@ -184,7 +184,7 @@
                         <ms-widget flippable="true" flex="100" flex-gt-sm="50" flex-gt-lg="25">
 
                             <!-- Front -->
-                            <ms-widget-front class="white-bg" layout="column" flex>
+                            <ms-widget-front class="white-bg">
                                 <div class="p-16 h-55" layout="row" layout-align="space-between center">
                                     <span class="h3">{{vm.widget3.title}}</span>
 
@@ -217,14 +217,14 @@
                                 </div>
 
                                 <div class="p-16 grey-50-bg border-top" layout="row" layout-align="start center">
-                                    <span class="h4 secondary-text">{{vm.widget3.data.extra.label}}:</span>
+                                    <span class="h4 secondary-text text-truncate">{{vm.widget3.data.extra.label}}:</span>
                                     <span class="h4 ml-8">{{vm.widget3.data.extra.count}}</span>
                                 </div>
                             </ms-widget-front>
                             <!-- / Front -->
 
                             <!-- Back -->
-                            <ms-widget-back class="p-16 white-bg" layout="column" flex>
+                            <ms-widget-back class="p-16 white-bg">
                                 <div class="flip-to-front">
                                     <md-button class="md-icon-button" ng-click="flipWidget()"
                                                aria-label="Flip widget">
@@ -245,7 +245,7 @@
                         <ms-widget flippable="true" flex="100" flex-gt-sm="50" flex-gt-lg="25">
 
                             <!-- Front -->
-                            <ms-widget-front class="white-bg" layout="column" flex>
+                            <ms-widget-front class="white-bg">
                                 <div class="p-16 h-55" layout="row" layout-align="space-between center">
                                     <span class="h3">{{vm.widget4.title}}</span>
 
@@ -277,14 +277,14 @@
                                 </div>
 
                                 <div class="p-16 grey-50-bg border-top" layout="row" layout-align="start center">
-                                    <span class="h4 secondary-text">{{vm.widget4.data.extra.label}}:</span>
+                                    <span class="h4 secondary-text text-truncate">{{vm.widget4.data.extra.label}}:</span>
                                     <span class="h4 ml-8">{{vm.widget4.data.extra.count}}</span>
                                 </div>
                             </ms-widget-front>
                             <!-- / Front -->
 
                             <!-- Back -->
-                            <ms-widget-back class="p-16 white-bg" layout="column" flex>
+                            <ms-widget-back class="p-16 white-bg">
                                 <div class="flip-to-front">
                                     <md-button class="md-icon-button" ng-click="flipWidget()"
                                                aria-label="Flip widget">
@@ -311,7 +311,7 @@
                         <ms-widget flex="100">
 
                             <!-- Front -->
-                            <ms-widget-front class="white-bg" layout="column" flex>
+                            <ms-widget-front class="white-bg">
                                 <div class="ph-16 pv-8 border-bottom" layout="row" layout-align="space-between center"
                                      layout-wrap>
                                     <div class="pv-8 h3">{{vm.widget5.title}}</div>
@@ -363,10 +363,10 @@
                     <div class="widget-group" layout="row" flex="100" layout-wrap>
 
                         <!-- WIDGET 6 -->
-                        <ms-widget flex="100" flex-gt-lg="50">
+                        <ms-widget layout="column" flex="100" flex-gt-lg="50">
 
                             <!-- Front -->
-                            <ms-widget-front class="white-bg" layout="column" flex>
+                            <ms-widget-front class="white-bg">
 
                                 <div class="ph-16 border-bottom" layout="row" layout-align="space-between center">
                                     <div class="h3">{{vm.widget6.title}}</div>
@@ -410,10 +410,10 @@
                         <!-- / WIDGET 6 -->
 
                         <!-- WIDGET 7 -->
-                        <!--<ms-widget flex="100" flex-gt-lg="50">
+                        <ms-widget layout="column" flex="100" flex-gt-lg="50">
 
-                            &lt;!&ndash; Front &ndash;&gt;
-                            <ms-widget-front class="white-bg" layout="column" flex>
+                            <!-- Front -->
+                            <ms-widget-front class="white-bg">
 
                                 <div class="ph-16 border-bottom" layout="row" layout-align="space-between center">
                                     <div class="h3">{{vm.widget7.title}}</div>
@@ -434,8 +434,8 @@
                                     <div>
                                         <div class="h3">{{event.title}}</div>
                                         <div>
-                                            <span class="secondary-text">{{event.time}}</span><span
-                                                ng-if="event.location">, {{event.location}}</span>
+                                            <span class="secondary-text">{{event.time}}</span>
+                                            <span ng-if="event.location">, {{event.location}}</span>
                                         </div>
                                     </div>
 
@@ -445,9 +445,9 @@
                                 </div>
 
                             </ms-widget-front>
-                            &lt;!&ndash; / Front &ndash;&gt;
+                            <!-- / Front -->
 
-                        </ms-widget>-->
+                        </ms-widget>
                         <!-- / WIDGET 7 -->
 
                     </div>
@@ -461,21 +461,20 @@
                     <div class="widget-group" layout="row" flex="100" layout-wrap>
 
                         <!-- WIDGET 8 -->
-                        <ms-widget class="" layout="column" flex="100" flex-gt-lg="50">
+                        <ms-widget layout="column" flex="100" flex-gt-lg="50">
 
                             <!-- Front -->
-                            <ms-widget-front class="white-bg" flex>
-                                <div class="h3 p-16" flex="100">
+                            <ms-widget-front class="white-bg">
+                                <div class="h3 p-16">
                                     {{vm.widget8.title}}
                                 </div>
 
-                                <md-divider flex="100"></md-divider>
+                                <md-divider></md-divider>
 
-                                <div class="p-16" layout="row" layout-align="start center" flex="100">
-                                    <div flex>
-                                        <nvd3 options="vm.widget8.mainChart.options"
-                                              data="vm.widget8.mainChart.data"></nvd3>
-                                    </div>
+                                <div class="p-16">
+                                    <nvd3 class="h-400"
+                                          options="vm.widget8.mainChart.options"
+                                          data="vm.widget8.mainChart.data"></nvd3>
                                 </div>
 
                             </ms-widget-front>
@@ -485,12 +484,11 @@
                         <!-- / WIDGET 8 -->
 
                         <!-- WIDGET 9 -->
-                        <ms-widget class="" layout="column" flex="100" flex-gt-lg="50">
+                        <ms-widget layout="column" flex="100" flex-gt-lg="50">
 
                             <!-- Front -->
-                            <ms-widget-front class="white-bg" layout="column" flex>
-                                <div class="ph-16 border-bottom" layout="row" layout-align="space-between center"
-                                     flex="100">
+                            <ms-widget-front class="white-bg">
+                                <div class="ph-16 border-bottom" layout="row" layout-align="space-between center">
                                     <div class="h3">{{vm.widget9.title}}</div>
 
                                     <div class="pv-16">
@@ -505,59 +503,58 @@
                                     </div>
                                 </div>
 
-                                <div layout="column" layout-align="space-between" flex>
-                                    <div layout="column">
-                                        <div class="p-16" layout="row" layout-align="space-between center"
-                                             layout-wrap flex="100" flex-gt-sm="50">
-                                            <div class="p-8">
-                                                <div class="h4 secondary-text">{{vm.widget9.weeklySpent.title}}</div>
-                                                <div class="md-display-1 font-weight-300">
-                                                    {{vm.widget9.weeklySpent.count[vm.widget9.currentRange]}}
-                                                </div>
-                                            </div>
-                                            <div class="p-8" flex>
-                                                <nvd3 config="vm.widget9.chart.config"
-                                                      options="vm.widget9.chart.options"
-                                                      data="vm.widget9.weeklySpent.chartData"></nvd3>
-                                            </div>
-                                        </div>
-
-                                        <div class="p-16" layout="row" layout-align="space-between center"
-                                             layout-wrap flex="100" flex-gt-sm="50">
-                                            <div class="p-8">
-                                                <div class="h4 secondary-text">{{vm.widget9.totalSpent.title}}</div>
-                                                <div class="md-display-1 font-weight-300">
-                                                    {{vm.widget9.totalSpent.count[vm.widget9.currentRange]}}
-                                                </div>
-                                            </div>
-                                            <div class="p-8" flex>
-                                                <nvd3 config="vm.widget9.chart.config"
-                                                      options="vm.widget9.chart.options"
-                                                      data="vm.widget9.totalSpent.chartData"></nvd3>
-                                            </div>
-                                        </div>
-
-                                        <div class="p-16" layout="row" layout-align="space-between center"
-                                             layout-wrap flex="100" flex-gt-sm="50">
-                                            <div class="p-8">
-                                                <div class="h4 secondary-text">{{vm.widget9.remaining.title}}</div>
-                                                <div class="md-display-1 font-weight-300">
-                                                    {{vm.widget9.remaining.count[vm.widget9.currentRange]}}
-                                                </div>
-                                            </div>
-                                            <div class="p-8" flex>
-                                                <nvd3 config="vm.widget9.chart.config"
-                                                      options="vm.widget9.chart.options"
-                                                      data="vm.widget9.remaining.chartData"></nvd3>
-                                            </div>
+                                <div class="p-16" layout="row" layout-align="space-between center" layout-sm="column"
+                                     layout-align-sm="start start">
+                                    <div class="p-8">
+                                        <div class="h4 secondary-text">{{vm.widget9.weeklySpent.title}}</div>
+                                        <div class="md-display-1 font-weight-300">
+                                            {{vm.widget9.weeklySpent.count[vm.widget9.currentRange]}}
                                         </div>
                                     </div>
+                                    <div class="p-8" flex>
+                                        <nvd3 class="h-50"
+                                              config="vm.widget9.chart.config"
+                                              options="vm.widget9.chart.options"
+                                              data="vm.widget9.weeklySpent.chartData"></nvd3>
+                                    </div>
+                                </div>
 
-                                    <div class="pv-24 mh-24 border-top">
-                                        <div class="h4 secondary-text">{{vm.widget9.totalBudget.title}}</div>
+                                <div class="p-16" layout="row" layout-align="space-between center" layout-sm="column"
+                                     layout-align-sm="start start">
+                                    <div class="p-8">
+                                        <div class="h4 secondary-text">{{vm.widget9.totalSpent.title}}</div>
                                         <div class="md-display-1 font-weight-300">
-                                            {{vm.widget9.totalBudget.count}}
+                                            {{vm.widget9.totalSpent.count[vm.widget9.currentRange]}}
                                         </div>
+                                    </div>
+                                    <div class="p-8" flex>
+                                        <nvd3 class="h-50"
+                                              config="vm.widget9.chart.config"
+                                              options="vm.widget9.chart.options"
+                                              data="vm.widget9.totalSpent.chartData"></nvd3>
+                                    </div>
+                                </div>
+
+                                <div class="p-16" layout="row" layout-align="space-between center" layout-sm="column"
+                                     layout-align-sm="start start">
+                                    <div class="p-8">
+                                        <div class="h4 secondary-text">{{vm.widget9.remaining.title}}</div>
+                                        <div class="md-display-1 font-weight-300">
+                                            {{vm.widget9.remaining.count[vm.widget9.currentRange]}}
+                                        </div>
+                                    </div>
+                                    <div class="p-8" flex>
+                                        <nvd3 class="h-50"
+                                              config="vm.widget9.chart.config"
+                                              options="vm.widget9.chart.options"
+                                              data="vm.widget9.remaining.chartData"></nvd3>
+                                    </div>
+                                </div>
+
+                                <div class="pv-24 mh-24 border-top">
+                                    <div class="h4 secondary-text">{{vm.widget9.totalBudget.title}}</div>
+                                    <div class="md-display-1 font-weight-300">
+                                        {{vm.widget9.totalBudget.count}}
                                     </div>
                                 </div>
 
@@ -575,10 +572,10 @@
                     <div class="widget-group" layout="row" flex="100" layout-wrap>
 
                         <!-- WIDGET 10 -->
-                        <ms-widget class="" layout="column" flex="100">
+                        <ms-widget flex="100">
 
                             <!-- Front -->
-                            <ms-widget-front class="white-bg" flex>
+                            <ms-widget-front class="white-bg">
 
                                 <div class="simple-table-container" ms-responsive-table>
                                     <div class=" table-title">
@@ -624,10 +621,10 @@
                     <div class="widget-group" layout="row" flex="100" layout-wrap>
 
                         <!-- WIDGET 11 -->
-                        <ms-widget class="" layout="column" flex="100">
+                        <ms-widget flex="100">
 
                             <!-- Front -->
-                            <ms-widget-front class="white-bg" flex>
+                            <ms-widget-front class="white-bg">
 
                                 <div class="p-24 mb-8 border-bottom" layout="row" layout-align="space-between center">
                                     <div class="h2">{{vm.widget11.title}}</div>
@@ -687,10 +684,10 @@
         <div class="widget-group">
 
             <!-- NOW WIDGET -->
-            <ms-widget class="sidenav-widget" layout="column" flex="100">
+            <ms-widget flippable="false" class="sidenav-widget">
 
                 <!-- Front -->
-                <ms-widget-front layout="column">
+                <ms-widget-front>
 
                     <div class="p-16" layout="row" layout-align="space-between center">
                         <span class="h3">{{vm.nowWidget.now.weekDay}}, {{vm.nowWidget.now.hour}}:{{vm.nowWidget.now.minute}}:{{vm.nowWidget.now.second}}</span>
@@ -743,10 +740,10 @@
 
 
             <!-- WEATHER WIDGET -->
-            <ms-widget class="sidenav-widget" layout="column" flex="100">
+            <ms-widget flippable="false" class="sidenav-widget">
 
                 <!-- Front -->
-                <ms-widget-front layout="column">
+                <ms-widget-front>
 
                     <div class="p-16" layout="row" layout-align="space-between center">
                         <span class="h4">

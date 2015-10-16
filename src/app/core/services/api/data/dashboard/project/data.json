@@ -470,8 +470,8 @@
                     "time": "11:00 AM"
                 },
                 {
-                    "title": "Public Beta Release",
-                    "time": "11:00 AM"
+                    "title": "Lunch",
+                    "time": "12:10 PM"
                 },
                 {
                     "title": "Dinner with David",
@@ -496,6 +496,10 @@
                     "time": "11:00 AM"
                 },
                 {
+                    "title": "Lunch",
+                    "time": "12:10 PM"
+                },
+                {
                     "title": "Meeting with Beta Testers",
                     "time": "15:00 AM"
                 },
@@ -506,6 +510,10 @@
                 {
                     "title": "Release Party",
                     "time": "19:30 PM"
+                },
+                {
+                    "title": "CEO's Party",
+                    "time": "22:30 PM"
                 }
             ]
         }
