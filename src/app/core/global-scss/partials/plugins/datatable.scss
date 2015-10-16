@@ -851,7 +851,6 @@ table.dataTable {
             display: flex;
             flex: 0 0 50%;
             max-width: 50%;
-            max-height: 50%;
             align-self: center;
             padding: 0 8px;
 
@@ -868,7 +867,6 @@ table.dataTable {
             display: flex;
             flex: 0 0 50%;
             max-width: 50%;
-            max-height: 50%;
             align-self: center;
             justify-content: flex-end;
             padding: 0 8px;
@@ -1161,7 +1159,6 @@ table.dataTable.dtr-inline.collapsed {
             .left {
                 flex: 0 0 100%;
                 max-width: none;
-                max-height: none;
                 padding-top: 8px;
                 padding-bottom: 8px;
             }
@@ -1169,7 +1166,6 @@ table.dataTable.dtr-inline.collapsed {
             .right {
                 flex: 0 0 100%;
                 max-width: none;
-                max-height: none;
                 padding-top: 8px;
                 padding-bottom: 8px;
             }
