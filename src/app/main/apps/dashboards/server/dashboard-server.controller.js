@@ -95,7 +95,7 @@
                     chart: {
                         type        : 'lineChart',
                         color       : ['rgba(0, 0, 0, 0.27)'],
-                        height      : 48,
+                        height      : 50,
                         margin      : {
                             top   : 8,
                             right : 0,
