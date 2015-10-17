@@ -553,9 +553,9 @@
         "weeklySpent": {
             "title": "WEEKLY SPENT",
             "count": {
-                "2W": "$2,682.85",
-                "LW": "$1,445.34",
-                "TW": "$3,630.15"
+                "2W": "2,682.85",
+                "LW": "1,445.34",
+                "TW": "3,630.15"
             },
             "chart": {
                 "label": "Weekly Spent",
@@ -593,9 +593,9 @@
         "totalSpent": {
             "title": "TOTAL SPENT",
             "count": {
-                "2W": "$29,682.85",
-                "LW": "$31,128.19",
-                "TW": "$34,758.34"
+                "2W": "29,682.85",
+                "LW": "31,128.19",
+                "TW": "34,758.34"
             },
             "chart": {
                 "label": "Spent",
@@ -633,9 +633,9 @@
         "remaining": {
             "title": "REMAINING",
             "count": {
-                "2W": "$94.317,15",
-                "LW": "$92.871,81",
-                "TW": "$89.241,66"
+                "2W": "94.317,15",
+                "LW": "92.871,81",
+                "TW": "89.241,66"
             },
             "chart": {
                 "label": "Remaining",
@@ -672,11 +672,11 @@
         },
         "totalRemaining": {
             "title": "TOTAL BUDGET",
-            "count": "$124.000,00"
+            "count": "124.000,00"
         },
         "totalBudget": {
             "title": "TOTAL BUDGET",
-            "count": "$124.000,00"
+            "count": "124.000,00"
         }
     },
     "widget10": {
