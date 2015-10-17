@@ -33,11 +33,11 @@
                 }
             }
         },
-        'blue-grey': {
+        'pink': {
             primary   : {
                 name: 'blue-grey',
                 hues: {
-                    'default': '900',
+                    'default': '800',
                     'hue-1'  : '600',
                     'hue-2'  : '400',
                     'hue-3'  : 'A100'
