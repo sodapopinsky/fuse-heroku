@@ -4,6 +4,7 @@
         max-width: none !important;
 
         .color-tabs {
+            box-shadow: $whiteframe-shadow-1dp;
 
             md-tabs-content-wrapper {
                 display: none;
@@ -11,14 +12,12 @@
         }
 
         .color-tab {
-            max-width: 800px;
             padding: 24px;
             background: none;
 
             .color-header {
-                margin-bottom: 8px;
                 overflow: hidden;
-                height: 126px;
+                margin-bottom: 8px;
             }
 
             .color {

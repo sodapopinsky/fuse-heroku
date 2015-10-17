@@ -36,21 +36,25 @@
         </md-tabs>
 
         <md-content class="color-tab">
-            <div class="color-header colored-bg md-whiteframe-1dp" layout="row" layout-align="start center"
-                 ng-class="'md-'+vm.selected+'-bg'" layout-padding>
-                <div flex layout-fill layout="column">
-                    <div flex layout="column" layout-align="start start">
-                        <h3>{{vm.selected}}</h3>
-                    </div>
-                    <div layout="row" layout-align="space-beetween center">
-                        <div flex>500</div>
-                        <div>
-                            rgb({{vm.selectedPalette['500'].value[0]}},{{vm.selectedPalette['500'].value[1]}},{{vm.selectedPalette['500'].value[2]}})
-                        </div>
+            <div class="h3 pb-16">Fuse has classes for every single color from <a
+                    href="https://www.google.com/design/spec/style/color.html#color-color-palette" target="_blank">Material
+                Design Color Palette</a> for your convenient. You can use them with pretty much every element except
+                Angular Material directives.
+            </div>
+
+            <div class="color-header colored-bg" ng-class="'md-'+vm.selected+'-bg'" layout="row" layout-align="start start" layout-wrap layout-padding>
+                <div flex="100">
+                    <h3 class="text-capitalize">{{vm.selected}}</h3>
+                </div>
+                <div layout="row" layout-align="space-between center" flex="100">
+                    <div>500</div>
+                    <div>
+                        rgb({{vm.selectedPalette['500'].value[0]}},{{vm.selectedPalette['500'].value[1]}},{{vm.selectedPalette['500'].value[2]}})
                     </div>
                 </div>
             </div>
-            <div class="color md-whiteframe-1dp" layout="row" layout-wrap layout-align="center center">
+
+            <div class="color" layout="row" layout-wrap layout-align="center center">
                 <div class="colored-bg" ng-repeat="(hue, hueValue) in vm.selectedPalette" flex="100" layout="row"
                      layout-sm="column" layout-padding
                      ng-class="vm.selected+'-'+hue+'-bg'">
