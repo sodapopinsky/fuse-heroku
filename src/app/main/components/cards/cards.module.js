@@ -10,8 +10,8 @@
     function config($stateProvider)
     {
         $stateProvider.state('app.components_cards', {
-            url  : '/components/cards',
-            views: {
+            url    : '/components/cards',
+            views  : {
                 'content@app': {
                     templateUrl: 'app/main/components/cards/cards.html',
                     controller : 'CardsController as vm'

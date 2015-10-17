@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.pages.auth.register')
+    angular
+        .module('app.pages.auth.register')
         .controller('RegisterController', RegisterController);
 
     /** @ngInject */

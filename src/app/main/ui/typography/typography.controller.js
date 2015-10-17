@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.ui.typography')
+    angular
+        .module('app.ui.typography')
         .controller('TypographyController', TypographyController);
 
     /** @ngInject */

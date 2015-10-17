@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.pages.timeline')
+    angular
+        .module('app.pages.timeline')
         .controller('TimelineController', TimelineController);
 
     /** @ngInject */

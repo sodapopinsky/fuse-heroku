@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.file-manager')
+    angular
+        .module('app.file-manager')
         .controller('FileManagerController', FileManagerController);
 
     /** @ngInject */

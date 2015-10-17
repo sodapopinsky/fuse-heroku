@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.pages.error-500')
+    angular
+        .module('app.pages.error-500')
         .controller('Error500Controller', Error500Controller);
 
     /** @ngInject */

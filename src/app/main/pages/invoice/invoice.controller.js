@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.pages.invoice')
+    angular
+        .module('app.pages.invoice')
         .controller('InvoiceController', InvoiceController);
 
     /** @ngInject */

@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.core')
+    angular
+        .module('app.core')
         .controller('MsWidgetController', MsWidgetController)
         .directive('msWidget', msWidgetDirective)
         .directive('msWidgetFront', msWidgetFrontDirective)

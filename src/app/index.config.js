@@ -9,7 +9,7 @@
     /** @ngInject */
     function config()
     {
-
+        // Put your custom configurations here
     }
 
 })();

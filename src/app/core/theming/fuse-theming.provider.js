@@ -11,7 +11,7 @@
     {
         // Inject Cookies Service
         var $cookies;
-        
+
         angular.injector(['ngCookies']).invoke([
             '$cookies', function (_$cookies)
             {

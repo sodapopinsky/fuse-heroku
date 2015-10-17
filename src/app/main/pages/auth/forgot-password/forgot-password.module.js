@@ -12,7 +12,7 @@
         $stateProvider.state('app.pages_auth_forgot-password', {
             url  : '/pages/auth/forgot-password',
             views: {
-                'main@'                  : {
+                'main@'                                 : {
                     templateUrl: 'app/core/layouts/basic.html'
                 },
                 'content@app.pages_auth_forgot-password': {

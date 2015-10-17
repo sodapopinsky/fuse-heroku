@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.pages.error-404')
+    angular
+        .module('app.pages.error-404')
         .controller('Error404Controller', Error404Controller);
 
     /** @ngInject */

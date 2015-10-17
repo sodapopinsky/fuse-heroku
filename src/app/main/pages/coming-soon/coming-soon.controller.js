@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.pages.coming-soon')
+    angular
+        .module('app.pages.coming-soon')
         .controller('ComingSoonController', ComingSoonController);
 
     /** @ngInject */

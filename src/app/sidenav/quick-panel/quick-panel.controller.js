@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.quick-panel')
+    angular
+        .module('app.quick-panel')
         .controller('QuickPanelController', QuickPanelController);
 
     /** @ngInject */
@@ -28,7 +29,6 @@
             vm.notes = response.data;
         });
 
-      
         api.activities.get({}, function (response)
         {
             vm.activities = response.data;

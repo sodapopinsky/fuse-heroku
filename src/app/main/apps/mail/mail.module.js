@@ -10,8 +10,8 @@
     function config($stateProvider, $translatePartialLoaderProvider)
     {
         $stateProvider.state('app.mail', {
-            url  : '/mail',
-            views: {
+            url    : '/mail',
+            views  : {
                 'content@app': {
                     templateUrl: 'app/main/apps/mail/mail.html',
                     controller : 'MailController as vm'

@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.quick-panel')
+    angular
+        .module('app.quick-panel')
         .controller('ChatTabController', ChatTabController);
 
     /** @ngInject */

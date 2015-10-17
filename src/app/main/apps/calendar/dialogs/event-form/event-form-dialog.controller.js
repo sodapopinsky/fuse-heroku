@@ -2,8 +2,7 @@
 {
     'use strict';
 
-    angular
-        .module('app.calendar')
+    angular.module('app.calendar')
         .controller('EventFormDialogController', EventFormDialogController);
 
     /** @ngInject */
@@ -73,7 +72,7 @@
         function saveEvent()
         {
             var response = {
-                type : vm.dialogData.type,
+                type         : vm.dialogData.type,
                 calendarEvent: vm.calendarEvent
             };
 

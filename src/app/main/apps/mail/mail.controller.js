@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.mail')
+    angular
+        .module('app.mail')
         .controller('MailController', MailController);
 
     /** @ngInject */

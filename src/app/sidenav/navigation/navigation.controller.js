@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.navigation')
+    angular
+        .module('app.navigation')
         .controller('NavigationController', NavigationController);
 
     /** @ngInject */

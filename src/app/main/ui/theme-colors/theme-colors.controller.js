@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.ui.theme-colors')
+    angular
+        .module('app.ui.theme-colors')
         .controller('ThemeColorsController', ThemeColorsController);
 
     /** @ngInject */

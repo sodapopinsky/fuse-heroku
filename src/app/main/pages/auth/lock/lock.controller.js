@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.pages.auth.lock')
+    angular
+        .module('app.pages.auth.lock')
         .controller('LockController', LockController);
 
     /** @ngInject */
@@ -12,7 +13,7 @@
 
         // Data
         vm.form = {
-            userName : 'Jane Doe'
+            userName: 'Jane Doe'
         };
 
         // Methods

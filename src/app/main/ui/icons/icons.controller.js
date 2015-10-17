@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.ui.icons')
+    angular
+        .module('app.ui.icons')
         .controller('IconsController', IconsController);
 
     /** @ngInject */

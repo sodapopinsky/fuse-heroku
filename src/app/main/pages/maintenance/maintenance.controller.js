@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.pages.maintenance')
+    angular
+        .module('app.pages.maintenance')
         .controller('MaintenanceController', MaintenanceController);
 
     /** @ngInject */

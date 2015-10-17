@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.pages.search')
+    angular
+        .module('app.pages.search')
         .controller('SearchController', SearchController);
 
     /** @ngInject */

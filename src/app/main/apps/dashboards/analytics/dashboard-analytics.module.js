@@ -10,8 +10,8 @@
     function config($stateProvider)
     {
         $stateProvider.state('app.dashboard-analytics', {
-            url  : '/dashboard-analytics',
-            views: {
+            url    : '/dashboard-analytics',
+            views  : {
                 'content@app': {
                     templateUrl: 'app/main/apps/dashboards/analytics/dashboard-analytics.html',
                     controller : 'DashboardAnalyticsController as vm'

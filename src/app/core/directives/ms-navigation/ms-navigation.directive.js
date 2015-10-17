@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.core')
+    angular
+        .module('app.core')
         .factory('msNavFoldService', msNavFoldService)
         .directive('msNavIsFolded', msNavIsFoldedDirective)
         .controller('MsNavController', MsNavController)

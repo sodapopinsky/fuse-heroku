@@ -52,10 +52,10 @@
         function sampleAction(name, ev)
         {
             $mdDialog.show($mdDialog.alert()
-                    .title(name)
-                    .content('You triggered the "' + name + '" action')
-                    .ok('Great')
-                    .targetEvent(ev)
+                .title(name)
+                .content('You triggered the "' + name + '" action')
+                .ok('Great')
+                .targetEvent(ev)
             );
         }
     }

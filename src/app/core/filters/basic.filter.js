@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.core')
+    angular
+        .module('app.core')
         .filter('toTrusted', toTrustedFilter)
         .filter('htmlToPlaintext', htmlToPlainTextFilter)
         .filter('nospace', nospaceFilter)

@@ -18,7 +18,7 @@
                 }
             },
             resolve: {
-                DashboardData  : function (apiResolver)
+                DashboardData: function (apiResolver)
                 {
                     return apiResolver.resolve('dashboard.project@get');
                 }

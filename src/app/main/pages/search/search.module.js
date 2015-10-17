@@ -10,23 +10,23 @@
     function config($stateProvider, $translatePartialLoaderProvider)
     {
         $stateProvider.state('app.pages_search', {
-            url  : '/pages/search',
-            views: {
+            url    : '/pages/search',
+            views  : {
                 'content@app': {
                     templateUrl: 'app/main/pages/search/search.html',
                     controller : 'SearchController as vm'
                 }
             },
             resolve: {
-                Classic: function (apiResolver)
+                Classic : function (apiResolver)
                 {
                     return apiResolver.resolve('search.classic@get');
                 },
-                Mails: function (apiResolver)
+                Mails   : function (apiResolver)
                 {
                     return apiResolver.resolve('search.mails@get');
                 },
-                Users: function (apiResolver)
+                Users   : function (apiResolver)
                 {
                     return apiResolver.resolve('search.users@get');
                 },

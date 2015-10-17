@@ -2,8 +2,7 @@
 {
     'use strict';
 
-    angular
-        .module('app.calendar')
+    angular.module('app.calendar')
         .controller('EventDetailDialogController', EventDetailDialogController);
 
     /** @ngInject */

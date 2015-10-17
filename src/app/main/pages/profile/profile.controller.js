@@ -2,7 +2,8 @@
 {
     'use strict';
 
-    angular.module('app.pages.profile')
+    angular
+        .module('app.pages.profile')
         .controller('ProfileController', ProfileController);
 
     /** @ngInject */
@@ -14,7 +15,7 @@
         vm.posts = Timeline.posts;
         vm.activities = Timeline.activities;
         vm.about = About.data;
-        vm.photosVideos= PhotosVideos.data;
+        vm.photosVideos = PhotosVideos.data;
 
         // Methods
 
