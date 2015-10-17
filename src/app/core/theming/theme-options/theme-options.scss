@@ -30,7 +30,7 @@ $theme-panel-button-width: 48px;
             box-shadow: $whiteframe-shadow-4dp;
             width: $theme-panel-button-width;
             height: $theme-panel-button-width;
-            line-height: $theme-panel-button-width;
+            line-height: 1;
             border-radius: 0;
             margin: 0;
             pointer-events: auto;
