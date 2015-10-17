@@ -73,8 +73,17 @@
         {
             angular.forEach(vm.tasks, function (task)
             {
-                task.startDateTimestamp = new Date(task.startDate).getTime();
-                task.dueDateTimestamp = new Date(task.dueDate).getTime();
+                if ( task.startDate )
+                {
+                    task.startDate = new Date(task.startDate);
+                    task.startDateTimestamp = task.startDate.getTime();
+                }
+
+                if ( task.dueDate )
+                {
+                    task.dueDate = new Date(task.dueDate);
+                    task.dueDateTimestamp = task.dueDate.getTime();
+                }
             });
         }
 
