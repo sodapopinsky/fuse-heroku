@@ -51,7 +51,7 @@
                     <div class="widget-group" layout="row" flex="100" layout-wrap>
 
                         <!-- WIDGET 1 -->
-                        <ms-widget flippable="true" flex="100" flex-gt-sm="50" flex-gt-lg="25">
+                        <ms-widget flippable="true" layout="column" flex="100" flex-gt-sm="50" flex-gt-lg="25">
 
                             <!-- Front -->
                             <ms-widget-front class="white-bg">
@@ -117,14 +117,13 @@
                         </ms-widget>
                         <!-- / WIDGET 1 -->
 
-
                         <!-- WIDGET 2 -->
-                        <ms-widget flippable="true" flex="100" flex-gt-sm="50" flex-gt-lg="25">
+                        <ms-widget flippable="true" layout="column" flex="100" flex-gt-sm="50" flex-gt-lg="25">
 
                             <!-- Front -->
                             <ms-widget-front class="white-bg">
                                 <div class="p-16 h-55" layout="row" layout-align="space-between center">
-                                    <span class="h3">{{vm.widget2.title}}</span>
+                                    <div class="h3">{{vm.widget2.title}}</div>
 
                                     <md-menu>
                                         <md-button class="md-icon-button" ng-click="$mdOpenMenu()"
@@ -179,14 +178,13 @@
                         </ms-widget>
                         <!-- / WIDGET 2 -->
 
-
                         <!-- WIDGET 3 -->
-                        <ms-widget flippable="true" flex="100" flex-gt-sm="50" flex-gt-lg="25">
+                        <ms-widget flippable="true" layout="column" flex="100" flex-gt-sm="50" flex-gt-lg="25">
 
                             <!-- Front -->
                             <ms-widget-front class="white-bg">
                                 <div class="p-16 h-55" layout="row" layout-align="space-between center">
-                                    <span class="h3">{{vm.widget3.title}}</span>
+                                    <div class="h3">{{vm.widget3.title}}</div>
 
                                     <md-menu>
                                         <md-button class="md-icon-button" ng-click="$mdOpenMenu()"
@@ -242,12 +240,12 @@
                         <!-- / WIDGET 3 -->
 
                         <!-- WIDGET 4 -->
-                        <ms-widget flippable="true" flex="100" flex-gt-sm="50" flex-gt-lg="25">
+                        <ms-widget flippable="true" layout="column" flex="100" flex-gt-sm="50" flex-gt-lg="25">
 
                             <!-- Front -->
                             <ms-widget-front class="white-bg">
                                 <div class="p-16 h-55" layout="row" layout-align="space-between center">
-                                    <span class="h3">{{vm.widget4.title}}</span>
+                                    <div class="h3">{{vm.widget4.title}}</div>
 
                                     <md-menu>
                                         <md-button class="md-icon-button" ng-click="$mdOpenMenu()"
@@ -308,7 +306,7 @@
                     <div class="widget-group" layout="row" flex="100" layout-wrap>
 
                         <!-- WIDGET 5 -->
-                        <ms-widget flex="100">
+                        <ms-widget layout="row" flex="100">
 
                             <!-- Front -->
                             <ms-widget-front class="white-bg">
@@ -572,7 +570,7 @@
                     <div class="widget-group" layout="row" flex="100" layout-wrap>
 
                         <!-- WIDGET 10 -->
-                        <ms-widget flex="100">
+                        <ms-widget layout="row" flex="100">
 
                             <!-- Front -->
                             <ms-widget-front class="white-bg">
@@ -621,7 +619,7 @@
                     <div class="widget-group" layout="row" flex="100" layout-wrap>
 
                         <!-- WIDGET 11 -->
-                        <ms-widget flex="100">
+                        <ms-widget layout="row" flex="100">
 
                             <!-- Front -->
                             <ms-widget-front class="white-bg">
@@ -690,7 +688,7 @@
                 <ms-widget-front>
 
                     <div class="p-16" layout="row" layout-align="space-between center">
-                        <span class="h3">{{vm.nowWidget.now.weekDay}}, {{vm.nowWidget.now.hour}}:{{vm.nowWidget.now.minute}}:{{vm.nowWidget.now.second}}</span>
+                        <div class="h3">{{vm.nowWidget.now.weekDay}}, {{vm.nowWidget.now.hour}}:{{vm.nowWidget.now.minute}}:{{vm.nowWidget.now.second}}</div>
 
                         <md-menu>
                             <md-button class="md-icon-button" ng-click="$mdOpenMenu()" md-menu-origin
@@ -746,10 +744,10 @@
                 <ms-widget-front>
 
                     <div class="p-16" layout="row" layout-align="space-between center">
-                        <span class="h4">
+                        <div class="h4">
                             <md-icon md-font-icon="icon-map-marker" class="icon mr-8"></md-icon>
                             {{vm.weatherWidget.locations[vm.weatherWidget.currentLocation].name}}
-                        </span>
+                        </div>
 
                         <md-menu>
                             <md-button class="md-icon-button" ng-click="$mdOpenMenu()" md-menu-origin

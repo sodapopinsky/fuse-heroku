@@ -5,8 +5,8 @@ md-dialog {
         width: 720px;
 
         md-dialog-content {
-            position: relative;
             display: block;
+            position: relative;
         }
 
         md-toolbar {
@@ -69,12 +69,15 @@ md-dialog {
 
         .attachment-list {
             font-size: 13px;
+            padding: 16px 0;
 
             .attachment {
+                min-height: 48px;
+                height: 48px;
                 background-color: rgba(0, 0, 0, 0.08);
-                border: 1px solid rgba(0, 0, 0, 0.16);
+                border: 1px solid rgba(0, 0, 0, 0.12);
                 padding-left: 16px;
-                margin: 8px 0;
+                margin-bottom: 8px;
                 border-radius: 2px;
 
                 .filename {
