@@ -416,17 +416,13 @@
                         </md-menu>
                     </div>
 
-                    <div class="p-16 border-bottom" layout="row" layout-align="space-between center"
-                         ng-repeat="activity in vm.widget8.activities">
-                        <div layout="column">
-                            <span class="h4 text-bold">{{activity.process}}</span>
-                            <div class="pt-5" layout="row" layout-align="start center">
-                                <i class="icon mr-8 s16"
-                                   ng-class="{'icon-arrow-down red-fg':activity.type === 'Input', 'icon-arrow-up green-fg':activity.type === 'Output'}"></i>
-                                <span class="secondary-text">{{activity.type}}</span>
-                            </div>
+                    <div class="ph-16 pv-15 border-bottom" layout="row" layout-align="start center" ng-repeat="activity in vm.widget8.activities">
+                        <div>
+                            <i class="icon pr-16 mr-16 border-right"
+                               ng-class="{'icon-arrow-down red-fg':activity.type === 'Input', 'icon-arrow-up green-fg':activity.type === 'Output'}"></i>
                         </div>
-                        <span class="h4 font-weight-500 secondary-text">{{activity.value}}</span>
+                        <div class="h4 text-bold" flex>{{activity.process}}</div>
+                        <div class="h4 font-weight-500 secondary-text">{{activity.value}}</div>
                     </div>
 
                 </ms-widget-front>

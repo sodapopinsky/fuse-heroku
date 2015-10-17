@@ -158,102 +158,101 @@
         };
 
         vm.widget14 = {
-            title   : 'Visitor Demographics',
-            tabs: [
+            title: 'Visitor Demographics',
+            tabs : [
                 {
-                    label: '30 days',
-                    genders: [
+                    label : '30 days',
+                    groups: [
                         {
-                            title: 'Male',
-                            value: 40
+                            title: 'Genders',
+                            data : [
+                                {
+                                    title: 'Male',
+                                    value: 40
+                                },
+                                {
+                                    title: 'Female',
+                                    value: 41
+                                }
+                            ]
                         },
                         {
-                            title: 'Female',
-                            value: 41
-                        },
-                        {
-                            title: 'Not Specified',
-                            value: 19
-                        }
-                    ],
-                    ages: [
-                        {
-                            title: '25 - 34',
-                            value: 32
-                        },
-                        {
-                            title: '35 - 44',
-                            value: 85
-                        },
-                        {
-                            title: '45+',
-                            value: 48
+                            title: 'Age',
+                            data : [
+                                {
+                                    title: '25 - 34',
+                                    value: 32
+                                },
+                                {
+                                    title: '35 - 44',
+                                    value: 85
+                                }
+                            ]
                         }
                     ]
                 },
                 {
-                    label: '10 days',
-                    genders: [
+                    label : '10 days',
+                    groups: [
                         {
-                            title: 'Male',
-                            value: 32
+                            title: 'Genders',
+                            data : [
+                                {
+                                    title: 'Male',
+                                    value: 32
+                                },
+                                {
+                                    title: 'Female',
+                                    value: 49
+                                }
+                            ]
                         },
                         {
-                            title: 'Female',
-                            value: 49
-                        },
-                        {
-                            title: 'Not Specified',
-                            value: 19
-                        }
-                    ],
-                    ages: [
-                        {
-                            title: '25 - 34',
-                            value: 85
-                        },
-                        {
-                            title: '35 - 44',
-                            value: 60
-                        },
-                        {
-                            title: '45+',
-                            value: 36
+                            title: 'Age',
+                            data : [
+                                {
+                                    title: '25 - 34',
+                                    value: 85
+                                },
+                                {
+                                    title: '35 - 44',
+                                    value: 60
+                                }
+                            ]
                         }
                     ]
                 },
                 {
-                    label: '1 day',
-                    genders: [
+                    label : '1 day',
+                    groups: [
                         {
-                            title: 'Male',
-                            value: 28
+                            title: 'Genders',
+                            data : [
+                                {
+                                    title: 'Male',
+                                    value: 28
+                                },
+                                {
+                                    title: 'Female',
+                                    value: 60
+                                }
+                            ]
                         },
                         {
-                            title: 'Female',
-                            value: 62
-                        },
-                        {
-                            title: 'Not Specified',
-                            value: 10
-                        }
-                    ],
-                    ages: [
-                        {
-                            title: '25 - 34',
-                            value: 17
-                        },
-                        {
-                            title: '35 - 44',
-                            value: 64
-                        },
-                        {
-                            title: '45+',
-                            value: 72
+                            title: 'Age',
+                            data : [
+                                {
+                                    title: '25 - 34',
+                                    value: 17
+                                },
+                                {
+                                    title: '35 - 44',
+                                    value: 64
+                                }
+                            ]
                         }
                     ]
-                },
-
+                }
             ]
         };
 

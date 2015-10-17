@@ -766,6 +766,11 @@
                 "value": "887Kb"
             },
             {
+                "process" : "sshd",
+                "type": "Output",
+                "value": "441B"
+            },
+            {
                 "process" : "queueprocd",
                 "type": "Input",
                 "value": "6.27Kb"
@@ -789,6 +794,11 @@
                 "process" : "queueprocd",
                 "type": "Input",
                 "value": "5Mb"
+            },
+            {
+                "process" : "tailwatchd",
+                "type": "Output",
+                "value": "1.1Kb"
             },
             {
                 "process" : "pure-authd",
