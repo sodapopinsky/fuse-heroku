@@ -7,9 +7,9 @@
             primary   : {
                 name: 'fuse-pale-blue',
                 hues: {
-                    'default': '500',
-                    'hue-1'  : '400',
-                    'hue-2'  : '700',
+                    'default': '700',
+                    'hue-1'  : '600',
+                    'hue-2'  : '500',
                     'hue-3'  : 'A100'
                 }
             },
