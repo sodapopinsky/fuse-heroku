@@ -212,7 +212,8 @@
                 clickOutsideToClose: true,
                 locals             : {
                     calendarEvent      : calendarEvent,
-                    showEventFormDialog: showEventFormDialog
+                    showEventFormDialog: showEventFormDialog,
+                    event              : e
                 }
             });
         }

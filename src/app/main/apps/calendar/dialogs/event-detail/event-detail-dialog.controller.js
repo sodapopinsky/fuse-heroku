@@ -6,7 +6,7 @@
         .controller('EventDetailDialogController', EventDetailDialogController);
 
     /** @ngInject */
-    function EventDetailDialogController($mdDialog, calendarEvent, showEventFormDialog)
+    function EventDetailDialogController($mdDialog, calendarEvent, showEventFormDialog, event)
     {
         var vm = this;
 
@@ -24,9 +24,9 @@
             $mdDialog.hide();
         }
 
-        function editEvent(calendarEvent, e)
+        function editEvent(calendarEvent)
         {
-            showEventFormDialog('edit', calendarEvent, false, false, e);
+            showEventFormDialog('edit', calendarEvent, false, false, event);
         }
     }
 })();
