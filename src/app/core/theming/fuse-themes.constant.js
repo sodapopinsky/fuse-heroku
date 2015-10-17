@@ -8,8 +8,8 @@
                 name: 'fuse-pale-blue',
                 hues: {
                     'default': '700',
-                    'hue-1'  : '600',
-                    'hue-2'  : '500',
+                    'hue-1'  : '500',
+                    'hue-2'  : '600',
                     'hue-3'  : 'A100'
                 }
             },
@@ -33,11 +33,25 @@
                 }
             }
         },
-        'indigo'   : {
+        'blue-grey': {
             primary   : {
-                name: 'indigo'
+                name: 'blue-grey',
+                hues: {
+                    'default': '900',
+                    'hue-1'  : '600',
+                    'hue-2'  : '400',
+                    'hue-3'  : 'A100'
+                }
             },
-            accent    : {name: 'pink'},
+            accent    : {
+                name: 'pink',
+                hues: {
+                    'default': '400',
+                    'hue-1'  : '300',
+                    'hue-2'  : '600',
+                    'hue-3'  : 'A100'
+                }
+            },
             warn      : {name: 'blue'},
             background: {
                 name: 'grey',
@@ -49,17 +63,35 @@
                 }
             }
         },
-        'blue-grey': {
-            primary   : {name: 'blue-grey'},
-            accent    : {name: 'teal',
+        'teal'     : {
+            primary   : {
+                name: 'fuse-blue',
                 hues: {
-                    'default': '700',
+                    'default': '900',
+                    'hue-1'  : '600',
+                    'hue-2'  : '500',
+                    'hue-3'  : 'A100'
+                }
+            },
+            accent    : {
+                name: 'teal',
+                hues: {
+                    'default': '500',
                     'hue-1'  : '400',
-                    'hue-2'  : '800',
+                    'hue-2'  : '600',
+                    'hue-3'  : 'A100'
+                }
+            },
+            warn      : {name: 'deep-orange'},
+            background: {
+                name: 'grey',
+                hues: {
+                    'default': 'A100',
+                    'hue-1'  : '100',
+                    'hue-2'  : '50',
                     'hue-3'  : '300'
-                }},
-            warn      : {name: 'blue'},
-            background: {name: 'grey'}
+                }
+            }
         }
     };
 

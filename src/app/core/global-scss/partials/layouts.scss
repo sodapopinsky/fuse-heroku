@@ -18,7 +18,8 @@ body {
 body {
 
     &.boxed {
-        background: #DCDDDE;
+        background: #B0BEC5 url('/assets/images/backgrounds/header-bg.png');
+        background-size: cover;
 
         #main {
             overflow: hidden !important;
