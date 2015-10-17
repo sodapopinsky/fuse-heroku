@@ -21,7 +21,7 @@
             $mdDialog.show({
                 controller         : 'CustomThemeDialogController',
                 controllerAs       : 'vm',
-                templateUrl        : 'app/main/ui/colors/dialogs/custom-theme/custom-theme-dialog.html',
+                templateUrl        : 'app/main/ui/theme-colors/dialogs/custom-theme/custom-theme-dialog.html',
                 parent             : angular.element($document.body),
                 targetEvent        : ev,
                 clickOutsideToClose: true
