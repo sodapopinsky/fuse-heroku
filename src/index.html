@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>Fuse - Admin Theme</title>
 
+        <!-- SPLASH SCREEN -->
         <style>
             [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
                 display: none !important;
@@ -334,6 +335,8 @@
                 }
             }
         </style>
+        <!-- / SPLASH SCREEN -->
+
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -362,6 +365,7 @@
 
     <body md-theme="{{vm.themes.active.name}}" md-theme-watch ng-controller="AppController as vm">
 
+        <!-- SPLASH SCREEN -->
         <div ng-cloak id="splash-screen">
             <div class="center">
                 <div class="logo">
@@ -383,6 +387,7 @@
                 <!-- / Material Design Spinner -->
             </div>
         </div>
+        <!-- / SPLASH SCREEN -->
 
         <div id="main" class="animate slide-up" flex layout="row" ui-view="main"></div>
 
