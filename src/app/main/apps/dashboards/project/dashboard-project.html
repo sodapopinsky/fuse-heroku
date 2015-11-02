@@ -30,8 +30,7 @@
                     <md-menu-content width="3" class="md-background-bg">
                         <md-menu-item ng-repeat="project in vm.projects">
                             <md-button ng-click="vm.selectProject(project)" aria-label="{{project.name}}">
-                                {{project.name}}
-                                <md-icon ng-if="vm.selectedProject == project" md-font-icon="icon-check"></md-icon>
+                                <span ng-class="{'secondary-text': vm.selectedProject == project}" >{{project.name}}</span>
                             </md-button>
                         </md-menu-item>
                     </md-menu-content>
