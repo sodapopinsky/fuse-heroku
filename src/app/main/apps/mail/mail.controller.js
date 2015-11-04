@@ -28,6 +28,7 @@
 
         vm.inbox = Inbox.data;
         vm.selectedMail = vm.inbox[0];
+        vm.selectedMailShowDetails = false;
 
         // Methods
         vm.checkAll = checkAll;

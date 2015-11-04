@@ -17,12 +17,16 @@
             padding: 24px 0;
 
             .to {
-                margin-right: 6px;
-                text-transform: lowercase;
+                color: rgba(0, 0, 0, 0.54);
+
+                .to-text {
+                    margin-right: 4px;
+                    text-transform: lowercase;
+                }
             }
 
             .info {
-                padding-bottom: 24px;
+                padding-bottom: 16px;
 
                 .avatar {
                     margin-right: 16px;
@@ -33,9 +37,25 @@
                     font-weight: 500;
                 }
 
-                .mail {
-                    color: rgba(0, 0, 0, 0.54);
+                .toggle-details {
+                    padding-top: 16px;
+                    cursor: pointer;
+                    font-weight: 500;
                 }
+
+                .details {
+                    padding-top: 8px;
+
+                    .title {
+                        font-weight: 500;
+                        margin-right: 6px;
+                    }
+
+                    .detail {
+                        color: rgba(0, 0, 0, 0.54);
+                    }
+                }
+
             }
         }
 
@@ -99,41 +119,3 @@
 }
 
 // RESPONSIVE
-@media screen and (max-width: $layout-breakpoint-sm) {
-    #mail {
-
-        .center {
-
-            .content-card {
-
-                .content-wrapper {
-
-                    .content.mail-read-pane {
-
-                        .mail-header {
-
-                            .subject {
-                                margin-bottom: 16px;
-                            }
-
-                        }
-
-                        .mail-content {
-
-                            .info {
-
-                                .avatar {
-                                    margin: 0;
-                                }
-                            }
-
-                            .name {
-                                margin: 16px 0;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
