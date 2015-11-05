@@ -1,35 +1,6 @@
 /*----------------------------------------------------------------*/
-/*  Layouts
+/*  Page Layouts
 /*----------------------------------------------------------------*/
-
-// Global
-html,
-body {
-    overflow: hidden !important;
-    height: 100%;
-    min-height: 100%;
-}
-
-#content {
-    position: relative;
-}
-
-// Boxed Layout
-body {
-
-    &.boxed {
-        background: #B0BEC5 url('/assets/images/backgrounds/header-bg.png');
-        background-size: cover;
-
-        #main {
-            overflow: hidden !important;
-            width: 100%;
-            max-width: 1280px;
-            margin: 0 auto;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
-        }
-    }
-}
 
 // Page Layouts
 $header-height: 200px;
