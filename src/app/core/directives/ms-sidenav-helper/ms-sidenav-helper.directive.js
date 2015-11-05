@@ -27,7 +27,8 @@
                         return;
                     }
 
-                    iElement.parents('.page-layout').toggleClass('sidenav-open', current);
+                    iElement.parent().toggleClass('full-height', current);
+                    angular.element('html').toggleClass('sidenav-open', current);
                 });
             }
         };

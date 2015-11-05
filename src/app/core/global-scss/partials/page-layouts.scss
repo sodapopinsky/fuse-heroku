@@ -116,10 +116,6 @@ $card-header-height-sm: $header-height-sm - $card-toolbar-height;
             &.single-scroll {
                 height: auto;
 
-                &.sidenav-open {
-                    height: 100%;
-                }
-
                 > .center {
 
                     .content-card {
@@ -225,10 +221,6 @@ $card-header-height-sm: $header-height-sm - $card-toolbar-height;
             // Single scroll
             &.single-scroll {
                 height: auto;
-
-                &.sidenav-open {
-                    height: 100%;
-                }
 
                 > .center {
 
@@ -358,10 +350,6 @@ $card-header-height-sm: $header-height-sm - $card-toolbar-height;
             &.single-scroll {
                 height: auto;
 
-                &.sidenav-open {
-                    height: 100%;
-                }
-
                 > .center {
                     overflow: hidden;
                 }
@@ -415,10 +403,6 @@ $card-header-height-sm: $header-height-sm - $card-toolbar-height;
             // Single scroll
             &.single-scroll {
                 height: auto;
-
-                &.sidenav-open {
-                    height: 100%;
-                }
 
                 > .center {
                     overflow: hidden;
@@ -573,10 +557,6 @@ $card-header-height-sm: $header-height-sm - $card-toolbar-height;
             &.left-sidenav {
                 height: auto;
 
-                &.sidenav-open {
-                    height: 100%;
-                }
-
                 > .center {
 
                     .content-card {
@@ -622,10 +602,6 @@ $card-header-height-sm: $header-height-sm - $card-toolbar-height;
             &.left-sidenav,
             &.right-sidenav {
                 height: auto;
-
-                &.sidenav-open {
-                    height: 100%;
-                }
 
                 > .center {
                     overflow: hidden;
