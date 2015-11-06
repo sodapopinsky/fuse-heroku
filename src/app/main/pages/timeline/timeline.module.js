@@ -21,7 +21,7 @@
                 resolve: {
                     Timeline: function (apiResolver)
                     {
-                        return apiResolver.resolve('timeline@get');
+                        return apiResolver.resolve('timeline.page1@get');
                     }
                 }
             })
@@ -36,7 +36,7 @@
                 resolve: {
                     Timeline: function (apiResolver)
                     {
-                        return apiResolver.resolve('timeline@get');
+                        return apiResolver.resolve('timeline.page1@get');
                     }
                 }
             })
@@ -51,7 +51,7 @@
                 resolve: {
                     Timeline: function (apiResolver)
                     {
-                        return apiResolver.resolve('timeline@get');
+                        return apiResolver.resolve('timeline.page1@get');
                     }
                 }
             });

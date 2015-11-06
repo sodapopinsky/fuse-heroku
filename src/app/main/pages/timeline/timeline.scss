@@ -1,7 +1,7 @@
 #timeline {
     position: relative;
-    padding-bottom: 160px;
     height: auto;
+    padding-bottom: 64px;
 
     &:before {
         display: block;
@@ -16,7 +16,7 @@
         margin-left: -1px;
     }
 
-    .timeline-item {
+    .ms-timeline-item {
         overflow: hidden;
         position: relative;
         z-index: 20;
@@ -70,6 +70,7 @@
             .timeline-card {
                 order: 3;
                 padding-right: 0;
+
                 ms-card {
                     padding-left: 84px;
                 }
@@ -79,6 +80,7 @@
                 order: 1;
                 padding-left: 0;
                 text-align: right;
+
                 .time, .event {
                     padding-right: 68px;
                 }
@@ -95,7 +97,7 @@
     }
 
     /* Animations */
-    .timeline-item {
+    .ms-timeline-item {
 
         &.animate {
 
@@ -134,7 +136,7 @@
     // Timeline Left
     &.timeline-left {
 
-        .timeline-item {
+        .ms-timeline-item {
 
             .timeline-card {
                 order: 1;
@@ -167,7 +169,7 @@
     // Timeline Right
     &.timeline-right {
 
-        .timeline-item {
+        .ms-timeline-item {
 
             .timeline-card {
                 order: 3;
@@ -211,7 +213,7 @@
     #timeline.timeline-left,
     #timeline.timeline-right {
 
-        .timeline-item {
+        .ms-timeline-item {
 
             .timeline-card {
                 order: 3;

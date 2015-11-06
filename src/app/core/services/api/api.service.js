@@ -102,9 +102,17 @@
             })
         };
 
-        api.timeline = $resource(api.dataUrl + 'timeline/timeline.json', null, {
-            get: {method: 'get'}
-        });
+        api.timeline = {
+            page1: $resource(api.dataUrl + 'timeline/page-1.json', null, {
+                get: {method: 'get'}
+            }),
+            page2: $resource(api.dataUrl + 'timeline/page-2.json', null, {
+                get: {method: 'get'}
+            }),
+            page3: $resource(api.dataUrl + 'timeline/page-3.json', null, {
+                get: {method: 'get'}
+            })
+        };
 
         api.todo = {
             tasks: $resource(api.dataUrl + 'todo/tasks.json', null, {
