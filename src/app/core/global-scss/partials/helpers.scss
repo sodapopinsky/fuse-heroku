@@ -16,6 +16,7 @@
     margin: 0 8px;
 }
 
+// Soft hide (don't remove from DOM flow)
 .hidden {
     visibility: hidden;
     opacity: 0;
