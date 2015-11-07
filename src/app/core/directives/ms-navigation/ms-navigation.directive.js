@@ -433,6 +433,7 @@
                     // Store all related states
                     var links = iElement.find('a');
                     var states = [];
+                    var regExp = /\(.*\)/g;
 
                     angular.forEach(links, function (link)
                     {
@@ -442,6 +443,9 @@
                         {
                             return;
                         }
+
+                        // Remove any parameter definition from the state name before storing it
+                        state = state.replace(regExp, '');
 
                         states.push(state);
                     });
