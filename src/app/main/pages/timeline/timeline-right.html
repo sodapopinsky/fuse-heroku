@@ -1,7 +1,7 @@
-<div id="timeline" class="timeline-right" ms-timeline>
+<div id="timeline" class="timeline-right" ms-timeline ms-timeline-load-more="vm.loadNextPage()">
 
     <!-- TIMELINE ITEM -->
-    <div class="timeline-item animate" layout="column" layout-align="center center" layout-gt-md="row" layout-align-gt-md="center start"
+    <div ms-timeline-item class="timeline-item animate" layout="column" layout-align="center center" layout-gt-md="row" layout-align-gt-md="center start"
          ng-repeat="timelineItem in vm.timeline | limitTo: timelineItemLimit">
 
         <div class="timeline-card" layout="row" flex="50">
