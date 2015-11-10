@@ -7,7 +7,7 @@
         .run(runBlock);
 
     /** @ngInject */
-    function runBlock($rootScope, $timeout)
+    function runBlock($rootScope, $timeout, $state)
     {
         $rootScope.$on('$stateChangeStart', function ()
         {
@@ -21,5 +21,8 @@
                 $rootScope.loadingProgress = false;
             });
         });
+
+        // Store state in the root scope for easy access
+        $rootScope.state = $state;
     }
 })();
