@@ -33,7 +33,7 @@
                 }
 
                 .subtitle {
-                    margin-top: 16px;
+                    margin: 16px auto 0 auto;
                     text-align: center;
                     max-width: 300px;
                     color: rgba(0, 0, 0, 0.54);
@@ -41,10 +41,11 @@
                 }
 
                 timer {
-                    margin: 48px 0;
+                    margin: 48px 0 24px 0;
                     width: 100%;
+
                     > div {
-                        margin: 0 16px;
+                        padding: 0 16px;
                         text-align: center;
 
                         .value {
@@ -99,10 +100,7 @@
                     timer {
 
                         > div {
-
-                            .value {
-                                font-size: 24px;
-                            }
+                            padding: 16px 8px;
                         }
                     }
                 }

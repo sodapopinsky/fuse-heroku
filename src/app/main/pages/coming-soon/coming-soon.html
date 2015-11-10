@@ -1,6 +1,6 @@
 <div id="coming-soon" class="flex-scrollable" layout="column" ms-scroll>
     <div id="coming-soon-form-wrapper" layout="column" layout-align="center center">
-        <div id="coming-soon-form" class="md-whiteframe-1dp">
+        <div id="coming-soon-form" class="md-whiteframe-8dp">
             <div class="top">
                 <div class="logo md-accent-bg">
                     <span>F</span>
@@ -12,23 +12,23 @@
                     it will be ready in approximately:
                 </div>
 
-                <timer end-time="vm.endTime" layout="row">
-                    <div>
+                <timer end-time="vm.endTime" layout="row" layout-wrap>
+                    <div flex-sm="50">
                         <div class="value">{{days}}</div>
                         <div class="type" translate="COMINGSOON.DAYS">days</div>
                     </div>
 
-                    <div>
+                    <div flex-sm="50">
                         <div class="value">{{hours}}</div>
                         <div class="type" translate="COMINGSOON.HOURS">hours</div>
                     </div>
 
-                    <div>
+                    <div flex-sm="50">
                         <div class="value">{{minutes}}</div>
                         <div class="type" translate="COMINGSOON.MINUTES">minutes</div>
                     </div>
 
-                    <div>
+                    <div flex-sm="50">
                         <div class="value">{{seconds}}</div>
                         <div class="type" translate="COMINGSOON.SECONDS">seconds</div>
                     </div>
