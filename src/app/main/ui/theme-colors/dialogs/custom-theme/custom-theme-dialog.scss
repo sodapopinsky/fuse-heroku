@@ -35,8 +35,10 @@
         }
     }
 
-    .md-actions {
-        padding-right: 24px;
-        padding-left: 24px;
+    md-dialog-actions {
+        position: relative;
+        justify-content: space-between;
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+        background-color: rgba(0, 0, 0, 0.03);
     }
 }

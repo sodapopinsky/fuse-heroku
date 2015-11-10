@@ -5,8 +5,8 @@ md-dialog {
         width: 720px;
 
         md-dialog-content {
-            position: relative;
             display: block;
+            position: relative;
         }
 
         form {
@@ -28,21 +28,13 @@ md-dialog {
 
             .date-row {
 
-                > md-input-container {
-                    margin: 0 16px;
-
-                    &:first-child {
-                        margin-left: 0;
-                    }
-
-                    &:last-child {
-                        margin-right: 0;
-                    }
+                md-datepicker {
+                    margin-right: 24px;
                 }
             }
 
             .notifications {
-                margin: 16px 0;
+                padding: 16px 0;
 
                 > .md-button {
                     margin: 0;
@@ -50,12 +42,13 @@ md-dialog {
             }
         }
 
-        .md-actions {
+        md-dialog-actions {
             position: relative;
             overflow-y: hidden;
             overflow-x: auto;
             justify-content: space-between;
             border-top: 1px solid rgba(0, 0, 0, 0.12);
+            background-color: rgba(0, 0, 0, 0.03);
         }
     }
 }

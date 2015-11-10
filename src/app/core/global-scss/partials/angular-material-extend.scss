@@ -62,10 +62,28 @@ md-backdrop {
     }
 }
 
+// Datepicker
+md-datepicker {
+
+    .md-datepicker-button {
+        width: 36px !important;
+        height: 48px !important;
+        line-height: 48px !important;
+    }
+
+    .md-datepicker-input-container {
+        margin-left: 2px;
+    }
+}
+
 // Dialog
 md-dialog {
 
-    .md-actions {
+    md-dialog-content {
+        padding: 32px 24px 24px 24px;
+    }
+
+    md-dialog-actions {
         min-height: 64px;
         padding-top: 8px;
         padding-bottom: 8px;
@@ -74,7 +92,6 @@ md-dialog {
             margin: 0 8px;
         }
     }
-
 }
 
 // Lists

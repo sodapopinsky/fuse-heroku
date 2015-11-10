@@ -1,5 +1,5 @@
 <md-dialog class="task-dialog" aria-label="New Task">
-    <form name="taskForm" novalidate>
+    <form name="taskForm" class="md-inline-form" novalidate>
         <md-toolbar class="md-accent md-hue-2">
             <div class="md-toolbar-tools" layout="row" layout-align="space-between">
                 <span class="title">{{vm.title}}</span>
@@ -10,14 +10,14 @@
         </md-toolbar>
 
         <md-dialog-content ms-scroll>
-            <md-input-container>
+            <md-input-container class="md-block">
                 <label translate="TODO.TITLE">Title</label>
                 <input required ng-model="vm.task.title">
             </md-input-container>
 
             <div class="tags">
                 <label translate="TODO.TAGS">Tags</label>
-                <md-chips ng-model="vm.task.tags" md-on-append="vm.newTag($chip)">
+                <md-chips ng-model="vm.task.tags" md-transform-chip="vm.newTag($chip)">
                     <md-chip-template>
                         <span ng-if="$chip.color" class="color" ng-style="{'background-color':$chip.color}"></span>
                         <span>{{$chip.label}}</span>
@@ -25,7 +25,7 @@
                 </md-chips>
             </div>
 
-            <div layout="row">
+            <div layout-sm="column" layout="row">
                 <div flex class="date-container">
                     <label translate="TODO.START_DATE">Start Date</label>
                     <md-datepicker flex ng-model="vm.task.startDate" md-placeholder="Start Date"></md-datepicker>
@@ -68,7 +68,7 @@
             </div>
         </md-dialog-content>
 
-        <div class="md-actions mail-form-actions" layout="row" layout-align="space-between center">
+        <md-dialog-actions layout="row" layout-align="space-between center">
             <div layout="row" layout-align="start center">
                 <md-button type="submit" ng-disabled="taskForm.$invalid" ng-if="!vm.newTask" ng-click="vm.saveTask()"
                            class="send-button md-accent md-raised"
@@ -100,6 +100,6 @@
                     <md-tooltip><span translate="TODO.DELETE">DELETE</span></md-tooltip>
                 </md-button>
             </div>
-        </div>
+        </md-dialog-actions>
     </form>
 </md-dialog>

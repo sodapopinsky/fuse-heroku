@@ -1,5 +1,5 @@
 <md-dialog class="event-form-dialog" aria-label="New Message">
-    <form>
+    <form class="md-inline-form">
         <md-toolbar class="md-accent md-hue-2">
             <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
                 <span class="title">{{vm.dialogTitle}}</span>
@@ -11,7 +11,7 @@
         </md-toolbar>
 
         <md-dialog-content ms-scroll>
-            <md-input-container>
+            <md-input-container class="md-block">
                 <label translate="CALENDAR.TITLE">Title</label>
                 <input ng-model="vm.calendarEvent.title">
             </md-input-container>
@@ -25,7 +25,7 @@
             </md-list>
 
             <div layout="row" class="date-row">
-                <md-datepicker flex ng-model="vm.calendarEvent.start" md-placeholder="Start Date"></md-datepicker>
+                <md-datepicker ng-model="vm.calendarEvent.start" md-placeholder="Start Date"></md-datepicker>
 
                 <md-input-container flex md-no-float>
                     <input ng-model="vm.calendarEvent.startTime" placeholder="Start Time" translate
@@ -34,7 +34,7 @@
             </div>
 
             <div layout="row" class="date-row">
-                <md-datepicker flex ng-model="vm.calendarEvent.end" md-placeholder="End Date"></md-datepicker>
+                <md-datepicker ng-model="vm.calendarEvent.end" md-placeholder="End Date"></md-datepicker>
 
                 <md-input-container flex md-no-float>
                     <input ng-model="vm.calendarEvent.endTime" placeholder="End Time" translate
@@ -42,12 +42,12 @@
                 </md-input-container>
             </div>
 
-            <md-input-container flex>
+            <md-input-container class="md-block" flex>
                 <label translate="CALENDAR.REPEAT">Repeat</label>
                 <input ng-model="vm.calendarEvent.repeat">
             </md-input-container>
 
-            <md-input-container flex>
+            <md-input-container class="md-block" flex>
                 <label translate="CALENDAR.LOCATION">Location</label>
                 <input ng-model="vm.calendarEvent.location">
             </md-input-container>
@@ -66,13 +66,13 @@
                 </md-button>
             </div>
 
-            <md-input-container flex class="textarea-container">
+            <md-input-container flex class="md-block textarea-container">
                 <label translate="CALENDAR.NOTES">Notes</label>
                 <textarea ng-model="vm.task.notes" md-maxlength="250"></textarea>
             </md-input-container>
         </md-dialog-content>
 
-        <div class="md-actions mail-form-actions" layout="row" layout-align="space-between center">
+        <md-dialog-actions layout="row" layout-align="space-between center">
             <md-button ng-click="vm.saveEvent()" class="save-button md-accent md-raised" aria-label="SAVE"
                        translate="CALENDAR.SAVE"
                        translate-attr-aria-label="CALENDAR.SAVE">
@@ -83,6 +83,6 @@
                 <md-icon md-font-icon="icon-delete"></md-icon>
                 <md-tooltip><span translate="CALENDAR.DELETE">Delete</span></md-tooltip>
             </md-button>
-        </div>
+        </md-dialog-actions>
     </form>
 </md-dialog>

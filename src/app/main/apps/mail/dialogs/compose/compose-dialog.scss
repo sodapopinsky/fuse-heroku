@@ -5,8 +5,8 @@ md-dialog {
         width: 720px;
 
         md-dialog-content {
-            position: relative;
             display: block;
+            position: relative;
         }
 
         md-toolbar {
@@ -63,14 +63,15 @@ md-dialog {
         }
 
         .attachment-list {
+            font-size: 13px;
+            padding-top: 16px;
 
             .attachment {
                 background-color: rgba(0, 0, 0, 0.08);
                 border: 1px solid rgba(0, 0, 0, 0.16);
                 padding-left: 16px;
-                margin: 8px 0;
+                margin-top: 8px;
                 border-radius: 2px;
-                font-size: 13px;
 
                 .filename {
                     font-weight: 500;
@@ -90,7 +91,7 @@ md-dialog {
             }
         }
 
-        .md-actions {
+        md-dialog-actions {
             position: relative;
             justify-content: space-between;
             border-top: 1px solid rgba(0, 0, 0, 0.12);
