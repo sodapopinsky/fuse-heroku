@@ -57,7 +57,7 @@
                 // Trigger load more event
                 vm.loadMore().then(function ()
                 {
-                    registerOnScroll();
+                    vm.registerOnScroll();
                 });
             }
         }
@@ -100,12 +100,8 @@
                     var loadMoreEl = angular.element('<div class="loader"></div>');
                     iElement.append(loadMoreEl);
 
-                    // Decide and grab the scrollable element
+                    // Grab the scrollable element
                     var scrollEl = angular.element('#content > md-content');
-                    if ( angular.element('html').hasClass('body-scroll') )
-                    {
-                        scrollEl = angular.element('body');
-                    }
 
                     // Initialize the controller with the values
                     MsTimelineController.init(loadMoreEl, scrollEl);
@@ -192,7 +188,10 @@
                     // Test the card to see if there is any image on it
                     vm.testForImage(cardEl).then(function ()
                     {
-                        vm.itemLoaded = true;
+                        $timeout(function ()
+                        {
+                            vm.itemLoaded = true;
+                        });
                     });
                 });
             }
