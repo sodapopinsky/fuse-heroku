@@ -7,15 +7,30 @@
 
             <div class="title" translate="LOGIN.TITLE">Log in to your account</div>
 
-            <form>
-                <md-input-container flex md-no-float>
-                    <input ng-model="vm.form.username" placeholder="Username" translate
-                           translate-attr-placeholder="LOGIN.USERNAME">
+            <form name="loginForm" novalidate>
+                <md-input-container class="md-block" md-no-float>
+                    <input type="email" name="email" ng-model="vm.form.email" placeholder="Email"
+                           translate translate-attr-placeholder="LOGIN.EMAIL"
+                           ng-pattern="/^.+@.+\..+$/" required>
+                    <div ng-messages="loginForm.email.$error" ng-show="loginForm.email.$touched" multiple>
+                        <div ng-message="required">
+                            <span translate="LOGIN.ERRORS.EMAIL_REQUIRED">Email field is required</span>
+                        </div>
+                        <div ng-message="pattern">
+                            <span translate="LOGIN.ERRORS.EMAIL_MUST_VALID">Email must be a valid e-mail address</span>
+                        </div>
+                    </div>
                 </md-input-container>
 
-                <md-input-container flex md-no-float>
-                    <input ng-model="vm.form.password" type="password" placeholder="Password" translate
-                           translate-attr-placeholder="LOGIN.PASSWORD">
+                <md-input-container class="md-block" md-no-float>
+                    <input type="password" name="password" ng-model="vm.form.password" placeholder="Password"
+                           translate translate-attr-placeholder="LOGIN.PASSWORD"
+                           required>
+                    <div ng-messages="loginForm.password.$error" ng-show="loginForm.password.$touched">
+                        <div ng-message="required">
+                            <span translate="LOGIN.ERRORS.PASSWORD_REQUIRED">Password field is required</span>
+                        </div>
+                    </div>
                 </md-input-container>
 
                 <div class="remember-forgot-password" layout="row" layout-sm="column"
@@ -28,8 +43,9 @@
                        translate="LOGIN.FORGOT_PASSWORD">Forgot Password?</a>
                 </div>
 
-                <md-button class="md-raised md-accent" aria-label="LOG IN" translate="LOGIN.LOG_IN"
-                           translate-attr-aria-label="LOGIN.LOG_IN">
+                <md-button type="submit" class="md-raised md-accent" aria-label="LOG IN"
+                           ng-disabled="loginForm.$invalid || loginForm.$pristine"
+                           translate="LOGIN.LOG_IN" translate-attr-aria-label="LOGIN.LOG_IN">
                     LOG IN
                 </md-button>
             </form>

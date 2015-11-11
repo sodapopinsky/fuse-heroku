@@ -19,7 +19,8 @@
                     templateUrl: 'app/main/pages/auth/login/login.html',
                     controller : 'LoginController as vm'
                 }
-            }
+            },
+            class: 'auth-login'
         });
 
         $translatePartialLoaderProvider.addPart('app/main/pages/auth/login');

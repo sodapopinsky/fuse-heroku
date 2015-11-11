@@ -19,7 +19,8 @@
                     templateUrl: 'app/main/pages/auth/register/register.html',
                     controller : 'RegisterController as vm'
                 }
-            }
+            },
+            class: 'auth-register'
         });
 
         $translatePartialLoaderProvider.addPart('app/main/pages/auth/register');

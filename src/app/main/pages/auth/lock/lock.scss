@@ -9,6 +9,7 @@
 
         #lock-form {
             padding: 48px 32px 32px 32px;
+            width: 384px;
             max-width: 384px;
             background: #FFFFFF;
 
@@ -35,10 +36,6 @@
             form {
                 width: 100%;
                 margin: 32px 0 0 0;
-
-                md-input-container {
-                    width: 320px;
-                }
 
                 .md-button {
                     width: 220px;
@@ -76,10 +73,6 @@
                 }
 
                 form {
-
-                    md-input-container {
-                        width: 100%;
-                    }
 
                     .md-button {
                         width: 90%;

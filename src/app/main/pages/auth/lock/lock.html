@@ -15,19 +15,28 @@
                 </div>
             </div>
 
-            <form>
-                <md-input-container flex md-no-float>
-                    <input ng-model="vm.form.userName" disabled placeholder="User Name" translate
-                           translate-attr-placeholder="LOCK.USERNAME">
+            <form name="lockForm" novalidate>
+                <md-input-container class="md-block" md-no-float>
+                    <input ng-model="vm.form.username" placeholder="Username"
+                           translate translate-attr-placeholder="LOCK.USERNAME"
+                           disabled>
                 </md-input-container>
 
-                <md-input-container flex md-no-float>
-                    <input ng-model="vm.form.password" type="password" placeholder="Password" translate
-                           translate-attr-placeholder="LOCK.PASSWORD">
+                <md-input-container class="md-block" md-no-float>
+                    <input type="password" name="password" ng-model="vm.form.password" placeholder="Password"
+                           translate translate-attr-placeholder="LOCK.PASSWORD"
+                           required>
+                    <div ng-messages="lockForm.password.$error"
+                         ng-show="lockForm.password.$touched">
+                        <div ng-message="required">
+                            <span translate="LOCK.ERRORS.PASSWORD_REQUIRED">Password field is required</span>
+                        </div>
+                    </div>
                 </md-input-container>
 
-                <md-button class="md-raised md-accent" aria-label="UNLOCK" translate="LOCK.UNLOCK"
-                           translate-attr-aria-label="LOCK.UNLOCK">
+                <md-button type="submit" class="md-raised md-accent" aria-label="UNLOCK"
+                           ng-disabled="lockForm.$invalid || lockForm.$pristine"
+                           translate="LOCK.UNLOCK" translate-attr-aria-label="LOCK.UNLOCK">
                     UNLOCK
                 </md-button>
             </form>

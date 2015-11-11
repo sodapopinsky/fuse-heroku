@@ -13,7 +13,7 @@
 
         // Data
         vm.form = {
-            userName: 'Jane Doe'
+            username: 'Jane Doe'
         };
 
         // Methods
