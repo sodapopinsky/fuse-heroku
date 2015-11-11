@@ -10,19 +10,20 @@
     function config($stateProvider, $translatePartialLoaderProvider)
     {
         $stateProvider.state('app.mail', {
-            url    : '/mail',
-            views  : {
+            url      : '/mail',
+            views    : {
                 'content@app': {
                     templateUrl: 'app/main/apps/mail/mail.html',
                     controller : 'MailController as vm'
                 }
             },
-            resolve: {
+            resolve  : {
                 Inbox: function (apiResolver)
                 {
                     return apiResolver.resolve('mail.inbox@get');
                 }
-            }
+            },
+            bodyClass: 'mail'
         });
 
         $translatePartialLoaderProvider.addPart('app/main/apps/mail');

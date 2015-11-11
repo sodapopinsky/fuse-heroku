@@ -10,19 +10,20 @@
     function config($stateProvider)
     {
         $stateProvider.state('app.dashboard-server', {
-            url    : '/dashboard-server',
-            views  : {
+            url      : '/dashboard-server',
+            views    : {
                 'content@app': {
                     templateUrl: 'app/main/apps/dashboards/server/dashboard-server.html',
                     controller : 'DashboardServerController as vm'
                 }
             },
-            resolve: {
+            resolve  : {
                 DashboardData: function (apiResolver)
                 {
                     return apiResolver.resolve('dashboard.server@get');
                 }
-            }
+            },
+            bodyClass: 'dashboard-server'
         });
     }
 

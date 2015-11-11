@@ -10,19 +10,20 @@
     function config($stateProvider, $translatePartialLoaderProvider)
     {
         $stateProvider.state('app.pages_invoice', {
-            url    : '/pages/invoice',
-            views  : {
+            url      : '/pages/invoice',
+            views    : {
                 'content@app': {
                     templateUrl: 'app/main/pages/invoice/invoice.html',
                     controller : 'InvoiceController as vm'
                 }
             },
-            resolve: {
+            resolve  : {
                 Invoice: function (apiResolver)
                 {
                     return apiResolver.resolve('invoice@get');
                 }
-            }
+            },
+            bodyClass: 'invoice'
         });
 
         $translatePartialLoaderProvider.addPart('app/main/pages/invoice');

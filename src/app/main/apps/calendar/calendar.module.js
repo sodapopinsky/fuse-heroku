@@ -12,13 +12,14 @@
     function config($stateProvider, $translatePartialLoaderProvider)
     {
         $stateProvider.state('app.calendar', {
-            url  : '/calendar',
-            views: {
+            url      : '/calendar',
+            views    : {
                 'content@app': {
                     templateUrl: 'app/main/apps/calendar/calendar.html',
                     controller : 'CalendarController as vm'
                 }
-            }
+            },
+            bodyClass: 'calendar'
         });
 
         $translatePartialLoaderProvider.addPart('app/main/apps/calendar');

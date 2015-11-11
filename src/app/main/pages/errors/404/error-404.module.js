@@ -10,8 +10,8 @@
     function config($stateProvider, $translatePartialLoaderProvider)
     {
         $stateProvider.state('app.pages_errors_error-404', {
-            url  : '/pages/errors/error-404',
-            views: {
+            url      : '/pages/errors/error-404',
+            views    : {
                 'main@'                             : {
                     templateUrl: 'app/core/layouts/basic.html'
                 },
@@ -19,7 +19,8 @@
                     templateUrl: 'app/main/pages/errors/404/error-404.html',
                     controller : 'Error404Controller as vm'
                 }
-            }
+            },
+            bodyClass: 'error-404'
         });
 
         $translatePartialLoaderProvider.addPart('app/main/pages/errors/404');

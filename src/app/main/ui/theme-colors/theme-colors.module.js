@@ -10,13 +10,14 @@
     function config($stateProvider)
     {
         $stateProvider.state('app.ui_theme_colors', {
-            url  : '/ui/theme-colors',
-            views: {
+            url      : '/ui/theme-colors',
+            views    : {
                 'content@app': {
                     templateUrl: 'app/main/ui/theme-colors/theme-colors.html',
                     controller : 'ThemeColorsController as vm'
                 }
-            }
+            },
+            bodyClass: 'theme-colors'
         });
     }
 

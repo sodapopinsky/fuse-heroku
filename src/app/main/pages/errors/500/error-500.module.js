@@ -10,8 +10,8 @@
     function config($stateProvider, $translatePartialLoaderProvider)
     {
         $stateProvider.state('app.pages_errors_error-500', {
-            url  : '/pages/errors/error-500',
-            views: {
+            url      : '/pages/errors/error-500',
+            views    : {
                 'main@'                             : {
                     templateUrl: 'app/core/layouts/basic.html'
                 },
@@ -19,7 +19,8 @@
                     templateUrl: 'app/main/pages/errors/500/error-500.html',
                     controller : 'Error500Controller as vm'
                 }
-            }
+            },
+            bodyClass: 'error-500'
         });
 
         $translatePartialLoaderProvider.addPart('app/main/pages/errors/500');

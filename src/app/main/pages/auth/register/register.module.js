@@ -10,8 +10,8 @@
     function config($stateProvider, $translatePartialLoaderProvider)
     {
         $stateProvider.state('app.pages_auth_register', {
-            url  : '/pages/auth/register',
-            views: {
+            url      : '/pages/auth/register',
+            views    : {
                 'main@'                          : {
                     templateUrl: 'app/core/layouts/basic.html'
                 },
@@ -20,7 +20,7 @@
                     controller : 'RegisterController as vm'
                 }
             },
-            class: 'auth-register'
+            bodyClass: 'register'
         });
 
         $translatePartialLoaderProvider.addPart('app/main/pages/auth/register');

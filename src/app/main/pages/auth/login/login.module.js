@@ -10,8 +10,8 @@
     function config($stateProvider, $translatePartialLoaderProvider)
     {
         $stateProvider.state('app.pages_auth_login', {
-            url  : '/pages/auth/login',
-            views: {
+            url      : '/pages/auth/login',
+            views    : {
                 'main@'                       : {
                     templateUrl: 'app/core/layouts/basic.html'
                 },
@@ -20,7 +20,7 @@
                     controller : 'LoginController as vm'
                 }
             },
-            class: 'auth-login'
+            bodyClass: 'login'
         });
 
         $translatePartialLoaderProvider.addPart('app/main/pages/auth/login');

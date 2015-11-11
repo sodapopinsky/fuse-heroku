@@ -10,14 +10,14 @@
     function config($stateProvider, $translatePartialLoaderProvider)
     {
         $stateProvider.state('app.pages_profile', {
-            url    : '/pages/profile',
-            views  : {
+            url      : '/pages/profile',
+            views    : {
                 'content@app': {
                     templateUrl: 'app/main/pages/profile/profile.html',
                     controller : 'ProfileController as vm'
                 }
             },
-            resolve: {
+            resolve  : {
                 Timeline    : function (apiResolver)
                 {
                     return apiResolver.resolve('profile.timeline@get');
@@ -30,7 +30,8 @@
                 {
                     return apiResolver.resolve('profile.photosVideos@get');
                 }
-            }
+            },
+            bodyClass: 'profile'
         });
 
         $translatePartialLoaderProvider.addPart('app/main/pages/profile');

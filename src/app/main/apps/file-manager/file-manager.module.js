@@ -10,19 +10,20 @@
     function config($stateProvider, $translatePartialLoaderProvider)
     {
         $stateProvider.state('app.file-manager', {
-            url    : '/file-manager',
-            views  : {
+            url      : '/file-manager',
+            views    : {
                 'content@app': {
                     templateUrl: 'app/main/apps/file-manager/file-manager.html',
                     controller : 'FileManagerController as vm'
                 }
             },
-            resolve: {
+            resolve  : {
                 Documents: function (apiResolver)
                 {
                     return apiResolver.resolve('fileManager.documents@get');
                 }
-            }
+            },
+            bodyClass: 'file-manager'
         });
 
         $translatePartialLoaderProvider.addPart('app/main/apps/file-manager');

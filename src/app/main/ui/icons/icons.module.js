@@ -10,19 +10,20 @@
     function config($stateProvider)
     {
         $stateProvider.state('app.ui_icons', {
-            url    : '/ui/icons',
-            views  : {
+            url      : '/ui/icons',
+            views    : {
                 'content@app': {
                     templateUrl: 'app/main/ui/icons/icons.html',
                     controller : 'IconsController as vm'
                 }
             },
-            resolve: {
+            resolve  : {
                 Icons: function (apiResolver)
                 {
                     return apiResolver.resolve('icons@get');
                 }
-            }
+            },
+            bodyClass: 'icons'
         });
     }
 

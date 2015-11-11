@@ -10,14 +10,14 @@
     function config($stateProvider, $translatePartialLoaderProvider)
     {
         $stateProvider.state('app.to-do', {
-            url    : '/to-do',
-            views  : {
+            url      : '/to-do',
+            views    : {
                 'content@app': {
                     templateUrl: 'app/main/apps/todo/todo.html',
                     controller : 'TodoController as vm'
                 }
             },
-            resolve: {
+            resolve  : {
                 Tasks: function (apiResolver)
                 {
                     return apiResolver.resolve('todo.tasks@get');
@@ -26,7 +26,8 @@
                 {
                     return apiResolver.resolve('todo.tags@get');
                 }
-            }
+            },
+            bodyClass: 'todo'
         });
 
         $translatePartialLoaderProvider.addPart('app/main/apps/todo');

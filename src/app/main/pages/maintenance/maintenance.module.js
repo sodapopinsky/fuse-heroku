@@ -10,8 +10,8 @@
     function config($stateProvider, $translatePartialLoaderProvider)
     {
         $stateProvider.state('app.pages_maintenance', {
-            url  : '/pages/maintenance',
-            views: {
+            url      : '/pages/maintenance',
+            views    : {
                 'main@'                        : {
                     templateUrl: 'app/core/layouts/basic.html'
                 },
@@ -19,7 +19,8 @@
                     templateUrl: 'app/main/pages/maintenance/maintenance.html',
                     controller : 'MaintenanceController as vm'
                 }
-            }
+            },
+            bodyClass: 'maintenance'
         });
 
         $translatePartialLoaderProvider.addPart('app/main/pages/maintenance');

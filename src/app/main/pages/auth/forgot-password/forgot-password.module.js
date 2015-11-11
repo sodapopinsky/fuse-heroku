@@ -10,8 +10,8 @@
     function config($stateProvider, $translatePartialLoaderProvider)
     {
         $stateProvider.state('app.pages_auth_forgot-password', {
-            url  : '/pages/auth/forgot-password',
-            views: {
+            url      : '/pages/auth/forgot-password',
+            views    : {
                 'main@'                                 : {
                     templateUrl: 'app/core/layouts/basic.html'
                 },
@@ -19,7 +19,8 @@
                     templateUrl: 'app/main/pages/auth/forgot-password/forgot-password.html',
                     controller : 'ForgotPasswordController as vm'
                 }
-            }
+            },
+            bodyClass: 'forgot-password'
         });
 
         $translatePartialLoaderProvider.addPart('app/main/pages/auth/forgot-password');
