@@ -23,6 +23,7 @@ md-card > :not(md-card-content) img {
 
 // Date picker box-sizing Fix
 .md-datepicker-calendar-pane {
+
     * {
         box-sizing: initial;
     }
@@ -90,6 +91,22 @@ md-dialog {
 
         .md-button {
             margin: 0 8px;
+        }
+    }
+}
+
+// Input
+md-input-container {
+
+    // fix ng-messages container underneath the
+    // input fields when we are using extra
+    // ng-show to hide error messages on untouched
+    // form elements
+    [ng-messages] {
+
+        &.ng-hide {
+            display: block !important;
+            visibility: hidden;
         }
     }
 }
