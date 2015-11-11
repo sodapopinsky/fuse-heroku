@@ -13,6 +13,7 @@
         "LOGIN": "Login",
         "REGISTER": "Register",
         "FORGOT_PASSWORD": "Forgot Password",
+        "RESET_PASSWORD": "Reset Password",
         "LOCK_SCREEN": "Lock Screen",
         "COMING_SOON": "Coming Soon",
         "ERRORS": "Errors",

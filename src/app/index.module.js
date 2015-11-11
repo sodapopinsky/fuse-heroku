@@ -31,6 +31,7 @@
             'app.pages.auth.login',
             'app.pages.auth.register',
             'app.pages.auth.forgot-password',
+            'app.pages.auth.reset-password',
             'app.pages.auth.lock',
             'app.pages.coming-soon',
             'app.pages.error-404',
