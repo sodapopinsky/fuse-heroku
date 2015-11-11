@@ -21,7 +21,7 @@
                 font-size: 86px;
                 font-weight: 500;
                 margin: 32px auto;
-                color: rgba(255, 255, 255, 1);
+                color: #FFFFFF;
                 border-radius: 2px;
             }
 
@@ -60,34 +60,24 @@
                 }
             }
 
-            .md-button {
+            .register {
+                margin: 32px auto 24px auto;
+                width: 250px;
+                font-weight: 500;
 
-                &.google,
-                &.facebook {
-                    width: 192px;
-                    text-transform: none;
-                    color: #FFFFFF;
-                    font-size: 13px;
-
-                    md-icon {
-                        color: #FFFFFF;
-                        margin: 0 8px 0 0;
-                    }
+                .text {
+                    margin-right: 8px;
                 }
 
-                &.google {
-                    background-color: #D73D32;
-                }
+                .link {
 
-                &.facebook {
-                    background-color: rgb(63, 92, 154);
                 }
             }
 
             .separator {
                 font-size: 15px;
                 font-weight: 600;
-                margin: 16px auto;
+                margin: 24px auto 16px auto;
                 position: relative;
                 overflow: hidden;
                 width: 100px;
@@ -119,17 +109,27 @@
                 }
             }
 
-            .register {
-                margin: 32px auto 24px auto;
-                width: 250px;
-                font-weight: 500;
+            .md-button {
 
-                .text {
-                    margin-right: 8px;
+                &.google,
+                &.facebook {
+                    width: 192px;
+                    text-transform: none;
+                    color: #FFFFFF;
+                    font-size: 13px;
+
+                    md-icon {
+                        color: #FFFFFF;
+                        margin: 0 8px 0 0;
+                    }
                 }
 
-                .link {
+                &.google {
+                    background-color: #D73D32;
+                }
 
+                &.facebook {
+                    background-color: rgb(63, 92, 154);
                 }
             }
         }
