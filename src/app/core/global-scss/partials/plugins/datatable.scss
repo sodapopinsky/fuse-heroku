@@ -884,6 +884,7 @@ table.dataTable {
             .pagination {
                 display: block;
                 align-self: center;
+                white-space: nowrap;
 
                 .dataTables_paginate {
                     padding: 0;
