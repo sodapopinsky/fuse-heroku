@@ -7,8 +7,9 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
     {
+        // State
         $stateProvider.state('app.pages_auth_login-v2', {
             url      : '/pages/auth/login-v2',
             views    : {
@@ -23,7 +24,15 @@
             bodyClass: 'login-v2'
         });
 
+        // Translation
         $translatePartialLoaderProvider.addPart('app/main/pages/auth/login-v2');
+
+        // Navigation
+        msNavigationFactoryProvider.saveItem('fuse.pages.auth.login-v2', {
+            title : 'Login v2',
+            state : 'app.pages_auth_login-v2',
+            weight: 2
+        });
     }
 
 })();

@@ -24,6 +24,12 @@
                         templateUrl: 'app/toolbar/toolbar.html',
                         controller : 'ToolbarController as vm'
                     },
+                    // Classic Navigation (html based)
+                    /*'navigation@app': {
+                        templateUrl: 'app/sidenav/navigation-classic/navigation-classic.html',
+                        controller : 'NavigationClassicController as vm'
+                    },*/
+                    // Automated Navigation (service based)
                     'navigation@app': {
                         templateUrl: 'app/sidenav/navigation/navigation.html',
                         controller : 'NavigationController as vm'

@@ -9,6 +9,7 @@
     /** @ngInject */
     function config($stateProvider)
     {
+        // State
         $stateProvider.state('app.dashboards_analytics', {
             url      : '/dashboard-analytics',
             views    : {

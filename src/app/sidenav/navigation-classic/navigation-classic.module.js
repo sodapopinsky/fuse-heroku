@@ -3,13 +3,13 @@
     'use strict';
 
     angular
-        .module('app.navigation', [])
+        .module('app.navigation-classic', [])
         .config(config);
 
     /** @ngInject */
     function config($translatePartialLoaderProvider)
     {
-        $translatePartialLoaderProvider.addPart('app/sidenav/navigation');
+        $translatePartialLoaderProvider.addPart('app/sidenav/navigation-classic');
     }
 
 })();

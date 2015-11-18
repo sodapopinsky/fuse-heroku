@@ -7,8 +7,9 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
     {
+        // State
         $stateProvider.state('app.pages_errors_error-404', {
             url      : '/pages/errors/error-404',
             views    : {
@@ -23,8 +24,20 @@
             bodyClass: 'error-404'
         });
 
+        // Translation
         $translatePartialLoaderProvider.addPart('app/main/pages/errors/404');
 
+        // Navigation
+        msNavigationFactoryProvider.saveItem('fuse.pages.errors', {
+            title: 'Errors',
+            weight: 3
+        });
+
+        msNavigationFactoryProvider.saveItem('fuse.pages.errors.error-404', {
+            title: '404',
+            state: 'app.pages_errors_error-404',
+            weight: 1
+        });
     }
 
 })();

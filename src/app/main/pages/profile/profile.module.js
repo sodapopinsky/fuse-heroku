@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
     {
         $stateProvider.state('app.pages_profile', {
             url      : '/pages/profile',
@@ -36,6 +36,12 @@
 
         $translatePartialLoaderProvider.addPart('app/main/pages/profile');
 
+        // Navigation
+        msNavigationFactoryProvider.saveItem('fuse.pages.profile', {
+            title : 'Profile',
+            state : 'app.pages_profile',
+            weight: 6
+        });
     }
 
 })();

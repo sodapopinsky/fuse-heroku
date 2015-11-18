@@ -7,8 +7,9 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
     {
+        // State
         $stateProvider.state('app.pages_auth_register', {
             url      : '/pages/auth/register',
             views    : {
@@ -23,7 +24,15 @@
             bodyClass: 'register'
         });
 
+        // Translation
         $translatePartialLoaderProvider.addPart('app/main/pages/auth/register');
+
+        // Navigation
+        msNavigationFactoryProvider.saveItem('fuse.pages.auth.register', {
+            title : 'Register',
+            state : 'app.pages_auth_register',
+            weight: 3
+        });
     }
 
 })();

@@ -7,8 +7,9 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
     {
+        // State
         $stateProvider.state('app.pages_invoice', {
             url      : '/pages/invoice',
             views    : {
@@ -26,8 +27,15 @@
             bodyClass: 'invoice'
         });
 
+        // Translation
         $translatePartialLoaderProvider.addPart('app/main/pages/invoice');
 
+        // Navigation
+        msNavigationFactoryProvider.saveItem('fuse.pages.invoice', {
+            title : 'Invoice',
+            state : 'app.pages_invoice',
+            weight: 4
+        });
     }
 
 })();

@@ -7,7 +7,7 @@
         .controller('ToolbarController', ToolbarController);
 
     /** @ngInject */
-    function ToolbarController($rootScope, $mdSidenav, msNavFoldService, $translate, $mdToast)
+    function ToolbarController($rootScope, $mdSidenav, msNavigationFactory, $translate, $mdToast)
     {
         var vm = this;
 
@@ -67,7 +67,7 @@
 
         // Methods
         vm.toggleSidenav = toggleSidenav;
-        vm.toggleNavigationSidenavFold = toggleNavigationSidenavFold;
+        vm.toggleMsNavigationFolded = toggleMsNavigationFolded;
         vm.logout = logout;
         vm.changeLanguage = changeLanguage;
         vm.setUserStatus = setUserStatus;
@@ -88,13 +88,13 @@
         }
 
         /**
-         * Toggle navigation sidenav fold
+         * Toggle ms-navigation folded status
          */
-        function toggleNavigationSidenavFold(event)
+        function toggleMsNavigationFolded(event)
         {
             event.preventDefault();
 
-            msNavFoldService.toggleFold();
+            msNavigationFactory.toggleFolded();
         }
 
         /**

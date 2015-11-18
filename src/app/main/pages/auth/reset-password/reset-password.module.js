@@ -7,8 +7,9 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
     {
+        // State
         $stateProvider.state('app.pages_auth_reset-password', {
             url      : '/pages/auth/reset-password',
             views    : {
@@ -23,7 +24,15 @@
             bodyClass: 'reset-password'
         });
 
+        // Translation
         $translatePartialLoaderProvider.addPart('app/main/pages/auth/reset-password');
+
+        // Navigation
+        msNavigationFactoryProvider.saveItem('fuse.pages.auth.reset-password', {
+            title : 'Reset Password',
+            state : 'app.pages_auth_reset-password',
+            weight: 6
+        });
     }
 
 })();

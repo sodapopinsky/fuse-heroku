@@ -7,8 +7,9 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
     {
+        // State
         $stateProvider.state('app.to-do', {
             url      : '/to-do',
             views    : {
@@ -30,7 +31,16 @@
             bodyClass: 'todo'
         });
 
+        // Translation
         $translatePartialLoaderProvider.addPart('app/main/apps/todo');
+
+        // Navigation
+        msNavigationFactoryProvider.saveItem('fuse.to-do', {
+            title : 'To-Do',
+            icon  : 'icon-checkbox-marked',
+            state : 'app.to-do',
+            weight: 5
+        });
     }
 
 })();

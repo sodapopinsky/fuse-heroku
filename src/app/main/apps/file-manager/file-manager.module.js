@@ -7,8 +7,9 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
     {
+        // State
         $stateProvider.state('app.file-manager', {
             url      : '/file-manager',
             views    : {
@@ -26,7 +27,16 @@
             bodyClass: 'file-manager'
         });
 
+        // Translation
         $translatePartialLoaderProvider.addPart('app/main/apps/file-manager');
+
+        // Navigation
+        msNavigationFactoryProvider.saveItem('fuse.file-manager', {
+            title : 'File Manager',
+            icon  : 'icon-folder',
+            state : 'app.file-manager',
+            weight: 4
+        });
     }
 
 })();

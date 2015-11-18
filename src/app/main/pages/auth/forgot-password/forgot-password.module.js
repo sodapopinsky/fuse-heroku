@@ -7,8 +7,9 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
     {
+        // State
         $stateProvider.state('app.pages_auth_forgot-password', {
             url      : '/pages/auth/forgot-password',
             views    : {
@@ -23,7 +24,15 @@
             bodyClass: 'forgot-password'
         });
 
+        // Translation
         $translatePartialLoaderProvider.addPart('app/main/pages/auth/forgot-password');
+
+        // Navigation
+        msNavigationFactoryProvider.saveItem('fuse.pages.auth.forgot-password', {
+            title : 'Forgot Password',
+            state : 'app.pages_auth_forgot-password',
+            weight: 5
+        });
     }
 
 })();

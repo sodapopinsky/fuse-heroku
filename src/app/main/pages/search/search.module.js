@@ -7,8 +7,9 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
     {
+        // State
         $stateProvider.state('app.pages_search', {
             url      : '/pages/search',
             views    : {
@@ -38,8 +39,15 @@
             bodyClass: 'search'
         });
 
+        // Translation
         $translatePartialLoaderProvider.addPart('app/main/pages/search');
 
+        // Navigation
+        msNavigationFactoryProvider.saveItem('fuse.pages.search', {
+            title : 'Search',
+            state : 'app.pages_search',
+            weight: 7
+        });
     }
 
 })();

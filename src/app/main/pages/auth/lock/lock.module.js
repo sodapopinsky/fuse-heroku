@@ -7,8 +7,9 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
     {
+        // State
         $stateProvider.state('app.pages_auth_lock', {
             url      : '/pages/auth/lock',
             views    : {
@@ -23,7 +24,15 @@
             bodyClass: 'lock'
         });
 
+        // Translation
         $translatePartialLoaderProvider.addPart('app/main/pages/auth/lock');
+
+        // Navigation
+        msNavigationFactoryProvider.saveItem('fuse.pages.auth.lock', {
+            title : 'Lock Screen',
+            state : 'app.pages_auth_lock',
+            weight: 7
+        });
     }
 
 })();

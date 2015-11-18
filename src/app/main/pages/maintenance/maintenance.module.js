@@ -7,8 +7,9 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
     {
+        // State
         $stateProvider.state('app.pages_maintenance', {
             url      : '/pages/maintenance',
             views    : {
@@ -23,8 +24,15 @@
             bodyClass: 'maintenance'
         });
 
+        // Translation
         $translatePartialLoaderProvider.addPart('app/main/pages/maintenance');
 
+        // Navigation
+        msNavigationFactoryProvider.saveItem('fuse.pages.maintenance', {
+            title : 'Maintenance',
+            state : 'app.pages_maintenance',
+            weight: 5
+        });
     }
 
 })();

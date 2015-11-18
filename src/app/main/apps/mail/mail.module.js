@@ -7,8 +7,9 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
     {
+        // State
         $stateProvider.state('app.mail', {
             url      : '/mail',
             views    : {
@@ -26,7 +27,15 @@
             bodyClass: 'mail'
         });
 
+        // Translation
         $translatePartialLoaderProvider.addPart('app/main/apps/mail');
-    }
 
+        // Navigation
+        msNavigationFactoryProvider.saveItem('fuse.mail', {
+            title : 'Mail',
+            icon  : 'icon-email',
+            state : 'app.mail',
+            weight: 3
+        });
+    }
 })();
