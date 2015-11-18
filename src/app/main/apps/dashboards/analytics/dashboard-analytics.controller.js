@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.dashboard-analytics')
+        .module('app.dashboards.analytics')
         .controller('DashboardAnalyticsController', DashboardAnalyticsController);
 
     /** @ngInject */

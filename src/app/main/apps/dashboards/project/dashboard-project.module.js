@@ -3,13 +3,13 @@
     'use strict';
 
     angular
-        .module('app.dashboard-project', [])
+        .module('app.dashboards.project', [])
         .config(config);
 
     /** @ngInject */
     function config($stateProvider)
     {
-        $stateProvider.state('app.dashboard-project', {
+        $stateProvider.state('app.dashboards_project', {
             url      : '/dashboard-project',
             views    : {
                 'content@app': {

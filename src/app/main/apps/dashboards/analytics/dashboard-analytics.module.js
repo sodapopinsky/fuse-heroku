@@ -3,13 +3,13 @@
     'use strict';
 
     angular
-        .module('app.dashboard-analytics', [])
+        .module('app.dashboards.analytics', [])
         .config(config);
 
     /** @ngInject */
     function config($stateProvider)
     {
-        $stateProvider.state('app.dashboard-analytics', {
+        $stateProvider.state('app.dashboards_analytics', {
             url      : '/dashboard-analytics',
             views    : {
                 'content@app': {
