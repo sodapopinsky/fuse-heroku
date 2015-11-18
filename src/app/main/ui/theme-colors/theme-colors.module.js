@@ -9,7 +9,7 @@
     /** @ngInject */
     function config($stateProvider)
     {
-        $stateProvider.state('app.ui_theme_colors', {
+        $stateProvider.state('app.ui_theme-colors', {
             url      : '/ui/theme-colors',
             views    : {
                 'content@app': {

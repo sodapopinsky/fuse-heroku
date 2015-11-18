@@ -9,7 +9,7 @@
     /** @ngInject */
     function config($stateProvider)
     {
-        $stateProvider.state('app.components_elements_menu_bar', {
+        $stateProvider.state('app.components_elements_menu-bar', {
             url  : '/components/elements/menu-bar',
             views: {
                 'content@app': {
