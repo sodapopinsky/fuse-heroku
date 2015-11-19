@@ -50,23 +50,20 @@
             <!-- / TOOLBAR -->
 
             <!-- HEADER BOTTOM -->
-            <div class="header-bottom" layout="row" layout-align="start center" layout-sm="column">
+            <div class="header-bottom" layout="row" layout-align="start center" layout-align-sm="center center">
+                <md-button class="md-icon-button arrow" ng-click="vm.calendar.prev()" aria-label="Previous"
+                           translate translate-attr-aria-label="CALENDAR.PREVIOUS">
+                    <md-icon md-font-icon="icon-chevron-left"></md-icon>
+                </md-button>
 
                 <div class="title">
                     {{vm.calendarView.title}}
                 </div>
 
-                <div>
-                    <md-button class="md-icon-button arrow" ng-click="vm.calendar.prev()" aria-label="Previous"
-                               translate translate-attr-aria-label="CALENDAR.PREVIOUS">
-                        <md-icon md-font-icon="icon-chevron-left"></md-icon>
-                    </md-button>
-
-                    <md-button class="md-icon-button arrow" ng-click="vm.calendar.next()" aria-label="Next" translate
-                               translate-attr-aria-label="CALENDAR.NEXT">
-                        <md-icon md-font-icon="icon-chevron-right"></md-icon>
-                    </md-button>
-                </div>
+                <md-button class="md-icon-button arrow" ng-click="vm.calendar.next()" aria-label="Next" translate
+                           translate-attr-aria-label="CALENDAR.NEXT">
+                    <md-icon md-font-icon="icon-chevron-right"></md-icon>
+                </md-button>
             </div>
             <!-- / HEADER BOTTOM -->
         </div>

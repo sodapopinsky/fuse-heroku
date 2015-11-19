@@ -8,6 +8,7 @@
         background-repeat: no-repeat;
         background-color: #FAFAFA;
         color: #FFFFFF;
+        padding-bottom: 16px;
 
         &:before {
             content: '';
@@ -17,7 +18,7 @@
             bottom: 0;
             left: 0;
             z-index: 1;
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.27), transparent);
+            background: rgba(0, 0, 0, 0.3);
         }
 
         &.Jan {
@@ -94,6 +95,8 @@
 
                 .title {
                     font-size: 15px;
+                    min-width: 120px;
+                    text-align: center;
                 }
             }
         }
