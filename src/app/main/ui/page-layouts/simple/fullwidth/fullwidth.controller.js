@@ -9,8 +9,6 @@
     /** @ngInject */
     function SimpleFullwidthController()
     {
-        var vm = this;
-
         // Data
 
         // Methods

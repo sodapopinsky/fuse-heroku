@@ -9,8 +9,6 @@
     /** @ngInject */
     function SimpleTabbedController()
     {
-        var vm = this;
-
         // Data
 
         // Methods

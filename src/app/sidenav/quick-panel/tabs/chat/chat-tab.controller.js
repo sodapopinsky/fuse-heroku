@@ -10,19 +10,22 @@
     function ChatTabController(api, $timeout)
     {
         var vm = this;
-        vm.chat = {};
-        vm.toggleChat = toggleChat;
-        vm.chatActive = false;
-        vm.replyMessage = '';
-        vm.reply = reply;
 
         // Data
+        vm.chat = {};
+        vm.chatActive = false;
+        vm.replyMessage = '';
         api.contacts.get({}, function (response)
         {
             vm.contacts = response.data;
         });
 
         // Methods
+        vm.toggleChat = toggleChat;
+        vm.reply = reply;
+
+        //////////
+
         function toggleChat(contact)
         {
             vm.chatActive = !vm.chatActive;
@@ -60,20 +63,16 @@
 
         function scrollToBottomOfChat(speed)
         {
-            var chatDialog = document.getElementById('chat-dialog');
+            var chatDialog = angular.element('#chat-dialog');
 
             $timeout(function ()
             {
-                $(chatDialog).animate({
-                    scrollTop: chatDialog.scrollHeight
+                chatDialog.animate({
+                    scrollTop: chatDialog[0].scrollHeight
                 }, speed);
             }, 0);
 
         }
-
-        //////////
     }
 
 })();
-
-

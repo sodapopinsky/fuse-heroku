@@ -9,8 +9,6 @@
     /** @ngInject */
     function BlankController()
     {
-        var vm = this;
-
         // Data
 
         // Methods

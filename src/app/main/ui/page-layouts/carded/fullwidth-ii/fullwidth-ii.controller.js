@@ -9,8 +9,6 @@
     /** @ngInject */
     function CardedFullwidthIIController()
     {
-        var vm = this;
-
         // Data
 
         // Methods

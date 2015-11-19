@@ -8,8 +8,6 @@
 
     function ButtonsController()
     {
-        var vm = this;
-
         // Data
 
         // Methods

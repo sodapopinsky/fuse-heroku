@@ -9,8 +9,6 @@
     /** @ngInject */
     function MaintenanceController()
     {
-        var vm = this;
-
         // Data
 
         // Methods

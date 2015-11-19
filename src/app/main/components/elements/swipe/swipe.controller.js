@@ -10,17 +10,16 @@
     function SwipeController($mdDialog)
     {
         var vm = this;
-        vm.swipeAction = swipeAction;
 
         // Data
 
         // Methods
+        vm.swipeAction = swipeAction;
 
         //////////
 
         function swipeAction(direction, ev)
         {
-            console.log('asdasd');
             $mdDialog.show($mdDialog.alert()
                     .content('You swiped ' + direction + ' !!')
                     .ok('Great')

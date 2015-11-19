@@ -47,7 +47,7 @@
             ghostClass   : 'todo-item-placeholder',
             handle       : '.handle',
             forceFallback: true,
-            fallbackClass: 'todo-item-ghost',
+            fallbackClass: 'todo-item-ghost'
         };
 
         // Methods

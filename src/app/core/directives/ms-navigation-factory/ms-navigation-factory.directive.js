@@ -14,6 +14,9 @@
     /** @ngInject */
     function msNavigationFactoryProvider()
     {
+        // Inject $log service
+        var $log =  angular.injector(['ng']).get('$log');
+
         // Navigation array
         var navigation = [];
 
@@ -35,7 +38,7 @@
         {
             if ( !angular.isString(path) )
             {
-                console.error('path must be a string (eg. `dashboard.project`)');
+                $log.error('path must be a string (eg. `dashboard.project`)');
                 return;
             }
 
@@ -286,14 +289,6 @@
             function getNavigationObject()
             {
                 return navigation;
-            }
-
-            /**
-             * Sort the navigation by weight
-             */
-            function sort()
-            {
-                sortByWeight();
             }
 
             /**

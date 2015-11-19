@@ -7,7 +7,7 @@
         .factory('fuseGenerator', fuseGeneratorService);
 
     /** @ngInject */
-    function fuseGeneratorService(fuseTheming, $cookies)
+    function fuseGeneratorService($cookies, $log, fuseTheming)
     {
         // Storage for simplified themes object
         var themes = {};
@@ -173,11 +173,10 @@
                 return styleVars[matched];
             });
 
-            var headEl = document.getElementsByTagName('head')[0];
-            var styleEl = document.createElement('style');
-            styleEl.setAttribute('type', 'text/css');
-            styleEl.appendChild(document.createTextNode(css));
-            headEl.appendChild(styleEl);
+            var headEl = angular.element('head');
+            var styleEl = angular.element('<style type="text/css"></style>');
+            styleEl.html(css);
+            headEl.append(styleEl);
         }
 
         /**
@@ -218,7 +217,7 @@
             }
             else
             {
-                console.error('Invalid number of arguments supplied in the color array: ' + color.length + '\n' + 'The array must have 3 or 4 colors.');
+                $log.error('Invalid number of arguments supplied in the color array: ' + color.length + '\n' + 'The array must have 3 or 4 colors.');
             }
         }
 

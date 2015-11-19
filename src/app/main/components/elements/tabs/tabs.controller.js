@@ -9,8 +9,6 @@
     /** @ngInject */
     function TabsController()
     {
-        var vm = this;
-
         // Data
 
         // Methods

@@ -10,7 +10,7 @@
         .directive('msTimelineItem', msTimelineItemDirective);
 
     /** @ngInject */
-    function MsTimelineController($scope)
+    function MsTimelineController()
     {
         var vm = this;
 
@@ -276,7 +276,7 @@
 
                     MsTimelineItemController.init(MsTimelineController.scrollEl, iElement);
                 };
-            },
+            }
         };
     }
 })();

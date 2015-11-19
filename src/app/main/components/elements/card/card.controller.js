@@ -8,8 +8,6 @@
 
     function CardController()
     {
-        var vm = this;
-
         // Data
 
         // Methods

@@ -21,8 +21,8 @@
          */
         if ( fuseConfig.getConfig('disableMdInkRippleOnMobile') && fuseHelper.isMobile() )
         {
-            var body = angular.element(document.body);
-            body.attr('md-no-ink', true);
+            var bodyEl = angular.element('body');
+            bodyEl.attr('md-no-ink', true);
         }
     }
 })();

@@ -9,8 +9,6 @@
     /** @ngInject */
     function Error500Controller()
     {
-        var vm = this;
-
         // Data
 
         // Methods

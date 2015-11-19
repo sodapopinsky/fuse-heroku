@@ -9,8 +9,6 @@
     /** @ngInject */
     function Error404Controller()
     {
-        var vm = this;
-
         // Data
 
         // Methods

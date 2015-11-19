@@ -33,20 +33,6 @@
                         return d.y;
                     },
                     useInteractiveGuideline: true,
-                    dispatch               : {
-                        stateChange: function (e)
-                        {
-                        },
-                        changeState: function (e)
-                        {
-                        },
-                        tooltipShow: function (e)
-                        {
-                        },
-                        tooltipHide: function (e)
-                        {
-                        }
-                    },
                     xAxis                  : {
                         axisLabel: 'Time (ms)'
                     },
@@ -57,9 +43,6 @@
                             return d3.format('.02f')(d);
                         },
                         axisLabelDistance: 30
-                    },
-                    callback               : function (chart)
-                    {
                     }
                 },
                 title   : {

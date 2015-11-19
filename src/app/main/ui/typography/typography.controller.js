@@ -9,8 +9,6 @@
     /** @ngInject */
     function TypographyController()
     {
-        var vm = this;
-
         // Data
 
         // Methods

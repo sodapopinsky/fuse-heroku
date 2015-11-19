@@ -25,7 +25,7 @@
             vm.notificationsEnabled = !vm.notificationsEnabled;
         }
 
-        function redial(e)
+        function redial()
         {
             $mdDialog.show(
                 $mdDialog.alert()

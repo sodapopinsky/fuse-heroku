@@ -9,8 +9,6 @@
     /** @ngInject */
     function ForgotPasswordController()
     {
-        var vm = this;
-
         // Data
 
         // Methods

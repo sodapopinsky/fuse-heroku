@@ -19,6 +19,9 @@
             }
         ]);
 
+        // Inject $log service
+        var $log =  angular.injector(['ng']).get('$log');
+
         var registeredPalettes,
             registeredThemes;
 
@@ -104,11 +107,11 @@
                     // If there is no theme called "default"...
                     if ( angular.isUndefined(service.themes.list.default) )
                     {
-                        console.error('You must have at least one theme named "default"');
+                        $log.error('You must have at least one theme named "default"');
                         return;
                     }
 
-                    console.warn('The theme "' + themeName + '" does not exist! Falling back to the "default" theme.');
+                    $log.warn('The theme "' + themeName + '" does not exist! Falling back to the "default" theme.');
 
                     // Otherwise set theme to default theme
                     service.themes.active.name = 'default';

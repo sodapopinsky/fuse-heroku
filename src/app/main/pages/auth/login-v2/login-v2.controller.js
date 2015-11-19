@@ -9,8 +9,6 @@
     /** @ngInject */
     function LoginV2Controller()
     {
-        var vm = this;
-
         // Data
 
         // Methods

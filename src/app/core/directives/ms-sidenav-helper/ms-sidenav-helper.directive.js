@@ -20,7 +20,7 @@
                 scope.$watch(function ()
                 {
                     return MdSidenavCtrl.isOpen() && !MdSidenavCtrl.isLockedOpen();
-                }, function (current, old)
+                }, function (current)
                 {
                     if ( angular.isUndefined(current) )
                     {

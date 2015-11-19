@@ -9,8 +9,6 @@
     /** @ngInject */
     function PriceTablesController()
     {
-        var vm = this;
-
         // Data
 
         // Methods

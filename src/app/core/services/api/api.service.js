@@ -127,7 +127,7 @@
     }
 
     /** @ngInject */
-    function apiResolverService($q, api)
+    function apiResolverService($q, $log, api)
     {
         var service = {
             resolve: resolve
@@ -150,7 +150,7 @@
 
             if ( !resource || !method )
             {
-                console.error('apiResolver.resolve requires correct action parameter (ResourceName@methodName)');
+                $log.error('apiResolver.resolve requires correct action parameter (ResourceName@methodName)');
                 return false;
             }
 
@@ -162,7 +162,7 @@
 
             if ( !apiObject )
             {
-                console.error('Resource "' + resource + '" is not defined in the api service!');
+                $log.error('Resource "' + resource + '" is not defined in the api service!');
                 deferred.reject('Resource "' + resource + '" is not defined in the api service!');
             }
             else
@@ -205,7 +205,7 @@
             {
                 if ( angular.isUndefined(apiObject[resourceParts[l]]) )
                 {
-                    console.error('Resource part "' + resourceParts[l] + '" is not defined!');
+                    $log.error('Resource part "' + resourceParts[l] + '" is not defined!');
                     apiObject = false;
                     break;
                 }

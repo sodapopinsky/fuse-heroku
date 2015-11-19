@@ -58,7 +58,7 @@
 
         function selectedItemChange(item)
         {
-            $log.info('Item changed to ' + JSON.stringify(item));
+            $log.info('Item changed to ' + angular.toJson(item));
         }
 
         /**

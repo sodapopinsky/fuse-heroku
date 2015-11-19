@@ -296,7 +296,7 @@
                     {},
                     {},
                     {
-                        render: function (data, type, row, meta)
+                        render: function (data, type)
                         {
                             if ( type === 'display' )
                             {
@@ -309,7 +309,7 @@
                         }
                     },
                     {
-                        render: function (data, type, row, meta)
+                        render: function (data, type)
                         {
                             if ( type === 'display' )
                             {
@@ -322,7 +322,7 @@
                         }
                     },
                     {
-                        render: function (data, type, row, meta)
+                        render: function (data, type)
                         {
                             if ( type === 'display' )
                             {

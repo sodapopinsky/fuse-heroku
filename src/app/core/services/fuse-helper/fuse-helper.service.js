@@ -7,10 +7,10 @@
         .factory('fuseHelper', fuseHelperService);
 
     /** @ngInject */
-    function fuseHelperService()
+    function fuseHelperService($window)
     {
         // Private variables
-        var mobileDetect = new MobileDetect(window.navigator.userAgent);
+        var mobileDetect = new MobileDetect($window.navigator.userAgent);
 
         var service = {
             isMobile: isMobile

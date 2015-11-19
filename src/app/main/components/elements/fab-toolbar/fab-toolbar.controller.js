@@ -7,7 +7,7 @@
         .controller('FabToolbarController', FabToolbarController);
 
     /** @ngInject */
-    function FabToolbarController($mdDialog)
+    function FabToolbarController()
     {
         var vm = this;
 

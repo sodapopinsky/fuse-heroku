@@ -18,7 +18,7 @@
             'app.pages.maintenance',
             'app.pages.profile',
             'app.pages.search',
-            'app.pages.timeline',
+            'app.pages.timeline'
         ])
         .config(config);
 

@@ -64,7 +64,7 @@
         });
 
         msNavigationFactoryProvider.saveItem('ui.page-layouts.carded', {
-            title: 'Carded',
+            title: 'Carded'
         });
 
         msNavigationFactoryProvider.saveItem('ui.page-layouts.carded.fullwidth', {
@@ -98,7 +98,7 @@
         });
 
         msNavigationFactoryProvider.saveItem('ui.page-layouts.simple', {
-            title: 'Simple',
+            title: 'Simple'
         });
 
         msNavigationFactoryProvider.saveItem('ui.page-layouts.simple.fullwidth', {

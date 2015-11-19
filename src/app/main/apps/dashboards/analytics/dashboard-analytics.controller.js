@@ -176,7 +176,7 @@
                             tooltip: {
                                 gravity: 's',
                                 classes: 'gravity-s'
-                            },
+                            }
                         }
                     }
                 },
@@ -313,7 +313,7 @@
         //////////
 
         // Widget 2
-        uiGmapGoogleMapApi.then(function (maps)
+        uiGmapGoogleMapApi.then(function ()
         {
             vm.widget2.map = vm.dashboardData.widget2.map;
         });

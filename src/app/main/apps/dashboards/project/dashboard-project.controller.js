@@ -506,7 +506,7 @@
                     day    : now.format('D'),
                     weekDay: now.format('dddd'),
                     month  : now.format('MMMM'),
-                    year   : now.format('YYYY'),
+                    year   : now.format('YYYY')
                 };
             }
         };

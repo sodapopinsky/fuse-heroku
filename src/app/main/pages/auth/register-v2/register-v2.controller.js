@@ -9,8 +9,6 @@
     /** @ngInject */
     function RegisterV2Controller()
     {
-        var vm = this;
-
         // Data
 
         // Methods
