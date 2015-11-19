@@ -28,12 +28,6 @@
         $translatePartialLoaderProvider.addPart('app/main/pages/auth/login');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('fuse.pages', {
-            title : 'Pages',
-            icon  : 'icon-file-outline',
-            weight: 6
-        });
-
         msNavigationFactoryProvider.saveItem('fuse.pages.auth', {
             title : 'Authentication',
             weight: 1
