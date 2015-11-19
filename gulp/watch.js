@@ -3,7 +3,6 @@
 var path = require('path');
 var gulp = require('gulp');
 var conf = require('./conf');
-var console = require('console');
 
 var browserSync = require('browser-sync');
 
@@ -45,8 +44,8 @@ gulp.task('watch', ['inject'], function ()
     });
 
     gulp.watch([
-        path.join(conf.paths.src, '/app/**/*.html'),
         path.join(conf.paths.src, '/app/**/*.json'),
+        path.join(conf.paths.src, '/app/**/*.html')
     ], function (event)
     {
         browserSync.reload(event.path);
