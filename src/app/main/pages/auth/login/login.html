@@ -12,7 +12,7 @@
                     <input type="email" name="email" ng-model="vm.form.email" placeholder="Email"
                            translate translate-attr-placeholder="LOGIN.EMAIL"
                            ng-pattern="/^.+@.+\..+$/" required>
-                    <div ng-messages="loginForm.email.$error" ng-show="loginForm.email.$touched" multiple>
+                    <div ng-messages="loginForm.email.$error" ng-show="loginForm.email.$touched" role="alert" multiple>
                         <div ng-message="required">
                             <span translate="LOGIN.ERRORS.EMAIL_REQUIRED">Email field is required</span>
                         </div>
@@ -26,7 +26,7 @@
                     <input type="password" name="password" ng-model="vm.form.password" placeholder="Password"
                            translate translate-attr-placeholder="LOGIN.PASSWORD"
                            required>
-                    <div ng-messages="loginForm.password.$error" ng-show="loginForm.password.$touched">
+                    <div ng-messages="loginForm.password.$error" ng-show="loginForm.password.$touched" role="alert">
                         <div ng-message="required">
                             <span translate="LOGIN.ERRORS.PASSWORD_REQUIRED">Password field is required</span>
                         </div>

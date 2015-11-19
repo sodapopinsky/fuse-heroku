@@ -27,7 +27,7 @@
                            translate translate-attr-placeholder="LOCK.PASSWORD"
                            required>
                     <div ng-messages="lockForm.password.$error"
-                         ng-show="lockForm.password.$touched">
+                         ng-show="lockForm.password.$touched" role="alert">
                         <div ng-message="required">
                             <span translate="LOCK.ERRORS.PASSWORD_REQUIRED">Password field is required</span>
                         </div>
