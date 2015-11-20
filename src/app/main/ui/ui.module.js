@@ -4,9 +4,9 @@
 
     angular
         .module('app.ui', [
-            'app.ui.theme-colors',
-            'app.ui.material-colors',
+            'app.ui.forms',
             'app.ui.icons',
+            'app.ui.material-colors',
             'app.ui.page-layouts.blank',
             'app.ui.page-layouts.carded.fullwidth',
             'app.ui.page-layouts.carded.fullwidth-ii',
@@ -20,6 +20,7 @@
             'app.ui.page-layouts.simple.right-sidenav',
             'app.ui.page-layouts.simple.right-sidenav-ii',
             'app.ui.page-layouts.simple.tabbed',
+            'app.ui.theme-colors',
             'app.ui.typography'
         ])
         .config(config);
@@ -32,6 +33,18 @@
             title : 'USER INTERFACE',
             group : true,
             weight: 2
+        });
+
+        msNavigationFactoryProvider.saveItem('ui.forms', {
+            title: 'Forms',
+            icon : 'icon-window-restore',
+            state: 'app.ui_forms'
+        });
+
+        msNavigationFactoryProvider.saveItem('ui.icons', {
+            title: 'Icons',
+            icon : 'icon-file-image-box',
+            state: 'app.ui_icons'
         });
 
         msNavigationFactoryProvider.saveItem('ui.typography', {
@@ -52,11 +65,6 @@
             state: 'app.ui_material-colors'
         });
 
-        msNavigationFactoryProvider.saveItem('ui.icons', {
-            title: 'Icons',
-            icon : 'icon-file-image-box',
-            state: 'app.ui_icons'
-        });
 
         msNavigationFactoryProvider.saveItem('ui.page-layouts', {
             title: 'Page Layouts',
