@@ -27,6 +27,7 @@
 
         vm.currentStepInvalid = currentStepInvalid;
         vm.formsIncomplete = formsIncomplete;
+        vm.resetForm = resetForm;
 
         //////////
 
@@ -102,6 +103,22 @@
             }
 
             return false;
+        }
+
+        /**
+         * Reset form
+         */
+        function resetForm()
+        {
+            // Go back to first step
+            vm.selectedIndex = 0;
+
+            // Make sure all the forms are back in the $pristine & $untouched status
+            for ( var x = 0; x < vm.forms.length; x++ )
+            {
+                vm.forms[x].$setPristine();
+                vm.forms[x].$setUntouched();
+            }
         }
     }
 
