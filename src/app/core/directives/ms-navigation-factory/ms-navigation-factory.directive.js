@@ -838,7 +838,10 @@
                 ).then(
                     function ()
                     {
-                        //
+                        // Clear the inline styles after animation done
+                        expandEl.css({
+                            'height' : ''
+                        });
                     }
                 );
 
