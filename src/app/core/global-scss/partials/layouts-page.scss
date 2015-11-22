@@ -510,6 +510,81 @@ $card-header-height-sm: $header-height-sm - $card-toolbar-height;
     }
 }
 
+// Single scroll modifications
+.single-scroll {
+
+    // Carded
+    .carded {
+
+        // Fullwidth
+        &.fullwidth {
+            height: auto;
+
+            > .center {
+
+                .content-card {
+
+                    .content {
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+
+        // Left sidenav
+        &.left-sidenav {
+            height: auto;
+
+            > .center {
+
+                .content-card {
+
+                    .content {
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+
+        // Right sidenav
+        &.right-sidenav {
+            height: auto;
+
+            > .center {
+
+                .content-card {
+
+                    .content {
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+    }
+
+    // Simple layout
+    .simple {
+
+        // Left sidenav
+        &.left-sidenav {
+            height: auto;
+
+            > .center {
+                overflow: hidden;
+            }
+        }
+
+        // Right sidenav
+        &.right-sidenav {
+            height: auto;
+
+            > .center {
+                overflow: hidden;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: $layout-breakpoint-sm) {
 
     .page-layout {

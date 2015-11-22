@@ -21,6 +21,13 @@ $breakpoint-sm: $layout-breakpoint-sm;
 $breakpoint-md: $layout-breakpoint-md;
 $breakpoint-lg: $layout-breakpoint-lg;
 
+// Toolbar
+$toolbarHeight: 64px;
+
+// Navigation Sidenav
+$navigationWidth: 240px;
+$navigationFoldedWidth: 64px;
+
 // Material colors
 // https://www.google.com/design/spec/style/color.html
 $contrastsMap: (
