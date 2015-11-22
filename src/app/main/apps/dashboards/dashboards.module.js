@@ -19,23 +19,23 @@
             group: true
         });
 
-        msNavigationFactoryProvider.saveItem('fuse.dashboard', {
-            title : 'Dashboard',
+        msNavigationFactoryProvider.saveItem('fuse.dashboards', {
+            title : 'Dashboards',
             icon  : 'icon-tile-four',
             weight: 1
         });
 
-        msNavigationFactoryProvider.saveItem('fuse.dashboard.project', {
+        msNavigationFactoryProvider.saveItem('fuse.dashboards.project', {
             title    : 'Project',
             state    : 'app.dashboards_project'
         });
 
-        msNavigationFactoryProvider.saveItem('fuse.dashboard.server', {
+        msNavigationFactoryProvider.saveItem('fuse.dashboards.server', {
             title: 'Server',
             state: 'app.dashboards_server'
         });
 
-        msNavigationFactoryProvider.saveItem('fuse.dashboard.analytics', {
+        msNavigationFactoryProvider.saveItem('fuse.dashboards.analytics', {
             title: 'Analytics',
             state: 'app.dashboards_analytics'
         });

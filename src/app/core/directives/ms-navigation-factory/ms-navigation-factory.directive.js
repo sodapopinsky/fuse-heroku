@@ -527,8 +527,10 @@
                     /**
                      * onHover event of foldExpander
                      */
-                    function onFoldExpanderHover()
+                    function onFoldExpanderHover(event)
                     {
+                        event.preventDefault();
+
                         // Set folded open status
                         msNavigationFactory.setFoldedOpen(true);
 
@@ -552,8 +554,10 @@
                     /**
                      * onHover event of foldCollapser
                      */
-                    function onFoldCollapserHover()
+                    function onFoldCollapserHover(event)
                     {
+                        event.preventDefault();
+
                         // Set folded open status
                         msNavigationFactory.setFoldedOpen(false);
 
@@ -585,7 +589,7 @@
     }
 
     /** @ngInject */
-    function MsNavigationNodeController($scope, $rootScope, $animate, $state, $mdSidenav, msNavigationFactory)
+    function MsNavigationNodeController($scope, $rootScope, $animate, $state, msNavigationFactory)
     {
         var vm = this;
 
@@ -834,8 +838,7 @@
                 ).then(
                     function ()
                     {
-                        // Clear the inline styles after animation done
-                        expandEl.css({'height': ''});
+                        //
                     }
                 );
 
