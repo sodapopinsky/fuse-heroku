@@ -7,7 +7,7 @@
         .controller('MailController', MailController);
 
     /** @ngInject */
-    function MailController($document, $mdDialog, $mdSidenav, Inbox)
+    function MailController($scope, $document, $timeout, $mdDialog, $mdMedia, $mdSidenav, Inbox)
     {
         var vm = this;
 
@@ -22,9 +22,12 @@
         vm.selectedMail = {};
         vm.toggleSidenav = toggleSidenav;
 
-        vm.responsiveReadPane = false;
+        vm.responsiveReadPane = undefined;
+        vm.activeMailPaneIndex = 0;
+        vm.dynamicHeight = false;
+
         vm.scrollPos = 0;
-        vm.scrollEl = angular.element('#content > md-content');
+        vm.scrollEl = angular.element('#content');
 
         vm.inbox = Inbox.data;
         vm.selectedMail = vm.inbox[0];
@@ -42,6 +45,24 @@
 
         //////////
 
+        // Watch screen size to activate responsive read pane
+        $scope.$watch(function ()
+        {
+            return $mdMedia('gt-lg');
+        }, function (current)
+        {
+            vm.responsiveReadPane = !current;
+        });
+
+        // Watch screen size to activate dynamic height on tabs
+        $scope.$watch(function ()
+        {
+            return $mdMedia('sm');
+        }, function (current)
+        {
+            vm.dynamicHeight = current;
+        });
+
         /**
          * Select mail
          *
@@ -50,13 +71,22 @@
         function selectMail(mail)
         {
             vm.selectedMail = mail;
-            vm.responsiveReadPane = true;
 
-            // Store the current scrollPos
-            vm.scrollPos = vm.scrollEl.scrollTop();
+            $timeout(function ()
+            {
+                // If responsive read pane is
+                // active, navigate to it
+                if ( angular.isDefined(vm.responsiveReadPane) && vm.responsiveReadPane )
+                {
+                    vm.activeMailPaneIndex = 1;
+                }
 
-            // Scroll to the top
-            vm.scrollEl.scrollTop(96);
+                // Store the current scrollPos
+                vm.scrollPos = vm.scrollEl.scrollTop();
+
+                // Scroll to the top
+                vm.scrollEl.scrollTop(0);
+            });
         }
 
         /**
@@ -64,10 +94,14 @@
          */
         function closeReadPane()
         {
-            if ( vm.responsiveReadPane )
+            if ( angular.isDefined(vm.responsiveReadPane) && vm.responsiveReadPane )
             {
-                vm.responsiveReadPane = false;
-                vm.scrollEl.scrollTop(vm.scrollPos);
+                vm.activeMailPaneIndex = 0;
+
+                $timeout(function ()
+                {
+                    vm.scrollEl.scrollTop(vm.scrollPos);
+                }, 650);
             }
         }
 

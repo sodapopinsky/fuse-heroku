@@ -55,16 +55,36 @@
                 overflow: hidden;
                 position: relative;
 
-                .content {
-                    padding: 0;
+                .mail-tabs {
 
-                    &.mail-list-pane {
-                        border-right: 1px solid rgba(0, 0, 0, 0.12);
-                        background: #FAFAFA;
+                    md-tabs-wrapper {
+                        display: none;
                     }
 
-                    &.mail-read-pane {
-                        padding: 24px;
+                    md-tabs-content-wrapper {
+                        top: 0;
+
+                        md-tab-content {
+
+                        }
+                    }
+
+                    .content {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        padding: 0;
+
+                        &.mail-list-pane {
+                            border-right: 1px solid rgba(0, 0, 0, 0.12);
+                            background: #FAFAFA;
+                        }
+
+                        &.mail-read-pane {
+                            padding: 24px;
+                        }
                     }
                 }
             }
@@ -73,7 +93,7 @@
 }
 
 // RESPONSIVE
-@media screen and (max-width: $layout-breakpoint-lg) {
+@media screen and (min-width: $layout-breakpoint-lg) {
 
     #mail {
 
@@ -81,46 +101,36 @@
 
             .content-card {
 
-                &.responsive-read-pane {
+                .content-wrapper {
 
-                    .toolbar {
-                        display: none;
+                    .mail-tabs {
 
-                        &.mail-read-pane-toolbar {
-                            display: flex !important;
-                        }
+                        md-tabs-content-wrapper {
 
-                    }
+                            md-tab-content {
+                                width: 50%;
+                                opacity: 1;
 
-                    .content-wrapper {
-
-                        .content {
-
-                            &.mail-read-pane {
-                                @include easingOutQuadTimingFunction();
-                                @include transitionDuration(250ms);
-                                left: 0;
+                                * {
+                                    visibility: visible;
+                                }
                             }
                         }
                     }
                 }
+            }
+        }
+    }
 
-                .content-wrapper {
+}
 
-                    .content {
+@media screen and (max-width: $layout-breakpoint-lg) {
 
-                        &.mail-read-pane {
-                            position: absolute;
-                            width: 100%;
-                            max-width: 100%;
-                            top: 0;
-                            bottom: 0;
-                            left: 100%;
-                            @include easingOutQuadTimingFunction();
-                            @include transitionDuration(250ms);
-                        }
-                    }
-                }
+    #mail {
+
+        .center {
+
+            .content-card {
 
                 .toolbar {
 
@@ -132,7 +142,17 @@
 
                         &.md-icon-button {
                             width: 30px;
+                            min-height: 30px;
+                            height: 30px;
+                            line-height: 30px;
                             margin: 0 3px;
+
+                            md-icon {
+                                font-size: 18px;
+                                width: 18px;
+                                height: 18px;
+                                line-height: 18px;
+                            }
                         }
                     }
                 }
@@ -155,6 +175,28 @@
 
                         &.md-icon-button {
                             margin: 0 6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $layout-breakpoint-sm) {
+
+    #mail {
+
+        .center {
+
+            .content-card {
+
+                .content-wrapper {
+
+                    .mail-tabs {
+
+                        .content {
+                            position: relative;
                         }
                     }
                 }

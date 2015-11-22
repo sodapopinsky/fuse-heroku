@@ -33,10 +33,10 @@
         <!-- / CONTENT HEADER -->
 
         <!-- CONTENT CARD -->
-        <div class="content-card" layout="column" flex ng-class="{'responsive-read-pane' : vm.responsiveReadPane}">
+        <div class="content-card" layout="column" flex>
 
             <!-- MAIL READ PANE TOOLBAR -->
-            <div class="toolbar mail-read-pane-toolbar" layout="row" layout-align="space-between center">
+            <div class="toolbar" layout="row" layout-align="space-between center" ng-if="vm.activeMailPaneIndex === 1">
                 <md-button class="md-icon-button"
                            ng-click="vm.closeReadPane()"
                            aria-label="Back"
@@ -48,7 +48,7 @@
             <!-- / MAIL READ PANE TOOLBAR -->
 
             <!-- CONTENT TOOLBAR -->
-            <div class="toolbar" layout="row" layout-align="space-between center">
+            <div class="toolbar" layout="row" layout-align="space-between center" ng-if="vm.activeMailPaneIndex === 0">
 
                 <div layout="row" layout-align="start center">
                     <md-checkbox aria-label="{{vm.allChecked?'Uncheck All':'Check All'}}" ng-checked="vm.allChecked"
@@ -191,17 +191,29 @@
             <!-- CONTENT WRAPPER -->
             <div class="content-wrapper" layout="row" flex>
 
-                <!-- MAIL LIST PANE -->
-                <md-content class="content mail-list-pane" flex="100" flex-gt-lg="50"
-                            ng-include="'app/main/apps/mail/views/mail-list/mail-list.html'" ms-scroll>
-                </md-content>
-                <!-- / MAIL LIST PANE -->
+                <md-tabs md-selected="vm.activeMailPaneIndex" class="mail-tabs" md-dynamic-height="{{vm.dynamicHeight}}" flex>
+                    <md-tab>
+                        <md-tab-label>Mails</md-tab-label>
+                        <md-tab-body>
+                            <!-- MAIL LIST PANE -->
+                            <div class="content mail-list-pane"
+                                 ng-include="'app/main/apps/mail/views/mail-list/mail-list.html'" ms-scroll>
+                            </div>
+                            <!-- / MAIL LIST PANE -->
+                        </md-tab-body>
+                    </md-tab>
 
-                <!-- MAIL READ PANE -->
-                <md-content class="content mail-read-pane" flex="50"
-                            ng-include="'app/main/apps/mail/views/mail-read/mail-read.html'" ms-scroll>
-                </md-content>
-                <!-- / MAIL READ PANE -->
+                    <md-tab>
+                        <md-tab-label>Read Pane</md-tab-label>
+                        <md-tab-body>
+                            <!-- MAIL READ PANE -->
+                            <div class="content mail-read-pane"
+                                 ng-include="'app/main/apps/mail/views/mail-read/mail-read.html'" ms-scroll>
+                            </div>
+                            <!-- / MAIL READ PANE -->
+                        </md-tab-body>
+                    </md-tab>
+                </md-tabs>
 
             </div>
             <!-- / CONTENT WRAPPER -->
