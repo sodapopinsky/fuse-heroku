@@ -29,7 +29,7 @@
                         templateUrl: 'app/sidenav/navigation-classic/navigation-classic.html',
                         controller : 'NavigationClassicController as vm'
                     },*/
-                    // Automated Navigation (service based)
+                    // Automated Navigation (data based)
                     'navigation@app': {
                         templateUrl: 'app/sidenav/navigation/navigation.html',
                         controller : 'NavigationController as vm'

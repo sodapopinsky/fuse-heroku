@@ -16,18 +16,6 @@ body {
     left: 0;
 }
 
-#content-container {
-    position: relative;
-
-    #content {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-    }
-}
-
 // Boxed Layout
 body {
 
@@ -51,9 +39,14 @@ body {
     max-height: 100%;
 
     #content-container {
+        position: relative;
 
         #content {
+            position: absolute;
             top: $toolbarHeight;
+            right: 0;
+            bottom: 0;
+            left: 0;
         }
     }
 }
@@ -70,16 +63,5 @@ body {
         right: 0;
         bottom: 0;
         left: 0;
-    }
-}
-
-// Single Scroll Layout
-#layout-single-scroll {
-
-    #content-container {
-
-        #content {
-            top: $toolbarHeight;
-        }
     }
 }
