@@ -377,7 +377,7 @@
     }
 
     /** @ngInject */
-    function msNavigationFactoryDirective($rootScope, $mdSidenav, msNavigationFactory)
+    function msNavigationFactoryDirective($rootScope, $timeout, $mdSidenav, msNavigationFactory)
     {
         return {
             restrict   : 'E',
@@ -414,8 +414,16 @@
 
                         if ( scope.folded )
                         {
-                            // Collapse everything
-                            $rootScope.$broadcast('msNavigation::collapse');
+                            // Collapse everything.
+                            // This must be inside a $timeout because by the
+                            // time we call this, the 'msNavigation::collapse'
+                            // event listener is not registered yet. $timeout
+                            // will ensure that it will be called after it is
+                            // registered.
+                            $timeout(function ()
+                            {
+                                $rootScope.$broadcast('msNavigation::collapse');
+                            });
 
                             // Add class to the body
                             bodyEl.addClass('ms-navigation-folded');
@@ -442,19 +450,11 @@
                         {
                             if ( current )
                             {
-                                // Set the navigation's folded open
-                                // status to false
-                                msNavigationFactory.setFoldedOpen(false);
-
                                 // Collapse everything
                                 $rootScope.$broadcast('msNavigation::collapse');
                             }
                             else
                             {
-                                // Set the navigation's folded open
-                                // status to true.
-                                msNavigationFactory.setFoldedOpen(true);
-
                                 // Expand the active one and its parents
                                 var activeItem = msNavigationFactory.getActiveItem();
                                 if ( activeItem )
@@ -671,15 +671,6 @@
 
             $scope.$on('msNavigation::stateMatched', function ()
             {
-                // If the navigation is folded and is not folded open, do not expand
-                var folded = msNavigationFactory.getFolded(),
-                    foldedOpen = msNavigationFactory.getFoldedOpen();
-
-                if ( folded && !foldedOpen )
-                {
-                    return;
-                }
-
                 // Expand if the current scope is collapsable and is collapsed
                 if ( vm.collapsable && vm.collapsed )
                 {
