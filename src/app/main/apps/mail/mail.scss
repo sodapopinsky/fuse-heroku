@@ -63,10 +63,6 @@
 
                     md-tabs-content-wrapper {
                         top: 0;
-
-                        md-tab-content {
-
-                        }
                     }
 
                     .content {
@@ -110,9 +106,11 @@
                             md-tab-content {
                                 width: 50%;
                                 opacity: 1;
+                                animation: none !important;
 
                                 * {
                                     visibility: visible;
+                                    transition: none !important;
                                 }
                             }
                         }
