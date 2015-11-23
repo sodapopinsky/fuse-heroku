@@ -7,7 +7,7 @@
         .controller('ToolbarController', ToolbarController);
 
     /** @ngInject */
-    function ToolbarController($rootScope, $mdSidenav, msNavigationFactory, $translate, $mdToast)
+    function ToolbarController($rootScope, $mdSidenav, msNavigationFactory, msNavFoldService, $translate, $mdToast)
     {
         var vm = this;
 
@@ -94,7 +94,11 @@
         {
             event.preventDefault();
 
+            // Disable this, if you want to use classic navigation
             msNavigationFactory.toggleFolded();
+
+            // Enable this, if you want to use classic navigation
+            //msNavFoldService.toggleFold();
         }
 
         /**

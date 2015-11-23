@@ -83,7 +83,7 @@
             restrict: 'A',
             link    : function (scope, iElement, iAttrs)
             {
-                var isFolded = (iAttrs.msNavIsFoldedDirective === 'true'),
+                var isFolded = (iAttrs.msNavIsFolded === 'true'),
                     isFoldedOpen = false,
                     body = angular.element($document[0].body),
                     openOverlay = angular.element('<div id="ms-nav-fold-open-overlay"></div>'),
