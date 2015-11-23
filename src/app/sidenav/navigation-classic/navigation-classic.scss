@@ -38,12 +38,78 @@
         .fold-toggle {
             transition: transform 0.3s ease-in-out 0.1s;
             transform: rotate(0deg);
+            opacity: 1;
             margin: 0;
             cursor: pointer;
         }
     }
 
     &:not(.md-locked-open) {
+
+        ms-nav {
+            overflow: hidden
+        }
+    }
+
+    &:not(.md-locked-open) {
         box-shadow: $whiteframe-shadow-8dp;
+    }
+}
+
+// Folded navigation
+@media only screen and (min-width: $layout-breakpoint-md) {
+
+    .ms-nav-folded {
+
+        #content-container {
+            margin-left: $navigationFoldedWidth;
+        }
+
+        #navigation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 999;
+
+            .navigation-header {
+
+                .fold-toggle {
+                    transform: rotate(180deg);
+                    opacity: 0;
+                }
+            }
+        }
+
+        &.ms-nav-folded-open {
+
+            #navigation {
+
+                .navigation-header {
+
+                    .fold-toggle {
+                        transition: transform 0.3s ease-in-out 0.1s, opacity 0.3s ease-in-out 0.2s;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        &:not(.ms-nav-folded-open) {
+
+            #navigation {
+                width: $navigationFoldedWidth;
+                min-width: $navigationFoldedWidth;
+                max-width: $navigationFoldedWidth;
+
+                .navigation-header {
+                    padding: 0 16px;
+
+                    .logo-text {
+                        display: none;
+                    }
+                }
+            }
+        }
     }
 }
