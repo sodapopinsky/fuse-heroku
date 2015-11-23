@@ -507,10 +507,10 @@
                             }
 
                             // Remove body class
-                            bodyEl.removeClass('ms-navigation-folded');
+                            bodyEl.removeClass('ms-navigation-folded ms-navigation-folded-open');
 
-                            // Set fold collapser
-                            setFoldCollapser();
+                            // Remove fold collapser
+                            removeFoldCollapser();
                         }
                     }
 
@@ -520,7 +520,13 @@
                     function setFoldExpander()
                     {
                         iElement.parent().append(foldExpanderEl);
-                        foldExpanderEl.on('mouseenter touchstart', onFoldExpanderHover);
+
+                        // Let everything settle for a moment
+                        // before registering the event listener
+                        $timeout(function ()
+                        {
+                            foldExpanderEl.on('mouseenter touchstart', onFoldExpanderHover);
+                        });
                     }
 
                     /**
@@ -530,6 +536,14 @@
                     {
                         bodyEl.find('#main').append(foldCollapserEl);
                         foldCollapserEl.on('mouseenter touchstart', onFoldCollapserHover);
+                    }
+
+                    /**
+                     * Remove fold collapser
+                     */
+                    function removeFoldCollapser()
+                    {
+                        foldCollapserEl.remove();
                     }
 
                     /**

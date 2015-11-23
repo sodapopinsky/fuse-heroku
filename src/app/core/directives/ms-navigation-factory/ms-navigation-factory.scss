@@ -1,13 +1,3 @@
-#navigation {
-
-    &:not(.md-locked-open) {
-
-        ms-navigation-factory {
-
-        }
-    }
-}
-
 .ms-navigation-factory {
     display: block;
     position: relative;
@@ -245,85 +235,62 @@
 
         &.ms-navigation-folded {
 
-            #content-container {
-                margin-left: $navigationFoldedWidth;
-            }
-
-            #navigation {
-                position: absolute;
-            }
-
             &:not(.ms-navigation-folded-open) {
 
-                #navigation {
-                    position: absolute;
-                    width: $navigationFoldedWidth;
-                    min-width: $navigationFoldedWidth;
-                    max-width: $navigationFoldedWidth;
+                .ms-navigation-factory {
 
-                    .navigation-header {
-                        padding: 0 16px;
-
-                        .logo-text {
-                            display: none;
-                        }
+                    .animate-height {
+                        transition: none;
                     }
 
-                    .ms-navigation-factory {
+                    .ms-navigation-node {
 
-                        .animate-height {
-                            transition: none;
+                        .ms-navigation-item {
+
+                            .ms-navigation-title {
+
+                                .icon {
+                                    margin: 0;
+                                }
+
+                                span {
+                                    opacity: 0;
+                                    visibility: hidden;
+                                }
+
+                                .arrow {
+                                    opacity: 0;
+                                    visibility: hidden;
+                                }
+                            }
                         }
 
-                        .ms-navigation-node {
+                        &.group {
 
-                            .ms-navigation-item {
+                            > .ms-navigation-item {
 
                                 .ms-navigation-title {
 
-                                    .icon {
-                                        margin: 0;
-                                    }
-
-                                    span {
-                                        opacity: 0;
-                                        visibility: hidden;
-                                    }
-
-                                    .arrow {
-                                        opacity: 0;
-                                        visibility: hidden;
-                                    }
-                                }
-                            }
-
-                            &.group {
-
-                                > .ms-navigation-item {
-
-                                    .ms-navigation-title {
-
-                                        &:before {
-                                            content: '';
-                                            display: block;
-                                            position: relative;
-                                            width: 16px;
-                                            border-top: 1px solid rgba(255, 255, 255, 0.12);
-                                        }
+                                    &:before {
+                                        content: '';
+                                        display: block;
+                                        position: relative;
+                                        width: 16px;
+                                        border-top: 1px solid rgba(255, 255, 255, 0.12);
                                     }
                                 }
                             }
                         }
                     }
+                }
 
-                    #ms-navigation-fold-expander {
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                        bottom: 0;
-                        left: 0;
-                        z-index: 999;
-                    }
+                #ms-navigation-fold-expander {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    z-index: 999;
                 }
             }
 
@@ -336,6 +303,5 @@
                 z-index: 59;
             }
         }
-
     }
 }
