@@ -15,7 +15,7 @@
     function msNavigationFactoryProvider()
     {
         // Inject $log service
-        var $log =  angular.injector(['ng']).get('$log');
+        var $log = angular.injector(['ng']).get('$log');
 
         // Navigation array
         var navigation = [];
@@ -353,7 +353,7 @@
     }
 
     /** @ngInject */
-    function MsNavigationFactoryController($scope, msNavigationFactory)
+    function MsNavigationFactoryController(msNavigationFactory)
     {
         var vm = this;
 
@@ -442,11 +442,19 @@
                         {
                             if ( current )
                             {
+                                // Set the navigation's folded open
+                                // status to false
+                                msNavigationFactory.setFoldedOpen(false);
+
                                 // Collapse everything
                                 $rootScope.$broadcast('msNavigation::collapse');
                             }
                             else
                             {
+                                // Set the navigation's folded open
+                                // status to true.
+                                msNavigationFactory.setFoldedOpen(true);
+
                                 // Expand the active one and its parents
                                 var activeItem = msNavigationFactory.getActiveItem();
                                 if ( activeItem )
@@ -663,7 +671,16 @@
 
             $scope.$on('msNavigation::stateMatched', function ()
             {
-                // Only expand if the current scope is collapsable and is collapsed
+                // If the navigation is folded and is not folded open, do not expand
+                var folded = msNavigationFactory.getFolded(),
+                    foldedOpen = msNavigationFactory.getFoldedOpen();
+
+                if ( folded && !foldedOpen )
+                {
+                    return;
+                }
+
+                // Expand if the current scope is collapsable and is collapsed
                 if ( vm.collapsable && vm.collapsed )
                 {
                     $scope.$evalAsync(function ()
@@ -840,7 +857,7 @@
                     {
                         // Clear the inline styles after animation done
                         expandEl.css({
-                            'height' : ''
+                            'height': ''
                         });
                     }
                 );
