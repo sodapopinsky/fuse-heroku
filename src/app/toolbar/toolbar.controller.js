@@ -7,7 +7,7 @@
         .controller('ToolbarController', ToolbarController);
 
     /** @ngInject */
-    function ToolbarController($rootScope, $mdSidenav, msNavigationFactory, msNavFoldService, $translate, $mdToast)
+    function ToolbarController($rootScope, $mdSidenav, $translate, $mdToast)
     {
         var vm = this;
 
@@ -67,7 +67,6 @@
 
         // Methods
         vm.toggleSidenav = toggleSidenav;
-        vm.toggleMsNavigationFolded = toggleMsNavigationFolded;
         vm.logout = logout;
         vm.changeLanguage = changeLanguage;
         vm.setUserStatus = setUserStatus;
@@ -85,20 +84,6 @@
         function toggleSidenav(sidenavId)
         {
             $mdSidenav(sidenavId).toggle();
-        }
-
-        /**
-         * Toggle ms-navigation folded status
-         */
-        function toggleMsNavigationFolded(event)
-        {
-            event.preventDefault();
-
-            // Disable this, if you want to use classic navigation
-            msNavigationFactory.toggleFolded();
-
-            // Enable this, if you want to use classic navigation
-            //msNavFoldService.toggleFold();
         }
 
         /**

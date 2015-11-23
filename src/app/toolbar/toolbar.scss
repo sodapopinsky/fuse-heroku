@@ -12,19 +12,6 @@
         border-radius: 0;
     }
 
-    #navigation-sidenav-mode-toggle {
-        width: $toolbarHeight;
-        height: $toolbarHeight;
-        margin: 0;
-        border-right: 1px solid rgba(0, 0, 0, 0.12);
-        border-radius: 0;
-
-        md-icon {
-            transition: transform 0.3s ease-in-out 0.1s;
-            transform: rotate(0deg);
-        }
-    }
-
     #search {
         font-size: 13px;
 
@@ -154,21 +141,6 @@
 
     > p {
         margin: 8px 0;
-    }
-}
-
-.ms-nav-folded,
-.ms-navigation-folded {
-
-    #toolbar {
-
-        #navigation-sidenav-mode-toggle {
-
-            md-icon {
-                transition: transform 0.3s ease-in-out 0.1s;
-                transform: rotate(180deg);
-            }
-        }
     }
 }
 
