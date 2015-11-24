@@ -22,7 +22,7 @@
         };
         vm.selectedFilter = {
             filter: 'Start Date',
-            next  : 'Next 3 days'
+            dueDate  : 'Next 3 days'
         };
         vm.selectedProject = 'creapond';
 

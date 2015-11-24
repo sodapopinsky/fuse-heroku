@@ -4,7 +4,6 @@
         "SEARCH": "Search for a task or tag",
         "FILTER": "Filter",
         "ORDER": "Order",
-        "INTERVAL": "Interval",
         "START_DATE": "Start Date",
         "DUE_DATE": "Due Date",
         "MANUAL": "Manual",
