@@ -17,6 +17,7 @@
 
         label {
             padding: 0 16px 0 24px;
+
             md-icon {
                 line-height: $toolbarHeight;
             }
@@ -104,7 +105,6 @@
             height: $toolbarHeight;
             margin: 0;
             padding: 0 16px;
-            border-left: 1px solid rgba(0, 0, 0, 0.12);
             border-radius: 0;
 
             .iso {
@@ -121,8 +121,13 @@
         width: $toolbarHeight;
         height: $toolbarHeight;
         margin: 0;
-        border-left: 1px solid rgba(0, 0, 0, 0.12);
         border-radius: 0;
+    }
+
+    .toolbar-separator {
+        height: $toolbarHeight;
+        width: 1px;
+        background: rgba(0, 0, 0, 0.12);
     }
 }
 
@@ -137,7 +142,7 @@
 }
 
 #language-message {
-    padding: 8px 16px;
+    min-height: 88px;
 
     > p {
         margin: 8px 0;

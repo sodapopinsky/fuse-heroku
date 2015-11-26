@@ -1,4 +1,5 @@
 .ms-navigation-factory {
+
     display: block;
     position: relative;
     color: rgba(255, 255, 255, 0.70);
@@ -228,6 +229,119 @@
     }
 }
 
+#horizontal-navigation {
+
+    .navigation-toggle {
+
+        md-icon {
+            color: #FFFFFF !important;
+        }
+    }
+
+    .ms-navigation-horizontal-factory {
+        display: flex;
+        position: relative;
+        user-select: none;
+
+        ul, li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        // First <ul>
+        .horizontal {
+            display: flex;
+            flex: 1;
+
+            li {
+                position: relative;
+                cursor: pointer;
+
+                &:not(.active):hover {
+                    background: rgba(0, 0, 0, 0.12);
+                }
+            }
+
+            // Root menu items
+            > li {
+                padding: 20px 24px;
+
+                > .ms-navigation-horizontal-item {
+
+                    > .ms-navigation-horizontal-title {
+                        padding: 0;
+
+                        .arrow {
+                            display: none;
+                        }
+                    }
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
+            // Every menu item that has children
+            .has-children {
+
+                ul {
+                    display: none;
+                    position: absolute;
+                    z-index: 999;
+                    min-width: 200px;
+                    box-shadow: $whiteframe-shadow-8dp;
+                    top: 0;
+                    left: 100%;
+                }
+
+                &:hover {
+
+                    > ul {
+                        display: block;
+                    }
+                }
+            }
+
+            // Root menu items that has children
+            > .has-children {
+
+                > ul {
+                    top: 100%;
+                    left: 0;
+                }
+            }
+
+            .ms-navigation-horizontal-item {
+
+                .ms-navigation-horizontal-title {
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    color: #FFFFFF;
+                    white-space: nowrap;
+                    padding: 14px 16px;
+                    text-decoration: none;
+
+                    &.active {
+                        cursor: default;
+                    }
+
+                    .icon {
+                        color: #FFFFFF;
+                        margin-right: 8px;
+                    }
+
+                    .arrow {
+                        margin-left: 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
 // Folded navigation
 @media only screen and (min-width: $layout-breakpoint-md) {
 
@@ -239,44 +353,47 @@
 
                 .ms-navigation-factory {
 
-                    .animate-height {
-                        transition: none;
-                    }
+                    &.ms-navigation-structure-default {
 
-                    .ms-navigation-node {
-
-                        .ms-navigation-item {
-
-                            .ms-navigation-title {
-
-                                .icon {
-                                    margin: 0;
-                                }
-
-                                span {
-                                    opacity: 0;
-                                    visibility: hidden;
-                                }
-
-                                .arrow {
-                                    opacity: 0;
-                                    visibility: hidden;
-                                }
-                            }
+                        .animate-height {
+                            transition: none;
                         }
 
-                        &.group {
+                        .ms-navigation-node {
 
-                            > .ms-navigation-item {
+                            .ms-navigation-item {
 
                                 .ms-navigation-title {
 
-                                    &:before {
-                                        content: '';
-                                        display: block;
-                                        position: relative;
-                                        width: 16px;
-                                        border-top: 1px solid rgba(255, 255, 255, 0.12);
+                                    .icon {
+                                        margin: 0;
+                                    }
+
+                                    span {
+                                        opacity: 0;
+                                        visibility: hidden;
+                                    }
+
+                                    .arrow {
+                                        opacity: 0;
+                                        visibility: hidden;
+                                    }
+                                }
+                            }
+
+                            &.group {
+
+                                > .ms-navigation-item {
+
+                                    .ms-navigation-title {
+
+                                        &:before {
+                                            content: '';
+                                            display: block;
+                                            position: relative;
+                                            width: 16px;
+                                            border-top: 1px solid rgba(255, 255, 255, 0.12);
+                                        }
                                     }
                                 }
                             }
@@ -301,6 +418,125 @@
                 bottom: 0;
                 left: 0;
                 z-index: 59;
+            }
+        }
+    }
+}
+
+// Mobile horizontal navigation
+@media only screen and (max-width: $layout-breakpoint-md) {
+
+    body {
+
+        &.ms-navigation-horizontal-mobile-menu-active {
+
+            #horizontal-navigation {
+
+                .navigation-toggle {
+                    position: absolute;
+                    top:0;
+                    right: 0;
+                    left: 0;
+                    z-index: 9999;
+                    padding: 4px 16px;
+                }
+
+                .ms-navigation-horizontal-factory {
+                    display: block !important;
+                }
+            }
+
+        }
+    }
+
+    #horizontal-navigation {
+
+        .ms-navigation-horizontal-factory {
+            position: absolute;
+            display: none;
+            top: 48px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 0;
+            z-index: 9999;
+            overflow-x: hidden;
+            overflow-y: scroll;
+
+            .horizontal {
+                flex-direction: column;
+                min-height: 100%;
+                width: 100%;
+
+                li {
+
+                    &:not(.active) {
+
+                        &:hover {
+                            background: none;
+                        }
+
+                        .ms-navigation-horizontal-item {
+
+                            &:hover {
+                                background: rgba(0, 0, 0, 0.12);
+                            }
+                        }
+                    }
+                }
+
+                > li {
+                    padding: 0 16px;
+
+                    > .ms-navigation-horizontal-item {
+                        padding: 0 16px;
+
+                        > .ms-navigation-horizontal-title {
+
+                            .arrow {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+
+                // Every menu item that has children
+                .has-children {
+
+                    ul {
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                        box-shadow: none;
+                    }
+
+                    &:hover {
+
+                        > ul {
+                            display: none;
+                        }
+                    }
+
+                    .expanded {
+
+                        > .ms-navigation-horizontal-title {
+
+                            .arrow {
+                                transform: rotate(90deg);
+                            }
+                        }
+
+                        + ul {
+                            display: block;
+                            margin-left: 16px;
+                        }
+                    }
+                }
+
+                .ms-navigation-horizontal-item {
+                    min-height: 48px;
+                    height: 48px;
+                }
             }
         }
     }

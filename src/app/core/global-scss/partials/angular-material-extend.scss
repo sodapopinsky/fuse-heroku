@@ -176,3 +176,54 @@ md-select {
 md-sidenav {
     -webkit-overflow-scrolling: touch;
 }
+
+// Toolbar
+md-toolbar {
+
+    // Colored toolbar element compatibility
+    &.colored-toolbar {
+        color: rgba(255, 255, 255, 0.87);
+
+        md-menu-bar {
+
+            md-menu {
+
+                &.md-open {
+
+                    > button {
+                        background: rgba(0, 0, 0, 0.12);
+                    }
+                }
+
+                .md-open-menu-container {
+                    background: #FFFFFF;
+
+                    md-menu-item {
+
+                        button {
+                            color: rgba(0, 0, 0, 0.87) !important;
+                        }
+
+                        md-icon {
+                            color: rgba(0, 0, 0, 0.54);
+                        }
+                    }
+                }
+            }
+        }
+
+        md-menu {
+
+            &.md-open {
+
+                > button {
+                    background: rgba(0, 0, 0, 0.12);
+                }
+            }
+        }
+
+        input {
+            color: rgba(255, 255, 255, 0.87) !important;
+        }
+    }
+}

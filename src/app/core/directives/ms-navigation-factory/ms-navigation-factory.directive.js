@@ -5,11 +5,17 @@
     angular
         .module('app.core')
         .provider('msNavigationFactory', msNavigationFactoryProvider)
+        // Vertical
         .controller('MsNavigationFactoryController', MsNavigationFactoryController)
         .directive('msNavigationFactory', msNavigationFactoryDirective)
         .controller('MsNavigationNodeController', MsNavigationNodeController)
         .directive('msNavigationNode', msNavigationNodeDirective)
-        .directive('msNavigationItem', msNavigationItemDirective);
+        .directive('msNavigationItem', msNavigationItemDirective)
+        //Horizontal
+        .directive('msNavigationHorizontalFactory', msNavigationHorizontalFactoryDirective)
+        .controller('MsNavigationHorizontalNodeController', MsNavigationHorizontalNodeController)
+        .directive('msNavigationHorizontalNode', msNavigationHorizontalNodeDirective)
+        .directive('msNavigationHorizontalItem', msNavigationHorizontalItemDirective);
 
     /** @ngInject */
     function msNavigationFactoryProvider()
@@ -943,6 +949,140 @@
                         iElement.on('click', MsNavigationNodeCtrl.toggleCollapsed);
                     }
 
+                };
+            }
+        };
+    }
+
+    /** @ngInject */
+    function msNavigationHorizontalFactoryDirective(msNavigationFactory)
+    {
+        return {
+            restrict   : 'E',
+            scope      : true,
+            controller : 'MsNavigationFactoryController as vm',
+            templateUrl: 'app/core/directives/ms-navigation-factory/templates/horizontal.html',
+            transclude : true,
+            compile    : function (tElement)
+            {
+                tElement.addClass('ms-navigation-horizontal-factory');
+
+                return function postLink(scope)
+                {
+                    // Store the navigation in the service for public access
+                    msNavigationFactory.setNavigationScope(scope);
+                };
+            }
+        };
+    }
+
+    /** @ngInject */
+    function MsNavigationHorizontalNodeController($scope)
+    {
+        var vm = this;
+
+        // Data
+        vm.node = $scope.node;
+        vm.hasChildren = undefined;
+        vm.group = undefined;
+
+        // Methods
+        vm.setElement = setElement;
+        vm.getClass = getClass;
+
+        //////////
+
+        init();
+
+        /**
+         * Initialize
+         */
+        function init()
+        {
+            // Setup the initial values
+
+            // Has children?
+            vm.hasChildren = vm.node.children.length > 0;
+
+            // Is group?
+            vm.group = !!(angular.isDefined(vm.node.group) && vm.node.group === true);
+        }
+
+        /**
+         * Set element
+         *
+         * @param element
+         */
+        function setElement(element)
+        {
+            vm.element = element;
+        }
+
+        /**
+         * Return the class
+         *
+         * @returns {*}
+         */
+        function getClass()
+        {
+            return vm.node.class;
+        }
+    }
+
+    /** @ngInject */
+    function msNavigationHorizontalNodeDirective()
+    {
+        return {
+            restrict        : 'A',
+            bindToController: {
+                node: '=msNavigationHorizontalNode'
+            },
+            controller      : 'MsNavigationHorizontalNodeController as vm',
+            compile         : function (tElement)
+            {
+                tElement.addClass('ms-navigation-horizontal-node');
+
+                return function postLink(scope, iElement, iAttrs, MsNavigationHorizontalNodeCtrl)
+                {
+                    // Set the element on the controller for later use
+                    MsNavigationHorizontalNodeCtrl.setElement(iElement);
+
+                    // Add custom classes
+                    iElement.addClass(MsNavigationHorizontalNodeCtrl.getClass());
+
+                    // Add group class if it's a group
+                    if ( MsNavigationHorizontalNodeCtrl.group )
+                    {
+                        iElement.addClass('group');
+                    }
+                };
+            }
+        };
+    }
+
+    /** @ngInject */
+    function msNavigationHorizontalItemDirective($mdMedia)
+    {
+        return {
+            restrict: 'A',
+            require : '^msNavigationHorizontalNode',
+            compile : function (tElement)
+            {
+                tElement.addClass('ms-navigation-horizontal-item');
+
+                return function postLink(scope, iElement, iAttrs, MsNavigationHorizontalNodeCtrl)
+                {
+                    iElement.on('click', onClick);
+
+                    function onClick()
+                    {
+                        if ( !MsNavigationHorizontalNodeCtrl.hasChildren || $mdMedia('gt-md') )
+                        {
+                            return;
+                        }
+
+                        iElement.toggleClass('expanded');
+                    }
                 };
             }
         };
