@@ -11,14 +11,14 @@
 <ms-nav ms-nav-is-folded="false" ms-scroll="vm.msScrollOptions" class="scrollable">
 
     <ms-nav-item ms-nav-title>
-        <span>FUSE</span>
+        <span>APPS</span>
     </ms-nav-item>
 
     <ms-nav-item ms-nav-toggle>
         <a ms-nav-button md-ink-ripple>
             <i class="icon-tile-four s16"></i>
             <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.DASHBOARDS">Dashboards</span>
-            <i class="icon-chevron-down s16 arrow"></i>
+            <i class="icon-chevron-right s16 arrow"></i>
         </a>
 
         <ms-nav-toggle-items>
@@ -72,146 +72,147 @@
         </a>
     </ms-nav-item>
 
+    <ms-nav-item ms-nav-title>
+        <span>PAGES</span>
+    </ms-nav-item>
+
     <ms-nav-item ms-nav-toggle>
         <a ms-nav-button md-ink-ripple>
-            <i class="icon-file-outline s16"></i>
-            <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.PAGES">Pages</span>
-            <i class="icon-chevron-down s16 arrow"></i>
+            <i class="icon-lock s16"></i>
+            <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.AUTHENTICATION">Authentication</span>
+            <i class="icon-chevron-right s16 arrow"></i>
         </a>
 
         <ms-nav-toggle-items>
-            <ms-nav-item ms-nav-toggle>
-                <a ms-nav-button md-ink-ripple>
-                    <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.AUTHENTICATION">Authentication</span>
-                    <i class="icon-chevron-down s16 arrow"></i>
-                </a>
-
-                <ms-nav-toggle-items>
-                    <ms-nav-item>
-                        <a ms-nav-button ui-sref="app.pages_auth_login" ui-sref-active="active md-accent-bg" md-ink-ripple>
-                            <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.LOGIN">Login</span>
-                        </a>
-                    </ms-nav-item>
-
-                    <ms-nav-item>
-                        <a ms-nav-button ui-sref="app.pages_auth_login-v2" ui-sref-active="active md-accent-bg" md-ink-ripple>
-                            <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.LOGIN_V2">Login v2</span>
-                        </a>
-                    </ms-nav-item>
-
-                    <ms-nav-item>
-                        <a ms-nav-button ui-sref="app.pages_auth_register" ui-sref-active="active md-accent-bg" md-ink-ripple>
-                            <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.REGISTER">Register</span>
-                        </a>
-                    </ms-nav-item>
-
-                    <ms-nav-item>
-                        <a ms-nav-button ui-sref="app.pages_auth_register-v2" ui-sref-active="active md-accent-bg" md-ink-ripple>
-                            <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.REGISTER_V2">Register v2</span>
-                        </a>
-                    </ms-nav-item>
-
-                    <ms-nav-item>
-                        <a ms-nav-button ui-sref="app.pages_auth_forgot-password" ui-sref-active="active md-accent-bg"
-                           md-ink-ripple>
-                            <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.FORGOT_PASSWORD">Forgot Password</span>
-                        </a>
-                    </ms-nav-item>
-
-                    <ms-nav-item>
-                        <a ms-nav-button ui-sref="app.pages_auth_reset-password" ui-sref-active="active md-accent-bg"
-                           md-ink-ripple>
-                            <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.RESET_PASSWORD">Reset Password</span>
-                        </a>
-                    </ms-nav-item>
-
-                    <ms-nav-item>
-                        <a ms-nav-button ui-sref="app.pages_auth_lock" ui-sref-active="active md-accent-bg" md-ink-ripple>
-                            <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.LOCK_SCREEN">Lock Screen</span>
-                        </a>
-                    </ms-nav-item>
-                </ms-nav-toggle-items>
-            </ms-nav-item>
-
             <ms-nav-item>
-                <a ms-nav-button ui-sref="app.pages_coming-soon" ui-sref-active="active md-accent-bg" md-ink-ripple>
-                    <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.COMING_SOON">Coming Soon</span>
-                </a>
-            </ms-nav-item>
-
-            <ms-nav-item ms-nav-toggle>
-                <a ms-nav-button md-ink-ripple>
-                    <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.ERRORS">Errors</span>
-                    <i class="icon-chevron-down s16 arrow"></i>
-                </a>
-
-                <ms-nav-toggle-items>
-                    <ms-nav-item>
-                        <a ms-nav-button ui-sref="app.pages_errors_error-404" ui-sref-active="active md-accent-bg" md-ink-ripple>
-                            <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.404">404</span>
-                        </a>
-                    </ms-nav-item>
-
-                    <ms-nav-item>
-                        <a ms-nav-button ui-sref="app.pages_errors_error-500" ui-sref-active="active md-accent-bg" md-ink-ripple>
-                            <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.500">500</span>
-                        </a>
-                    </ms-nav-item>
-                </ms-nav-toggle-items>
-            </ms-nav-item>
-
-            <ms-nav-item>
-                <a ms-nav-button ui-sref="app.pages_invoice" ui-sref-active="active md-accent-bg" md-ink-ripple>
-                    <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.INVOICE">Invoice</span>
+                <a ms-nav-button ui-sref="app.pages_auth_login" ui-sref-active="active md-accent-bg" md-ink-ripple>
+                    <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.LOGIN">Login</span>
                 </a>
             </ms-nav-item>
 
             <ms-nav-item>
-                <a ms-nav-button ui-sref="app.pages_maintenance" ui-sref-active="active md-accent-bg" md-ink-ripple>
-                    <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.MAINTENANCE">Maintenance</span>
+                <a ms-nav-button ui-sref="app.pages_auth_login-v2" ui-sref-active="active md-accent-bg" md-ink-ripple>
+                    <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.LOGIN_V2">Login v2</span>
                 </a>
             </ms-nav-item>
 
             <ms-nav-item>
-                <a ms-nav-button ui-sref="app.pages_profile" ui-sref-active="active md-accent-bg" md-ink-ripple>
-                    <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.PROFILE">Profile</span>
+                <a ms-nav-button ui-sref="app.pages_auth_register" ui-sref-active="active md-accent-bg" md-ink-ripple>
+                    <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.REGISTER">Register</span>
                 </a>
             </ms-nav-item>
 
             <ms-nav-item>
-                <a ms-nav-button ui-sref="app.pages_search" ui-sref-active="active md-accent-bg" md-ink-ripple>
-                    <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.SEARCH">Search</span>
+                <a ms-nav-button ui-sref="app.pages_auth_register-v2" ui-sref-active="active md-accent-bg" md-ink-ripple>
+                    <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.REGISTER_V2">Register v2</span>
                 </a>
             </ms-nav-item>
 
-            <ms-nav-item ms-nav-toggle>
-                <div ms-nav-button md-ink-ripple>
-                    <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.TIMELINE">Timeline</span>
-                    <i class="icon-chevron-down s16 arrow"></i>
-                </div>
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.pages_auth_forgot-password" ui-sref-active="active md-accent-bg"
+                   md-ink-ripple>
+                    <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.FORGOT_PASSWORD">Forgot Password</span>
+                </a>
+            </ms-nav-item>
 
-                <ms-nav-toggle-items>
-                    <ms-nav-item>
-                        <a ms-nav-button ui-sref="app.pages_timeline" ui-sref-active="active md-accent-bg" md-ink-ripple>
-                            <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.TIMELINE_DEFAULT">Default</span>
-                        </a>
-                    </ms-nav-item>
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.pages_auth_reset-password" ui-sref-active="active md-accent-bg"
+                   md-ink-ripple>
+                    <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.RESET_PASSWORD">Reset Password</span>
+                </a>
+            </ms-nav-item>
 
-                    <ms-nav-item>
-                        <a ms-nav-button ui-sref="app.pages_timeline_left" ui-sref-active="active md-accent-bg" md-ink-ripple>
-                            <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.TIMELINE_LEFT_ALIGNED">Left Aligned</span>
-                        </a>
-                    </ms-nav-item>
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.pages_auth_lock" ui-sref-active="active md-accent-bg" md-ink-ripple>
+                    <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.LOCK_SCREEN">Lock Screen</span>
+                </a>
+            </ms-nav-item>
+        </ms-nav-toggle-items>
+    </ms-nav-item>
 
-                    <ms-nav-item>
-                        <a ms-nav-button ui-sref="app.pages_timeline_right" ui-sref-active="active md-accent-bg" md-ink-ripple>
+    <ms-nav-item>
+        <a ms-nav-button ui-sref="app.pages_coming-soon" ui-sref-active="active md-accent-bg" md-ink-ripple>
+            <i class="icon-alarm-check s16"></i>
+            <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.COMING_SOON">Coming Soon</span>
+        </a>
+    </ms-nav-item>
+
+    <ms-nav-item ms-nav-toggle>
+        <a ms-nav-button md-ink-ripple>
+            <i class="icon-alert s16"></i>
+            <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.ERRORS">Errors</span>
+            <i class="icon-chevron-right s16 arrow"></i>
+        </a>
+
+        <ms-nav-toggle-items>
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.pages_errors_error-404" ui-sref-active="active md-accent-bg" md-ink-ripple>
+                    <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.404">404</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.pages_errors_error-500" ui-sref-active="active md-accent-bg" md-ink-ripple>
+                    <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.500">500</span>
+                </a>
+            </ms-nav-item>
+        </ms-nav-toggle-items>
+    </ms-nav-item>
+
+    <ms-nav-item>
+        <a ms-nav-button ui-sref="app.pages_invoice" ui-sref-active="active md-accent-bg" md-ink-ripple>
+            <i class="icon-receipt s16"></i>
+            <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.INVOICE">Invoice</span>
+        </a>
+    </ms-nav-item>
+
+    <ms-nav-item>
+        <a ms-nav-button ui-sref="app.pages_maintenance" ui-sref-active="active md-accent-bg" md-ink-ripple>
+            <i class="icon-oil s16"></i>
+            <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.MAINTENANCE">Maintenance</span>
+        </a>
+    </ms-nav-item>
+
+    <ms-nav-item>
+        <a ms-nav-button ui-sref="app.pages_profile" ui-sref-active="active md-accent-bg" md-ink-ripple>
+            <i class="icon-account s16"></i>
+            <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.PROFILE">Profile</span>
+        </a>
+    </ms-nav-item>
+
+    <ms-nav-item>
+        <a ms-nav-button ui-sref="app.pages_search" ui-sref-active="active md-accent-bg" md-ink-ripple>
+            <i class="icon-magnify s16"></i>
+            <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.SEARCH">Search</span>
+        </a>
+    </ms-nav-item>
+
+    <ms-nav-item ms-nav-toggle>
+        <div ms-nav-button md-ink-ripple>
+            <i class="icon-view-stream s16"></i>
+            <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.TIMELINE">Timeline</span>
+            <i class="icon-chevron-right s16 arrow"></i>
+        </div>
+
+        <ms-nav-toggle-items>
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.pages_timeline" ui-sref-active="active md-accent-bg" md-ink-ripple>
+                    <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.TIMELINE_DEFAULT">Default</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.pages_timeline_left" ui-sref-active="active md-accent-bg" md-ink-ripple>
+                    <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.TIMELINE_LEFT_ALIGNED">Left Aligned</span>
+                </a>
+            </ms-nav-item>
+
+            <ms-nav-item>
+                <a ms-nav-button ui-sref="app.pages_timeline_right" ui-sref-active="active md-accent-bg" md-ink-ripple>
                             <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.TIMELINE_RIGHT_ALIGNED">Right
                                 Aligned</span>
-                        </a>
-                    </ms-nav-item>
-                </ms-nav-toggle-items>
+                </a>
             </ms-nav-item>
-
         </ms-nav-toggle-items>
     </ms-nav-item>
 
@@ -251,14 +252,14 @@
         <a ms-nav-button md-ink-ripple>
             <i class="icon-view-quilt s16"></i>
             <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.PAGE_LAYOUTS">Page Layouts</span>
-            <i class="icon-chevron-down s16 arrow"></i>
+            <i class="icon-chevron-right s16 arrow"></i>
         </a>
 
         <ms-nav-toggle-items>
             <ms-nav-item ms-nav-toggle="">
                 <a ms-nav-button md-ink-ripple>
                     <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.CARDED">Carded</span>
-                    <i class="icon-chevron-down s16 arrow"></i>
+                    <i class="icon-chevron-right s16 arrow"></i>
                 </a>
 
                 <ms-nav-toggle-items>
@@ -309,7 +310,7 @@
             <ms-nav-item ms-nav-toggle="">
                 <a ms-nav-button md-ink-ripple>
                     <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.SIMPLE">Simple</span>
-                    <i class="icon-chevron-down s16 arrow"></i>
+                    <i class="icon-chevron-right s16 arrow"></i>
                 </a>
 
                 <ms-nav-toggle-items>
@@ -381,7 +382,7 @@
         <a ms-nav-button md-ink-ripple>
             <i class="icon-poll s16"></i>
             <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.CHARTS">Charts</span>
-            <i class="icon-chevron-down s16 arrow"></i>
+            <i class="icon-chevron-right s16 arrow"></i>
         </a>
         <ms-nav-toggle-items>
 
@@ -416,14 +417,14 @@
         <a ms-nav-button md-ink-ripple>
             <i class="icon-layers s16"></i>
             <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.ELEMENTS">Elements</span>
-            <i class="icon-chevron-down s16 arrow"></i>
+            <i class="icon-chevron-right s16 arrow"></i>
         </a>
 
         <ms-nav-toggle-items>
             <ms-nav-item ms-nav-toggle="">
                 <a ms-nav-button md-ink-ripple>
                     <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.INPUTS">Inputs</span>
-                    <i class="icon-chevron-down s16 arrow"></i>
+                    <i class="icon-chevron-right s16 arrow"></i>
                 </a>
 
                 <ms-nav-toggle-items>
@@ -607,7 +608,7 @@
         <a ms-nav-button md-ink-ripple>
             <i class="icon-table-large s16"></i>
             <span class="ms-nav-label" translate="NAVIGATION_CLASSIC.TABLES">Tables</span>
-            <i class="icon-chevron-down s16 arrow"></i>
+            <i class="icon-chevron-right s16 arrow"></i>
         </a>
 
         <ms-nav-toggle-items>
