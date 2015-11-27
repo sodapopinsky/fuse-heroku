@@ -4,10 +4,10 @@
 
     angular
         .module('fuse')
-        .controller('AppController', AppController);
+        .controller('IndexController', IndexController);
 
     /** @ngInject */
-    function AppController(fuseTheming)
+    function IndexController(fuseTheming)
     {
         var vm = this;
 
