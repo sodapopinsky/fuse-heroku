@@ -44,11 +44,11 @@
     /** @ngInject */
     function config(msNavigationFactoryProvider)
     {
-        // COMPONENTS navigation definitions
+        // Navigation
         msNavigationFactoryProvider.saveItem('components', {
             title : 'COMPONENTS',
             group : true,
-            weight: 3
+            weight: 4
         });
 
         msNavigationFactoryProvider.saveItem('components.cards', {

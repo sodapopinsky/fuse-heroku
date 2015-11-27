@@ -28,12 +28,13 @@
         $translatePartialLoaderProvider.addPart('app/main/pages/auth/login');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('fuse.pages.auth', {
+        msNavigationFactoryProvider.saveItem('pages.auth', {
             title : 'Authentication',
+            icon  : 'icon-lock',
             weight: 1
         });
 
-        msNavigationFactoryProvider.saveItem('fuse.pages.auth.login', {
+        msNavigationFactoryProvider.saveItem('pages.auth.login', {
             title : 'Login',
             state : 'app.pages_auth_login',
             weight: 1

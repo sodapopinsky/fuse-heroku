@@ -61,22 +61,23 @@
             });
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('fuse.pages.timeline', {
+        msNavigationFactoryProvider.saveItem('pages.timeline', {
             title : 'Timeline',
+            icon  : 'icon-view-stream',
             weight: 8
         });
 
-        msNavigationFactoryProvider.saveItem('fuse.pages.timeline.default', {
+        msNavigationFactoryProvider.saveItem('pages.timeline.default', {
             title: 'Default',
             state: 'app.pages_timeline'
         });
 
-        msNavigationFactoryProvider.saveItem('fuse.pages.timeline.left-aligned', {
+        msNavigationFactoryProvider.saveItem('pages.timeline.left-aligned', {
             title: 'Left Aligned',
             state: 'app.pages_timeline_left'
         });
 
-        msNavigationFactoryProvider.saveItem('fuse.pages.timeline.right-aligned', {
+        msNavigationFactoryProvider.saveItem('pages.timeline.right-aligned', {
             title: 'Right Aligned',
             state: 'app.pages_timeline_right'
         });

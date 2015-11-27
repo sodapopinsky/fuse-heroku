@@ -28,7 +28,7 @@
         $translatePartialLoaderProvider.addPart('app/main/pages/errors/500');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('fuse.pages.errors.error-500', {
+        msNavigationFactoryProvider.saveItem('pages.errors.error-500', {
             title : '500',
             state : 'app.pages_errors_error-500',
             weight: 2

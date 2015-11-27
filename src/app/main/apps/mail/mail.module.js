@@ -31,7 +31,7 @@
         $translatePartialLoaderProvider.addPart('app/main/apps/mail');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('fuse.mail', {
+        msNavigationFactoryProvider.saveItem('apps.mail', {
             title : 'Mail',
             icon  : 'icon-email',
             state : 'app.mail',

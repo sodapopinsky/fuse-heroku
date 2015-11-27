@@ -31,7 +31,7 @@
         $translatePartialLoaderProvider.addPart('app/main/apps/file-manager');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('fuse.file-manager', {
+        msNavigationFactoryProvider.saveItem('apps.file-manager', {
             title : 'File Manager',
             icon  : 'icon-folder',
             state : 'app.file-manager',

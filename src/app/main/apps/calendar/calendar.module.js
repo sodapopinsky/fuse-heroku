@@ -27,7 +27,7 @@
         $translatePartialLoaderProvider.addPart('app/main/apps/calendar');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('fuse.calendar', {
+        msNavigationFactoryProvider.saveItem('apps.calendar', {
             title : 'Calendar',
             icon  : 'icon-calendar-today',
             state : 'app.calendar',

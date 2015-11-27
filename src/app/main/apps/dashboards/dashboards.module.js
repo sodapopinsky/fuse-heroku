@@ -14,28 +14,29 @@
     function config(msNavigationFactoryProvider)
     {
         // Navigation
-        msNavigationFactoryProvider.saveItem('fuse', {
-            title: 'FUSE',
-            group: true
+        msNavigationFactoryProvider.saveItem('apps', {
+            title : 'APPS',
+            group : true,
+            weight: 1
         });
 
-        msNavigationFactoryProvider.saveItem('fuse.dashboards', {
+        msNavigationFactoryProvider.saveItem('apps.dashboards', {
             title : 'Dashboards',
             icon  : 'icon-tile-four',
             weight: 1
         });
 
-        msNavigationFactoryProvider.saveItem('fuse.dashboards.project', {
-            title    : 'Project',
-            state    : 'app.dashboards_project'
+        msNavigationFactoryProvider.saveItem('apps.dashboards.project', {
+            title: 'Project',
+            state: 'app.dashboards_project'
         });
 
-        msNavigationFactoryProvider.saveItem('fuse.dashboards.server', {
+        msNavigationFactoryProvider.saveItem('apps.dashboards.server', {
             title: 'Server',
             state: 'app.dashboards_server'
         });
 
-        msNavigationFactoryProvider.saveItem('fuse.dashboards.analytics', {
+        msNavigationFactoryProvider.saveItem('apps.dashboards.analytics', {
             title: 'Analytics',
             state: 'app.dashboards_analytics'
         });

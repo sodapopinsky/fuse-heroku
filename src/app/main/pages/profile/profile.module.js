@@ -37,8 +37,9 @@
         $translatePartialLoaderProvider.addPart('app/main/pages/profile');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('fuse.pages.profile', {
+        msNavigationFactoryProvider.saveItem('pages.profile', {
             title : 'Profile',
+            icon  : 'icon-account',
             state : 'app.pages_profile',
             weight: 6
         });

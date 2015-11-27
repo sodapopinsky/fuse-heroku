@@ -28,7 +28,7 @@
         $translatePartialLoaderProvider.addPart('app/main/pages/auth/register-v2');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('fuse.pages.auth.register-v2', {
+        msNavigationFactoryProvider.saveItem('pages.auth.register-v2', {
             title : 'Register v2',
             state : 'app.pages_auth_register-v2',
             weight: 4

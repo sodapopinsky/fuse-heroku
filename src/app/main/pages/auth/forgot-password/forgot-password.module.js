@@ -28,7 +28,7 @@
         $translatePartialLoaderProvider.addPart('app/main/pages/auth/forgot-password');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('fuse.pages.auth.forgot-password', {
+        msNavigationFactoryProvider.saveItem('pages.auth.forgot-password', {
             title : 'Forgot Password',
             state : 'app.pages_auth_forgot-password',
             weight: 5

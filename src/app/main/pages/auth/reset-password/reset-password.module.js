@@ -28,7 +28,7 @@
         $translatePartialLoaderProvider.addPart('app/main/pages/auth/reset-password');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('fuse.pages.auth.reset-password', {
+        msNavigationFactoryProvider.saveItem('pages.auth.reset-password', {
             title : 'Reset Password',
             state : 'app.pages_auth_reset-password',
             weight: 6

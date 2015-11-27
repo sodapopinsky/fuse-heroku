@@ -43,8 +43,9 @@
         $translatePartialLoaderProvider.addPart('app/main/pages/search');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('fuse.pages.search', {
+        msNavigationFactoryProvider.saveItem('pages.search', {
             title : 'Search',
+            icon  : 'icon-magnify',
             state : 'app.pages_search',
             weight: 7
         });

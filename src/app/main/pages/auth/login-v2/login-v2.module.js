@@ -28,7 +28,7 @@
         $translatePartialLoaderProvider.addPart('app/main/pages/auth/login-v2');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('fuse.pages.auth.login-v2', {
+        msNavigationFactoryProvider.saveItem('pages.auth.login-v2', {
             title : 'Login v2',
             state : 'app.pages_auth_login-v2',
             weight: 2

@@ -28,14 +28,15 @@
         $translatePartialLoaderProvider.addPart('app/main/pages/errors/404');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('fuse.pages.errors', {
-            title: 'Errors',
+        msNavigationFactoryProvider.saveItem('pages.errors', {
+            title : 'Errors',
+            icon  : 'icon-alert',
             weight: 3
         });
 
-        msNavigationFactoryProvider.saveItem('fuse.pages.errors.error-404', {
-            title: '404',
-            state: 'app.pages_errors_error-404',
+        msNavigationFactoryProvider.saveItem('pages.errors.error-404', {
+            title : '404',
+            state : 'app.pages_errors_error-404',
             weight: 1
         });
     }

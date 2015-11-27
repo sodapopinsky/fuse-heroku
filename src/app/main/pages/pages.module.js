@@ -26,10 +26,10 @@
     function config(msNavigationFactoryProvider)
     {
         // Navigation
-        msNavigationFactoryProvider.saveItem('fuse.pages', {
-            title : 'Pages',
-            icon  : 'icon-file-outline',
-            weight: 6
+        msNavigationFactoryProvider.saveItem('pages', {
+            title : 'PAGES',
+            group : true,
+            weight: 2
         });
     }
 })();

@@ -31,8 +31,9 @@
         $translatePartialLoaderProvider.addPart('app/main/pages/invoice');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('fuse.pages.invoice', {
+        msNavigationFactoryProvider.saveItem('pages.invoice', {
             title : 'Invoice',
+            icon  : 'icon-receipt',
             state : 'app.pages_invoice',
             weight: 4
         });

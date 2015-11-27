@@ -28,7 +28,7 @@
         $translatePartialLoaderProvider.addPart('app/main/pages/auth/lock');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('fuse.pages.auth.lock', {
+        msNavigationFactoryProvider.saveItem('pages.auth.lock', {
             title : 'Lock Screen',
             state : 'app.pages_auth_lock',
             weight: 7

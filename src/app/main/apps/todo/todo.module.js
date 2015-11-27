@@ -35,7 +35,7 @@
         $translatePartialLoaderProvider.addPart('app/main/apps/todo');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('fuse.to-do', {
+        msNavigationFactoryProvider.saveItem('apps.to-do', {
             title : 'To-Do',
             icon  : 'icon-checkbox-marked',
             state : 'app.to-do',

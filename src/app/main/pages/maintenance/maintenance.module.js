@@ -28,8 +28,9 @@
         $translatePartialLoaderProvider.addPart('app/main/pages/maintenance');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('fuse.pages.maintenance', {
+        msNavigationFactoryProvider.saveItem('pages.maintenance', {
             title : 'Maintenance',
+            icon  : 'icon-oil',
             state : 'app.pages_maintenance',
             weight: 5
         });

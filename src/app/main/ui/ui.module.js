@@ -28,11 +28,11 @@
     /** @ngInject */
     function config(msNavigationFactoryProvider)
     {
-        // USER INTERFACE navigation definitions
+        // Navigation
         msNavigationFactoryProvider.saveItem('ui', {
             title : 'USER INTERFACE',
             group : true,
-            weight: 2
+            weight: 3
         });
 
         msNavigationFactoryProvider.saveItem('ui.forms', {
