@@ -39,6 +39,10 @@
             title : 'To-Do',
             icon  : 'icon-checkbox-marked',
             state : 'app.to-do',
+            badge : {
+                content: 3,
+                color  : '#4CAF50'
+            },
             weight: 5
         });
     }

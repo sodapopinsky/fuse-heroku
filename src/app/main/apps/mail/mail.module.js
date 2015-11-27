@@ -35,6 +35,10 @@
             title : 'Mail',
             icon  : 'icon-email',
             state : 'app.mail',
+            badge : {
+                content: 25,
+                color  : '#F44336'
+            },
             weight: 3
         });
     }
