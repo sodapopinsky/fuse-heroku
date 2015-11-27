@@ -9,16 +9,18 @@
 
     <div ms-navigation-horizontal-item layout="row">
 
-        <div class="ms-navigation-horizontal-title" ng-if="!node.uisref && node.title">
+        <div class="ms-navigation-horizontal-button" ng-if="!node.uisref && node.title">
             <i class="icon s18 {{node.icon}}" ng-if="node.icon"></i>
-            <span translate="{{node.translate}}" flex>{{node.title}}</span>
+            <span class="title" translate="{{node.translate}}" flex>{{node.title}}</span>
+            <span class="badge white-fg" style="background: {{node.badge.color}}" ng-if="node.badge">{{node.badge.content}}</span>
             <i class="icon-chevron-right s18 arrow" ng-if="vm.hasChildren"></i>
         </div>
 
-        <a class="ms-navigation-horizontal-title" ui-sref="{{node.uisref}}" ui-sref-active="active md-accent-bg"
+        <a class="ms-navigation-horizontal-button" ui-sref="{{node.uisref}}" ui-sref-active="active md-accent-bg"
            ng-if="node.uisref && node.title">
             <i class="icon s18 {{node.icon}}" ng-if="node.icon"></i>
-            <span translate="{{node.translate}}" flex>{{node.title}}</span>
+            <span class="title" translate="{{node.translate}}" flex>{{node.title}}</span>
+            <span class="badge white-fg" style="background: {{node.badge.color}}" ng-if="node.badge">{{node.badge.content}}</span>
             <i class="icon-chevron-right s18 arrow" ng-if="vm.hasChildren"></i>
         </a>
 
