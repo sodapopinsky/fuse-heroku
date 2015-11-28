@@ -37,7 +37,6 @@ gulp.task('html-dev', ['inject'], function ()
         .pipe(gulp.dest(path.join(conf.paths.dist, '/app/')));
     // End - Copied from styles.js
 
-
     var htmlFilter = $.filter('*.html', {restore: true});
     var jsFilter = $.filter('**/*.js', {restore: true});
     var cssFilter = $.filter('**/*.css', {restore: true});
