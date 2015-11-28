@@ -19,18 +19,15 @@
                 views   : {
                     'main@'         : {
                         templateUrl: 'app/core/layouts/default.html'
+                        //templateUrl: 'app/core/layouts/horizontal-navigation.html'
                     },
-                    'toolbar@app': {
+                    'toolbar@app'   : {
+                        //templateUrl: 'app/toolbar/layouts/horizontal-navigation/toolbar.html',
                         templateUrl: 'app/toolbar/toolbar.html',
                         controller : 'ToolbarController as vm'
                     },
-                    // Classic Navigation (html based)
-                    /*'navigation@app': {
-                        templateUrl: 'app/sidenav/navigation-classic/navigation-classic.html',
-                        controller : 'NavigationClassicController as vm'
-                    },*/
-                    // Automated Navigation (data based)
                     'navigation@app': {
+                        //templateUrl: 'app/sidenav/navigation/layouts/horizontal-navigation/navigation.html',
                         templateUrl: 'app/sidenav/navigation/navigation.html',
                         controller : 'NavigationController as vm'
                     },
@@ -44,6 +41,14 @@
                     }
                 }
             });
+
+        // Classic Navigation
+        /*
+         'navigation@app': {
+         templateUrl: 'app/sidenav/navigation-classic/navigation-classic.html',
+         controller : 'NavigationClassicController as vm'
+         },
+         */
     }
 
 })();
