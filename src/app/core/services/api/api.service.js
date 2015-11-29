@@ -12,11 +12,8 @@
     {
         var api = {};
 
+        // API url definitions
         api.dataUrl = 'app/core/services/api/data/';
-
-        api.activities = $resource(api.dataUrl + 'notifications/activities.json', null, {
-            get: {method: 'get'}
-        });
 
         api.dashboard = {
             project  : $resource(api.dataUrl + 'dashboard/project/data.json', null, {
@@ -31,14 +28,6 @@
         };
 
         api.cards = $resource(api.dataUrl + 'cards/cards.json', null, {
-            get: {method: 'get'}
-        });
-
-        api.contacts = $resource(api.dataUrl + 'notifications/contacts.json', null, {
-            get: {method: 'get'}
-        });
-
-        api.events = $resource(api.dataUrl + 'notifications/events.json', null, {
             get: {method: 'get'}
         });
 
@@ -62,10 +51,6 @@
             })
         };
 
-        api.notes = $resource(api.dataUrl + 'notifications/notes.json', null, {
-            get: {method: 'get'}
-        });
-
         api.profile = {
             timeline    : $resource(api.dataUrl + 'profile/timeline.json', null, {
                 get: {method: 'get'}
@@ -74,6 +59,21 @@
                 get: {method: 'get'}
             }),
             photosVideos: $resource(api.dataUrl + 'profile/photos-videos.json', null, {
+                get: {method: 'get'}
+            })
+        };
+
+        api.quickPanel = {
+            activities: $resource(api.dataUrl + 'quick-panel/activities.json', null, {
+                get: {method: 'get'}
+            }),
+            contacts  : $resource(api.dataUrl + 'quick-panel/contacts.json', null, {
+                get: {method: 'get'}
+            }),
+            events    : $resource(api.dataUrl + 'quick-panel/events.json', null, {
+                get: {method: 'get'}
+            }),
+            notes     : $resource(api.dataUrl + 'quick-panel/notes.json', null, {
                 get: {method: 'get'}
             })
         };
