@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationServiceProvider)
     {
         // State
         $stateProvider.state('app.file-manager', {
@@ -31,7 +31,7 @@
         $translatePartialLoaderProvider.addPart('app/main/apps/file-manager');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('apps.file-manager', {
+        msNavigationServiceProvider.saveItem('apps.file-manager', {
             title : 'File Manager',
             icon  : 'icon-folder',
             state : 'app.file-manager',

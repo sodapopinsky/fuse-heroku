@@ -23,10 +23,10 @@
         .config(config);
 
     /** @ngInject */
-    function config(msNavigationFactoryProvider)
+    function config(msNavigationServiceProvider)
     {
         // Navigation
-        msNavigationFactoryProvider.saveItem('pages', {
+        msNavigationServiceProvider.saveItem('pages', {
             title : 'PAGES',
             group : true,
             weight: 2

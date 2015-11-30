@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationServiceProvider)
     {
         // State
         $stateProvider.state('app.to-do', {
@@ -35,7 +35,7 @@
         $translatePartialLoaderProvider.addPart('app/main/apps/todo');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('apps.to-do', {
+        msNavigationServiceProvider.saveItem('apps.to-do', {
             title : 'To-Do',
             icon  : 'icon-checkbox-marked',
             state : 'app.to-do',

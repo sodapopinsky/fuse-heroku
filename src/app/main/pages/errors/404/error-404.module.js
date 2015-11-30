@@ -7,14 +7,14 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationServiceProvider)
     {
         // State
         $stateProvider.state('app.pages_errors_error-404', {
             url      : '/pages/errors/error-404',
             views    : {
                 'main@'                             : {
-                    templateUrl: 'app/core/layouts/basic.html'
+                    templateUrl: 'app/core/layouts/simple.html'
                 },
                 'content@app.pages_errors_error-404': {
                     templateUrl: 'app/main/pages/errors/404/error-404.html',
@@ -28,13 +28,13 @@
         $translatePartialLoaderProvider.addPart('app/main/pages/errors/404');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('pages.errors', {
+        msNavigationServiceProvider.saveItem('pages.errors', {
             title : 'Errors',
             icon  : 'icon-alert',
             weight: 3
         });
 
-        msNavigationFactoryProvider.saveItem('pages.errors.error-404', {
+        msNavigationServiceProvider.saveItem('pages.errors.error-404', {
             title : '404',
             state : 'app.pages_errors_error-404',
             weight: 1

@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationServiceProvider)
     {
         $stateProvider.state('app.pages_profile', {
             url      : '/pages/profile',
@@ -37,7 +37,7 @@
         $translatePartialLoaderProvider.addPart('app/main/pages/profile');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('pages.profile', {
+        msNavigationServiceProvider.saveItem('pages.profile', {
             title : 'Profile',
             icon  : 'icon-account',
             state : 'app.pages_profile',

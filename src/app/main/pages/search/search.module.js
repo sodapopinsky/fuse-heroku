@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationServiceProvider)
     {
         // State
         $stateProvider.state('app.pages_search', {
@@ -43,7 +43,7 @@
         $translatePartialLoaderProvider.addPart('app/main/pages/search');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('pages.search', {
+        msNavigationServiceProvider.saveItem('pages.search', {
             title : 'Search',
             icon  : 'icon-magnify',
             state : 'app.pages_search',

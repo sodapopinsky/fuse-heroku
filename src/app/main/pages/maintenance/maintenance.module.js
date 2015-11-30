@@ -7,14 +7,14 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationServiceProvider)
     {
         // State
         $stateProvider.state('app.pages_maintenance', {
             url      : '/pages/maintenance',
             views    : {
                 'main@'                        : {
-                    templateUrl: 'app/core/layouts/basic.html'
+                    templateUrl: 'app/core/layouts/simple.html'
                 },
                 'content@app.pages_maintenance': {
                     templateUrl: 'app/main/pages/maintenance/maintenance.html',
@@ -28,7 +28,7 @@
         $translatePartialLoaderProvider.addPart('app/main/pages/maintenance');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('pages.maintenance', {
+        msNavigationServiceProvider.saveItem('pages.maintenance', {
             title : 'Maintenance',
             icon  : 'icon-oil',
             state : 'app.pages_maintenance',

@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, msNavigationFactoryProvider)
+    function config($stateProvider, msNavigationServiceProvider)
     {
         // State
         $stateProvider
@@ -61,23 +61,23 @@
             });
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('pages.timeline', {
+        msNavigationServiceProvider.saveItem('pages.timeline', {
             title : 'Timeline',
             icon  : 'icon-view-stream',
             weight: 8
         });
 
-        msNavigationFactoryProvider.saveItem('pages.timeline.default', {
+        msNavigationServiceProvider.saveItem('pages.timeline.default', {
             title: 'Default',
             state: 'app.pages_timeline'
         });
 
-        msNavigationFactoryProvider.saveItem('pages.timeline.left-aligned', {
+        msNavigationServiceProvider.saveItem('pages.timeline.left-aligned', {
             title: 'Left Aligned',
             state: 'app.pages_timeline_left'
         });
 
-        msNavigationFactoryProvider.saveItem('pages.timeline.right-aligned', {
+        msNavigationServiceProvider.saveItem('pages.timeline.right-aligned', {
             title: 'Right Aligned',
             state: 'app.pages_timeline_right'
         });

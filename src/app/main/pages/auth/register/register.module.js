@@ -7,14 +7,14 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationServiceProvider)
     {
         // State
         $stateProvider.state('app.pages_auth_register', {
             url      : '/pages/auth/register',
             views    : {
                 'main@'                          : {
-                    templateUrl: 'app/core/layouts/basic.html'
+                    templateUrl: 'app/core/layouts/simple.html'
                 },
                 'content@app.pages_auth_register': {
                     templateUrl: 'app/main/pages/auth/register/register.html',
@@ -28,7 +28,7 @@
         $translatePartialLoaderProvider.addPart('app/main/pages/auth/register');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('pages.auth.register', {
+        msNavigationServiceProvider.saveItem('pages.auth.register', {
             title : 'Register',
             state : 'app.pages_auth_register',
             weight: 3

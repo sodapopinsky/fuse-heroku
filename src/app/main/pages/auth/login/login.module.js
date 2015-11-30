@@ -7,14 +7,14 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationServiceProvider)
     {
         // State
         $stateProvider.state('app.pages_auth_login', {
             url      : '/pages/auth/login',
             views    : {
                 'main@'                       : {
-                    templateUrl: 'app/core/layouts/basic.html'
+                    templateUrl: 'app/core/layouts/simple.html'
                 },
                 'content@app.pages_auth_login': {
                     templateUrl: 'app/main/pages/auth/login/login.html',
@@ -28,13 +28,13 @@
         $translatePartialLoaderProvider.addPart('app/main/pages/auth/login');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('pages.auth', {
+        msNavigationServiceProvider.saveItem('pages.auth', {
             title : 'Authentication',
             icon  : 'icon-lock',
             weight: 1
         });
 
-        msNavigationFactoryProvider.saveItem('pages.auth.login', {
+        msNavigationServiceProvider.saveItem('pages.auth.login', {
             title : 'Login',
             state : 'app.pages_auth_login',
             weight: 1

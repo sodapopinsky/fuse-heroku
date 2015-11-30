@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationServiceProvider)
     {
         // State
         $stateProvider.state('app.mail', {
@@ -31,7 +31,7 @@
         $translatePartialLoaderProvider.addPart('app/main/apps/mail');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('apps.mail', {
+        msNavigationServiceProvider.saveItem('apps.mail', {
             title : 'Mail',
             icon  : 'icon-email',
             state : 'app.mail',

@@ -7,14 +7,14 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationServiceProvider)
     {
         // State
         $stateProvider.state('app.pages_coming-soon', {
             url      : '/pages/coming-soon',
             views    : {
                 'main@'                        : {
-                    templateUrl: 'app/core/layouts/basic.html'
+                    templateUrl: 'app/core/layouts/simple.html'
                 },
                 'content@app.pages_coming-soon': {
                     templateUrl: 'app/main/pages/coming-soon/coming-soon.html',
@@ -28,7 +28,7 @@
         $translatePartialLoaderProvider.addPart('app/main/pages/coming-soon');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('pages.coming-soon', {
+        msNavigationServiceProvider.saveItem('pages.coming-soon', {
             title : 'Coming Soon',
             icon  : 'icon-alarm-check',
             state : 'app.pages_coming-soon',

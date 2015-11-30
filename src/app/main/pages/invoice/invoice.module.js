@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationServiceProvider)
     {
         // State
         $stateProvider.state('app.pages_invoice', {
@@ -31,7 +31,7 @@
         $translatePartialLoaderProvider.addPart('app/main/pages/invoice');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('pages.invoice', {
+        msNavigationServiceProvider.saveItem('pages.invoice', {
             title : 'Invoice',
             icon  : 'icon-receipt',
             state : 'app.pages_invoice',
