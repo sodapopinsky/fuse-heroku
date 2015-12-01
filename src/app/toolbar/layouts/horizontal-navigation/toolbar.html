@@ -1,6 +1,13 @@
 <div layout="row" layout-align="space-between center">
 
     <div layout="row" layout-align="start center">
+        <div class="navigation-toggle" hide-gt-md>
+            <md-button class="md-icon-button" ng-click="vm.toggleHorizontalMobileMenu()"
+                       aria-label="Toggle Mobile Navigation">
+                <md-icon md-font-icon="icon-menu"></md-icon>
+            </md-button>
+        </div>
+
         <div class="logo" layout="row" layout-align="start center">
             <span class="logo-image">F</span>
             <span class="logo-text">FUSE</span>
@@ -12,6 +19,9 @@
     </div>
 
     <div layout="row" layout-align="start center">
+
+        <ms-search-bar></ms-search-bar>
+
         <md-menu-bar id="user-menu">
             <md-menu md-offset="0 72" md-position-mode="target-right target">
                 <md-button class="user-button" ng-click="$mdOpenMenu()"
