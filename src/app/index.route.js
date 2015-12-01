@@ -36,11 +36,6 @@
         var layoutStyle = $cookies.get('layoutStyle') || 'verticalNavigation';
 
         var layouts = {
-            simple              : {
-                main      : 'app/core/layouts/simple.html',
-                toolbar   : '',
-                navigation: ''
-            },
             verticalNavigation  : {
                 main      : 'app/core/layouts/vertical-navigation.html',
                 toolbar   : 'app/toolbar/layouts/vertical-navigation/toolbar.html',
@@ -50,6 +45,16 @@
                 main      : 'app/core/layouts/horizontal-navigation.html',
                 toolbar   : 'app/toolbar/layouts/horizontal-navigation/toolbar.html',
                 navigation: 'app/navigation/layouts/horizontal-navigation/navigation.html'
+            },
+            contentOnly         : {
+                main      : 'app/core/layouts/content-only.html',
+                toolbar   : '',
+                navigation: ''
+            },
+            contentWithToolbar  : {
+                main      : 'app/core/layouts/content-with-toolbar.html',
+                toolbar   : 'app/toolbar/layouts/content-with-toolbar/toolbar.html',
+                navigation: ''
             }
         };
         // END - Layout Style Switcher

@@ -14,7 +14,7 @@
             url      : '/pages/auth/forgot-password',
             views    : {
                 'main@'                                 : {
-                    templateUrl: 'app/core/layouts/simple.html'
+                    templateUrl: 'app/core/layouts/content-only.html'
                 },
                 'content@app.pages_auth_forgot-password': {
                     templateUrl: 'app/main/pages/auth/forgot-password/forgot-password.html',

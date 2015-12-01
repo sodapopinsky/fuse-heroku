@@ -14,7 +14,7 @@
             url      : '/pages/auth/lock',
             views    : {
                 'main@'                      : {
-                    templateUrl: 'app/core/layouts/simple.html'
+                    templateUrl: 'app/core/layouts/content-only.html'
                 },
                 'content@app.pages_auth_lock': {
                     templateUrl: 'app/main/pages/auth/lock/lock.html',

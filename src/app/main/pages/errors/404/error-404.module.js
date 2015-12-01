@@ -14,7 +14,7 @@
             url      : '/pages/errors/error-404',
             views    : {
                 'main@'                             : {
-                    templateUrl: 'app/core/layouts/simple.html'
+                    templateUrl: 'app/core/layouts/content-only.html'
                 },
                 'content@app.pages_errors_error-404': {
                     templateUrl: 'app/main/pages/errors/404/error-404.html',

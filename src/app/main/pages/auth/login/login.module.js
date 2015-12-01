@@ -14,7 +14,7 @@
             url      : '/pages/auth/login',
             views    : {
                 'main@'                       : {
-                    templateUrl: 'app/core/layouts/simple.html'
+                    templateUrl: 'app/core/layouts/content-only.html'
                 },
                 'content@app.pages_auth_login': {
                     templateUrl: 'app/main/pages/auth/login/login.html',

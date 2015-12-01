@@ -14,7 +14,7 @@
             url      : '/pages/auth/reset-password',
             views    : {
                 'main@'                                : {
-                    templateUrl: 'app/core/layouts/simple.html'
+                    templateUrl: 'app/core/layouts/content-only.html'
                 },
                 'content@app.pages_auth_reset-password': {
                     templateUrl: 'app/main/pages/auth/reset-password/reset-password.html',

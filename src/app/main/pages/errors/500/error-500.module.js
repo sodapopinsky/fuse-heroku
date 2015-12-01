@@ -14,7 +14,7 @@
             url      : '/pages/errors/error-500',
             views    : {
                 'main@'                             : {
-                    templateUrl: 'app/core/layouts/simple.html'
+                    templateUrl: 'app/core/layouts/content-only.html'
                 },
                 'content@app.pages_errors_error-500': {
                     templateUrl: 'app/main/pages/errors/500/error-500.html',

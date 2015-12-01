@@ -14,7 +14,7 @@
             url      : '/pages/auth/login-v2',
             views    : {
                 'main@'                          : {
-                    templateUrl: 'app/core/layouts/simple.html'
+                    templateUrl: 'app/core/layouts/content-only.html'
                 },
                 'content@app.pages_auth_login-v2': {
                     templateUrl: 'app/main/pages/auth/login-v2/login-v2.html',
