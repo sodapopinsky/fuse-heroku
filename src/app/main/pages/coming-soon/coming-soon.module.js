@@ -14,7 +14,8 @@
             url      : '/pages/coming-soon',
             views    : {
                 'main@'                        : {
-                    templateUrl: 'app/core/layouts/content-only.html'
+                    templateUrl: 'app/core/layouts/content-only.html',
+                    controller : 'MainController as vm'
                 },
                 'content@app.pages_coming-soon': {
                     templateUrl: 'app/main/pages/coming-soon/coming-soon.html',

@@ -14,7 +14,8 @@
             url      : '/pages/maintenance',
             views    : {
                 'main@'                        : {
-                    templateUrl: 'app/core/layouts/content-only.html'
+                    templateUrl: 'app/core/layouts/content-only.html',
+                    controller : 'MainController as vm'
                 },
                 'content@app.pages_maintenance': {
                     templateUrl: 'app/main/pages/maintenance/maintenance.html',

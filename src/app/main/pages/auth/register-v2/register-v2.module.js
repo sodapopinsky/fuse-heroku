@@ -14,7 +14,8 @@
             url      : '/pages/auth/register-v2',
             views    : {
                 'main@'                          : {
-                    templateUrl: 'app/core/layouts/content-only.html'
+                    templateUrl: 'app/core/layouts/content-only.html',
+                    controller : 'MainController as vm'
                 },
                 'content@app.pages_auth_register-v2': {
                     templateUrl: 'app/main/pages/auth/register-v2/register-v2.html',

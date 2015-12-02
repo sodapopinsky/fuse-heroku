@@ -65,7 +65,8 @@
                 abstract: true,
                 views   : {
                     'main@'         : {
-                        templateUrl: layouts[layoutStyle].main
+                        templateUrl: layouts[layoutStyle].main,
+                        controller : 'MainController as vm'
                     },
                     'toolbar@app'   : {
                         templateUrl: layouts[layoutStyle].toolbar,
