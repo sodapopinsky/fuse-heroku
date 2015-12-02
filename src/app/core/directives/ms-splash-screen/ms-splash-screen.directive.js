@@ -13,14 +13,18 @@
             restrict: 'A',
             link    : function (scope, iElement)
             {
-                scope.$on('msSplashScreen::remove', function ()
+                var splashScreenRemoveEvent = scope.$on('msSplashScreen::remove', function ()
                 {
-                    scope.$evalAsync(function ()
+                    $animate.leave(iElement.children().eq(1)).then(function ()
                     {
-                        $animate.leave(iElement.children().eq(1)).then(function ()
-                        {
-                            iElement.remove();
-                        });
+                        // Remove the element
+                        iElement.remove();
+
+                        // De-register scope event
+                        splashScreenRemoveEvent();
+
+                        // Null-ify everything else
+                        scope = iElement = null;
                     });
                 });
             }
