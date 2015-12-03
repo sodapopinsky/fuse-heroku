@@ -8,7 +8,7 @@
         .run(run);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider, msNavigationFactoryProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msNavigationServiceProvider)
     {
         $stateProvider.state('app.scrumboard', {
                 url      : '/scrumboard',
@@ -69,7 +69,7 @@
         $translatePartialLoaderProvider.addPart('app/main/apps/scrumboard');
 
         // Navigation
-        msNavigationFactoryProvider.saveItem('fuse.scrumboard', {
+        msNavigationServiceProvider.saveItem('apps.scrumboard', {
             title : 'Scrumboard',
             icon  : 'icon-trello',
             state : 'app.scrumboard.home',
