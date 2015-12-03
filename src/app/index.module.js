@@ -25,6 +25,7 @@
             'app.calendar',
             'app.mail',
             'app.file-manager',
+            'app.scrumboard',
             'app.todo',
 
             // Pages

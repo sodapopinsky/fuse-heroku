@@ -3,8 +3,8 @@
         {
             "card": {
                 "template": "app/core/directives/ms-card/templates/template-1/template-1.html",
-                "media": {
-                    "image": {
+                        "media": {
+                            "image": {
                         "src": "assets/images/etc/early-sunrise.jpg",
                         "alt": "Early Sunrise"
                     }

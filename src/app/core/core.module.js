@@ -23,6 +23,8 @@
                 'ui.router',
                 'uiGmapgoogle-maps',
                 'textAngular',
-                'ng-sortable'
-            ]);
+                'ng-sortable',
+                'ui.sortable',
+                'xeditable'
+                ]);
 })();

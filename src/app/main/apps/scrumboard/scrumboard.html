@@ -1,0 +1,134 @@
+<div id="scrumboard" class="page-layout simple right-sidenav" layout="row">
+
+    <!-- CENTER -->
+    <div class="center" layout="column" flex>
+
+        <!-- HEADER -->
+        <div class="header md-accent-bg" ng-class="'md-'+vm.board.color+'-bg'">
+
+            <div class="header-content" layout="column" layout-align="space-between">
+
+                <!-- TOOLBAR -->
+                <div class="toolbar" layout="row" layout-align="space-between">
+
+                    <!-- BOARD SELECTION BUTTON -->
+                    <md-button class="md-accent md-raised md-hue-2 header-boards-button"
+                               ng-class="'md-'+vm.board.color+'-700-bg'"
+                               ng-click="vm.boardSelectorVisible = !vm.boardSelectorVisible"
+                               aria-label="boards button" translate
+                               translate-attr-aria-label="SB.TOOGLE_MAIN_SIDENAV">
+                        <md-icon md-font-icon="icon-trello" class="icon"></md-icon>
+                        <span translate="SB.BOARDS">BOARDS</span>
+                    </md-button>
+                    <!-- / BOARD SELECTION BUTTON -->
+
+                    <!-- BOARD NAME -->
+                    <div class="header-board-name" layout="row" layout-align="center center">
+                        <i ng-if="vm.board.subscribed" class="board-subscribe s16 icon-eye" aria-label="subscribed"></i>
+                        <span editable-text="vm.board.name" onaftersave="vm.updateBoardUri()">{{vm.board.name}}</span>
+                    </div>
+                    <!-- / BOARD NAME -->
+
+                    <div class="right-side" layout="row">
+
+                        <!--<md-button class="md-icon-button" aria-label="Calendar" translate-->
+                        <!--translate-attr-aria-label="SB.CALENDAR" ui-sref="app.scrumboard.board.calendar">-->
+                        <!--<md-icon md-font-icon="icon-calendar"></md-icon>-->
+                        <!--<md-tooltip><span translate="SB.CALENDAR">Calendar</span></md-tooltip>-->
+                        <!--</md-button>-->
+                        <!--<md-button class="md-icon-button" aria-label="ACTIVITY" translate-->
+                        <!--translate-attr-aria-label="SB.ACTIVITY">-->
+                        <!--<md-icon md-font-icon="icon-format-list-bulleted"></md-icon>-->
+                        <!--<md-tooltip><span translate="SB.ACTIVITY">Activity</span></md-tooltip>-->
+                        <!--</md-button>-->
+
+                        <!-- CLEAR FILTERS BUTTON -->
+                        <md-button ng-if="vm.filteringIsOn()" class="md-icon-button" ng-click="vm.clearFilters()"
+                                   aria-label="clear filters">
+                            <md-icon md-font-icon="icon-filter-remove"></md-icon>
+                            <md-tooltip>Clear Filters</md-tooltip>
+                        </md-button>
+                        <!-- / CLEAR FILTERS BUTTON -->
+
+                        <!-- FILTERS SIDENAV BUTTON -->
+                        <md-button class="md-icon-button" ng-click="vm.toggleSidenav('filters-sidenav')"
+                                   aria-label="Filter" translate
+                                   translate-attr-aria-label="SB.FILTER">
+                            <md-icon md-font-icon="icon-filter-variant"></md-icon>
+                            <md-tooltip><span translate="SB.FILTER_CARDS">Filter Cards</span></md-tooltip>
+                        </md-button>
+                        <!-- / FILTERS SIDENAV BUTTON -->
+
+                        <!-- BOARD SETTINGS BUTTON -->
+                        <md-button class="md-icon-button" ng-click="vm.toggleSidenav('settings-sidenav')"
+                                   aria-label="Settings" translate
+                                   translate-attr-aria-label="SB.SETTINGS">
+                            <md-icon md-font-icon="icon-cog"></md-icon>
+                            <md-tooltip><span translate="SB.SETTINGS">Settings</span></md-tooltip>
+                        </md-button>
+                        <!-- / BOARD SETTINGS BUTTON -->
+
+                    </div>
+                </div>
+                <!-- / TOOLBAR -->
+            </div>
+        </div>
+        <!-- / HEADER -->
+
+        <!-- BOARD SELECTION -->
+        <div id="board-selector" ng-show="vm.boardSelectorVisible"
+             class="md-accent-bg animate-slide-down board-list md-whiteframe-3dp"
+             ng-class="'md-'+vm.board.color+'-bg'"
+             layout="row" layout-align="start center">
+
+            <div class="board-list-item" ng-repeat="board in vm.boardList"
+                 ui-sref="app.scrumboard.board({id:board.id, uri:board.uri})" layout="column"
+                 layout-align="space-between center">
+                <div class="board-icon">
+                    <i class="icon-trello s64"></i>
+                </div>
+                <div flex class="board-name">{{board.name}}</div>
+                <div class="board-options">
+                    <i class="icon-dots-horizontal"></i>
+                </div>
+                <div ng-if="board.id === vm.board.id" class="selected-icon green-bg">
+                    <i class="icon-check s24"></i>
+                </div>
+            </div>
+
+            <div class="board-list-item add-new-board" layout="column"
+                 layout-align="space-between center">
+                <div class="board-icon">
+                    <i class="icon-trello s64"></i>
+                </div>
+                <div flex class="board-name">Add a board</div>
+            </div>
+
+        </div>
+
+        <md-backdrop ng-click="vm.boardSelectorVisible = false" ng-show="vm.boardSelectorVisible"
+                     class="md-dialog-backdrop md-opaque" aria-hidden="true"></md-backdrop>
+        <!-- / BOARD SELECTION -->
+
+        <!-- CONTENT -->
+        <md-content class="content" flex layout="column" ui-view="scrumboardContent"></md-content>
+        <!-- / CONTENT -->
+
+    </div>
+    <!-- / CENTER -->
+
+    <!-- SETTINGS SIDENAV -->
+    <md-sidenav class="settings-sidenav md-sidenav-right" md-component-id="settings-sidenav"
+                ng-include="'app/main/apps/scrumboard/sidenavs/settings/settings-sidenav.html'"
+                ng-controller="SettingsSidenavController as vm" ms-sidenav-helper>
+    </md-sidenav>
+    <!-- / SETTINGS SIDENAV -->
+
+    <!-- FILTERS SIDENAV -->
+    <md-sidenav class="filters-sidenav md-sidenav-right" md-component-id="filters-sidenav"
+                ng-include="'app/main/apps/scrumboard/sidenavs/filters/filters-sidenav.html'"
+                ng-controller="FiltersSidenavController as vm" ms-sidenav-helper>
+    </md-sidenav>
+    <!-- / FILTERS SIDENAV -->
+
+</div>

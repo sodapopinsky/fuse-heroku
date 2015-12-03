@@ -93,6 +93,15 @@
             })
         };
 
+        api.scrumboard = {
+            boardList   : $resource(api.dataUrl + 'scrumboard/boardList.json', null, {
+                get: {method: 'get'}
+            }),
+            board      : $resource(api.dataUrl + 'scrumboard/boards/:id.json', null, {
+                get: {method: 'get'}
+            }),
+        };
+
         api.tables = {
             employees   : $resource(api.dataUrl + 'tables/employees.json', null, {
                 get: {method: 'get'}

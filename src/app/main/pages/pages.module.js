@@ -29,7 +29,7 @@
         msNavigationServiceProvider.saveItem('pages', {
             title : 'PAGES',
             group : true,
-            weight: 2
+            weight: 7
         });
     }
 })();
