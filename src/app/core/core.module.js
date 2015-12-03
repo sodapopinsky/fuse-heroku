@@ -11,7 +11,6 @@
                 'ngMessages',
                 'ngResource',
                 'ngSanitize',
-                'ngTouch',
                 'ngMaterial',
                 'angular-chartist',
                 'chart.js',
