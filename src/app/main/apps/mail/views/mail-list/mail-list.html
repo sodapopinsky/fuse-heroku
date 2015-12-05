@@ -5,7 +5,7 @@
      ng-class="{'starred': mail.starred, 'selected': vm.selectedMail === mail, 'checked': vm.isChecked(mail)}">
 
     <div layout="row" layout-align="start center">
-        <md-checkbox class="checkbox"
+        <md-checkbox class="no-label"
                      ng-checked="vm.isChecked(mail)"
                      ng-click="vm.toggleCheck(mail, $event)"
                      aria-label="{{vm.isChecked(mail)? 'Uncheck':'check'}}">

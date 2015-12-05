@@ -10,7 +10,6 @@
                 margin: 0;
                 width: 56px;
                 height: 56px;
-                line-height: 56px;
                 background: #FFFFFF;
                 border-radius: 0;
                 border-right: 1px solid rgba(0, 0, 0, 0.12);
@@ -89,7 +88,7 @@
 }
 
 // RESPONSIVE
-@media screen and (min-width: $layout-breakpoint-lg) {
+@media screen and (min-width: $layout-breakpoint-md) {
 
     #mail {
 
@@ -122,66 +121,7 @@
 
 }
 
-@media screen and (max-width: $layout-breakpoint-lg) {
-
-    #mail {
-
-        .center {
-
-            .content-card {
-
-                .toolbar {
-
-                    md-checkbox {
-                        padding-left: 0;
-                    }
-
-                    .md-button {
-
-                        &.md-icon-button {
-                            width: 30px;
-                            min-height: 30px;
-                            height: 30px;
-                            line-height: 30px;
-                            margin: 0 3px;
-
-                            md-icon {
-                                font-size: 18px;
-                                width: 18px;
-                                height: 18px;
-                                line-height: 18px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: $layout-breakpoint-md) {
-
-    #mail {
-
-        .center {
-
-            .content-card {
-
-                .toolbar {
-
-                    .md-button {
-
-                        &.md-icon-button {
-                            margin: 0 6px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: $layout-breakpoint-sm) {
+@media screen and (max-width: $layout-breakpoint-xs) {
 
     #mail {
 

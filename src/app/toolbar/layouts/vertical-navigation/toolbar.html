@@ -1,7 +1,7 @@
 <div layout="row" layout-align="start center">
     <div layout="row" layout-align="start center" flex>
         <md-button id="navigation-toggle" class="md-icon-button" ng-click="vm.toggleSidenav('navigation')"
-                   hide-gt-md aria-label="Toggle navigation" translate
+                   hide-gt-sm aria-label="Toggle navigation" translate
                    translate-attr-aria-label="TOOLBAR.TOGGLE_NAVIGATION">
             <md-icon md-font-icon="icon-menu" class="icon"></md-icon>
         </md-button>
@@ -11,7 +11,7 @@
         <div class="toolbar-separator"></div>
 
         <md-progress-circular id="toolbar-progress" ng-if="$root.loadingProgress" class="md-accent"
-                              md-mode="indeterminate" md-diameter="32">
+                              md-mode="indeterminate" md-diameter="64">
         </md-progress-circular>
     </div>
 

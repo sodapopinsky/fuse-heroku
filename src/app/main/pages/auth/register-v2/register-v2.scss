@@ -103,26 +103,6 @@
 }
 
 // RESPONSIVE
-@media screen and (max-width: $layout-breakpoint-md) {
-
-    #register-v2 {
-
-        #register-v2-intro {
-            padding: 128px 24px 0 32px;
-        }
-
-        #register-v2-form-wrapper {
-            width: 384px;
-            min-width: 384px;
-            max-width: 384px;
-
-            #register-v2-form {
-                padding: 128px 32px 32px 32px;
-            }
-        }
-    }
-}
-
 @media screen and (max-width: $layout-breakpoint-sm) {
 
     #register-v2 {
@@ -139,5 +119,4 @@
             }
         }
     }
-
 }

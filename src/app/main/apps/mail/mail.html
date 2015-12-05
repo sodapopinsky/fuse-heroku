@@ -51,8 +51,8 @@
             <div class="toolbar" layout="row" layout-align="space-between center" ng-if="vm.activeMailPaneIndex === 0">
 
                 <div layout="row" layout-align="start center">
-                    <md-checkbox aria-label="{{vm.allChecked?'Uncheck All':'Check All'}}" ng-checked="vm.allChecked"
-                                 ng-click="vm.checkAll()"></md-checkbox>
+                    <md-checkbox class="no-label" aria-label="{{vm.allChecked?'Uncheck All':'Check All'}}"
+                                 ng-checked="vm.allChecked" ng-click="vm.checkAll()"></md-checkbox>
                     <md-menu>
                         <md-button class="md-icon-button"
                                    ng-click="$mdOpenMenu($event)"
@@ -94,22 +94,22 @@
                         </md-menu-content>
                     </md-menu>
 
-                    <div class="divider-vertical" hide-sm></div>
+                    <div class="divider-vertical" hide show-gt-sm></div>
 
                     <md-button class="md-icon-button" aria-label="Archive" translate
-                               translate-attr-aria-label="MAIL.ARCHIVE" hide-sm>
+                               translate-attr-aria-label="MAIL.ARCHIVE" hide show-gt-sm>
                         <md-icon md-font-icon="icon-archive"></md-icon>
                         <md-tooltip><span translate="MAIL.ARCHIVE">Archive</span></md-tooltip>
                     </md-button>
 
                     <md-button class="md-icon-button" aria-label="Spam" translate
-                               translate-attr-aria-label="MAIL.SPAM" hide-sm>
+                               translate-attr-aria-label="MAIL.SPAM" hide show-gt-sm>
                         <md-icon md-font-icon="icon-alert-octagon"></md-icon>
                         <md-tooltip><span translate="MAIL.SPAM">Spam</span></md-tooltip>
                     </md-button>
 
                     <md-button class="md-icon-button" aria-label="Delete" translate
-                               translate-attr-aria-label="MAIL.DELETE" hide-sm>
+                               translate-attr-aria-label="MAIL.DELETE" hide show-gt-sm>
                         <md-icon md-font-icon="icon-delete"></md-icon>
                         <md-tooltip><span translate="MAIL.DELETE">Delete</span></md-tooltip>
                     </md-button>
@@ -117,13 +117,13 @@
                     <div class="divider-vertical"></div>
 
                     <md-button class="md-icon-button" aria-label="Move to" translate
-                               translate-attr-aria-label="MAIL.MOVE_TO" hide-sm>
+                               translate-attr-aria-label="MAIL.MOVE_TO" hide show-gt-sm>
                         <md-icon md-font-icon="icon-folder"></md-icon>
                         <md-tooltip><span translate="MAIL.MOVE_TO">Move to</span></md-tooltip>
                     </md-button>
 
                     <md-button class="md-icon-button" aria-label="Labels" translate
-                               translate-attr-aria-label="MAIL.LABELS" hide-sm>
+                               translate-attr-aria-label="MAIL.LABELS" hide show-gt-sm>
                         <md-icon md-font-icon="icon-label"></md-icon>
                         <md-tooltip><span translate="MAIL.LABELS">Labels</span></md-tooltip>
                     </md-button>
@@ -191,7 +191,8 @@
             <!-- CONTENT WRAPPER -->
             <div class="content-wrapper" layout="row" flex>
 
-                <md-tabs md-selected="vm.activeMailPaneIndex" class="mail-tabs" md-dynamic-height="{{vm.dynamicHeight}}" flex>
+                <md-tabs md-selected="vm.activeMailPaneIndex" class="mail-tabs" md-dynamic-height="{{vm.dynamicHeight}}"
+                         flex>
                     <md-tab>
                         <md-tab-label>Mails</md-tab-label>
                         <md-tab-body>

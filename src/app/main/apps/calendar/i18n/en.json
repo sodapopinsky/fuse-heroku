@@ -26,6 +26,9 @@
         "DELETE": "Delete",
         "30_MIN_BEFORE": "30 minutes before",
         "15_MIN_BEFORE": "15 minutes before",
-        "30_MIN_LATER": "30 minutes later"
+        "30_MIN_LATER": "30 minutes later",
+        "ERRORS": {
+            "TITLE_REQUIRED": "Title field is required"
+        }
     }
 }

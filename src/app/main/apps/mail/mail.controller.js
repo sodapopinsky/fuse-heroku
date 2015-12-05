@@ -48,7 +48,7 @@
         // Watch screen size to activate responsive read pane
         $scope.$watch(function ()
         {
-            return $mdMedia('gt-lg');
+            return $mdMedia('gt-md');
         }, function (current)
         {
             vm.responsiveReadPane = !current;
@@ -57,7 +57,7 @@
         // Watch screen size to activate dynamic height on tabs
         $scope.$watch(function ()
         {
-            return $mdMedia('sm');
+            return $mdMedia('xs');
         }, function (current)
         {
             vm.dynamicHeight = current;
