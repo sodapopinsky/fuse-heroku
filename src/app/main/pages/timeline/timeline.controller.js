@@ -7,7 +7,7 @@
         .controller('TimelineController', TimelineController);
 
     /** @ngInject */
-    function TimelineController($scope, $timeout, $q, api, Timeline)
+    function TimelineController($q, api, Timeline)
     {
         var vm = this;
 
@@ -64,7 +64,8 @@
                     {
                         // Reject the promise
                         deferred.reject(response);
-                    });
+                    }
+                );
             }
 
             return deferred.promise;

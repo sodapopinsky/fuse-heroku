@@ -35,11 +35,18 @@
 
         .timeline-point {
             position: absolute;
-            width: 72px;
+            width: 56px;
+            height: 56px;
+            line-height: 56px;
+            text-align: center;
+            border-radius: 50%;
             left: 50%;
-            margin-left: -36px;
-            padding: 16px 0 0 0;
+            margin: 16px 0 0 -28px;
             order: 2;
+
+            md-icon {
+                color: #FFFFFF;
+            }
         }
 
         .timeline-detail {

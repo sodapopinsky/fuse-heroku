@@ -51,14 +51,31 @@
         {
             if ( vm.scrollEl.scrollTop() + vm.scrollEl.height() + vm.threshold > vm.loadMoreEl.position().top )
             {
+                // Show the loader
+                vm.loadMoreEl.addClass('show');
+
                 // Unregister scroll event to prevent triggering the function over and over again
                 vm.unregisterOnScroll();
 
                 // Trigger load more event
-                vm.loadMore().then(function ()
-                {
-                    vm.registerOnScroll();
-                });
+                vm.loadMore().then(
+                    // Success
+                    function ()
+                    {
+                        // Hide the loader
+                        vm.loadMoreEl.removeClass('show');
+
+                        // Register the onScroll event again
+                        vm.registerOnScroll();
+                    },
+
+                    // Error
+                    function ()
+                    {
+                        // Remove the loader completely
+                        vm.loadMoreEl.remove();
+                    }
+                );
             }
         }
 
@@ -97,11 +114,11 @@
                 return function postLink(scope, iElement, iAttrs, MsTimelineController)
                 {
                     // Create an element for triggering the load more action and append it
-                    var loadMoreEl = angular.element('<div class="loader"></div>');
+                    var loadMoreEl = angular.element('<div class="ms-timeline-loader md-accent-bg md-whiteframe-4dp"><span class="spinner animate-rotate"></span></div>');
                     iElement.append(loadMoreEl);
 
                     // Grab the scrollable element
-                    var scrollEl = angular.element('#content > md-content');
+                    var scrollEl = angular.element('#content');
 
                     // Initialize the controller with the values
                     MsTimelineController.init(loadMoreEl, scrollEl);
@@ -151,7 +168,7 @@
                 },
                 function (current, old)
                 {
-                    if ( current === old )
+                    if ( angular.equals(current, old) )
                     {
                         return;
                     }
