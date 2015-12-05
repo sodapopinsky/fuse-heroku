@@ -51,6 +51,9 @@
         "ADD_TASK": "ADD TASK",
         "ATTACH_FILE": "Attach file",
         "INSERT_PICTURE": "Insert picture",
-        "DELETE": "Delete"
+        "DELETE": "Delete",
+        "ERRORS": {
+            "TITLE_REQUIRED": "Title field is required"
+        }
     }
 }

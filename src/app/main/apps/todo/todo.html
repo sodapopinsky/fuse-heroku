@@ -37,8 +37,7 @@
             <!-- CONTENT TOOLBAR -->
             <div class="toolbar" layout="row" layout-align="space-between center">
 
-                <md-select class="simplified" ng-model="vm.selectedFilter.dueDate" placeholder="Due Date" translate
-                           translate-attr-placeholder="TODO.DUE_DATE">
+                <md-select class="simplified" ng-model="vm.selectedFilter.dueDate" placeholder="Due Date">
                     <md-option value="Next 3 days" translate="TODO.NEXT_3_DAYS">Next 3 days</md-option>
                     <md-option value="Next 7 days" translate="TODO.NEXT_7_DAYS">Next 7 days</md-option>
                     <md-option value="Next 2 weeks" translate="TODO.NEXT_2_WEEKS">Next 2 weeks</md-option>
@@ -46,48 +45,21 @@
                 </md-select>
 
                 <div layout="row" layout-align="start center">
-                    <md-select class="simplified" ng-model="vm.taskOrder" placeholder="Order" translate
-                               translate-attr-placeholder="TODO.ORDER"
-                               ng-change="vm.taskOrderReverse = vm.taskOrder === '' ? false : vm.taskOrderReverse">
+                    <md-select class="simplified" ng-model="vm.taskOrder" placeholder="Order"
+                               ng-change="vm.taskOrderDescending = vm.taskOrder === '' ? false : vm.taskOrderDescending">
                         <md-option value="startDateTimestamp" translate="TODO.START_DATE">Start Date</md-option>
                         <md-option value="dueDateTimestamp" translate="TODO.DUE_DATE">Due Date</md-option>
                         <md-option value="" translate="TODO.MANUAL">Manual</md-option>
                         <md-option value="title" translate="TODO.TITLE">Title</md-option>
                     </md-select>
 
-                    <md-menu>
-                        <md-button ng-disabled="vm.taskOrder === ''" class="md-icon-button arrow"
-                                   ng-click="$mdOpenMenu($event)"
-                                   aria-label="Sort Direction" translate
-                                   translate-attr-aria-label="TODO.SORT_DIRECTION">
-                            <md-icon md-font-icon="icon-sort"></md-icon>
-                            <md-tooltip><span translate="TODO.SORT_DIRECTION">Sort direction</span></md-tooltip>
-                        </md-button>
-
-                        <md-menu-content width="3">
-                            <md-menu-item>
-                                <md-button aria-label="Ascending" translate-aria-label="TODO.ASCENDING"
-                                           ng-click="vm.taskOrderReverse = false">
-                                    <md-icon ng-if="vm.taskOrderReverse === false"
-                                             md-font-icon="icon-checkbox-marked-circle"></md-icon>
-                                    <md-icon ng-if="vm.taskOrderReverse === true"
-                                             md-font-icon="icon-checkbox-blank-circle-outline"></md-icon>
-                                    <span translate="TODO.ASCENDING">Ascending</span>
-                                </md-button>
-                            </md-menu-item>
-                            <md-menu-item>
-                                <md-button aria-label="Descending" translate-aria-label="TODO.DESCENDING"
-                                           ng-click="vm.taskOrderReverse = true">
-                                    <md-icon ng-if="vm.taskOrderReverse === true"
-                                             md-font-icon="icon-checkbox-marked-circle"></md-icon>
-                                    <md-icon ng-if="vm.taskOrderReverse === false"
-                                             md-font-icon="icon-checkbox-blank-circle-outline"></md-icon>
-                                    <span translate="TODO.DESCENDING">Descending</span>
-                                </md-button>
-                            </md-menu-item>
-                        </md-menu-content>
-                    </md-menu>
-
+                    <md-button class="md-icon-button" ng-disabled="vm.taskOrder === ''"
+                               ng-click="vm.taskOrderDescending = !vm.taskOrderDescending"
+                               aria-label="Sort Direction"
+                               translate translate-attr-aria-label="TODO.SORT_DIRECTION">
+                        <md-icon md-font-icon="icon-sort-ascending" ng-if="vm.taskOrderDescending === false"></md-icon>
+                        <md-icon md-font-icon="icon-sort-descending" ng-if="vm.taskOrderDescending === true"></md-icon>
+                    </md-button>
                 </div>
 
             </div>

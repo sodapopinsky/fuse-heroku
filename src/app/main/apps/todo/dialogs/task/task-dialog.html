@@ -12,7 +12,12 @@
         <md-dialog-content ms-scroll>
             <md-input-container class="md-block">
                 <label translate="TODO.TITLE">Title</label>
-                <input required ng-model="vm.task.title">
+                <input name="title" ng-model="vm.task.title" required>
+                <div ng-messages="taskForm.title.$error" ng-show="taskForm.title.$touched" role="alert">
+                    <div ng-message="required">
+                        <span translate="TODO.ERRORS.TITLE_REQUIRED">Title field is required</span>
+                    </div>
+                </div>
             </md-input-container>
 
             <div class="tags">
@@ -70,14 +75,16 @@
 
         <md-dialog-actions layout="row" layout-align="space-between center">
             <div layout="row" layout-align="start center">
-                <md-button type="submit" ng-disabled="taskForm.$invalid" ng-if="!vm.newTask" ng-click="vm.saveTask()"
+                <md-button type="submit" ng-if="!vm.newTask" ng-click="vm.saveTask()"
                            class="send-button md-accent md-raised"
+                           ng-disabled="taskForm.$invalid || taskForm.$pristine"
                            aria-label="SAVE" translate="TODO.SAVE" translate-attr-aria-label="TODO.SAVE">
                     SAVE
                 </md-button>
 
-                <md-button type="submit" ng-disabled="taskForm.$invalid" ng-if="vm.newTask" ng-click="vm.addNewTask()"
+                <md-button type="submit" ng-if="vm.newTask" ng-click="vm.addNewTask()"
                            class="send-button md-accent md-raised"
+                           ng-disabled="taskForm.$invalid || taskForm.$pristine"
                            aria-label="Add Task" translate="TODO.ADD_TASK" translate-attr-aria-label="TODO.ADD_TASK">
                     ADD TASK
                 </md-button>

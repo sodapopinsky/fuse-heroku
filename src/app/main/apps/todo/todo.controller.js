@@ -41,7 +41,7 @@
         vm.showAllTasks = true;
 
         vm.taskOrder = '';
-        vm.taskOrderReverse = false;
+        vm.taskOrderDescending = false;
 
         vm.sortableOptions = {
             ghostClass   : 'todo-item-placeholder',
