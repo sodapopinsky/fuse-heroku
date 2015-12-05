@@ -73,7 +73,7 @@
 }
 
 // RESPONSIVE
-@media screen and (max-width: $layout-breakpoint-lg) {
+@media screen and (max-width: $layout-breakpoint-md) {
 
     #file-manager {
 
@@ -92,7 +92,7 @@
     }
 }
 
-@media screen and (max-width: $layout-breakpoint-md) {
+@media screen and (max-width: $layout-breakpoint-sm) {
 
     #file-manager {
 

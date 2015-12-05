@@ -1,13 +1,14 @@
 .doc-page {
 
     > .header {
-        height: 160px !important;
-        min-height: 160px !important;
-        max-height: 160px !important;
+        height: 140px !important;
+        min-height: 140px !important;
+        max-height: 140px !important;
         padding: 24px !important;
 
         .reference-button {
             padding: 0 8px;
+            min-width: 45px;
 
             span {
                 margin-left: 4px;
@@ -65,7 +66,7 @@
 }
 
 // RESPONSIVE
-@media screen and (max-width: $layout-breakpoint-sm) {
+@media screen and (max-width: $layout-breakpoint-xs) {
 
     .doc-page {
 
@@ -74,12 +75,16 @@
         }
 
         > .header {
-            height: 200px !important;
-            min-height: 200px !important;
-            max-height: 200px !important;
+            /*height: 190px !important;
+            min-height: 190px !important;
+            max-height: 190px !important;*/
 
             .reference-button {
                 margin: 0;
+
+                span {
+                    display: none;
+                }
             }
         }
 
