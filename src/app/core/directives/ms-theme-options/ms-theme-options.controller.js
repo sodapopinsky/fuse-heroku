@@ -4,10 +4,10 @@
 
     angular
         .module('app.core')
-        .controller('ThemeOptionsController', ThemeOptionsController);
+        .controller('msThemeOptionsController', msThemeOptionsController);
 
     /** @ngInject */
-    function ThemeOptionsController($cookies, fuseTheming)
+    function msThemeOptionsController($cookies, fuseTheming)
     {
         var vm = this;
 

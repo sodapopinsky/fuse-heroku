@@ -1,40 +1,39 @@
 $theme-panel-width: 220px;
 $theme-panel-button-width: 48px;
 
-#theme-options {
+ms-theme-options {
     position: fixed;
     top: 160px;
     right: 0;
     z-index: 50;
+    display: flex;
+    flex-direction: row;
+    width: $theme-panel-width + $theme-panel-button-width;
+    transform: translateX($theme-panel-width);
+    transition: transform 0.225s ease-in-out;
 
-    #theme-options-panel {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: $theme-panel-width + $theme-panel-button-width;
-        transform: translateX($theme-panel-width);
-        transition: transform 0.225s ease-in-out;
-        pointer-events: none;
+    &.open {
+        transform: translateX(0);
 
-        &.open {
-            transform: translateX(0);
+        #theme-options-list {
             pointer-events: auto;
 
-            #theme-options-list {
-                box-shadow: $whiteframe-shadow-4dp;
-            }
-        }
-
-        #theme-options-panel-button {
-            background: #FFFFFF;
             box-shadow: $whiteframe-shadow-4dp;
-            width: $theme-panel-button-width;
-            height: $theme-panel-button-width;
-            line-height: 1;
-            border-radius: 0;
-            margin: 0;
-            pointer-events: auto;
         }
+    }
+
+    #ms-theme-options-panel-button {
+        background: #FFFFFF;
+        box-shadow: $whiteframe-shadow-4dp;
+        width: $theme-panel-button-width;
+        height: $theme-panel-button-width;
+        line-height: 1;
+        border-radius: 0;
+        margin: 0;
+        pointer-events: auto;
+    }
+    #ms-theme-options-panel {
+        pointer-events: none;
 
         #theme-options-list {
             width: $theme-panel-width;

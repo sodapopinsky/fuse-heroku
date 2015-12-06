@@ -1,9 +1,9 @@
-<div id="theme-options-panel" ng-class="{'open':vm.panelOpen}" layout="row" layout-align="start start">
+<md-button ms-theme-options-button id="ms-theme-options-panel-button" class="md-icon-button"
+           aria-label="theme options menu button">
+    <md-icon md-font-icon="icon-cog" class="icon"></md-icon>
+</md-button>
 
-    <md-button id="theme-options-panel-button" class="md-icon-button" ng-click="vm.toggleOptionsPanel()"
-               aria-label="theme options menu button">
-        <md-icon md-font-icon="icon-cog" class="icon"></md-icon>
-    </md-button>
+<div id="ms-theme-options-panel">
 
     <div id="theme-options-list" layout="column">
         <div class="theme-option">
