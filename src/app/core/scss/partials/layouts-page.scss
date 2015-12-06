@@ -464,9 +464,9 @@ $card-header-height-sm: $header-height-xs - $card-toolbar-height;
 
             > .content {
 
-                md-tabs {
+                > md-tabs {
 
-                    md-tabs-wrapper {
+                    > md-tabs-wrapper {
                         background: #FFFFFF;
                         box-shadow: $whiteframe-shadow-1dp;
                         padding: 0 24px;
@@ -492,9 +492,9 @@ $card-header-height-sm: $header-height-xs - $card-toolbar-height;
                         }
                     }
 
-                    md-tabs-content-wrapper {
+                    > md-tabs-content-wrapper {
 
-                        md-tab-content {
+                        > md-tab-content {
                             padding: 24px;
                         }
                     }
