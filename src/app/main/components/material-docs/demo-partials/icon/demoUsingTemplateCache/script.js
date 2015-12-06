@@ -7,16 +7,16 @@ angular.module('appUsingTemplateCache', ['ngMaterial'])
     // will load by url and retrieve the data via the $http and $templateCache
 
     $mdIconProvider
-      .iconSet('core', 'img/icons/sets/core-icons.svg',24)
-      .icon('social:cake', 'img/icons/cake.svg',24);
+      .iconSet('core', 'assets/angular-material-assets/img/icons/sets/core-icons.svg',24)
+      .icon('social:cake', 'assets/angular-material-assets/img/icons/cake.svg',24);
 
   })
   .run(function($http, $templateCache) {
 
     var urls = [
-      'img/icons/sets/core-icons.svg',
-      'img/icons/cake.svg',
-      'img/icons/android.svg'
+      'assets/angular-material-assets/img/icons/sets/core-icons.svg',
+      'assets/angular-material-assets/img/icons/cake.svg',
+      'assets/angular-material-assets/img/icons/android.svg'
     ];
 
     // Pre-fetch icons sources by URL and cache in the $templateCache...

@@ -6,7 +6,7 @@
         .module('app.components.material-docs')
         .directive('demoInclude', demoInclude)
 
-    function demoInclude($q, $http, $compile, $templateCache, $timeout, ASSETS_CACHE)
+    function demoInclude($q, $http, $compile, $templateCache, $timeout)
     {
         return {
             restrict: 'E',
@@ -20,15 +20,6 @@
             // Interpret the expression given as `demo-include files="something"`
             var files = scope.$eval(attr.files) || {};
             var ngModule = scope.$eval(attr.module) || '';
-
-            angular.module(ngModule)
-                .run(function ($templateCache)
-                {
-                    angular.forEach(ASSETS_CACHE, function (value, key)
-                    {
-                        $templateCache.put(key, value);
-                    });
-                });
 
             $timeout(handleDemoIndexFile);
 

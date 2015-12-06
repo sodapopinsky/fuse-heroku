@@ -10,10 +10,6 @@
             </div>
             <div class="title">{{vm.componentName}}</div>
         </div>
-        <a class="angular-material-logo" href="https://github.com/angular/material" target="_blank">
-            <img src="assets/images/logos/angular-logo.svg" alt="">
-            <div class="md-heading">Angular Material</div>
-        </a>
     </div>
     <!-- / HEADER -->
 
@@ -27,6 +23,11 @@
                     {{vm.demo.label}} (Demo)
                 </md-tab-label>
                 <md-tab-body>
+                    <a class="reference-link md-yellow-400-bg"
+                       href="https://material.angularjs.org/{{vm.materialVersion}}/demo/{{vm.demo.name}}"
+                       target="_blank">
+                        Go to Official Angular Metarial <b>{{vm.demo.name}}</b> Documentation Page
+                    </a>
                     <docs-demo
                             ng-repeat="demo in vm.demos"
                             demo-id="{{demo.id}}"
@@ -46,6 +47,11 @@
                     {{doc.name}} ({{doc.type}})
                 </md-tab-label>
                 <md-tab-body>
+                    <a class="reference-link md-yellow-400-bg"
+                       href="https://material.angularjs.org/{{vm.materialVersion}}/api/{{doc.type}}/{{doc.name}}"
+                       target="_blank">
+                        Go to Official Angular Metarial <b>{{doc.name}} {{doc.type}}</b> Documentation Page
+                    </a>
                     <div class="" ng-include="'app/main/components/material-docs/'+doc.outputPath"></div>
                 </md-tab-body>
             </md-tab>

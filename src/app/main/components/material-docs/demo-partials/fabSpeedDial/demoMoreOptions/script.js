@@ -22,9 +22,9 @@
       });
 
       self.items = [
-        { name: "Twitter", icon: "img/icons/twitter.svg", direction: "bottom" },
-        { name: "Facebook", icon: "img/icons/facebook.svg", direction: "top" },
-        { name: "Google Hangout", icon: "img/icons/hangout.svg", direction: "bottom" }
+        { name: "Twitter", icon: "assets/angular-material-assets/img/icons/twitter.svg", direction: "bottom" },
+        { name: "Facebook", icon: "assets/angular-material-assets/img/icons/facebook.svg", direction: "top" },
+        { name: "Google Hangout", icon: "assets/angular-material-assets/img/icons/hangout.svg", direction: "bottom" }
       ];
 
       self.openDialog = function($event, item) {

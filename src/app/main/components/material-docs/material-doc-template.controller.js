@@ -11,12 +11,16 @@
     {
         var vm = this;
         var component = $state.current.data;
+        vm.materialVersion = 'latest';
 
         vm.componentName = component.name;
 
         vm.component = getComponent(component.moduleName);
 
-        vm.demo = getDemo(component.moduleName);
+        if ( !component.excludeDemo )
+        {
+            vm.demo = getDemo(component.moduleName);
+        }
 
         if ( vm.component )
         {

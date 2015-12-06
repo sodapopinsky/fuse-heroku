@@ -1,16 +1,16 @@
 angular.module('bottomSheetDemo1', ['ngMaterial'])
 .config(function($mdIconProvider) {
     $mdIconProvider
-      .icon('share-arrow', 'img/icons/share-arrow.svg', 24)
-      .icon('upload', 'img/icons/upload.svg', 24)
-      .icon('copy', 'img/icons/copy.svg', 24)
-      .icon('print', 'img/icons/print.svg', 24)
-      .icon('hangout', 'img/icons/hangout.svg', 24)
-      .icon('mail', 'img/icons/mail.svg', 24)
-      .icon('message', 'img/icons/message.svg', 24)
-      .icon('copy2', 'img/icons/copy2.svg', 24)
-      .icon('facebook', 'img/icons/facebook.svg', 24)
-      .icon('twitter', 'img/icons/twitter.svg', 24);
+      .icon('share-arrow', 'assets/angular-material-assets/img/icons/share-arrow.svg', 24)
+      .icon('upload', 'assets/angular-material-assets/img/icons/upload.svg', 24)
+      .icon('copy', 'assets/angular-material-assets/img/icons/copy.svg', 24)
+      .icon('print', 'assets/angular-material-assets/img/icons/print.svg', 24)
+      .icon('hangout', 'assets/angular-material-assets/img/icons/hangout.svg', 24)
+      .icon('mail', 'assets/angular-material-assets/img/icons/mail.svg', 24)
+      .icon('message', 'assets/angular-material-assets/img/icons/message.svg', 24)
+      .icon('copy2', 'assets/angular-material-assets/img/icons/copy2.svg', 24)
+      .icon('facebook', 'assets/angular-material-assets/img/icons/facebook.svg', 24)
+      .icon('twitter', 'assets/angular-material-assets/img/icons/twitter.svg', 24);
   })
 .controller('BottomSheetExample', function($scope, $timeout, $mdBottomSheet, $mdToast) {
   $scope.alert = '';
@@ -76,16 +76,16 @@ angular.module('bottomSheetDemo1', ['ngMaterial'])
 .run(function($http, $templateCache) {
 
     var urls = [
-      'img/icons/share-arrow.svg',
-      'img/icons/upload.svg',
-      'img/icons/copy.svg',
-      'img/icons/print.svg',
-      'img/icons/hangout.svg',
-      'img/icons/mail.svg',
-      'img/icons/message.svg',
-      'img/icons/copy2.svg',
-      'img/icons/facebook.svg',
-      'img/icons/twitter.svg'
+      'assets/angular-material-assets/img/icons/share-arrow.svg',
+      'assets/angular-material-assets/img/icons/upload.svg',
+      'assets/angular-material-assets/img/icons/copy.svg',
+      'assets/angular-material-assets/img/icons/print.svg',
+      'assets/angular-material-assets/img/icons/hangout.svg',
+      'assets/angular-material-assets/img/icons/mail.svg',
+      'assets/angular-material-assets/img/icons/message.svg',
+      'assets/angular-material-assets/img/icons/copy2.svg',
+      'assets/angular-material-assets/img/icons/facebook.svg',
+      'assets/angular-material-assets/img/icons/twitter.svg'
     ];
 
     angular.forEach(urls, function(url) {

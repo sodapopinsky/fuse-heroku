@@ -5,7 +5,7 @@ app.controller('TitleController', function($scope) {
 });
 
 app.controller('AppCtrl', function($scope) {
-  var imagePath = 'img/list/60.jpeg';
+  var imagePath = 'assets/angular-material-assets/img/list/60.jpeg';
 
   $scope.todos = [];
   for (var i = 0; i < 15; i++) {

@@ -1,14 +1,21 @@
 .material-docs {
     > .header {
-        .angular-material-logo{
-            color:white;
-            text-decoration: none;
-            margin-right: 32px;
-        }
+
     }
 
     > .content {
         max-width: 100%;
+
+        .reference-link {
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+            display: block;
+            max-width: 864px;
+            margin: 0 16px 24px 16px;
+            padding: 16px;
+            color: rgba(0, 0, 0, 0.8);
+        }
 
         > md-tabs {
             transition: none !important;

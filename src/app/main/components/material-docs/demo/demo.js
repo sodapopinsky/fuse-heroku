@@ -28,7 +28,7 @@
             bindToController: true
         };
 
-        function DocsDemoCtrl($scope, $element, $attrs, $interpolate, codepen)
+        function DocsDemoCtrl($scope, $element, $attrs, $interpolate)
         {
             var self = this;
 

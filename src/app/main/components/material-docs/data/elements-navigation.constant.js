@@ -108,7 +108,8 @@
                 url       : 'icon',
                 navPath   : 'components.elements',
                 moduleName: 'material.components.icon',
-                stateName : 'material_components_icon'
+                stateName : 'material_components_icon',
+                excludeDemo: true
             },
             {
                 name      : 'Input',
