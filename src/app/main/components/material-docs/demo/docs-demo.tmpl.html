@@ -24,7 +24,7 @@
             </md-toolbar>
 
             <!-- Source views -->
-            <md-tabs class="demo-source-tabs md-primary" ng-show="demoCtrl.$showSource" style="min-height: 0;">
+            <md-tabs class="demo-source-tabs md-primary"  md-dynamic-height ng-show="demoCtrl.$showSource">
                 <md-tab ng-repeat="file in demoCtrl.orderedFiles" label="{{file.name}}">
                     <md-content md-scroll-y class="demo-source-container">
                         <hljs class="no-header" code="file.contentsPromise" lang="{{file.fileType}}"

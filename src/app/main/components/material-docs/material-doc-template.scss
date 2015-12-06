@@ -177,14 +177,13 @@
         .demo-source-tabs {
             z-index: 1;
             transition: all 0.45s cubic-bezier(0.35, 0, 0.25, 1);
-            height: 448px;
+            //height: 448px;
             background: #FFF;
             overflow: hidden;
             position: relative;
             width: 100%;
             z-index: 0;
             &.ng-hide {
-                min-height: 0;
                 height: 0;
             }
             md-tabs-wrapper {
@@ -285,7 +284,7 @@
             display: block;
             border: 1px solid #DDD;
             background-color: #F6F6F6;
-            height: 400px;
+            //height: 400px;
             hljs {
                 margin-bottom: 0;
                 border-radius: 0;
