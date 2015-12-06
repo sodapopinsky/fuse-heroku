@@ -626,11 +626,12 @@
     }
 
     /** @ngInject */
-    function MsNavigationNodeController($scope, $rootScope, $animate, $state, msNavigationService)
+    function MsNavigationNodeController($scope, $element, $rootScope, $animate, $state, msNavigationService)
     {
         var vm = this;
 
         // Data
+        vm.element = $element;
         vm.node = $scope.node;
         vm.hasChildren = undefined;
         vm.collapsed = undefined;
@@ -641,8 +642,6 @@
         vm.toggleCollapsed = toggleCollapsed;
         vm.collapse = collapse;
         vm.expand = expand;
-
-        vm.setElement = setElement;
         vm.getClass = getClass;
 
         //////////
@@ -889,16 +888,6 @@
         }
 
         /**
-         * Set element
-         *
-         * @param element
-         */
-        function setElement(element)
-        {
-            vm.element = element;
-        }
-
-        /**
          * Return the class
          *
          * @returns {*}
@@ -924,9 +913,6 @@
 
                 return function postLink(scope, iElement, iAttrs, MsNavigationNodeCtrl)
                 {
-                    // Set the element on the controller for later use
-                    MsNavigationNodeCtrl.setElement(iElement);
-
                     // Add custom classes
                     iElement.addClass(MsNavigationNodeCtrl.getClass());
 
@@ -986,17 +972,17 @@
     }
 
     /** @ngInject */
-    function MsNavigationHorizontalNodeController($scope, $rootScope, $state, msNavigationService)
+    function MsNavigationHorizontalNodeController($scope, $element, $rootScope, $state, msNavigationService)
     {
         var vm = this;
 
         // Data
+        vm.element = $element;
         vm.node = $scope.node;
         vm.hasChildren = undefined;
         vm.group = undefined;
 
         // Methods
-        vm.setElement = setElement;
         vm.getClass = getClass;
 
         //////////
@@ -1103,16 +1089,6 @@
         }
 
         /**
-         * Set element
-         *
-         * @param element
-         */
-        function setElement(element)
-        {
-            vm.element = element;
-        }
-
-        /**
          * Return the class
          *
          * @returns {*}
@@ -1138,9 +1114,6 @@
 
                 return function postLink(scope, iElement, iAttrs, MsNavigationHorizontalNodeCtrl)
                 {
-                    // Set the element on the controller for later use
-                    MsNavigationHorizontalNodeCtrl.setElement(iElement);
-
                     // Add custom classes
                     iElement.addClass(MsNavigationHorizontalNodeCtrl.getClass());
 
