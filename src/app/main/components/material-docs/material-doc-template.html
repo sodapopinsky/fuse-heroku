@@ -1,0 +1,58 @@
+<div class="doc-page material-docs doc-template page-layout simple tabbed" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+        <div layout="column" layout-align="center start">
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-home" class="s16"></md-icon>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">ANGULAR MATERIAL ELEMENTS</span>
+            </div>
+            <div class="title">{{vm.componentName}}</div>
+        </div>
+        <a class="angular-material-logo" href="https://github.com/angular/material" target="_blank">
+            <img src="assets/images/logos/angular-logo.svg" alt="">
+            <div class="md-heading">Angular Material</div>
+        </a>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div flex class="content">
+
+        <md-tabs md-selected="selectedIndex" md-dynamic-height>
+
+            <md-tab ng-if="vm.demo">
+                <md-tab-label>
+                    {{vm.demo.label}} (Demo)
+                </md-tab-label>
+                <md-tab-body>
+                    <docs-demo
+                            ng-repeat="demo in vm.demos"
+                            demo-id="{{demo.id}}"
+                            demo-title="{{demo.label}}"
+                            demo-module="{{demo.ngModule.module}}">
+                        <demo-file
+                                ng-repeat="file in demo.$files"
+                                name="{{file.name}}"
+                                contents="file.httpPromise">
+                        </demo-file>
+                    </docs-demo>
+                </md-tab-body>
+            </md-tab>
+
+            <md-tab ng-repeat="doc in vm.docs">
+                <md-tab-label>
+                    {{doc.name}} ({{doc.type}})
+                </md-tab-label>
+                <md-tab-body>
+                    <div class="" ng-include="'app/main/components/material-docs/'+doc.outputPath"></div>
+                </md-tab-body>
+            </md-tab>
+
+        </md-tabs>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>
