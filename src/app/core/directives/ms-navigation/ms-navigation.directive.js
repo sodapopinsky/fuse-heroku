@@ -626,7 +626,7 @@
     }
 
     /** @ngInject */
-    function MsNavigationNodeController($scope, $element, $rootScope, $animate, $state, msNavigationService)
+    function MsNavigationNodeController($scope, $element, $rootScope, $animate, $timeout, $state, msNavigationService)
     {
         var vm = this;
 
@@ -637,6 +637,7 @@
         vm.collapsed = undefined;
         vm.collapsable = undefined;
         vm.group = undefined;
+        vm.animateHeightClass = 'animate-height';
 
         // Methods
         vm.toggleCollapsed = toggleCollapsed;
@@ -804,6 +805,9 @@
                 // Set collapsed status
                 vm.collapsed = true;
 
+                // Add collapsing class to the node
+                vm.element.addClass('collapsing');
+
                 // Animate the height
                 $animate.animate(collapseEl,
                     {
@@ -812,7 +816,8 @@
                     },
                     {
                         'height': '0px'
-                    }
+                    },
+                    vm.animateHeightClass
                 ).then(
                     function ()
                     {
@@ -821,6 +826,9 @@
                             'display': '',
                             'height' : ''
                         });
+
+                        // Clear collapsing class from the node
+                        vm.element.removeClass('collapsing');
                     }
                 );
 
@@ -862,6 +870,9 @@
                 // Set collapsed status
                 vm.collapsed = false;
 
+                // Add expanding class to the node
+                vm.element.addClass('expanding');
+
                 // Animate the height
                 $animate.animate(expandEl,
                     {
@@ -870,7 +881,8 @@
                     },
                     {
                         'height': height + 'px'
-                    }
+                    },
+                    vm.animateHeightClass
                 ).then(
                     function ()
                     {
@@ -878,6 +890,9 @@
                         expandEl.css({
                             'height': ''
                         });
+
+                        // Clear expanding class from the node
+                        vm.element.removeClass('expanding');
                     }
                 );
 
