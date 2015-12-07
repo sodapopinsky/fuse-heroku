@@ -39,7 +39,10 @@
         }
 
         /**
-         * Remove Label
+         * Remove label
+         *
+         * @param ev
+         * @param labelId
          */
         function removeLabel(ev, labelId)
         {
@@ -69,7 +72,7 @@
                 });
             }, function ()
             {
-                console.log('canceled');
+                // Canceled
             });
         }
 

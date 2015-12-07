@@ -26,7 +26,7 @@
         vm.closeDialog = closeDialog;
         vm.getCardList = getCardList;
         vm.removeCard = removeCard;
-        /* Attachement */
+        /* Attachment */
         vm.toggleCoverImage = toggleCoverImage;
         vm.removeAttachment = removeAttachment;
         /* Labels */
@@ -100,7 +100,7 @@
 
             }, function ()
             {
-                console.log('canceled');
+                // Canceled
             });
         }
 

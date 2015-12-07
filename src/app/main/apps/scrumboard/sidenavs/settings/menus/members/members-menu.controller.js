@@ -26,11 +26,14 @@
          */
         function addNewMember()
         {
-            console.log('New Member Action');
+            // Add new member
         }
 
         /**
-         * Remove Member
+         * Remove member
+         *
+         * @param ev
+         * @param memberId
          */
         function removeMember(ev, memberId)
         {
@@ -60,7 +63,7 @@
                 });
             }, function ()
             {
-                console.log('canceled');
+                // Canceled
             });
         }
 

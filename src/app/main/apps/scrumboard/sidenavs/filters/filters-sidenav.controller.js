@@ -25,6 +25,5 @@
         vm.filteringIsOn = CardFilters.isOn;
 
         ////////
-
     }
 })();

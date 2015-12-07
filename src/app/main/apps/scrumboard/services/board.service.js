@@ -23,7 +23,7 @@
 
                 return deferred.promise;
             }
-        }
+        };
 
         return self;
     }

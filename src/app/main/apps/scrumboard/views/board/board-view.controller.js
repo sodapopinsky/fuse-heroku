@@ -17,7 +17,7 @@
         vm.boardList = BoardList.data;
         vm.cardFilters = CardFilters;
         vm.card = {};
-        vm.cardOptions = {}
+        vm.cardOptions = {};
         vm.newListName = '';
         vm.uiSortableListOptions = {
             tolerance  : "pointer",
@@ -33,7 +33,7 @@
                     'height'   : height + 'px'
                 });
             }
-        }
+        };
         vm.uiSortableCardOptions = {
             helper              : 'clone',
             appendTo            : '#board',
@@ -41,7 +41,7 @@
             tolerance           : "pointer",
             placeholder         : "list-card card-sortable-placeholder",
             forcePlaceholderSize: true,
-            connectWith         : ".list-cards",
+            connectWith         : ".list-cards"
         };
 
         // Methods
@@ -53,7 +53,8 @@
         //////////
 
         /**
-         * Open Card Dialog
+         * Open card dialog
+         *
          * @param ev
          * @param cardId
          */
@@ -74,7 +75,7 @@
         }
 
         /**
-         * Add New List
+         * Add new list
          */
         function addNewList()
         {
@@ -82,16 +83,19 @@
             {
                 return;
             }
+
             vm.board.lists.push({
                 "id"     : utils.guidGenerator(),
                 "name"   : vm.newListName,
                 "idCards": []
             });
+
             vm.newListName = '';
         }
 
         /**
-         * Remove List
+         * Remove list
+         *
          * @param ev
          * @param list
          */
@@ -113,13 +117,14 @@
                 vm.board.lists.splice(vm.board.lists.indexOf(list), 1);
             }, function ()
             {
-                console.log('canceled');
+                // Canceled
             });
 
         }
 
         /**
-         * Filtering Cards
+         * Card filter
+         *
          * @param cardId
          * @returns {*}
          */
@@ -157,7 +162,6 @@
             }
 
             return true;
-
         }
 
     }

@@ -10,7 +10,8 @@
     /** @ngInject */
     function config($stateProvider, $translatePartialLoaderProvider, msNavigationServiceProvider)
     {
-        $stateProvider.state('app.scrumboard', {
+        $stateProvider
+            .state('app.scrumboard', {
                 url      : '/scrumboard',
                 abstract : true,
                 resolve  : {
@@ -21,6 +22,8 @@
                 },
                 bodyClass: 'scrumboard'
             })
+
+            // Home
             .state('app.scrumboard.home', {
                 url    : '',
                 resolve: {
@@ -33,8 +36,9 @@
                         });
                     }
                 }
-
             })
+
+            // Board
             .state('app.scrumboard.board', {
                     url    : '/board/:id/:uri',
                     views  : {
@@ -55,6 +59,8 @@
                     }
                 }
             )
+
+            // Calendar
             .state('app.scrumboard.board.calendar', {
                 url  : '/calendar',
                 views: {

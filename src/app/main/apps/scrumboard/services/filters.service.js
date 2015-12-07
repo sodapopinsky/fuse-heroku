@@ -23,7 +23,7 @@
             {
                 return (self.name === '' && self.labels.length === 0 && self.members.length === 0 ) ? false : true;
             }
-        }
+        };
 
         return self;
     }
