@@ -19,7 +19,6 @@ $theme-panel-button-width: 48px;
     &.open {
         .ms-theme-options-panel {
             transform: translateX(0);
-            pointer-events: auto;
 
             .ms-theme-options-panel-button {
                 opacity: 1;
@@ -64,6 +63,7 @@ $theme-panel-button-width: 48px;
             max-width: $theme-panel-width;
             background: #FFFFFF;
             z-index: 12;
+            pointer-events: auto;
 
             .theme-option {
                 padding: 16px;
