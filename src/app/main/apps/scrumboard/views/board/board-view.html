@@ -1,9 +1,10 @@
-<div id="board" ui-sortable="vm.uiSortableListOptions" ng-model="vm.board.lists" ng-class="vm.board.color+'-100-bg'">
+<div id="board" ui-sortable="vm.uiSortableListOptions" ng-model="vm.board.lists" ng-class="vm.board.color+'-100-bg'"
+     layout="row">
 
     <!-- LIST -->
     <div class="list-wrapper" ng-repeat="list in vm.board.lists track by list.id">
 
-        <div class="list md-whiteframe-1dp">
+        <div class="list md-whiteframe-1dp" layout="column">
 
             <!-- LIST HEADER -->
             <div class="list-header" layout="row" layout-align="space-between center">
@@ -30,7 +31,7 @@
             <!-- / LIST HEADER -->
 
             <!-- LIST CONTENT -->
-            <div ms-scroll layout="column" class="list-content">
+            <div class="list-content" ms-scroll>
 
                 <div class="list-cards" ui-sortable="vm.uiSortableCardOptions" ng-model="list.idCards">
 
@@ -127,8 +128,6 @@
                                 <!-- / CARD DETAILS -->
 
                             </div>
-
-                            <div flex></div>
 
                             <div layout="row" layout-align="end center">
 

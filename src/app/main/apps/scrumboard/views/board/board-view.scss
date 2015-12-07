@@ -1,43 +1,37 @@
 #board {
-    padding: 24px;
-    display: flex;
-    height: 100%;
-    background: transparent;
     position: absolute;
-    left: 0;
+    top: 0;
     right: 0;
     bottom: 0;
-    top: 0;
+    left: 0;
+    height: 100%;
+    background: transparent;
+    padding: 24px;
     overflow-y: hidden;
     overflow-x: auto;
 
     .list-wrapper {
+        width: 360px;
+        min-width: 360px;
+        max-width: 360px;
+        margin-right: 24px;
         height: 100%;
-        display: inline-block;
-        vertical-align: top;
-        white-space: nowrap;
 
         &.ui-sortable-helper .list {
             box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
         }
 
         .list {
-            display: flex;
-            flex-direction: column;
             max-height: 100%;
             background-color: rgba(255, 255, 255, 0.8);
-            //background-color: #EEF0F2;
             color: #000;
-            width: 360px;
-            min-width: 360px;
             border-radius: 2px;
-            margin-right: 24px;
             transition: box-shadow 150ms ease;
 
             .list-header {
-                padding: 0 0 0 16px;
                 height: 64px;
                 min-height: 64px;
+                padding: 0 0 0 16px;
                 border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 
                 .list-header-name {
@@ -54,14 +48,12 @@
 
             .list-content {
                 position: relative;
-                display: block;
-                overflow-y: auto;
-                overflow-x: hidden;
+                overflow: hidden;
 
                 .list-cards {
                     position: relative;
-                    padding: 0 16px;
                     min-height: 32px;
+                    padding: 0 16px;
 
                     .card-sortable-placeholder {
                         background: rgba(0, 0, 0, 0.06);
@@ -74,12 +66,12 @@
             }
 
             .list-add-card {
+                position: relative;
                 height: 48px;
                 min-height: 48px;
                 padding: 0 16px;
                 text-align: left;
                 text-transform: none;
-                position: relative;
                 font-weight: 500;
                 font-size: 16px;
                 background-color: rgba(0, 0, 0, 0.08);
@@ -100,11 +92,12 @@
     }
 
     .new-list-wrapper {
+        width: 360px;
+        min-width: 360px;
+        max-width: 360px;
+        margin-right: 24px;
 
         .new-list {
-            width: 360px;
-            min-width: 360px;
-            margin-right: 24px;
             border-radius: 2px;
             background-color: rgba(255, 255, 255, 0.8);
 
@@ -162,6 +155,7 @@
 
             .list-card-labels {
                 margin-bottom: 12px;
+
                 .list-card-label {
                     width: 32px;
                     height: 6px;
