@@ -9,22 +9,34 @@
     /** @ngInject */
     function CardFiltersService()
     {
-        var self = {
+        var service = {
             name   : '',
             labels : [],
             members: [],
-            clear  : function ()
-            {
-                self.name = '';
-                self.labels = [];
-                self.members = [];
-            },
-            isOn   : function ()
-            {
-                return (self.name === '' && self.labels.length === 0 && self.members.length === 0 ) ? false : true;
-            }
+            clear  : clear,
+            isOn   : isOn
         };
 
-        return self;
+        /**
+         * Clear
+         */
+        function clear()
+        {
+            service.name = '';
+            service.labels = [];
+            service.members = [];
+        }
+
+        /**
+         * Is on
+         *
+         * @returns {boolean}
+         */
+        function isOn()
+        {
+            return (service.name === '' && service.labels.length === 0 && service.members.length === 0 ) ? false : true;
+        }
+
+        return service;
     }
 })();

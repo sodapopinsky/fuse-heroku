@@ -9,22 +9,24 @@
     /** @ngInject */
     function BoardService($q, api)
     {
-        var self = {
+        var service = {
             data   : {},
-            setData: function (boardId)
-            {
-                var deferred = $q.defer();
-
-                api.scrumboard.board.get({id: boardId}, {}, function (response)
-                {
-                    self.data = response.data;
-                    deferred.resolve();
-                });
-
-                return deferred.promise;
-            }
+            setData: setData
         };
 
-        return self;
+        function setData(boardId)
+        {
+            var deferred = $q.defer();
+
+            api.scrumboard.board.get({id: boardId}, {}, function (response)
+            {
+                service.data = response.data;
+                deferred.resolve();
+            });
+
+            return deferred.promise;
+        }
+
+        return service;
     }
 })();
