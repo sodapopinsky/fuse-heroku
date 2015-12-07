@@ -85,6 +85,10 @@ md-dialog {
                     &:last-child {
                         border-bottom: none;
                         margin-bottom: 0;
+
+                        .section-content {
+                            padding-bottom: 0;
+                        }
                     }
 
                     .section-header {
