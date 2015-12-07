@@ -73,7 +73,8 @@
         }
 
         /**
-         * Remove Card
+         * Remove card
+         *
          * @param ev
          */
         function removeCard(ev)
@@ -105,7 +106,8 @@
         }
 
         /**
-         * Toggle Cover Image
+         * Toggle cover image
+         *
          * @param attachmentId
          */
         function toggleCoverImage(attachmentId)
@@ -121,7 +123,8 @@
         }
 
         /**
-         * Remove Attachment
+         * Remove attachment
+         *
          * @param item
          */
         function removeAttachment(item)
@@ -134,18 +137,19 @@
         }
 
         /**
-         * Add Label Chips
+         * Add label chips
+         *
          * @param query
          * @returns {filterFn}
          */
         function labelQuerySearch(query)
         {
-            var results = query ? vm.labels.filter(createFilterFor(query)) : [];
-            return results;
+            return query ? vm.labels.filter(createFilterFor(query)) : [];
         }
 
         /**
-         * Label Filter
+         * Label filter
+         *
          * @param label
          * @returns {boolean}
          */
@@ -160,7 +164,7 @@
         }
 
         /**
-         * Add New Label
+         * Add new label
          */
         function addNewLabel()
         {
@@ -169,11 +173,12 @@
                 "name" : vm.newLabelName,
                 "color": vm.newLabelColor
             });
+
             vm.newLabelName = '';
         }
 
         /**
-         * Remove Label
+         * Remove label
          */
         function removeLabel()
         {
@@ -192,7 +197,8 @@
         }
 
         /**
-         * Member Filter
+         * Member filter
+         *
          * @param member
          * @returns {boolean}
          */
@@ -207,18 +213,19 @@
         }
 
         /**
-         * Add Member Chips
+         * Add member chips
+         *
          * @param query
          * @returns {Array}
          */
         function memberQuerySearch(query)
         {
-            var results = query ? vm.members.filter(createFilterFor(query)) : [];
-            return results;
+            return query ? vm.members.filter(createFilterFor(query)) : [];
         }
 
         /**
-         * Remove Checklist
+         * Remove checklist
+         *
          * @param item
          */
         function removeChecklist(item)
@@ -232,7 +239,7 @@
         }
 
         /**
-         * Update Check List Stats
+         * Update check list stats
          * @param list
          */
         function updateCheckedCount(list)
@@ -263,7 +270,8 @@
         }
 
         /**
-         * Add Checklist Item
+         * Add checklist item
+         *
          * @param text
          * @param checkList
          */
@@ -277,7 +285,7 @@
             var newCheckItem = {
                 'name'   : text,
                 'checked': false
-            }
+            };
 
             checkList.checkItems.push(newCheckItem);
 
@@ -285,7 +293,7 @@
         }
 
         /**
-         * Create Checklist
+         * Create checklist
          */
         function createCheckList()
         {
@@ -295,11 +303,13 @@
                 "checkItemsChecked": 0,
                 "checkItems"       : []
             });
+
             vm.newCheckListTitle = '';
         }
 
         /**
-         * Add New Comment
+         * Add new comment
+         *
          * @param newCommentText
          */
         function addNewComment(newCommentText)
@@ -308,13 +318,14 @@
                 "idMember": "36027j1930450d8bf7b10158",
                 "message" : newCommentText,
                 "time"    : "now"
-            }
+            };
 
             vm.card.comments.unshift(newComment);
         }
 
         /**
-         * Filter for Chips
+         * Filter for chips
+         *
          * @param query
          * @returns {filterFn}
          */

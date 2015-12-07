@@ -15,7 +15,7 @@
                 url      : '/scrumboard',
                 abstract : true,
                 resolve  : {
-                    'BoardList': function (apiResolver)
+                    BoardList: function (apiResolver)
                     {
                         return apiResolver.resolve('scrumboard.boardList@get');
                     }
@@ -27,7 +27,7 @@
             .state('app.scrumboard.home', {
                 url    : '',
                 resolve: {
-                    redirect: function (BoardList, $state)
+                    Redirect: function (BoardList, $state)
                     {
                         var latestBoard = BoardList.data[0];
                         $state.go('app.scrumboard.board', {
@@ -52,7 +52,7 @@
                         }
                     },
                     resolve: {
-                        'BoardData': function (apiResolver, $stateParams, Board)
+                        BoardData: function ($stateParams, apiResolver, Board)
                         {
                             return Board.setData($stateParams.id);
                         }
@@ -90,10 +90,8 @@
          * Inline Edit Configuration
          * @type {string}
          */
-        editableThemes.default.submitTpl = '<md-button class="md-icon-button" type="submit" aria-label="save">' +
-                                           '<md-icon md-font-icon="icon-checkbox-marked-circle" class="md-accent-fg md-hue-1"></md-icon></md-button>';
-        editableThemes.default.cancelTpl = '<md-button class="md-icon-button" ng-click="$form.$cancel()" aria-label="cancel">' +
-                                           '<md-icon md-font-icon="icon-close-circle" class="icon-cancel"></md-icon></md-button>';
+        editableThemes.default.submitTpl = '<md-button class="md-icon-button" type="submit" aria-label="save"><md-icon md-font-icon="icon-checkbox-marked-circle" class="md-accent-fg md-hue-1"></md-icon></md-button>';
+        editableThemes.default.cancelTpl = '<md-button class="md-icon-button" ng-click="$form.$cancel()" aria-label="cancel"><md-icon md-font-icon="icon-close-circle" class="icon-cancel"></md-icon></md-button>';
     }
 
 })();

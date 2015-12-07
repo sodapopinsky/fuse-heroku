@@ -283,7 +283,7 @@
 
         <!-- DESCRIPTION -->
         <div class="description">
-            <md-input-container>
+            <md-input-container class="md-block">
                 <label>Description</label>
                 <textarea ng-model="vm.card.description" columns="1" md-maxlength="150" rows="5"></textarea>
             </md-input-container>
@@ -303,7 +303,7 @@
                     </div>
                     <div class="section-content">
                         <md-chips class="label-chips" ng-model="vm.card.idLabels" md-autocomplete-snap
-                                  md-transform-chip="$chip.id">
+                                  md-require-match="true" md-transform-chip="$chip.id">
                             <md-autocomplete
                                     md-selected-item="vm.selectedLabel"
                                     md-search-text="vm.searchLabelText"
@@ -330,7 +330,7 @@
                     </div>
                     <div class="section-content">
                         <md-chips class="member-chips" ng-model="vm.card.idMembers" md-autocomplete-snap
-                                  md-transform-chip="$chip.id">
+                                  md-require-match="true" md-transform-chip="$chip.id">
                             <md-autocomplete
                                     md-selected-item="vm.selectedMember"
                                     md-search-text="vm.searchText"

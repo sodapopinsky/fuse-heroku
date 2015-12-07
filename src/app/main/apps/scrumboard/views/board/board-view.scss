@@ -5,16 +5,17 @@
     bottom: 0;
     left: 0;
     height: 100%;
-    background: transparent;
+    background: #E5E7E8;
     padding: 24px;
     overflow-y: hidden;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 
     .list-wrapper {
-        width: 360px;
-        min-width: 360px;
-        max-width: 360px;
-        margin-right: 24px;
+        width: 344px;
+        min-width: 344px;
+        max-width: 344px;
+        padding-right: 24px;
         height: 100%;
 
         &.ui-sortable-helper .list {
@@ -23,7 +24,7 @@
 
         .list {
             max-height: 100%;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: #EEF0F2;
             color: #000;
             border-radius: 2px;
             transition: box-shadow 150ms ease;
@@ -32,7 +33,7 @@
                 height: 64px;
                 min-height: 64px;
                 padding: 0 0 0 16px;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
                 .list-header-name {
                     font-size: 16px;
@@ -74,7 +75,7 @@
                 text-transform: none;
                 font-weight: 500;
                 font-size: 16px;
-                background-color: rgba(0, 0, 0, 0.08);
+                background-color: #DCDFE2;
                 cursor: pointer;
                 border-radius: 2px;
 
@@ -92,20 +93,20 @@
     }
 
     .new-list-wrapper {
-        width: 360px;
-        min-width: 360px;
-        max-width: 360px;
-        margin-right: 24px;
+        width: 344px;
+        min-width: 344px;
+        max-width: 344px;
+        padding-right: 24px;
 
         .new-list {
             border-radius: 2px;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: #EEF0F2;
 
             .editable-wrap {
-                padding: 0 8px;
-                height: 64px;
-                align-items: center;
                 display: flex;
+                align-items: center;
+                height: 64px;
+                padding: 0 4px 0 12px;
 
                 .editable-controls {
                     width: 100%;
@@ -165,7 +166,6 @@
             }
 
             .list-card-name {
-                padding-top: 4px;
                 font-size: 16px;
                 font-weight: 500;
                 margin-bottom: 12px;
@@ -203,7 +203,7 @@
         }
 
         .list-card-footer {
-            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
             padding: 0 16px;
 
             .list-card-footer-item {

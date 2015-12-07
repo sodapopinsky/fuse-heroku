@@ -36,7 +36,7 @@
                 <div class="list-cards" ui-sortable="vm.uiSortableCardOptions" ng-model="list.idCards">
 
                     <!-- CARD -->
-                    <div ng-if="cardId" class="list-card md-whiteframe-2dp"
+                    <div ng-if="cardId" class="list-card md-whiteframe-3dp"
                          ng-repeat="cardId in list.idCards | filter: vm.cardFilter track by $index"
                          ng-click="vm.openCardDialog($event, cardId)">
 
@@ -75,7 +75,7 @@
                                 <span class="badge" ng-if="vm.board.cards.getById(cardId).due" layout="row"
                                       layout-align="start center">
                                     <i class="icon-clock s16"></i>
-                                    <span>{{vm.board.cards.getById(cardId).due}}</span>
+                                    <span>{{vm.board.cards.getById(cardId).due | date}}</span>
                                 </span>
                                 <!-- / CARD DUE -->
 

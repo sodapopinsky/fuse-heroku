@@ -23,6 +23,13 @@
                     .board-subscribe {
                         margin-right: 8px;
                     }
+
+                    .editable-buttons {
+
+                        md-icon {
+                            color: #FFFFFF !important;
+                        }
+                    }
                 }
 
                 .right-side {
@@ -36,13 +43,14 @@
         }
 
         #board-selector {
-            height: 192px;
             position: absolute;
             top: 96px;
             right: 0;
             left: 0;
+            height: 192px;
             z-index: 51;
             padding: 24px;
+            opacity: 1;
 
             .board-list-item {
                 width: 128px;
@@ -60,10 +68,10 @@
                     position: absolute;
                     top: 0;
                     left: 50%;
-                    margin-left: -16px;
-                    border-radius: 50%;
                     width: 32px;
                     height: 32px;
+                    margin-left: -16px;
+                    border-radius: 50%;
                     text-align: center;
                     color: white;
 
@@ -109,13 +117,13 @@
 
             .editable-buttons {
                 display: inherit;
-                padding-left: 6px;
 
                 .md-button {
-                    height: 32px;
-                    line-height: 32px;
-                    width: 32px;
                     margin: 0;
+
+                    &:first-of-type {
+                        padding-right: 0;
+                    }
 
                     .icon-cancel {
                         color: rgba(0, 0, 0, 0.32);
