@@ -82,7 +82,7 @@
              layout="row" layout-align="start center">
 
             <div class="board-list-item" ng-repeat="board in vm.boardList"
-                 ui-sref="app.scrumboard.board({id:board.id, uri:board.uri})" layout="column"
+                 ui-sref="app.scrumboard.boards.board({id:board.id, uri:board.uri})" layout="column"
                  layout-align="space-between center">
                 <div class="board-icon">
                     <i class="icon-trello s64"></i>
@@ -96,12 +96,13 @@
                 </div>
             </div>
 
-            <div class="board-list-item add-new-board" layout="column"
-                 layout-align="space-between center">
+            <div class="board-list-item add-new-board"
+                 ui-sref="app.scrumboard.boards.addBoard" ui-sref-active="hidden"
+                 layout="column" layout-align="space-between center">
                 <div class="board-icon">
                     <i class="icon-trello s64"></i>
                 </div>
-                <div flex class="board-name">Add a board</div>
+                <div flex class="board-name">Add new board</div>
             </div>
         </div>
 
