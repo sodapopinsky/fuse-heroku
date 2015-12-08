@@ -36,7 +36,7 @@
          *      });
          *
          * In addition to these definitions, you can also create multi-dimensional objects.
-         * They are nothing to do with the $resource object, it's just a more conventional
+         * They are nothing to do with the $resource object, it's just a more convenient
          * way that we have created for you to packing your related API urls together:
          *
          *      api.blog = {
