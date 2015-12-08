@@ -1,5 +1,5 @@
 <!-- SIDENAV HEADER -->
-<md-toolbar class="md-accent" ng-class="'md-'+vm.board.color+'-bg'">
+<md-toolbar class="md-accent" ng-class="'md-'+vm.board.settings.color+'-bg'">
     <div class="md-toolbar-tools">
         <md-button ng-hide="vm.selectedMenu === 'Settings'" class="md-icon-button"
                    ng-click="vm.selectedMenu = 'Settings'" aria-label="back">
@@ -19,16 +19,16 @@
             <p class="title">Board Color</p>
         </md-list-item>
 
-        <md-list-item class="item" aria-label="inbox" ng-click="vm.board.cardCoverImages = !vm.board.cardCoverImages">
+        <md-list-item class="item" aria-label="inbox" ng-click="vm.board.settings.cardCoverImages = !vm.board.settings.cardCoverImages">
             <md-icon md-font-icon="icon-image-area" class="s18"></md-icon>
             <p flex class="title">Card Cover Images</p>
-            <md-icon ng-show="vm.board.cardCoverImages" md-font-icon="icon-check" class="s18"></md-icon>
+            <md-icon ng-show="vm.board.settings.cardCoverImages" md-font-icon="icon-check" class="s18"></md-icon>
         </md-list-item>
 
-        <md-list-item class="item" aria-label="inbox" ng-click="vm.board.subscribed = !vm.board.subscribed">
+        <md-list-item class="item" aria-label="inbox" ng-click="vm.board.settings.subscribed = !vm.board.settings.subscribed">
             <md-icon md-font-icon="icon-eye" class="s18"></md-icon>
             <p flex class="title">Subscribe</p>
-            <md-icon ng-show="vm.board.subscribed" md-font-icon="icon-check" class="s18"></md-icon>
+            <md-icon ng-show="vm.board.settings.subscribed" md-font-icon="icon-check" class="s18"></md-icon>
         </md-list-item>
 
         <md-list-item class="item" aria-label="inbox">

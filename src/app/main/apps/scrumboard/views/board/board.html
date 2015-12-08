@@ -1,4 +1,4 @@
-<div id="board" ui-sortable="vm.uiSortableListOptions" ng-model="vm.board.lists" ng-class="vm.board.color+'-100-bg'"
+<div id="board" ui-sortable="vm.uiSortableListOptions" ng-model="vm.board.lists" ng-class="vm.board.settings.color+'-100-bg'"
      layout="row">
 
     <!-- LIST -->
@@ -41,7 +41,7 @@
                          ng-click="vm.openCardDialog($event, cardId)">
 
                         <!-- CARD COVER -->
-                        <div ng-if="vm.board.cardCoverImages && vm.board.cards.getById(cardId).idAttachmentCover"
+                        <div ng-if="vm.board.settings.cardCoverImages && vm.board.cards.getById(cardId).idAttachmentCover"
                              class="list-card-cover">
                             <img ng-src="{{vm.board.cards.getById(cardId).attachments.getById(vm.board.cards.getById(cardId).idAttachmentCover).src}}">
                         </div>

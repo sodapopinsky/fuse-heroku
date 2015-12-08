@@ -4,7 +4,7 @@
     <div class="center" layout="column" flex>
 
         <!-- HEADER -->
-        <div class="header md-accent-bg" ng-class="'md-'+vm.board.color+'-bg'">
+        <div class="header md-accent-bg" ng-class="'md-'+vm.board.settings.color+'-bg'">
 
             <div class="header-content" layout="column" layout-align="space-between">
 
@@ -13,7 +13,7 @@
 
                     <!-- BOARD SELECTION BUTTON -->
                     <md-button class="md-accent md-raised md-hue-2 header-boards-button"
-                               ng-class="'md-'+vm.board.color+'-700-bg'"
+                               ng-class="'md-'+vm.board.settings.color+'-700-bg'"
                                ng-click="vm.boardSelectorVisible = !vm.boardSelectorVisible"
                                aria-label="boards button" translate
                                translate-attr-aria-label="SB.TOOGLE_MAIN_SIDENAV">
@@ -24,7 +24,7 @@
 
                     <!-- BOARD NAME -->
                     <div class="header-board-name" layout="row" layout-align="center center">
-                        <i ng-if="vm.board.subscribed" class="board-subscribe s16 icon-eye" aria-label="subscribed"></i>
+                        <i ng-if="vm.board.settings.subscribed" class="board-subscribe s16 icon-eye" aria-label="subscribed"></i>
                         <span editable-text="vm.board.name" onaftersave="vm.updateBoardUri()">{{vm.board.name}}</span>
                     </div>
                     <!-- / BOARD NAME -->
@@ -78,7 +78,7 @@
         <!-- BOARD SELECTION -->
         <div id="board-selector" ng-show="vm.boardSelectorVisible"
              class="md-accent-bg animate-slide-down board-list md-whiteframe-3dp"
-             ng-class="'md-'+vm.board.color+'-bg'"
+             ng-class="'md-'+vm.board.settings.color+'-bg'"
              layout="row" layout-align="start center">
 
             <div class="board-list-item" ng-repeat="board in vm.boardList"
@@ -103,7 +103,6 @@
                 </div>
                 <div flex class="board-name">Add a board</div>
             </div>
-
         </div>
 
         <md-backdrop ng-click="vm.boardSelectorVisible = false" ng-show="vm.boardSelectorVisible"

@@ -1,11 +1,13 @@
 {
     "data": {
+        "id": "27cfcbe1",
         "name": "ACME Backend Application",
         "uri": "acme-backend-application",
-        "id": "27cfcbe1",
-        "color": "blue-grey",
-        "subscribed": false,
-        "cardCoverImages": true,
+        "settings": {
+            "color": "blue-grey",
+            "subscribed": false,
+            "cardCoverImages": true
+        },
         "lists": [
             {
                 "id": "56027cf5a2ca3839a5d36103",
