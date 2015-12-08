@@ -24,5 +24,15 @@
             var bodyEl = angular.element('body');
             bodyEl.attr('md-no-ink', true);
         }
+
+        /**
+         * Put browser information to the html as a class
+         */
+        var browserInfo = msUtils.detectBrowser();
+        if ( browserInfo )
+        {
+            var htmlClass = browserInfo.browser + ' ' + browserInfo.version + ' ' + browserInfo.os;
+            angular.element('html').addClass(htmlClass);
+        }
     }
 })();
