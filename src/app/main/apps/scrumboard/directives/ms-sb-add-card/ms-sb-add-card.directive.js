@@ -13,10 +13,10 @@
         var vm = this;
 
         vm.newCardName = '';
-        var listId = $scope.msListId;
-        var board = BoardService.data;
-        var cards = board.cards;
-        var list = board.lists.getById(listId);
+        vm.listId = $scope.msListId;
+        vm.board = BoardService.data;
+        vm.cards = vm.board.cards;
+        vm.list = vm.board.lists.getById(vm.listId);
 
         // Methods
         vm.addNewCard = addNewCard;
@@ -35,7 +35,7 @@
 
             var newCardId = msUtils.guidGenerator();
 
-            cards.push({
+            vm.cards.push({
                 "id"               : newCardId,
                 "name"             : vm.newCardName,
                 "description"      : '',
@@ -52,14 +52,14 @@
                 "due"              : null
             });
 
-            list.idCards.push(newCardId);
+            vm.list.idCards.push(newCardId);
+
             $timeout(function ()
             {
                 $scope.scrollListContentBottom();
             });
 
             vm.newCardName = '';
-
         }
     }
 

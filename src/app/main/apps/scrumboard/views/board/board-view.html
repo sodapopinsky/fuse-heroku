@@ -1,4 +1,5 @@
-<div id="board" ui-sortable="vm.uiSortableListOptions" ng-model="vm.board.lists" ng-class="vm.board.settings.color+'-100-bg'"
+<div id="board" ui-sortable="vm.uiSortableListOptions" ng-model="vm.board.lists"
+     ng-class="vm.board.settings.color+'-100-bg'"
      layout="row">
 
     <!-- LIST -->
@@ -160,8 +161,8 @@
             <!-- / LIST CONTENT -->
 
             <!-- NEW CARD BUTTON-->
-            <div ms-sb-add-card md-ink-ripple ms-list-id="list.id" class="list-add-card" layout="row"
-                 layout-align="start center">
+            <div class="list-add-card" ms-sb-add-card ms-list-id="list.id" md-ink-ripple
+                 layout="row" layout-align="start center">
                 <div>
                     <i class="icon-plus s20"></i>
                 </div>
