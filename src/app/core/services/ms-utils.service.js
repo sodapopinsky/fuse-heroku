@@ -55,6 +55,11 @@
             var browserData = [
                 {
                     string   : $window.navigator.userAgent,
+                    subString: "Edge",
+                    identity : "Edge"
+                },
+                {
+                    string   : $window.navigator.userAgent,
                     subString: "Chrome",
                     identity : "Chrome"
                 },
