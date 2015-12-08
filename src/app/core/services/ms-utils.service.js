@@ -56,7 +56,7 @@
                 {
                     string       : $window.navigator.userAgent,
                     subString    : "Edge",
-                    versionSearch: "Edge/",
+                    versionSearch: "Edge",
                     identity     : "Edge"
                 },
                 {
@@ -204,7 +204,7 @@
                     return;
                 }
 
-                return parseFloat(dataString.substring(index + versionSearchString.length + 1));
+                return parseInt(dataString.substring(index + versionSearchString.length + 1));
             }
 
             var browser = searchString(browserData) || "unknown-browser";
