@@ -7,7 +7,7 @@
         .controller('FiltersSidenavController', FiltersSidenavController);
 
     /** @ngInject */
-    function FiltersSidenavController(BoardService, CardFilters, msUtils)
+    function FiltersSidenavController(msUtils, BoardService, CardFilters)
     {
         var vm = this;
 

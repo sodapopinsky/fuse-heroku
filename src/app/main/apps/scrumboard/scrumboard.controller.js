@@ -7,7 +7,7 @@
         .controller('ScrumboardController', ScrumboardController);
 
     /** @ngInject */
-    function ScrumboardController(BoardService, BoardList, $mdSidenav, CardFilters)
+    function ScrumboardController($window, $mdSidenav, msUtils, BoardService, BoardList, CardFilters)
     {
         var vm = this;
 

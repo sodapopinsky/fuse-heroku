@@ -7,7 +7,7 @@
         .controller('ScrumboardCardDialogController', ScrumboardCardDialogController);
 
     /** @ngInject */
-    function ScrumboardCardDialogController($document, $mdDialog, BoardService, cardId, fuseTheming, fuseGenerator, msUtils)
+    function ScrumboardCardDialogController($document, $mdDialog, fuseTheming, fuseGenerator, msUtils, BoardService, cardId)
     {
         var vm = this;
 

@@ -7,7 +7,7 @@
         .controller('MembersMenuController', MembersMenuController);
 
     /** @ngInject */
-    function MembersMenuController(BoardService, $mdDialog, $document)
+    function MembersMenuController($document, $mdDialog, BoardService)
     {
         var vm = this;
 

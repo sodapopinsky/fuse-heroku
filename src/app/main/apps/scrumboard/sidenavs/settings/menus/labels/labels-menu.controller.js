@@ -7,7 +7,7 @@
         .controller('LabelsMenuController', LabelsMenuController);
 
     /** @ngInject */
-    function LabelsMenuController(BoardService, $mdColorPalette, fuseGenerator, $mdDialog, $document, msUtils)
+    function LabelsMenuController($document, $mdColorPalette, $mdDialog, fuseGenerator, msUtils, BoardService)
     {
         var vm = this;
 

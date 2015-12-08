@@ -7,7 +7,7 @@
         .controller('SettingsSidenavController', SettingsSidenavController);
 
     /** @ngInject */
-    function SettingsSidenavController(BoardService, $mdColorPalette)
+    function SettingsSidenavController($mdColorPalette, BoardService)
     {
         var vm = this;
 
