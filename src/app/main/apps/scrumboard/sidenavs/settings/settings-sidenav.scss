@@ -1,12 +1,12 @@
 #scrumboard {
 
-    // Settings sidenav
     .settings-sidenav {
         z-index: 51;
         box-shadow: $whiteframe-shadow-8dp;
         overflow-x: hidden;
 
         .md-toolbar-tools {
+
             .menu-title {
                 font-size: 16px;
                 text-align: center;
@@ -20,10 +20,14 @@
             bottom: 0;
             left: 0;
             right: 0;
+
             &.settings {
                 padding-top: 12px;
+
                 md-list {
+
                     md-list-item {
+
                         md-icon {
                             margin-top: auto;
                             margin-bottom: auto;
@@ -32,6 +36,7 @@
 
                 }
             }
+
             md-divider {
                 margin: 16px 0;
             }

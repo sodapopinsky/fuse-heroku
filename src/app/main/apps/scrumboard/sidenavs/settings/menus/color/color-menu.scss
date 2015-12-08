@@ -1,6 +1,5 @@
 #scrumboard {
 
-    // Settings sidenav
     .settings-sidenav {
 
         md-content {
@@ -10,10 +9,13 @@
                 overflow-y: hidden;
 
                 .header {
+
                     .selected-color {
+
                         .title {
                             padding-left: 16px;
                         }
+
                         .preview {
                             padding: 8px 16px;
                         }
@@ -22,10 +24,9 @@
 
                 .content {
                     position: relative;
+
                     md-list {
                         padding: 0;
-                        .color {
-                        }
                     }
                 }
             }
