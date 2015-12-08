@@ -496,17 +496,20 @@
 
                     <div class="section-content">
 
-                        <form ng-submit="vm.addNewComment(vm.newCommentText); vm.newCommentText =''"
+                        <form name="cardCommentForm"
+                              ng-submit="vm.addNewComment(vm.newCommentText); vm.newCommentText =''"
                               class="comment new-comment" layout="column"
-                              layout-align="start end">
+                              layout-align="start end" no-validate>
                             <div layout-fill layout="row">
                                 <img class="comment-member-avatar" src="assets/images/avatars/profile.jpg">
                                 <md-input-container flex md-no-float>
                                 <textarea ms-scroll placeholder="Write a comment.."
-                                          ng-model="vm.newCommentText"></textarea>
+                                          ng-model="vm.newCommentText" required></textarea>
                                 </md-input-container>
                             </div>
-                            <md-button class="md-raised md-accent" type="submit" aria-label="add comment">Add
+                            <md-button type="submit" class="md-raised md-accent"
+                                       ng-disabled="cardCommentForm.$invalid || cardCommentForm.$pristine"
+                                       aria-label="add comment">Add
                             </md-button>
                         </form>
 
