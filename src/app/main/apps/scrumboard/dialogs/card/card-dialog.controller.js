@@ -7,7 +7,7 @@
         .controller('ScrumboardCardDialogController', ScrumboardCardDialogController);
 
     /** @ngInject */
-    function ScrumboardCardDialogController($document, $mdDialog, Board, cardId, fuseTheming, fuseGenerator, utils)
+    function ScrumboardCardDialogController($document, $mdDialog, Board, cardId, fuseTheming, fuseGenerator, msUtils)
     {
         var vm = this;
 
@@ -21,8 +21,8 @@
         // Methods
         vm.palettes = fuseTheming.getRegisteredPalettes();
         vm.rgba = fuseGenerator.rgba;
-        vm.toggleInArray = utils.toggleInArray;
-        vm.exists = utils.exists;
+        vm.toggleInArray = msUtils.toggleInArray;
+        vm.exists = msUtils.exists;
         vm.closeDialog = closeDialog;
         vm.getCardList = getCardList;
         vm.removeCard = removeCard;
@@ -169,7 +169,7 @@
         function addNewLabel()
         {
             vm.board.labels.push({
-                "id"   : utils.guidGenerator(),
+                "id"   : msUtils.guidGenerator(),
                 "name" : vm.newLabelName,
                 "color": vm.newLabelColor
             });
@@ -298,7 +298,7 @@
         function createCheckList()
         {
             vm.card.checklists.push({
-                "id"               : utils.guidGenerator(),
+                "id"               : msUtils.guidGenerator(),
                 "name"             : vm.newCheckListTitle,
                 "checkItemsChecked": 0,
                 "checkItems"       : []

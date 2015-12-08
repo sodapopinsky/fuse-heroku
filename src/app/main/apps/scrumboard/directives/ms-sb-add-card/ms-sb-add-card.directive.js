@@ -8,7 +8,7 @@
         .directive('msSbAddCard', msSbAddCardDirective);
 
     /** @ngInject */
-    function msSbAddCardController($scope, $timeout, Board, utils)
+    function msSbAddCardController($scope, $timeout, Board, msUtils)
     {
         var vm = this;
 
@@ -33,7 +33,7 @@
                 return;
             }
 
-            var newCardId = utils.guidGenerator();
+            var newCardId = msUtils.guidGenerator();
 
             cards.push({
                 "id"               : newCardId,

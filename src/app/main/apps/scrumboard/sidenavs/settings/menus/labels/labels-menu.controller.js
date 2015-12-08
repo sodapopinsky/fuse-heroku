@@ -7,7 +7,7 @@
         .controller('LabelsMenuController', LabelsMenuController);
 
     /** @ngInject */
-    function LabelsMenuController(Board, $mdColorPalette, fuseGenerator, $mdDialog, $document, utils)
+    function LabelsMenuController(Board, $mdColorPalette, fuseGenerator, $mdDialog, $document, msUtils)
     {
         var vm = this;
 
@@ -31,7 +31,7 @@
         function addNewLabel()
         {
             vm.board.labels.push({
-                "id"   : utils.guidGenerator(),
+                "id"   : msUtils.guidGenerator(),
                 "name" : vm.newLabelName,
                 "color": vm.newLabelColor
             });

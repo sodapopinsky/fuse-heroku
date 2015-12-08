@@ -7,7 +7,7 @@
         .controller('FiltersSidenavController', FiltersSidenavController);
 
     /** @ngInject */
-    function FiltersSidenavController(Board, CardFilters, utils)
+    function FiltersSidenavController(Board, CardFilters, msUtils)
     {
         var vm = this;
 
@@ -19,8 +19,8 @@
         vm.selectedMenu = 'Settings';
 
         // Methods
-        vm.exists = utils.exists;
-        vm.toggleInArray = utils.toggleInArray;
+        vm.exists = msUtils.exists;
+        vm.toggleInArray = msUtils.toggleInArray;
         vm.clearFilters = CardFilters.clear;
         vm.filteringIsOn = CardFilters.isOn;
 

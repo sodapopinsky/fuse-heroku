@@ -3,20 +3,40 @@
     'use strict';
 
     angular
-        .module('app.scrumboard')
-        .factory('utils', utilsService);
+        .module('app.core')
+        .factory('msUtils', msUtils);
 
     /** @ngInject */
-    function utilsService()
+    function msUtils($window)
     {
+        // Private variables
+        var mobileDetect = new MobileDetect($window.navigator.userAgent);
+
         var service = {
-            guidGenerator: guidGenerator,
             exists       : exists,
+            guidGenerator: guidGenerator,
+            isMobile     : isMobile,
             toggleInArray: toggleInArray
         };
 
+        return service;
+
+        //////////
+
         /**
-         * Generates unique id
+         * Check if item exists in a list
+         *
+         * @param item
+         * @param list
+         * @returns {boolean}
+         */
+        function exists(item, list)
+        {
+            return list.indexOf(item) > -1;
+        }
+
+        /**
+         * Generates a globally unique id
          *
          * @returns {*}
          */
@@ -30,15 +50,12 @@
         }
 
         /**
-         * Check item exists in list
-         *
-         * @param item
-         * @param list
-         * @returns {boolean}
+         * Return if current device is a
+         * mobile device or not
          */
-        function exists(item, list)
+        function isMobile()
         {
-            return list.indexOf(item) > -1;
+            return mobileDetect.mobile();
         }
 
         /**
@@ -58,7 +75,5 @@
                 array.splice(array.indexOf(item), 1);
             }
         }
-
-        return service;
     }
-})();
+}());
