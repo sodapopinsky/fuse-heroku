@@ -47,8 +47,8 @@
                             controller : 'ScrumboardController as vm'
                         },
                         'scrumboardContent@app.scrumboard.board': {
-                            templateUrl: 'app/main/apps/scrumboard/views/board/board-view.html',
-                            controller : 'BoardViewController as vm'
+                            templateUrl: 'app/main/apps/scrumboard/views/board/board.html',
+                            controller : 'BoardController as vm'
                         }
                     },
                     resolve: {

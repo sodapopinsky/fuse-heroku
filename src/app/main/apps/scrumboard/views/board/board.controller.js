@@ -4,10 +4,10 @@
 
     angular
         .module('app.scrumboard')
-        .controller('BoardViewController', BoardViewController);
+        .controller('BoardController', BoardController);
 
     /** @ngInject */
-    function BoardViewController($mdDialog, $document, BoardList, Board, CardFilters, utils)
+    function BoardController($mdDialog, $document, BoardList, Board, CardFilters, msUtils)
     {
         var vm = this;
 
@@ -85,7 +85,7 @@
             }
 
             vm.board.lists.push({
-                "id"     : utils.guidGenerator(),
+                "id"     : msUtils.guidGenerator(),
                 "name"   : vm.newListName,
                 "idCards": []
             });
@@ -141,7 +141,7 @@
 
                 angular.forEach(vm.cardFilters.labels, function (label)
                 {
-                    if ( !utils.exists(label, card.idLabels) )
+                    if ( !msUtils.exists(label, card.idLabels) )
                     {
                         throw false;
                     }
@@ -149,7 +149,7 @@
 
                 angular.forEach(vm.cardFilters.members, function (member)
                 {
-                    if ( !utils.exists(member, card.idMembers) )
+                    if ( !msUtils.exists(member, card.idMembers) )
                     {
                         throw false;
                     }
