@@ -28,8 +28,8 @@
                 url    : '/boards',
                 views  : {
                     'content@app'                           : {
-                        templateUrl: 'app/main/apps/scrumboard/views/boards/boards.html',
-                        controller : 'BoardsController as vm'
+                        templateUrl: 'app/main/apps/scrumboard/views/boards/boards-view.html',
+                        controller : 'BoardsViewController as vm'
                     }
                 }
             })
@@ -43,8 +43,8 @@
                             controller : 'ScrumboardController as vm'
                         },
                         'scrumboardContent@app.scrumboard.boards.board': {
-                            templateUrl: 'app/main/apps/scrumboard/views/board/board.html',
-                            controller : 'BoardController as vm'
+                            templateUrl: 'app/main/apps/scrumboard/views/board/board-view.html',
+                            controller : 'BoardViewController as vm'
                         }
                     },
                     resolve: {
@@ -65,8 +65,8 @@
                             controller : 'ScrumboardController as vm'
                         },
                         'scrumboardContent@app.scrumboard.boards.addBoard': {
-                            templateUrl: 'app/main/apps/scrumboard/views/board/board.html',
-                            controller : 'BoardController as vm'
+                            templateUrl: 'app/main/apps/scrumboard/views/board/board-view.html',
+                            controller : 'BoardViewController as vm'
                         }
                     },
                     resolve: {

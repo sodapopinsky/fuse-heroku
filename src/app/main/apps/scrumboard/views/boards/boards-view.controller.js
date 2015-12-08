@@ -4,10 +4,10 @@
 
     angular
         .module('app.scrumboard')
-        .controller('BoardsController', BoardsController);
+        .controller('BoardsViewController', BoardsViewController);
 
     /** @ngInject */
-    function BoardsController(BoardList)
+    function BoardsViewController(BoardList)
     {
         var vm = this;
 
