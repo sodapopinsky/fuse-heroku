@@ -7,12 +7,12 @@
         .controller('ScrumboardCardDialogController', ScrumboardCardDialogController);
 
     /** @ngInject */
-    function ScrumboardCardDialogController($document, $mdDialog, Board, cardId, fuseTheming, fuseGenerator, msUtils)
+    function ScrumboardCardDialogController($document, $mdDialog, BoardService, cardId, fuseTheming, fuseGenerator, msUtils)
     {
         var vm = this;
 
         // Data
-        vm.board = Board.data;
+        vm.board = BoardService.data;
         vm.card = vm.board.cards.getById(cardId);
         vm.newLabelColor = 'red';
         vm.members = vm.board.members;

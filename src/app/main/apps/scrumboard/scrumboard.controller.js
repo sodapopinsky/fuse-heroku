@@ -7,13 +7,13 @@
         .controller('ScrumboardController', ScrumboardController);
 
     /** @ngInject */
-    function ScrumboardController(Board, BoardList, $mdSidenav, CardFilters)
+    function ScrumboardController(BoardService, BoardList, $mdSidenav, CardFilters)
     {
         var vm = this;
 
         // Data
         vm.currentView = 'board';
-        vm.board = Board.data;
+        vm.board = BoardService.data;
         vm.boardList = BoardList.data;
         vm.boardSelectorVisible = false;
 

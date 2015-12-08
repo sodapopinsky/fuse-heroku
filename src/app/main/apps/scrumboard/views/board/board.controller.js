@@ -7,13 +7,13 @@
         .controller('BoardController', BoardController);
 
     /** @ngInject */
-    function BoardController($mdDialog, $document, BoardList, Board, CardFilters, msUtils)
+    function BoardController($mdDialog, $document, BoardList, BoardService, CardFilters, msUtils)
     {
         var vm = this;
 
         // Data
         vm.currentView = 'board';
-        vm.board = Board.data;
+        vm.board = BoardService.data;
         vm.boardList = BoardList.data;
         vm.cardFilters = CardFilters;
         vm.card = {};
