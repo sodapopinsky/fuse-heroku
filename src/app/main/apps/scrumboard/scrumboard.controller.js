@@ -7,7 +7,7 @@
         .controller('ScrumboardController', ScrumboardController);
 
     /** @ngInject */
-    function ScrumboardController($window, $mdSidenav, msUtils, BoardService, BoardList, CardFilters)
+    function ScrumboardController($window, $mdSidenav, BoardService, BoardList, CardFilters)
     {
         var vm = this;
 
@@ -91,6 +91,14 @@
             $mdSidenav(sidenavId).toggle();
         }
 
+        /**
+         * Array prototype
+         *
+         * Get by id
+         * 
+         * @param value
+         * @returns {T}
+         */
         Array.prototype.getById = function (value)
         {
             return this.filter(function (x)
