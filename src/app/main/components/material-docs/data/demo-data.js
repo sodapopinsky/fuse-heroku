@@ -392,7 +392,7 @@ angular.module('app.components.material-docs')
                 {
                     "ngModule"  : {
                         "name"        : "checkboxDemo1",
-                        "module"      : "checkboxDemo1",
+                        "module"      : "checkboxDemo2",
                         "dependencies": [
                             "ngMaterial"
                         ]
