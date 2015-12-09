@@ -26,8 +26,7 @@
         vm.closeDialog = closeDialog;
         vm.getCardList = getCardList;
         vm.removeCard = removeCard;
-        /* Due Date */
-        vm.calculateOverdue = calculateOverdue;
+
         /* Attachment */
         vm.toggleCoverImage = toggleCoverImage;
         vm.removeAttachment = removeAttachment;
@@ -60,9 +59,6 @@
             if ( vm.card.due )
             {
                 vm.card.due = new Date(vm.card.due);
-
-                // Calculate the the overdue status
-                vm.calculateOverdue();
             }
         }
 
@@ -122,14 +118,6 @@
             {
                 // Canceled
             });
-        }
-
-        /**
-         * Calculate the overdue status
-         */
-        function calculateOverdue()
-        {
-            vm.card.overdue = (new Date() > vm.card.due);
         }
 
         /**

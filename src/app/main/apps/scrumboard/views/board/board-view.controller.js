@@ -7,7 +7,7 @@
         .controller('BoardViewController', BoardViewController);
 
     /** @ngInject */
-    function BoardViewController($document, $mdDialog, msUtils, BoardList, BoardService, CardFilters)
+    function BoardViewController($document, $mdDialog, msUtils, BoardList, BoardService, CardFilters, DialogService)
     {
         var vm = this;
 
@@ -45,34 +45,14 @@
         };
 
         // Methods
-        vm.openCardDialog = openCardDialog;
+        vm.openCardDialog = DialogService.openCardDialog;
         vm.addNewList = addNewList;
         vm.removeList = removeList;
         vm.cardFilter = cardFilter;
+        vm.isOverdue = isOverdue;
 
         //////////
 
-        /**
-         * Open card dialog
-         *
-         * @param ev
-         * @param cardId
-         */
-        function openCardDialog(ev, cardId)
-        {
-            $mdDialog.show({
-                templateUrl        : 'app/main/apps/scrumboard/dialogs/card/card-dialog.html',
-                controller         : "ScrumboardCardDialogController",
-                controllerAs       : "vm",
-                parent             : $document.find('#scrumboard'),
-                targetEvent        : ev,
-                clickOutsideToClose: true,
-                escapeToClose      : true,
-                locals             : {
-                    cardId: cardId
-                }
-            });
-        }
 
         /**
          * Add new list
@@ -164,5 +144,9 @@
             return true;
         }
 
+        function isOverdue(cardDate)
+        {
+            return new Date() > cardDate;
+        }
     }
 })();

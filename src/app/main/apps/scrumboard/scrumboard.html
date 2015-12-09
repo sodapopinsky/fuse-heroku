@@ -24,23 +24,28 @@
 
                     <!-- BOARD NAME -->
                     <div class="header-board-name" layout="row" layout-align="center center">
-                        <i ng-if="vm.board.settings.subscribed" class="board-subscribe s16 icon-eye" aria-label="subscribed"></i>
+                        <i ng-if="vm.board.settings.subscribed" class="board-subscribe s16 icon-eye"
+                           aria-label="subscribed"></i>
                         <span editable-text="vm.board.name" onaftersave="vm.updateBoardUri()">{{vm.board.name}}</span>
                     </div>
                     <!-- / BOARD NAME -->
 
                     <div class="right-side" layout="row">
 
-                        <!--<md-button class="md-icon-button" aria-label="Calendar" translate-->
-                        <!--translate-attr-aria-label="SB.CALENDAR" ui-sref="app.scrumboard.board.calendar">-->
-                        <!--<md-icon md-font-icon="icon-calendar"></md-icon>-->
-                        <!--<md-tooltip><span translate="SB.CALENDAR">Calendar</span></md-tooltip>-->
-                        <!--</md-button>-->
-                        <!--<md-button class="md-icon-button" aria-label="ACTIVITY" translate-->
-                        <!--translate-attr-aria-label="SB.ACTIVITY">-->
-                        <!--<md-icon md-font-icon="icon-format-list-bulleted"></md-icon>-->
-                        <!--<md-tooltip><span translate="SB.ACTIVITY">Activity</span></md-tooltip>-->
-                        <!--</md-button>-->
+                        <md-button ui-sref-active-eq="ng-hide" class="md-icon-button"
+                                   aria-label="Calendar" translate
+                                   translate-attr-aria-label="SB.CALENDAR"
+                                   ui-sref="app.scrumboard.boards.board.calendar">
+                            <md-icon md-font-icon="icon-calendar"></md-icon>
+                            <md-tooltip><span translate="SB.CALENDAR">Calendar</span></md-tooltip>
+                        </md-button>
+
+                        <md-button ui-sref-active-eq="ng-hide"
+                                   class="md-icon-button" aria-label="Board" translate
+                                   translate-attr-aria-label="" ui-sref="app.scrumboard.boards.board">
+                            <md-icon md-font-icon="icon-trello"></md-icon>
+                            <md-tooltip><span translate="SB.CALENDAR">Board</span></md-tooltip>
+                        </md-button>
 
                         <!-- CLEAR FILTERS BUTTON -->
                         <md-button ng-if="vm.filteringIsOn()" class="md-icon-button" ng-click="vm.clearFilters()"

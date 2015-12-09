@@ -79,10 +79,10 @@
             )
 
             // Calendar
-            .state('app.scrumboard.board.calendar', {
+            .state('app.scrumboard.boards.board.calendar', {
                 url  : '/calendar',
                 views: {
-                    'scrumboardContent@app.scrumboard.board': {
+                    'scrumboardContent@app.scrumboard.boards.board': {
                         templateUrl: 'app/main/apps/scrumboard/views/calendar/calendar-view.html',
                         controller : 'CalendarViewController as vm'
                     }
