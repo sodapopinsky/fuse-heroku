@@ -399,7 +399,7 @@ md-dialog {
 }
 
 .checklist-menu-content {
-    padding: 16px;
+    padding: 8px 16px 16px 16px;
 
     md-input-container {
         width: 100%;
@@ -413,6 +413,8 @@ md-dialog {
 
 .labels-menu-content {
     position: relative;
+    padding: 4px 0;
+    max-height: 400px;
 
     md-tabs-wrapper {
         height: 0;
@@ -424,56 +426,9 @@ md-dialog {
     }
 
     md-input-container {
-        padding: 0;
-        margin: 0;
 
         input {
             font-size: 16px;
-        }
-    }
-
-    .add-label-button {
-        margin-left: 8px;
-        cursor: pointer;
-    }
-
-    .add-label-tab-content,
-    .edit-label-tab-content {
-
-        .header {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-
-            .back-button {
-                width: 36px;
-                height: 36px;
-            }
-
-            span {
-                padding-left: 24px;
-            }
-        }
-
-        .content {
-            padding: 8px;
-
-            md-input-container {
-                width: 100%;
-            }
-
-            .new-label-color-pick {
-                padding: 8px 0;
-                width: 200px;
-
-                .color {
-                    width: 24px;
-                    height: 24px;
-                    margin: 4px;
-                }
-            }
-
-            .create-button {
-                margin: 0;
-            }
         }
     }
 
@@ -485,22 +440,53 @@ md-dialog {
         }
 
         .label-edit-button {
+            margin: 0 0 0 8px;
+            padding: 0;
             text-align: center;
-            width: 24px;
-            margin: 8px 0 8px 6px;
-            height: 24px;
-            min-width: 24px;
-            line-height: 24px;
-            min-height: 24px;
 
             md-icon {
                 margin: 0;
             }
         }
     }
+
+    md-menu-divider {
+        display: block;
+    }
+
+    .add-label-tab-content,
+    .edit-label-tab-content {
+
+        .header {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        }
+
+        .content {
+            padding: 0 16px 8px 16px;
+
+            .label-color-picker {
+                width: 240px;
+                margin: 0 -4px 0 2px;
+
+                .color {
+                    width: 24px;
+                    height: 24px;
+                    margin: 0 6px 6px 0;
+                    cursor: pointer;
+                }
+            }
+
+            .create-button {
+                margin: 16px 0 8px 0;
+            }
+        }
+    }
 }
 
 .members-menu-content {
+    position: relative;
+    padding: 4px 0;
+    max-height: 400px;
 
     md-input-container {
 
@@ -510,7 +496,6 @@ md-dialog {
     }
 
     .member {
-        padding: 8px 0;
 
         .md-button {
 

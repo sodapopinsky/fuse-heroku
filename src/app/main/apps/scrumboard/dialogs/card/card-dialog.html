@@ -10,28 +10,25 @@
             <!-- / DUE DATE -->
 
             <!-- LABELS -->
-            <md-menu md-offset="0 48px" class="labels">
-                <md-button aria-label="Label" class="md-icon-button"
+            <md-menu md-offset="0 48" class="labels">
+                <md-button class="md-icon-button" aria-label="Label"
                            ng-click="vm.labelTabIndex = 0;$mdOpenMenu($event)">
                     <md-icon md-menu-origin md-font-icon="icon-label-outline"></md-icon>
                 </md-button>
-                <md-menu-content class="labels-menu-content" width="3" ms-scroll>
 
+                <md-menu-content class="labels-menu-content" width="4" ms-scroll>
                     <md-tabs md-selected="vm.labelTabIndex" md-dynamic-height>
+
+                        <!-- SELECT LABEL -->
                         <md-tab>
                             <md-tab-body>
                                 <md-menu-item>
-                                    <div layout="row" layout-align="spece-between center">
-                                        <md-input-container flex md-no-float>
-                                            <input placeholder="Search labels..." type="text"
-                                                   ng-model="vm.labelSearchText" autocomplete="off">
-                                        </md-input-container>
-                                        <md-icon ng-click="vm.labelTabIndex = 1" class="add-label-button"
-                                                 md-font-icon="icon-plus-circle-outline"
-                                                 md-prevent-menu-close>
-                                        </md-icon>
-                                    </div>
+                                    <md-input-container class="no-errors-spacer" md-no-float>
+                                        <input placeholder="Search labels..." type="text"
+                                               ng-model="vm.labelSearchText" autocomplete="off">
+                                    </md-input-container>
                                 </md-menu-item>
+
                                 <md-menu-item class="label"
                                               ng-repeat="label in vm.labels | filter: vm.filterLabel">
                                     <md-button class="label-toggle-button" md-prevent-menu-close
@@ -39,9 +36,7 @@
                                                ng-click="vm.toggleInArray(label.id, vm.card.idLabels)"
                                                aria-label="toggle label">
                                         <div layout="row" layout-align="space-between center">
-                                            <span>
-                                                {{label.name}}
-                                            </span>
+                                            <span>{{label.name}}</span>
                                             <i class="icon-check s16"
                                                ng-if="vm.exists(label.id, vm.card.idLabels)"></i>
                                         </div>
@@ -52,29 +47,40 @@
                                         <md-icon md-font-icon="icon-pencil" class="s16"></md-icon>
                                     </md-button>
                                 </md-menu-item>
+
+                                <md-menu-divider></md-menu-divider>
+
+                                <md-menu-item>
+                                    <md-button class="add-label-button" md-prevent-menu-close
+                                               ng-click="vm.labelTabIndex = 1">
+                                        <md-icon md-font-icon="icon-plus-circle-outline"></md-icon>
+                                        <span>Add new label</span>
+                                    </md-button>
+                                </md-menu-item>
                             </md-tab-body>
                         </md-tab>
+                        <!-- / SELECT LABEL -->
 
+                        <!-- ADD LABEL -->
                         <md-tab>
                             <md-tab-body>
                                 <div class="add-label-tab-content">
                                     <div class="header" layout="row" layout-align="space-between center">
-                                        <md-button class="back-button md-icon-button" md-prevent-menu-close
+                                        <md-button class="md-icon-button" md-prevent-menu-close
                                                    ng-click="vm.labelTabIndex = 0" aria-label="back">
-                                            <i class="icon-arrow-left s16"></i>
+                                            <i class="icon-arrow-left s20"></i>
                                         </md-button>
                                         <span flex>Create Label</span>
                                     </div>
-                                    <div class="content">
-                                        <form ng-submit="vm.addNewLabel(); vm.labelTabIndex = 0" layout="column"
-                                              layout-align="start end">
 
-                                            <md-input-container flex md-no-float>
+                                    <div class="content" layout="column" layout-align="start stretch">
+                                        <form ng-submit="vm.addNewLabel(); vm.labelTabIndex = 0" layout="column">
+                                            <md-input-container class="no-errors-spacer" md-no-float>
                                                 <input placeholder="Label Name" type="text"
                                                        ng-model="vm.newLabelName">
                                             </md-input-container>
 
-                                            <div class="new-label-color-pick" layout="row" layout-wrap>
+                                            <div class="label-color-picker" layout="row" layout-wrap>
                                                 <label class="color" ng-repeat="(palette, hues) in vm.palettes"
                                                        ng-style="{'background-color': vm.rgba(hues['500'].value), 'color': vm.rgba(hues['500'].contrast, 1)}"
                                                        layout="column" layout-align="center center">
@@ -85,9 +91,10 @@
                                                 </label>
                                             </div>
 
-                                            <md-button md-prevent-menu-close type="submit"
+                                            <md-button type="submit" md-prevent-menu-close
                                                        class="create-button md-accent md-raised"
-                                                       aria-label="create label">Create
+                                                       aria-label="create label">
+                                                Create
                                             </md-button>
                                         </form>
 
@@ -95,50 +102,53 @@
                                 </div>
                             </md-tab-body>
                         </md-tab>
+                        <!-- / ADD LABEL -->
 
+                        <!-- EDIT LABEL -->
                         <md-tab>
                             <md-tab-body>
                                 <div class="edit-label-tab-content">
                                     <div class="header" layout="row" layout-align="space-between center">
-                                        <md-button class="back-button md-icon-button" md-prevent-menu-close
+                                        <md-button class="md-icon-button" md-prevent-menu-close
                                                    ng-click="vm.labelTabIndex = 0" aria-label="back">
-                                            <i class="icon-arrow-left s16"></i>
+                                            <i class="icon-arrow-left s20"></i>
                                         </md-button>
                                         <span flex>Edit Label</span>
                                     </div>
-                                    <div class="content">
-                                        <div layout="column" layout-align="start end">
 
-                                            <md-input-container flex md-no-float>
-                                                <input placeholder="Label Name" type="text"
-                                                       ng-model="vm.board.labels.getById(vm.editLabelId).name">
-                                            </md-input-container>
+                                    <div class="content" layout="column" layout-align="start stretch">
+                                        <md-input-container class="no-errors-spacer" md-no-float>
+                                            <input placeholder="Label Name" type="text"
+                                                   ng-model="vm.board.labels.getById(vm.editLabelId).name">
+                                        </md-input-container>
 
-                                            <div class="new-label-color-pick" layout="row" layout-wrap>
-                                                <label class="color" ng-repeat="(palette, hues) in vm.palettes"
-                                                       ng-style="{'background-color': vm.rgba(hues['500'].value), 'color': vm.rgba(hues['500'].contrast, 1)}"
-                                                       layout="column" layout-align="center center">
-                                                    <input class="ng-hide" type="radio"
-                                                           ng-model="vm.board.labels.getById(vm.editLabelId).color"
-                                                           ng-value="palette"
-                                                           aria-label="{{palette}}"
-                                                    >
-                                                    <i class="icon-check s18"
-                                                       ng-if="vm.board.labels.getById(vm.editLabelId).color === palette"></i>
-                                                </label>
-                                            </div>
+                                        <div class="label-color-picker" layout="row" layout-wrap>
+                                            <label class="color" ng-repeat="(palette, hues) in vm.palettes"
+                                                   ng-style="{'background-color': vm.rgba(hues['500'].value), 'color': vm.rgba(hues['500'].contrast, 1)}"
+                                                   layout="column" layout-align="center center">
+                                                <input class="ng-hide" type="radio"
+                                                       ng-model="vm.board.labels.getById(vm.editLabelId).color"
+                                                       ng-value="palette"
+                                                       aria-label="{{palette}}">
+                                                <i class="icon-check s18"
+                                                   ng-if="vm.board.labels.getById(vm.editLabelId).color === palette"></i>
+                                            </label>
+                                        </div>
 
-                                            <md-button ng-click="vm.removeLabel(); vm.labelTabIndex=0"
-                                                       md-prevent-menu-close type="submit"
-                                                       class="remove-button md-icon-button" aria-label="remove">
+                                        <div layout="row" layout-align="end center" flex>
+                                            <md-button type="submit" md-prevent-menu-close
+                                                       class="remove-button md-icon-button"
+                                                       ng-click="vm.removeLabel(); vm.labelTabIndex=0"
+                                                       aria-label="remove">
                                                 <md-icon md-font-icon="icon-delete"></md-icon>
                                             </md-button>
-
                                         </div>
                                     </div>
                                 </div>
+
                             </md-tab-body>
                         </md-tab>
+                        <!-- / EDIT LABEL -->
 
                     </md-tabs>
                 </md-menu-content>
@@ -146,17 +156,19 @@
             <!-- / LABELS -->
 
             <!-- MEMBERS -->
-            <md-menu md-offset="0 48px" class="members">
-                <md-button aria-label="Members" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+            <md-menu md-offset="0 48" class="members">
+                <md-button class="md-icon-button" aria-label="Members" ng-click="$mdOpenMenu($event)">
                     <md-icon md-menu-origin md-font-icon="icon-account-multiple"></md-icon>
                 </md-button>
-                <md-menu-content class="members-menu-content" width="4">
+
+                <md-menu-content class="members-menu-content" width="4" ms-scroll>
                     <md-menu-item>
-                        <md-input-container md-no-float>
+                        <md-input-container class="no-errors-spacer" md-no-float>
                             <input placeholder="Search members..." autocomplete="off" type="text"
                                    ng-model="vm.memberSearchText">
                         </md-input-container>
                     </md-menu-item>
+
                     <md-menu-item class="member" ng-repeat="member in vm.members  | filter: vm.filterMember">
                         <md-button ng-click="vm.toggleInArray(member.id, vm.card.idMembers)" aria-label="toggle member"
                                    md-prevent-menu-close>
@@ -184,12 +196,14 @@
                 <md-button aria-label="checklist" class="md-icon-button" ng-click="$mdOpenMenu($event)">
                     <md-icon md-menu-origin md-font-icon="icon-checkbox-marked"></md-icon>
                 </md-button>
+
                 <md-menu-content class="checklist-menu-content" width="4">
                     <form ng-submit="vm.createCheckList()" layout="column" layout-align="start end">
-                        <md-input-container md-no-float>
+                        <md-input-container class="no-errors-spacer" md-no-float>
                             <input placeholder="Checklist title" autocomplete="off" type="text"
                                    ng-model="vm.newCheckListTitle">
                         </md-input-container>
+
                         <md-button type="submit" class="md-raised md-accent" aria-label="add checklist">
                             Add Checklist
                         </md-button>
