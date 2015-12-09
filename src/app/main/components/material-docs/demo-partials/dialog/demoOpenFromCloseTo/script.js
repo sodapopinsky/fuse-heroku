@@ -8,6 +8,7 @@ angular.module('dialogDemo2', ['ngMaterial'])
         .title('Opening from the left')
         .textContent('Closing to the right!')
         .ariaLabel('Left to right demo')
+        .parent(angular.element(document.body))
         .ok('Nice!')
         // You can specify either sting with query selector
         .openFrom('#left')
@@ -23,6 +24,7 @@ angular.module('dialogDemo2', ['ngMaterial'])
         .title('Opening from offscreen')
         .textContent('Closing to offscreen')
         .ariaLabel('Offscreen Demo')
+        .parent(angular.element(document.body))
         .ok('Amazing!')
         // Or you can specify the rect to do the transition from
         .openFrom({
