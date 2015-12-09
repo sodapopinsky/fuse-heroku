@@ -26,6 +26,8 @@
         vm.closeDialog = closeDialog;
         vm.getCardList = getCardList;
         vm.removeCard = removeCard;
+        /* Due Date */
+        vm.calculateOverdue = calculateOverdue;
         /* Attachment */
         vm.toggleCoverImage = toggleCoverImage;
         vm.removeAttachment = removeAttachment;
@@ -46,6 +48,20 @@
         vm.addNewComment = addNewComment;
 
         //////////
+
+        init();
+
+        /**
+         * Initialize
+         */
+        function init()
+        {
+            // Convert due date to the date object
+            vm.card.due = new Date(vm.card.due);
+
+            // Calculate the the overdue status
+            vm.calculateOverdue();
+        }
 
         /**
          * Close Dialog
@@ -103,6 +119,14 @@
             {
                 // Canceled
             });
+        }
+
+        /**
+         * Calculate the overdue status
+         */
+        function calculateOverdue()
+        {
+            vm.card.overdue = (new Date() > vm.card.due);
         }
 
         /**
@@ -197,6 +221,17 @@
         }
 
         /**
+         * Add member chips
+         *
+         * @param query
+         * @returns {Array}
+         */
+        function memberQuerySearch(query)
+        {
+            return query ? vm.members.filter(createFilterFor(query)) : [];
+        }
+
+        /**
          * Member filter
          *
          * @param member
@@ -210,32 +245,6 @@
             }
 
             return angular.lowercase(member.name).indexOf(angular.lowercase(vm.memberSearchText)) >= 0;
-        }
-
-        /**
-         * Add member chips
-         *
-         * @param query
-         * @returns {Array}
-         */
-        function memberQuerySearch(query)
-        {
-            return query ? vm.members.filter(createFilterFor(query)) : [];
-        }
-
-        /**
-         * Remove checklist
-         *
-         * @param item
-         */
-        function removeChecklist(item)
-        {
-            vm.card.checklists.splice(vm.card.checklists.indexOf(item), 1);
-
-            angular.forEach(vm.card.checklists, function (list)
-            {
-                updateCheckedCount(list);
-            });
         }
 
         /**
@@ -290,6 +299,21 @@
             checkList.checkItems.push(newCheckItem);
 
             updateCheckedCount(checkList);
+        }
+
+        /**
+         * Remove checklist
+         *
+         * @param item
+         */
+        function removeChecklist(item)
+        {
+            vm.card.checklists.splice(vm.card.checklists.indexOf(item), 1);
+
+            angular.forEach(vm.card.checklists, function (list)
+            {
+                updateCheckedCount(list);
+            });
         }
 
         /**

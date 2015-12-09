@@ -95,7 +95,7 @@
          * Array prototype
          *
          * Get by id
-         * 
+         *
          * @param value
          * @returns {T}
          */

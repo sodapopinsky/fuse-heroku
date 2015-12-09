@@ -218,12 +218,12 @@
                     <md-icon md-menu-origin ng-if="vm.card.subscribed" md-font-icon="icon-eye"></md-icon>
                     <md-icon md-menu-origin ng-if="!vm.card.subscribed" md-font-icon="icon-eye-off"></md-icon>
                 </md-button>
+
                 <md-menu-content class="subscribe-menu-content" width="4">
                     <md-menu-item>
-                        <md-button>
-                            <md-checkbox ng-model="vm.card.subscribed" aria-label="subscribed">
-                                Subscribe
-                            </md-checkbox>
+                        <md-button ng-click="vm.card.subscribed = !vm.card.subscribed" aria-label="subscribed">
+                            <span ng-if="!vm.card.subscribed">Subscribe</span>
+                            <span ng-if="vm.card.subscribed">Unsubscribe</span>
                         </md-button>
                     </md-menu-item>
                 </md-menu-content>
@@ -289,8 +289,9 @@
             </div>
 
             <!-- DUE DATE -->
-            <md-datepicker ng-if="vm.card.due" class="due-date-picker" ng-model="vm.card.due"
-                           md-placeholder="Due date"></md-datepicker>
+            <md-datepicker ng-if="vm.card.due" class="due-date-picker"
+                           ng-model="vm.card.due"
+                           ng-change="vm.calculateOverdue()" md-placeholder="Due date"></md-datepicker>
             <!-- / DUE DATE -->
 
         </div>
