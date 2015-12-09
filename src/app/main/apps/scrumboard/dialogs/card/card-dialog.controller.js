@@ -57,10 +57,13 @@
         function init()
         {
             // Convert due date to the date object
-            vm.card.due = new Date(vm.card.due);
+            if ( vm.card.due )
+            {
+                vm.card.due = new Date(vm.card.due);
 
-            // Calculate the the overdue status
-            vm.calculateOverdue();
+                // Calculate the the overdue status
+                vm.calculateOverdue();
+            }
         }
 
         /**

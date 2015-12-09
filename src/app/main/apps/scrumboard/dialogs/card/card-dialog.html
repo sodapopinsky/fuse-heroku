@@ -6,6 +6,7 @@
 
             <!-- DUE DATE -->
             <md-datepicker class="due-date-picker" ng-model="vm.card.due"
+                           ng-change="vm.calculateOverdue()"
                            md-placeholder="Due date"></md-datepicker>
             <!-- / DUE DATE -->
 
