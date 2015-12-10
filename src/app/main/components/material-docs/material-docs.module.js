@@ -41,8 +41,9 @@
 
             // Navigation
             msNavigationServiceProvider.saveItem(component.navPath + '.' + component.url, {
-                title: component.name,
-                state: 'app.docs_' + component.stateName
+                title : component.name,
+                state : 'app.docs_' + component.stateName,
+                weight: component.weight
             });
         });
 

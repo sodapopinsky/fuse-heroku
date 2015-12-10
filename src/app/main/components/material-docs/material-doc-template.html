@@ -23,10 +23,10 @@
                     {{vm.demo.label}} (Demo)
                 </md-tab-label>
                 <md-tab-body>
-                    <a class="reference-link md-yellow-400-bg"
+                    <a class="reference-link md-yellow-200-bg"
                        href="https://material.angularjs.org/{{vm.materialVersion}}/demo/{{vm.demo.name}}"
                        target="_blank">
-                        Go to Official Angular Metarial <b>{{vm.demo.name}}</b> Demo Page
+                        Go to official Angular Material <b>{{vm.demo.name}}</b> demo page
                     </a>
                     <docs-demo
                             ng-repeat="demo in vm.demos"
@@ -47,10 +47,10 @@
                     {{doc.name}} ({{doc.type}})
                 </md-tab-label>
                 <md-tab-body>
-                    <a class="reference-link md-yellow-400-bg"
+                    <a class="reference-link md-yellow-200-bg"
                        href="https://material.angularjs.org/{{vm.materialVersion}}/api/{{doc.type}}/{{doc.name}}"
                        target="_blank">
-                        Go to Official Angular Metarial <b>{{doc.name}} {{doc.type}}</b> Documentation Page
+                        Go to official Angular Material <b>{{doc.name}} {{doc.type}}</b> documentation page
                     </a>
                     <div class="" ng-include="'app/main/components/material-docs/'+doc.outputPath"></div>
                 </md-tab-body>
