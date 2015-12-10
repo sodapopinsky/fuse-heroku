@@ -15,8 +15,7 @@
                     <md-button class="md-accent md-raised md-hue-2 header-boards-button"
                                ng-class="'md-'+vm.board.settings.color+'-700-bg'"
                                ng-click="vm.boardSelectorVisible = !vm.boardSelectorVisible"
-                               aria-label="boards button" translate
-                               translate-attr-aria-label="SB.TOOGLE_MAIN_SIDENAV">
+                               aria-label="boards button" translate translate-attr-aria-label="SB.BOARDS_BUTTON">
                         <md-icon md-font-icon="icon-trello" class="icon"></md-icon>
                         <span translate="SB.BOARDS">BOARDS</span>
                     </md-button>
@@ -24,50 +23,52 @@
 
                     <!-- BOARD NAME -->
                     <div class="header-board-name" layout="row" layout-align="center center">
-                        <i ng-if="vm.board.settings.subscribed" class="board-subscribe s16 icon-eye"
-                           aria-label="subscribed"></i>
+                        <i ng-if="vm.board.settings.subscribed" class="board-subscribe s16 icon-eye"></i>
                         <span editable-text="vm.board.name" onaftersave="vm.updateBoardUri()">{{vm.board.name}}</span>
                     </div>
                     <!-- / BOARD NAME -->
 
                     <div class="right-side" layout="row">
 
-                        <md-button ui-sref-active-eq="ng-hide" class="md-icon-button"
-                                   aria-label="Calendar" translate
-                                   translate-attr-aria-label="SB.CALENDAR"
-                                   ui-sref="app.scrumboard.boards.board.calendar">
+                        <md-button ui-sref-active-eq="ng-hide"
+                                   class="md-icon-button"
+                                   ui-sref="app.scrumboard.boards.board.calendar"
+                                   aria-label="Calendar" translate translate-attr-aria-label="SB.CALENDAR">
                             <md-icon md-font-icon="icon-calendar"></md-icon>
                             <md-tooltip><span translate="SB.CALENDAR">Calendar</span></md-tooltip>
                         </md-button>
 
                         <md-button ui-sref-active-eq="ng-hide"
-                                   class="md-icon-button" aria-label="Board" translate
-                                   translate-attr-aria-label="" ui-sref="app.scrumboard.boards.board">
+                                   class="md-icon-button"
+                                   ui-sref="app.scrumboard.boards.board"
+                                   aria-label="Board" translate translate-attr-aria-label="SB.BOARD">
                             <md-icon md-font-icon="icon-trello"></md-icon>
-                            <md-tooltip><span translate="SB.CALENDAR">Board</span></md-tooltip>
+                            <md-tooltip><span translate="SB.BOARD">Board</span></md-tooltip>
                         </md-button>
 
                         <!-- CLEAR FILTERS BUTTON -->
-                        <md-button ng-if="vm.filteringIsOn()" class="md-icon-button" ng-click="vm.clearFilters()"
-                                   aria-label="clear filters">
+                        <md-button ng-if="vm.filteringIsOn()"
+                                   class="md-icon-button"
+                                   ng-click="vm.clearFilters()"
+                                   aria-label="Clear Filters" translate translate-attr-aria-label="SB.CLEAR_FILTERS">
                             <md-icon md-font-icon="icon-filter-remove"></md-icon>
-                            <md-tooltip>Clear Filters</md-tooltip>
+                            <md-tooltip SB.CLEAR_FILTERS>Clear Filters</md-tooltip>
                         </md-button>
                         <!-- / CLEAR FILTERS BUTTON -->
 
                         <!-- FILTERS SIDENAV BUTTON -->
-                        <md-button class="md-icon-button" ng-click="vm.toggleSidenav('filters-sidenav')"
-                                   aria-label="Filter" translate
-                                   translate-attr-aria-label="SB.FILTER">
+                        <md-button class="md-icon-button"
+                                   ng-click="vm.toggleSidenav('filters-sidenav')"
+                                   aria-label="Filter Cards" translate translate-attr-aria-label="SB.FILTER_CARDS">
                             <md-icon md-font-icon="icon-filter-variant"></md-icon>
                             <md-tooltip><span translate="SB.FILTER_CARDS">Filter Cards</span></md-tooltip>
                         </md-button>
                         <!-- / FILTERS SIDENAV BUTTON -->
 
                         <!-- BOARD SETTINGS BUTTON -->
-                        <md-button class="md-icon-button" ng-click="vm.toggleSidenav('settings-sidenav')"
-                                   aria-label="Settings" translate
-                                   translate-attr-aria-label="SB.SETTINGS">
+                        <md-button class="md-icon-button"
+                                   ng-click="vm.toggleSidenav('settings-sidenav')"
+                                   aria-label="Settings" translate translate-attr-aria-label="SB.SETTINGS">
                             <md-icon md-font-icon="icon-cog"></md-icon>
                             <md-tooltip><span translate="SB.SETTINGS">Settings</span></md-tooltip>
                         </md-button>
@@ -81,38 +82,48 @@
         <!-- / HEADER -->
 
         <!-- BOARD SELECTION -->
-        <div id="board-selector" ng-show="vm.boardSelectorVisible"
+        <div ng-show="vm.boardSelectorVisible"
+             id="board-selector"
              class="md-accent-bg animate-slide-down board-list md-whiteframe-3dp"
              ng-class="'md-'+vm.board.settings.color+'-bg'"
              layout="row" layout-align="start center">
 
             <div class="board-list-item" ng-repeat="board in vm.boardList"
-                 ui-sref="app.scrumboard.boards.board({id:board.id, uri:board.uri})" layout="column"
-                 layout-align="space-between center">
+                 ui-sref="app.scrumboard.boards.board({id:board.id, uri:board.uri})"
+                 layout="column" layout-align="space-between center">
+
                 <div class="board-icon">
                     <i class="icon-trello s64"></i>
                 </div>
+
                 <div flex class="board-name">{{board.name}}</div>
+
                 <div class="board-options">
                     <i class="icon-dots-horizontal"></i>
                 </div>
+
                 <div ng-if="board.id === vm.board.id" class="selected-icon green-bg">
                     <i class="icon-check s24"></i>
                 </div>
+
             </div>
 
             <div class="board-list-item add-new-board"
                  ui-sref="app.scrumboard.boards.addBoard" ui-sref-active="hidden"
                  layout="column" layout-align="space-between center">
+
                 <div class="board-icon">
                     <i class="icon-trello s64"></i>
                 </div>
-                <div flex class="board-name">Add new board</div>
+
+                <div flex class="board-name" translate="SB.ADD_NEW_BOARD">Add New Board</div>
+
             </div>
         </div>
 
-        <md-backdrop ng-click="vm.boardSelectorVisible = false" ng-show="vm.boardSelectorVisible"
-                     class="md-dialog-backdrop md-opaque" aria-hidden="true"></md-backdrop>
+        <md-backdrop ng-show="vm.boardSelectorVisible" class="md-dialog-backdrop md-opaque"
+                     ng-click="vm.boardSelectorVisible = false" aria-hidden="true">
+        </md-backdrop>
         <!-- / BOARD SELECTION -->
 
         <!-- CONTENT -->
