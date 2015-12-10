@@ -1023,7 +1023,7 @@
 
             // Mark all parents as active if we have a matching state
             // or the current state is a child of the node's state
-            if ( vm.node.state === $state.current.name || $state.includes(vm.node.state))
+            if ( vm.node.state === $state.current.name || $state.includes(vm.node.state) )
             {
                 // If state params are defined, make sure they are
                 // equal, otherwise do not set the active item
