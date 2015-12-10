@@ -7,9 +7,11 @@
         .controller('CalendarViewController', CalendarViewController);
 
     /** @ngInject */
-    function CalendarViewController($scope, $mdDialog, $document, BoardService, DialogService, $mdSidenav)
+    function CalendarViewController($scope, $document, $mdDialog, $mdSidenav, BoardService, DialogService)
     {
         var vm = this;
+
+        // Data
         vm.board = BoardService.data;
         vm.eventSources = [];
 
@@ -68,6 +70,12 @@
             vm.eventSources[0] = vm.cards;
         }
 
+        /**
+         * Get scheduled cards and prepare
+         * them to show on the calendar
+         *
+         * @returns {Array}
+         */
         function getScheduledCards()
         {
             var cards = [];
@@ -87,6 +95,12 @@
             return cards;
         }
 
+        /**
+         * Get background color
+         *
+         * @param cardDue
+         * @returns {*}
+         */
         function getEventBgColor(cardDue)
         {
             if ( new Date() > cardDue )
@@ -97,7 +111,7 @@
         }
 
         /**
-         * Watch Board's Changes
+         * Watch board changes
          */
         $scope.$watch('vm.board', function (current, old)
         {
@@ -112,6 +126,7 @@
 
         /**
          * Go to Date
+         *
          * @param date
          */
         function goToDate(date)

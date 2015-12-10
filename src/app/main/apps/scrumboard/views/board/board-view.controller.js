@@ -144,6 +144,12 @@
             return true;
         }
 
+        /**
+         * Is the card overdue?
+         *
+         * @param cardDate
+         * @returns {boolean}
+         */
         function isOverdue(cardDate)
         {
             return new Date() > cardDate;

@@ -25,6 +25,7 @@
         vm.closeDialog = closeDialog;
         vm.addNewCard = addNewCard;
         vm.assignDueDate = assignDueDate;
+
         //////////
 
         /**
@@ -85,6 +86,5 @@
 
             closeDialog();
         }
-
     }
 })();

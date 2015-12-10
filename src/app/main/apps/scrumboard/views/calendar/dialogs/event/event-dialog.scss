@@ -6,13 +6,6 @@ md-dialog {
         min-height: 400px;
         overflow: hidden;
 
-        md-toolbar {
-
-            .md-toolbar-tools {
-
-            }
-        }
-
         md-dialog-content {
             position: relative;
             padding: 0;
@@ -44,9 +37,6 @@ md-dialog {
                         max-height: 200px;
 
                         .card {
-
-                            .card-name {
-                            }
 
                             .card-date {
                                 font-size: 11px;

@@ -26,7 +26,6 @@
         vm.closeDialog = closeDialog;
         vm.getCardList = getCardList;
         vm.removeCard = removeCard;
-
         /* Attachment */
         vm.toggleCoverImage = toggleCoverImage;
         vm.removeAttachment = removeAttachment;

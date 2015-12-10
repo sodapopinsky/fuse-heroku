@@ -13,6 +13,7 @@
             openCardDialog: openCardDialog
         };
 
+        //////////
 
         /**
          * Open card dialog
