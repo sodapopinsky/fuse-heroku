@@ -10,20 +10,23 @@
 
     .todo-list-pane {
 
-        .sortable {
+        .todo-items {
+            
+            &.sortable {
 
-            .todo-item {
-                padding: 16px 16px 16px 48px;
+                .todo-item {
+                    padding: 16px 16px 16px 48px;
 
-                .handle {
-                    display: block;
+                    .handle {
+                        display: block;
+                    }
                 }
             }
         }
 
         .todo-items {
             overflow-x: hidden;
-            
+
             .todo-item {
                 position: relative;
                 padding: 16px;
