@@ -28,7 +28,7 @@
             text-transform: none;
             cursor: pointer;
 
-            &.todo-item-ghost {
+            &.ui-sortable-helper {
                 opacity: 1 !important;
                 background: #FFFFFF;
                 box-shadow: $whiteframe-shadow-14dp;
@@ -41,7 +41,6 @@
 
             &.todo-item-placeholder {
                 background: rgba(0, 0, 0, 0.12);
-
                 * {
                     opacity: 0;
                 }

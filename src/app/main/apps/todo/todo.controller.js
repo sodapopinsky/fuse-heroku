@@ -21,8 +21,8 @@
             'withinpixels': 'Project Withinpixels'
         };
         vm.selectedFilter = {
-            filter: 'Start Date',
-            dueDate  : 'Next 3 days'
+            filter : 'Start Date',
+            dueDate: 'Next 3 days'
         };
         vm.selectedProject = 'creapond';
 
@@ -44,11 +44,12 @@
         vm.taskOrderDescending = false;
 
         vm.sortableOptions = {
-            ghostClass   : 'todo-item-placeholder',
-            handle       : '.handle',
-            forceFallback: true,
-            fallbackClass: 'todo-item-ghost'
-        };
+            forceHelperSize     : true,
+            forcePlaceholderSize: true,
+            tolerance           : 'pointer',
+            placeholder         : 'todo-item-placeholder todo-item',
+            handle              : '.handle'
+        }
 
         // Methods
         vm.preventDefault = preventDefault;
