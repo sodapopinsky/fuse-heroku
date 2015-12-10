@@ -1,7 +1,7 @@
 {
     "SB": {
         "BOARDS": "BOARDS",
-        "BOARD": "BOARD",
+        "BOARD": "Board",
         "FILTER_CARDS": "Filter Cards",
         "SETTINGS": "Settings",
         "BOARDS_BUTTON": "Boards Button",
