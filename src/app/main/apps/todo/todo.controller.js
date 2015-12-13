@@ -44,11 +44,12 @@
         vm.taskOrderDescending = false;
 
         vm.sortableOptions = {
-            forceHelperSize     : true,
-            forcePlaceholderSize: true,
-            tolerance           : 'pointer',
-            placeholder         : 'todo-item-placeholder todo-item',
-            handle              : '.handle'
+            handle        : '.handle',
+            forceFallback : true,
+            ghostClass    : 'todo-item-placeholder',
+            fallbackClass : 'todo-item-ghost',
+            fallbackOnBody: true,
+            sort: true
         }
 
         // Methods
