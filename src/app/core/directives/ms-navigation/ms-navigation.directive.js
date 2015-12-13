@@ -392,7 +392,7 @@
     }
 
     /** @ngInject */
-    function msNavigationDirective($rootScope, $timeout, $mdSidenav, $mdComponentRegistry, msNavigationService)
+    function msNavigationDirective($rootScope, $timeout, $mdSidenav, msNavigationService)
     {
         return {
             restrict   : 'E',
