@@ -49,8 +49,11 @@
             ghostClass    : 'todo-item-placeholder',
             fallbackClass : 'todo-item-ghost',
             fallbackOnBody: true,
-            sort: true
-        }
+            sort          : true
+        };
+        vm.msScrollOptions = {
+            suppressScrollX: true
+        };
 
         // Methods
         vm.preventDefault = preventDefault;
