@@ -22,6 +22,8 @@ gulp.task('scripts', function ()
 function buildScripts()
 {
     return gulp.src(path.join(conf.paths.src, '/app/**/*.js'))
+        // Enable the following two lines if you want linter
+        // to check your code every time the scripts reloaded
         //.pipe($.eslint())
         //.pipe($.eslint.format())
         .pipe($.size())
