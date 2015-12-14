@@ -19,10 +19,14 @@
         vm.card = {};
         vm.cardOptions = {};
         vm.newListName = '';
-        vm.uiSortableListOptions = {
-            tolerance  : "pointer",
-            placeholder: "list-wrapper list-sortable-placeholder",
-            items      : "> .list-wrapper",
+        vm.sortableListOptions = {
+            axis       : 'x',
+            delay      : 75,
+            distance   : 7,
+            items      : '> .list-wrapper',
+            handle     : '.list-header',
+            placeholder: 'list-wrapper list-sortable-placeholder',
+            tolerance  : 'pointer',
             start      : function (event, ui)
             {
                 var width = ui.item[0].children[0].clientWidth;
@@ -34,42 +38,73 @@
                 });
             }
         };
-        vm.uiSortableCardOptions = {
-            helper              : 'clone',
-            appendTo            : '#board',
+        vm.sortableCardOptions = {
+            appendTo            : 'body',
+            connectWith         : '.list-cards',
+            delay               : 75,
+            distance            : 7,
             forceHelperSize     : true,
-            tolerance           : "pointer",
-            placeholder         : "list-card card-sortable-placeholder",
             forcePlaceholderSize: true,
-            connectWith         : ".list-cards",
-            scroll              : false,
+            handle              : msUtils.isMobile() ? '.list-card-sort-handle' : false,
+            helper              : function (event, el)
+            {
+                return el.clone().addClass('list-card-sort-helper');
+            },
+            placeholder         : 'list-card card-sortable-placeholder',
+            tolerance           : 'pointer',
+            scroll              : true,
             sort                : function (event, ui)
             {
-                var scrollEl = $(event.target).parents('.list-content')[0];
+                var listContentEl = ui.placeholder.closest('.list-content');
+                var boardContentEl = ui.placeholder.closest('#board');
 
-                if ( !scrollEl )
+                if ( listContentEl )
                 {
-                    return;
+                    var listContentElHeight = listContentEl[0].clientHeight,
+                        listContentElScrollHeight = listContentEl[0].scrollHeight;
+
+                    if ( listContentElHeight !== listContentElScrollHeight )
+                    {
+                        var itemTop = ui.position.top,
+                            itemBottom = itemTop + ui.item.height(),
+                            listTop = listContentEl.offset().top,
+                            listBottom = listTop + listContentElHeight;
+
+                        if ( itemTop < listTop + 25 )
+                        {
+                            listContentEl.scrollTop(listContentEl.scrollTop() - 25);
+                        }
+
+                        if ( itemBottom > listBottom - 25 )
+                        {
+                            listContentEl.scrollTop(listContentEl.scrollTop() + 25);
+                        }
+                    }
                 }
 
-                var scrollElHeight = scrollEl.clientHeight;
-                var scrollElScrollHeight = scrollEl.scrollHeight;
-
-                if ( scrollElHeight === scrollElScrollHeight )
+                if ( boardContentEl )
                 {
-                    return;
-                }
+                    var boardContentElWidth = boardContentEl[0].clientWidth;
+                    var boardContentElScrollWidth = boardContentEl[0].scrollWidth;
 
-                if ( ui.position.top <= 25 )
-                {
-                    scrollEl.scrollTop = scrollEl.scrollTop - 25;
-                }
+                    if ( boardContentElWidth !== boardContentElScrollWidth )
+                    {
+                        var itemLeft = ui.position.left,
+                            itemRight = itemLeft + ui.item.width(),
+                            boardLeft = boardContentEl.offset().left,
+                            boardRight = boardLeft + boardContentElWidth;
 
-                if ( ui.position.top >= scrollElHeight )
-                {
-                    scrollEl.scrollTop = scrollEl.scrollTop + 25;
-                }
+                        if ( itemLeft < boardLeft + 25 )
+                        {
+                            boardContentEl.scrollLeft(boardContentEl.scrollLeft() - 25);
+                        }
 
+                        if ( itemRight > boardRight)
+                        {
+                            boardContentEl.scrollLeft(boardContentEl.scrollLeft() + 25);
+                        }
+                    }
+                }
             }
         };
 
