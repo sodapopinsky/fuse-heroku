@@ -41,7 +41,36 @@
             tolerance           : "pointer",
             placeholder         : "list-card card-sortable-placeholder",
             forcePlaceholderSize: true,
-            connectWith         : ".list-cards"
+            connectWith         : ".list-cards",
+            scroll              : false,
+            sort                : function (event, ui)
+            {
+                var scrollEl = $(event.target).parents('.list-content')[0];
+
+                if ( !scrollEl )
+                {
+                    return;
+                }
+
+                var scrollElHeight = scrollEl.clientHeight;
+                var scrollElScrollHeight = scrollEl.scrollHeight;
+
+                if ( scrollElHeight === scrollElScrollHeight )
+                {
+                    return;
+                }
+
+                if ( ui.position.top <= 25 )
+                {
+                    scrollEl.scrollTop = scrollEl.scrollTop - 25;
+                }
+
+                if ( ui.position.top >= scrollElHeight )
+                {
+                    scrollEl.scrollTop = scrollEl.scrollTop + 25;
+                }
+
+            }
         };
 
         // Methods

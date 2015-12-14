@@ -53,6 +53,7 @@
             .list-content {
                 position: relative;
                 overflow: hidden;
+                overflow-y: auto;
 
                 .list-cards {
                     position: relative;
