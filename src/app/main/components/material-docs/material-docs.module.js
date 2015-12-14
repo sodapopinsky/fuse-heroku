@@ -25,6 +25,37 @@
             weight: 0
         });
 
+        msNavigationServiceProvider.saveItem('components.elements.buttons', {
+            title : 'Buttons',
+            weight: 1
+        });
+
+        msNavigationServiceProvider.saveItem('components.elements.content-elements', {
+            title : 'Content Elements',
+            weight: 2
+        });
+
+        msNavigationServiceProvider.saveItem('components.elements.lists', {
+            title : 'Lists',
+            weight: 3
+        });
+
+        msNavigationServiceProvider.saveItem('components.elements.menus', {
+            title : 'Menus',
+            weight: 4
+        });
+
+        msNavigationServiceProvider.saveItem('components.elements.progress', {
+            title : 'Progress',
+            weight: 5
+        });
+
+        msNavigationServiceProvider.saveItem('components.elements.others', {
+            title : 'Others',
+            weight: 6
+        });
+
+
         angular.forEach(ELEMENTS_NAVIGATION, function (component)
         {
 
