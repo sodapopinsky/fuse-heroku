@@ -1307,22 +1307,10 @@ angular.module('app.components.material-docs')
                             "label"     : "style.css",
                             "fileType"  : "css",
                             "outputPath": "demo-partials/input/demoErrors/style.css"
-                        },
-                        {
-                            "name"      : "style.css",
-                            "label"     : "style.css",
-                            "fileType"  : "css",
-                            "outputPath": "demo-partials/input/demoErrors/style.css"
                         }
                     ],
                     "html"      : [],
                     "js"        : [
-                        {
-                            "name"      : "script.js",
-                            "label"     : "script.js",
-                            "fileType"  : "js",
-                            "outputPath": "demo-partials/input/demoErrors/script.js"
-                        },
                         {
                             "name"      : "script.js",
                             "label"     : "script.js",
