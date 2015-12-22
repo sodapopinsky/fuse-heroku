@@ -12,6 +12,7 @@ gulp.task('partials', function ()
 {
     return gulp.src([
             path.join(conf.paths.src, '/app/**/*.html'),
+            path.join('!' + conf.paths.src, '/app/main/components/material-docs/demo-partials/**/*.html'),
             path.join(conf.paths.tmp, '/serve/app/**/*.html')
         ])
         .pipe($.minifyHtml({
@@ -98,9 +99,24 @@ gulp.task('other', function ()
         .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
 });
 
+// Move demo-partials directory for material-docs
+gulp.task('material-docs', function ()
+{
+    var fileFilter = $.filter(function (file)
+    {
+        return file.stat.isFile();
+    });
+
+    return gulp.src([
+            path.join(conf.paths.src, '/app/main/components/material-docs/demo-partials/**/*')
+        ])
+        .pipe(fileFilter)
+        .pipe(gulp.dest(path.join(conf.paths.dist, '/app/main/components/material-docs/demo-partials/')));
+});
+
 gulp.task('clean', function ()
 {
     return $.del([path.join(conf.paths.dist, '/'), path.join(conf.paths.tmp, '/')]);
 });
 
-gulp.task('build', ['html', 'fonts', 'other']);
+gulp.task('build', ['html', 'fonts', 'other', 'material-docs']);
