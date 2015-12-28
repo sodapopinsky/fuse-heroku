@@ -24,7 +24,7 @@
                     return apiResolver.resolve('invoice@get');
                 }
             },
-            bodyClass: 'invoice'
+            bodyClass: 'invoice printable'
         });
 
         // Translation
