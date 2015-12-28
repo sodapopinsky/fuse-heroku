@@ -12,10 +12,11 @@
         var vm = this;
 
         // Data
-        vm.bodyEl = angular.element('body');
         $rootScope.global = {
             search: ''
         };
+
+        vm.bodyEl = angular.element('body');
         vm.userStatusOptions = [
             {
                 'title': 'Online',
@@ -43,26 +44,26 @@
                 'color': '#616161'
             }
         ];
-        vm.languages = [
-            {
+        vm.languages = {
+            en: {
                 'title'      : 'English',
                 'translation': 'TOOLBAR.ENGLISH',
                 'code'       : 'en',
-                'flag'       : 'gb'
+                'flag'       : 'us'
             },
-            {
+            es: {
                 'title'      : 'Spanish',
                 'translation': 'TOOLBAR.SPANISH',
                 'code'       : 'es',
                 'flag'       : 'es'
             },
-            {
+            tr: {
                 'title'      : 'Turkish',
                 'translation': 'TOOLBAR.TURKISH',
                 'code'       : 'tr',
                 'flag'       : 'tr'
             }
-        ];
+        };
 
         // Methods
         vm.toggleSidenav = toggleSidenav;
@@ -73,8 +74,20 @@
 
         //////////
 
-        vm.userStatus = vm.userStatusOptions[0];
-        vm.selectedLanguage = vm.languages[0];
+        init();
+
+        /**
+         * Initialize
+         */
+        function init()
+        {
+            // Select the first status as a default
+            vm.userStatus = vm.userStatusOptions[0];
+
+            // Get the selected language directly from angular-translate module setting
+            vm.selectedLanguage = vm.languages[$translate.preferredLanguage()];
+        }
+
 
         /**
          * Toggle sidenav
@@ -100,7 +113,7 @@
          */
         function logout()
         {
-
+            // Do logout here..
         }
 
         /**
