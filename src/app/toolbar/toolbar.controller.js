@@ -123,7 +123,18 @@
         {
             vm.selectedLanguage = lang;
 
-            // Show temporary message if user selects a language other than English
+            /**
+             * Show temporary message if user selects a language other than English
+             *
+             * angular-translate module will try to load language specific json files
+             * as soon as you change the language. And because we don't have them, there
+             * will be a lot of errors in the page potentially breaking couple functions
+             * of the template.
+             *
+             * To prevent that from happening, we added a simple "return;" statement at the
+             * end of this if block. If you have all the translation files, remove this if
+             * block and the translations should work without any problems.
+             */
             if ( lang.code !== 'en' )
             {
                 var message = 'Fuse supports translations through angular-translate module, but currently we do not have any translations other than English language. If you want to help us, send us a message through ThemeForest profile page.';
@@ -138,7 +149,7 @@
                 return;
             }
 
-            //Change the language
+            // Change the language
             $translate.use(lang.code);
         }
 
