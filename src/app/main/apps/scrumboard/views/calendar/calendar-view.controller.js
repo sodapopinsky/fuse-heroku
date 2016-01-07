@@ -37,9 +37,9 @@
                 {
                     vm.openCardDialog(ev, calendarEvent.idCard);
                 },
-                eventAfterRender: function (event)
+                eventDrop       : function (event)
                 {
-                    vm.board.cards.getById(event.idCard).due = moment(event.start).toDate();
+                    vm.board.cards.getById(event.idCard).due = moment.utc(event.start).toISOString();
                 },
                 selectable      : true,
                 selectHelper    : true,
@@ -79,6 +79,7 @@
         function getScheduledCards()
         {
             var cards = [];
+
             angular.forEach(vm.board.cards, function (card)
             {
                 if ( card.due )
@@ -86,12 +87,13 @@
                     cards.push({
                         idCard         : card.id,
                         title          : card.name,
-                        start          : new Date(card.due),
+                        start          : card.due,
                         allDay         : true,
                         backgroundColor: getEventBgColor(new Date(card.due))
                     });
                 }
             });
+
             return cards;
         }
 
@@ -107,6 +109,7 @@
             {
                 return '#F44336';
             }
+
             return '#4CAF50';
         }
 
@@ -163,7 +166,6 @@
                 parent             : $document.find('#scrumboard'),
                 targetEvent        : ev,
                 clickOutsideToClose: true,
-                escapeToClose      : true,
                 locals             : {
                     dueDate: date
                 }

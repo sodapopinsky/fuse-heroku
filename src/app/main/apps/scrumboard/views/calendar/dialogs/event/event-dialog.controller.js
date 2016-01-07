@@ -13,8 +13,7 @@
 
         // Data
         vm.board = BoardService.data;
-        vm.dueDate = dueDate;
-        vm.eventDate = moment(dueDate).toDate();
+        vm.dueDate = moment.utc(dueDate).toISOString();
         vm.newCardName = '';
         vm.newCardListId = '';
         vm.selectedCards = [];
@@ -49,20 +48,20 @@
             var newCardId = msUtils.guidGenerator();
 
             vm.board.cards.push({
-                "id"               : newCardId,
-                "name"             : vm.newCardName,
-                "description"      : '',
-                "idAttachmentCover": '',
-                "idMembers"        : [],
-                "idLabels"         : [],
-                "attachments"      : [],
-                "subscribed"       : false,
-                "checklists"       : [],
-                "checkItems"       : 0,
-                "checkItemsChecked": 0,
-                "comments"         : [],
-                "activities"       : [],
-                "due"              : vm.eventDate
+                'id'               : newCardId,
+                'name'             : vm.newCardName,
+                'description'      : '',
+                'idAttachmentCover': '',
+                'idMembers'        : [],
+                'idLabels'         : [],
+                'attachments'      : [],
+                'subscribed'       : false,
+                'checklists'       : [],
+                'checkItems'       : 0,
+                'checkItemsChecked': 0,
+                'comments'         : [],
+                'activities'       : [],
+                'due'              : vm.dueDate
             });
 
             vm.board.lists.getById(vm.newCardListId).idCards.push(newCardId);
@@ -79,7 +78,7 @@
         {
             angular.forEach(vm.selectedCards, function (cardId)
             {
-                vm.board.cards.getById(cardId).due = vm.eventDate;
+                vm.board.cards.getById(cardId).due = vm.dueDate;
             });
 
             vm.selectedCards = [];

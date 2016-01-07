@@ -3,7 +3,7 @@
     <!-- DIALOG TOOLBAR -->
     <md-toolbar class="md-accent" ng-class="'md-'+vm.board.settings.color+'-bg'">
         <div class="md-toolbar-tools">
-            <h2 class="title"> {{vm.eventDate | date}}</h2>
+            <h2 class="title">{{vm.dueDate | date:'mediumDate':'UTC'}}</h2>
             <span flex></span>
 
             <!-- CLOSE DIALOG BUTTON -->

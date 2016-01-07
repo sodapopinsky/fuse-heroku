@@ -88,7 +88,7 @@
                                       ng-if="vm.board.cards.getById(cardId).due" layout="row"
                                       layout-align="start center">
                                     <i class="icon-clock s16"></i>
-                                    <span>{{vm.board.cards.getById(cardId).due | date}}</span>
+                                    <span>{{vm.board.cards.getById(cardId).due | date:'mediumDate':'UTC'}}</span>
                                 </span>
                                 <!-- / CARD DUE -->
 
