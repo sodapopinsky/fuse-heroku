@@ -30,7 +30,7 @@
                 },
                 columnFormat    : {
                     month: 'ddd',
-                    week : 'ddd M',
+                    week : 'ddd D',
                     day  : 'ddd M'
                 },
                 eventClick      : function eventDetail(calendarEvent, ev)
