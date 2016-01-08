@@ -54,21 +54,7 @@
          */
         function init()
         {
-            // Convert due date to the date object
-            if ( vm.card.due )
-            {
-                var offset = moment().utcOffset();
-
-                if ( offset < 0 )
-                {
-                    vm.card.due = moment.utc(vm.card.due).subtract(offset, 'm').toDate();
-                }
-                else
-                {
-                    vm.card.due = moment.utc(vm.card.due).add(offset, 'm').toDate();
-                }
-
-            }
+         
         }
 
         /**

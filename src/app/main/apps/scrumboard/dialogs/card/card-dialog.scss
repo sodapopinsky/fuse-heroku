@@ -18,19 +18,11 @@ md-dialog {
                     }
                 }
 
-                .due-date-picker {
-                    position: relative;
-                    background: transparent;
-
-                    .md-datepicker-input-container {
-                        position: absolute;
-                        top: 100%;
-                        left: 0;
-                        width: 0;
-                        height: 0;
-                        padding: 0;
-                        margin: 0;
-                        overflow: hidden;
+                .due-date {
+                    .moment-picker {
+                        .moment-picker-container {
+                            font-size: 13px;
+                        }
                     }
                 }
             }
@@ -59,11 +51,21 @@ md-dialog {
                 }
             }
 
-            .due-date-picker {
-                background-color: transparent;
-
-                .md-datepicker-input {
-                    background-color: transparent;
+            .due-date {
+                .moment-picker {
+                    .picker {
+                        margin-left: 12px;
+                        md-icon {
+                            margin-right: 4px;
+                        }
+                    }
+                    .moment-picker-container {
+                        right: 0;
+                        &:before, &:after {
+                            right: 15px;
+                            left: inherit;
+                        }
+                    }
                 }
             }
 

@@ -17,33 +17,36 @@
 
         vm.calendarUiConfig = {
             calendar: {
-                editable        : true,
-                eventLimit      : true,
-                header          : '',
-                dayNames        : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-                dayNamesShort   : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-                viewRender      : function (view)
+                editable                 : true,
+                eventLimit               : true,
+                header                   : '',
+                dayNames                 : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                dayNamesShort            : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                timezone                 : 'local',
+                eventDurationEditable    : false,
+                defaultTimedEventDuration: '01:00:00',
+                viewRender               : function (view)
                 {
                     vm.calendarView = view;
                     vm.calendar = vm.calendarView.calendar;
                     vm.currentMonthShort = vm.calendar.getDate().format('MMM');
                 },
-                columnFormat    : {
+                columnFormat             : {
                     month: 'ddd',
                     week : 'ddd D',
-                    day  : 'ddd M'
+                    day  : 'ddd D'
                 },
-                eventClick      : function eventDetail(calendarEvent, ev)
+                eventClick               : function eventDetail(calendarEvent, ev)
                 {
                     vm.openCardDialog(ev, calendarEvent.idCard);
                 },
-                eventDrop       : function (event)
+                eventDrop                : function (event)
                 {
-                    vm.board.cards.getById(event.idCard).due = moment.utc(event.start).toISOString();
+                    vm.board.cards.getById(event.idCard).due = moment.utc(event.start).format('x');
                 },
-                selectable      : true,
-                selectHelper    : true,
-                dayClick        : function (date, ev)
+                selectable               : true,
+                selectHelper             : true,
+                dayClick                 : function (date, ev)
                 {
                     eventDialog(date, ev);
                 }
@@ -87,9 +90,9 @@
                     cards.push({
                         idCard         : card.id,
                         title          : card.name,
-                        start          : card.due,
-                        allDay         : true,
-                        backgroundColor: getEventBgColor(new Date(card.due))
+                        start          : moment.utc(card.due, 'x'),
+                        due            : card.due,
+                        backgroundColor: getEventBgColor(card.due)
                     });
                 }
             });
@@ -105,7 +108,7 @@
          */
         function getEventBgColor(cardDue)
         {
-            if ( new Date() > cardDue )
+            if ( moment() > moment(cardDue, 'x') )
             {
                 return '#F44336';
             }

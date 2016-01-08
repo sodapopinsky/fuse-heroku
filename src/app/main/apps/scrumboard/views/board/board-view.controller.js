@@ -216,7 +216,7 @@
          */
         function isOverdue(cardDate)
         {
-            return new Date() > new Date(cardDate);
+            return moment() > moment(cardDate, 'x');
         }
     }
 })();

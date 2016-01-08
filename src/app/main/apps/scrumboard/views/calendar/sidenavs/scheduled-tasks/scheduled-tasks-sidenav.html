@@ -9,9 +9,9 @@
 
         <!-- CARD DATE -->
         <md-button class="md-raised card-date" ng-click="vm.goToDate(card.start)">
-            <div class="day-in-week">{{card.start | date:'EEEE':'UTC'}}</div>
-            <div class="day">{{card.start | date:'d':'UTC' }}</div>
-            <div class="month-year">{{card.start | date:'MMM yyyy':'UTC'}}</div>
+            <div class="day-in-week">{{card.due | date:'EEEE'}}</div>
+            <div class="day">{{card.due | date:'d' }}</div>
+            <div class="month-year">{{card.due | date:'MMM yyyy'}}</div>
         </md-button>
         <!-- / CARD DATE -->
 
