@@ -10,7 +10,8 @@
                 <div ng-if="!vm.card.due" moment-picker="vm.card.due" format="x" min-view="year"
                      max-view="hour"
                      start-view="month">
-                    <md-button class="md-icon-button" aria-label="Due" translate translate-attr-aria-label="SB.LABEL"
+                    <md-button class="md-icon-button" aria-label="Due date" translate
+                               translate-attr-aria-label="SB.DUE_DATE"
                                ng-click="$mdOpenMenu($event)">
                         <md-icon md-font-icon="icon-calendar"></md-icon>
                     </md-button>
@@ -25,8 +26,8 @@
 
                 <md-menu-content class="remove-due-date-menu-content" width="4" ms-scroll>
                     <md-menu-item>
-                        <md-button ng-click="vm.card.due = ''" aria-label="remove due date" translate
-                                   translate-attr-aria-label="SB.TOGGLE_MEMBER">
+                        <md-button ng-click="vm.card.due = ''" aria-label="remove" translate
+                                   translate-attr-aria-label="SB.REMOVE">
                             Remove Due Date
                         </md-button>
                     </md-menu-item>
@@ -345,7 +346,8 @@
                         <span>{{vm.card.due | date:'shortTime'}}</span>
                     </div>
                 </div>
-                <md-button class="md-icon-button" ng-click="vm.card.due = ''">
+                <md-button class="md-icon-button" ng-click="vm.card.due = ''" aria-label="remove" translate
+                           translate-attr-aria-label="SB.REMOVE">
                     <md-icon md-font-icon="icon-delete" class="s16"></md-icon>
                 </md-button>
             </div>

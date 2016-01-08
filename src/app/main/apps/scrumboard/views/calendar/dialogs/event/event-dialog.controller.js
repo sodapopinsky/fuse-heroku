@@ -13,7 +13,7 @@
 
         // Data
         vm.board = BoardService.data;
-        vm.dueDate = moment.utc(dueDate).toISOString();
+        vm.dueDate = dueDate;
         vm.newCardName = '';
         vm.newCardListId = '';
         vm.selectedCards = [];

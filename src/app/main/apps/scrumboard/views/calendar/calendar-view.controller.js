@@ -48,7 +48,19 @@
                 selectHelper             : true,
                 dayClick                 : function (date, ev)
                 {
-                    eventDialog(date, ev);
+                    var offset = moment().utcOffset();
+                    var corrDate = '';
+
+                    if ( offset < 0 )
+                    {
+                        corrDate = moment.utc(date).subtract(offset, 'm').format('x');
+                    }
+                    else
+                    {
+                        corrDate = moment.utc(date).add(offset, 'm').format('x');
+                    }
+
+                    eventDialog(corrDate, ev);
                 }
             }
         };
