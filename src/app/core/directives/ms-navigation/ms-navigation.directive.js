@@ -30,6 +30,7 @@
 
         // Methods
         service.saveItem = saveItem;
+        service.deleteItem = deleteItem;
         service.sortByWeight = sortByWeight;
 
         //////////
@@ -101,6 +102,52 @@
                 // Push the item into the array
                 parent.push(item);
             }
+        }
+
+        /**
+         * Delete navigation item
+         *
+         * @param path
+         */
+        function deleteItem(path)
+        {
+            if ( !angular.isString(path) )
+            {
+                $log.error('path must be a string (eg. `dashboard.project`)');
+                return;
+            }
+
+            // Locate the item by using given path
+            var item = navigation,
+                parts = path.split('.');
+
+            for ( var p = 0; p < parts.length; p++ )
+            {
+                var id = parts[p];
+
+                for ( var i = 0; i < item.length; i++ )
+                {
+                    if ( item[i]._id === id )
+                    {
+                        // If we have a matching path,
+                        // we have found our object:
+                        // remove it.
+                        if ( item[i]._path === path )
+                        {
+                            //delete item[i];
+                            item.splice(i, 1);
+                            return true;
+                        }
+
+                        // Otherwise grab the children of
+                        // the current item and continue
+                        item = item[i].children;
+                        break;
+                    }
+                }
+            }
+
+            return false;
         }
 
         /**
@@ -249,6 +296,7 @@
 
             var service = {
                 saveItem           : saveItem,
+                deleteItem         : deleteItem,
                 sort               : sortByWeight,
                 setActiveItem      : setActiveItem,
                 getActiveItem      : getActiveItem,
@@ -1024,7 +1072,7 @@
         return {
             restrict   : 'E',
             scope      : {
-                root  : '@'
+                root: '@'
             },
             controller : 'MsNavigationController as vm',
             templateUrl: 'app/core/directives/ms-navigation/templates/horizontal.html',
