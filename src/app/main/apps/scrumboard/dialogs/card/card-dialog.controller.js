@@ -47,16 +47,6 @@
 
         //////////
 
-        init();
-
-        /**
-         * Initialize
-         */
-        function init()
-        {
-         
-        }
-
         /**
          * Close Dialog
          */

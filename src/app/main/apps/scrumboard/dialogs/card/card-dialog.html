@@ -26,9 +26,10 @@
 
                 <md-menu-content class="remove-due-date-menu-content" width="4" ms-scroll>
                     <md-menu-item>
-                        <md-button ng-click="vm.card.due = ''" aria-label="remove" translate
-                                   translate-attr-aria-label="SB.REMOVE">
-                            Remove Due Date
+                        <md-button ng-click="vm.card.due = ''" aria-label="remove due date"
+                                   translate-attr-aria-label="SB.REMOVE_DUE_DATE">
+                            <md-icon md-font-icon="icon-delete"></md-icon>
+                            <span translate="SB.REMOVE_DUE_DATE">Remove Due Date</span>
                         </md-button>
                     </md-menu-item>
                 </md-menu-content>
@@ -332,24 +333,25 @@
 
             <!-- DUE DATE -->
             <div ng-if="vm.card.due" class="due-date" layout="row" layout-align="start center">
-                <div class="picker" moment-picker="vm.card.due" format="x" min-view="year" max-view="month"
+                <div class="picker day-picker" moment-picker="vm.card.due" format="x" min-view="year" max-view="month"
                      start-view="month">
                     <div layout="row" layout-align="start center">
-                        <md-icon md-font-icon="icon-calendar" class="s16"></md-icon>
+                        <i class="s18 icon icon-calendar"></i>
                         <span>{{vm.card.due | date:'mediumDate'}}</span>
                     </div>
                 </div>
-                <div class="picker" moment-picker="vm.card.due" format="x" min-view="day" max-view="hour"
+
+                <div class="picker hour-picker" moment-picker="vm.card.due" format="x" min-view="day" max-view="hour"
                      start-view="day">
                     <div layout="row" layout-align="start center">
-                        <md-icon md-font-icon="icon-clock" class="s16"></md-icon>
+                        <i class="s18 icon icon-clock"></i>
                         <span>{{vm.card.due | date:'shortTime'}}</span>
                     </div>
                 </div>
-                <md-button class="md-icon-button" ng-click="vm.card.due = ''" aria-label="remove" translate
-                           translate-attr-aria-label="SB.REMOVE">
-                    <md-icon md-font-icon="icon-delete" class="s16"></md-icon>
-                </md-button>
+
+                <div class="remove-due-date" layout="row" layout-align="center center" ng-click="vm.card.due = ''">
+                    <i class="s16 icon icon-close"></i>
+                </div>
             </div>
             <!-- / DUE DATE -->
 

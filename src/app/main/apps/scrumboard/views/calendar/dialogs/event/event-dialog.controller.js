@@ -14,8 +14,10 @@
         // Data
         vm.board = BoardService.data;
         vm.dueDate = dueDate;
-        vm.newCardName = '';
-        vm.newCardListId = '';
+        vm.newCard = {
+            name  : '',
+            listId: ''
+        };
         vm.selectedCards = [];
 
         // Methods
@@ -40,16 +42,11 @@
          */
         function addNewCard()
         {
-            if ( vm.newCardName === '' || vm.newCardListId === '' )
-            {
-                return;
-            }
-
             var newCardId = msUtils.guidGenerator();
 
             vm.board.cards.push({
                 'id'               : newCardId,
-                'name'             : vm.newCardName,
+                'name'             : vm.newCard.name,
                 'description'      : '',
                 'idAttachmentCover': '',
                 'idMembers'        : [],
@@ -64,9 +61,13 @@
                 'due'              : vm.dueDate
             });
 
-            vm.board.lists.getById(vm.newCardListId).idCards.push(newCardId);
+            vm.board.lists.getById(vm.newCard.listId).idCards.push(newCardId);
 
-            vm.newCardName = vm.newCardListId = '';
+            // Reset the newCard object
+            vm.newCard = {
+                name: '',
+                listId: ''
+            };
 
             closeDialog();
         }

@@ -11,11 +11,12 @@
         "ADD_NEW_BOARD": "Add New Board",
         "OPTIONS": "Options",
         "REMOVE_LIST": "Remove List",
-        "ADD_A_CART": "Add a cart",
+        "ADD_A_CARD": "Add a card",
         "ADD_A_LIST": "Add a list",
         "SCRUMBOARD_APP": "Scrumboard App",
         "ADD_NEW_BOARD": "Add new board",
         "DUE_DATE": "Due date",
+        "REMOVE_DUE_DATE": "Remove due date",
         "LABEL": "Label",
         "TOGGLE_LABEL": "Toggle Label",
         "EDIT_LABEL": "Edit Label",
@@ -78,6 +79,10 @@
         "DAY": "Day",
         "WEEK": "Week",
         "MONTH": "Month",
-        "NO_SCHEDULED_CARD": "There is no scheduled card."
+        "NO_SCHEDULED_CARD": "There is no scheduled card.",
+        "ASSIGN_THE_DATE_TO_CARDS": "Assign the date to cards",
+        "ERRORS": {
+            "TITLE_REQUIRED": "Title field is required"
+        }
     }
 }
