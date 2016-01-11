@@ -134,7 +134,6 @@
                         // remove it.
                         if ( item[i]._path === path )
                         {
-                            //delete item[i];
                             item.splice(i, 1);
                             return true;
                         }
