@@ -6,10 +6,34 @@
         <div class="md-toolbar-tools">
 
             <!-- DUE DATE -->
-            <md-datepicker class="due-date-picker" ng-model="vm.card.due"
-                           ng-change="vm.calculateOverdue()" md-placeholder="Due date">
-            </md-datepicker>
+            <div class="due-date">
+                <div ng-if="!vm.card.due" moment-picker="vm.card.due" format="x" min-view="year"
+                     max-view="hour"
+                     start-view="month">
+                    <md-button class="md-icon-button" aria-label="Due date" translate
+                               translate-attr-aria-label="SB.DUE_DATE"
+                               ng-click="$mdOpenMenu($event)">
+                        <md-icon md-font-icon="icon-calendar"></md-icon>
+                    </md-button>
+                </div>
+            </div>
             <!-- / DUE DATE -->
+
+            <md-menu ng-if="vm.card.due" md-offset="0 48" class="remove-due-date">
+                <md-button class="md-icon-button" aria-label="Members" ng-click="$mdOpenMenu($event)">
+                    <md-icon md-font-icon="icon-calendar"></md-icon>
+                </md-button>
+
+                <md-menu-content class="remove-due-date-menu-content" width="4" ms-scroll>
+                    <md-menu-item>
+                        <md-button ng-click="vm.card.due = ''" aria-label="remove due date"
+                                   translate-attr-aria-label="SB.REMOVE_DUE_DATE">
+                            <md-icon md-font-icon="icon-delete"></md-icon>
+                            <span translate="SB.REMOVE_DUE_DATE">Remove Due Date</span>
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
 
             <!-- LABELS -->
             <md-menu md-offset="0 48" class="labels">
@@ -308,9 +332,27 @@
             </div>
 
             <!-- DUE DATE -->
-            <md-datepicker ng-if="vm.card.due" class="due-date-picker"
-                           ng-model="vm.card.due" ng-change="vm.calculateOverdue()"
-                           md-placeholder="Due date"></md-datepicker>
+            <div ng-if="vm.card.due" class="due-date" layout="row" layout-align="start center">
+                <div class="picker day-picker" moment-picker="vm.card.due" format="x" min-view="year" max-view="month"
+                     start-view="month">
+                    <div layout="row" layout-align="start center">
+                        <i class="s18 icon icon-calendar"></i>
+                        <span>{{vm.card.due | date:'mediumDate'}}</span>
+                    </div>
+                </div>
+
+                <div class="picker hour-picker" moment-picker="vm.card.due" format="x" min-view="day" max-view="hour"
+                     start-view="day">
+                    <div layout="row" layout-align="start center">
+                        <i class="s18 icon icon-clock"></i>
+                        <span>{{vm.card.due | date:'shortTime'}}</span>
+                    </div>
+                </div>
+
+                <div class="remove-due-date" layout="row" layout-align="center center" ng-click="vm.card.due = ''">
+                    <i class="s16 icon icon-close"></i>
+                </div>
+            </div>
             <!-- / DUE DATE -->
 
         </div>
@@ -463,6 +505,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <md-button class="add-attachment-button" aria-label="add attachment">
                             <div layout="row" layout-align="start center">
                                 <i class="icon-plus s20"></i>
@@ -477,14 +520,11 @@
             <!-- CHECKLISTS SECTION -->
             <div ng-if="vm.card.checklists" class="section" ng-repeat="checklist in vm.card.checklists">
                 <div class="checklist">
-
                     <div class="section-header" layout="row" layout-align="start center">
                         <i class="icon-checkbox-marked s18"></i>
-
                         <span flex class="section-title" editable-text="checklist.name">{{checklist.name}}</span>
 
-                        <md-menu md-offset="0 48px" class="options">
-
+                        <md-menu md-position-mode="target-right target" class="options">
                             <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)" aria-label="options"
                                        translate translate-attr-aria-label="SB.OPTIONS">
                                 <md-icon md-menu-origin md-font-icon="icon-dots-vertical"></md-icon>
@@ -494,19 +534,17 @@
                                 <md-menu-item>
                                     <md-button ng-click="vm.removeChecklist(checklist)" aria-label="Remove Checklist"
                                                translate translate-attr-aria-label="SB.REMOVE_CHECKLIST">
-                                        <md-icon md-font-icon="icon-delete" md-menu-align-target></md-icon>
+                                        <md-icon md-font-icon="icon-delete"></md-icon>
                                         <span translate="SB.REMOVE_CHECKLIST">Remove Checklist</span>
                                     </md-button>
                                 </md-menu-item>
                             </md-menu-content>
-
                         </md-menu>
                     </div>
 
                     <div class="section-content">
 
                         <div class="checklist-progress" layout="row" layout-align="start center">
-
                             <span class="checklist-progress-value">
                                 {{checklist.checkItemsChecked}} / {{checklist.checkItems.length}}
                             </span>
@@ -514,11 +552,9 @@
                             <md-progress-linear class="md-accent checklist-progressbar" md-mode="determinate"
                                                 value="{{100 * checklist.checkItemsChecked / checklist.checkItems.length}}">
                             </md-progress-linear>
-
                         </div>
 
                         <div class="check-items">
-
                             <div class="check-item" ng-repeat="checkItem in checklist.checkItems">
                                 <md-checkbox ng-model="checkItem.checked"
                                              ng-change="vm.updateCheckedCount(checklist)"
@@ -526,20 +562,18 @@
                                     {{checkItem.name}}
                                 </md-checkbox>
                             </div>
-
                         </div>
 
                         <form name="newCheckItemForm" class="new-check-item-form"
                               ng-submit="vm.addCheckItem(vm[checklist.id].newCheckItem, checklist);vm[checklist.id].newCheckItem = ''"
-                              layout="row" layout-align="space-between center">
+                              layout="row" layout-align="start center">
 
-                            <md-input-container flex>
+                            <md-input-container class="no-errors-spacer" flex>
                                 <label layout="row" layout-align="center">
                                     <i class="icon-plus s18"></i>
                                     <span translate="SB.ADD_AN_ITEM">Add an item</span>
                                 </label>
-                                <input type="text" autocomplete="off" ng-model="vm[checklist.id].newCheckItem"
-                                       md-maxlength="150"/>
+                                <input type="text" autocomplete="off" ng-model="vm[checklist.id].newCheckItem">
                             </md-input-container>
 
                             <md-button type="submit" class="md-raised md-accent" aria-label="Add"
@@ -563,12 +597,11 @@
                     </div>
 
                     <div class="section-content">
-
                         <form name="cardCommentForm"
                               ng-submit="vm.addNewComment(vm.newCommentText); vm.newCommentText =''"
-                              class="comment new-comment" layout="column" layout-align="start end" no-validate>
+                              class="comment new-comment" layout="column" layout-align="start" no-validate>
 
-                            <div layout-fill layout="row">
+                            <div layout="row">
                                 <img class="comment-member-avatar" src="assets/images/avatars/profile.jpg">
                                 <md-input-container flex md-no-float>
                                 <textarea ms-scroll placeholder="Write a comment.."
@@ -577,28 +610,26 @@
                                 </md-input-container>
                             </div>
 
-                            <md-button type="submit" class="md-raised md-accent"
-                                       ng-disabled="cardCommentForm.$invalid || cardCommentForm.$pristine"
-                                       aria-label="Add">
-                                <span translate="SB.ADD">Add</span>
-                            </md-button>
-
+                            <div layout="row" layout-align="end center">
+                                <md-button type="submit" class="md-raised md-accent"
+                                           ng-disabled="cardCommentForm.$invalid || cardCommentForm.$pristine"
+                                           aria-label="Add">
+                                    <span translate="SB.ADD">Add</span>
+                                </md-button>
+                            </div>
                         </form>
 
                         <div class="comment" layout="row" ng-repeat="comment in vm.card.comments">
-
                             <img class="comment-member-avatar"
                                  ng-src="{{vm.board.members.getById(comment.idMember).avatar}}">
 
                             <div layout="column">
-                                <div class="comment-member-name">{{vm.board.members.getById(comment.idMember).name}}
+                                <div class="comment-member-name">
+                                    {{vm.board.members.getById(comment.idMember).name}}
                                 </div>
-
                                 <div class="comment-bubble">{{comment.message}}</div>
-
                                 <div class="comment-time secondary-text">{{comment.time}}</div>
                             </div>
-
                         </div>
                     </div>
                 </div>

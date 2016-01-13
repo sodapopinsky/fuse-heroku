@@ -127,7 +127,7 @@
                 },
                 columnFormat : {
                     month: 'ddd',
-                    week : 'ddd M',
+                    week : 'ddd D',
                     day  : 'ddd M'
                 },
                 eventClick   : eventDetail,

@@ -88,7 +88,7 @@
                                       ng-if="vm.board.cards.getById(cardId).due" layout="row"
                                       layout-align="start center">
                                     <i class="icon-clock s16"></i>
-                                    <span>{{vm.board.cards.getById(cardId).due | date}}</span>
+                                    <span>{{vm.board.cards.getById(cardId).due | date:'mediumDate'}}</span>
                                 </span>
                                 <!-- / CARD DUE -->
 
@@ -181,7 +181,7 @@
                 <div>
                     <i class="icon-plus s20"></i>
                 </div>
-                <span transalte="SB.ADD_A_CART">Add a card</span>
+                <span transalte="SB.ADD_A_CARD">Add a card</span>
             </div>
             <!-- / NEW CARD BUTTON-->
 

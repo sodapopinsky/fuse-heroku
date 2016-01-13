@@ -47,20 +47,6 @@
 
         //////////
 
-        init();
-
-        /**
-         * Initialize
-         */
-        function init()
-        {
-            // Convert due date to the date object
-            if ( vm.card.due )
-            {
-                vm.card.due = new Date(vm.card.due);
-            }
-        }
-
         /**
          * Close Dialog
          */

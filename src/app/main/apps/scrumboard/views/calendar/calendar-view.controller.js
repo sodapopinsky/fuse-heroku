@@ -17,35 +17,50 @@
 
         vm.calendarUiConfig = {
             calendar: {
-                editable        : true,
-                eventLimit      : true,
-                header          : '',
-                dayNames        : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-                dayNamesShort   : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-                viewRender      : function (view)
+                editable                 : true,
+                eventLimit               : true,
+                header                   : '',
+                dayNames                 : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                dayNamesShort            : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                timezone                 : 'local',
+                eventDurationEditable    : false,
+                defaultTimedEventDuration: '01:00:00',
+                viewRender               : function (view)
                 {
                     vm.calendarView = view;
                     vm.calendar = vm.calendarView.calendar;
                     vm.currentMonthShort = vm.calendar.getDate().format('MMM');
                 },
-                columnFormat    : {
+                columnFormat             : {
                     month: 'ddd',
-                    week : 'ddd M',
-                    day  : 'ddd M'
+                    week : 'ddd D',
+                    day  : 'ddd D'
                 },
-                eventClick      : function eventDetail(calendarEvent, ev)
+                eventClick               : function eventDetail(calendarEvent, ev)
                 {
                     vm.openCardDialog(ev, calendarEvent.idCard);
                 },
-                eventAfterRender: function (event)
+                eventDrop                : function (event)
                 {
-                    vm.board.cards.getById(event.idCard).due = moment(event.start).toDate();
+                    vm.board.cards.getById(event.idCard).due = moment.utc(event.start).format('x');
                 },
-                selectable      : true,
-                selectHelper    : true,
-                dayClick        : function (date, ev)
+                selectable               : true,
+                selectHelper             : true,
+                dayClick                 : function (date, ev)
                 {
-                    eventDialog(date, ev);
+                    var offset = moment().utcOffset();
+                    var corrDate = '';
+
+                    if ( offset < 0 )
+                    {
+                        corrDate = moment.utc(date).subtract(offset, 'm').format('x');
+                    }
+                    else
+                    {
+                        corrDate = moment.utc(date).add(offset, 'm').format('x');
+                    }
+
+                    eventDialog(corrDate, ev);
                 }
             }
         };
@@ -79,6 +94,7 @@
         function getScheduledCards()
         {
             var cards = [];
+
             angular.forEach(vm.board.cards, function (card)
             {
                 if ( card.due )
@@ -86,12 +102,13 @@
                     cards.push({
                         idCard         : card.id,
                         title          : card.name,
-                        start          : new Date(card.due),
-                        allDay         : true,
-                        backgroundColor: getEventBgColor(new Date(card.due))
+                        start          : moment.utc(card.due, 'x'),
+                        due            : card.due,
+                        backgroundColor: getEventBgColor(card.due)
                     });
                 }
             });
+
             return cards;
         }
 
@@ -103,10 +120,11 @@
          */
         function getEventBgColor(cardDue)
         {
-            if ( new Date() > cardDue )
+            if ( moment() > moment(cardDue, 'x') )
             {
                 return '#F44336';
             }
+
             return '#4CAF50';
         }
 
@@ -163,7 +181,6 @@
                 parent             : $document.find('#scrumboard'),
                 targetEvent        : ev,
                 clickOutsideToClose: true,
-                escapeToClose      : true,
                 locals             : {
                     dueDate: date
                 }

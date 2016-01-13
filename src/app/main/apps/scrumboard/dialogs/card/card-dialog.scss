@@ -18,19 +18,13 @@ md-dialog {
                     }
                 }
 
-                .due-date-picker {
-                    position: relative;
-                    background: transparent;
+                .due-date {
 
-                    .md-datepicker-input-container {
-                        position: absolute;
-                        top: 100%;
-                        left: 0;
-                        width: 0;
-                        height: 0;
-                        padding: 0;
-                        margin: 0;
-                        overflow: hidden;
+                    .moment-picker {
+
+                        .moment-picker-container {
+                            font-size: 13px;
+                        }
                     }
                 }
             }
@@ -59,11 +53,42 @@ md-dialog {
                 }
             }
 
-            .due-date-picker {
-                background-color: transparent;
+            .due-date {
 
-                .md-datepicker-input {
-                    background-color: transparent;
+                .moment-picker {
+
+                    .picker {
+                        background: material-color('grey', '200');
+                        padding: 8px 10px;
+
+                        &:hover {
+                            background: material-color('grey', '300');
+                        }
+
+                        i {
+                            margin-right: 8px;
+                        }
+                    }
+
+                    .moment-picker-container {
+                        margin-top: 8px;
+                        right: 0;
+
+                        &:before, &:after {
+                            right: 15px;
+                            left: auto;
+                        }
+                    }
+                }
+
+                .remove-due-date {
+                    background: material-color('grey', '200');
+                    padding: 9px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: material-color('grey', '300');
+                    }
                 }
             }
 
@@ -278,14 +303,10 @@ md-dialog {
 
                             md-input-container {
                                 margin: 0;
-
-                                input {
-                                    border-bottom: none;
-                                }
                             }
 
                             .md-button {
-                                margin: 0 0 0 8px;
+                                margin: 0 0 0 16px;
                             }
                         }
                     }
