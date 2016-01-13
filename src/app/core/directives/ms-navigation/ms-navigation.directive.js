@@ -491,10 +491,25 @@
                      */
                     function init()
                     {
-                        // Set the folded status for the first time
-                        msNavigationService.setFolded(scope.folded);
+                        // Set the folded status for the first time.
+                        // First, we have to check if we have a folded
+                        // status available in the service already. This
+                        // will prevent navigation to act weird if we already
+                        // set the fold status, remove the navigation and
+                        // then re-initialize it, which happens if we
+                        // change to a view without a navigation and then
+                        // come back with history.back() function.
 
-                        if ( scope.folded )
+                        // If the service didn't initialize before, set
+                        // the folded status from scope, otherwise we
+                        // won't touch anything because the folded status
+                        // already set in the service...
+                        if ( msNavigationService.getFolded() === null )
+                        {
+                            msNavigationService.setFolded(scope.folded);
+                        }
+
+                        if ( msNavigationService.getFolded() )
                         {
                             // Collapse everything.
                             // This must be inside a $timeout because by the
@@ -695,9 +710,9 @@
                     };
 
                     /**
-                     * On $stateChangeSuccess
+                     * On $stateChangeStart
                      */
-                    scope.$on('$stateChangeSuccess', function ()
+                    scope.$on('$stateChangeStart', function ()
                     {
                         // Close the sidenav
                         sidenav.close();
