@@ -20,6 +20,8 @@
                 editable                 : true,
                 eventLimit               : true,
                 header                   : '',
+                handleWindowResize       : false,
+                aspectRatio              : 1,
                 dayNames                 : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
                 dayNamesShort            : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
                 timezone                 : 'local',
