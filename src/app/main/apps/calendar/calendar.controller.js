@@ -114,26 +114,28 @@
 
         vm.calendarUiConfig = {
             calendar: {
-                editable     : true,
-                eventLimit   : true,
-                header       : '',
-                dayNames     : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-                dayNamesShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-                viewRender   : function (view)
+                editable          : true,
+                eventLimit        : true,
+                header            : '',
+                handleWindowResize: false,
+                aspectRatio       : 1,
+                dayNames          : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                dayNamesShort     : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                viewRender        : function (view)
                 {
                     vm.calendarView = view;
                     vm.calendar = vm.calendarView.calendar;
                     vm.currentMonthShort = vm.calendar.getDate().format('MMM');
                 },
-                columnFormat : {
+                columnFormat      : {
                     month: 'ddd',
                     week : 'ddd D',
                     day  : 'ddd M'
                 },
-                eventClick   : eventDetail,
-                selectable   : true,
-                selectHelper : true,
-                select       : select
+                eventClick        : eventDetail,
+                selectable        : true,
+                selectHelper      : true,
+                select            : select
             }
         };
 
