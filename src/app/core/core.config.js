@@ -77,7 +77,6 @@
             tabindex: false
         });
 
-
         // Fuse theme configurations
         fuseConfigProvider.config({
             'disableCustomScrollbars'        : false,
