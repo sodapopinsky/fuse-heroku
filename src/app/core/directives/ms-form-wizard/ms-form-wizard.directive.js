@@ -51,7 +51,7 @@
          */
         function previousStep()
         {
-            if ( vm.selectedIndex === 0 )
+            if ( isFirstStep() )
             {
                 return;
             }
