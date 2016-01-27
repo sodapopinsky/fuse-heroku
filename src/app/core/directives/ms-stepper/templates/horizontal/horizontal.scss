@@ -16,12 +16,15 @@
                 flex-direction: row;
                 align-items: center;
                 position: relative;
-                cursor: pointer;
+                height: 72px;
+                min-height: 72px;
+                max-height: 72px;
+                line-height: 24px;
                 margin: 0;
                 padding: 24px;
                 border-radius: 0;
+                cursor: pointer;
                 font-size: 14px;
-                line-height: 24px;
                 text-transform: none;
 
                 &:before,
@@ -85,7 +88,7 @@
                 }
 
                 &.optional {
-                    padding: 12px 24px;
+                    padding: 16px 24px;
                 }
 
                 .step {

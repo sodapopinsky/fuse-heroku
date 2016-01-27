@@ -13,9 +13,9 @@
 
         // Data
         vm.stepperTitles = {
-            step1Title: 'Step 1',
-            step2Title: 'Step 2',
-            step3Title: 'Step 3'
+            step1Title: 'Shipping Address',
+            step2Title: 'Billing Address',
+            step3Title: 'Payment Method'
         };
 
         vm.stepper = {

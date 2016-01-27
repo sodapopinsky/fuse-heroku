@@ -2,14 +2,10 @@
     <div layout="column" layout-gt-xs="row" flex>
         <md-input-container flex="100" flex-gt-xs="50">
             <input type="text" name="firstname" ng-model="vm.stepper.step2.title"
-                   placeholder="Firstname"
-                   required>
+                   placeholder="Firstname">
             <div ng-messages="step2.firstname.$error"
                  ng-show="step2.firstname.$touched"
                  role="alert">
-                <div ng-message="required">
-                    <span>Firstname field is required.</span>
-                </div>
             </div>
         </md-input-container>
 

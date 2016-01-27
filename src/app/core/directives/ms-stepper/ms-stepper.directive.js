@@ -6,11 +6,10 @@
         .module('app.core')
         .controller('MsStepperController', MsStepperController)
         .directive('msStepper', msStepperDirective)
-        .directive('msStepperStep', msStepperStepDirective)
-        .directive('msStepperForm', msStepperFormDirective);
+        .directive('msStepperStep', msStepperStepDirective);
 
     /** @ngInject */
-    function MsStepperController($scope)
+    function MsStepperController()
     {
         var vm = this;
 
@@ -41,6 +40,7 @@
         vm.isStepDisabled = isStepDisabled;
         vm.isStepOptional = isStepOptional;
         vm.isStepValid = isStepValid;
+        vm.isStepNumberValid = isStepNumberValid;
 
         vm.isFormValid = isFormValid;
 
@@ -98,7 +98,8 @@
          */
         function setCurrentStep(stepNumber)
         {
-            if ( stepNumber < 1 || stepNumber > vm.steps.length )
+            // If the stepNumber is not a valid step number, bail...
+            if ( !isStepNumberValid(stepNumber) )
             {
                 return;
             }
@@ -187,7 +188,7 @@
         function isStepCurrent(stepNumber)
         {
             // If the stepNumber is not a valid step number, bail...
-            if ( stepNumber < 1 || stepNumber > vm.steps.length )
+            if ( !isStepNumberValid(stepNumber) )
             {
                 return null;
             }
@@ -204,7 +205,7 @@
         function isStepDisabled(stepNumber)
         {
             // If the stepNumber is not a valid step number, bail...
-            if ( stepNumber < 1 || stepNumber > vm.steps.length )
+            if ( !isStepNumberValid(stepNumber) )
             {
                 return null;
             }
@@ -232,7 +233,7 @@
         function isStepOptional(stepNumber)
         {
             // If the stepNumber is not a valid step number, bail...
-            if ( stepNumber < 1 || stepNumber > vm.steps.length )
+            if ( !isStepNumberValid(stepNumber) )
             {
                 return null;
             }
@@ -249,7 +250,7 @@
         function isStepValid(stepNumber)
         {
             // If the stepNumber is not a valid step number, bail...
-            if ( stepNumber < 1 || stepNumber > vm.steps.length )
+            if ( !isStepNumberValid(stepNumber) )
             {
                 return null;
             }
@@ -261,6 +262,17 @@
             }
 
             return vm.steps[stepNumber - 1].form.$valid;
+        }
+
+        /**
+         * Check if the given step number is a valid step number
+         *
+         * @param stepNumber
+         * @returns {boolean}
+         */
+        function isStepNumberValid(stepNumber)
+        {
+            return !(stepNumber < 1 || stepNumber > vm.steps.length);
         }
 
         /**
@@ -296,8 +308,8 @@
                     var FormCtrl = ctrls[0],
                         MsStepperCtrl = ctrls[1];
 
-                    console.warn('msStepper');
-
+                    // Register the main form and setup
+                    // the steps for the first time
                     MsStepperCtrl.registerMainForm(FormCtrl);
                     MsStepperCtrl.setupSteps();
                 };
@@ -326,39 +338,16 @@
                     var FormCtrl = ctrls[0],
                         MsStepperCtrl = ctrls[1];
 
+                    // Is it an optional step?
                     scope.optionalStep = angular.isDefined(iAttrs.optionalStep);
 
-                    console.log(scope);
-
-                    console.warn('msStepperStep');
-
-                    iElement.hide();
-
+                    // Register the step
                     MsStepperCtrl.registerStep(iElement, scope, FormCtrl);
+
+                    // Hide the step by default
+                    iElement.hide();
                 };
             }
         }
     }
-
-    /** @ngInject */
-    function msStepperFormDirective()
-    {
-        return {
-            restrict: 'A',
-            require : ['form', '^msStepper'],
-            compile : function (tElement)
-            {
-                tElement.addClass('ms-stepper-form');
-
-                return function postLink(scope, iElement, iAttrs, ctrls)
-                {
-                    var formCtrl = ctrls[0],
-                        MsStepperCtrl = ctrls[1];
-
-                    //MsStepperCtrl.registerForm(formCtrl);
-                }
-            }
-        }
-    }
-
 })();

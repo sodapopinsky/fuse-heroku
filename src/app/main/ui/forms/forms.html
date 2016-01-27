@@ -19,6 +19,11 @@
 
         <!-- STEPPER -->
         <h1>Stepper</h1>
+        <div class="pb-16">
+            <b>ms-stepper</b> is a custom made form wizard directive. It follows Google's Material Design specifications
+            and we recommend you to use it. If for some reason, it's not suitable for you, you can also use the Form
+            Wizard that we put together using md-tabs and forms.
+        </div>
 
         <form name="stepper" ms-stepper ng-submit="vm.submitStepper()" ng-model="vm.stepper" novalidate>
             <ms-stepper-step ng-form="step1" step="1" step-title="vm.stepperTitles.step1Title">
@@ -35,18 +40,7 @@
                 step3
                 <div ng-include="'app/main/ui/forms/stepper-steps/step-3.html'"></div>
             </ms-stepper-step>
-
-            <!--<div style="white-space: pre-wrap; font-family: monospace">
-                {{stepper | json}}
-            </div>-->
-
-
         </form>
-
-        <div style="white-space: pre-wrap; font-family: monospace">
-            {{vm.stepper | json}}
-        </div>
-
 
         <!-- / STEPPER -->
 
