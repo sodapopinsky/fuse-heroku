@@ -20,13 +20,13 @@
 
         vm.stepper = {
             step1: {
-                title: 'Step 1'
+                title: ''
             },
             step2: {
                 title: ''
             },
             step3: {
-                title: 'Step 3'
+                title: ''
             }
         };
 

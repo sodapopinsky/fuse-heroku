@@ -213,7 +213,7 @@
 
             for ( var i = 1; i < stepNumber; i++ )
             {
-                if ( vm.steps[i - 1].form.$invalid )
+                if ( !isStepValid(i) )
                 {
                     disabled = true;
                     break;

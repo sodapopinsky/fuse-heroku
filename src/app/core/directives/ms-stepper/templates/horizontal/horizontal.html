@@ -5,18 +5,22 @@
     <div class="ms-stepper-navigation" layout="row" layout-align="center center">
 
         <md-button class="ms-stepper-navigation-item"
-                   ng-class="{'current': MsStepper.isStepCurrent(step.stepNumber), 'valid': MsStepper.isStepValid(step.stepNumber), 'disabled': MsStepper.isStepDisabled(step.stepNumber)}"
+                   ng-class="{'current': MsStepper.isStepCurrent(step.stepNumber), 'valid': MsStepper.isStepValid(step.stepNumber), 'disabled': MsStepper.isStepDisabled(step.stepNumber), 'optional': MsStepper.isStepOptional(step.stepNumber)}"
                    ng-click="MsStepper.gotoStep(step.stepNumber)"
                    ng-disabled="MsStepper.isStepDisabled(step.stepNumber)"
                    ng-repeat="step in MsStepper.steps" layout="row" layout-align="start center">
 
             <div class="step md-accent-bg"
                  layout="row" layout-align="center center">
-                <span ng-if="!MsStepper.isStepValid(step.stepNumber)">{{step.stepNumber}}</span>
-                <span ng-if="MsStepper.isStepValid(step.stepNumber)"><i class="icon icon-check s18"></i></span>
+                <span ng-if="!MsStepper.isStepValid(step.stepNumber) || MsStepper.isStepOptional(step.stepNumber)">{{step.stepNumber}}</span>
+                <span ng-if="MsStepper.isStepValid(step.stepNumber) && !MsStepper.isStepOptional(step.stepNumber)"><i
+                        class="icon icon-check s18"></i></span>
             </div>
 
-            <div class="title">{{step.stepTitle}}</div>
+            <div layout="column" layout-align="start start">
+                <div class="title">{{step.stepTitle}}</div>
+                <div class="subtitle" ng-if="MsStepper.isStepOptional(step.stepNumber)">Optional</div>
+            </div>
         </md-button>
 
     </div>
