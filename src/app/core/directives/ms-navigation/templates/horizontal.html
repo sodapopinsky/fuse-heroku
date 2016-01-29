@@ -14,9 +14,9 @@
 <!-- Nested horizontal navigation template -->
 <script type="text/ng-template" id="navigation-horizontal-nested.html">
 
-    <div ms-navigation-horizontal-item layout="row">
+    <div ms-navigation-horizontal-item layout="row" ng-if="!vm.isHidden()">
 
-        <div class="ms-navigation-horizontal-button" ng-if="!node.uisref && node.title && !node.hide"
+        <div class="ms-navigation-horizontal-button" ng-if="!node.uisref && node.title"
              ng-class="{'active md-accent-bg': vm.isActive}">
             <i class="icon s18 {{node.icon}}" ng-if="node.icon"></i>
             <span class="title" translate="{{node.translate}}" flex>{{node.title}}</span>
@@ -26,7 +26,7 @@
 
         <a class="ms-navigation-horizontal-button" ui-sref="{{node.uisref}}" ui-sref-active="active md-accent-bg"
            ng-class="{'active md-accent-bg': vm.isActive}"
-           ng-if="node.uisref && node.title && !node.hide">
+           ng-if="node.uisref && node.title">
             <i class="icon s18 {{node.icon}}" ng-if="node.icon"></i>
             <span class="title" translate="{{node.translate}}" flex>{{node.title}}</span>
             <span class="badge white-fg" style="background: {{node.badge.color}}" ng-if="node.badge">{{node.badge.content}}</span>
@@ -35,7 +35,7 @@
 
     </div>
 
-    <ul ng-if="vm.hasChildren && !node.hide">
+    <ul ng-if="vm.hasChildren && !vm.isHidden()">
         <li ng-repeat="node in node.children" ms-navigation-horizontal-node="node"
             ng-class="{'has-children': vm.hasChildren}"
             ng-include="'navigation-horizontal-nested.html'"></li>
