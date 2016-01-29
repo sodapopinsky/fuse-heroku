@@ -100,18 +100,6 @@ md-dialog {
 // Input
 md-input-container {
 
-    // fix ng-messages container underneath the
-    // input fields when we are using extra
-    // ng-show to hide error messages on untouched
-    // form elements
-    [ng-messages] {
-
-        &.ng-hide {
-            display: block !important;
-            visibility: hidden;
-        }
-    }
-
     &.no-errors-spacer {
 
         .md-errors-spacer {

@@ -47,7 +47,6 @@
                                                placeholder="Firstname"
                                                required>
                                         <div ng-messages="wizardStep1.firstname.$error"
-                                             ng-show="wizardStep1.firstname.$touched"
                                              role="alert">
                                             <div ng-message="required">
                                                 <span>Firstname field is required.</span>
@@ -60,7 +59,6 @@
                                                placeholder="Lastname"
                                                required>
                                         <div ng-messages="wizardStep1.lastname.$error"
-                                             ng-show="wizardStep1.lastname.$touched"
                                              role="alert">
                                             <div ng-message="required">
                                                 <span>Lastname field is required.</span>
@@ -72,7 +70,7 @@
                                 <md-input-container class="md-block">
                                     <input type="email" name="email" ng-model="vm.formWizard.email" placeholder="Email"
                                            ng-pattern="/^.+@.+\..+$/" required>
-                                    <div ng-messages="wizardStep1.email.$error" ng-show="wizardStep1.email.$touched"
+                                    <div ng-messages="wizardStep1.email.$error"
                                          role="alert" multiple>
                                         <div ng-message="required">
                                             <span>Email field is required</span>
@@ -89,7 +87,6 @@
                                                placeholder="Password"
                                                required>
                                         <div ng-messages="wizardStep1.password.$error"
-                                             ng-show="wizardStep1.password.$touched"
                                              role="alert">
                                             <div ng-message="required">
                                                 <span>Password field is required.</span>
@@ -103,7 +100,6 @@
                                                placeholder="Password (Confirm)"
                                                required>
                                         <div ng-messages="wizardStep1.passwordConfirm.$error"
-                                             ng-show="wizardStep1.passwordConfirm.$touched"
                                              role="alert">
                                             <div ng-message="required">
                                                 <span>Password (Confirm) field is required.</span>
@@ -149,7 +145,6 @@
                                         <input name="postalcode" ng-model="vm.formWizard.postalCode" placeholder="12345"
                                                required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
                                         <div ng-messages="wizardStep2.postalcode.$error"
-                                             ng-show="wizardStep2.postalcode.$touched"
                                              role="alert" multiple>
                                             <div ng-message="required"><span>You must supply a postal code.</span></div>
                                             <div ng-message="pattern">
@@ -166,7 +161,6 @@
                                     <textarea ng-model="vm.formWizard.address" columns="1" md-maxlength="150"
                                               rows="5" required></textarea>
                                     <div ng-messages="wizardStep2.address.$error"
-                                         ng-show="wizardStep2.address.$touched"
                                          role="alert" multiple>
                                         <div ng-message="required"><span>Address field is required.</span></div>
                                         <div ng-message="md-maxlength">
@@ -196,7 +190,6 @@
                                            placeholder="Card Holder"
                                            required>
                                     <div ng-messages="wizardStep3.cardholder.$error"
-                                         ng-show="wizardStep3.cardholder.$dirty"
                                          role="alert">
                                         <div ng-message="required">
                                             <span>Card holder field is required.</span>
@@ -210,7 +203,6 @@
                                                placeholder="Card Number"
                                                required>
                                         <div ng-messages="wizardStep3.cardnumber.$error"
-                                             ng-show="wizardStep3.cardnumber.$dirty"
                                              role="alert">
                                             <div ng-message="required">
                                                 <span>Card number field is required.</span>
@@ -223,7 +215,6 @@
                                                placeholder="CC2" md-maxlength="3"
                                                required>
                                         <div ng-messages="wizardStep3.cc2.$error"
-                                             ng-show="wizardStep3.cc2.$dirty"
                                              role="alert" multipl>
                                             <div ng-message="required">
                                                 <span>CC2 field is required.</span>
@@ -239,7 +230,6 @@
                                                placeholder="Expiration Date"
                                                required>
                                         <div ng-messages="wizardStep3.expirationDate.$error"
-                                             ng-show="wizardStep3.expirationDate.$dirty"
                                              role="alert">
                                             <div ng-message="required">
                                                 <span>Expiration date field is required.</span>
@@ -266,7 +256,8 @@
                                ng-disabled="msWizard.currentStepInvalid()">
                         Next
                     </md-button>
-                    <md-button class="md-raised md-warn" ng-click="vm.sendForm(); msWizard.resetForm();" ng-show="msWizard.isLastStep()"
+                    <md-button class="md-raised md-warn" ng-click="vm.sendForm(); msWizard.resetForm();"
+                               ng-show="msWizard.isLastStep()"
                                ng-disabled="msWizard.formsIncomplete()">
                         Send
                     </md-button>
@@ -295,7 +286,7 @@
                             <input type="text" name="firstname" ng-model="vm.basicForm.firstname"
                                    placeholder="Firstname"
                                    required>
-                            <div ng-messages="basicForm.firstname.$error" ng-show="basicForm.firstname.$touched"
+                            <div ng-messages="basicForm.firstname.$error"
                                  role="alert">
                                 <div ng-message="required">
                                     <span>Firstname field is required.</span>
@@ -306,7 +297,7 @@
                         <md-input-container flex>
                             <input type="text" name="lastname" ng-model="vm.basicForm.lastname" placeholder="Lastname"
                                    required>
-                            <div ng-messages="basicForm.lastname.$error" ng-show="basicForm.lastname.$touched"
+                            <div ng-messages="basicForm.lastname.$error"
                                  role="alert">
                                 <div ng-message="required">
                                     <span>Lastname field is required.</span>
@@ -334,8 +325,7 @@
                             <label>Postal Code</label>
                             <input name="postalcode" ng-model="vm.basicForm.postalCode" placeholder="12345"
                                    required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
-                            <div ng-messages="basicForm.postalcode.$error" ng-show="basicForm.postalcode.$touched"
-                                 role="alert" multiple>
+                            <div ng-messages="basicForm.postalcode.$error" role="alert" multiple>
                                 <div ng-message="required"><span>You must supply a postal code.</span></div>
                                 <div ng-message="pattern"><span>That doesn't look like a valid postal code.</span></div>
                                 <div ng-message="md-maxlength">
