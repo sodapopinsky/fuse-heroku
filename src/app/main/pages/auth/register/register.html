@@ -12,8 +12,7 @@
                     <input name="username" ng-model="vm.form.username" placeholder="Name"
                            translate translate-attr-placeholder="REGISTER.NAME"
                            required>
-                    <div ng-messages="registerForm.username.$error" ng-show="registerForm.username.$touched"
-                         role="alert">
+                    <div ng-messages="registerForm.username.$error" role="alert">
                         <div ng-message="required">
                             <span translate="REGISTER.ERRORS.USERNAME_REQUIRED">Username field is required</span>
                         </div>
@@ -24,8 +23,7 @@
                     <input type="email" name="email" ng-model="vm.form.email" placeholder="Email"
                            translate translate-attr-placeholder="REGISTER.EMAIL"
                            ng-pattern="/^.+@.+\..+$/" required>
-                    <div ng-messages="registerForm.email.$error" ng-show="registerForm.email.$touched" role="alert"
-                         multiple>
+                    <div ng-messages="registerForm.email.$error" role="alert" multiple>
                         <div ng-message="required">
                             <span translate="REGISTER.ERRORS.EMAIL_REQUIRED">Email field is required</span>
                         </div>
@@ -39,8 +37,7 @@
                     <input type="password" name="password" ng-model="vm.form.password" placeholder="Password"
                            translate translate-attr-placeholder="REGISTER.PASSWORD"
                            required>
-                    <div ng-messages="registerForm.password.$error" ng-show="registerForm.password.$touched"
-                         role="alert">
+                    <div ng-messages="registerForm.password.$error" role="alert">
                         <div ng-message="required">
                             <span translate="REGISTER.ERRORS.PASSWORD_REQUIRED">Password field is required</span>
                         </div>
@@ -52,8 +49,7 @@
                            placeholder="Password (Confirm)"
                            translate translate-attr-placeholder="REGISTER.PASSWORD_CONFIRM"
                            required>
-                    <div ng-messages="registerForm.passwordConfirm.$error"
-                         ng-show="registerForm.passwordConfirm.$touched" role="alert">
+                    <div ng-messages="registerForm.passwordConfirm.$error" role="alert">
                         <div ng-message="required">
                             <span translate="REGISTER.ERRORS.PASSWORD_CONFIRM_REQUIRED">Password (Confirm) field is required</span>
                         </div>
@@ -68,7 +64,7 @@
                     </div>
                 </div>
 
-                <md-button type="submit" class="md-raised md-accent" aria-label="CREATE MY ACCOUNT"
+                <md-button type="submit" class="md-raised md-accent submit-button" aria-label="CREATE MY ACCOUNT"
                            ng-disabled="registerForm.$invalid || registerForm.$pristine"
                            translate="REGISTER.CREATE_ACCOUNT"
                            translate-attr-aria-label="REGISTER.CREATE_ACCOUNT">
