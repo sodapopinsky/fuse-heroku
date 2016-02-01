@@ -64,7 +64,7 @@
     }
 
     /** @ngInject */
-    function msSbAddCardDirective($document)
+    function msSbAddCardDirective($document, $window, $timeout)
     {
         return {
             restrict   : 'E',
@@ -99,8 +99,13 @@
 
                         if ( scope.formActive )
                         {
-                            scrollListContentBottom();
-                            formEl.find('input').focus();
+                            $timeout(function ()
+                            {
+                                formEl.find('input').focus();
+
+                                scrollListContentBottom();
+                            });
+
                             $document.on('click', outSideClick);
                         }
                         else
@@ -108,6 +113,16 @@
                             PerfectScrollbar.update(listCards[0]);
                             $document.off('click', outSideClick);
                         }
+
+                        $timeout(function ()
+                        {
+                            // IE list-content max-height hack
+                            if ( angular.element('html').hasClass('explorer') )
+                            {
+                                angular.element($window).trigger('resize');
+                            }
+                        });
+
                     });
                 }
 

@@ -167,6 +167,7 @@
                 position: relative;
                 overflow: hidden;
                 overflow-y: auto;
+                min-height: 0;
 
                 .list-cards {
                     position: relative;
@@ -182,6 +183,14 @@
                     }
                 }
             }
+
+            .list-footer {
+                display: flex;
+                flex-direction: column;
+                flex: 1 0 auto;
+                min-height: 48px;
+            }
+
         }
     }
 

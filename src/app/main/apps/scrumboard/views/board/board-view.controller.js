@@ -7,7 +7,7 @@
         .controller('BoardViewController', BoardViewController);
 
     /** @ngInject */
-    function BoardViewController($document, $mdDialog, msUtils, BoardList, BoardService, CardFilters, DialogService)
+    function BoardViewController($document, $window, $timeout, $mdDialog, msUtils, BoardList, BoardService, CardFilters, DialogService)
     {
         var vm = this;
 
@@ -117,6 +117,56 @@
 
         //////////
 
+        init();
+
+        /**
+         * Initialize
+         */
+        function init()
+        {
+
+            $timeout(function ()
+            {
+                // IE list-content max-height hack
+                if ( angular.element('html').hasClass('explorer') )
+                {
+                    // Calculate the height for the first time
+                    calculateListContentHeight();
+
+                    // Attach calculateListContentHeight function to window resize
+                    $window.onresize = function ()
+                    {
+                        calculateListContentHeight();
+                    }
+                }
+            }, 0);
+
+        }
+
+        /**
+         * IE ONLY
+         * Calculate the list-content height
+         * IE ONLY
+         */
+        function calculateListContentHeight()
+        {
+            var boardEl = angular.element('#board');
+            var boardElHeight = boardEl.height();
+
+            boardEl.find('.list-wrapper').each(function (index, el)
+            {
+                // Get the required heights for calculations
+                var listWrapperEl = angular.element(el),
+                    listHeaderElHeight = listWrapperEl.find('.list-header').height(),
+                    listFooterElHeight = listWrapperEl.find('.list-footer').height();
+
+                // Calculate the max height
+                var maxHeight = boardElHeight - listHeaderElHeight - listFooterElHeight;
+
+                // Add the max height
+                listWrapperEl.find('.list-content').css({'max-height': maxHeight});
+            });
+        }
 
         /**
          * Add new list
