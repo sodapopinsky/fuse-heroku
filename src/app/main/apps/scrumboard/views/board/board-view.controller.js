@@ -99,7 +99,7 @@
                             boardContentEl.scrollLeft(boardContentEl.scrollLeft() - 25);
                         }
 
-                        if ( itemRight > boardRight)
+                        if ( itemRight > boardRight )
                         {
                             boardContentEl.scrollLeft(boardContentEl.scrollLeft() + 25);
                         }

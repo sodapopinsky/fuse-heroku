@@ -37,12 +37,12 @@
             <!-- / LIST HEADER -->
 
             <!-- LIST CONTENT -->
-            <div class="list-content" ms-scroll>
+            <div class="list-content" layout="column" flex>
 
-                <div class="list-cards" ui-sortable="vm.sortableCardOptions" ng-model="list.idCards">
+                <div class="list-cards" ui-sortable="vm.sortableCardOptions" ng-model="list.idCards" ms-scroll>
 
                     <!-- CARD -->
-                    <div ng-if="cardId" class="list-card md-whiteframe-3dp"
+                    <div ng-if="cardId" class="list-card md-whiteframe-2dp"
                          ng-repeat="cardId in list.idCards | filter: vm.cardFilter track by $index"
                          ng-click="vm.openCardDialog($event, cardId)">
 
@@ -176,12 +176,8 @@
             <!-- / LIST CONTENT -->
 
             <!-- NEW CARD BUTTON-->
-            <div class="list-footer list-add-card" ms-sb-add-card ms-list-id="list.id" md-ink-ripple
-                 layout="row" layout-align="start center">
-                <div>
-                    <i class="icon-plus s20"></i>
-                </div>
-                <span transalte="SB.ADD_A_CARD">Add a card</span>
+            <div class="list-footer">
+                <ms-sb-add-card ms-list-id="list.id"></ms-sb-add-card>
             </div>
             <!-- / NEW CARD BUTTON-->
 
