@@ -64,72 +64,65 @@
     }
 
     /** @ngInject */
-    function msSbAddCardDirective($document, $compile, $timeout)
+    function msSbAddCardDirective($document, $window, $timeout)
     {
         return {
-            restrict    : 'A',
-            controller  : 'msSbAddCardController',
-            controllerAs: 'vm',
-            scope       : {
+            restrict   : 'E',
+            controller : 'msSbAddCardController as vm',
+            templateUrl: 'app/main/apps/scrumboard/directives/ms-sb-add-card/ms-sb-add-card.html',
+            scope      : {
                 msListId: '='
             },
-            link        : function (scope, iElement)
+            link       : function (scope, iElement)
             {
-                scope.closeForm = closeForm;
+                scope.formActive = false;
+                scope.toggleForm = toggleForm;
                 scope.scrollListContentBottom = scrollListContentBottom;
 
-                var form = '<form ng-submit="vm.addNewCard()" class="ms-sb-add-card-form md-whiteframe-2dp" layout="column">\n\n    <md-input-container flex md-no-float>\n        <input placeholder="Card title" type="text" autocomplete="off"\n               ng-model="vm.newCardName" translate-attr-placeholder="SB.CARD_TITLE">\n    </md-input-container>\n\n    <div layout="row" layout-align="space-between center">\n        <md-button type="submit"\n                   class="add-button md-accent md-raised"\n                   aria-label="add" translate-attr-aria-label="SB.ADD">\n            <span translate="SB.ADD">Add</span>\n        </md-button>\n        <md-button ng-click="closeForm()" class="cancel-button md-icon-button"\n                   aria-label="cancel" translate-attr-aria-label="SB.CANCEL">\n            <md-icon md-font-icon="icon-close"></md-icon>\n        </md-button>\n    </div>\n\n</form>',
-                    formEl = '',
-                    listContent = iElement.prev();
+                var buttonEl = iElement.find('.ms-sb-add-card-button'),
+                    formEl = iElement.find('.ms-sb-add-card-form'),
+                    listCards = iElement.parent().prev().find('.list-cards');
 
                 /**
                  * Click Event
                  */
-                iElement.on('click', function (event)
-                {
-                    event.preventDefault();
-                    openForm();
-                });
+                buttonEl.on('click', toggleForm);
 
                 /**
-                 * Open Form
+                 * Toggle Form
                  */
-                function openForm()
+                function toggleForm()
                 {
-                    iElement.hide();
-
-                    formEl = $compile(form)(scope);
-
-                    listContent.append(formEl);
-
-                    scrollListContentBottom();
-
-                    formEl.find('input').focus();
-
-                    $timeout(function ()
+                    scope.$evalAsync(function ()
                     {
-                        $document.on('click', outSideClick);
-                    });
-                }
+                        scope.formActive = !scope.formActive;
 
-                /**
-                 * Close Form
-                 */
-                function closeForm()
-                {
-                    formEl.remove();
+                        if ( scope.formActive )
+                        {
+                            $timeout(function ()
+                            {
+                                formEl.find('input').focus();
 
-                    iElement.next().remove();
+                                scrollListContentBottom();
+                            });
 
-                    iElement.show();
+                            $document.on('click', outSideClick);
+                        }
+                        else
+                        {
+                            PerfectScrollbar.update(listCards[0]);
+                            $document.off('click', outSideClick);
+                        }
 
-                    PerfectScrollbar.update(listContent[0]);
+                        $timeout(function ()
+                        {
+                            // IE list-content max-height hack
+                            if ( angular.element('html').hasClass('explorer') )
+                            {
+                                angular.element($window).trigger('resize');
+                            }
+                        });
 
-                    // Clean
-                    $document.off('click', outSideClick);
-                    scope.$on('$destroy', function ()
-                    {
-                        $document.off('click', outSideClick);
                     });
                 }
 
@@ -138,7 +131,7 @@
                  */
                 function scrollListContentBottom()
                 {
-                    listContent[0].scrollTop = listContent[0].scrollHeight;
+                    listCards[0].scrollTop = listCards[0].scrollHeight;
                 }
 
                 /**
@@ -153,10 +146,9 @@
 
                     if ( !isInside )
                     {
-                        closeForm();
+                        toggleForm();
                     }
                 }
-
             }
         };
     }
