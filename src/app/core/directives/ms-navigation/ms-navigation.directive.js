@@ -275,7 +275,7 @@
 
                 if ( angular.isDefined(item.stateParams) && angular.isObject(item.stateParams) )
                 {
-                    uisref = uisref + '(' + angular.toString(item.stateParams) + ')';
+                    uisref = uisref + '(' + angular.toJson(item.stateParams) + ')';
                 }
             }
 
