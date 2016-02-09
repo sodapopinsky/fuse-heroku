@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider)
+    function config($stateProvider, msApiProvider)
     {
         $stateProvider.state('app.components_cards', {
             url    : '/components/cards',
@@ -18,12 +18,15 @@
                 }
             },
             resolve: {
-                Cards: function (apiResolver)
+                Cards: function (msApi)
                 {
-                    return apiResolver.resolve('cards@get');
+                    return msApi.resolve('cards@get');
                 }
             }
         });
+
+        // Api
+        msApiProvider.register('cards', ['app/data/cards/cards.json']);
     }
 
 })();

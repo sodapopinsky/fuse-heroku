@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider, msNavigationServiceProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msApiProvider, msNavigationServiceProvider)
     {
         // State
         $stateProvider.state('app.file-manager', {
@@ -19,9 +19,9 @@
                 }
             },
             resolve  : {
-                Documents: function (apiResolver)
+                Documents: function (msApi)
                 {
-                    return apiResolver.resolve('fileManager.documents@get');
+                    return msApi.resolve('fileManager.documents@get');
                 }
             },
             bodyClass: 'file-manager'
@@ -29,6 +29,9 @@
 
         // Translation
         $translatePartialLoaderProvider.addPart('app/main/apps/file-manager');
+
+        // Api
+        msApiProvider.register('fileManager.documents', ['app/data/file-manager/documents.json']);
 
         // Navigation
         msNavigationServiceProvider.saveItem('apps.file-manager', {

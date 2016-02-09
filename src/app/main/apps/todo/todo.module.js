@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider, msNavigationServiceProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msApiProvider, msNavigationServiceProvider)
     {
         // State
         $stateProvider.state('app.to-do', {
@@ -19,13 +19,13 @@
                 }
             },
             resolve  : {
-                Tasks: function (apiResolver)
+                Tasks: function (msApi)
                 {
-                    return apiResolver.resolve('todo.tasks@get');
+                    return msApi.resolve('todo.tasks@get');
                 },
-                Tags : function (apiResolver)
+                Tags : function (msApi)
                 {
-                    return apiResolver.resolve('todo.tags@get');
+                    return msApi.resolve('todo.tags@get');
                 }
             },
             bodyClass: 'todo'
@@ -33,6 +33,10 @@
 
         // Translation
         $translatePartialLoaderProvider.addPart('app/main/apps/todo');
+
+        // Api
+        msApiProvider.register('todo.tasks', ['app/data/todo/tasks.json']);
+        msApiProvider.register('todo.tags', ['app/data/todo/tags.json']);
 
         // Navigation
         msNavigationServiceProvider.saveItem('apps.to-do', {

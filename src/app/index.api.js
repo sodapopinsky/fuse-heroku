@@ -27,9 +27,9 @@
          *
          *      api.getBlogById = $resource('http://api.example.com/blog/:id', {id: '@id'});
          *
-         * You can also define your custom methods. Custom method definitions allows you to
-         * add hardcoded parameters to your API calls that you want them to be sent every
-         * time you make that API call:
+         * You can also define your custom methods. Custom method definitions allow you to
+         * add hardcoded parameters to your API calls that you want to sent every time you
+         * make that API call:
          *
          *      api.getBlogById = $resource('http://api.example.com/blog/:id', {id: '@id'}, {
          *         'getFromHomeCategory' : {method: 'GET', params: {blogCategory: 'home'}}
@@ -40,12 +40,17 @@
          * way that we have created for you to packing your related API urls together:
          *
          *      api.blog = {
-         *          list     : $resource('http://api.example.com/blog);
-         *          getById  : $resource('http://api.example.com/blog/:id', {id: '@id'});
-         *          getByDate: $resource('http://api.example.com/blog/:date', {id: '@date'},
-         *              'get': {method: 'GET', params: {getByDate: true}}
-         *          );
-         *      }
+         *                   list     : $resource('http://api.example.com/blog'),
+         *                   getById  : $resource('http://api.example.com/blog/:id', {id: '@id'}),
+         *                   getByDate: $resource('http://api.example.com/blog/:date', {id: '@date'}, {
+         *                       get: {
+         *                            method: 'GET',
+         *                            params: {
+         *                                getByDate: true
+         *                            }
+         *                       }
+         *                   })
+         *       }
          *
          * If you look at the last example from above, we overrode the 'get' method to put a
          * hardcoded parameter. Now every time we make the "getByDate" call, the {getByDate: true}
@@ -115,7 +120,7 @@
          *          );
          *      }
          *
-         * Because we are directly using $resource servive, all your API calls will return a
+         * Because we are directly using $resource service, all your API calls will return a
          * $promise object.
          *
          * --
@@ -175,66 +180,75 @@
         // Base Url
         api.baseUrl = 'app/data/';
 
-        api.dashboard = {
-            project  : $resource(api.baseUrl + 'dashboard/project/data.json'),
-            server   : $resource(api.baseUrl + 'dashboard/server/data.json'),
-            analytics: $resource(api.baseUrl + 'dashboard/analytics/data.json')
-        };
+        /**
+         * Here you can find all the definitions that the Demo Project requires
+         *
+         * If you wish to use this method, you can create your API definitions
+         * in a similar way.
+         */
 
-        api.cards = $resource(api.baseUrl + 'cards/cards.json');
+        /*
+         api.dashboard = {
+         project  : $resource(api.baseUrl + 'dashboard/project/data.json'),
+         server   : $resource(api.baseUrl + 'dashboard/server/data.json'),
+         analytics: $resource(api.baseUrl + 'dashboard/analytics/data.json')
+         };
 
-        api.fileManager = {
-            documents: $resource(api.baseUrl + 'file-manager/documents.json')
-        };
+         api.cards = $resource(api.baseUrl + 'cards/cards.json');
 
-        api.icons = $resource('assets/icons/selection.json');
+         api.fileManager = {
+         documents: $resource(api.baseUrl + 'file-manager/documents.json')
+         };
 
-        api.invoice = $resource(api.baseUrl + 'invoice/invoice.json');
+         api.icons = $resource('assets/icons/selection.json');
 
-        api.mail = {
-            inbox: $resource(api.baseUrl + 'mail/inbox.json')
-        };
+         api.invoice = $resource(api.baseUrl + 'invoice/invoice.json');
 
-        api.profile = {
-            timeline    : $resource(api.baseUrl + 'profile/timeline.json'),
-            about       : $resource(api.baseUrl + 'profile/about.json'),
-            photosVideos: $resource(api.baseUrl + 'profile/photos-videos.json')
-        };
+         api.mail = {
+         inbox: $resource(api.baseUrl + 'mail/inbox.json')
+         };
 
-        api.quickPanel = {
-            activities: $resource(api.baseUrl + 'quick-panel/activities.json'),
-            contacts  : $resource(api.baseUrl + 'quick-panel/contacts.json'),
-            events    : $resource(api.baseUrl + 'quick-panel/events.json'),
-            notes     : $resource(api.baseUrl + 'quick-panel/notes.json')
-        };
+         api.profile = {
+         timeline    : $resource(api.baseUrl + 'profile/timeline.json'),
+         about       : $resource(api.baseUrl + 'profile/about.json'),
+         photosVideos: $resource(api.baseUrl + 'profile/photos-videos.json')
+         };
 
-        api.search = {
-            classic : $resource(api.baseUrl + 'search/classic.json'),
-            mails   : $resource(api.baseUrl + 'search/mails.json'),
-            users   : $resource(api.baseUrl + 'search/users.json'),
-            contacts: $resource(api.baseUrl + 'search/contacts.json')
-        };
+         api.quickPanel = {
+         activities: $resource(api.baseUrl + 'quick-panel/activities.json'),
+         contacts  : $resource(api.baseUrl + 'quick-panel/contacts.json'),
+         events    : $resource(api.baseUrl + 'quick-panel/events.json'),
+         notes     : $resource(api.baseUrl + 'quick-panel/notes.json')
+         };
 
-        api.scrumboard = {
-            boardList: $resource(api.baseUrl + 'scrumboard/boardList.json'),
-            board    : $resource(api.baseUrl + 'scrumboard/boards/:id.json')
-        };
+         api.search = {
+         classic : $resource(api.baseUrl + 'search/classic.json'),
+         mails   : $resource(api.baseUrl + 'search/mails.json'),
+         users   : $resource(api.baseUrl + 'search/users.json'),
+         contacts: $resource(api.baseUrl + 'search/contacts.json')
+         };
 
-        api.tables = {
-            employees   : $resource(api.baseUrl + 'tables/employees.json'),
-            employees100: $resource(api.baseUrl + 'tables/employees100.json')
-        };
+         api.scrumboard = {
+         boardList: $resource(api.baseUrl + 'scrumboard/boardList.json'),
+         board    : $resource(api.baseUrl + 'scrumboard/boards/:id.json')
+         };
 
-        api.timeline = {
-            page1: $resource(api.baseUrl + 'timeline/page-1.json'),
-            page2: $resource(api.baseUrl + 'timeline/page-2.json'),
-            page3: $resource(api.baseUrl + 'timeline/page-3.json')
-        };
+         api.tables = {
+         employees   : $resource(api.baseUrl + 'tables/employees.json'),
+         employees100: $resource(api.baseUrl + 'tables/employees100.json')
+         };
 
-        api.todo = {
-            tasks: $resource(api.baseUrl + 'todo/tasks.json'),
-            tags : $resource(api.baseUrl + 'todo/tags.json')
-        };
+         api.timeline = {
+         page1: $resource(api.baseUrl + 'timeline/page-1.json'),
+         page2: $resource(api.baseUrl + 'timeline/page-2.json'),
+         page3: $resource(api.baseUrl + 'timeline/page-3.json')
+         };
+
+         api.todo = {
+         tasks: $resource(api.baseUrl + 'todo/tasks.json'),
+         tags : $resource(api.baseUrl + 'todo/tags.json')
+         };
+         */
 
         return api;
     }

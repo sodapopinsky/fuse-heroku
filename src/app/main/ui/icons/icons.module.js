@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider)
+    function config($stateProvider, msApiProvider)
     {
         $stateProvider.state('app.ui_icons', {
             url      : '/ui/icons',
@@ -18,13 +18,16 @@
                 }
             },
             resolve  : {
-                Icons: function (apiResolver)
+                Icons: function (msApi)
                 {
-                    return apiResolver.resolve('icons@get');
+                    return msApi.resolve('icons@get');
                 }
             },
             bodyClass: 'icons'
         });
+
+        // Api
+        msApiProvider.register('icons', ['assets/icons/selection.json']);
     }
 
 })();

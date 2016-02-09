@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider)
+    function config($stateProvider, msApiProvider)
     {
         // State
         $stateProvider.state('app.dashboards_server', {
@@ -19,13 +19,16 @@
                 }
             },
             resolve  : {
-                DashboardData: function (apiResolver)
+                DashboardData: function (msApi)
                 {
-                    return apiResolver.resolve('dashboard.server@get');
+                    return msApi.resolve('dashboard.server@get');
                 }
             },
             bodyClass: 'dashboard-server'
         });
+
+        // Api
+        msApiProvider.register('dashboard.server', ['app/data/dashboard/server/data.json']);
     }
 
 })();

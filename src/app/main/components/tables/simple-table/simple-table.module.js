@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider)
+    function config($stateProvider, msApiProvider)
     {
         $stateProvider.state('app.components_tables_simple-table', {
             url  : '/components/table/simple-table',
@@ -18,12 +18,15 @@
                 }
             },
             resolve: {
-                Employees: function (apiResolver)
+                Employees: function (msApi)
                 {
-                    return apiResolver.resolve('tables.employees@get');
+                    return msApi.resolve('tables.employees@get');
                 }
             }
         });
+
+        // Api
+        msApiProvider.register('tables.employees', ['app/data/tables/employees.json']);
     }
 
 })();

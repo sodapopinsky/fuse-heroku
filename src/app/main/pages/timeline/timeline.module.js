@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, msNavigationServiceProvider)
+    function config($stateProvider, msApiProvider, msNavigationServiceProvider)
     {
         // State
         $stateProvider
@@ -20,9 +20,9 @@
                     }
                 },
                 resolve  : {
-                    Timeline: function (apiResolver)
+                    Timeline: function (msApi)
                     {
-                        return apiResolver.resolve('timeline.page1@get');
+                        return msApi.resolve('timeline.page1@get');
                     }
                 },
                 bodyClass: 'timeline'
@@ -36,9 +36,9 @@
                     }
                 },
                 resolve  : {
-                    Timeline: function (apiResolver)
+                    Timeline: function (msApi)
                     {
-                        return apiResolver.resolve('timeline.page1@get');
+                        return msApi.resolve('timeline.page1@get');
                     }
                 },
                 bodyClass: 'timeline-left'
@@ -52,13 +52,18 @@
                     }
                 },
                 resolve  : {
-                    Timeline: function (apiResolver)
+                    Timeline: function (msApi)
                     {
-                        return apiResolver.resolve('timeline.page1@get');
+                        return msApi.resolve('timeline.page1@get');
                     }
                 },
                 bodyClass: 'timeline-right'
             });
+
+        // API
+        msApiProvider.register('timeline.page1', ['app/data/timeline/page-1.json']);
+        msApiProvider.register('timeline.page2', ['app/data/timeline/page-2.json']);
+        msApiProvider.register('timeline.page3', ['app/data/timeline/page-3.json']);
 
         // Navigation
         msNavigationServiceProvider.saveItem('pages.timeline', {

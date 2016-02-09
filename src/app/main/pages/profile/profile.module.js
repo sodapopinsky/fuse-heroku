@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider, msNavigationServiceProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msApiProvider, msNavigationServiceProvider)
     {
         $stateProvider.state('app.pages_profile', {
             url      : '/pages/profile',
@@ -18,23 +18,29 @@
                 }
             },
             resolve  : {
-                Timeline    : function (apiResolver)
+                Timeline    : function (msApi)
                 {
-                    return apiResolver.resolve('profile.timeline@get');
+                    return msApi.resolve('profile.timeline@get');
                 },
-                About       : function (apiResolver)
+                About       : function (msApi)
                 {
-                    return apiResolver.resolve('profile.about@get');
+                    return msApi.resolve('profile.about@get');
                 },
-                PhotosVideos: function (apiResolver)
+                PhotosVideos: function (msApi)
                 {
-                    return apiResolver.resolve('profile.photosVideos@get');
+                    return msApi.resolve('profile.photosVideos@get');
                 }
             },
             bodyClass: 'profile'
         });
 
+        // Translation
         $translatePartialLoaderProvider.addPart('app/main/pages/profile');
+
+        // Api
+        msApiProvider.register('profile.timeline', ['app/data/profile/timeline.json']);
+        msApiProvider.register('profile.about', ['app/data/profile/about.json']);
+        msApiProvider.register('profile.photosVideos', ['app/data/profile/photos-videos.json']);
 
         // Navigation
         msNavigationServiceProvider.saveItem('pages.profile', {
