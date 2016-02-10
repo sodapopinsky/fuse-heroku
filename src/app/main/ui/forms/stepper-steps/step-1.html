@@ -1,7 +1,7 @@
-<div class="md-inline-form" novalidate>
+<div class="md-inline-form">
     <div layout="column" layout-gt-xs="row" flex>
         <md-input-container flex="100" flex-gt-xs="50">
-            <input type="text" name="firstname" ng-model="vm.stepper.step1.title"
+            <input type="text" name="firstname" ng-model="vm.stepper.step1.firstname"
                    placeholder="Firstname"
                    required>
             <div ng-messages="step1.firstname.$error"
@@ -13,8 +13,8 @@
             </div>
         </md-input-container>
 
-        <!--<md-input-container flex="100" flex-gt-xs="50">
-            <input type="text" name="lastname" ng-model="MsStepper.formData.lastname"
+        <md-input-container flex="100" flex-gt-xs="50">
+            <input type="text" name="lastname" ng-model="vm.stepper.step1.lastname"
                    placeholder="Lastname"
                    required>
             <div ng-messages="step1.lastname.$error"
@@ -24,6 +24,6 @@
                     <span>Lastname field is required.</span>
                 </div>
             </div>
-        </md-input-container>-->
+        </md-input-container>
     </div>
 </div>

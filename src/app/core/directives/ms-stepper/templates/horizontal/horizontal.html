@@ -9,9 +9,12 @@
 
             <div class="step md-accent-bg"
                  layout="row" layout-align="center center">
-                <span ng-if="!MsStepper.isStepValid(step.stepNumber) || MsStepper.isStepOptional(step.stepNumber)">{{step.stepNumber}}</span>
-                <span ng-if="MsStepper.isStepValid(step.stepNumber) && !MsStepper.isStepOptional(step.stepNumber)"><i
-                        class="icon icon-check s18"></i></span>
+                <span ng-if="!MsStepper.isStepValid(step.stepNumber) || MsStepper.isStepOptional(step.stepNumber)">
+                    {{step.stepNumber}}
+                </span>
+                <span ng-if="MsStepper.isStepValid(step.stepNumber) && !MsStepper.isStepOptional(step.stepNumber)">
+                    <i class="icon icon-check s18"></i>
+                </span>
             </div>
 
             <div layout="column" layout-align="start start">
@@ -40,6 +43,7 @@
         </md-button>
 
         <md-button type="submit" class="md-accent md-raised"
+                   ng-click="MsStepper.resetForm()"
                    ng-if="MsStepper.isLastStep()"
                    ng-disabled="!MsStepper.isFormValid()">
             Submit

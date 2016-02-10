@@ -9,7 +9,7 @@
         .directive('msStepperStep', msStepperStepDirective);
 
     /** @ngInject */
-    function MsStepperController()
+    function MsStepperController($timeout)
     {
         var vm = this;
 
@@ -24,6 +24,7 @@
         vm.registerMainForm = registerMainForm;
         vm.registerStep = registerStep;
         vm.setupSteps = setupSteps;
+        vm.resetForm = resetForm;
 
         vm.setCurrentStep = setCurrentStep;
 
@@ -89,6 +90,32 @@
         function setupSteps()
         {
             vm.setCurrentStep(vm.currentStepNumber);
+        }
+
+        /**
+         * Reset steps and the main form
+         */
+        function resetForm()
+        {
+            // Timeout is required here because we need to
+            // let form model to reset before setting the
+            // statuses
+            $timeout(function ()
+            {
+                // Reset all the steps
+                for ( var x = 0; x < vm.steps.length; x++ )
+                {
+                    vm.steps[x].form.$setPristine();
+                    vm.steps[x].form.$setUntouched();
+                }
+
+                // Reset the main form
+                vm.mainForm.$setPristine();
+                vm.mainForm.$setUntouched();
+
+                // Go to first step
+                gotoFirstStep();
+            })
         }
 
         /**

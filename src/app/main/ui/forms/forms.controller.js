@@ -12,26 +12,32 @@
         var vm = this;
 
         // Data
-        vm.stepperTitles = {
-            step1Title: 'Shipping Address',
-            step2Title: 'Billing Address',
-            step3Title: 'Payment Method'
-        };
-
         vm.stepper = {
-            step1: {
-                title: ''
-            },
-            step2: {
-                title: ''
-            },
-            step3: {
-                title: ''
-            }
+            step1: {},
+            step2: {},
+            step3: {}
         };
 
+        vm.basicForm = {};
+        vm.formWizard = {};
+        vm.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
+        'MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI ' +
+        'WY').split(' ').map(function (state)
+        {
+            return {abbrev: state};
+        });
+
+        // Methods
+        vm.sendForm = sendForm;
         vm.submitStepper = submitStepper;
 
+        //////////
+
+        /**
+         * Submit stepper form
+         *
+         * @param ev
+         */
         function submitStepper(ev)
         {
             // You can do an API call here to send the form to your server
@@ -62,24 +68,13 @@
                 clickOutsideToClose: true
             });
 
-            // Clear the form data
-            //vm.formWizard = {};
+            // Reset the form model
+            vm.stepper = {
+                step1: {},
+                step2: {},
+                step3: {}
+            };
         }
-
-        vm.basicForm = {};
-        vm.formWizard = {};
-
-        vm.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
-        'MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI ' +
-        'WY').split(' ').map(function (state)
-        {
-            return {abbrev: state};
-        });
-
-        // Methods
-        vm.sendForm = sendForm;
-
-        //////////
 
         /**
          * Send form
