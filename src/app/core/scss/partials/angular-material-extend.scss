@@ -75,7 +75,11 @@ md-checkbox {
 md-datepicker {
 
     .md-datepicker-input-container {
-        margin-left: 2px;
+        margin-left: 0;
+
+        .md-datepicker-input {
+            background: transparent !important;
+        }
     }
 }
 
