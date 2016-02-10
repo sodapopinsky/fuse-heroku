@@ -17,6 +17,55 @@
     <!-- CONTENT -->
     <div class="content" layout="column">
 
+        <!-- STEPPER -->
+        <h1>Stepper</h1>
+        <div class="pb-16">
+            <b>ms-stepper</b> is a custom made form wizard directive. It follows Google's Material Design specifications
+            and we recommend you to use it. If for some reason, it's not suitable for your project, you can always use
+            the Form Wizard that we put together using md-tabs and forms.
+        </div>
+
+        <form name="stepper" ms-stepper ng-submit="vm.submitStepper()" ng-model="vm.stepper" novalidate>
+            <ms-stepper-step ng-form="step1" step="1" step-title="vm.stepperTitles.step1Title">
+                step1
+                <div ng-include="'app/main/ui/forms/stepper-steps/step-1.html'"></div>
+            </ms-stepper-step>
+
+            <ms-stepper-step ng-form="step2" step="2" step-title="vm.stepperTitles.step2Title" optional-step>
+                step2
+                <div ng-include="'app/main/ui/forms/stepper-steps/step-2.html'"></div>
+            </ms-stepper-step>
+
+            <ms-stepper-step ng-form="step3" step="3" step-title="vm.stepperTitles.step3Title">
+                step3
+                <div ng-include="'app/main/ui/forms/stepper-steps/step-3.html'"></div>
+            </ms-stepper-step>
+        </form>
+
+        <!-- / STEPPER -->
+
+        <!--<form name="aForm">
+            {{aForm}}
+            <div style="white-space: pre-wrap">{{aForm | json}}</div>
+
+            <ng-form name="step1">
+                <input name="name" type="text" ng-model="vm.stepper.step1.model" required>
+            </ng-form>
+
+            <ng-form name="step2">
+                <input name="lastname" type="text" ng-model="vm.stepper.step2.model" value="Yemen" required>
+            </ng-form>
+
+            <ng-form name="step3">
+                <input name="age" type="text" ng-model="vm.stepper.step3.model" required>
+            </ng-form>
+
+        </form>-->
+
+        <br>
+        <br>
+
+
         <div class="md-title">Form Wizard</div>
         <div class="pb-16">
             Form wizard is a combination of md-tabs and forms that we have created for you. You can have as many steps
