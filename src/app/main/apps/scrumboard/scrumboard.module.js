@@ -101,7 +101,7 @@
             title : 'Scrumboard',
             icon  : 'icon-trello',
             state : 'app.scrumboard.boards',
-            weight: 5
+            weight: 6
         });
     }
 

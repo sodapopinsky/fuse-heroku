@@ -200,6 +200,11 @@
          documents: $resource(api.baseUrl + 'file-manager/documents.json')
          };
 
+         api.ganttChart = {
+         tasks: $resource(api.baseUrl + 'gantt-chart/tasks.json'),
+         timespans : $resource(api.baseUrl + 'gantt-chart/timespans.json')
+         };
+
          api.icons = $resource('assets/icons/selection.json');
 
          api.invoice = $resource(api.baseUrl + 'invoice/invoice.json');
