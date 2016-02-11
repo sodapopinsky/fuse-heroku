@@ -19,7 +19,8 @@
             templateUrl: 'app/core/directives/ms-material-color-picker/ms-material-color-picker.html',
             link       : function ($scope, element, attrs, ngModel)
             {
-                $scope.palettes = $mdColorPalette; // Material Color Palette
+                // Material Color Palette
+                $scope.palettes = $mdColorPalette;
                 $scope.selectedPalette = false;
                 $scope.selectedHues = false;
 
@@ -43,7 +44,7 @@
                 {
                     $scope.selectedPalette = palette;
                     $scope.selectedHues = hues;
-                }
+                };
 
                 /**
                  * Select Color
@@ -59,7 +60,7 @@
 
                     // Hide The picker
                     $mdMenu.hide();
-                }
+                };
 
                 $scope.removeColor = function ()
                 {
@@ -73,8 +74,7 @@
                     $scope.activateHueSelection(false, false);
 
                     updateModel();
-
-                }
+                };
 
                 /**
                  * Set SelectedColor by model type
@@ -108,7 +108,6 @@
                     {
                         palette = ngModel.$viewValue.palette;
                         hue = ngModel.$viewValue.hue || 500;
-
                     }
 
                     // Update Selected Color
