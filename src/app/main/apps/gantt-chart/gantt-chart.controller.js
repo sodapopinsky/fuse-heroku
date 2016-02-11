@@ -56,7 +56,7 @@
             rowContentEnabled       : true,
             rowContent              : '{{row.model.name}}',
             taskContentEnabled      : true,
-            taskContent             : '<span>\n    {{task.model.name}}\n    <md-tooltip md-direction="top">\n        {{task.model.name}}\n        <small>\n            <span>\n                {{task.model.from.format(\'MMM DD, HH:mm\')}}\n            </span>\n            <span>-</span>\n            <span>\n                {{task.model.to.format(\'MMM DD, HH:mm\')}}\n            </span>\n\n        </small>\n    </md-tooltip>\n</span>',
+            taskContent             : '<span>\n    {{task.model.name}}\n    <md-tooltip md-direction="top" class="gantt-chart-task-tooltip">\n        <div layout="column" layout-align="center center">\n            <div class="tooltip-name">\n                {{task.model.name}}\n            </div>\n            <div class="tooltip-date">\n                <span>\n                    {{task.model.from.format(\'MMM DD, HH:mm\')}}\n                </span>\n                <span>-</span>\n                <span>\n                    {{task.model.to.format(\'MMM DD, HH:mm\')}}\n                </span>\n            </div>\n        </div>\n    </md-tooltip>\n</span>',
             allowSideResizing       : false,
             labelsEnabled           : true,
             currentDate             : 'line',

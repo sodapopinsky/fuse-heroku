@@ -2,7 +2,6 @@
 {
     'use strict';
 
-    angular
     angular.module('app.gantt-chart')
         .controller('GanttChartAddEditDialogController', GanttChartAddEditDialogController);
 
@@ -32,7 +31,7 @@
                 classes : ['', ''],
                 sortable: true,
                 parent  : ''
-            }
+            };
             vm.task = {
                 id      : ganttUtils.randomUuid(),
                 name    : '',
@@ -40,7 +39,7 @@
                 from    : '',
                 to      : '',
                 progress: ''
-            }
+            };
             vm.taskRowId = '';
         }
 
@@ -141,6 +140,6 @@
             {
                 return x.id === value;
             })[0];
-        }
+        };
     }
 })();

@@ -2,8 +2,11 @@
 
     <!-- DIALOG TOOLBAR -->
     <md-toolbar class="md-accent" ng-class="'md-'+vm.board.settings.color+'-bg'">
+
         <div class="md-toolbar-tools">
+
             <h2 class="title">Add</h2>
+
             <span flex></span>
 
             <!-- CLOSE DIALOG BUTTON -->
@@ -11,6 +14,7 @@
                 <md-icon md-font-icon="icon-close" aria-label="Close dialog"></md-icon>
             </md-button>
             <!-- / CLOSE DIALOG BUTTON -->
+
         </div>
     </md-toolbar>
     <!-- / DIALOG TOOLBAR -->
@@ -22,6 +26,7 @@
 
             <!-- ADD NEW CARD TAB -->
             <md-tab>
+
                 <md-tab-label>
                     <span translate="GANTT.ADD_ROW">Add Row</span>
                 </md-tab-label>
@@ -29,11 +34,13 @@
                 <md-tab-body>
                     <div ng-include="'app/main/apps/gantt-chart/dialogs/add-edit/views/row-form-view.html'"></div>
                 </md-tab-body>
+
             </md-tab>
             <!-- / ADD NEW CARD TAB -->
 
             <!-- ASSIGN DUE DATE -->
             <md-tab>
+
                 <md-tab-label>
                     <span translate="GANTT.ADD_TASK">Add Task</span>
                 </md-tab-label>
@@ -41,6 +48,7 @@
                 <md-tab-body>
                     <div ng-include="'app/main/apps/gantt-chart/dialogs/add-edit/views/task-form-view.html'"></div>
                 </md-tab-body>
+
             </md-tab>
             <!-- / ASSIGN DUE DATE -->
 

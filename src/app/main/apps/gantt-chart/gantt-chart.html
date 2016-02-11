@@ -55,8 +55,9 @@
                     </md-button>
                 </div>
             </div>
-            <div class="bottom" layout="row" layout-align="end center">
-                <div flex ng-show="vm.searchActive" layout="row" layout-align="start center">
+            <div class="bottom" layout-gt-sm="row" layout-align="end center" layout="column">
+                <div class="search-boxes" flex ng-show="vm.searchActive" layout-gt-sm="row" layout-align="start center"
+                     layout="column">
                     <div class="search  md-whiteframe-3dp mr-8" flex layout="row"
                          layout-align="start center">
                         <md-icon md-font-icon="icon-magnify" class="icon s24"></md-icon>
@@ -75,8 +76,8 @@
                     </div>
                 </div>
 
-                <div layout="row" ng-show="vm.dateFilterActive" layout-align="end center"
-                     class="date-filter md-whiteframe-3dp">
+                <div class="date-filter-box md-whiteframe-3dp" ng-show="vm.dateFilterActive" layout="column"
+                     layout-gt-sm="row" layout-align="end center">
                     <div layout="row" layout-align="space-between center" class="filter from">
                         <span class="label">From:</span>
                         <md-datepicker ms-datepicker-fix ng-model="vm.options.fromDate"
@@ -102,7 +103,6 @@
             <!-- CONTENT TOOLBAR -->
             <div class="toolbar" layout="row" layout-align="space-between center">
 
-
                 <div layout="row" layout-align="start center">
 
                     <md-button ng-click="vm.addDialog($event)" class="md-icon-button add-row-button" aria-label="Add"
@@ -110,7 +110,6 @@
                                translate-attr-aria-label="GANTT.ADD">
                         <md-icon md-font-icon="icon-plus"></md-icon>
                     </md-button>
-
 
                 </div>
 

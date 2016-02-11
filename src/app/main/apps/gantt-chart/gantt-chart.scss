@@ -35,7 +35,7 @@
                 }
             }
 
-            .date-filter {
+            .date-filter-box {
                 background-color: white;
                 padding: 0 12px;
                 height: 48px;
@@ -293,5 +293,49 @@
             }
         }
     }
+}
 
+.gantt-chart-task-tooltip {
+    .md-content {
+        height: auto;
+        line-height: 1;
+        background: red;
+        padding: 6px;
+        .tooltip-name {
+            margin-bottom: 6px;
+        }
+        .tooltip-date {
+
+        }
+    }
+}
+
+// RESPONSIVE
+@media screen and (max-width: $layout-breakpoint-sm) {
+    #gantt-chart .center .header {
+        padding: 24px 0 16px 0;
+        height: inherit;
+        min-height: inherit;
+        max-height: inherit;
+
+        .logo .logo-text {
+            font-size: 16px;
+        }
+
+        .bottom {
+
+            .search-boxes, .date-filter-box {
+                width: 100%;
+                .search {
+                    width: 100%;
+                    margin: 0 0 8px 0;
+                }
+            }
+
+            .date-filter-box {
+                margin: 0;
+                height: inherit;
+            }
+        }
+    }
 }
