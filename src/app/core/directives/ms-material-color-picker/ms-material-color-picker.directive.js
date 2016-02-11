@@ -10,11 +10,11 @@
     function msMaterialColorPicker($mdMenu, $mdColorPalette, fuseGenerator)
     {
         return {
-            require    : "ngModel",
+            require    : 'ngModel',
             restrict   : 'E',
             scope      : {
                 ngModel    : '=',
-                msModelType: '=?'
+                msModelType: '@?'
             },
             templateUrl: 'app/core/directives/ms-material-color-picker/ms-material-color-picker.html',
             link       : function ($scope, element, attrs, ngModel)
@@ -156,6 +156,6 @@
                     }
                 }
             }
-        }
+        };
     }
 })();
