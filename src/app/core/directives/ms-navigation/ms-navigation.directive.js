@@ -297,6 +297,7 @@
                 saveItem           : saveItem,
                 deleteItem         : deleteItem,
                 sort               : sortByWeight,
+                clearNavigation    : clearNavigation,
                 setActiveItem      : setActiveItem,
                 getActiveItem      : getActiveItem,
                 getNavigationObject: getNavigationObject,
@@ -311,6 +312,21 @@
             return service;
 
             //////////
+
+            /**
+             * Clear the entire navigation
+             */
+            function clearNavigation()
+            {
+                // Clear the navigation array
+                navigation = [];
+
+                // Clear the vm.navigation from main controller
+                if ( navigationScope )
+                {
+                    navigationScope.vm.navigation = [];
+                }
+            }
 
             /**
              * Set active item
