@@ -312,29 +312,36 @@
 
 // RESPONSIVE
 @media screen and (max-width: $layout-breakpoint-sm) {
-    #gantt-chart .center .header {
-        padding: 24px 0 16px 0;
-        height: inherit;
-        min-height: inherit;
-        max-height: inherit;
+    #gantt-chart .center {
+        margin: 0 8px;
+        .header {
+            padding: 24px 0 16px 0;
+            height: inherit;
+            min-height: inherit;
+            max-height: inherit;
 
-        .logo .logo-text {
-            font-size: 16px;
-        }
-
-        .bottom {
-
-            .search-boxes, .date-filter-box {
-                width: 100%;
-                .search {
-                    width: 100%;
-                    margin: 0 0 8px 0;
-                }
+            .logo .logo-text {
+                font-size: 13px;
+                white-space: nowrap;
             }
 
-            .date-filter-box {
-                margin: 0;
-                height: inherit;
+            .bottom {
+
+                .search-boxes, .date-filter-box {
+                    width: 100%;
+                    .search {
+                        width: 100%;
+                        margin: 8px 0 6px 0;
+                    }
+                }
+
+                .date-filter-box {
+                    margin: 8px 0 0 0;
+                    height: inherit;
+                    > div {
+                        margin: 8px 0 8px 0;
+                    }
+                }
             }
         }
     }

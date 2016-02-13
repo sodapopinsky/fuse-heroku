@@ -6,7 +6,7 @@
         .controller('GanttChartController', GanttChartController);
 
     /** @ngInject */
-    function GanttChartController($mdDialog, $document, $animate, $scope, $timeout, $log, ganttUtils, GanttObjectModel, ganttDebounce, moment, Tasks, Timespans, $window, $mdSidenav, api)
+    function GanttChartController($mdDialog, $document, $animate, $scope, $timeout, $log, ganttUtils, GanttObjectModel, ganttDebounce, moment, Tasks, Timespans, $window, $mdSidenav, msApi)
     {
         var vm = this;
         var objectModel;
@@ -391,12 +391,12 @@
          */
         vm.reload = function ()
         {
-            api.ganttChart.tasks.get({}, function (response)
+            msApi.resolve('ganttChart.tasks@get', function (response)
             {
                 vm.data = response.data;
             });
 
-            api.ganttChart.timespans.get({}, function (response)
+            msApi.resolve('ganttChart.timespans@get', function (response)
             {
                 vm.timespans = response.data;
             });
