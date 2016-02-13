@@ -129,52 +129,6 @@
 
                 vm.api.core.on.ready($scope, function ()
                 {
-
-                  /* // Log various events to console
-                    vm.api.scroll.on.scroll($scope, logScrollEvent);
-                    vm.api.core.on.ready($scope, logReadyEvent);
-
-                    vm.api.data.on.remove($scope, addEventName('data.on.remove', logDataEvent));
-                    vm.api.data.on.load($scope, addEventName('data.on.load', logDataEvent));
-                    vm.api.data.on.clear($scope, addEventName('data.on.clear', logDataEvent));
-                    vm.api.data.on.change($scope, addEventName('data.on.change', logDataEvent));
-
-                    vm.api.tasks.on.add($scope, addEventName('tasks.on.add', logTaskEvent));
-                    vm.api.tasks.on.change($scope, addEventName('tasks.on.change', logTaskEvent));
-                    vm.api.tasks.on.rowChange($scope, addEventName('tasks.on.rowChange', logTaskEvent));
-                    vm.api.tasks.on.remove($scope, addEventName('tasks.on.remove', logTaskEvent));
-
-                    if ( vm.api.tasks.on.moveBegin )
-                    {
-                        vm.api.tasks.on.moveBegin($scope, addEventName('tasks.on.moveBegin', logTaskEvent));
-                        //vm.api.tasks.on.move($scope, addEventName('tasks.on.move', logTaskEvent));
-                        vm.api.tasks.on.moveEnd($scope, addEventName('tasks.on.moveEnd', logTaskEvent));
-
-                        vm.api.tasks.on.resizeBegin($scope, addEventName('tasks.on.resizeBegin', logTaskEvent));
-                        //vm.api.tasks.on.resize($scope, addEventName('tasks.on.resize', logTaskEvent));
-                        vm.api.tasks.on.resizeEnd($scope, addEventName('tasks.on.resizeEnd', logTaskEvent));
-                    }
-
-                    vm.api.rows.on.add($scope, addEventName('rows.on.add', logRowEvent));
-                    vm.api.rows.on.change($scope, addEventName('rows.on.change', logRowEvent));
-                    vm.api.rows.on.move($scope, addEventName('rows.on.move', logRowEvent));
-                    vm.api.rows.on.remove($scope, addEventName('rows.on.remove', logRowEvent));
-
-                    vm.api.side.on.resizeBegin($scope, addEventName('labels.on.resizeBegin', logLabelsEvent));
-                    //vm.api.side.on.resize($scope, addEventName('labels.on.resize', logLabelsEvent));
-                    vm.api.side.on.resizeEnd($scope, addEventName('labels.on.resizeEnd', logLabelsEvent));
-
-                    vm.api.timespans.on.add($scope, addEventName('timespans.on.add', logTimespanEvent));
-                    vm.api.columns.on.generate($scope, logColumnsGenerateEvent);
-
-                    vm.api.rows.on.filter($scope, logRowsFilterEvent);
-                    vm.api.tasks.on.filter($scope, logTasksFilterEvent);
-
-                    vm.api.data.on.change($scope, function (newData)
-                    {
-
-                    });*/
-
                     // When gantt is ready, load data.
                     // `data` attribute could have been used too.
                     vm.load();
