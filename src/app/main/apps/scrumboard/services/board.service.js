@@ -7,7 +7,7 @@
         .factory('BoardService', BoardService);
 
     /** @ngInject */
-    function BoardService($q, api)
+    function BoardService($q, msApi)
     {
         var service = {
             data        : {},
@@ -26,7 +26,7 @@
             // Create a new deferred object
             var deferred = $q.defer();
 
-            api.scrumboard.board.get({id: boardId},
+            msApi.request('scrumboard.board@get', {id: boardId},
 
                 // SUCCESS
                 function (response)

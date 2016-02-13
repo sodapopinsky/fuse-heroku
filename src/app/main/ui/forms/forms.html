@@ -17,7 +17,30 @@
     <!-- CONTENT -->
     <div class="content" layout="column">
 
-        <div class="md-title">Form Wizard</div>
+        <!-- STEPPER -->
+        <div class="md-title">Stepper</div>
+        <div class="pb-16">
+            <b>ms-stepper</b> is a custom made form wizard directive. It follows Google's Material Design specifications
+            and we recommend you to use it. If for some reason, it's not suitable for your project, you can always use
+            the Form Wizard that we put together using md-tabs and forms.
+        </div>
+
+        <form name="stepper" ms-stepper ng-submit="vm.submitStepper()" ng-model="vm.stepper" novalidate>
+            <ms-stepper-step ng-form="step1" step="1" step-title="'Personal Information'">
+                <div ng-include="'app/main/ui/forms/stepper-steps/step-1.html'"></div>
+            </ms-stepper-step>
+
+            <ms-stepper-step ng-form="step2" step="2" step-title="'Address'" optional-step>
+                <div ng-include="'app/main/ui/forms/stepper-steps/step-2.html'"></div>
+            </ms-stepper-step>
+
+            <ms-stepper-step ng-form="step3" step="3" step-title="'Payment Method'">
+                <div ng-include="'app/main/ui/forms/stepper-steps/step-3.html'"></div>
+            </ms-stepper-step>
+        </form>
+        <!-- / STEPPER -->
+
+        <div class="md-title mt-32">Form Wizard</div>
         <div class="pb-16">
             Form wizard is a combination of md-tabs and forms that we have created for you. You can have as many steps
             as you want.

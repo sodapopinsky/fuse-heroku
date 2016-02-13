@@ -7,7 +7,7 @@
         .controller('TimelineController', TimelineController);
 
     /** @ngInject */
-    function TimelineController($q, api, Timeline)
+    function TimelineController($q, msApi, Timeline)
     {
         var vm = this;
 
@@ -43,9 +43,9 @@
             else
             {
                 // Emulate the api call and load new timeline items in
-                var pageName = 'page' + vm.currentPage;
+                var pageName = 'timeline.page' + vm.currentPage + '@get';
 
-                api.timeline[pageName].get({},
+                msApi.request(pageName, {},
 
                     // SUCCESS
                     function (response)

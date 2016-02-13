@@ -26,6 +26,7 @@
             'app.mail',
             'app.file-manager',
             'app.scrumboard',
+            'app.gantt-chart',
             'app.todo',
 
             // Pages

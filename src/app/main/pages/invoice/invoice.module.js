@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider, msNavigationServiceProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msApiProvider, msNavigationServiceProvider)
     {
         // State
         $stateProvider.state('app.pages_invoice', {
@@ -19,9 +19,9 @@
                 }
             },
             resolve  : {
-                Invoice: function (apiResolver)
+                Invoice: function (msApi)
                 {
-                    return apiResolver.resolve('invoice@get');
+                    return msApi.resolve('invoice@get');
                 }
             },
             bodyClass: 'invoice printable'
@@ -29,6 +29,9 @@
 
         // Translation
         $translatePartialLoaderProvider.addPart('app/main/pages/invoice');
+
+        // Api
+        msApiProvider.register('invoice', ['app/data/invoice/invoice.json']);
 
         // Navigation
         msNavigationServiceProvider.saveItem('pages.invoice', {

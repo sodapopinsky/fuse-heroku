@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider, msNavigationServiceProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msApiProvider, msNavigationServiceProvider)
     {
         // State
         $stateProvider.state('app.pages_search', {
@@ -19,21 +19,21 @@
                 }
             },
             resolve  : {
-                Classic : function (apiResolver)
+                Classic : function (msApi)
                 {
-                    return apiResolver.resolve('search.classic@get');
+                    return msApi.resolve('search.classic@get');
                 },
-                Mails   : function (apiResolver)
+                Mails   : function (msApi)
                 {
-                    return apiResolver.resolve('search.mails@get');
+                    return msApi.resolve('search.mails@get');
                 },
-                Users   : function (apiResolver)
+                Users   : function (msApi)
                 {
-                    return apiResolver.resolve('search.users@get');
+                    return msApi.resolve('search.users@get');
                 },
-                Contacts: function (apiResolver)
+                Contacts: function (msApi)
                 {
-                    return apiResolver.resolve('search.contacts@get');
+                    return msApi.resolve('search.contacts@get');
                 }
             },
             bodyClass: 'search'
@@ -41,6 +41,12 @@
 
         // Translation
         $translatePartialLoaderProvider.addPart('app/main/pages/search');
+
+        // Api
+        msApiProvider.register('search.classic', ['app/data/search/classic.json']);
+        msApiProvider.register('search.mails', ['app/data/search/mails.json']);
+        msApiProvider.register('search.users', ['app/data/search/users.json']);
+        msApiProvider.register('search.contacts', ['app/data/search/contacts.json']);
 
         // Navigation
         msNavigationServiceProvider.saveItem('pages.search', {

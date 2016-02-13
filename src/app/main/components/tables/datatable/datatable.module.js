@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider)
+    function config($stateProvider, msApiProvider)
     {
         $stateProvider.state('app.components_tables_datatable', {
             url    : '/components/table/datatable',
@@ -18,12 +18,15 @@
                 }
             },
             resolve: {
-                Employees: function (apiResolver)
+                Employees: function (msApi)
                 {
-                    return apiResolver.resolve('tables.employees100@get');
+                    return msApi.resolve('tables.employees100@get');
                 }
             }
         });
+
+        // Api
+        msApiProvider.register('tables.employees100', ['app/data/tables/employees100.json']);
     }
 
 })();

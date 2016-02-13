@@ -8,16 +8,16 @@
         .run(run);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider, msNavigationServiceProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msApiProvider, msNavigationServiceProvider)
     {
         $stateProvider
             .state('app.scrumboard', {
                 abstract : true,
                 url      : '/scrumboard',
                 resolve  : {
-                    BoardList: function (apiResolver)
+                    BoardList: function (msApi)
                     {
-                        return apiResolver.resolve('scrumboard.boardList@get');
+                        return msApi.resolve('scrumboard.boardList@get');
                     }
                 },
                 bodyClass: 'scrumboard'
@@ -25,9 +25,9 @@
 
             // Home
             .state('app.scrumboard.boards', {
-                url    : '/boards',
-                views  : {
-                    'content@app'                           : {
+                url  : '/boards',
+                views: {
+                    'content@app': {
                         templateUrl: 'app/main/apps/scrumboard/views/boards/boards-view.html',
                         controller : 'BoardsViewController as vm'
                     }
@@ -38,7 +38,7 @@
             .state('app.scrumboard.boards.board', {
                     url    : '/:id/:uri',
                     views  : {
-                        'content@app'                           : {
+                        'content@app'                                  : {
                             templateUrl: 'app/main/apps/scrumboard/scrumboard.html',
                             controller : 'ScrumboardController as vm'
                         },
@@ -48,7 +48,7 @@
                         }
                     },
                     resolve: {
-                        BoardData: function ($stateParams, apiResolver, BoardService)
+                        BoardData: function ($stateParams, BoardService)
                         {
                             return BoardService.getBoardData($stateParams.id);
                         }
@@ -60,7 +60,7 @@
             .state('app.scrumboard.boards.addBoard', {
                     url    : '/add',
                     views  : {
-                        'content@app'                           : {
+                        'content@app'                                     : {
                             templateUrl: 'app/main/apps/scrumboard/scrumboard.html',
                             controller : 'ScrumboardController as vm'
                         },
@@ -70,7 +70,7 @@
                         }
                     },
                     resolve: {
-                        BoardData: function ($stateParams, apiResolver, BoardService)
+                        BoardData: function ($stateParams, BoardService)
                         {
                             return BoardService.addNewBoard();
                         }
@@ -92,12 +92,16 @@
         // Translation
         $translatePartialLoaderProvider.addPart('app/main/apps/scrumboard');
 
+        // Api
+        msApiProvider.register('scrumboard.boardList', ['app/data/scrumboard/board-list.json']);
+        msApiProvider.register('scrumboard.board', ['app/data/scrumboard/boards/:id.json']);
+
         // Navigation
         msNavigationServiceProvider.saveItem('apps.scrumboard', {
             title : 'Scrumboard',
             icon  : 'icon-trello',
             state : 'app.scrumboard.boards',
-            weight: 5
+            weight: 6
         });
     }
 

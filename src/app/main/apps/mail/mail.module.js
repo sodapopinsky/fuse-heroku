@@ -7,7 +7,7 @@
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider, msNavigationServiceProvider)
+    function config($stateProvider, $translatePartialLoaderProvider, msApiProvider, msNavigationServiceProvider)
     {
         // State
         $stateProvider.state('app.mail', {
@@ -19,9 +19,9 @@
                 }
             },
             resolve  : {
-                Inbox: function (apiResolver)
+                Inbox: function (msApi)
                 {
-                    return apiResolver.resolve('mail.inbox@get');
+                    return msApi.resolve('mail.inbox@get');
                 }
             },
             bodyClass: 'mail'
@@ -29,6 +29,9 @@
 
         // Translation
         $translatePartialLoaderProvider.addPart('app/main/apps/mail');
+
+        // Api
+        msApiProvider.register('mail.inbox', ['app/data/mail/inbox.json']);
 
         // Navigation
         msNavigationServiceProvider.saveItem('apps.mail', {
