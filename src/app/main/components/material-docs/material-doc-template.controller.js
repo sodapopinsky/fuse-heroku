@@ -11,7 +11,7 @@
     {
         var vm = this;
         var component = $state.current.data;
-        vm.materialVersion = '1.0.0-rc7';
+        vm.materialVersion = '1.0.5';
 
         vm.componentName = component.name;
 
