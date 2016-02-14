@@ -1,11 +1,15 @@
 #gantt-chart {
+
     .center {
+
         .header {
             padding: 24px 0 16px 0;
+
             .logo {
 
                 .logo-icon {
                     margin: 0 16px 0 0;
+
                     md-icon {
                         color: #FFFFFF;
                     }
@@ -15,53 +19,44 @@
                     color: #FFFFFF;
                     font-size: 20px;
                     font-weight: 500;
+                    white-space: nowrap;
                 }
             }
 
-            .search {
-                height: 48px;
-                padding: 8px 8px 8px 16px;
-                background: #FFFFFF;
+            .bottom {
+                margin-top: 8px;
 
-                .icon {
-                    margin: 0;
-                }
-
-                input {
-                    padding-left: 16px;
+                .search {
                     height: 48px;
-                    line-height: 48px;
-                    color: rgba(0, 0, 0, 0.54);
+                    padding: 8px 8px 8px 16px;
+                    background: #FFFFFF;
+
+                    .icon {
+                        margin: 0;
+                    }
+
+                    input {
+                        padding-left: 16px;
+                        color: rgba(0, 0, 0, 0.54);
+                    }
                 }
-            }
 
-            .date-filter-box {
-                background-color: white;
-                padding: 0 12px;
-                height: 48px;
-                margin-left: 8px;
+                .date-filter-box {
+                    background-color: white;
+                    height: 48px;
+                    padding-left: 16px;
+                    margin-left: 8px;
 
-                .filter {
+                    .filter {
 
-                    md-datepicker {
-
-                        .md-datepicker-input {
-                            background-color: transparent;
+                        md-datepicker {
+                            margin-right: 0;
                         }
-
                     }
-
-                    &.from {
-                        margin-right: 16px;
-                    }
-
-                    &.to {
-
-                    }
-
                 }
             }
         }
+
         .content-card {
 
             .toolbar {
@@ -296,14 +291,17 @@
 }
 
 .gantt-chart-task-tooltip {
+
     .md-content {
         height: auto;
         line-height: 1;
         background: red;
         padding: 6px;
+
         .tooltip-name {
             margin-bottom: 6px;
         }
+
         .tooltip-date {
 
         }
@@ -312,34 +310,128 @@
 
 // RESPONSIVE
 @media screen and (max-width: $layout-breakpoint-sm) {
-    #gantt-chart .center {
-        margin: 0 8px;
-        .header {
-            padding: 24px 0 16px 0;
-            height: inherit;
-            min-height: inherit;
-            max-height: inherit;
 
-            .logo .logo-text {
-                font-size: 13px;
-                white-space: nowrap;
-            }
+    #gantt-chart {
 
-            .bottom {
+        &.search-active {
 
-                .search-boxes, .date-filter-box {
-                    width: 100%;
-                    .search {
-                        width: 100%;
-                        margin: 8px 0 6px 0;
-                    }
+            &.date-filter-active {
+
+                .top-bg {
+                    height: 256px;
                 }
 
-                .date-filter-box {
-                    margin: 8px 0 0 0;
-                    height: inherit;
-                    > div {
-                        margin: 8px 0 8px 0;
+                .center {
+
+                    .header {
+                        height: 192px;
+                        min-height: 192px;
+                        max-height: 192px;
+
+                        .bottom {
+
+                            .date-filter-box {
+                                margin-top: 8px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .center {
+
+            .header {
+
+                .bottom {
+
+                    .date-filter-box {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $layout-breakpoint-xs) {
+
+    #gantt-chart {
+
+        &.search-active,
+        &.date-filter-active {
+
+            .top-bg {
+                height: 256px;
+            }
+
+            .center {
+
+                .header {
+                    height: 192px;
+                    min-height: 192px;
+                    max-height: 192px;
+
+                    .bottom {
+
+                        .date-filter-box {
+                            margin-top: 8px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.search-active {
+
+            &.date-filter-active {
+
+                .top-bg {
+                    height: 360px;
+                }
+
+                .center {
+
+                    .header {
+                        height: 296px;
+                        min-height: 296px;
+                        max-height: 296px;
+
+                        .bottom {
+
+                            .date-filter-box {
+                                margin-top: 8px;
+
+                                .filter {
+                                    min-height: 48px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .center {
+
+            .header {
+
+                .bottom {
+
+                    .search-boxes {
+
+                        .search {
+                            margin: 8px 0 0 0;
+                        }
+                    }
+
+                    .date-filter-box {
+                        min-height: 96px;
+                        margin: 8px 0 0 0;
+
+                        .filter {
+                            margin: 0;
+                        }
                     }
                 }
             }

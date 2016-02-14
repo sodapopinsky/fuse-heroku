@@ -1,4 +1,5 @@
-<div id="gantt-chart" class="page-layout carded fullwidth" layout="row">
+<div id="gantt-chart" class="page-layout carded fullwidth"
+     ng-class="{'date-filter-active':vm.dateFilterActive, 'search-active': vm.searchActive}" layout="row">
 
     <!-- SETTINGS SIDENAV -->
     <md-sidenav class="sidenav settings-sidenav md-sidenav-right" md-component-id="settings-sidenav"
@@ -15,8 +16,7 @@
     <div class="center" layout="column" flex>
 
         <!-- CONTENT HEADER -->
-        <div class="header"
-             layout="column" layout-align="space-between">
+        <div class="header" layout="column">
             <div class="toolbar" layout="row" layout-align="space-between center">
                 <div class="logo" layout="row" layout-align="start center">
                     <span class="logo-icon">
@@ -55,19 +55,17 @@
                     </md-button>
                 </div>
             </div>
-            <div class="bottom" layout-gt-sm="row" layout-align="end center" layout="column">
-                <div class="search-boxes" flex ng-show="vm.searchActive" layout-gt-sm="row" layout-align="start center"
-                     layout="column">
-                    <div class="search  md-whiteframe-3dp mr-8" flex layout="row"
-                         layout-align="start center">
+
+            <div class="bottom" layout="column" layout-gt-sm="row" layout-align-gt-sm="end center">
+                <div class="search-boxes" flex ng-show="vm.searchActive" layout="column" layout-gt-xs="row">
+                    <div class="search md-whiteframe-3dp mr-8" flex layout="row" layout-align="start center">
                         <md-icon md-font-icon="icon-magnify" class="icon s24"></md-icon>
                         <input flex ng-model="vm.searchRowKeyword"
                                ng-change="vm.search('rows', vm.searchRowKeyword)" type="text"
                                placeholder="Search in rows" translate
                                translate-attr-placeholder="GANTT.SEARCH_IN_ROWS">
                     </div>
-                    <div class="search  md-whiteframe-3dp" flex layout="row"
-                         layout-align="start center">
+                    <div class="search md-whiteframe-3dp" flex layout="row" layout-align="start center">
                         <md-icon md-font-icon="icon-magnify" class="icon s24"></md-icon>
                         <input flex ng-model="vm.searchTaskKeyword" ng-change="vm.search('tasks', vm.searchTaskKeyword)"
                                type="text"
@@ -77,7 +75,7 @@
                 </div>
 
                 <div class="date-filter-box md-whiteframe-3dp" ng-show="vm.dateFilterActive" layout="column"
-                     layout-gt-sm="row" layout-align="end center">
+                     layout-gt-xs="row" layout-align-gt-xs="center center">
                     <div layout="row" layout-align="space-between center" class="filter from">
                         <span class="label">From:</span>
                         <md-datepicker ms-datepicker-fix ng-model="vm.options.fromDate"
