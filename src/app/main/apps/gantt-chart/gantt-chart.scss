@@ -28,6 +28,7 @@
 
                 .search {
                     height: 48px;
+                    min-height: 48px;
                     padding: 8px 8px 8px 16px;
                     background: #FFFFFF;
 
@@ -401,10 +402,6 @@
 
                             .date-filter-box {
                                 margin-top: 8px;
-
-                                .filter {
-                                    min-height: 48px;
-                                }
                             }
                         }
                     }
@@ -419,9 +416,13 @@
                 .bottom {
 
                     .search-boxes {
+                        min-height: 104px;
 
                         .search {
-                            margin: 8px 0 0 0;
+
+                            &:nth-child(2) {
+                                margin: 8px 0 0 0;
+                            }
                         }
                     }
 
@@ -430,6 +431,7 @@
                         margin: 8px 0 0 0;
 
                         .filter {
+                            min-height: 48px;
                             margin: 0;
                         }
                     }

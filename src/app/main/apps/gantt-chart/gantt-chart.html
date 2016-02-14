@@ -76,13 +76,13 @@
 
                 <div class="date-filter-box md-whiteframe-3dp" ng-show="vm.dateFilterActive" layout="column"
                      layout-gt-xs="row" layout-align-gt-xs="center center">
-                    <div layout="row" layout-align="space-between center" class="filter from">
+                    <div layout="row" layout-align="center center" class="filter from">
                         <span class="label">From:</span>
                         <md-datepicker ms-datepicker-fix ng-model="vm.options.fromDate"
                                        md-max-date="vm.options.toDate"
                                        md-placeholder="Enter date"></md-datepicker>
                     </div>
-                    <div layout="row" layout-align="space-between center" class="filter to">
+                    <div layout="row" layout-align="center center" class="filter to">
                         <span class="label">To:</span>
                         <md-datepicker ms-datepicker-fix ng-model="vm.options.toDate"
                                        md-min-date="vm.options.fromDate"
