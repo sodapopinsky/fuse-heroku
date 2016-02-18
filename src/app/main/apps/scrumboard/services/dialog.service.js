@@ -25,8 +25,8 @@
         {
             $mdDialog.show({
                 templateUrl        : 'app/main/apps/scrumboard/dialogs/card/card-dialog.html',
-                controller         : "ScrumboardCardDialogController",
-                controllerAs       : "vm",
+                controller         : 'ScrumboardCardDialogController',
+                controllerAs       : 'vm',
                 parent             : $document.find('#scrumboard'),
                 targetEvent        : ev,
                 clickOutsideToClose: true,

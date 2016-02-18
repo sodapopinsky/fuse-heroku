@@ -169,9 +169,9 @@
         function addNewLabel()
         {
             vm.board.labels.push({
-                "id"   : msUtils.guidGenerator(),
-                "name" : vm.newLabelName,
-                "color": vm.newLabelColor
+                id   : msUtils.guidGenerator(),
+                name : vm.newLabelName,
+                color: vm.newLabelColor
             });
 
             vm.newLabelName = '';
@@ -298,10 +298,10 @@
         function createCheckList()
         {
             vm.card.checklists.push({
-                "id"               : msUtils.guidGenerator(),
-                "name"             : vm.newCheckListTitle,
-                "checkItemsChecked": 0,
-                "checkItems"       : []
+                id               : msUtils.guidGenerator(),
+                name             : vm.newCheckListTitle,
+                checkItemsChecked: 0,
+                checkItems       : []
             });
 
             vm.newCheckListTitle = '';
@@ -315,9 +315,9 @@
         function addNewComment(newCommentText)
         {
             var newComment = {
-                "idMember": "36027j1930450d8bf7b10158",
-                "message" : newCommentText,
-                "time"    : "now"
+                idMember: '36027j1930450d8bf7b10158',
+                message : newCommentText,
+                time    : 'now'
             };
 
             vm.card.comments.unshift(newComment);

@@ -137,7 +137,7 @@
                     $window.onresize = function ()
                     {
                         calculateListContentHeight();
-                    }
+                    };
                 }
             }, 0);
 
@@ -179,9 +179,9 @@
             }
 
             vm.board.lists.push({
-                "id"     : msUtils.guidGenerator(),
-                "name"   : vm.newListName,
-                "idCards": []
+                id     : msUtils.guidGenerator(),
+                name   : vm.newListName,
+                idCards: []
             });
 
             vm.newListName = '';

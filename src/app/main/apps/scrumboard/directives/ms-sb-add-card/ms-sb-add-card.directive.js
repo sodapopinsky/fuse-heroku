@@ -36,20 +36,20 @@
             var newCardId = msUtils.guidGenerator();
 
             vm.cards.push({
-                "id"               : newCardId,
-                "name"             : vm.newCardName,
-                "description"      : '',
-                "idAttachmentCover": '',
-                "idMembers"        : [],
-                "idLabels"         : [],
-                "attachments"      : [],
-                "subscribed"       : false,
-                "checklists"       : [],
-                "checkItems"       : 0,
-                "checkItemsChecked": 0,
-                "comments"         : [],
-                "activities"       : [],
-                "due"              : null
+                id               : newCardId,
+                name             : vm.newCardName,
+                description      : '',
+                idAttachmentCover: '',
+                idMembers        : [],
+                idLabels         : [],
+                attachments      : [],
+                subscribed       : false,
+                checklists       : [],
+                checkItems       : 0,
+                checkItemsChecked: 0,
+                comments         : [],
+                activities       : [],
+                due              : null
             });
 
             vm.list.idCards.push(newCardId);
@@ -141,14 +141,14 @@
                 var outSideClick = function (event)
                 {
                     var isChild = formEl.has(event.target).length > 0;
-                    var isSelf = formEl[0] == event.target;
+                    var isSelf = formEl[0] === event.target;
                     var isInside = isChild || isSelf;
 
                     if ( !isInside )
                     {
                         toggleForm();
                     }
-                }
+                };
             }
         };
     }

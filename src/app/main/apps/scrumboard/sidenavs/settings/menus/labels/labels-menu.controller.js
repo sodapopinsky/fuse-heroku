@@ -31,9 +31,9 @@
         function addNewLabel()
         {
             vm.board.labels.push({
-                "id"   : msUtils.guidGenerator(),
-                "name" : vm.newLabelName,
-                "color": vm.newLabelColor
+                id   : msUtils.guidGenerator(),
+                name : vm.newLabelName,
+                color: vm.newLabelColor
             });
             vm.newLabelName = '';
         }
