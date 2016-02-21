@@ -35,11 +35,11 @@
     "Sortable": "1.4.2",
     "jqueryui-touch-punch": "*",
     "moment-picker": "0.2.2",
-    "angular-ui-tree": "2.9.0",
-    "angular-native-dragdrop": "1.1.2",
+    "angular-ui-tree": "2.15.0",
+    "angular-native-dragdrop": "1.2.0",
     "css-element-queries": "0.3.2",
     "jsPlumb": "2.0.5",
-    "angular-gantt": "1.2.11",
+    "angular-gantt": "#339cc086b05a7fada3a81f9f55259f387d8903f9",
     "moment-range": "2.1.0"
   },
   "devDependencies": {
