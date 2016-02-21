@@ -34,7 +34,7 @@
     "angular-xeditable": "0.1.9",
     "Sortable": "1.4.2",
     "jqueryui-touch-punch": "*",
-    "angular-moment-picker": "moment-picker#5e5b007",
+    "moment-picker": "0.2.2",
     "angular-ui-tree": "2.9.0",
     "angular-native-dragdrop": "1.1.2",
     "css-element-queries": "0.3.2",
