@@ -63,7 +63,7 @@
             currentDateValue        : new Date(),
             draw                    : true,
             readOnly                : false,
-            groupDisplayMode        : 'Disabled',
+            groupDisplayMode        : 'group',
             filterTask              : '',
             filterRow               : '',
             timeFrames              : {
