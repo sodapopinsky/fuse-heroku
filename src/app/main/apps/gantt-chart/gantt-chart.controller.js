@@ -58,7 +58,7 @@
             rowContentEnabled       : true,
             rowContent              : '{{row.model.name}}',
             taskContentEnabled      : true,
-            taskContent             : '<span>\n    {{task.model.name}}\n    <md-tooltip md-direction="top" class="gantt-chart-task-tooltip">\n        <div layout="column" layout-align="center center">\n            <div class="tooltip-name">\n                {{task.model.name}}\n            </div>\n            <div class="tooltip-date">\n                <span>\n                    {{task.model.from.format(\'MMM DD, HH:mm\')}}\n                </span>\n                <span>-</span>\n                <span>\n                    {{task.model.to.format(\'MMM DD, HH:mm\')}}\n                </span>\n            </div>\n        </div>\n    </md-tooltip>\n</span>',
+            taskContent             : '<i ng-click="scope.vm.editDialog($event, \'task\', task)" class="gantt-task-edit-button icon-pencil s12 icon"\n   aria-label="edit task">\n</i>\n<span class="gantt-task-name">\n    {{task.model.name}}\n    <md-tooltip md-direction="top" class="gantt-chart-task-tooltip">\n        <div layout="column" layout-align="center center">\n            <div class="tooltip-name">\n                {{task.model.name}}\n            </div>\n            <div class="tooltip-date">\n                <span>\n                    {{task.model.from.format(\'MMM DD, HH:mm\')}}\n                </span>\n                <span>-</span>\n                <span>\n                    {{task.model.to.format(\'MMM DD, HH:mm\')}}\n                </span>\n            </div>\n        </div>\n    </md-tooltip>\n</span>',
             allowSideResizing       : false,
             labelsEnabled           : true,
             currentDate             : 'line',
@@ -143,14 +143,6 @@
                          */
                         if ( directiveName === 'ganttTask' )
                         {
-
-                            element.on('click', function (event)
-                            {
-                                event.preventDefault();
-                                event.stopPropagation();
-                                editDialog(event, 'task', directiveScope.task);
-                            });
-
                             element.on('mousedown touchstart', function (event)
                             {
                                 event.preventDefault();

@@ -217,6 +217,23 @@
 
                         .gantt-task-content {
                             line-height: 38px;
+
+                            > span {
+                                margin-left: 0;
+                                margin-right: 0;
+
+                                .gantt-task-name {
+
+                                }
+
+                                .gantt-task-edit-button {
+                                    cursor: pointer;
+                                    padding: 4px;
+                                    display: inline-block;
+                                    width: 20px!important;
+                                    height: 20px!important;
+                                }
+                            }
                         }
 
                         .gantt-task-background {
