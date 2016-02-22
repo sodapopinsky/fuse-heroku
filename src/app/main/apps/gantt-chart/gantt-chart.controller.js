@@ -6,7 +6,7 @@
         .controller('GanttChartController', GanttChartController);
 
     /** @ngInject */
-    function GanttChartController($mdDialog, $document, $animate, $scope, $timeout, $log, ganttUtils, GanttObjectModel, ganttDebounce, moment, Tasks, Timespans, $window, $mdSidenav, msApi)
+    function GanttChartController($mdDialog, $document, $animate, $scope, $timeout, ganttUtils, GanttObjectModel, ganttDebounce, moment, Tasks, Timespans, $window, $mdSidenav, msApi)
     {
         var vm = this;
         var objectModel;
