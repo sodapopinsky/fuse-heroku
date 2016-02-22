@@ -70,12 +70,6 @@
     },
     "font-awesome": {
       "main": []
-    },
-    "angular-moment-picker": {
-      "main": [
-        "dist/angular-moment-picker.js",
-        "dist/angular-moment-picker.css"
-      ]
     }
   }
 }
