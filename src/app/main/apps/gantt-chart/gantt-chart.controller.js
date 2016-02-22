@@ -11,6 +11,8 @@
         var vm = this;
         var objectModel;
 
+        // Data
+        vm.live = {};
         vm.options = {
             mode                    : 'custom',
             scale                   : 'day',
@@ -176,7 +178,6 @@
                             element.on('click', function (event)
                             {
                                 event.stopPropagation();
-                                logRowEvent('row-click', directiveScope.row);
                             });
 
                             element.on('mousedown touchstart', function (event)
@@ -221,17 +222,45 @@
             }
         };
 
-
         // Methods
         vm.toggleSidenav = toggleSidenav;
         vm.search = search;
         vm.setSortMode = setSortMode;
         vm.addDialog = addDialog;
+        vm.editDialog = editDialog;
+        vm.canAutoWidth = canAutoWidth;
+        vm.getColumnWidth = getColumnWidth;
+        vm.load = load;
+        vm.reload = reload;
 
         //////////
 
-        // Set Gantt Chart height at the init
-        calculateHeight();
+        init();
+
+        /**
+         * Initialize
+         */
+        function init()
+        {
+            // Set Gantt Chart height at the init
+            calculateHeight();
+
+            angular.element($window).on('resize', function ()
+            {
+                $scope.$apply(function ()
+                {
+                    calculateHeight();
+                });
+            });
+        }
+
+        /**
+         * Max Height Fix
+         */
+        function calculateHeight()
+        {
+            vm.options.maxHeight = $document.find('#chart-container').offsetHeight;
+        }
 
         /**
          * Add New Row
@@ -310,6 +339,7 @@
         function setSortMode(mode)
         {
             vm.options.sortMode = mode;
+
             if ( angular.isUndefined(mode) )
             {
                 vm.options.rowSortable = true;
@@ -328,6 +358,7 @@
             if ( newValue !== oldValue )
             {
                 vm.api.side.setWidth(undefined);
+
                 $timeout(function ()
                 {
                     vm.api.columns.refresh();
@@ -335,16 +366,17 @@
             }
         });
 
-        vm.canAutoWidth = function (scale)
+        function canAutoWidth(scale)
         {
             if ( scale.match(/.*?hour.*?/) || scale.match(/.*?minute.*?/) )
             {
                 return false;
             }
-            return true;
-        };
 
-        vm.getColumnWidth = function (widthEnabled, scale, zoom)
+            return true;
+        }
+
+        function getColumnWidth(widthEnabled, scale, zoom)
         {
             if ( !widthEnabled && vm.canAutoWidth(scale) )
             {
@@ -372,10 +404,10 @@
             }
 
             return 40 * zoom;
-        };
+        }
 
         // Reload data action
-        vm.load = function ()
+        function load()
         {
             vm.data = Tasks.data;
             vm.timespans = Timespans.data;
@@ -384,12 +416,12 @@
             $animate.enabled(true);
             $animate.enabled($document.find('#gantt'), false);
 
-        };
+        }
 
         /**
          * Reload Data
          */
-        vm.reload = function ()
+        function reload()
         {
             msApi.resolve('ganttChart.tasks@get', function (response)
             {
@@ -400,11 +432,9 @@
             {
                 vm.timespans = response.data;
             });
-        };
+        }
 
         // Visual two way binding.
-        vm.live = {};
-
         var ganttDebounceValue = 1000;
 
         var listenTaskJson = ganttDebounce(function (taskJson)
@@ -452,10 +482,12 @@
                     {
                         rowModel.tasks = [];
                     }
+
                     for ( i = rowModel.tasks.length - 1; i >= 0; i-- )
                     {
                         var existingTask = rowModel.tasks[i];
                         var newTask = newTasks[existingTask.id];
+
                         if ( angular.isUndefined(newTask) )
                         {
                             rowModel.tasks.splice(i, 1);
@@ -464,6 +496,7 @@
                         {
                             objectModel.cleanTask(newTask);
                             angular.extend(existingTask, newTask);
+
                             delete newTasks[existingTask.id];
                         }
                     }
@@ -501,99 +534,6 @@
         {
             vm.live.rowJson = angular.toJson(vm.live.row, true);
         });
-
-        /**
-         * EVENTS
-         */
-
-        // Event handler
-        var logScrollEvent = function (left, date, direction)
-        {
-            if ( angular.isDefined(date) )
-            {
-                $log.info('[Event] vm.api.on.scroll: ' + left + ', ' + (angular.isUndefined(date) ? 'undefined' : date.format()) + ', ' + direction);
-            }
-        };
-
-        // Event handler
-        function logDataEvent(eventName)
-        {
-            $log.info('[Event] ' + eventName);
-        }
-
-        // Event handler
-        function logTaskEvent(eventName, task)
-        {
-            $log.info('[Event] ' + eventName + ': ' + task.model.name);
-        }
-
-        // Event handler
-        function logRowEvent(eventName, row)
-        {
-            $log.info('[Event] ' + eventName + ': ' + row.model.name);
-        }
-
-        // Event handler
-        function logTimespanEvent(eventName, timespan)
-        {
-            $log.info('[Event] ' + eventName + ': ' + timespan.model.name);
-        }
-
-        // Event handler
-        function logLabelsEvent(eventName, width)
-        {
-            $log.info('[Event] ' + eventName + ': ' + width);
-        }
-
-        // Event handler
-        function logColumnsGenerateEvent(columns, headers)
-        {
-            $log.info('[Event] ' + 'columns.on.generate' + ': ' + columns.length + ' column(s), ' + headers.length + ' header(s)');
-        }
-
-        // Event handler
-        function logRowsFilterEvent(rows, filteredRows)
-        {
-            $log.info('[Event] rows.on.filter: ' + filteredRows.length + '/' + rows.length + ' rows displayed.');
-        }
-
-        // Event handler
-        function logTasksFilterEvent(tasks, filteredTasks)
-        {
-            $log.info('[Event] tasks.on.filter: ' + filteredTasks.length + '/' + tasks.length + ' tasks displayed.');
-        }
-
-        // Event handler
-        function logReadyEvent()
-        {
-            $log.info('[Event] core.on.ready');
-        }
-
-        // Event utility function
-        function addEventName(eventName, func)
-        {
-            return function (data)
-            {
-                return func(eventName, data);
-            };
-        }
-
-        /**
-         * Max Height Fix
-         */
-        function calculateHeight()
-        {
-            vm.options.maxHeight = $document.find('#chart-container').offsetHeight;
-        }
-
-        angular.element($window).on('resize', function ()
-        {
-            $scope.$apply(function ()
-            {
-                calculateHeight();
-            });
-        });
-
     }
 
 })();
