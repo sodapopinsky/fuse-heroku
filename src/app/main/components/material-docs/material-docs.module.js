@@ -12,7 +12,7 @@
         .config(config);
 
     /** @ngInject */
-    function config(msNavigationServiceProvider, $stateProvider, ELEMENTS_NAVIGATION)
+    function config(msNavigationServiceProvider, $stateProvider, ELEMENTS_NAVIGATION, LAYOUT_NAVIGATION)
     {
         msNavigationServiceProvider.saveItem('components.elements', {
             title : 'Angular Material Elements',
@@ -55,6 +55,12 @@
             weight: 6
         });
 
+        msNavigationServiceProvider.saveItem('components.material_layout', {
+            title : 'Angular Material Layout',
+            icon  : 'icon-view-quilt',
+            weight: 1
+        });
+
 
         angular.forEach(ELEMENTS_NAVIGATION, function (component)
         {
@@ -72,6 +78,28 @@
 
             // Navigation
             msNavigationServiceProvider.saveItem(component.navPath + '.' + component.url, {
+                title : component.name,
+                state : 'app.docs_' + component.stateName,
+                weight: component.weight
+            });
+        });
+
+        angular.forEach(LAYOUT_NAVIGATION, function (component)
+        {
+
+            $stateProvider.state('app.docs_' + component.stateName, {
+                url  : '/components/angular-material-elements/' + component.url,
+                views: {
+                    'content@app': {
+                        templateUrl: 'app/main/components/material-docs/layout/layout-template.html',
+                        controller : 'LayoutTemplateController as vm',
+                    },
+                },
+                data : component
+            });
+
+            // Navigation
+            msNavigationServiceProvider.saveItem('components.material_layout.' + component.url, {
                 title : component.name,
                 state : 'app.docs_' + component.stateName,
                 weight: component.weight

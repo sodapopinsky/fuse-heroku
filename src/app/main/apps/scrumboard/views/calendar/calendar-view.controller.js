@@ -178,8 +178,8 @@
         {
             $mdDialog.show({
                 templateUrl        : 'app/main/apps/scrumboard/views/calendar/dialogs/event/event-dialog.html',
-                controller         : "ScrumboardCalendarEventDialogController",
-                controllerAs       : "vm",
+                controller         : 'ScrumboardCalendarEventDialogController',
+                controllerAs       : 'vm',
                 parent             : $document.find('#scrumboard'),
                 targetEvent        : ev,
                 clickOutsideToClose: true,

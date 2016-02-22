@@ -202,10 +202,10 @@
                 weight    : 11
             },
             {
-                name      : "Whiteframe",
+                name      : 'Whiteframe',
                 url       : 'whiteframe',
                 navPath   : 'components.elements.content-elements',
-                moduleName: "material.components.whiteframe",
+                moduleName: 'material.components.whiteframe',
                 stateName : 'material_components_whiteframe',
                 weight    : 12
             },

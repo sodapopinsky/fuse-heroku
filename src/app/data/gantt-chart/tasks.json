@@ -96,9 +96,6 @@
             "id": "ee8b5e3f-65e0-ce92-41f5-eae3f4e61c3c",
             "name": "Kickoff",
             "classes": [],
-            "movable": {
-                "allowResizing": false
-            },
             "tasks": [
                 {
                     "id": "b855064f-683f-e137-bdeb-69541cbc0690",
@@ -106,8 +103,7 @@
                     "classes": [],
                     "from": "2016-02-07T06:00:00.000Z",
                     "to": "2016-02-07T14:00:00.000Z",
-                    "progress": 50,
-                    "movable": false
+                    "progress": 50
                 },
                 {
                     "id": "39c7dcf0-50a0-4a56-13f0-6e61cac5b76d",
