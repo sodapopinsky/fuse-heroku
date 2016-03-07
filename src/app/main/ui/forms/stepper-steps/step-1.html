@@ -1,4 +1,6 @@
 <div class="md-inline-form">
+    <p>Fill the <span class="text-bold">Lastname</span> field to reveal the conditional step!</p>
+
     <div layout="column" layout-gt-xs="row" flex>
         <md-input-container flex="100" flex-gt-xs="50">
             <input type="text" name="firstname" ng-model="vm.stepper.step1.firstname"
@@ -15,8 +17,7 @@
 
         <md-input-container flex="100" flex-gt-xs="50">
             <input type="text" name="lastname" ng-model="vm.stepper.step1.lastname"
-                   placeholder="Lastname"
-                   required>
+                   placeholder="Lastname">
             <div ng-messages="step1.lastname.$error"
                  ng-show="step1.lastname.$touched"
                  role="alert">
