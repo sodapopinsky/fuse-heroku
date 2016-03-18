@@ -1,12 +1,8 @@
 <div class="md-inline-form">
     <div layout="column" layout-gt-xs="row" flex>
-        <md-input-container flex="100">
-            <label>Address</label>
-            <textarea ng-model="vm.stepper.step3.address" columns="1" md-maxlength="150" rows="5"></textarea>
-            <div ng-messages="step3.address.$error"
-                 ng-show="step3.address.$touched"
-                 role="alert">
-            </div>
+        <md-input-container flex="100" flex-gt-xs="50">
+            <input type="text" name="ssn" ng-model="vm.stepper.step3.ssn"
+                   placeholder="Social Security Number">
         </md-input-container>
     </div>
 </div>
