@@ -34,12 +34,16 @@
                 <div ng-include="'app/main/ui/forms/stepper-steps/step-2.html'"></div>
             </ms-stepper-step>
 
-            <ms-stepper-step ng-form="step3" step="3" step-title="'Address'" optional-step>
+            <ms-stepper-step ng-form="step3" step="3" step-title="'SSN'" optional-step hide-step="!MsStepper.model.step2.birthplace">
                 <div ng-include="'app/main/ui/forms/stepper-steps/step-3.html'"></div>
             </ms-stepper-step>
 
-            <ms-stepper-step ng-form="step4" step="4" step-title="'Payment Method'">
+            <ms-stepper-step ng-form="step4" step="4" step-title="'Address'" optional-step>
                 <div ng-include="'app/main/ui/forms/stepper-steps/step-4.html'"></div>
+            </ms-stepper-step>
+
+            <ms-stepper-step ng-form="step5" step="5" step-title="'Payment Method'">
+                <div ng-include="'app/main/ui/forms/stepper-steps/step-5.html'"></div>
             </ms-stepper-step>
         </form>
         <!-- / STEPPER -->
