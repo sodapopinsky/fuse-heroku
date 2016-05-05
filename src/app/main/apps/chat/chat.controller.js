@@ -63,14 +63,14 @@
         function reply($event)
         {
             // If "shift + enter" pressed, grow the reply textarea
-            if ( $event.keyCode === 13 && $event.shiftKey )
+            if ( $event && $event.keyCode === 13 && $event.shiftKey )
             {
                 vm.textareaGrow = true;
                 return;
             }
 
             // Prevent the reply() for key presses rather than the"enter" key.
-            if ( $event.keyCode !== 13 )
+            if ( $event && $event.keyCode !== 13 )
             {
                 return;
             }
