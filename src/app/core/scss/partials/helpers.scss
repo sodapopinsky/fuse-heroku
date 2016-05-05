@@ -1,6 +1,10 @@
 /*----------------------------------------------------------------*/
 /*  Helpers
 /*----------------------------------------------------------------*/
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
 .no-margin {
     margin-right: 0;
 }
