@@ -15,7 +15,9 @@
         vm.stepper = {
             step1: {},
             step2: {},
-            step3: {}
+            step3: {},
+            step4: {},
+            step5: {}
         };
 
         vm.basicForm = {};
