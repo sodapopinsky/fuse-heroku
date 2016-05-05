@@ -1,6 +1,7 @@
 {
     "CHAT": {
         "CHAT_SEARCH_PLACEHOLDER": "Search or start new chat",
+        "CONTACTS_SEARCH_PLACEHOLDER": "Search contact",
         "APP_TITLE": "Chat App",
         "START_MESSAGE":"Select contact to start the chat!..",
         "CONTACT_INFO":"Contact Info",
@@ -14,6 +15,7 @@
         "PROFILE":"Profile",
         "LOGOUT":"Logout",
         "NO_RESULTS":"No results..",
+        "CHATS":"Chats",
         "CONTACTS":"Contacts",
         "ENTER_MOOD_MESSAGE":"Enter mood message",
         "CONTACT_INFO":"Contact Info",
