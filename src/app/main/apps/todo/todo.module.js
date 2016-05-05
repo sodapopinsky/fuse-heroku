@@ -47,7 +47,7 @@
                 content: 3,
                 color  : '#4CAF50'
             },
-            weight: 7
+            weight: 8
         });
     }
 

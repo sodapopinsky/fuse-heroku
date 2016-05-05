@@ -53,7 +53,7 @@
             title : 'Gantt Chart',
             icon  : 'icon-calendar-text',
             state : 'app.gantt-chart',
-            weight: 5
+            weight: 6
         });
 
         // Api

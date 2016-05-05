@@ -28,6 +28,7 @@
             'app.scrumboard',
             'app.gantt-chart',
             'app.todo',
+            'app.chat',
 
             // Pages
             'app.pages',
