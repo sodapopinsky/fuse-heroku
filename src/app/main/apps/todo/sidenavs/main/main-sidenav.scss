@@ -32,19 +32,6 @@
                     margin: 0;
                 }
             }
-
-            .item {
-                cursor: pointer;
-
-                &.selected {
-                    background-color: rgba(0, 0, 0, 0.06);
-                }
-
-                label {
-                    cursor: pointer;
-                }
-            }
-
         }
 
         &.md-locked-open {
