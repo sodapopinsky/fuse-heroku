@@ -17,8 +17,10 @@
             'app.ui.page-layouts.simple.fullwidth',
             'app.ui.page-layouts.simple.left-sidenav',
             'app.ui.page-layouts.simple.left-sidenav-ii',
+            'app.ui.page-layouts.simple.left-sidenav-iii',
             'app.ui.page-layouts.simple.right-sidenav',
             'app.ui.page-layouts.simple.right-sidenav-ii',
+            'app.ui.page-layouts.simple.right-sidenav-iii',
             'app.ui.page-layouts.simple.tabbed',
             'app.ui.theme-colors',
             'app.ui.typography'
@@ -124,6 +126,11 @@
             state: 'app.ui_page-layouts_simple_left-sidenav-ii'
         });
 
+        msNavigationServiceProvider.saveItem('ui.page-layouts.simple.left-sidenav-iii', {
+            title: 'Left Sidenav (III)',
+            state: 'app.ui_page-layouts_simple_left-sidenav-iii'
+        });
+
         msNavigationServiceProvider.saveItem('ui.page-layouts.simple.right-sidenav', {
             title: 'Right Sidenav (I)',
             state: 'app.ui_page-layouts_simple_right-sidenav'
@@ -132,6 +139,11 @@
         msNavigationServiceProvider.saveItem('ui.page-layouts.simple.right-sidenav-ii', {
             title: 'Right Sidenav (II)',
             state: 'app.ui_page-layouts_simple_right-sidenav-ii'
+        });
+
+        msNavigationServiceProvider.saveItem('ui.page-layouts.simple.right-sidenav-iii', {
+            title: 'Right Sidenav (III)',
+            state: 'app.ui_page-layouts_simple_right-sidenav-iii'
         });
 
         msNavigationServiceProvider.saveItem('ui.page-layouts.simple.tabbed', {
