@@ -39,20 +39,6 @@
                         squash: true
                     }
                 },
-                /*resolve  : {
-                    Threads: function ($state, $stateParams, msApi)
-                    {
-                        if ( $stateParams.type === null )
-                        {
-                            return msApi.resolve('mail.folder.' + $stateParams.filter + '@get');
-                        }
-
-                        if ( $stateParams.type === 'label' )
-                        {
-                            return msApi.resolve('mail.label.' + $stateParams.filter + '@get');
-                        }
-                    }
-                },*/
                 bodyClass: 'mail'
             })
             .state('app.mail.threads.thread', {
