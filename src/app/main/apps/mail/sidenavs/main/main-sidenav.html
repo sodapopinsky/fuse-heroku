@@ -30,107 +30,27 @@
     </div>
 
     <div class="navigation-simple" layout="column">
-        <md-button class="item" aria-label="inbox">
-            <div layout="row" layout-align="start center">
-                <md-icon md-font-icon="icon-inbox" class="s16"></md-icon>
-                <span class="title" translate="MAIL.INBOX">Inbox</span>
-            </div>
-        </md-button>
 
-        <md-button class="item" aria-label="starred">
+        <md-button class="item" aria-label="inbox" ng-repeat="folder in vm.folders"
+                   ng-click="vm.loadFolder(folder.name)"
+                   ng-class="{'selected':vm.isFolderActive(folder.name)}">
             <div layout="row" layout-align="start center">
-                <md-icon md-font-icon="icon-star" class="s16"></md-icon>
-                <span class="title" flex translate="MAIL.STARRED">Starred</span>
-            </div>
-        </md-button>
-
-        <md-button class="item" aria-label="important">
-            <div layout="row" layout-align="start center">
-                <md-icon md-font-icon="icon-alert-circle" class="s16"></md-icon>
-                <span class="title" flex translate="MAIL.IMPORTANT">Important</span>
-            </div>
-        </md-button>
-
-        <md-button class="item" aria-label="sent">
-            <div layout="row" layout-align="start center">
-                <md-icon md-font-icon="icon-send" class="s16"></md-icon>
-                <span class="title" translate="MAIL.SENT">Sent</span>
-            </div>
-        </md-button>
-
-        <md-button class="item" aria-label="drafts">
-            <div layout="row" layout-align="start center">
-                <md-icon md-font-icon="icon-email-open" class="s16"></md-icon>
-                <span class="title" translate="MAIL.DRAFTS">Drafts</span>
-            </div>
-        </md-button>
-
-        <md-button class="item" aria-label="all mail">
-            <div layout="row" layout-align="start center">
-                <md-icon md-font-icon="icon-folder" class="s16"></md-icon>
-                <span class="title" translate="MAIL.ALL_MAIL">All Mail</span>
-            </div>
-        </md-button>
-
-        <md-button class="item" aria-label="spam">
-            <div layout="row" layout-align="start center">
-                <md-icon md-font-icon="icon-alert-octagon" class="s16"></md-icon>
-                <span class="title" translate="MAIL.SPAM">Spam</span>
-            </div>
-        </md-button>
-
-        <md-button class="item" aria-label="trash">
-            <div layout="row" layout-align="start center">
-                <md-icon md-font-icon="icon-delete" class="s16"></md-icon>
-                <span class="title" translate="MAIL.TRASH">Trash</span>
+                <md-icon md-font-icon="{{folder.icon}}" class="s16"></md-icon>
+                <span class="title">{{folder.title}}</span>
             </div>
         </md-button>
 
         <div class="item subheader" translate="MAIL.LABELS">Labels</div>
 
-        <md-button class="item" aria-label="label notes">
+        <md-button class="item" ng-repeat="label in vm.labels"
+                   ng-click="vm.loadLabel(label.name)"
+                   ng-class="{'selected':vm.isLabelActive(label.name)}">
             <div layout="row" layout-align="start center">
-                <md-icon md-font-icon="icon-label" class="s16 green-fg"></md-icon>
-                <span class="title">Notes</span>
+                <div class="h-10 w-10 mr-16" ng-class="label.color"></div>
+                <span class="title">{{label.title}}</span>
             </div>
         </md-button>
 
-        <md-button class="item" aria-label="label paypal">
-            <div layout="row" layout-align="start center">
-                <md-icon md-font-icon="icon-label" class="s16 orange-fg"></md-icon>
-                <span class="title">Paypal</span>
-            </div>
-        </md-button>
-
-        <md-button class="item" aria-label="label invoices">
-            <div layout="row" layout-align="start center">
-                <md-icon md-font-icon="icon-label" class="s16 blue-grey-fg"></md-icon>
-                <span class="title">Invoices</span>
-            </div>
-        </md-button>
-
-        <md-button class="item" aria-label="label amazon">
-            <div layout="row" layout-align="start center">
-                <md-icon md-font-icon="icon-label" class="s16 blue-fg"></md-icon>
-                <span class="title">Amazon</span>
-            </div>
-        </md-button>
-
-        <md-divider></md-divider>
-
-        <md-button class="item" aria-label="settings">
-            <div layout="row" layout-align="start center">
-                <md-icon md-font-icon="icon-cog" class="s16"></md-icon>
-                <span class="title" translate="MAIL.SETTINGS">Settings</span>
-            </div>
-        </md-button>
-
-        <md-button class="item" aria-label="help">
-            <div layout="row" layout-align="start center">
-                <md-icon md-font-icon="icon-help" class="s16"></md-icon>
-                <span class="title" translate="MAIL.HELP">Help</span>
-            </div>
-        </md-button>
     </div>
 
 </md-content>
