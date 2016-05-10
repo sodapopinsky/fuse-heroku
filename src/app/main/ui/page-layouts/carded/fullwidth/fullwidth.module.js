@@ -14,7 +14,7 @@
             views: {
                 'content@app': {
                     templateUrl: 'app/main/ui/page-layouts/carded/fullwidth/fullwidth.html',
-                    controller : 'ChatController'
+                    controller : 'CardedFullwidthController as vm'
                 }
             }
         });
