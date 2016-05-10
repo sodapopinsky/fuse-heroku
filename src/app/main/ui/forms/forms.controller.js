@@ -52,7 +52,7 @@
                     $scope.closeDialog = function ()
                     {
                         $mdDialog.hide();
-                    }
+                    };
                 },
                 template           : '<md-dialog>' +
                 '  <md-dialog-content><h1>You have sent the form with the following data</h1><div><pre>{{formWizardData | json}}</pre></div></md-dialog-content>' +
