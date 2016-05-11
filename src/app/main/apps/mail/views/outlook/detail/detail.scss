@@ -11,6 +11,18 @@
                     .thread-detail {
                         background: #FFFFFF;
 
+                        .no-thread-selected {
+
+                            md-icon {
+                                margin: -56px 0 12px 0;
+                            }
+
+                            span {
+                                font-size: 24px;
+                                font-weight: 300;
+                            }
+                        }
+
                         .thread-header {
                             padding-bottom: 24px;
                             border-bottom: 1px solid rgba(0, 0, 0, 0.12);

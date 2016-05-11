@@ -71,6 +71,7 @@
         "NEXT": "Next",
         "PREVIOUS": "Previous",
         "BACK": "Back",
+        "SELECT_MESSAGE_TO_READ": "Select a message to read",
         "SHOW_DETAILS": "Show Details",
         "HIDE_DETAILS": "Hide Details",
         "INFO": {

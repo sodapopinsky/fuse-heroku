@@ -1,5 +1,6 @@
-<div ng-if="!vm.currentThread" class="no-thread-selected" layout="row" layout-align="center center">
-    Select a message to read.
+<div ng-if="!vm.currentThread" class="no-thread-selected" layout="column" layout-align="center center" flex>
+    <md-icon md-font-icon="icon-email" class="s120 grey-400-fg"></md-icon>
+    <span class="hint-text" translate="MAIL.SELECT_MESSAGE_TO_READ">Select a message to read</span>
 </div>
 
 <div ng-if="vm.currentThread">
