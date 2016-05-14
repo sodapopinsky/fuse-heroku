@@ -23,12 +23,13 @@
             // Apps
             'app.dashboards',
             'app.calendar',
+            'app.e-commerce',
             'app.mail',
+            'app.chat',
             'app.file-manager',
             'app.scrumboard',
             'app.gantt-chart',
             'app.todo',
-            'app.chat',
             'app.contacts',
 
             // Pages

@@ -78,7 +78,7 @@
                 content: 25,
                 color  : '#F44336'
             },
-            weight     : 3
+            weight     : 4
         });
     }
 })();
