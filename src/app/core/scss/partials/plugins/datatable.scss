@@ -835,6 +835,7 @@ table.dataTable {
  */
 .dataTables_wrapper {
     display: flex;
+    flex: 100;
     flex-direction: column;
 
     .top {
@@ -846,6 +847,7 @@ table.dataTable {
         flex: 1 1 auto;
         justify-content: space-between;
         padding: 16px 8px;
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
 
         .left {
             display: flex;
@@ -986,7 +988,7 @@ table.dataTable {
 
         .dataTables_scrollHead {
             display: flex;
-            min-height: 95px;
+            min-height: 56px;
             box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.095), 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 2px 1px 0 rgba(0, 0, 0, 0.05);
             background: #FFFFFF;
             overflow: visible !important;
@@ -1012,7 +1014,6 @@ table.dataTable {
 
         .dataTables_scrollBody {
             display: flex;
-            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.095), 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 2px 1px 0 rgba(0, 0, 0, 0.05);
             overflow-x: hidden !important;
             overflow-y: scroll !important;
             -webkit-overflow-scrolling: touch;
@@ -1041,7 +1042,7 @@ table.dataTable {
     &.no-footer {
 
         .dataTables_scrollBody {
-
+            border-bottom: none;
         }
 
         .dataTables_scrollHead table,
@@ -1129,19 +1130,31 @@ table.dataTable.dtr-inline.collapsed {
 
         > tr {
 
-            &.child ul {
+            &.child {
 
-                li {
-                    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-                    padding: 8px 0;
+                ul {
+                    display: block;
 
-                    &:first-child {
-                        padding-top: 0;
-                    }
+                    li {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: flex-start;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                        padding: 8px 0;
 
-                    &:last-child {
-                        border-bottom: none;
-                        padding-bottom: 0;
+                        &:first-child {
+                            padding-top: 0;
+                        }
+
+                        &:last-child {
+                            border-bottom: none;
+                            padding-bottom: 0;
+                        }
+
+                        .dtr-title {
+                            margin-right: 8px;
+                        }
                     }
                 }
             }
@@ -1155,6 +1168,7 @@ table.dataTable.dtr-inline.collapsed {
     .dataTables_wrapper {
 
         .bottom {
+            flex: 1 0 auto;
             flex-wrap: wrap;
 
             .left {
