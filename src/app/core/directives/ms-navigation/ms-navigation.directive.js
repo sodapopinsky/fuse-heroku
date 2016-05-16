@@ -367,6 +367,8 @@
                             return [navigation[i]];
                         }
                     }
+
+                    return null;
                 }
 
                 return navigation;
