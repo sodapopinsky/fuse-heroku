@@ -5,6 +5,7 @@
     angular
         .module('app.ui', [
             'app.ui.forms',
+            'app.ui.helper-classes',
             'app.ui.icons',
             'app.ui.material-colors',
             'app.ui.page-layouts.blank',
@@ -53,6 +54,12 @@
             title: 'Typography',
             icon : 'icon-format-size',
             state: 'app.ui_typography'
+        });
+
+        msNavigationServiceProvider.saveItem('ui.helper-classes', {
+            title: 'Helper Classes',
+            icon : 'icon-help-circle',
+            state: 'app.ui_helper-classes'
         });
 
         msNavigationServiceProvider.saveItem('ui.theme-colors', {
