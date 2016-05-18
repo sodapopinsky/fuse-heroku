@@ -58,11 +58,20 @@
             </div>
 
             <!-- ADD FILE BUTTON -->
-            <md-button class="add-file-button md-fab md-warn"
-                       ng-click="vm.addFile($event)" aria-label="Add file" translate
-                       translate-attr-aria-label="FM.ADD_FILE">
-                <md-icon md-font-icon="icon-plus"></md-icon>
-            </md-button>
+            <div id="file-uploader"
+                 flow-init="vm.ngFlowOptions"
+                 flow-name="vm.ngFlow.flow"
+                 flow-files-submitted="vm.upload()"
+                 flow-file-added="vm.fileAdded($file)"
+                 flow-file-success="vm.fileSuccess($file, $message)"
+                 flow-complete="vm.uploadComplete()">
+
+                <md-button flow-btn class="add-file-button md-fab md-warn"
+                           ng-click="vm.addFile($event)" aria-label="Add file" translate
+                           translate-attr-aria-label="FM.ADD_FILE">
+                    <md-icon md-font-icon="icon-plus"></md-icon>
+                </md-button>
+            </div>
             <!-- / ADD FILE BUTTON -->
         </div>
         <!-- / HEADER -->
