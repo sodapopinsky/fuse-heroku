@@ -1,6 +1,6 @@
 #e-commerce-order {
 
-    .header {
+    > .header {
         height: 120px;
         min-height: 120px;
         max-height: 120px;
@@ -107,5 +107,4 @@
             }
         }
     }
-
 }

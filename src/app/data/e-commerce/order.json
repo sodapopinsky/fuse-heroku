@@ -2,13 +2,16 @@
     "data": [
         {
             "id": 1,
-            "reference": "96903cf4",
-            "total": "$19.63",
-            "date": "2016/01/03 20:47:05",
+            "reference": "70d4d7d0",
+            "subtotal": "$39.97",
+            "tax": "$77.44",
+            "discount": "-$10.17",
+            "total": "$73.31",
+            "date": "2015/04/25 02:07:59",
             "customer": {
                 "id": 1,
-                "firstName": "Ayala",
-                "lastName": "Santos",
+                "firstName": "Dollie",
+                "lastName": "Bullock",
                 "avatar": "assets/images/avatars/Abbott.jpg",
                 "company": "Saois",
                 "jobTitle": "Digital Archivist",
@@ -23,6 +26,7 @@
                     "name": "Printed Dress",
                     "price": "$10.24",
                     "quantity": 1,
+                    "total": "$10.24",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -30,6 +34,7 @@
                     "name": "Green Skirt",
                     "price": "$24.62",
                     "quantity": 1,
+                    "total": "$24.62",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -37,6 +42,7 @@
                     "name": "Printed Dress",
                     "price": "$49.29",
                     "quantity": 1,
+                    "total": "$49.29",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 }
             ],
@@ -45,42 +51,45 @@
                     "id": 1,
                     "name": "Awaiting check payment",
                     "color": "md-blue-500-bg",
-                    "date": "2015/10/30 17:45:07"
+                    "date": "2015/03/17 18:28:37"
                 },
                 {
                     "id": 2,
                     "name": "Payment accepted",
                     "color": "md-green-500-bg",
-                    "date": "2015/04/18 22:25:45"
+                    "date": "2016/04/03 10:06:18"
                 }
             ],
             "payment": [
                 {
-                    "transactionId": "b6bd4d1b",
-                    "amount": "$19.63",
-                    "method": "PayPal",
-                    "date": "2015/06/10 12:16:38"
+                    "transactionId": "2a894b9e",
+                    "amount": "$73.31",
+                    "method": "Credit Card",
+                    "date": "2016/02/23 15:50:23"
                 }
             ],
             "shippingDetails": [
                 {
                     "tracking": "",
-                    "carrier": "FedEx",
-                    "weight": "3.63",
-                    "fee": "5.00",
-                    "date": "2015/02/11 12:53:12"
+                    "carrier": "TNT",
+                    "weight": "10.44",
+                    "fee": "7.00",
+                    "date": "2015/04/10 07:03:52"
                 }
             ]
         },
         {
             "id": 2,
-            "reference": "4dc55659",
-            "total": "$11.55",
-            "date": "2015/01/06 01:53:06",
+            "reference": "2003479c",
+            "subtotal": "$98.68",
+            "tax": "$45.55",
+            "discount": "-$10.25",
+            "total": "$24.51",
+            "date": "2015/11/07 15:47:31",
             "customer": {
                 "id": 1,
-                "firstName": "Cardenas",
-                "lastName": "Espinoza",
+                "firstName": "Holmes",
+                "lastName": "Hines",
                 "avatar": "assets/images/avatars/Abbott.jpg",
                 "company": "Saois",
                 "jobTitle": "Digital Archivist",
@@ -95,6 +104,7 @@
                     "name": "Printed Dress",
                     "price": "$10.24",
                     "quantity": 1,
+                    "total": "$10.24",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -102,6 +112,7 @@
                     "name": "Green Skirt",
                     "price": "$24.62",
                     "quantity": 1,
+                    "total": "$24.62",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -109,6 +120,7 @@
                     "name": "Printed Dress",
                     "price": "$49.29",
                     "quantity": 1,
+                    "total": "$49.29",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 }
             ],
@@ -117,42 +129,45 @@
                     "id": 1,
                     "name": "Awaiting check payment",
                     "color": "md-blue-500-bg",
-                    "date": "2015/11/21 19:27:23"
+                    "date": "2015/10/04 08:54:33"
                 },
                 {
                     "id": 2,
                     "name": "Payment accepted",
                     "color": "md-green-500-bg",
-                    "date": "2016/04/27 04:08:50"
+                    "date": "2015/05/03 03:43:04"
                 }
             ],
             "payment": [
                 {
-                    "transactionId": "004c48a1",
-                    "amount": "$11.55",
+                    "transactionId": "79c640c8",
+                    "amount": "$24.51",
                     "method": "Check",
-                    "date": "2015/10/16 19:07:54"
+                    "date": "2015/04/22 04:49:49"
                 }
             ],
             "shippingDetails": [
                 {
                     "tracking": "",
-                    "carrier": "FedEx",
-                    "weight": "11.91",
-                    "fee": "5.00",
-                    "date": "2015/11/13 10:17:25"
+                    "carrier": "USPS",
+                    "weight": "2.92",
+                    "fee": "4.00",
+                    "date": "2015/07/11 14:57:12"
                 }
             ]
         },
         {
             "id": 3,
-            "reference": "3cc01e77",
-            "total": "$13.39",
-            "date": "2015/02/12 18:38:19",
+            "reference": "09f5443b",
+            "subtotal": "$23.03",
+            "tax": "$16.36",
+            "discount": "-$19.46",
+            "total": "$87.17",
+            "date": "2015/11/26 16:04:40",
             "customer": {
                 "id": 1,
-                "firstName": "David",
-                "lastName": "Good",
+                "firstName": "Serena",
+                "lastName": "Glover",
                 "avatar": "assets/images/avatars/Abbott.jpg",
                 "company": "Saois",
                 "jobTitle": "Digital Archivist",
@@ -167,6 +182,7 @@
                     "name": "Printed Dress",
                     "price": "$10.24",
                     "quantity": 1,
+                    "total": "$10.24",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -174,6 +190,7 @@
                     "name": "Green Skirt",
                     "price": "$24.62",
                     "quantity": 1,
+                    "total": "$24.62",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -181,6 +198,7 @@
                     "name": "Printed Dress",
                     "price": "$49.29",
                     "quantity": 1,
+                    "total": "$49.29",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 }
             ],
@@ -189,42 +207,45 @@
                     "id": 1,
                     "name": "Awaiting check payment",
                     "color": "md-blue-500-bg",
-                    "date": "2015/10/27 01:50:50"
+                    "date": "2015/07/02 20:44:34"
                 },
                 {
                     "id": 2,
                     "name": "Payment accepted",
                     "color": "md-green-500-bg",
-                    "date": "2015/02/06 03:01:38"
+                    "date": "2015/03/23 04:59:45"
                 }
             ],
             "payment": [
                 {
-                    "transactionId": "514f45bb",
-                    "amount": "$13.39",
-                    "method": "Credit Card",
-                    "date": "2015/06/01 20:53:31"
+                    "transactionId": "5ff44b0c",
+                    "amount": "$87.17",
+                    "method": "PayPal",
+                    "date": "2016/01/25 11:46:28"
                 }
             ],
             "shippingDetails": [
                 {
                     "tracking": "",
-                    "carrier": "TNT",
-                    "weight": "6.31",
-                    "fee": "3.00",
-                    "date": "2015/03/01 19:17:06"
+                    "carrier": "USPS",
+                    "weight": "7.53",
+                    "fee": "7.00",
+                    "date": "2015/11/25 00:40:54"
                 }
             ]
         },
         {
             "id": 4,
-            "reference": "ce4c693b",
-            "total": "$19.45",
-            "date": "2015/07/08 01:02:56",
+            "reference": "960898d0",
+            "subtotal": "$13.47",
+            "tax": "$53.45",
+            "discount": "-$15.55",
+            "total": "$26.98",
+            "date": "2015/11/23 05:35:18",
             "customer": {
                 "id": 1,
-                "firstName": "Phelps",
-                "lastName": "Conrad",
+                "firstName": "Dianne",
+                "lastName": "Prince",
                 "avatar": "assets/images/avatars/Abbott.jpg",
                 "company": "Saois",
                 "jobTitle": "Digital Archivist",
@@ -239,6 +260,7 @@
                     "name": "Printed Dress",
                     "price": "$10.24",
                     "quantity": 1,
+                    "total": "$10.24",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -246,6 +268,7 @@
                     "name": "Green Skirt",
                     "price": "$24.62",
                     "quantity": 1,
+                    "total": "$24.62",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -253,6 +276,7 @@
                     "name": "Printed Dress",
                     "price": "$49.29",
                     "quantity": 1,
+                    "total": "$49.29",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 }
             ],
@@ -261,42 +285,45 @@
                     "id": 1,
                     "name": "Awaiting check payment",
                     "color": "md-blue-500-bg",
-                    "date": "2015/04/01 19:05:20"
+                    "date": "2015/10/26 16:12:47"
                 },
                 {
                     "id": 2,
                     "name": "Payment accepted",
                     "color": "md-green-500-bg",
-                    "date": "2015/09/19 07:57:14"
+                    "date": "2016/02/06 06:42:37"
                 }
             ],
             "payment": [
                 {
-                    "transactionId": "65694d06",
-                    "amount": "$19.45",
-                    "method": "Bank-wire",
-                    "date": "2015/07/24 16:23:25"
+                    "transactionId": "787d49b1",
+                    "amount": "$26.98",
+                    "method": "Check",
+                    "date": "2015/03/07 05:50:57"
                 }
             ],
             "shippingDetails": [
                 {
                     "tracking": "",
-                    "carrier": "TNT",
-                    "weight": "6.33",
-                    "fee": "3.00",
-                    "date": "2016/04/24 17:49:49"
+                    "carrier": "FedEx",
+                    "weight": "11.93",
+                    "fee": "5.00",
+                    "date": "2016/03/21 07:08:26"
                 }
             ]
         },
         {
             "id": 5,
-            "reference": "d177d3a6",
-            "total": "$33.03",
-            "date": "2015/04/29 19:44:59",
+            "reference": "2d7f68de",
+            "subtotal": "$46.93",
+            "tax": "$12.14",
+            "discount": "-$19.16",
+            "total": "$12.97",
+            "date": "2015/01/13 06:21:21",
             "customer": {
                 "id": 1,
-                "firstName": "Tania",
-                "lastName": "Stephenson",
+                "firstName": "Frankie",
+                "lastName": "Hewitt",
                 "avatar": "assets/images/avatars/Abbott.jpg",
                 "company": "Saois",
                 "jobTitle": "Digital Archivist",
@@ -311,6 +338,7 @@
                     "name": "Printed Dress",
                     "price": "$10.24",
                     "quantity": 1,
+                    "total": "$10.24",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -318,6 +346,7 @@
                     "name": "Green Skirt",
                     "price": "$24.62",
                     "quantity": 1,
+                    "total": "$24.62",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -325,6 +354,7 @@
                     "name": "Printed Dress",
                     "price": "$49.29",
                     "quantity": 1,
+                    "total": "$49.29",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 }
             ],
@@ -333,42 +363,45 @@
                     "id": 1,
                     "name": "Awaiting check payment",
                     "color": "md-blue-500-bg",
-                    "date": "2016/01/18 14:02:17"
+                    "date": "2015/02/01 09:21:46"
                 },
                 {
                     "id": 2,
                     "name": "Payment accepted",
                     "color": "md-green-500-bg",
-                    "date": "2015/07/27 23:03:59"
+                    "date": "2015/11/16 04:48:32"
                 }
             ],
             "payment": [
                 {
-                    "transactionId": 20524704,
-                    "amount": "$33.03",
-                    "method": "Credit Card",
-                    "date": "2015/02/02 09:17:30"
+                    "transactionId": "cd8c4727",
+                    "amount": "$12.97",
+                    "method": "Bank-wire",
+                    "date": "2016/05/15 21:15:32"
                 }
             ],
             "shippingDetails": [
                 {
                     "tracking": "",
-                    "carrier": "FedEx",
-                    "weight": "6.40",
-                    "fee": "4.00",
-                    "date": "2016/04/28 08:49:23"
+                    "carrier": "USPS",
+                    "weight": "5.43",
+                    "fee": "3.00",
+                    "date": "2016/01/06 00:51:59"
                 }
             ]
         },
         {
             "id": 6,
-            "reference": "9fb89484",
-            "total": "$14.97",
-            "date": "2015/07/30 20:40:53",
+            "reference": "9c991708",
+            "subtotal": "$32.55",
+            "tax": "$11.81",
+            "discount": "-$12.33",
+            "total": "$30.96",
+            "date": "2015/01/17 04:21:08",
             "customer": {
                 "id": 1,
-                "firstName": "Roach",
-                "lastName": "Walls",
+                "firstName": "Cole",
+                "lastName": "Holcomb",
                 "avatar": "assets/images/avatars/Abbott.jpg",
                 "company": "Saois",
                 "jobTitle": "Digital Archivist",
@@ -383,6 +416,7 @@
                     "name": "Printed Dress",
                     "price": "$10.24",
                     "quantity": 1,
+                    "total": "$10.24",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -390,6 +424,7 @@
                     "name": "Green Skirt",
                     "price": "$24.62",
                     "quantity": 1,
+                    "total": "$24.62",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -397,6 +432,7 @@
                     "name": "Printed Dress",
                     "price": "$49.29",
                     "quantity": 1,
+                    "total": "$49.29",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 }
             ],
@@ -405,42 +441,45 @@
                     "id": 1,
                     "name": "Awaiting check payment",
                     "color": "md-blue-500-bg",
-                    "date": "2015/04/19 09:35:23"
+                    "date": "2015/11/30 01:04:32"
                 },
                 {
                     "id": 2,
                     "name": "Payment accepted",
                     "color": "md-green-500-bg",
-                    "date": "2016/03/26 20:31:03"
+                    "date": "2015/11/12 21:27:18"
                 }
             ],
             "payment": [
                 {
-                    "transactionId": "704e477d",
-                    "amount": "$14.97",
-                    "method": "Bank-wire",
-                    "date": "2016/04/07 02:12:24"
+                    "transactionId": "a41f4b7c",
+                    "amount": "$30.96",
+                    "method": "Check",
+                    "date": "2015/04/27 03:59:22"
                 }
             ],
             "shippingDetails": [
                 {
                     "tracking": "",
-                    "carrier": "TNT",
-                    "weight": "8.10",
-                    "fee": "6.00",
-                    "date": "2015/01/16 13:22:47"
+                    "carrier": "FedEx",
+                    "weight": "6.05",
+                    "fee": "4.00",
+                    "date": "2015/09/10 11:28:47"
                 }
             ]
         },
         {
             "id": 7,
-            "reference": "819029cb",
-            "total": "$28.97",
-            "date": "2015/10/24 20:41:24",
+            "reference": "7683b54d",
+            "subtotal": "$14.08",
+            "tax": "$74.96",
+            "discount": "-$16.60",
+            "total": "$63.36",
+            "date": "2015/06/14 14:49:47",
             "customer": {
                 "id": 1,
-                "firstName": "Koch",
-                "lastName": "Patterson",
+                "firstName": "Merrill",
+                "lastName": "Richardson",
                 "avatar": "assets/images/avatars/Abbott.jpg",
                 "company": "Saois",
                 "jobTitle": "Digital Archivist",
@@ -455,6 +494,7 @@
                     "name": "Printed Dress",
                     "price": "$10.24",
                     "quantity": 1,
+                    "total": "$10.24",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -462,6 +502,7 @@
                     "name": "Green Skirt",
                     "price": "$24.62",
                     "quantity": 1,
+                    "total": "$24.62",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -469,6 +510,7 @@
                     "name": "Printed Dress",
                     "price": "$49.29",
                     "quantity": 1,
+                    "total": "$49.29",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 }
             ],
@@ -477,42 +519,45 @@
                     "id": 1,
                     "name": "Awaiting check payment",
                     "color": "md-blue-500-bg",
-                    "date": "2015/09/12 04:08:12"
+                    "date": "2015/09/03 18:53:02"
                 },
                 {
                     "id": 2,
                     "name": "Payment accepted",
                     "color": "md-green-500-bg",
-                    "date": "2015/08/21 21:21:20"
+                    "date": "2015/12/13 18:14:40"
                 }
             ],
             "payment": [
                 {
-                    "transactionId": "69c24686",
-                    "amount": "$28.97",
-                    "method": "Check",
-                    "date": "2015/10/24 22:08:57"
+                    "transactionId": 1974588,
+                    "amount": "$63.36",
+                    "method": "PayPal",
+                    "date": "2015/11/28 22:24:58"
                 }
             ],
             "shippingDetails": [
                 {
                     "tracking": "",
-                    "carrier": "USPS",
-                    "weight": "10.18",
-                    "fee": "8.00",
-                    "date": "2015/11/09 06:18:14"
+                    "carrier": "FedEx",
+                    "weight": "2.89",
+                    "fee": "3.00",
+                    "date": "2016/02/10 09:03:44"
                 }
             ]
         },
         {
             "id": 8,
-            "reference": "c7357830",
-            "total": "$88.61",
-            "date": "2015/03/28 06:57:19",
+            "reference": "c1de0f75",
+            "subtotal": "$13.77",
+            "tax": "$55.78",
+            "discount": "-$17.20",
+            "total": "$45.74",
+            "date": "2015/01/18 01:31:47",
             "customer": {
                 "id": 1,
-                "firstName": "Isabel",
-                "lastName": "Cooper",
+                "firstName": "Morgan",
+                "lastName": "Pitts",
                 "avatar": "assets/images/avatars/Abbott.jpg",
                 "company": "Saois",
                 "jobTitle": "Digital Archivist",
@@ -527,6 +572,7 @@
                     "name": "Printed Dress",
                     "price": "$10.24",
                     "quantity": 1,
+                    "total": "$10.24",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -534,6 +580,7 @@
                     "name": "Green Skirt",
                     "price": "$24.62",
                     "quantity": 1,
+                    "total": "$24.62",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -541,6 +588,7 @@
                     "name": "Printed Dress",
                     "price": "$49.29",
                     "quantity": 1,
+                    "total": "$49.29",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 }
             ],
@@ -549,42 +597,45 @@
                     "id": 1,
                     "name": "Awaiting check payment",
                     "color": "md-blue-500-bg",
-                    "date": "2016/05/08 17:21:40"
+                    "date": "2015/04/29 07:57:43"
                 },
                 {
                     "id": 2,
                     "name": "Payment accepted",
                     "color": "md-green-500-bg",
-                    "date": "2015/09/29 20:28:59"
+                    "date": "2015/04/23 11:14:38"
                 }
             ],
             "payment": [
                 {
-                    "transactionId": "e7c945f9",
-                    "amount": "$88.61",
-                    "method": "Bank-wire",
-                    "date": "2015/03/26 20:40:29"
+                    "transactionId": "1e704aaf",
+                    "amount": "$45.74",
+                    "method": "Credit Card",
+                    "date": "2015/06/08 03:50:41"
                 }
             ],
             "shippingDetails": [
                 {
                     "tracking": "",
                     "carrier": "USPS",
-                    "weight": "5.39",
-                    "fee": "7.00",
-                    "date": "2015/06/17 16:29:55"
+                    "weight": "6.35",
+                    "fee": "2.00",
+                    "date": "2015/06/01 09:18:26"
                 }
             ]
         },
         {
             "id": 9,
-            "reference": "f186ab88",
-            "total": "$64.86",
-            "date": "2015/03/28 18:13:15",
+            "reference": "35a4dbc6",
+            "subtotal": "$56.49",
+            "tax": "$11.44",
+            "discount": "-$17.45",
+            "total": "$15.31",
+            "date": "2016/02/14 14:22:58",
             "customer": {
                 "id": 1,
-                "firstName": "Hurst",
-                "lastName": "Levine",
+                "firstName": "Krista",
+                "lastName": "Mathis",
                 "avatar": "assets/images/avatars/Abbott.jpg",
                 "company": "Saois",
                 "jobTitle": "Digital Archivist",
@@ -599,6 +650,7 @@
                     "name": "Printed Dress",
                     "price": "$10.24",
                     "quantity": 1,
+                    "total": "$10.24",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -606,6 +658,7 @@
                     "name": "Green Skirt",
                     "price": "$24.62",
                     "quantity": 1,
+                    "total": "$24.62",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -613,6 +666,7 @@
                     "name": "Printed Dress",
                     "price": "$49.29",
                     "quantity": 1,
+                    "total": "$49.29",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 }
             ],
@@ -621,42 +675,45 @@
                     "id": 1,
                     "name": "Awaiting check payment",
                     "color": "md-blue-500-bg",
-                    "date": "2015/01/07 20:47:01"
+                    "date": "2015/07/15 15:48:00"
                 },
                 {
                     "id": 2,
                     "name": "Payment accepted",
                     "color": "md-green-500-bg",
-                    "date": "2015/07/26 16:40:42"
+                    "date": "2015/11/08 18:30:15"
                 }
             ],
             "payment": [
                 {
-                    "transactionId": "e68a41a4",
-                    "amount": "$64.86",
+                    "transactionId": "762c4e1a",
+                    "amount": "$15.31",
                     "method": "Bank-wire",
-                    "date": "2015/08/04 13:53:50"
+                    "date": "2015/06/19 14:52:53"
                 }
             ],
             "shippingDetails": [
                 {
                     "tracking": "",
-                    "carrier": "TNT",
-                    "weight": "2.93",
-                    "fee": "6.00",
-                    "date": "2015/05/23 03:49:11"
+                    "carrier": "USPS",
+                    "weight": "7.93",
+                    "fee": "8.00",
+                    "date": "2015/08/25 15:18:55"
                 }
             ]
         },
         {
             "id": 10,
-            "reference": "510bd8c0",
-            "total": "$11.30",
-            "date": "2015/06/28 13:20:46",
+            "reference": "a8bc5b17",
+            "subtotal": "$29.34",
+            "tax": "$87.50",
+            "discount": "-$18.11",
+            "total": "$20.97",
+            "date": "2015/10/23 03:02:55",
             "customer": {
                 "id": 1,
-                "firstName": "Mcconnell",
-                "lastName": "Best",
+                "firstName": "Hayden",
+                "lastName": "Fitzgerald",
                 "avatar": "assets/images/avatars/Abbott.jpg",
                 "company": "Saois",
                 "jobTitle": "Digital Archivist",
@@ -671,6 +728,7 @@
                     "name": "Printed Dress",
                     "price": "$10.24",
                     "quantity": 1,
+                    "total": "$10.24",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -678,6 +736,7 @@
                     "name": "Green Skirt",
                     "price": "$24.62",
                     "quantity": 1,
+                    "total": "$24.62",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -685,6 +744,7 @@
                     "name": "Printed Dress",
                     "price": "$49.29",
                     "quantity": 1,
+                    "total": "$49.29",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 }
             ],
@@ -693,42 +753,45 @@
                     "id": 1,
                     "name": "Awaiting check payment",
                     "color": "md-blue-500-bg",
-                    "date": "2016/03/07 05:05:05"
+                    "date": "2016/05/02 09:53:55"
                 },
                 {
                     "id": 2,
                     "name": "Payment accepted",
                     "color": "md-green-500-bg",
-                    "date": "2015/10/07 00:31:45"
+                    "date": "2015/07/11 05:33:31"
                 }
             ],
             "payment": [
                 {
-                    "transactionId": "a50d4bed",
-                    "amount": "$11.30",
+                    "transactionId": "3dce47a3",
+                    "amount": "$20.97",
                     "method": "Credit Card",
-                    "date": "2015/01/09 14:14:13"
+                    "date": "2015/07/28 23:53:49"
                 }
             ],
             "shippingDetails": [
                 {
                     "tracking": "",
                     "carrier": "TNT",
-                    "weight": "5.04",
-                    "fee": "3.00",
-                    "date": "2015/03/10 21:14:07"
+                    "weight": "9.20",
+                    "fee": "2.00",
+                    "date": "2015/08/05 08:45:55"
                 }
             ]
         },
         {
             "id": 11,
-            "reference": "2a780875",
-            "total": "$63.13",
-            "date": "2016/01/22 14:00:18",
+            "reference": "54ab8191",
+            "subtotal": "$50.35",
+            "tax": "$71.75",
+            "discount": "-$10.46",
+            "total": "$72.30",
+            "date": "2015/07/28 13:22:49",
             "customer": {
                 "id": 1,
-                "firstName": "Macias",
-                "lastName": "Bonner",
+                "firstName": "Cotton",
+                "lastName": "Carlson",
                 "avatar": "assets/images/avatars/Abbott.jpg",
                 "company": "Saois",
                 "jobTitle": "Digital Archivist",
@@ -743,6 +806,7 @@
                     "name": "Printed Dress",
                     "price": "$10.24",
                     "quantity": 1,
+                    "total": "$10.24",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -750,6 +814,7 @@
                     "name": "Green Skirt",
                     "price": "$24.62",
                     "quantity": 1,
+                    "total": "$24.62",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -757,6 +822,7 @@
                     "name": "Printed Dress",
                     "price": "$49.29",
                     "quantity": 1,
+                    "total": "$49.29",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 }
             ],
@@ -765,42 +831,45 @@
                     "id": 1,
                     "name": "Awaiting check payment",
                     "color": "md-blue-500-bg",
-                    "date": "2016/01/24 19:56:21"
+                    "date": "2016/02/26 14:15:38"
                 },
                 {
                     "id": 2,
                     "name": "Payment accepted",
                     "color": "md-green-500-bg",
-                    "date": "2015/05/11 15:43:25"
+                    "date": "2015/10/17 03:32:39"
                 }
             ],
             "payment": [
                 {
-                    "transactionId": "63e3494a",
-                    "amount": "$63.13",
+                    "transactionId": "f4154419",
+                    "amount": "$72.30",
                     "method": "PayPal",
-                    "date": "2015/10/06 08:44:21"
+                    "date": "2016/03/07 15:10:12"
                 }
             ],
             "shippingDetails": [
                 {
                     "tracking": "",
                     "carrier": "USPS",
-                    "weight": "3.84",
-                    "fee": "6.00",
-                    "date": "2015/04/04 07:42:51"
+                    "weight": "2.81",
+                    "fee": "7.00",
+                    "date": "2016/05/01 11:15:22"
                 }
             ]
         },
         {
             "id": 12,
-            "reference": "c21dbba2",
-            "total": "$97.83",
-            "date": "2015/03/30 17:47:33",
+            "reference": 6919050,
+            "subtotal": "$81.95",
+            "tax": "$22.44",
+            "discount": "-$10.89",
+            "total": "$42.54",
+            "date": "2015/06/07 17:54:36",
             "customer": {
                 "id": 1,
-                "firstName": "Cassie",
-                "lastName": "Rhodes",
+                "firstName": "Kaye",
+                "lastName": "Baldwin",
                 "avatar": "assets/images/avatars/Abbott.jpg",
                 "company": "Saois",
                 "jobTitle": "Digital Archivist",
@@ -815,6 +884,7 @@
                     "name": "Printed Dress",
                     "price": "$10.24",
                     "quantity": 1,
+                    "total": "$10.24",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -822,6 +892,7 @@
                     "name": "Green Skirt",
                     "price": "$24.62",
                     "quantity": 1,
+                    "total": "$24.62",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -829,6 +900,7 @@
                     "name": "Printed Dress",
                     "price": "$49.29",
                     "quantity": 1,
+                    "total": "$49.29",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 }
             ],
@@ -837,42 +909,45 @@
                     "id": 1,
                     "name": "Awaiting check payment",
                     "color": "md-blue-500-bg",
-                    "date": "2015/05/24 12:39:36"
+                    "date": "2015/09/01 20:50:07"
                 },
                 {
                     "id": 2,
                     "name": "Payment accepted",
                     "color": "md-green-500-bg",
-                    "date": "2015/07/20 09:13:17"
+                    "date": "2016/02/13 21:19:04"
                 }
             ],
             "payment": [
                 {
-                    "transactionId": "c7204001",
-                    "amount": "$97.83",
-                    "method": "PayPal",
-                    "date": "2016/04/20 20:17:48"
+                    "transactionId": 44464979,
+                    "amount": "$42.54",
+                    "method": "Credit Card",
+                    "date": "2015/06/30 11:59:49"
                 }
             ],
             "shippingDetails": [
                 {
                     "tracking": "",
-                    "carrier": "USPS",
-                    "weight": "5.00",
-                    "fee": "8.00",
-                    "date": "2016/04/05 05:47:54"
+                    "carrier": "FedEx",
+                    "weight": "5.52",
+                    "fee": "2.00",
+                    "date": "2015/03/15 07:08:37"
                 }
             ]
         },
         {
             "id": 13,
-            "reference": "4c13a7be",
-            "total": "$69.96",
-            "date": "2015/05/14 10:27:53",
+            "reference": "1d4e89f0",
+            "subtotal": "$67.10",
+            "tax": "$46.96",
+            "discount": "-$11.64",
+            "total": "$97.49",
+            "date": "2016/02/06 13:26:55",
             "customer": {
                 "id": 1,
-                "firstName": "June",
-                "lastName": "Gamble",
+                "firstName": "Iva",
+                "lastName": "Clark",
                 "avatar": "assets/images/avatars/Abbott.jpg",
                 "company": "Saois",
                 "jobTitle": "Digital Archivist",
@@ -887,6 +962,7 @@
                     "name": "Printed Dress",
                     "price": "$10.24",
                     "quantity": 1,
+                    "total": "$10.24",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -894,6 +970,7 @@
                     "name": "Green Skirt",
                     "price": "$24.62",
                     "quantity": 1,
+                    "total": "$24.62",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -901,6 +978,7 @@
                     "name": "Printed Dress",
                     "price": "$49.29",
                     "quantity": 1,
+                    "total": "$49.29",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 }
             ],
@@ -909,42 +987,45 @@
                     "id": 1,
                     "name": "Awaiting check payment",
                     "color": "md-blue-500-bg",
-                    "date": "2016/03/12 16:23:02"
+                    "date": "2015/03/31 03:01:12"
                 },
                 {
                     "id": 2,
                     "name": "Payment accepted",
                     "color": "md-green-500-bg",
-                    "date": "2015/10/25 04:20:16"
+                    "date": "2016/03/11 18:53:35"
                 }
             ],
             "payment": [
                 {
-                    "transactionId": "8c2448f4",
-                    "amount": "$69.96",
-                    "method": "Bank-wire",
-                    "date": "2015/01/11 06:28:24"
+                    "transactionId": "2aef4aa3",
+                    "amount": "$97.49",
+                    "method": "Check",
+                    "date": "2015/05/13 13:28:52"
                 }
             ],
             "shippingDetails": [
                 {
                     "tracking": "",
                     "carrier": "TNT",
-                    "weight": "8.15",
-                    "fee": "3.00",
-                    "date": "2015/02/27 21:16:53"
+                    "weight": "5.37",
+                    "fee": "6.00",
+                    "date": "2015/04/22 01:48:15"
                 }
             ]
         },
         {
             "id": 14,
-            "reference": "db9efd73",
-            "total": "$12.65",
-            "date": "2016/01/04 09:55:03",
+            "reference": "d897564e",
+            "subtotal": "$55.50",
+            "tax": "$48.92",
+            "discount": "-$18.45",
+            "total": "$16.95",
+            "date": "2016/01/17 04:23:11",
             "customer": {
                 "id": 1,
-                "firstName": "Branch",
-                "lastName": "Flowers",
+                "firstName": "Shauna",
+                "lastName": "Rosales",
                 "avatar": "assets/images/avatars/Abbott.jpg",
                 "company": "Saois",
                 "jobTitle": "Digital Archivist",
@@ -959,6 +1040,7 @@
                     "name": "Printed Dress",
                     "price": "$10.24",
                     "quantity": 1,
+                    "total": "$10.24",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -966,6 +1048,7 @@
                     "name": "Green Skirt",
                     "price": "$24.62",
                     "quantity": 1,
+                    "total": "$24.62",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -973,6 +1056,7 @@
                     "name": "Printed Dress",
                     "price": "$49.29",
                     "quantity": 1,
+                    "total": "$49.29",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 }
             ],
@@ -981,42 +1065,45 @@
                     "id": 1,
                     "name": "Awaiting check payment",
                     "color": "md-blue-500-bg",
-                    "date": "2016/01/29 07:38:56"
+                    "date": "2015/12/29 15:34:46"
                 },
                 {
                     "id": 2,
                     "name": "Payment accepted",
                     "color": "md-green-500-bg",
-                    "date": "2015/12/29 05:45:52"
+                    "date": "2015/07/14 19:10:43"
                 }
             ],
             "payment": [
                 {
-                    "transactionId": 44324298,
-                    "amount": "$12.65",
-                    "method": "Check",
-                    "date": "2015/06/16 02:36:31"
+                    "transactionId": "b7ea43c9",
+                    "amount": "$16.95",
+                    "method": "PayPal",
+                    "date": "2015/07/11 07:18:06"
                 }
             ],
             "shippingDetails": [
                 {
                     "tracking": "",
                     "carrier": "TNT",
-                    "weight": "7.28",
+                    "weight": "6.49",
                     "fee": "6.00",
-                    "date": "2016/02/09 05:37:05"
+                    "date": "2015/01/05 13:42:13"
                 }
             ]
         },
         {
             "id": 15,
-            "reference": "f619bf4e",
-            "total": "$23.66",
-            "date": "2015/02/26 22:53:57",
+            "reference": "1a803de2",
+            "subtotal": "$13.73",
+            "tax": "$64.42",
+            "discount": "-$19.64",
+            "total": "$20.34",
+            "date": "2015/09/26 14:26:33",
             "customer": {
                 "id": 1,
-                "firstName": "Houston",
-                "lastName": "Sharpe",
+                "firstName": "Carroll",
+                "lastName": "Dotson",
                 "avatar": "assets/images/avatars/Abbott.jpg",
                 "company": "Saois",
                 "jobTitle": "Digital Archivist",
@@ -1031,6 +1118,7 @@
                     "name": "Printed Dress",
                     "price": "$10.24",
                     "quantity": 1,
+                    "total": "$10.24",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -1038,6 +1126,7 @@
                     "name": "Green Skirt",
                     "price": "$24.62",
                     "quantity": 1,
+                    "total": "$24.62",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -1045,6 +1134,7 @@
                     "name": "Printed Dress",
                     "price": "$49.29",
                     "quantity": 1,
+                    "total": "$49.29",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 }
             ],
@@ -1053,42 +1143,45 @@
                     "id": 1,
                     "name": "Awaiting check payment",
                     "color": "md-blue-500-bg",
-                    "date": "2016/04/14 14:35:39"
+                    "date": "2015/12/21 10:42:21"
                 },
                 {
                     "id": 2,
                     "name": "Payment accepted",
                     "color": "md-green-500-bg",
-                    "date": "2016/02/05 05:03:58"
+                    "date": "2016/02/11 05:58:55"
                 }
             ],
             "payment": [
                 {
-                    "transactionId": "bbca4fb1",
-                    "amount": "$23.66",
-                    "method": "Bank-wire",
-                    "date": "2015/12/05 13:52:01"
+                    "transactionId": "0633458c",
+                    "amount": "$20.34",
+                    "method": "Check",
+                    "date": "2015/07/17 20:54:14"
                 }
             ],
             "shippingDetails": [
                 {
                     "tracking": "",
                     "carrier": "TNT",
-                    "weight": "6.87",
-                    "fee": "5.00",
-                    "date": "2015/09/04 00:55:30"
+                    "weight": "3.30",
+                    "fee": "2.00",
+                    "date": "2015/11/04 14:08:16"
                 }
             ]
         },
         {
             "id": 16,
-            "reference": "9b8cafc6",
-            "total": "$19.77",
-            "date": "2016/02/08 04:34:22",
+            "reference": "7d90eaa6",
+            "subtotal": "$99.07",
+            "tax": "$31.36",
+            "discount": "-$18.23",
+            "total": "$10.64",
+            "date": "2015/08/10 14:28:10",
             "customer": {
                 "id": 1,
-                "firstName": "Ball",
-                "lastName": "Ball",
+                "firstName": "Jeannie",
+                "lastName": "Reese",
                 "avatar": "assets/images/avatars/Abbott.jpg",
                 "company": "Saois",
                 "jobTitle": "Digital Archivist",
@@ -1103,6 +1196,7 @@
                     "name": "Printed Dress",
                     "price": "$10.24",
                     "quantity": 1,
+                    "total": "$10.24",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -1110,6 +1204,7 @@
                     "name": "Green Skirt",
                     "price": "$24.62",
                     "quantity": 1,
+                    "total": "$24.62",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -1117,6 +1212,7 @@
                     "name": "Printed Dress",
                     "price": "$49.29",
                     "quantity": 1,
+                    "total": "$49.29",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 }
             ],
@@ -1125,42 +1221,45 @@
                     "id": 1,
                     "name": "Awaiting check payment",
                     "color": "md-blue-500-bg",
-                    "date": "2015/09/09 02:34:48"
+                    "date": "2015/06/20 08:37:46"
                 },
                 {
                     "id": 2,
                     "name": "Payment accepted",
                     "color": "md-green-500-bg",
-                    "date": "2015/06/10 19:11:36"
+                    "date": "2015/01/01 01:42:21"
                 }
             ],
             "payment": [
                 {
-                    "transactionId": "738e4ba5",
-                    "amount": "$19.77",
-                    "method": "Credit Card",
-                    "date": "2015/06/16 16:37:53"
+                    "transactionId": "45f7440a",
+                    "amount": "$10.64",
+                    "method": "PayPal",
+                    "date": "2015/11/23 11:14:47"
                 }
             ],
             "shippingDetails": [
                 {
                     "tracking": "",
-                    "carrier": "FedEx",
-                    "weight": "5.36",
-                    "fee": "5.00",
-                    "date": "2015/08/29 12:09:03"
+                    "carrier": "USPS",
+                    "weight": "9.94",
+                    "fee": "6.00",
+                    "date": "2016/04/30 19:17:39"
                 }
             ]
         },
         {
             "id": 17,
-            "reference": "26caa1fe",
-            "total": "$30.19",
-            "date": "2015/10/03 14:42:58",
+            "reference": "cf9b4bfc",
+            "subtotal": "$96.93",
+            "tax": "$74.32",
+            "discount": "-$12.63",
+            "total": "$27.06",
+            "date": "2015/11/10 16:54:11",
             "customer": {
                 "id": 1,
-                "firstName": "Hilary",
-                "lastName": "Hancock",
+                "firstName": "Dena",
+                "lastName": "Rowe",
                 "avatar": "assets/images/avatars/Abbott.jpg",
                 "company": "Saois",
                 "jobTitle": "Digital Archivist",
@@ -1175,6 +1274,7 @@
                     "name": "Printed Dress",
                     "price": "$10.24",
                     "quantity": 1,
+                    "total": "$10.24",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -1182,6 +1282,7 @@
                     "name": "Green Skirt",
                     "price": "$24.62",
                     "quantity": 1,
+                    "total": "$24.62",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -1189,6 +1290,7 @@
                     "name": "Printed Dress",
                     "price": "$49.29",
                     "quantity": 1,
+                    "total": "$49.29",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 }
             ],
@@ -1197,42 +1299,45 @@
                     "id": 1,
                     "name": "Awaiting check payment",
                     "color": "md-blue-500-bg",
-                    "date": "2016/04/22 01:03:04"
+                    "date": "2015/03/23 00:18:52"
                 },
                 {
                     "id": 2,
                     "name": "Payment accepted",
                     "color": "md-green-500-bg",
-                    "date": "2015/02/28 15:11:34"
+                    "date": "2015/03/22 04:48:12"
                 }
             ],
             "payment": [
                 {
-                    "transactionId": "130c4ebb",
-                    "amount": "$30.19",
-                    "method": "Check",
-                    "date": "2016/02/12 22:24:10"
+                    "transactionId": "966f4c8e",
+                    "amount": "$27.06",
+                    "method": "PayPal",
+                    "date": "2015/07/10 17:22:44"
                 }
             ],
             "shippingDetails": [
                 {
                     "tracking": "",
-                    "carrier": "USPS",
-                    "weight": "2.56",
+                    "carrier": "FedEx",
+                    "weight": "6.81",
                     "fee": "3.00",
-                    "date": "2015/07/21 10:17:28"
+                    "date": "2015/01/23 07:31:46"
                 }
             ]
         },
         {
             "id": 18,
-            "reference": "bcfc03c9",
-            "total": "$18.19",
-            "date": "2015/03/20 12:41:03",
+            "reference": "07a938c4",
+            "subtotal": "$67.73",
+            "tax": "$33.33",
+            "discount": "-$12.33",
+            "total": "$91.50",
+            "date": "2015/08/26 16:24:38",
             "customer": {
                 "id": 1,
-                "firstName": "Mabel",
-                "lastName": "Tyler",
+                "firstName": "Blankenship",
+                "lastName": "Lynch",
                 "avatar": "assets/images/avatars/Abbott.jpg",
                 "company": "Saois",
                 "jobTitle": "Digital Archivist",
@@ -1247,6 +1352,7 @@
                     "name": "Printed Dress",
                     "price": "$10.24",
                     "quantity": 1,
+                    "total": "$10.24",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -1254,6 +1360,7 @@
                     "name": "Green Skirt",
                     "price": "$24.62",
                     "quantity": 1,
+                    "total": "$24.62",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 },
                 {
@@ -1261,6 +1368,7 @@
                     "name": "Printed Dress",
                     "price": "$49.29",
                     "quantity": 1,
+                    "total": "$49.29",
                     "image": "assets/images/ecommerce/product-image-placeholder.png"
                 }
             ],
@@ -1269,174 +1377,186 @@
                     "id": 1,
                     "name": "Awaiting check payment",
                     "color": "md-blue-500-bg",
-                    "date": "2015/07/02 13:25:30"
+                    "date": "2016/03/24 22:56:35"
                 },
                 {
                     "id": 2,
                     "name": "Payment accepted",
                     "color": "md-green-500-bg",
-                    "date": "2015/01/27 12:35:04"
+                    "date": "2016/04/09 13:33:26"
                 }
             ],
             "payment": [
                 {
-                    "transactionId": "9b8e4769",
-                    "amount": "$18.19",
+                    "transactionId": "411a4e97",
+                    "amount": "$91.50",
                     "method": "PayPal",
-                    "date": "2015/04/20 03:06:05"
-                }
-            ],
-            "shippingDetails": [
-                {
-                    "tracking": "",
-                    "carrier": "FedEx",
-                    "weight": "8.71",
-                    "fee": "5.00",
-                    "date": "2015/03/04 22:31:11"
-                }
-            ]
-        },
-        {
-            "id": 19,
-            "reference": "cae14c24",
-            "total": "$31.90",
-            "date": "2015/03/09 11:08:34",
-            "customer": {
-                "id": 1,
-                "firstName": "Marlene",
-                "lastName": "Mosley",
-                "avatar": "assets/images/avatars/Abbott.jpg",
-                "company": "Saois",
-                "jobTitle": "Digital Archivist",
-                "email": "abbott@withinpixels.com",
-                "phone": "+1-202-555-0175",
-                "invoiceAddress": "183 River Street Passaic, NJ 07055",
-                "shippingAddress": "956 6th Avenue North Bergen, NJ 0704"
-            },
-            "products": [
-                {
-                    "id": 1,
-                    "name": "Printed Dress",
-                    "price": "$10.24",
-                    "quantity": 1,
-                    "image": "assets/images/ecommerce/product-image-placeholder.png"
-                },
-                {
-                    "id": 2,
-                    "name": "Green Skirt",
-                    "price": "$24.62",
-                    "quantity": 1,
-                    "image": "assets/images/ecommerce/product-image-placeholder.png"
-                },
-                {
-                    "id": 3,
-                    "name": "Printed Dress",
-                    "price": "$49.29",
-                    "quantity": 1,
-                    "image": "assets/images/ecommerce/product-image-placeholder.png"
-                }
-            ],
-            "status": [
-                {
-                    "id": 1,
-                    "name": "Awaiting check payment",
-                    "color": "md-blue-500-bg",
-                    "date": "2015/08/16 21:12:30"
-                },
-                {
-                    "id": 2,
-                    "name": "Payment accepted",
-                    "color": "md-green-500-bg",
-                    "date": "2015/02/23 23:05:27"
-                }
-            ],
-            "payment": [
-                {
-                    "transactionId": "f9fd4378",
-                    "amount": "$31.90",
-                    "method": "PayPal",
-                    "date": "2015/10/29 18:55:26"
-                }
-            ],
-            "shippingDetails": [
-                {
-                    "tracking": "",
-                    "carrier": "FedEx",
-                    "weight": "3.07",
-                    "fee": "7.00",
-                    "date": "2015/09/08 04:11:05"
-                }
-            ]
-        },
-        {
-            "id": 20,
-            "reference": "1db78276",
-            "total": "$64.19",
-            "date": "2015/05/25 01:06:32",
-            "customer": {
-                "id": 1,
-                "firstName": "Ginger",
-                "lastName": "Buckley",
-                "avatar": "assets/images/avatars/Abbott.jpg",
-                "company": "Saois",
-                "jobTitle": "Digital Archivist",
-                "email": "abbott@withinpixels.com",
-                "phone": "+1-202-555-0175",
-                "invoiceAddress": "183 River Street Passaic, NJ 07055",
-                "shippingAddress": "956 6th Avenue North Bergen, NJ 0704"
-            },
-            "products": [
-                {
-                    "id": 1,
-                    "name": "Printed Dress",
-                    "price": "$10.24",
-                    "quantity": 1,
-                    "image": "assets/images/ecommerce/product-image-placeholder.png"
-                },
-                {
-                    "id": 2,
-                    "name": "Green Skirt",
-                    "price": "$24.62",
-                    "quantity": 1,
-                    "image": "assets/images/ecommerce/product-image-placeholder.png"
-                },
-                {
-                    "id": 3,
-                    "name": "Printed Dress",
-                    "price": "$49.29",
-                    "quantity": 1,
-                    "image": "assets/images/ecommerce/product-image-placeholder.png"
-                }
-            ],
-            "status": [
-                {
-                    "id": 1,
-                    "name": "Awaiting check payment",
-                    "color": "md-blue-500-bg",
-                    "date": "2015/05/31 00:42:49"
-                },
-                {
-                    "id": 2,
-                    "name": "Payment accepted",
-                    "color": "md-green-500-bg",
-                    "date": "2015/10/07 22:15:10"
-                }
-            ],
-            "payment": [
-                {
-                    "transactionId": "ca694431",
-                    "amount": "$64.19",
-                    "method": "Bank-wire",
-                    "date": "2015/05/29 10:35:35"
+                    "date": "2016/02/05 05:35:52"
                 }
             ],
             "shippingDetails": [
                 {
                     "tracking": "",
                     "carrier": "USPS",
-                    "weight": "3.21",
-                    "fee": "2.00",
-                    "date": "2016/01/12 02:54:09"
+                    "weight": "6.11",
+                    "fee": "7.00",
+                    "date": "2015/10/20 10:46:31"
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "reference": "d460f4ff",
+            "subtotal": "$15.83",
+            "tax": "$41.90",
+            "discount": "-$16.54",
+            "total": "$47.99",
+            "date": "2015/01/04 21:13:53",
+            "customer": {
+                "id": 1,
+                "firstName": "Whitley",
+                "lastName": "Mcgee",
+                "avatar": "assets/images/avatars/Abbott.jpg",
+                "company": "Saois",
+                "jobTitle": "Digital Archivist",
+                "email": "abbott@withinpixels.com",
+                "phone": "+1-202-555-0175",
+                "invoiceAddress": "183 River Street Passaic, NJ 07055",
+                "shippingAddress": "956 6th Avenue North Bergen, NJ 0704"
+            },
+            "products": [
+                {
+                    "id": 1,
+                    "name": "Printed Dress",
+                    "price": "$10.24",
+                    "quantity": 1,
+                    "total": "$10.24",
+                    "image": "assets/images/ecommerce/product-image-placeholder.png"
+                },
+                {
+                    "id": 2,
+                    "name": "Green Skirt",
+                    "price": "$24.62",
+                    "quantity": 1,
+                    "total": "$24.62",
+                    "image": "assets/images/ecommerce/product-image-placeholder.png"
+                },
+                {
+                    "id": 3,
+                    "name": "Printed Dress",
+                    "price": "$49.29",
+                    "quantity": 1,
+                    "total": "$49.29",
+                    "image": "assets/images/ecommerce/product-image-placeholder.png"
+                }
+            ],
+            "status": [
+                {
+                    "id": 1,
+                    "name": "Awaiting check payment",
+                    "color": "md-blue-500-bg",
+                    "date": "2015/08/10 17:14:57"
+                },
+                {
+                    "id": 2,
+                    "name": "Payment accepted",
+                    "color": "md-green-500-bg",
+                    "date": "2016/03/30 01:38:14"
+                }
+            ],
+            "payment": [
+                {
+                    "transactionId": "761943c2",
+                    "amount": "$47.99",
+                    "method": "PayPal",
+                    "date": "2015/10/11 20:10:46"
+                }
+            ],
+            "shippingDetails": [
+                {
+                    "tracking": "",
+                    "carrier": "USPS",
+                    "weight": "5.51",
+                    "fee": "5.00",
+                    "date": "2015/08/28 21:24:36"
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "reference": "ba6a946d",
+            "subtotal": "$36.84",
+            "tax": "$20.12",
+            "discount": "-$14.57",
+            "total": "$44.40",
+            "date": "2015/02/24 00:57:18",
+            "customer": {
+                "id": 1,
+                "firstName": "Hood",
+                "lastName": "Hodges",
+                "avatar": "assets/images/avatars/Abbott.jpg",
+                "company": "Saois",
+                "jobTitle": "Digital Archivist",
+                "email": "abbott@withinpixels.com",
+                "phone": "+1-202-555-0175",
+                "invoiceAddress": "183 River Street Passaic, NJ 07055",
+                "shippingAddress": "956 6th Avenue North Bergen, NJ 0704"
+            },
+            "products": [
+                {
+                    "id": 1,
+                    "name": "Printed Dress",
+                    "price": "$10.24",
+                    "quantity": 1,
+                    "total": "$10.24",
+                    "image": "assets/images/ecommerce/product-image-placeholder.png"
+                },
+                {
+                    "id": 2,
+                    "name": "Green Skirt",
+                    "price": "$24.62",
+                    "quantity": 1,
+                    "total": "$24.62",
+                    "image": "assets/images/ecommerce/product-image-placeholder.png"
+                },
+                {
+                    "id": 3,
+                    "name": "Printed Dress",
+                    "price": "$49.29",
+                    "quantity": 1,
+                    "total": "$49.29",
+                    "image": "assets/images/ecommerce/product-image-placeholder.png"
+                }
+            ],
+            "status": [
+                {
+                    "id": 1,
+                    "name": "Awaiting check payment",
+                    "color": "md-blue-500-bg",
+                    "date": "2015/05/19 11:09:56"
+                },
+                {
+                    "id": 2,
+                    "name": "Payment accepted",
+                    "color": "md-green-500-bg",
+                    "date": "2015/03/27 05:02:33"
+                }
+            ],
+            "payment": [
+                {
+                    "transactionId": "4af94368",
+                    "amount": "$44.40",
+                    "method": "PayPal",
+                    "date": "2015/11/11 14:25:39"
+                }
+            ],
+            "shippingDetails": [
+                {
+                    "tracking": "",
+                    "carrier": "USPS",
+                    "weight": "3.63",
+                    "fee": "5.00",
+                    "date": "2016/03/01 09:07:49"
                 }
             ]
         }
