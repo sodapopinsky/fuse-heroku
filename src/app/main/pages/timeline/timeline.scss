@@ -97,10 +97,6 @@
         &:first-child {
             padding-top: 64px;
         }
-
-        &:last-child {
-            padding-bottom: 0;
-        }
     }
 
     /* Animations */
@@ -221,26 +217,17 @@
     #timeline.timeline-right {
 
         .ms-timeline-item {
-
-            .timeline-card {
-                order: 3;
-
-                ms-card {
-                    padding: 0;
-                }
-            }
+            display: block;
 
             .timeline-point {
-                order: 1;
                 position: relative;
                 left: auto;
-                margin: 0 0 16px 0;
+                margin: 0 auto 16px auto;
                 padding: 0;
             }
 
             .timeline-detail {
-                order: 2;
-                padding: 0;
+                padding: 2px;
                 margin-bottom: 16px;
 
                 .time,
@@ -251,27 +238,25 @@
                 }
             }
 
+            .timeline-card {
+
+                ms-card {
+                    margin: 0 auto;
+                    padding: 0;
+                }
+            }
+
             &:nth-child(even) {
 
-                .timeline-card {
-                    order: 3;
-
-                    ms-card {
-                        padding: 0;
-                    }
-                }
-
                 .timeline-point {
-                    order: 1;
                     position: relative;
                     left: auto;
-                    margin: 0 0 16px 0;
+                    margin: 0 auto 16px auto;
                     padding: 0;
                 }
 
                 .timeline-detail {
-                    order: 2;
-                    padding: 0;
+                    padding: 2px;
                     margin-bottom: 16px;
 
                     .time,
@@ -279,6 +264,14 @@
                         padding-right: 0;
                         padding-left: 0;
                         text-align: center;
+                    }
+                }
+
+                .timeline-card {
+
+                    ms-card {
+                        margin: 0 auto;
+                        padding: 0;
                     }
                 }
             }

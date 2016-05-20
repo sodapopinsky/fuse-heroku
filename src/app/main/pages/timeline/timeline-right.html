@@ -5,12 +5,6 @@
          layout-align-gt-md="center start"
          ng-repeat="timelineItem in vm.timeline">
 
-        <div class="timeline-card" layout="row" flex="50">
-            <!-- MS-CARD -->
-            <ms-card template="timelineItem.card.template" ng-model="timelineItem.card"></ms-card>
-            <!-- / MS-CARD -->
-        </div>
-
         <div class="timeline-point md-accent-bg md-whiteframe-2dp">
             <md-icon md-font-icon="{{timelineItem.icon}}"></md-icon>
         </div>
@@ -22,6 +16,12 @@
             <div class="event">
                 {{timelineItem.event}}
             </div>
+        </div>
+
+        <div class="timeline-card" layout="row" flex="50">
+            <!-- MS-CARD -->
+            <ms-card template="timelineItem.card.template" ng-model="timelineItem.card"></ms-card>
+            <!-- / MS-CARD -->
         </div>
     </div>
     <!-- / TIMELINE ITEM -->
