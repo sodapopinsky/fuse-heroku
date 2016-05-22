@@ -5,8 +5,8 @@
     height: $toolbarHeight;
     font-size: 13px;
 
-    #ms-search-bar-expander,
-    #ms-search-bar-collapser {
+    .ms-search-bar-expander,
+    .ms-search-bar-collapser {
         cursor: pointer;
         padding: 0 20px;
         margin: 0;
@@ -15,13 +15,13 @@
         line-height: $toolbarHeight !important;
     }
 
-    #ms-search-bar-loader {
+    .ms-search-bar-loader {
         width: 64px !important;
         height: $toolbarHeight !important;
         line-height: $toolbarHeight !important;
     }
 
-    #ms-search-bar-collapser {
+    .ms-search-bar-collapser {
         display: none;
     }
 
@@ -32,7 +32,7 @@
         font-size: 16px;
     }
 
-    #ms-search-bar-results {
+    .ms-search-bar-results {
         position: absolute;
         top: $toolbarHeight;
         left: 0;
@@ -95,11 +95,7 @@
             display: block;
         }
 
-        #ms-search-bar-expander {
-            //display: none;
-        }
-
-        #ms-search-bar-collapser {
+        .ms-search-bar-collapser {
             display: block;
         }
     }

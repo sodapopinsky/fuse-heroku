@@ -323,7 +323,7 @@
          */
         function ensureSelectedResultIsVisible()
         {
-            var resultsEl = $element.find('#ms-search-bar-results'),
+            var resultsEl = $element.find('.ms-search-bar-results'),
                 selectedItemEl = angular.element(resultsEl.find('.result')[vm.selectedResultIndex]);
 
             if ( resultsEl && selectedItemEl )
