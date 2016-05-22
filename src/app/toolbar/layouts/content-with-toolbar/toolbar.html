@@ -15,10 +15,6 @@
 
         <div class="toolbar-separator"></div>
 
-        <ms-search-bar></ms-search-bar>
-
-        <div class="toolbar-separator"></div>
-
         <md-menu-bar id="user-menu">
             <md-menu md-position-mode="left bottom">
                 <md-button class="user-button" ng-click="$mdOpenMenu()"
@@ -79,6 +75,10 @@
                 </md-menu-content>
             </md-menu>
         </md-menu-bar>
+
+        <div class="toolbar-separator"></div>
+
+        <ms-search-bar on-search="vm.search(query)" on-result-click="vm.searchResultClick(item)" debounce="300"></ms-search-bar>
 
         <div class="toolbar-separator"></div>
 
