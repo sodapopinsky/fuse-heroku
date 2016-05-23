@@ -5,7 +5,7 @@
 
 <div ng-if="vm.currentThread">
     <div class="thread-header" layout="row" layout-align="space-between center">
-        <div layout="column" layout-align="start start">
+        <div>
             <div class="subject" flex>{{vm.currentThread.subject}}</div>
 
             <div class="labels">
@@ -14,7 +14,6 @@
                 </div>
             </div>
         </div>
-
 
         <div class="actions" layout="row" layout-align="start center">
             <md-button class="md-icon-button" ng-click="vm.toggleThreadStatus('starred')"
