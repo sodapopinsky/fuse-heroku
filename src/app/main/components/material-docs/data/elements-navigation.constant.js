@@ -153,13 +153,29 @@
                 excludeDemo: true,
                 weight     : 5
             },
+         /*   {
+                name      : 'Navbar',
+                url       : 'navbar',
+                navPath   : 'components.elements.content-elements',
+                moduleName: 'material.components.navBar',
+                stateName : 'material_components_navBar',
+                weight    : 6
+            },*/
+            {
+                name      : 'Panel',
+                url       : 'panel',
+                navPath   : 'components.elements.content-elements',
+                moduleName: 'material.components.panel',
+                stateName : 'material_components_panel',
+                weight    : 7
+            },
             {
                 name      : 'Sidenav',
                 url       : 'sidenav',
                 navPath   : 'components.elements.content-elements',
                 moduleName: 'material.components.sidenav',
                 stateName : 'material_components_sidenav',
-                weight    : 6
+                weight    : 8
             },
             {
                 name      : 'Subheader',
@@ -167,7 +183,7 @@
                 navPath   : 'components.elements.content-elements',
                 moduleName: 'material.components.subheader',
                 stateName : 'material_components_subheader',
-                weight    : 7
+                weight    : 9
             },
             {
                 name      : 'Tabs',
@@ -175,7 +191,7 @@
                 navPath   : 'components.elements.content-elements',
                 moduleName: 'material.components.tabs',
                 stateName : 'material_components_tabs',
-                weight    : 8
+                weight    : 10
             },
             {
                 name      : 'Toast',
@@ -183,7 +199,7 @@
                 navPath   : 'components.elements.content-elements',
                 moduleName: 'material.components.toast',
                 stateName : 'material_components_toast',
-                weight    : 9
+                weight    : 11
             },
             {
                 name      : 'Toolbar',
@@ -191,7 +207,7 @@
                 navPath   : 'components.elements.content-elements',
                 moduleName: 'material.components.toolbar',
                 stateName : 'material_components_toolbar',
-                weight    : 10
+                weight    : 12
             },
             {
                 name      : 'Tooltip',
@@ -199,7 +215,7 @@
                 navPath   : 'components.elements.content-elements',
                 moduleName: 'material.components.tooltip',
                 stateName : 'material_components_tooltip',
-                weight    : 11
+                weight    : 13
             },
             {
                 name      : 'Whiteframe',
@@ -207,7 +223,7 @@
                 navPath   : 'components.elements.content-elements',
                 moduleName: 'material.components.whiteframe',
                 stateName : 'material_components_whiteframe',
-                weight    : 12
+                weight    : 14
             },
             /* LISTS */
             {
@@ -261,13 +277,21 @@
                 weight    : 2
             },
             /* OTHERS */
+           /* {
+                name      : 'Colors',
+                url       : 'colors',
+                navPath   : 'components.elements.others',
+                moduleName: 'material.components.colors',
+                stateName : 'material_components_colors',
+                weight    : 1
+            },*/
             {
                 name      : 'Divider',
                 url       : 'divider',
                 navPath   : 'components.elements.others',
                 moduleName: 'material.components.divider',
                 stateName : 'material_components_divider',
-                weight    : 1
+                weight    : 2
             },
             {
                 name      : 'Ripple',
@@ -275,7 +299,7 @@
                 navPath   : 'components.elements.others',
                 moduleName: 'material.core.ripple',
                 stateName : 'material_core_ripple',
-                weight    : 2
+                weight    : 3
             },
             {
                 name      : 'Sticky',
@@ -283,7 +307,7 @@
                 navPath   : 'components.elements.others',
                 moduleName: 'material.components.sticky',
                 stateName : 'material_components_sticky',
-                weight    : 3
+                weight    : 4
             },
             {
                 name      : 'Swipe',
@@ -291,7 +315,7 @@
                 navPath   : 'components.elements.others',
                 moduleName: 'material.components.swipe',
                 stateName : 'material_components_swipe',
-                weight    : 4
+                weight    : 5
             },
             {
                 name      : 'Util',
@@ -299,7 +323,7 @@
                 navPath   : 'components.elements.others',
                 moduleName: 'material.core.util',
                 stateName : 'material_core_util',
-                weight    : 5
+                weight    : 6
             },
             {
                 name      : 'Virtual Repeat',
@@ -307,7 +331,7 @@
                 navPath   : 'components.elements.others',
                 moduleName: 'material.components.virtualRepeat',
                 stateName : 'material_components_virtualRepeat',
-                weight    : 6
+                weight    : 7
             }
         ]);
 })();

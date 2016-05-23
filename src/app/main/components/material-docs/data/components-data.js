@@ -169,6 +169,37 @@ angular.module('app.components.material-docs')
             'hasDemo'   : false
         },
         {
+            'name'      : 'material.components.colors',
+            'type'      : 'module',
+            'outputPath': 'partials/api/material.components.colors/index.html',
+            'url'       : 'api/material.components.colors',
+            'label'     : 'material.components.colors',
+            'module'    : 'material.components',
+            'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/colors/colors.js',
+            'docs'      : [
+                {
+                    'name'      : '$mdColors',
+                    'type'      : 'service',
+                    'outputPath': 'partials/api/material.components.colors/service/$mdColors.html',
+                    'url'       : 'api/service/$mdColors',
+                    'label'     : '$mdColors',
+                    'module'    : 'material.components',
+                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/colors/colors.js',
+                    'hasDemo'   : false
+                },
+                {
+                    'name'      : 'mdColors',
+                    'type'      : 'directive',
+                    'outputPath': 'partials/api/material.components.colors/directive/mdColors.html',
+                    'url'       : 'api/directive/mdColors',
+                    'label'     : 'mdColors',
+                    'module'    : 'material.components',
+                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/colors/colors.js'
+                }
+            ],
+            'hasDemo'   : false
+        },
+        {
             'name'      : 'material.components.content',
             'type'      : 'module',
             'outputPath': 'partials/api/material.components.content/index.html',
@@ -447,6 +478,15 @@ angular.module('app.components.material-docs')
                     'label'     : 'mdInput',
                     'module'    : 'material.components',
                     'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/input/input.js'
+                },
+                {
+                    'name'      : 'mdSelectOnFocus',
+                    'type'      : 'directive',
+                    'outputPath': 'partials/api/material.components.input/directive/mdSelectOnFocus.html',
+                    'url'       : 'api/directive/mdSelectOnFocus',
+                    'label'     : 'mdSelectOnFocus',
+                    'module'    : 'material.components',
+                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/input/input.js'
                 }
             ],
             'hasDemo'   : false
@@ -527,6 +567,77 @@ angular.module('app.components.material-docs')
             'hasDemo'   : false
         },
         {
+            'name'      : 'material.components.navBar',
+            'type'      : 'module',
+            'outputPath': 'partials/api/material.components.navBar/index.html',
+            'url'       : 'api/material.components.navBar',
+            'label'     : 'material.components.navBar',
+            'module'    : 'material.components',
+            'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/navBar/navBar.js',
+            'docs'      : [
+                {
+                    'name'      : 'mdNavBar',
+                    'type'      : 'directive',
+                    'outputPath': 'partials/api/material.components.navBar/directive/mdNavBar.html',
+                    'url'       : 'api/directive/mdNavBar',
+                    'label'     : 'mdNavBar',
+                    'module'    : 'material.components',
+                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/navBar/navBar.js',
+                    'hasDemo'   : true
+                },
+                {
+                    'name'      : 'mdNavItem',
+                    'type'      : 'directive',
+                    'outputPath': 'partials/api/material.components.navBar/directive/mdNavItem.html',
+                    'url'       : 'api/directive/mdNavItem',
+                    'label'     : 'mdNavItem',
+                    'module'    : 'material.components',
+                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/navBar/navBar.js'
+                }
+            ],
+            'hasDemo'   : false
+        },
+        {
+            'name'      : 'material.components.panel',
+            'type'      : 'module',
+            'outputPath': 'partials/api/material.components.panel/index.html',
+            'url'       : 'api/material.components.panel',
+            'label'     : 'material.components.panel',
+            'module'    : 'material.components',
+            'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/panel/panel.js',
+            'docs'      : [
+                {
+                    'name'      : '$mdPanel',
+                    'type'      : 'service',
+                    'outputPath': 'partials/api/material.components.panel/service/$mdPanel.html',
+                    'url'       : 'api/service/$mdPanel',
+                    'label'     : '$mdPanel',
+                    'module'    : 'material.components',
+                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/panel/panel.js',
+                    'hasDemo'   : false
+                },
+                {
+                    'name'      : 'MdPanelRef',
+                    'type'      : 'type',
+                    'outputPath': 'partials/api/material.components.panel/type/MdPanelRef.html',
+                    'url'       : 'api/type/MdPanelRef',
+                    'label'     : 'MdPanelRef',
+                    'module'    : 'material.components',
+                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/panel/panel.js'
+                },
+                {
+                    'name'      : 'MdPanelPosition',
+                    'type'      : 'type',
+                    'outputPath': 'partials/api/material.components.panel/type/MdPanelPosition.html',
+                    'url'       : 'api/type/MdPanelPosition',
+                    'label'     : 'MdPanelPosition',
+                    'module'    : 'material.components',
+                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/panel/panel.js'
+                }
+            ],
+            'hasDemo'   : false
+        },
+        {
             'name'      : 'material.components.progressCircular',
             'type'      : 'module',
             'outputPath': 'partials/api/material.components.progressCircular/index.html',
@@ -542,8 +653,17 @@ angular.module('app.components.material-docs')
                     'url'       : 'api/directive/mdProgressCircular',
                     'label'     : 'mdProgressCircular',
                     'module'    : 'material.components',
-                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/progressCircular/progress-circular.js',
+                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/progressCircular/js/progressCircularDirective.js',
                     'hasDemo'   : true
+                },
+                {
+                    'name'      : '$mdProgressCircular',
+                    'type'      : 'service',
+                    'outputPath': 'partials/api/material.components.progressCircular/service/$mdProgressCircular.html',
+                    'url'       : 'api/service/$mdProgressCircular',
+                    'label'     : '$mdProgressCircular',
+                    'module'    : 'material.components',
+                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/progressCircular/js/progressCircularProvider.js'
                 }
             ],
             'hasDemo'   : false
@@ -672,6 +792,16 @@ angular.module('app.components.material-docs')
             'module'    : 'material.components',
             'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/slider/slider.js',
             'docs'      : [
+             /*   {
+                    'name'      : 'mdSliderContainer',
+                    'type'      : 'directive',
+                    'outputPath': 'partials/api/material.components.slider/directive/mdSliderContainer.html',
+                    'url'       : 'api/directive/mdSliderContainer',
+                    'label'     : 'mdSliderContainer',
+                    'module'    : 'material.components',
+                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/slider/slider.js',
+                    'hasDemo'   : true
+                },*/
                 {
                     'name'      : 'mdSlider',
                     'type'      : 'directive',
@@ -679,8 +809,7 @@ angular.module('app.components.material-docs')
                     'url'       : 'api/directive/mdSlider',
                     'label'     : 'mdSlider',
                     'module'    : 'material.components',
-                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/slider/slider.js',
-                    'hasDemo'   : true
+                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/slider/slider.js'
                 }
             ],
             'hasDemo'   : false
@@ -956,8 +1085,8 @@ angular.module('app.components.material-docs')
             'outputPath': 'partials/api/material.core.ripple/index.html',
             'url'       : 'api/material.core.ripple',
             'label'     : 'material.core.ripple',
-            'module'    : 'material.components',
-            'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/l/src/core/services/ripple/ripple.js',
+            'module'    : 'material.core',
+            'githubUrl' : 'https://github.com/angular/material/blob/master/src/core/services/ripple/ripple.js',
             'docs'      : [
                 {
                     'name'      : 'mdInkRipple',
@@ -965,8 +1094,8 @@ angular.module('app.components.material-docs')
                     'outputPath': 'partials/api/material.core.ripple/directive/mdInkRipple.html',
                     'url'       : 'api/directive/mdInkRipple',
                     'label'     : 'mdInkRipple',
-                    'module'    : 'material.components',
-                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/l/src/core/services/ripple/ripple.js',
+                    'module'    : 'material.core',
+                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/core/services/ripple/ripple.js',
                     'hasDemo'   : true
                 },
                 {
@@ -975,8 +1104,8 @@ angular.module('app.components.material-docs')
                     'outputPath': 'partials/api/material.core.ripple/service/$mdInkRipple.html',
                     'url'       : 'api/service/$mdInkRipple',
                     'label'     : '$mdInkRipple',
-                    'module'    : 'material.components',
-                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/l/src/core/services/ripple/ripple.js'
+                    'module'    : 'material.core',
+                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/core/services/ripple/ripple.js'
                 }
             ],
             'hasDemo'   : false
@@ -987,8 +1116,8 @@ angular.module('app.components.material-docs')
             'outputPath': 'partials/api/material.core.util/index.html',
             'url'       : 'api/material.core.util',
             'label'     : 'material.core.util',
-            'module'    : 'material.components',
-            'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/l/src/core/util/util.js',
+            'module'    : 'material.core',
+            'githubUrl' : 'https://github.com/angular/material/blob/master/src/core/util/util.js',
             'docs'      : [
                 {
                     'name'      : 'mdAutofocus',
@@ -996,8 +1125,8 @@ angular.module('app.components.material-docs')
                     'outputPath': 'partials/api/material.core.util/directive/mdAutofocus.html',
                     'url'       : 'api/directive/mdAutofocus',
                     'label'     : 'mdAutofocus',
-                    'module'    : 'material.components',
-                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/l/src/core/util/autofocus.js',
+                    'module'    : 'material.core',
+                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/core/util/autofocus.js',
                     'hasDemo'   : true
                 }
             ],

@@ -7,6 +7,8 @@ angular
   })
   .controller('PositionDemoCtrl', function DemoCtrl($mdDialog) {
     var originatorEv;
+    
+    this.menuHref = "http://www.google.com/design/spec/components/menus.html#menus-specs";
 
     this.openMenu = function($mdOpenMenu, ev) {
       originatorEv = ev;
@@ -16,10 +18,12 @@ angular
     this.announceClick = function(index) {
       $mdDialog.show(
         $mdDialog.alert()
+            .targetEvent(originatorEv)
+            .clickOutsideToClose(true)
+            .parent(angular.element(document.body))
           .title('You clicked!')
           .textContent('You clicked the menu item at index ' + index)
           .ok('Nice')
-          .targetEvent(originatorEv)
       );
       originatorEv = null;
     };

@@ -289,8 +289,8 @@ angular.module('app.components.material-docs')
                 },
                 {
                     'ngModule'  : {
-                        'name'        : 'cardDemo1',
-                        'module'      : 'cardDemo1',
+                        'name'        : 'cardDemo2',
+                        'module'      : 'cardDemo2',
                         'dependencies': [
                             'ngMaterial'
                         ]
@@ -318,8 +318,8 @@ angular.module('app.components.material-docs')
                 },
                 {
                     'ngModule'  : {
-                        'name'        : 'cardDemo1',
-                        'module'      : 'cardDemo1',
+                        'name'        : 'cardDemo3',
+                        'module'      : 'cardDemo3',
                         'dependencies': [
                             'ngMaterial'
                         ]
@@ -391,7 +391,43 @@ angular.module('app.components.material-docs')
                 },
                 {
                     'ngModule'  : {
-                        'name'        : 'checkboxDemo1',
+                        'name'        : 'checkboxDemo3',
+                        'module'      : 'checkboxDemo3',
+                        'dependencies': [
+                            'ngMaterial'
+                        ]
+                    },
+                    'id'        : 'checkboxdemoSelectAll',
+                    'css'       : [
+                        {
+                            'name'      : 'style.css',
+                            'label'     : 'style.css',
+                            'fileType'  : 'css',
+                            'outputPath': 'demo-partials/checkbox/demoSelectAll/style.css'
+                        }
+                    ],
+                    'html'      : [],
+                    'js'        : [
+                        {
+                            'name'      : 'script.js',
+                            'label'     : 'script.js',
+                            'fileType'  : 'js',
+                            'outputPath': 'demo-partials/checkbox/demoSelectAll/script.js'
+                        }
+                    ],
+                    'moduleName': 'material.components.checkbox',
+                    'name'      : 'demoSelectAll',
+                    'label'     : 'Select All',
+                    'index'     : {
+                        'name'      : 'index.html',
+                        'label'     : 'index.html',
+                        'fileType'  : 'html',
+                        'outputPath': 'demo-partials/checkbox/demoSelectAll/index.html'
+                    }
+                },
+                {
+                    'ngModule'  : {
+                        'name'        : 'checkboxDemo2',
                         'module'      : 'checkboxDemo2',
                         'dependencies': [
                             'ngMaterial'
@@ -438,7 +474,8 @@ angular.module('app.components.material-docs')
                         'name'        : 'chipsDemo',
                         'module'      : 'chipsDemo',
                         'dependencies': [
-                            'ngMaterial'
+                            'ngMaterial',
+                            'ngMessages'
                         ]
                     },
                     'id'        : 'chipsdemoBasicUsage',
@@ -608,6 +645,106 @@ angular.module('app.components.material-docs')
                 }
             ],
             'url'       : 'demo/chips'
+        },
+        {
+            'name'      : 'colors',
+            'moduleName': 'material.components.colors',
+            'label'     : 'Colors',
+            'demos'     : [
+                {
+                    'ngModule'  : {
+                        'name'        : 'colorsDemo',
+                        'module'      : 'colorsDemo',
+                        'dependencies': [
+                            'ngMaterial'
+                        ]
+                    },
+                    'id'        : 'colorsdemoBasicUsage',
+                    'css'       : [
+                        {
+                            'name'      : 'style.css',
+                            'label'     : 'style.css',
+                            'fileType'  : 'css',
+                            'outputPath': 'demo-partials/colors/demoBasicUsage/style.css'
+                        }
+                    ],
+                    'html'      : [
+                        {
+                            'name'      : 'regularCard.tmpl.html',
+                            'label'     : 'regularCard.tmpl.html',
+                            'fileType'  : 'html',
+                            'outputPath': 'demo-partials/colors/demoBasicUsage/regularCard.tmpl.html'
+                        },
+                        {
+                            'name'      : 'userCard.tmpl.html',
+                            'label'     : 'userCard.tmpl.html',
+                            'fileType'  : 'html',
+                            'outputPath': 'demo-partials/colors/demoBasicUsage/userCard.tmpl.html'
+                        }
+                    ],
+                    'js'        : [
+                        {
+                            'name'      : 'script.js',
+                            'label'     : 'script.js',
+                            'fileType'  : 'js',
+                            'outputPath': 'demo-partials/colors/demoBasicUsage/script.js'
+                        }
+                    ],
+                    'moduleName': 'material.components.colors',
+                    'name'      : 'demoBasicUsage',
+                    'label'     : 'Basic Usage',
+                    'index'     : {
+                        'name'      : 'index.html',
+                        'label'     : 'index.html',
+                        'fileType'  : 'html',
+                        'outputPath': 'demo-partials/colors/demoBasicUsage/index.html'
+                    }
+                },
+                {
+                    'ngModule'  : {
+                        'name'        : 'colorsThemePickerDemo',
+                        'module'      : 'colorsThemePickerDemo',
+                        'dependencies': [
+                            'ngMaterial'
+                        ]
+                    },
+                    'id'        : 'colorsdemoThemePicker',
+                    'css'       : [
+                        {
+                            'name'      : 'style.css',
+                            'label'     : 'style.css',
+                            'fileType'  : 'css',
+                            'outputPath': 'demo-partials/colors/demoThemePicker/style.css'
+                        }
+                    ],
+                    'html'      : [
+                        {
+                            'name'      : 'themePreview.tmpl.html',
+                            'label'     : 'themePreview.tmpl.html',
+                            'fileType'  : 'html',
+                            'outputPath': 'demo-partials/colors/demoThemePicker/themePreview.tmpl.html'
+                        }
+                    ],
+                    'js'        : [
+                        {
+                            'name'      : 'script.js',
+                            'label'     : 'script.js',
+                            'fileType'  : 'js',
+                            'outputPath': 'demo-partials/colors/demoThemePicker/script.js'
+                        }
+                    ],
+                    'moduleName': 'material.components.colors',
+                    'name'      : 'demoThemePicker',
+                    'label'     : 'Theme Picker',
+                    'index'     : {
+                        'name'      : 'index.html',
+                        'label'     : 'index.html',
+                        'fileType'  : 'html',
+                        'outputPath': 'demo-partials/colors/demoThemePicker/index.html'
+                    }
+                }
+            ],
+            'url'       : 'demo/colors'
         },
         {
             'name'      : 'content',
@@ -798,14 +935,7 @@ angular.module('app.components.material-docs')
                         ]
                     },
                     'id'        : 'dividerdemoBasicUsage',
-                    'css'       : [
-                        {
-                            'name'      : 'style.css',
-                            'label'     : 'style.css',
-                            'fileType'  : 'css',
-                            'outputPath': 'demo-partials/divider/demoBasicUsage/style.css'
-                        }
-                    ],
+                    'css'       : [],
                     'html'      : [],
                     'js'        : [
                         {
@@ -1031,8 +1161,8 @@ angular.module('app.components.material-docs')
                 },
                 {
                     'ngModule'  : {
-                        'name'        : 'gridListDemo1',
-                        'module'      : 'gridListDemo1',
+                        'name'        : 'gridListDemo2',
+                        'module'      : 'gridListDemo2',
                         'dependencies': [
                             'ngMaterial'
                         ]
@@ -1218,13 +1348,13 @@ angular.module('app.components.material-docs')
                             'ngMaterial'
                         ]
                     },
-                    'id'        : 'icondemoUsingTemplateCache',
+                    'id'        : 'icondemoUsingTemplateRequest',
                     'css'       : [
                         {
                             'name'      : 'style.css',
                             'label'     : 'style.css',
                             'fileType'  : 'css',
-                            'outputPath': 'demo-partials/icon/demoUsingTemplateCache/style.css'
+                            'outputPath': 'demo-partials/icon/demoUsingTemplateRequest/style.css'
                         }
                     ],
                     'html'      : [],
@@ -1233,17 +1363,17 @@ angular.module('app.components.material-docs')
                             'name'      : 'script.js',
                             'label'     : 'script.js',
                             'fileType'  : 'js',
-                            'outputPath': 'demo-partials/icon/demoUsingTemplateCache/script.js'
+                            'outputPath': 'demo-partials/icon/demoUsingTemplateRequest/script.js'
                         }
                     ],
                     'moduleName': 'material.components.icon',
-                    'name'      : 'demoUsingTemplateCache',
-                    'label'     : 'Using Template Cache',
+                    'name'      : 'demoUsingTemplateRequest',
+                    'label'     : 'Using Template Request',
                     'index'     : {
                         'name'      : 'index.html',
                         'label'     : 'index.html',
                         'fileType'  : 'html',
-                        'outputPath': 'demo-partials/icon/demoUsingTemplateCache/index.html'
+                        'outputPath': 'demo-partials/icon/demoUsingTemplateRequest/index.html'
                     }
                 }
             ],
@@ -1646,6 +1776,137 @@ angular.module('app.components.material-docs')
             'url'       : 'demo/menuBar'
         },
         {
+            'name'      : 'navBar',
+            'moduleName': 'material.components.navBar',
+            'label'     : 'Nav Bar',
+            'demos'     : [
+                {
+                    'ngModule'  : {
+                        'name'        : 'navBarDemoBasicUsage',
+                        'module'      : 'navBarDemoBasicUsage',
+                        'dependencies': [
+                            'ngMaterial'
+                        ]
+                    },
+                    'id'        : 'navBardemoBasicUsage',
+                    'css'       : [],
+                    'html'      : [],
+                    'js'        : [
+                        {
+                            'name'      : 'script.js',
+                            'label'     : 'script.js',
+                            'fileType'  : 'js',
+                            'outputPath': 'demo-partials/navBar/demoBasicUsage/script.js'
+                        }
+                    ],
+                    'moduleName': 'material.components.navBar',
+                    'name'      : 'demoBasicUsage',
+                    'label'     : 'Basic Usage',
+                    'index'     : {
+                        'name'      : 'index.html',
+                        'label'     : 'index.html',
+                        'fileType'  : 'html',
+                        'outputPath': 'demo-partials/navBar/demoBasicUsage/index.html'
+                    }
+                }
+            ],
+            'url'       : 'demo/navBar'
+        },
+        {
+            'name'      : 'panel',
+            'moduleName': 'material.components.panel',
+            'label'     : 'Panel',
+            'demos'     : [
+                {
+                    'ngModule'  : {
+                        'name'        : 'panelDemo',
+                        'module'      : 'panelDemo',
+                        'dependencies': [
+                            'ngMaterial'
+                        ]
+                    },
+                    'id'        : 'paneldemoBasicUsage',
+                    'css'       : [
+                        {
+                            'name'      : 'style.global.css',
+                            'label'     : 'style.global.css',
+                            'fileType'  : 'css',
+                            'outputPath': 'demo-partials/panel/demoBasicUsage/style.global.css'
+                        }
+                    ],
+                    'html'      : [
+                        {
+                            'name'      : 'panel.tmpl.html',
+                            'label'     : 'panel.tmpl.html',
+                            'fileType'  : 'html',
+                            'outputPath': 'demo-partials/panel/demoBasicUsage/panel.tmpl.html'
+                        }
+                    ],
+                    'js'        : [
+                        {
+                            'name'      : 'script.js',
+                            'label'     : 'script.js',
+                            'fileType'  : 'js',
+                            'outputPath': 'demo-partials/panel/demoBasicUsage/script.js'
+                        }
+                    ],
+                    'moduleName': 'material.components.panel',
+                    'name'      : 'demoBasicUsage',
+                    'label'     : 'Basic Usage',
+                    'index'     : {
+                        'name'      : 'index.html',
+                        'label'     : 'index.html',
+                        'fileType'  : 'html',
+                        'outputPath': 'demo-partials/panel/demoBasicUsage/index.html'
+                    }
+                },
+                {
+                    'ngModule'  : {
+                        'name'        : 'panelAnimationsDemo',
+                        'module'      : 'panelAnimationsDemo',
+                        'dependencies': [
+                            'ngMaterial'
+                        ]
+                    },
+                    'id'        : 'paneldemoPanelAnimations',
+                    'css'       : [
+                        {
+                            'name'      : 'style.global.css',
+                            'label'     : 'style.global.css',
+                            'fileType'  : 'css',
+                            'outputPath': 'demo-partials/panel/demoPanelAnimations/style.global.css'
+                        }
+                    ],
+                    'html'      : [
+                        {
+                            'name'      : 'panel.tmpl.html',
+                            'label'     : 'panel.tmpl.html',
+                            'fileType'  : 'html',
+                            'outputPath': 'demo-partials/panel/demoPanelAnimations/panel.tmpl.html'
+                        }
+                    ],
+                    'js'        : [
+                        {
+                            'name'      : 'script.js',
+                            'label'     : 'script.js',
+                            'fileType'  : 'js',
+                            'outputPath': 'demo-partials/panel/demoPanelAnimations/script.js'
+                        }
+                    ],
+                    'moduleName': 'material.components.panel',
+                    'name'      : 'demoPanelAnimations',
+                    'label'     : 'Panel Animations',
+                    'index'     : {
+                        'name'      : 'index.html',
+                        'label'     : 'index.html',
+                        'fileType'  : 'html',
+                        'outputPath': 'demo-partials/panel/demoPanelAnimations/index.html'
+                    }
+                }
+            ],
+            'url'       : 'demo/panel'
+        },
+        {
             'name'      : 'progressCircular',
             'moduleName': 'material.components.progressCircular',
             'label'     : 'Progress Circular',
@@ -1914,6 +2175,71 @@ angular.module('app.components.material-docs')
                 },
                 {
                     'ngModule'  : {
+                        'name'        : 'selectDemoSelectHeader',
+                        'module'      : 'selectDemoSelectHeader',
+                        'dependencies': [
+                            'ngMaterial'
+                        ]
+                    },
+                    'id'        : 'selectdemoSelectHeader',
+                    'css'       : [
+                        {
+                            'name'      : 'style.css',
+                            'label'     : 'style.css',
+                            'fileType'  : 'css',
+                            'outputPath': 'demo-partials/select/demoSelectHeader/style.css'
+                        }
+                    ],
+                    'html'      : [],
+                    'js'        : [
+                        {
+                            'name'      : 'script.js',
+                            'label'     : 'script.js',
+                            'fileType'  : 'js',
+                            'outputPath': 'demo-partials/select/demoSelectHeader/script.js'
+                        }
+                    ],
+                    'moduleName': 'material.components.select',
+                    'name'      : 'demoSelectHeader',
+                    'label'     : 'Select Header',
+                    'index'     : {
+                        'name'      : 'index.html',
+                        'label'     : 'index.html',
+                        'fileType'  : 'html',
+                        'outputPath': 'demo-partials/select/demoSelectHeader/index.html'
+                    }
+                },
+                {
+                    'ngModule'  : {
+                        'name'        : 'selectDemoSelectedText',
+                        'module'      : 'selectDemoSelectedText',
+                        'dependencies': [
+                            'ngMaterial'
+                        ]
+                    },
+                    'id'        : 'selectdemoSelectedText',
+                    'css'       : [],
+                    'html'      : [],
+                    'js'        : [
+                        {
+                            'name'      : 'script.js',
+                            'label'     : 'script.js',
+                            'fileType'  : 'js',
+                            'outputPath': 'demo-partials/select/demoSelectedText/script.js'
+                        }
+                    ],
+                    'moduleName': 'material.components.select',
+                    'name'      : 'demoSelectedText',
+                    'label'     : 'Selected Text',
+                    'index'     : {
+                        'name'      : 'index.html',
+                        'label'     : 'index.html',
+                        'fileType'  : 'html',
+                        'outputPath': 'demo-partials/select/demoSelectedText/index.html'
+                    }
+                },
+                {
+                    'ngModule'  : {
                         'name'        : 'selectDemoValidation',
                         'module'      : 'selectDemoValidation',
                         'dependencies': [
@@ -1996,14 +2322,7 @@ angular.module('app.components.material-docs')
                         ]
                     },
                     'id'        : 'sliderdemoBasicUsage',
-                    'css'       : [
-                        {
-                            'name'      : 'style.css',
-                            'label'     : 'style.css',
-                            'fileType'  : 'css',
-                            'outputPath': 'demo-partials/slider/demoBasicUsage/style.css'
-                        }
-                    ],
+                    'css'       : [],
                     'html'      : [],
                     'js'        : [
                         {
@@ -2021,6 +2340,35 @@ angular.module('app.components.material-docs')
                         'label'     : 'index.html',
                         'fileType'  : 'html',
                         'outputPath': 'demo-partials/slider/demoBasicUsage/index.html'
+                    }
+                },
+                {
+                    'ngModule'  : {
+                        'name'        : 'sliderDemo2',
+                        'module'      : 'sliderDemo2',
+                        'dependencies': [
+                            'ngMaterial'
+                        ]
+                    },
+                    'id'        : 'sliderdemoVertical',
+                    'css'       : [],
+                    'html'      : [],
+                    'js'        : [
+                        {
+                            'name'      : 'script.js',
+                            'label'     : 'script.js',
+                            'fileType'  : 'js',
+                            'outputPath': 'demo-partials/slider/demoVertical/script.js'
+                        }
+                    ],
+                    'moduleName': 'material.components.slider',
+                    'name'      : 'demoVertical',
+                    'label'     : 'Vertical',
+                    'index'     : {
+                        'name'      : 'index.html',
+                        'label'     : 'index.html',
+                        'fileType'  : 'html',
+                        'outputPath': 'demo-partials/slider/demoVertical/index.html'
                     }
                 }
             ],
@@ -2317,14 +2665,7 @@ angular.module('app.components.material-docs')
                     },
                     'id'        : 'toastdemoBasicUsage',
                     'css'       : [],
-                    'html'      : [
-                        {
-                            'name'      : 'toast-template.html',
-                            'label'     : 'toast-template.html',
-                            'fileType'  : 'html',
-                            'outputPath': 'demo-partials/toast/demoBasicUsage/toast-template.html'
-                        }
-                    ],
+                    'html'      : [],
                     'js'        : [
                         {
                             'name'      : 'script.js',
@@ -2341,6 +2682,42 @@ angular.module('app.components.material-docs')
                         'label'     : 'index.html',
                         'fileType'  : 'html',
                         'outputPath': 'demo-partials/toast/demoBasicUsage/index.html'
+                    }
+                },
+                {
+                    'ngModule'  : {
+                        'name'        : 'toastDemo2',
+                        'module'      : 'toastDemo2',
+                        'dependencies': [
+                            'ngMaterial'
+                        ]
+                    },
+                    'id'        : 'toastdemoCustomUsage',
+                    'css'       : [],
+                    'html'      : [
+                        {
+                            'name'      : 'toast-template.html',
+                            'label'     : 'toast-template.html',
+                            'fileType'  : 'html',
+                            'outputPath': 'demo-partials/toast/demoCustomUsage/toast-template.html'
+                        }
+                    ],
+                    'js'        : [
+                        {
+                            'name'      : 'script.js',
+                            'label'     : 'script.js',
+                            'fileType'  : 'js',
+                            'outputPath': 'demo-partials/toast/demoCustomUsage/script.js'
+                        }
+                    ],
+                    'moduleName': 'material.components.toast',
+                    'name'      : 'demoCustomUsage',
+                    'label'     : 'Custom Usage',
+                    'index'     : {
+                        'name'      : 'index.html',
+                        'label'     : 'index.html',
+                        'fileType'  : 'html',
+                        'outputPath': 'demo-partials/toast/demoCustomUsage/index.html'
                     }
                 }
             ],

@@ -10,7 +10,7 @@
     function LayoutTemplateController($state)
     {
         var vm = this;
-        vm.materialVersion = '1.0.5';
+        vm.materialVersion = '1.0.8';
         vm.component = $state.current.data;
     }
 
