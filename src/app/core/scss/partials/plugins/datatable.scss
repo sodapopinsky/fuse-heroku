@@ -835,8 +835,9 @@ table.dataTable {
  */
 .dataTables_wrapper {
     display: flex;
-    flex: 100;
+    flex: 1 1 0;
     flex-direction: column;
+    min-height: 0;
 
     .top {
         padding: 16px 24px;
@@ -844,7 +845,7 @@ table.dataTable {
 
     .bottom {
         display: flex;
-        flex: 1 1 auto;
+        min-height: 64px;
         justify-content: space-between;
         padding: 16px 8px;
         border-top: 1px solid rgba(0, 0, 0, 0.12);
@@ -970,9 +971,10 @@ table.dataTable {
 
     .dataTables_scroll {
         display: flex;
-        flex: 1;
+        flex: 1 1 0;
         flex-direction: column;
         clear: both;
+        min-height: 0;
 
         /* Clear the table border & shadows */
         table.dataTable {
