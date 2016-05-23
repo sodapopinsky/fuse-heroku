@@ -31,6 +31,7 @@
             'app.gantt-chart',
             'app.todo',
             'app.contacts',
+            'app.notes',
 
             // Pages
             'app.pages',
