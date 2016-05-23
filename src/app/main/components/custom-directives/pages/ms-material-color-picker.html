@@ -47,14 +47,37 @@
             </div>
 
             <span class="h2 pt-16">Example:</span>
+            <p>
+                Depending on <b>ms-model-type</b> value, color picker will either update the model with the appropriate
+                class name or the object:
+            </p>
+
             <hljs language="html" class="source-code">
                 <ms-material-color-picker ms-model-type="obj" ng-model="vm.color"></ms-material-color-picker>
             </hljs>
 
             <p>
-                Depending on <b>ms-model-type</b> value, color picker will either update the model with the appropriate
-                class name or the object.
+                You can also use transclusion to trigger the picker. Like in the below example, you can add a button or
+                any other element to trigger the picker:
             </p>
+
+            <hljs language="html" class="source-code">
+                <ms-material-color-picker ms-model-type="obj" ng-model="vm.color">
+                    <md-button>Select a Color</md-button>
+                </ms-material-color-picker>
+            </hljs>
+
+            <p>
+                <b>$selectedColor</b> variable can be used within the color picker element to access the properties of
+                the selected color:
+            </p>
+
+            <hljs language="html" class="source-code">
+                <ms-material-color-picker ms-model-type="obj" ng-model="vm.color">
+                    <md-button class="{{$selectedColor}}">Select a Color</md-button>
+                </ms-material-color-picker>
+            </hljs>
+
         </div>
 
     </div>

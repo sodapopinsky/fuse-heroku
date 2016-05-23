@@ -105,6 +105,15 @@
                     }
                 }
             })
+            .state('app.components_custom-directives_ms-shortcuts', {
+                url  : '/ms-shortcuts',
+                views: {
+                    'content@app': {
+                        templateUrl: 'app/main/components/custom-directives/pages/ms-shortcuts.html',
+                        controller : 'CustomDirectivesController as vm'
+                    }
+                }
+            })
             .state('app.components_custom-directives_ms-sidenav-helper', {
                 url  : '/ms-sidenav-helper',
                 views: {
@@ -218,34 +227,40 @@
             weight: 10
         });
 
+        msNavigationServiceProvider.saveItem('components.custom-directives.ms-shortcuts', {
+            title : 'ms-shortcuts',
+            state : 'app.components_custom-directives_ms-shortcuts',
+            weight: 11
+        });
+
         msNavigationServiceProvider.saveItem('components.custom-directives.ms-sidenav-helper', {
             title : 'ms-sidenav-helper',
             state : 'app.components_custom-directives_ms-sidenav-helper',
-            weight: 11
+            weight: 12
         });
 
         msNavigationServiceProvider.saveItem('components.custom-directives.ms-splash-screen', {
             title : 'ms-splash-screen',
             state : 'app.components_custom-directives_ms-splash-screen',
-            weight: 12
+            weight: 13
         });
 
         msNavigationServiceProvider.saveItem('components.custom-directives.ms-stepper', {
             title : 'ms-stepper',
             state : 'app.components_custom-directives_ms-stepper',
-            weight: 13
+            weight: 14
         });
 
         msNavigationServiceProvider.saveItem('components.custom-directives.ms-timeline', {
             title : 'ms-timeline',
             state : 'app.components_custom-directives_ms-timeline',
-            weight: 14
+            weight: 15
         });
 
         msNavigationServiceProvider.saveItem('components.custom-directives.ms-widget', {
             title : 'ms-widget',
             state : 'app.components_custom-directives_ms-widget',
-            weight: 15
+            weight: 16
         });
     }
 })();
