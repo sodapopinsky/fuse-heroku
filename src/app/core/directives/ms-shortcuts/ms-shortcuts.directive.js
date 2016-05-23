@@ -237,7 +237,7 @@
                     }
                 ];
 
-                vm.saveShortcuts();
+                $cookies.put('FUSE.shortcuts', angular.toJson(shortcuts));
             }
 
             // Resolve the promise
