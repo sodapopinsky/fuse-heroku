@@ -21,9 +21,6 @@
         "NO_NOTES_WITH_REMINDERS":"No notes with reminders",
         "NO_ARCHIVED_NOTES":"No archived notes",
         "NO_NOTES_WITH_THIS_LABEL":"No notes with this label",
-        "":"",
-        "":"",
-        "":"",
-        "":""
+        "NO_RESULTS":"No results..."
     }
 }

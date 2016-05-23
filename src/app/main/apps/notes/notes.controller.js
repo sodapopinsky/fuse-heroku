@@ -14,6 +14,7 @@
         // Data
         vm.notes = NotesService.data;
         vm.labels = LabelsService.data;
+        vm.search = '';
         vm.searchToolbar = false;
         vm.filters = {
             archive: false
