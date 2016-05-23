@@ -124,15 +124,6 @@
                 return;
             }
 
-            if ( isArray )
-            {
-                // Add displayIndex to the results
-                for ( var i = 0; i < results.length; i++ )
-                {
-                    results[i].displayIndex = i;
-                }
-            }
-
             // Reset the selected result
             vm.selectedResultIndex = 0;
 
@@ -245,6 +236,11 @@
 
                 // Down Arrow
                 case 40:
+
+                    if ( !vm.results )
+                    {
+                        return;
+                    }
 
                     // Increase the selected result index
                     if ( vm.selectedResultIndex + 1 < vm.results.length )

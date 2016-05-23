@@ -21,12 +21,16 @@
             <md-icon class="s18" md-font-icon="icon-backburger"></md-icon>
         </md-button>
 
-        <md-progress-circular id="toolbar-progress" ng-if="$root.loadingProgress" class="md-accent"
-                              md-mode="indeterminate" md-diameter="64">
-        </md-progress-circular>
+        <ms-shortcuts></ms-shortcuts>
+
+        <div class="toolbar-separator"></div>
     </div>
 
     <div layout="row" layout-align="start center">
+        <md-progress-circular id="toolbar-progress" ng-if="$root.loadingProgress" class="md-accent"
+                              md-mode="indeterminate" md-diameter="64">
+        </md-progress-circular>
+
         <md-menu-bar id="user-menu">
             <md-menu md-position-mode="left bottom">
                 <md-button class="user-button" ng-click="$mdOpenMenu()"
@@ -40,9 +44,9 @@
                                      class="icon status s16">
                             </md-icon>
                         </div>
-                        <span class="username" hide-xs>John Doe</span>
+                        <span class="username" hide-sm>John Doe</span>
                         <md-icon md-font-icon="icon-chevron-down"
-                                 class="icon s16" hide-xs></md-icon>
+                                 class="icon s16" hide-sm></md-icon>
                     </div>
                 </md-button>
 
