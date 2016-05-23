@@ -103,8 +103,6 @@
          */
         function fileSuccess(file, message)
         {
-            console.log(file);
-
             // Iterate through the file list, find the one we
             // are added as a temp and replace its data
             // Normally you would parse the message and extract
@@ -137,7 +135,6 @@
                     {
                         item.size = parseFloat(file.file.size / (1024 * 1024 * 1024)).toFixed(2) + ' Gb';
                     }
-
                 }
             });
         }
