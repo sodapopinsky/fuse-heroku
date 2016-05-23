@@ -1,4 +1,5 @@
 #contacts {
+    position: relative;
 
     > .header {
         height: 76px;
@@ -75,7 +76,11 @@
     }
 
     > .content {
-        position: relative;
+        position: absolute;
+        top: 76px;
+        bottom: 0;
+        right: 0;
+        left: 0;
 
         > md-sidenav {
             box-shadow: $whiteframe-shadow-1dp;

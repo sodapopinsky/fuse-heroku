@@ -64,8 +64,8 @@
         {
             var isChild = MsNewNote.element.has(event.target).length > 0;
             var isSelf = MsNewNote.element[0] === event.target;
-            var isMenu = event.target.closest('md-menu-content');
-            var isCalendar = event.target.closest('md-calendar') || event.target.closest('.md-datepicker-calendar-pane') || angular.element(event.target).hasClass('md-scroll-mask');
+            var isMenu = angular.element(event.target).closest('md-menu-content').length > 0;
+            var isCalendar = angular.element(event.target).closest('md-calendar').length > 0 || angular.element(event.target).closest('.md-datepicker-calendar-pane').length > 0 || angular.element(event.target).hasClass('md-scroll-mask');
 
             var isInside = isChild || isSelf || isMenu || isCalendar;
 

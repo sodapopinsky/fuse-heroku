@@ -43,9 +43,7 @@
         <!-- / NOTE LABELS -->
 
         <!-- NOTE REMINDER -->
-        <div ng-if="vm.noteListType ==='reminders' && MsNoteItem.note.reminder" class="reminder secondary-text"
-             layout="row"
-             layout-align="end center">
+        <div ng-if="vm.noteListType ==='reminders' && MsNoteItem.note.reminder" class="reminder secondary-text text-right">
             <md-icon md-font-icon="icon-bell" class="s16 mr-8"></md-icon>
             <span>
                 {{MsNoteItem.note.reminder | altDate}}

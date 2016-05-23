@@ -35,9 +35,9 @@
                           translate="NOTES.ARCHIVE">Archive</span>
                     <span class="title" ng-if="vm.noteListType.name">{{vm.noteListType.name}}</span>
 
-                    <small ng-if="filteredNotes.length" class="pl-8 secondary-text notes-count">
+                    <span ng-if="filteredNotes.length" class="pl-8 white-text secondary-text notes-count">
                         ({{filteredNotes.length}})
-                    </small>
+                    </span>
 
                 </div>
                 <!-- / MAIN TITLE-->
