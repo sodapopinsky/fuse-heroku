@@ -25,10 +25,10 @@
         vm.shortcuts = [];
 
         vm.sortableOptions = {
-            ghostClass: 'ghost',
+            ghostClass   : 'ghost',
             forceFallback: true,
             fallbackClass: 'dragging',
-            onSort: function ()
+            onSort       : function ()
             {
                 vm.saveShortcuts();
             }
@@ -190,12 +190,57 @@
             var deferred = $q.defer();
 
             // For the demo purposes, we will
-            // keep load the shortcuts from the
-            // cookies.
+            // load the shortcuts from the cookies.
             // But here you can make an API call
             // to load them from the DB.
-            var shortcuts = angular.fromJson($cookies.get('FUSE.shortcuts')) || [];
-            
+            var shortcuts = angular.fromJson($cookies.get('FUSE.shortcuts'));
+
+            // No cookie available. Generate one
+            // for the demo purposes...
+            if ( angular.isUndefined(shortcuts) )
+            {
+                shortcuts = [
+                    {
+                        'title'      : 'Chat',
+                        'icon'       : 'icon-hangouts',
+                        'state'      : 'app.chat',
+                        'badge'      : {
+                            'content': 13,
+                            'color'  : '#09d261'
+                        },
+                        'weight'     : 5,
+                        'children'   : [],
+                        '_id'        : 'chat',
+                        '_path'      : 'apps.chat',
+                        'uisref'     : 'app.chat',
+                        'hasShortcut': true
+                    }, {
+                        'title'      : 'Contacts',
+                        'icon'       : 'icon-account-box',
+                        'state'      : 'app.contacts',
+                        'weight'     : 10,
+                        'children'   : [],
+                        '_id'        : 'contacts',
+                        '_path'      : 'apps.contacts',
+                        'uisref'     : 'app.contacts',
+                        'hasShortcut': true
+                    }, {
+                        'title'      : 'Notes',
+                        'icon'       : 'icon-lightbulb',
+                        'state'      : 'app.notes',
+                        'weight'     : 11,
+                        'children'   : [],
+                        '_id'        : 'notes',
+                        '_path'      : 'apps.notes',
+                        'uisref'     : 'app.notes',
+                        'hasShortcut': true
+                    }
+                ];
+
+                vm.saveShortcuts();
+            }
+
+            // Resolve the promise
             deferred.resolve(shortcuts);
 
             return deferred.promise;
