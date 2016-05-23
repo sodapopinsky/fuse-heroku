@@ -233,10 +233,12 @@
                 // use them...
                 if ( item.stateParams )
                 {
-                    $state.go(item.uisref, item.stateParams);
+                    $state.go(item.state, item.stateParams);
                 }
-
-                $state.go(item.uisref);
+                else
+                {
+                    $state.go(item.state);
+                }
             }
         }
     }
