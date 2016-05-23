@@ -143,6 +143,10 @@
          */
         function save()
         {
+            if ( isNotValid() )
+            {
+                return;
+            }
             NotesService.updateNote(MsNoteForm.note);
             $mdDialog.hide();
         }
