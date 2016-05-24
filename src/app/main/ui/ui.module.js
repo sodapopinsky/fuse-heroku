@@ -5,6 +5,7 @@
     angular
         .module('app.ui', [
             'app.ui.forms',
+            'app.ui.helper-classes',
             'app.ui.icons',
             'app.ui.material-colors',
             'app.ui.page-layouts.blank',
@@ -17,8 +18,10 @@
             'app.ui.page-layouts.simple.fullwidth',
             'app.ui.page-layouts.simple.left-sidenav',
             'app.ui.page-layouts.simple.left-sidenav-ii',
+            'app.ui.page-layouts.simple.left-sidenav-iii',
             'app.ui.page-layouts.simple.right-sidenav',
             'app.ui.page-layouts.simple.right-sidenav-ii',
+            'app.ui.page-layouts.simple.right-sidenav-iii',
             'app.ui.page-layouts.simple.tabbed',
             'app.ui.theme-colors',
             'app.ui.typography'
@@ -51,6 +54,12 @@
             title: 'Typography',
             icon : 'icon-format-size',
             state: 'app.ui_typography'
+        });
+
+        msNavigationServiceProvider.saveItem('ui.helper-classes', {
+            title: 'Helper Classes',
+            icon : 'icon-help-circle',
+            state: 'app.ui_helper-classes'
         });
 
         msNavigationServiceProvider.saveItem('ui.theme-colors', {
@@ -124,6 +133,11 @@
             state: 'app.ui_page-layouts_simple_left-sidenav-ii'
         });
 
+        msNavigationServiceProvider.saveItem('ui.page-layouts.simple.left-sidenav-iii', {
+            title: 'Left Sidenav (III)',
+            state: 'app.ui_page-layouts_simple_left-sidenav-iii'
+        });
+
         msNavigationServiceProvider.saveItem('ui.page-layouts.simple.right-sidenav', {
             title: 'Right Sidenav (I)',
             state: 'app.ui_page-layouts_simple_right-sidenav'
@@ -132,6 +146,11 @@
         msNavigationServiceProvider.saveItem('ui.page-layouts.simple.right-sidenav-ii', {
             title: 'Right Sidenav (II)',
             state: 'app.ui_page-layouts_simple_right-sidenav-ii'
+        });
+
+        msNavigationServiceProvider.saveItem('ui.page-layouts.simple.right-sidenav-iii', {
+            title: 'Right Sidenav (III)',
+            state: 'app.ui_page-layouts_simple_right-sidenav-iii'
         });
 
         msNavigationServiceProvider.saveItem('ui.page-layouts.simple.tabbed', {

@@ -45,9 +45,9 @@
             state : 'app.to-do',
             badge : {
                 content: 3,
-                color  : '#4CAF50'
+                color  : '#FF6F00'
             },
-            weight: 7
+            weight: 9
         });
     }
 

@@ -11,13 +11,7 @@
     {
         // Enable debug logging
         $logProvider.debugEnabled(true);
-
-        // toastr configuration
-        toastr.options.timeOut = 3000;
-        toastr.options.positionClass = 'toast-top-right';
-        toastr.options.preventDuplicates = true;
-        toastr.options.progressBar = true;
-
+        
         // uiGmapgoogle-maps configuration
         uiGmapGoogleMapApiProvider.configure({
             //    key: 'your api key',
@@ -59,12 +53,26 @@
         $provide.decorator('taTools', [
             '$delegate', function (taTools)
             {
+                taTools.quote.iconclass = 'icon-format-quote';
                 taTools.bold.iconclass = 'icon-format-bold';
                 taTools.italics.iconclass = 'icon-format-italic';
                 taTools.underline.iconclass = 'icon-format-underline';
+                taTools.strikeThrough.iconclass = 'icon-format-strikethrough';
                 taTools.ul.iconclass = 'icon-format-list-bulleted';
                 taTools.ol.iconclass = 'icon-format-list-numbers';
-                taTools.quote.iconclass = 'icon-format-quote';
+                taTools.redo.iconclass = 'icon-redo';
+                taTools.undo.iconclass = 'icon-undo';
+                taTools.clear.iconclass = 'icon-close-circle-outline';
+                taTools.justifyLeft.iconclass = 'icon-format-align-left';
+                taTools.justifyCenter.iconclass = 'icon-format-align-center';
+                taTools.justifyRight.iconclass = 'icon-format-align-right';
+                taTools.justifyFull.iconclass = 'icon-format-align-justify';
+                taTools.indent.iconclass = 'icon-format-indent-increase';
+                taTools.outdent.iconclass = 'icon-format-indent-decrease';
+                taTools.html.iconclass = 'icon-code-tags';
+                taTools.insertImage.iconclass = 'icon-file-image-box';
+                taTools.insertLink.iconclass = 'icon-link';
+                taTools.insertVideo.iconclass = 'icon-filmstrip';
 
                 return taTools;
             }

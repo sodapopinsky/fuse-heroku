@@ -38,7 +38,7 @@
             title : 'File Manager',
             icon  : 'icon-folder',
             state : 'app.file-manager',
-            weight: 4
+            weight: 6
         });
     }
 

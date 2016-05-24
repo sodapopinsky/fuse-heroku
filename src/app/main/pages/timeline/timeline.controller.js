@@ -13,6 +13,9 @@
 
         // Data
         vm.timeline = Timeline.data;
+        vm.timelineOptions = {
+            scrollEl: '#content'
+        };
         vm.currentPage = 1;
         vm.totalPages = 3;
         vm.pauseScroll = false;

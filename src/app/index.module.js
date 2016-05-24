@@ -23,11 +23,15 @@
             // Apps
             'app.dashboards',
             'app.calendar',
+            'app.e-commerce',
             'app.mail',
+            'app.chat',
             'app.file-manager',
             'app.scrumboard',
             'app.gantt-chart',
             'app.todo',
+            'app.contacts',
+            'app.notes',
 
             // Pages
             'app.pages',

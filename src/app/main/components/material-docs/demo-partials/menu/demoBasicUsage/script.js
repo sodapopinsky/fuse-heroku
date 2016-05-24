@@ -23,7 +23,7 @@ angular
         $mdDialog.alert()
           .targetEvent(originatorEv)
           .clickOutsideToClose(true)
-          .parent('body')
+          .parent(angular.element(document.body))
           .title('Suddenly, a redial')
           .textContent('You just called a friend; who told you the most amazing story. Have a cookie!')
           .ok('That was easy')
