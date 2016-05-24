@@ -41,7 +41,6 @@
             pagingType: 'simple',
             lengthMenu: [10, 20, 30, 50, 100],
             pageLength: 20,
-            scrollY   : 'auto',
             responsive: true
         };
 
