@@ -1082,11 +1082,23 @@ table.dataTable {
     }
 }
 
+/* Fullpage datatable */
 .fullpage-datatable {
 
     .dataTables_wrapper {
         height: 100%;
         max-height: 100%;
+    }
+}
+
+/* Fullpage datatable IE11 Fix */
+.explorer-11 {
+
+    .fullpage-datatable {
+
+        .dataTables_scroll {
+            flex: 1;
+        }
     }
 }
 
