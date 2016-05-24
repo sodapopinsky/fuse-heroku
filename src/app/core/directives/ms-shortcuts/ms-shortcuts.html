@@ -37,7 +37,7 @@
                            ng-keydown="MsShortcuts.handleKeydown($event)">
                 </div>
 
-                <div class="results" ng-if="MsShortcuts.results">
+                <div class="results" ng-if="MsShortcuts.results" ms-scroll>
                     <div class="no-results" ng-if="MsShortcuts.results.length === 0">No Results!</div>
 
                     <div class="result" ng-repeat="result in MsShortcuts.results"
