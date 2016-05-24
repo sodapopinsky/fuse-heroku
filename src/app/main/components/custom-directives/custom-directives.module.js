@@ -42,6 +42,15 @@
                     }
                 }
             })
+            .state('app.components_custom-directives_ms-masonry', {
+                url  : '/ms-masonry',
+                views: {
+                    'content@app': {
+                        templateUrl: 'app/main/components/custom-directives/pages/ms-masonry.html',
+                        controller : 'CustomDirectivesController as vm'
+                    }
+                }
+            })
             .state('app.components_custom-directives_ms-material-color-picker', {
                 url  : '/ms-material-color-picker',
                 views: {
@@ -185,82 +194,88 @@
             weight: 3
         });
 
+        msNavigationServiceProvider.saveItem('components.custom-directives.ms-masonry', {
+            title : 'ms-masonry',
+            state : 'app.components_custom-directives_ms-masonry',
+            weight: 4
+        });
+
         msNavigationServiceProvider.saveItem('components.custom-directives.ms-material-color-picker', {
             title : 'ms-material-color-picker',
             state : 'app.components_custom-directives_ms-material-color-picker',
-            weight: 4
+            weight: 5
         });
 
         msNavigationServiceProvider.saveItem('components.custom-directives.ms-nav', {
             title : 'ms-nav',
             state : 'app.components_custom-directives_ms-nav',
-            weight: 5
+            weight: 6
         });
 
         msNavigationServiceProvider.saveItem('components.custom-directives.ms-navigation', {
             title : 'ms-navigation',
             state : 'app.components_custom-directives_ms-navigation',
-            weight: 6
+            weight: 7
         });
 
         msNavigationServiceProvider.saveItem('components.custom-directives.ms-random-class', {
             title : 'ms-random-class',
             state : 'app.components_custom-directives_ms-random-class',
-            weight: 7
+            weight: 8
         });
 
         msNavigationServiceProvider.saveItem('components.custom-directives.ms-responsive-table', {
             title : 'ms-responsive-table',
             state : 'app.components_custom-directives_ms-responsive-table',
-            weight: 8
+            weight: 9
         });
 
         msNavigationServiceProvider.saveItem('components.custom-directives.ms-scroll', {
             title : 'ms-scroll',
             state : 'app.components_custom-directives_ms-scroll',
-            weight: 9
+            weight: 10
         });
 
         msNavigationServiceProvider.saveItem('components.custom-directives.ms-search-bar', {
             title : 'ms-search-bar',
             state : 'app.components_custom-directives_ms-search-bar',
-            weight: 10
+            weight: 11
         });
 
         msNavigationServiceProvider.saveItem('components.custom-directives.ms-shortcuts', {
             title : 'ms-shortcuts',
             state : 'app.components_custom-directives_ms-shortcuts',
-            weight: 11
+            weight: 12
         });
 
         msNavigationServiceProvider.saveItem('components.custom-directives.ms-sidenav-helper', {
             title : 'ms-sidenav-helper',
             state : 'app.components_custom-directives_ms-sidenav-helper',
-            weight: 12
+            weight: 13
         });
 
         msNavigationServiceProvider.saveItem('components.custom-directives.ms-splash-screen', {
             title : 'ms-splash-screen',
             state : 'app.components_custom-directives_ms-splash-screen',
-            weight: 13
+            weight: 14
         });
 
         msNavigationServiceProvider.saveItem('components.custom-directives.ms-stepper', {
             title : 'ms-stepper',
             state : 'app.components_custom-directives_ms-stepper',
-            weight: 14
+            weight: 15
         });
 
         msNavigationServiceProvider.saveItem('components.custom-directives.ms-timeline', {
             title : 'ms-timeline',
             state : 'app.components_custom-directives_ms-timeline',
-            weight: 15
+            weight: 16
         });
 
         msNavigationServiceProvider.saveItem('components.custom-directives.ms-widget', {
             title : 'ms-widget',
             state : 'app.components_custom-directives_ms-widget',
-            weight: 16
+            weight: 17
         });
     }
 })();
