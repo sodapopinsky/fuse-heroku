@@ -7,7 +7,7 @@
         .factory('NotesService', NotesService);
 
     /** @ngInject */
-    function NotesService()
+    function NotesService(msApi, $q)
     {
         var service = {
             data      : [],
@@ -62,7 +62,29 @@
          */
         function getData()
         {
-            return service.data;
+            // Create a new deferred object
+            var deferred = $q.defer();
+
+            msApi.request('notes.notes@get', {},
+                // SUCCESS
+                function (response)
+                {
+                    // Attach the data
+                    service.data = response.data;
+
+                    // Resolve the promise
+                    deferred.resolve(response);
+                },
+
+                // ERROR
+                function (response)
+                {
+                    // Reject the promise
+                    deferred.reject(response);
+                }
+            );
+
+            return deferred.promise;
         }
 
         return service;

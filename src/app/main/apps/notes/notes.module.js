@@ -18,21 +18,13 @@
                 }
             },
             resolve: {
-                Notes : function (msApi, NotesService)
+                Notes : function (NotesService)
                 {
-                    msApi.resolve('notes.notes@get').then(function (response)
-                    {
-                        NotesService.data = response.data;
-                    });
-                    return NotesService.data;
+                    return NotesService.getData();
                 },
-                Labels: function (msApi, LabelsService)
+                Labels: function (LabelsService)
                 {
-                    msApi.resolve('notes.labels@get').then(function (response)
-                    {
-                        LabelsService.data = response.data;
-                    });
-                    return LabelsService.data;
+                    return LabelsService.getData();
                 }
             }
         });

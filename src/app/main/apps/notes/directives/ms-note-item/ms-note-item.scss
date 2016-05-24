@@ -39,8 +39,11 @@
                         md-description {
                             display: block;
                             padding: 8px 16px;
-                            white-space: pre-wrap;
-                            word-wrap: break-word;
+
+                            > span {
+                                white-space: pre-wrap;
+                                word-wrap: break-word;
+                            }
 
                             &[font-size='1'] {
                                 font-size: 14px;
