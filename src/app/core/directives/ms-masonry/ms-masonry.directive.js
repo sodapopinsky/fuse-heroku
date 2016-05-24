@@ -9,7 +9,7 @@
         .directive('msMasonryItem', msMasonryItem);
 
     /** @ngInject */
-    function msMasonryController($scope, $window, $animate, $q, $animateCss, $mdMedia, $timeout)
+    function msMasonryController($scope, $window, $mdMedia, $timeout)
     {
         var vm = this,
             defaultOpts = {
