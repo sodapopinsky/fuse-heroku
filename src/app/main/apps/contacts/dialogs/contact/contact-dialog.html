@@ -7,7 +7,7 @@
         <md-toolbar class="md-accent md-tall" layout="column">
 
             <!-- TOOLBAR TOP -->
-            <div class="md-toolbar-tools md-toolbar-tools-top" layout="row" layout-align="space-between">
+            <div class="md-toolbar-tools md-toolbar-tools-top" layout="row" layout-align="space-between center">
                 <span class="title">{{vm.title}}</span>
                 <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" translate
                            translate-attr-aria-label="CONTACTS.CLOSE_DIALOG">
@@ -18,16 +18,11 @@
 
             <!-- TOOLBAR MIDDLE -->
             <div class="md-toolbar-tools md-toolbar-tools-middle" flex layout="column" layout-align="center center">
-
                 <div layout="column" layout-align="center center">
-
                     <img ng-src="{{vm.contact.avatar}}" class="md-avatar avatar contact-avatar huge"
                          alt="{{vm.contact.name}}"/>
-
                     <div class="contact-name">{{vm.contact.name}}</div>
-
                 </div>
-
             </div>
             <!-- / TOOLBAR MIDDLE -->
 
