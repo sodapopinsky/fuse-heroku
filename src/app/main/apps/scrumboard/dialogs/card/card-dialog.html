@@ -522,7 +522,10 @@
                 <div class="checklist">
                     <div class="section-header" layout="row" layout-align="start center">
                         <i class="icon-checkbox-marked s18"></i>
-                        <span flex class="section-title" editable-text="checklist.name">{{checklist.name}}</span>
+                        <span flex class="section-title" ng-hide="editChecklistForm.$visible">{{checklist.name}}</span>
+
+                        <span flex class="section-title" editable-text="checklist.name" ng-show="editChecklistForm.$visible"
+                              e-form="editChecklistForm"></span>
 
                         <md-menu md-position-mode="target-right target" class="options">
                             <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)" aria-label="options"
@@ -530,14 +533,21 @@
                                 <md-icon md-menu-origin md-font-icon="icon-dots-vertical"></md-icon>
                             </md-button>
 
-                            <md-menu-content class="options-menu-content" width="4">
-                                <md-menu-item>
-                                    <md-button ng-click="vm.removeChecklist(checklist)" aria-label="Remove Checklist"
-                                               translate translate-attr-aria-label="SB.REMOVE_CHECKLIST">
-                                        <md-icon md-font-icon="icon-delete"></md-icon>
-                                        <span translate="SB.REMOVE_CHECKLIST">Remove Checklist</span>
-                                    </md-button>
-                                </md-menu-item>
+                            <md-menu-content class="options-menu-content">
+                                    <md-menu-item>
+                                        <md-button ng-click="editChecklistForm.$show()" aria-label="Edit"
+                                                   translate translate-attr-aria-label="SB.EDIT">
+                                            <md-icon md-font-icon="icon-pencil" class="s20"></md-icon>
+                                            <span translate="SB.EDIT_CHECKLIST">Edit Checklist</span>
+                                        </md-button>
+                                    </md-menu-item>
+                                    <md-menu-item>
+                                        <md-button ng-click="vm.removeChecklist(checklist)" aria-label="Remove Checklist"
+                                                       translate translate-attr-aria-label="SB.REMOVE_CHECKLIST">
+                                                <md-icon md-font-icon="icon-delete"></md-icon>
+                                                <span translate="SB.REMOVE_CHECKLIST">Remove Checklist</span>
+                                        </md-button>
+                                    </md-menu-item>
                             </md-menu-content>
                         </md-menu>
                     </div>
@@ -555,12 +565,47 @@
                         </div>
 
                         <div class="check-items">
-                            <div class="check-item" ng-repeat="checkItem in checklist.checkItems">
+                            <div class="check-item" ng-repeat="checkItem in checklist.checkItems" layout="row"
+                                 layout-align="space-between center">
+
                                 <md-checkbox ng-model="checkItem.checked"
                                              ng-change="vm.updateCheckedCount(checklist)"
-                                             aria-label="{{checkItem.name}}">
+                                             aria-label="{{checkItem.name}}"
+                                             ng-hide="editCheckItemForm.$visible">
                                     {{checkItem.name}}
                                 </md-checkbox>
+
+                                <span flex editable-text="checkItem.name" ng-show="editCheckItemForm.$visible"
+                                      e-form="editCheckItemForm"></span>
+
+                                <md-menu md-position-mode="target-right target" class="options">
+
+                                    <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)"
+                                               aria-label="options"
+                                               translate translate-attr-aria-label="SB.OPTIONS">
+                                        <md-icon md-menu-origin md-font-icon="icon-dots-vertical" class="s20"></md-icon>
+                                    </md-button>
+
+                                    <md-menu-content class="options-menu-content">
+                                        <md-menu-item>
+                                            <md-button ng-click="editCheckItemForm.$show()" aria-label="Edit"
+                                                       translate translate-attr-aria-label="SB.EDIT">
+                                                <md-icon md-font-icon="icon-pencil" class="s20"></md-icon>
+                                                <span translate="SB.EDIT">Edit</span>
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                            <md-button
+                                                    ng-click="vm.removeChecklistItem(checkItem, checklist.checkItems)"
+                                                    aria-label="Remove"
+                                                    translate translate-attr-aria-label="SB.REMOVE">
+                                                <md-icon md-font-icon="icon-delete"></md-icon>
+                                                <span translate="SB.REMOVE">Remove</span>
+                                            </md-button>
+                                        </md-menu-item>
+                                    </md-menu-content>
+                                </md-menu>
+
                             </div>
                         </div>
 
