@@ -84,13 +84,14 @@
 
         > md-sidenav {
             box-shadow: $whiteframe-shadow-1dp;
+            padding: 0;
         }
 
         .main {
             padding: 16px 90px 0 4px;
             position: absolute;
             top: 0;
-            left: 268px;
+            left: 24px;
             right: 0;
             bottom: 0;
 
@@ -199,18 +200,14 @@
 }
 
 // RESPONSIVE
-@media screen and (max-width: $layout-breakpoint-md) {
+@media screen and (min-width: $layout-breakpoint-md) {
 
     #contacts {
 
         > .content {
 
             .main {
-                left: 24px;
-            }
-
-            > md-sidenav {
-                padding: 0;
+                left: 268px;
             }
 
         }
