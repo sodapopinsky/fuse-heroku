@@ -114,7 +114,6 @@
                 .chat-footer {
                     min-height: 64px;
                     max-height: 96px;
-                    //height: 64px;
                     background-color: #F3F4F5;
                     color: rgba(0, 0, 0, 0.87);
                     border-top: 1px solid rgba(0, 0, 0, .08);
@@ -215,7 +214,8 @@
                         position: relative;
                         transition: all 200ms ease-out;
 
-                        md-list-item, .subheader {
+                        md-list-item,
+                        .subheader {
                             position: absolute;
                             right: 0;
                             left: 0;
@@ -223,6 +223,7 @@
                             transition: transform 200ms ease-out;
                             background: #FFF;
                             will-change: transform;
+
                             &.ng-leave {
                                 transform: translateY(0);
                                 display: none;
