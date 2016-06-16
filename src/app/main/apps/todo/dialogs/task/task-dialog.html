@@ -12,7 +12,7 @@
         <md-dialog-content ms-scroll>
             <md-input-container class="md-block">
                 <label translate="TODO.TITLE">Title</label>
-                <input name="title" ng-model="vm.task.title" required>
+                <input name="title" ng-model="vm.task.title" required md-autofocus>
                 <div ng-messages="taskForm.title.$error" ng-show="taskForm.title.$touched" role="alert">
                     <div ng-message="required">
                         <span translate="TODO.ERRORS.TITLE_REQUIRED">Title field is required</span>

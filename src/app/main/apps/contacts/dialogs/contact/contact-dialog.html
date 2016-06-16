@@ -71,7 +71,7 @@
             <md-input-container class="md-icon-float md-block">
                 <label translate="CONTACTS.NAME_REQUIRED">Name (required)</label>
                 <md-icon md-font-icon="icon-account" class="name"></md-icon>
-                <input ng-model="vm.contact.name" type="text" ng-required>
+                <input ng-model="vm.contact.name" type="text" ng-required md-autofocus>
             </md-input-container>
 
             <md-input-container class="md-icon-float md-block">
@@ -169,8 +169,7 @@
 
             <div layout="row">
                 <md-button class="md-icon-button" ng-click="vm.deleteContactConfirm($event)" aria-label="Delete"
-                           translate
-                           translate-attr-aria-label="CONTACTS.DELETE">
+                           translate translate-attr-aria-label="CONTACTS.DELETE">
                     <md-icon md-font-icon="icon-delete"></md-icon>
                     <md-tooltip><span translate="CONTACTS.DELETE">DELETE</span></md-tooltip>
                 </md-button>

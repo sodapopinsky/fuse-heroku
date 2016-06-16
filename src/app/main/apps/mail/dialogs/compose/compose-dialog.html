@@ -18,7 +18,7 @@
 
             <md-input-container class="md-block to" ng-class="{'hidden-cc': vm.hiddenCC, 'hidden-bcc': vm.hiddenBCC}">
                 <label translate="MAIL.TO">To</label>
-                <input ng-model="vm.form.to" type="email">
+                <input ng-model="vm.form.to" type="email" md-autofocus>
 
                 <div class="cc-bcc" layout="row" layout-align="start center">
                     <div class="show-cc" ng-show="vm.hiddenCC" ng-click="vm.hiddenCC = false">CC</div>
