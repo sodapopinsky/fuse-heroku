@@ -16,9 +16,11 @@
         <div class="card md-whiteframe-4dp" layout="column">
 
             <p>
+                <!-- htmlmin:ignore -->
                 <hljs language="js" class="source-code">
                     msNavigationService.saveItem('NAVIGATION.ID', {NAVIGATION_OPTIONS});
                 </hljs>
+                <!-- htmlmin:ignore -->
             </p>
 
             <span class="h2 pt-16">Description:</span>
@@ -132,6 +134,7 @@
             <p>
                 To create a navigation item from <b>Run</b> or <b>Config</b> blocks, you must use <b>msNavigationServiceProvider</b>:
             </p>
+            <!-- htmlmin:ignore -->
             <hljs language="js" class="source-code">
                 /** @ngInject */
                 function config(msNavigationServiceProvider)
@@ -186,11 +189,13 @@
                     });
                 }
             </hljs>
+            <!-- htmlmin:ignore -->
 
             <p class="mt-24">
                 To do the same thing in <b>services</b> and <b>controllers</b>, you must use
                 <b>msNavigationService</b>:
             </p>
+            <!-- htmlmin:ignore -->
             <hljs language="js" class="source-code">
                 /** @ngInject */
                 function TestController(msNavigationService)
@@ -245,6 +250,7 @@
                     });
                 }
             </hljs>
+            <!-- htmlmin:ignore -->
 
             <p class="mt-24">
                 You can specify a hidden value within your navigation item configuration to have more control on its
@@ -255,6 +261,7 @@
                 ms-navigation will watch that function and whenever the AuthService.isAdmin value changes, the
                 visibility of the navigation item will be updated automatically.
             </p>
+            <!-- htmlmin:ignore -->
             <hljs language="js" class="source-code">
                 /** @ngInject */
                 function TestController(msNavigationService)
@@ -279,11 +286,13 @@
                     });
                 }
             </hljs>
+            <!-- htmlmin:ignore -->
 
             <p class="mt-24">
                 If you wish to remove an item from the navigation at runtime, you can use deleteItem() method.
                 It's available in both <b>msNavigationService</b> and <b>msNavigationServiceProvider</b>:
             </p>
+            <!-- htmlmin:ignore -->
             <hljs language="js" class="source-code">
                 /** @ngInject */
                 function TestController(msNavigationService)
@@ -292,14 +301,17 @@
                     msNavigationService.deleteItem('apps');
                 }
             </hljs>
+            <!-- htmlmin:ignore -->
 
             <span class="h2 pt-16">Directive:</span>
             <p>
                 To show the navigation, you can use <b>ms-navigation</b> element:
             </p>
+            <!-- htmlmin:ignore -->
             <hljs lang="html" class="source-code">
                 <ms-navigation class="scrollable" folded="vm.folded" root="apps.dashboards"></ms-navigation>
             </hljs>
+            <!-- htmlmin:ignore -->
             <div class="simple-table-container md-whiteframe-1dp mv-16">
                 <table class="simple">
                     <thead>
