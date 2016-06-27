@@ -35,7 +35,7 @@
                 }
             }
         },
-        'pink-theme': {
+        'pinkTheme': {
             primary   : {
                 name: 'blue-grey',
                 hues: {
@@ -67,7 +67,7 @@
                 }
             }
         },
-        'teal-theme': {
+        'tealTheme': {
             primary   : {
                 name: 'fuse-blue',
                 hues: {
