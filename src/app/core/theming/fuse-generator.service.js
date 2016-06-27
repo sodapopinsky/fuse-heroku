@@ -27,8 +27,10 @@
          */
         function generate()
         {
-            var registeredThemes = fuseTheming.getRegisteredThemes();
-            var registeredPalettes = fuseTheming.getRegisteredPalettes();
+            // Get registered themes and palettes and copy
+            // them so we don't modify the original objects
+            var registeredThemes = angular.copy(fuseTheming.getRegisteredThemes());
+            var registeredPalettes = angular.copy(fuseTheming.getRegisteredPalettes());
 
             // First, create a simplified object that stores
             // all registered themes and their colors
