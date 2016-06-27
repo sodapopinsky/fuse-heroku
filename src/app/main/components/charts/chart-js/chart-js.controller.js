@@ -6,13 +6,11 @@
         .module('app.components.charts.chart-js')
         .controller('ChartJsController', ChartJsController);
 
-    function ChartJsController(fuseTheming)
+    function ChartJsController()
     {
         var vm = this;
 
         // Data
-        vm.themes = fuseTheming.themes;
-
         vm.lineChart = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
             series: ['Series A', 'Series B'],

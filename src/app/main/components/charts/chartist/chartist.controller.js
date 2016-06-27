@@ -6,13 +6,11 @@
         .module('app.components.charts.chartist')
         .controller('ChartistController', ChartistController);
 
-    function ChartistController(fuseTheming)
+    function ChartistController()
     {
         var vm = this;
 
         // Data
-        vm.themes = fuseTheming.themes;
-
 
         // line chart
         vm.lineChart = {
