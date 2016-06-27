@@ -81,10 +81,17 @@
                         }
 
                         .quantity-indicator {
+                            display: inline-block;
+                            vertical-align: middle;
                             width: 8px;
                             height: 8px;
                             border-radius: 4px;
                             margin-right: 8px;
+
+                            & + div {
+                                display: inline-block;
+                                vertical-align: middle;
+                            }
                         }
 
                         .edit-button {

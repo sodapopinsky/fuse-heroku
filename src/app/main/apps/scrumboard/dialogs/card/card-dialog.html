@@ -62,7 +62,7 @@
                                                ng-click="vm.toggleInArray(label.id, vm.card.idLabels)"
                                                aria-label="Toggle Label" translate
                                                translate-attr-aria-label="SB.TOGGLE_LABEL">
-                                        <div layout="row" layout-align="space-between center">
+                                        <div layout="row" layout-align="space-between center" flex>
                                             <span>{{label.name}}</span>
                                             <i ng-if="vm.exists(label.id, vm.card.idLabels)" class="icon-check s16"></i>
                                         </div>
@@ -205,7 +205,7 @@
                     <md-menu-item class="member" ng-repeat="member in vm.members  | filter: vm.filterMember">
                         <md-button ng-click="vm.toggleInArray(member.id, vm.card.idMembers)" md-prevent-menu-close
                                    aria-label="toggle member" translate translate-attr-aria-label="SB.TOGGLE_MEMBER">
-                            <div layout="row" layout-align="space-between center">
+                            <div layout="row" layout-align="space-between center" flex>
                                 <div layout="row" layout-align="start center">
                                     <img alt="{{ member.name }}" ng-src="{{ member.avatar }}" class="avatar"/>
                                     <p class="member-name">{{ member.name }}</p>
@@ -361,7 +361,7 @@
         <div class="description">
             <md-input-container class="md-block">
                 <label translate="SB.DESCRIPTION">Description</label>
-                <textarea ng-model="vm.card.description" columns="1" md-maxlength="150" rows="5"></textarea>
+                <textarea ng-model="vm.card.description" columns="1" md-maxlength="150" max-rows="4"></textarea>
             </md-input-container>
         </div>
         <!-- / DESCRIPTION -->
@@ -524,7 +524,8 @@
                         <i class="icon-checkbox-marked s18"></i>
                         <span flex class="section-title" ng-hide="editChecklistForm.$visible">{{checklist.name}}</span>
 
-                        <span flex class="section-title" editable-text="checklist.name" ng-show="editChecklistForm.$visible"
+                        <span flex class="section-title" editable-text="checklist.name"
+                              ng-show="editChecklistForm.$visible"
                               e-form="editChecklistForm"></span>
 
                         <md-menu md-position-mode="target-right target" class="options">
@@ -534,20 +535,20 @@
                             </md-button>
 
                             <md-menu-content class="options-menu-content">
-                                    <md-menu-item>
-                                        <md-button ng-click="editChecklistForm.$show()" aria-label="Edit"
-                                                   translate translate-attr-aria-label="SB.EDIT">
-                                            <md-icon md-font-icon="icon-pencil" class="s20"></md-icon>
-                                            <span translate="SB.EDIT_CHECKLIST">Edit Checklist</span>
-                                        </md-button>
-                                    </md-menu-item>
-                                    <md-menu-item>
-                                        <md-button ng-click="vm.removeChecklist(checklist)" aria-label="Remove Checklist"
-                                                       translate translate-attr-aria-label="SB.REMOVE_CHECKLIST">
-                                                <md-icon md-font-icon="icon-delete"></md-icon>
-                                                <span translate="SB.REMOVE_CHECKLIST">Remove Checklist</span>
-                                        </md-button>
-                                    </md-menu-item>
+                                <md-menu-item>
+                                    <md-button ng-click="editChecklistForm.$show()" aria-label="Edit"
+                                               translate translate-attr-aria-label="SB.EDIT">
+                                        <md-icon md-font-icon="icon-pencil" class="s20"></md-icon>
+                                        <span translate="SB.EDIT_CHECKLIST">Edit Checklist</span>
+                                    </md-button>
+                                </md-menu-item>
+                                <md-menu-item>
+                                    <md-button ng-click="vm.removeChecklist(checklist)" aria-label="Remove Checklist"
+                                               translate translate-attr-aria-label="SB.REMOVE_CHECKLIST">
+                                        <md-icon md-font-icon="icon-delete"></md-icon>
+                                        <span translate="SB.REMOVE_CHECKLIST">Remove Checklist</span>
+                                    </md-button>
+                                </md-menu-item>
                             </md-menu-content>
                         </md-menu>
                     </div>
@@ -614,7 +615,7 @@
                               layout="row" layout-align="start center">
 
                             <md-input-container class="no-errors-spacer" flex>
-                                <label layout="row" layout-align="center">
+                                <label>
                                     <i class="icon-plus s18"></i>
                                     <span translate="SB.ADD_AN_ITEM">Add an item</span>
                                 </label>
@@ -649,9 +650,9 @@
                             <div layout="row">
                                 <img class="comment-member-avatar" src="assets/images/avatars/profile.jpg">
                                 <md-input-container flex md-no-float>
-                                <textarea ms-scroll placeholder="Write a comment.."
-                                          ng-model="vm.newCommentText" required
-                                          translate translate-attr-placeholder="SB.WRITE_A_COMMENT"></textarea>
+                                    <textarea placeholder="Write a comment.."
+                                              ng-model="vm.newCommentText" required max-rows="4"
+                                              translate translate-attr-placeholder="SB.WRITE_A_COMMENT"></textarea>
                                 </md-input-container>
                             </div>
 

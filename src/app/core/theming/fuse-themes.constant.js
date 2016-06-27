@@ -3,7 +3,7 @@
     'use strict';
 
     var fuseThemes = {
-        'default'  : {
+        default: {
             primary   : {
                 name: 'fuse-pale-blue',
                 hues: {
@@ -22,18 +22,20 @@
                     'hue-3'  : 'A100'
                 }
             },
-            warn      : {name: 'red'},
+            warn      : {
+                name: 'red'
+            },
             background: {
                 name: 'grey',
                 hues: {
                     'default': 'A100',
-                    'hue-1'  : '100',
-                    'hue-2'  : '50',
+                    'hue-1'  : 'A100',
+                    'hue-2'  : '100',
                     'hue-3'  : '300'
                 }
             }
         },
-        'pink': {
+        pink   : {
             primary   : {
                 name: 'blue-grey',
                 hues: {
@@ -52,18 +54,20 @@
                     'hue-3'  : 'A100'
                 }
             },
-            warn      : {name: 'blue'},
+            warn      : {
+                name: 'blue'
+            },
             background: {
                 name: 'grey',
                 hues: {
                     'default': 'A100',
-                    'hue-1'  : '100',
-                    'hue-2'  : '50',
+                    'hue-1'  : 'A100',
+                    'hue-2'  : '100',
                     'hue-3'  : '300'
                 }
             }
         },
-        'teal'     : {
+        teal   : {
             primary   : {
                 name: 'fuse-blue',
                 hues: {
@@ -82,13 +86,15 @@
                     'hue-3'  : 'A100'
                 }
             },
-            warn      : {name: 'deep-orange'},
+            warn      : {
+                name: 'deep-orange'
+            },
             background: {
                 name: 'grey',
                 hues: {
                     'default': 'A100',
-                    'hue-1'  : '100',
-                    'hue-2'  : '50',
+                    'hue-1'  : 'A100',
+                    'hue-2'  : '100',
                     'hue-3'  : '300'
                 }
             }

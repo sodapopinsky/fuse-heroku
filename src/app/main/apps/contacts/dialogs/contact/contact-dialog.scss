@@ -26,7 +26,6 @@ md-dialog {
                     font-size: 24px;
                     margin: 8px 0;
                 }
-
             }
 
             .md-toolbar-tools-bottom {
@@ -34,7 +33,6 @@ md-dialog {
                     margin: 0;
                 }
             }
-
         }
 
         md-dialog-content {
@@ -57,27 +55,24 @@ md-dialog {
                     md-icon {
                         color: rgba(0, 0, 0, 0.87);
                     }
-
                 }
 
                 .md-datepicker-input-container {
                     display: flex;
                     flex: 1;
                 }
-
             }
 
             .textarea-wrapper {
+
+                md-input-container {
+                    margin-top: 0;
+                }
 
                 md-icon {
                     color: rgba(0, 0, 0, 0.87);
                     margin: 0 8px 0 0;
                 }
-
-                textarea {
-                    min-height: 150px;
-                }
-
             }
         }
 
@@ -89,6 +84,5 @@ md-dialog {
             background-color: rgba(0, 0, 0, 0.03);
             border-top: 1px solid rgba(0, 0, 0, 0.12);
         }
-
     }
 }

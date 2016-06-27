@@ -34,8 +34,8 @@
 
                 .shortcut {
                     width: 48px;
-                    height: 48px;
-                    line-height: 48px;
+                    height: 24px;
+                    line-height: 24px;
                     padding: 0 8px;
                     margin: 0;
 
@@ -73,6 +73,10 @@
             width: 40px;
             height: 40px;
             line-height: 48px;
+        }
+
+        .shortcut-loader {
+            padding: 10px;
         }
 
         input {

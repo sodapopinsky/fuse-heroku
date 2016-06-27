@@ -1,10 +1,7 @@
 #maps {
 
     > .content {
-
-        md-tabs {
-            box-shadow: $whiteframe-shadow-1dp;
-        }
+        max-width: none;
 
         .card {
             max-width: 1200px;

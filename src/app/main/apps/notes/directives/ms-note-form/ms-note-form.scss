@@ -23,8 +23,8 @@
             }
 
             md-input-container {
-                width: 100%;
-                margin: 0;
+                display: block;
+                margin: 8px;
 
                 textarea {
                     resize: none;
@@ -74,7 +74,6 @@
                     white-space: nowrap;
                     border-radius: 2px;
                 }
-
             }
 
             .date {
@@ -103,7 +102,6 @@
                 md-icon {
                     overflow: hidden;
                 }
-
             }
 
             > .footer {
@@ -128,7 +126,6 @@
                                 &::placeholder {
                                     color: rgba(0, 0, 0, 0.87);
                                 }
-
                             }
                         }
 
@@ -162,7 +159,6 @@
 
                         }
                     }
-
                 }
             }
         }

@@ -14,7 +14,7 @@
     <md-menu md-offset="8 56">
         <md-button class="md-icon-button add-shortcut-button" aria-label="Add shortcut"
                    ng-click="$mdOpenMenu($event)">
-            <md-icon md-menu-origin md-font-icon="icon-star" class="icon amber-600-fg s20"></md-icon>
+            <md-icon md-menu-origin md-font-icon="icon-star" class="icon amber-600-fg s24"></md-icon>
             <md-tooltip md-direction="bottom">Click to add/remove shortcut</md-tooltip>
         </md-button>
 
@@ -27,7 +27,7 @@
                     </div>
                     <div class="shortcut-loader" layout="row" layout-align="center center"
                          ng-if="MsShortcuts.resultsLoading">
-                        <md-progress-circular class="md-accent" md-diameter="40" md-mode="indeterminate">
+                        <md-progress-circular class="md-accent" md-diameter="20" md-mode="indeterminate">
                         </md-progress-circular>
                     </div>
 
@@ -49,7 +49,7 @@
                          md-ink-ripple>
                         <div layout="row" layout-align="start space-between">
                             <div layout="row" layout-align="start center" flex>
-                                <div class="icon-container" layout="row" layout-align="center center">
+                                <div class="icon icon-container" layout="row" layout-align="center center">
                                     <i ng-if="result.icon" class="{{result.icon}}"></i>
                                     <div ng-if="!result.icon" class="square md-accent-bg"></div>
                                 </div>
