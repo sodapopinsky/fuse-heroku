@@ -17,7 +17,6 @@
     <!-- CONTENT -->
     <div class="content" layout="column">
 
-        <!-- STEPPER -->
         <div class="md-title">Stepper</div>
         <div class="pb-16">
             <b>ms-stepper</b> is a custom made form wizard directive. It follows Google's Material Design specifications
@@ -25,30 +24,61 @@
             the Form Wizard that we put together using md-tabs and forms.
         </div>
 
-        <form name="stepper" ms-stepper ng-submit="vm.submitStepper()" ng-model="vm.stepper" novalidate>
-            <ms-stepper-step ng-form="step1" step="1" step-title="'Personal Information'">
-                <div ng-include="'app/main/ui/forms/stepper-steps/step-1.html'"></div>
-            </ms-stepper-step>
+        <!-- HORIZONTAL STEPPER -->
+        <form name="horizontalStepper" ms-horizontal-stepper ng-submit="vm.submitHorizontalStepper()"
+              ng-model="vm.horizontalStepper" novalidate>
+            <ms-horizontal-stepper-step ng-form="horizontalStep1" step="1" step-title="'Personal Information'">
+                <div ng-include="'app/main/ui/forms/stepper-steps/horizontal/step-1.html'"></div>
+            </ms-horizontal-stepper-step>
 
-            <ms-stepper-step ng-form="step2" step="2" step-title="'Birthplace'" optional-step
-                             hide-step="!MsStepper.model.step1.lastname">
-                <div ng-include="'app/main/ui/forms/stepper-steps/step-2.html'"></div>
-            </ms-stepper-step>
+            <ms-horizontal-stepper-step ng-form="horizontalStep2" step="2" step-title="'Birthplace'" optional-step
+                                        hide-step="!vm.horizontalStepper.step1.lastname">
+                <div ng-include="'app/main/ui/forms/stepper-steps/horizontal/step-2.html'"></div>
+            </ms-horizontal-stepper-step>
 
-            <ms-stepper-step ng-form="step3" step="3" step-title="'SSN'" optional-step
-                             hide-step="!MsStepper.model.step2.birthplace">
-                <div ng-include="'app/main/ui/forms/stepper-steps/step-3.html'"></div>
-            </ms-stepper-step>
+            <ms-horizontal-stepper-step ng-form="horizontalStep3" step="3" step-title="'SSN'" optional-step
+                                        hide-step="!vm.horizontalStepper.step2.birthplace">
+                <div ng-include="'app/main/ui/forms/stepper-steps/horizontal/step-3.html'"></div>
+            </ms-horizontal-stepper-step>
 
-            <ms-stepper-step ng-form="step4" step="4" step-title="'Address'" optional-step>
-                <div ng-include="'app/main/ui/forms/stepper-steps/step-4.html'"></div>
-            </ms-stepper-step>
+            <ms-horizontal-stepper-step ng-form="horizontalStep4" step="4" step-title="'Address'" optional-step>
+                <div ng-include="'app/main/ui/forms/stepper-steps/horizontal/step-4.html'"></div>
+            </ms-horizontal-stepper-step>
 
-            <ms-stepper-step ng-form="step5" step="5" step-title="'Payment Method'">
-                <div ng-include="'app/main/ui/forms/stepper-steps/step-5.html'"></div>
-            </ms-stepper-step>
+            <ms-horizontal-stepper-step ng-form="horizontalStep5" step="5" step-title="'Payment Method'">
+                <div ng-include="'app/main/ui/forms/stepper-steps/horizontal/step-5.html'"></div>
+            </ms-horizontal-stepper-step>
         </form>
-        <!-- / STEPPER -->
+        <!-- / HORIZONTAL STEPPER -->
+
+        <div class="mv-24"></div>
+
+        <!-- VERTICAL STEPPER -->
+        <form name="verticalStepper" ms-vertical-stepper ng-submit="vm.submitVerticalStepper()"
+              ng-model="vm.verticalStepper" novalidate>
+            <ms-vertical-stepper-step ng-form="verticalStep1" step="1" step-title="'Personal Information'">
+                <div ng-include="'app/main/ui/forms/stepper-steps/vertical/step-1.html'"></div>
+            </ms-vertical-stepper-step>
+
+            <ms-vertical-stepper-step ng-form="verticalStep2" step="2" step-title="'Birthplace'" optional-step
+                                      hide-step="!vm.verticalStepper.step1.lastname">
+                <div ng-include="'app/main/ui/forms/stepper-steps/vertical/step-2.html'"></div>
+            </ms-vertical-stepper-step>
+
+            <ms-vertical-stepper-step ng-form="verticalStep3" step="3" step-title="'SSN'" optional-step
+                                      hide-step="!vm.verticalStepper.step2.birthplace">
+                <div ng-include="'app/main/ui/forms/stepper-steps/vertical/step-3.html'"></div>
+            </ms-vertical-stepper-step>
+
+            <ms-vertical-stepper-step ng-form="verticalStep4" step="4" step-title="'Address'" optional-step>
+                <div ng-include="'app/main/ui/forms/stepper-steps/vertical/step-4.html'"></div>
+            </ms-vertical-stepper-step>
+
+            <ms-vertical-stepper-step ng-form="verticalStep5" step="5" step-title="'Payment Method'">
+                <div ng-include="'app/main/ui/forms/stepper-steps/vertical/step-5.html'"></div>
+            </ms-vertical-stepper-step>
+        </form>
+        <!-- / VERTICAL STEPPER -->
 
         <div class="md-title mt-32">Form Wizard</div>
         <div class="pb-16">
