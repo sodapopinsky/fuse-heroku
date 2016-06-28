@@ -34,7 +34,7 @@
 
         <div class="theme-option color-palettes">
             <div class="option-title">Color Palette:</div>
-            <div layout="row" layout-align="start start">
+            <div layout="row" layout-align="start start" layout-wrap>
                 <md-button ng-repeat="(themeName, theme) in vm.themes.list" class="md-raised theme-button"
                            layout="row" layout-align="center center"
                            aria-label="{{themeName}}" ng-click="vm.setActiveTheme(themeName)"
