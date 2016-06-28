@@ -14,6 +14,50 @@
 
         // Data
         vm.themes = fuseTheming.themes;
+
+        vm.layoutModes = [
+            {
+                label: 'Boxed',
+                value: 'boxed'
+            },
+            {
+                label: 'Wide',
+                value: 'wide'
+            }
+        ];
+        vm.layoutStyles = [
+            {
+                label : 'Vertical Navigation',
+                value : 'verticalNavigation',
+                figure: '/assets/images/theme-options/vertical-nav.png'
+            },
+            {
+                label : 'Vertical Navigation with Fullwidth Toolbar',
+                value : 'verticalNavigationFullwidthToolbar',
+                figure: '/assets/images/theme-options/vertical-nav-with-full-toolbar.png'
+            },
+            {
+                label : 'Vertical Navigation with Fullwidth Toolbar 2',
+                value : 'verticalNavigationFullwidthToolbar2',
+                figure: '/assets/images/theme-options/vertical-nav-with-full-toolbar-2.png'
+            },
+            {
+                label : 'Horizontal Navigation',
+                value : 'horizontalNavigation',
+                figure: '/assets/images/theme-options/horizontal-nav.png'
+            },
+            {
+                label : 'Content with Toolbar',
+                value : 'contentWithToolbar',
+                figure: '/assets/images/theme-options/content-with-toolbar.png'
+            },
+            {
+                label : 'Content Only',
+                value : 'contentOnly',
+                figure: '/assets/images/theme-options/content-only.png'
+            },
+        ];
+
         vm.layoutMode = 'wide';
         vm.layoutStyle = $cookies.get('layoutStyle') || 'verticalNavigation';
 
@@ -60,77 +104,30 @@
     }
 
     /** @ngInject */
-    function msThemeOptions()
+    function msThemeOptions($mdSidenav)
     {
         return {
             restrict   : 'E',
-            scope      : {
-                panelOpen: '=?'
-            },
+            scope      : {},
             controller : 'MsThemeOptionsController as vm',
             templateUrl: 'app/core/theme-options/theme-options.html',
             compile    : function (tElement)
             {
                 tElement.addClass('ms-theme-options');
 
-                return function postLink(scope, iElement)
+                return function postLink(scope)
                 {
-                    var bodyEl = angular.element('body'),
-                        backdropEl = angular.element('<div class="ms-theme-options-backdrop"></div>');
-
-                    // Panel open status
-                    scope.panelOpen = scope.panelOpen || false;
-
                     /**
-                     * Toggle options panel
+                     * Toggle options sidenav
                      */
-                    function toggleOptionsPanel()
+                    function toggleOptionsSidenav()
                     {
-                        if ( scope.panelOpen )
-                        {
-                            closeOptionsPanel();
-                        }
-                        else
-                        {
-                            openOptionsPanel();
-                        }
-                    }
-
-                    function openOptionsPanel()
-                    {
-                        // Set panelOpen status
-                        scope.panelOpen = true;
-
-                        // Add open class
-                        iElement.addClass('open');
-
-                        // Append the backdrop
-                        bodyEl.append(backdropEl);
-
-                        // Register the event
-                        backdropEl.on('click touch', closeOptionsPanel);
-                    }
-
-                    /**
-                     * Close options panel
-                     */
-                    function closeOptionsPanel()
-                    {
-                        // Set panelOpen status
-                        scope.panelOpen = false;
-
-                        // Remove open class
-                        iElement.removeClass('open');
-
-                        // De-register the event
-                        backdropEl.off('click touch', closeOptionsPanel);
-
-                        // Remove the backdrop
-                        backdropEl.remove();
+                        // Toggle the fuse theme options panel
+                        $mdSidenav('fuse-theme-options').toggle();
                     }
 
                     // Expose the toggle function
-                    scope.toggleOptionsPanel = toggleOptionsPanel;
+                    scope.toggleOptionsSidenav = toggleOptionsSidenav;
                 };
             }
         };
