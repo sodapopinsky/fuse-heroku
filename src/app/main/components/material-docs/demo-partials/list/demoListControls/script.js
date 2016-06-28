@@ -37,8 +37,12 @@ angular.module('listDemo2', ['ngMaterial'])
         .title('Navigating')
         .textContent('Inspect ' + person)
         .ariaLabel('Person inspect demo')
+        .clickOutsideToClose(true)
+        .parent(angular.element(document.body))
         .ok('Neat!')
         .targetEvent(event)
+          .clickOutsideToClose(true)
+          .parent(angular.element(document.body))
     );
   };
 
@@ -50,6 +54,8 @@ angular.module('listDemo2', ['ngMaterial'])
         .ariaLabel('Navigation demo')
         .ok('Neat!')
         .targetEvent(event)
+          .clickOutsideToClose(true)
+          .parent(angular.element(document.body))
     );
   };
 
@@ -61,6 +67,8 @@ angular.module('listDemo2', ['ngMaterial'])
         .ariaLabel('Primary click demo')
         .ok('Awesome!')
         .targetEvent(event)
+          .clickOutsideToClose(true)
+          .parent(angular.element(document.body))
     );
   };
 
@@ -72,6 +80,8 @@ angular.module('listDemo2', ['ngMaterial'])
         .ariaLabel('Secondary click demo')
         .ok('Neat!')
         .targetEvent(event)
+          .clickOutsideToClose(true)
+          .parent(angular.element(document.body))
     );
   };
 

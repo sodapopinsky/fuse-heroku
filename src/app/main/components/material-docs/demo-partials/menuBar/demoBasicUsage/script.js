@@ -38,6 +38,8 @@ angular
         .textContent('You triggered the "' + name + '" action')
         .ok('Great')
         .targetEvent(ev)
+          .clickOutsideToClose(true)
+          .parent(angular.element(document.body))
       );
     };
   });

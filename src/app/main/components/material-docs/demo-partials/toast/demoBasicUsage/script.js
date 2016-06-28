@@ -46,6 +46,8 @@ angular.module('toastDemo1', ['ngMaterial'])
     var toast = $mdToast.simple()
       .textContent('Marked as read')
       .action('UNDO')
+      .highlightAction(true)
+      .highlightClass('md-accent')// Accent is used by default, this just demonstrates the usage.
       .position(pinTo);
 
     $mdToast.show(toast).then(function(response) {

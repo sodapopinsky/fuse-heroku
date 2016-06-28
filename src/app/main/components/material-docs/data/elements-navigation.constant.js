@@ -153,14 +153,14 @@
                 excludeDemo: true,
                 weight     : 5
             },
-         /*   {
+            {
                 name      : 'Navbar',
                 url       : 'navbar',
                 navPath   : 'components.elements.content-elements',
                 moduleName: 'material.components.navBar',
                 stateName : 'material_components_navBar',
                 weight    : 6
-            },*/
+            },
             {
                 name      : 'Panel',
                 url       : 'panel',
@@ -277,14 +277,14 @@
                 weight    : 2
             },
             /* OTHERS */
-           /* {
+            {
                 name      : 'Colors',
                 url       : 'colors',
                 navPath   : 'components.elements.others',
                 moduleName: 'material.components.colors',
                 stateName : 'material_components_colors',
                 weight    : 1
-            },*/
+            },
             {
                 name      : 'Divider',
                 url       : 'divider',

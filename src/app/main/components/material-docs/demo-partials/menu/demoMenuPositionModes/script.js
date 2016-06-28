@@ -18,12 +18,11 @@ angular
     this.announceClick = function(index) {
       $mdDialog.show(
         $mdDialog.alert()
-            .targetEvent(originatorEv)
-            .clickOutsideToClose(true)
-            .parent(angular.element(document.body))
           .title('You clicked!')
           .textContent('You clicked the menu item at index ' + index)
           .ok('Nice')
+          .targetEvent(originatorEv)
+            .parent(angular.element(document.body))
       );
       originatorEv = null;
     };
