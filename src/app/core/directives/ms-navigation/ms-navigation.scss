@@ -296,16 +296,35 @@
                     > .ms-navigation-horizontal-button {
                         display: block;
                         float: left;
-                        padding: 20px 24px;
+                        padding: 12px 14px;
 
                         .arrow {
                             display: none;
+                        }
+
+                        &.active {
+                            background: none;
+                            border-bottom: 2px solid;
                         }
                     }
                 }
 
                 &:last-child {
                     margin-right: 0;
+                }
+
+                // Not root menu items
+                li {
+
+                    .ms-navigation-horizontal-item {
+
+                        .ms-navigation-horizontal-button {
+
+                            &.active {
+                                color: #FFFFFF !important;
+                            }
+                        }
+                    }
                 }
             }
 
@@ -373,7 +392,6 @@
                     }
 
                     &.active {
-                        color: #FFFFFF;
 
                         .badge {
                             background: #FFFFFF !important;
@@ -381,7 +399,7 @@
                         }
 
                         .icon {
-                            color: #FFFFFF !important;
+                            color: #FFFFFF;
                         }
                     }
                 }
