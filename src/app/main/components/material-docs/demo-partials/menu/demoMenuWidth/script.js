@@ -12,11 +12,10 @@ function DemoCtrl($mdDialog) {
   this.announceClick = function(index) {
     $mdDialog.show(
       $mdDialog.alert()
-          .clickOutsideToClose(true)
-          .parent(angular.element(document.body))
         .title('You clicked!')
         .textContent('You clicked the menu item at index ' + index)
         .ok('Nice')
+          .parent(angular.element(document.body))
     );
   };
 }
