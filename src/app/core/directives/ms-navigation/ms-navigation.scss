@@ -294,6 +294,8 @@
                 > .ms-navigation-horizontal-item {
 
                     > .ms-navigation-horizontal-button {
+                        display: block;
+                        float: left;
                         padding: 20px 24px;
 
                         .arrow {
@@ -536,6 +538,8 @@
                     > .ms-navigation-horizontal-item {
 
                         > .ms-navigation-horizontal-button {
+                            display: flex;
+                            float: none;
 
                             .arrow {
                                 display: block;
