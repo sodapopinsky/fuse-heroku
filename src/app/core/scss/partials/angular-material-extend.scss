@@ -335,3 +335,7 @@ md-toolbar {
         }
     }
 }
+
+md-progress-circular[disabled]{
+    visibility: hidden;
+}
