@@ -29,32 +29,32 @@
             {
                 label : 'Vertical Navigation',
                 value : 'verticalNavigation',
-                figure: '/assets/images/theme-options/vertical-nav.png'
+                figure: '/assets/images/theme-options/vertical-nav.jpg'
             },
             {
                 label : 'Vertical Navigation with Fullwidth Toolbar',
                 value : 'verticalNavigationFullwidthToolbar',
-                figure: '/assets/images/theme-options/vertical-nav-with-full-toolbar.png'
+                figure: '/assets/images/theme-options/vertical-nav-with-full-toolbar.jpg'
             },
             {
                 label : 'Vertical Navigation with Fullwidth Toolbar 2',
                 value : 'verticalNavigationFullwidthToolbar2',
-                figure: '/assets/images/theme-options/vertical-nav-with-full-toolbar-2.png'
+                figure: '/assets/images/theme-options/vertical-nav-with-full-toolbar-2.jpg'
             },
             {
                 label : 'Horizontal Navigation',
                 value : 'horizontalNavigation',
-                figure: '/assets/images/theme-options/horizontal-nav.png'
+                figure: '/assets/images/theme-options/horizontal-nav.jpg'
             },
             {
                 label : 'Content with Toolbar',
                 value : 'contentWithToolbar',
-                figure: '/assets/images/theme-options/content-with-toolbar.png'
+                figure: '/assets/images/theme-options/content-with-toolbar.jpg'
             },
             {
                 label : 'Content Only',
                 value : 'contentOnly',
-                figure: '/assets/images/theme-options/content-only.png'
+                figure: '/assets/images/theme-options/content-only.jpg'
             },
         ];
 
@@ -63,6 +63,7 @@
 
         // Methods
         vm.setActiveTheme = setActiveTheme;
+        vm.getActiveTheme = getActiveTheme;
         vm.updateLayoutMode = updateLayoutMode;
         vm.updateLayoutStyle = updateLayoutStyle;
 
@@ -75,8 +76,17 @@
          */
         function setActiveTheme(themeName)
         {
-            // Set active theme
             fuseTheming.setActiveTheme(themeName);
+        }
+
+        /**
+         * Get active theme
+         *
+         * @returns {service.themes.active|{name, theme}}
+         */
+        function getActiveTheme()
+        {
+            return fuseTheming.themes.active;
         }
 
         /**

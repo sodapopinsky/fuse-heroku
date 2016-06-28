@@ -40,12 +40,17 @@
                     md-radio-button {
                         width: 160px;
                         max-width: 160px;
+                        margin: 8px 8px 16px 8px;
 
                         &:hover,
                         &.md-checked {
 
                             ._md-label {
-                                opacity: 1;
+
+                                img {
+                                    opacity: 1;
+                                    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+                                }
                             }
                         }
 
@@ -54,8 +59,11 @@
                         }
 
                         ._md-label {
-                            opacity: 0.6;
                             margin-left: 0;
+                            img {
+                                opacity: 0.8;
+                                margin-bottom: 8px;
+                            }
                         }
                     }
                 }
@@ -64,6 +72,21 @@
 
                     md-menu-item {
                         max-width: 192px;
+                    }
+
+                    .theme-button {
+                        border-bottom: 16px solid;
+                        text-align: left;
+                        width: 101px;
+                        height: 88px;
+                        box-shadow: none;
+                        opacity: 0.8;
+
+                        &:hover,
+                        &.active {
+                            opacity: 1;
+                            box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+                        }
                     }
                 }
 
@@ -75,15 +98,6 @@
                     font-size: 14px;
                     font-weight: 500;
                     padding: 0 8px 12px 8px;
-                }
-
-                .theme {
-                    padding: 4px 8px;
-
-                    .theme-button {
-                        border-right: 8px solid;
-                        text-align: left;
-                    }
                 }
             }
         }
