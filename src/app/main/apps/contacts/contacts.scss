@@ -53,7 +53,6 @@
                         border-bottom: 1px solid white;
                         color: white;
                     }
-
                 }
             }
         }
@@ -70,9 +69,7 @@
             .close-button-wrapper {
                 width: 244px;
             }
-
         }
-
     }
 
     > .content {
@@ -104,7 +101,7 @@
                     border-bottom: 1px solid rgba(0, 0, 0, 0.14);
 
                     ._md-subheader-inner {
-                        padding: 8px 16px;
+                        padding: 16px;
                     }
 
                     .contacts-count {
@@ -183,14 +180,12 @@
                         display: block;
                         transition-property: all;
                     }
-
                 }
             }
 
             .no-results {
                 box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
             }
-
         }
     }
 
@@ -200,7 +195,6 @@
         right: 8px;
         padding: 0;
     }
-
 }
 
 // RESPONSIVE
@@ -213,7 +207,6 @@
             .main {
                 left: 268px;
             }
-
         }
     }
 }
