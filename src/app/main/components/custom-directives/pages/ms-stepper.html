@@ -22,33 +22,63 @@
                 material elements, therefore it's a lot more flexible and easy to use:
             </p>
 
+            <span class="h3 pt-16">Horizontal Stepper:</span>
+
             <!-- htmlmin:ignore -->
             <hljs language="html" class="source-code">
-                <form name="stepper" ms-stepper ng-submit="vm.submitStepper()" ng-model="vm.stepper" novalidate>
+                <form name="stepper" ms-horizontal-stepper ng-submit="vm.submitStepper()" ng-model="vm.stepper" novalidate>
                     <!-- Step 1 -->
-                    <ms-stepper-step ng-form="step1" step="1" step-title="'Personal Information'">
+                    <ms-horizontal-stepper-step ng-form="step1" step="1" step-title="'Personal Information'">
                         <div ng-include="'app/main/ui/forms/stepper-steps/step-1.html'"></div>
-                    </ms-stepper-step>
+                    </ms-horizontal-stepper-step>
                     <!-- / Step 1 -->
 
                     <!-- Step 2 -->
-                    <ms-stepper-step ng-form="step2" step="2" step-title="'Address'" optional-step>
+                    <ms-horizontal-stepper-step ng-form="step2" step="2" step-title="'Address'" optional-step>
                         <div ng-include="'app/main/ui/forms/stepper-steps/step-2.html'"></div>
-                    </ms-stepper-step>
+                    </ms-horizontal-stepper-step>
                     <!-- / Step 2 -->
 
                     <!-- Step 3 -->
-                    <ms-stepper-step ng-form="step3" step="3" step-title="'Payment Method'">
+                    <ms-horizontal-stepper-step ng-form="step3" step="3" step-title="'Payment Method'">
                         <div ng-include="'app/main/ui/forms/stepper-steps/step-3.html'"></div>
-                    </ms-stepper-step>
+                    </ms-horizontal-stepper-step>
                     <!-- / Step 3 -->
                 </form>
             </hljs>
             <!-- htmlmin:ignore -->
 
-            <span class="h2 pt-16">ms-stepper-step</span>
+            <hr>
+
+            <span class="h3 pt-16">Vertical Stepper:</span>
+
+            <!-- htmlmin:ignore -->
+            <hljs language="html" class="source-code">
+                <form name="stepper" ms-vertical-stepper ng-submit="vm.submitStepper()" ng-model="vm.stepper" novalidate>
+                    <!-- Step 1 -->
+                    <ms-vertical-stepper-step ng-form="step1" step="1" step-title="'Personal Information'">
+                        <div ng-include="'app/main/ui/forms/stepper-steps/step-1.html'"></div>
+                    </ms-vertical-stepper-step>
+                    <!-- / Step 1 -->
+
+                    <!-- Step 2 -->
+                    <ms-vertical-stepper-step ng-form="step2" step="2" step-title="'Address'" optional-step>
+                        <div ng-include="'app/main/ui/forms/stepper-steps/step-2.html'"></div>
+                    </ms-vertical-stepper-step>
+                    <!-- / Step 2 -->
+
+                    <!-- Step 3 -->
+                    <ms-vertical-stepper-step ng-form="step3" step="3" step-title="'Payment Method'">
+                        <div ng-include="'app/main/ui/forms/stepper-steps/step-3.html'"></div>
+                    </ms-vertical-stepper-step>
+                    <!-- / Step 3 -->
+                </form>
+            </hljs>
+            <!-- htmlmin:ignore -->
+
+            <span class="h2 pt-16">ms-*-stepper-step</span>
             <p>
-                This directive requires <b>ms-stepper</b> directive and it's used for creating individual steps. You can
+                This directive requires <b>ms-*-stepper</b> directive and it's used for creating individual steps. You can
                 either directly wrap your forms with this directive, or you can use ng-include to include them.
             </p>
 
