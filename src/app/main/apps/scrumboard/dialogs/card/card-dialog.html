@@ -305,7 +305,7 @@
 
         <div layout="row" layout-align="space-between start">
 
-            <div layout="column" layout-align="start start">
+            <div layout="column" layout-align="start stretch" flex>
 
                 <!-- BREADCRUMB -->
                 <div class="card-breadcrumb" layout="row" layout-align="start center">
@@ -317,15 +317,12 @@
 
                 <!-- CARD NAME -->
                 <div layout="row" layout-align="start center">
-
                     <md-icon ng-if="vm.card.subscribed" class="card-subscribe s18" md-font-icon="icon-eye"></md-icon>
-
                     <div class="card-name">
                         <span editable-text="vm.card.name">
                             {{vm.card.name}}
                         </span>
                     </div>
-
                 </div>
                 <!-- / CARD NAME -->
 
