@@ -29,9 +29,9 @@
             <div class="toolbar" layout="row" layout-align="space-between center" flex-order="3">
 
                 <!-- CALENDAR BUTTON -->
-                <md-button ui-sref-active-eq="ng-hide"
-                           class="md-icon-button"
+                <md-button class="md-icon-button"
                            ui-sref="app.scrumboard.boards.board.calendar"
+                           ng-hide="'app.scrumboard.boards.board.calendar' | isState"
                            aria-label="Calendar" translate translate-attr-aria-label="SB.CALENDAR">
                     <md-icon md-font-icon="icon-calendar"></md-icon>
                     <md-tooltip><span translate="SB.CALENDAR">Calendar</span></md-tooltip>
@@ -39,9 +39,9 @@
                 <!-- / CALENDAR BUTTON -->
 
                 <!-- BOARD BUTTON -->
-                <md-button ui-sref-active-eq="ng-hide"
-                           class="md-icon-button"
+                <md-button class="md-icon-button"
                            ui-sref="app.scrumboard.boards.board"
+                           ng-hide="'app.scrumboard.boards.board' | isState"
                            aria-label="Board" translate translate-attr-aria-label="SB.BOARD">
                     <md-icon md-font-icon="icon-trello"></md-icon>
                     <md-tooltip><span translate="SB.BOARD">Board</span></md-tooltip>

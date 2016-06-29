@@ -15,6 +15,7 @@ md-dialog {
                     height: 100%;
 
                     .md-button {
+
                     }
                 }
 
@@ -46,6 +47,7 @@ md-dialog {
             }
 
             .card-name {
+                width: 100%;
                 font-size: 24px;
 
                 .editable-input {
@@ -94,10 +96,6 @@ md-dialog {
 
             .description {
                 padding-bottom: 16px;
-
-                textarea {
-                    max-height: 96px;
-                }
             }
 
             .sections {
@@ -158,9 +156,9 @@ md-dialog {
                                         font-size: 14px;
                                     }
 
-                                    .md-chip-remove-container {
+                                    ._md-chip-remove-container {
                                         right: 12px;
-                                        line-height: 32px;
+                                        line-height: 30px;
                                     }
                                 }
                             }
@@ -190,9 +188,9 @@ md-dialog {
                                         }
                                     }
 
-                                    .md-chip-remove-container {
+                                    ._md-chip-remove-container {
                                         right: 6px;
-                                        line-height: 32px;
+                                        line-height: 30px;
                                     }
                                 }
                             }
@@ -277,11 +275,16 @@ md-dialog {
                             }
                         }
 
+                        .editable-wrap {
+                            flex: 1
+                        }
+
                         .check-items {
 
                             .check-item {
 
                                 md-checkbox {
+                                    margin-bottom: 0;
 
                                     .md-label {
                                         font-size: 14px;
@@ -371,14 +374,6 @@ md-dialog {
 
                                 md-input-container {
                                     margin: 0;
-                                    border: none;
-
-                                    textarea {
-                                        border: 1px solid rgb(220, 223, 225);
-                                        background-color: white;
-                                        padding: 8px;
-                                        min-height: 96px;
-                                    }
                                 }
                             }
                         }
@@ -462,10 +457,9 @@ md-dialog {
         .label-edit-button {
             margin: 0 0 0 8px;
             padding: 0;
-            text-align: center;
 
             md-icon {
-                margin: 0;
+                margin: 0 auto;
             }
         }
     }

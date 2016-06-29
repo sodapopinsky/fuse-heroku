@@ -52,31 +52,37 @@
                 class name or the object:
             </p>
 
+            <!-- htmlmin:ignore -->
             <hljs language="html" class="source-code">
                 <ms-material-color-picker ms-model-type="obj" ng-model="vm.color"></ms-material-color-picker>
             </hljs>
+            <!-- htmlmin:ignore -->
 
             <p>
                 You can also use transclusion to trigger the picker. Like in the below example, you can add a button or
                 any other element to trigger the picker:
             </p>
 
+            <!-- htmlmin:ignore -->
             <hljs language="html" class="source-code">
                 <ms-material-color-picker ms-model-type="obj" ng-model="vm.color">
                     <md-button>Select a Color</md-button>
                 </ms-material-color-picker>
             </hljs>
+            <!-- htmlmin:ignore -->
 
             <p>
                 <b>$selectedColor</b> variable can be used within the color picker element to access the properties of
                 the selected color:
             </p>
 
+            <!-- htmlmin:ignore -->
             <hljs language="html" class="source-code">
                 <ms-material-color-picker ms-model-type="obj" ng-model="vm.color">
                     <md-button class="{{$selectedColor}}">Select a Color</md-button>
                 </ms-material-color-picker>
             </hljs>
+            <!-- htmlmin:ignore -->
 
         </div>
 

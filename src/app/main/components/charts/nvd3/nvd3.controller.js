@@ -6,13 +6,11 @@
         .module('app.components.charts.nvd3')
         .controller('Nvd3Controller', Nvd3Controller);
 
-    function Nvd3Controller(fuseTheming)
+    function Nvd3Controller()
     {
         var vm = this;
 
         // Data
-        vm.themes = fuseTheming.themes;
-
         vm.lineChart = {
             options: {
                 chart   : {

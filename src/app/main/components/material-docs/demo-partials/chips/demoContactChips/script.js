@@ -72,7 +72,7 @@
       var lowercaseQuery = angular.lowercase(query);
 
       return function filterFn(contact) {
-        return (contact._lowername.indexOf(lowercaseQuery) != -1);
+        return (contact._lowername.indexOf(lowercaseQuery) != -1);;
       };
 
     }

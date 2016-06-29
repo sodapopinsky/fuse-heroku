@@ -17,13 +17,15 @@
 
             <span class="h2 pt-16">Description:</span>
             <p>
-                <b>ms-masonry</b> is a directive that you can use to create Masonry layouts. At the moment, it has 3
-                options which you can use to configure the directive:
+                <b>ms-masonry</b> is a directive that you can use to create Masonry layouts. You can use following
+                options to configure the directive:
             </p>
 
+            <!-- htmlmin:ignore -->
             <hljs language="js" class="source-code">
                 vm.masonryOptions = {
                     columnCount     : 5,
+                    respectItemOrder: false,
                     reLayoutDebounce: 400,
                     responsive      : {
                         md: 3,
@@ -32,6 +34,7 @@
                     }
                 }
             </hljs>
+            <!-- htmlmin:ignore -->
 
             <span class="h2 pt-16">Options:</span>
             <div class="simple-table-container md-whiteframe-1dp mv-16">
@@ -49,6 +52,13 @@
                                 (integer) Column count defines the maximum column count of your masonry layout.
                                 ms-masonry will adjust the column count automatically based on <b>responsive</b> options
                                 and some other calculations.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>respectItemOrder</td>
+                            <td>
+                                (boolean) Defaults to false to allow classical masonry behaviour, setting it to true
+                                enforces that masonry items are kept in order, allowing consistent positioning.
                             </td>
                         </tr>
                         <tr>
@@ -72,6 +82,7 @@
 
             <span class="h2 pt-16">Example:</span>
             <p>
+                <!-- htmlmin:ignore -->
                 <hljs language="js" class="source-code">
                     <ms-masonry options="vm.masonryOptions">
                         <ms-masonry-item></ms-masonry-item>
@@ -80,6 +91,7 @@
                         ...
                     </ms-masonry>
                 </hljs>
+                <!-- htmlmin:ignore -->
             </p>
 
         </div>

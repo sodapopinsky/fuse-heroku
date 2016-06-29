@@ -62,7 +62,7 @@
                                                ng-click="vm.toggleInArray(label.id, vm.card.idLabels)"
                                                aria-label="Toggle Label" translate
                                                translate-attr-aria-label="SB.TOGGLE_LABEL">
-                                        <div layout="row" layout-align="space-between center">
+                                        <div layout="row" layout-align="space-between center" flex>
                                             <span>{{label.name}}</span>
                                             <i ng-if="vm.exists(label.id, vm.card.idLabels)" class="icon-check s16"></i>
                                         </div>
@@ -205,7 +205,7 @@
                     <md-menu-item class="member" ng-repeat="member in vm.members  | filter: vm.filterMember">
                         <md-button ng-click="vm.toggleInArray(member.id, vm.card.idMembers)" md-prevent-menu-close
                                    aria-label="toggle member" translate translate-attr-aria-label="SB.TOGGLE_MEMBER">
-                            <div layout="row" layout-align="space-between center">
+                            <div layout="row" layout-align="space-between center" flex>
                                 <div layout="row" layout-align="start center">
                                     <img alt="{{ member.name }}" ng-src="{{ member.avatar }}" class="avatar"/>
                                     <p class="member-name">{{ member.name }}</p>
@@ -305,7 +305,7 @@
 
         <div layout="row" layout-align="space-between start">
 
-            <div layout="column" layout-align="start start">
+            <div layout="column" layout-align="start stretch" flex>
 
                 <!-- BREADCRUMB -->
                 <div class="card-breadcrumb" layout="row" layout-align="start center">
@@ -317,15 +317,12 @@
 
                 <!-- CARD NAME -->
                 <div layout="row" layout-align="start center">
-
                     <md-icon ng-if="vm.card.subscribed" class="card-subscribe s18" md-font-icon="icon-eye"></md-icon>
-
                     <div class="card-name">
                         <span editable-text="vm.card.name">
                             {{vm.card.name}}
                         </span>
                     </div>
-
                 </div>
                 <!-- / CARD NAME -->
 
@@ -361,7 +358,7 @@
         <div class="description">
             <md-input-container class="md-block">
                 <label translate="SB.DESCRIPTION">Description</label>
-                <textarea ng-model="vm.card.description" columns="1" md-maxlength="150" rows="5"></textarea>
+                <textarea ng-model="vm.card.description" columns="1" md-maxlength="150" max-rows="4"></textarea>
             </md-input-container>
         </div>
         <!-- / DESCRIPTION -->
@@ -522,7 +519,11 @@
                 <div class="checklist">
                     <div class="section-header" layout="row" layout-align="start center">
                         <i class="icon-checkbox-marked s18"></i>
-                        <span flex class="section-title" editable-text="checklist.name">{{checklist.name}}</span>
+                        <span flex class="section-title" ng-hide="editChecklistForm.$visible">{{checklist.name}}</span>
+
+                        <span flex class="section-title" editable-text="checklist.name"
+                              ng-show="editChecklistForm.$visible"
+                              e-form="editChecklistForm"></span>
 
                         <md-menu md-position-mode="target-right target" class="options">
                             <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)" aria-label="options"
@@ -530,7 +531,14 @@
                                 <md-icon md-menu-origin md-font-icon="icon-dots-vertical"></md-icon>
                             </md-button>
 
-                            <md-menu-content class="options-menu-content" width="4">
+                            <md-menu-content class="options-menu-content">
+                                <md-menu-item>
+                                    <md-button ng-click="editChecklistForm.$show()" aria-label="Edit"
+                                               translate translate-attr-aria-label="SB.EDIT">
+                                        <md-icon md-font-icon="icon-pencil" class="s20"></md-icon>
+                                        <span translate="SB.EDIT_CHECKLIST">Edit Checklist</span>
+                                    </md-button>
+                                </md-menu-item>
                                 <md-menu-item>
                                     <md-button ng-click="vm.removeChecklist(checklist)" aria-label="Remove Checklist"
                                                translate translate-attr-aria-label="SB.REMOVE_CHECKLIST">
@@ -555,12 +563,47 @@
                         </div>
 
                         <div class="check-items">
-                            <div class="check-item" ng-repeat="checkItem in checklist.checkItems">
+                            <div class="check-item" ng-repeat="checkItem in checklist.checkItems" layout="row"
+                                 layout-align="space-between center">
+
                                 <md-checkbox ng-model="checkItem.checked"
                                              ng-change="vm.updateCheckedCount(checklist)"
-                                             aria-label="{{checkItem.name}}">
+                                             aria-label="{{checkItem.name}}"
+                                             ng-hide="editCheckItemForm.$visible">
                                     {{checkItem.name}}
                                 </md-checkbox>
+
+                                <span flex editable-text="checkItem.name" ng-show="editCheckItemForm.$visible"
+                                      e-form="editCheckItemForm"></span>
+
+                                <md-menu md-position-mode="target-right target" class="options">
+
+                                    <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)"
+                                               aria-label="options"
+                                               translate translate-attr-aria-label="SB.OPTIONS">
+                                        <md-icon md-menu-origin md-font-icon="icon-dots-vertical" class="s20"></md-icon>
+                                    </md-button>
+
+                                    <md-menu-content class="options-menu-content">
+                                        <md-menu-item>
+                                            <md-button ng-click="editCheckItemForm.$show()" aria-label="Edit"
+                                                       translate translate-attr-aria-label="SB.EDIT">
+                                                <md-icon md-font-icon="icon-pencil" class="s20"></md-icon>
+                                                <span translate="SB.EDIT">Edit</span>
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                            <md-button
+                                                    ng-click="vm.removeChecklistItem(checkItem, checklist.checkItems)"
+                                                    aria-label="Remove"
+                                                    translate translate-attr-aria-label="SB.REMOVE">
+                                                <md-icon md-font-icon="icon-delete"></md-icon>
+                                                <span translate="SB.REMOVE">Remove</span>
+                                            </md-button>
+                                        </md-menu-item>
+                                    </md-menu-content>
+                                </md-menu>
+
                             </div>
                         </div>
 
@@ -569,7 +612,7 @@
                               layout="row" layout-align="start center">
 
                             <md-input-container class="no-errors-spacer" flex>
-                                <label layout="row" layout-align="center">
+                                <label>
                                     <i class="icon-plus s18"></i>
                                     <span translate="SB.ADD_AN_ITEM">Add an item</span>
                                 </label>
@@ -604,9 +647,9 @@
                             <div layout="row">
                                 <img class="comment-member-avatar" src="assets/images/avatars/profile.jpg">
                                 <md-input-container flex md-no-float>
-                                <textarea ms-scroll placeholder="Write a comment.."
-                                          ng-model="vm.newCommentText" required
-                                          translate translate-attr-placeholder="SB.WRITE_A_COMMENT"></textarea>
+                                    <textarea placeholder="Write a comment.."
+                                              ng-model="vm.newCommentText" required max-rows="4"
+                                              translate translate-attr-placeholder="SB.WRITE_A_COMMENT"></textarea>
                                 </md-input-container>
                             </div>
 

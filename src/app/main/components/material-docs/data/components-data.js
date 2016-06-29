@@ -12,6 +12,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdAutocomplete',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': true,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.autocomplete/directive/mdAutocomplete.html',
                     'url'       : 'api/directive/mdAutocomplete',
                     'label'     : 'mdAutocomplete',
@@ -22,6 +28,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdHighlightText',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': true,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.autocomplete/directive/mdHighlightText.html',
                     'url'       : 'api/directive/mdHighlightText',
                     'label'     : 'mdHighlightText',
@@ -65,6 +77,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdButton',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.button/directive/mdButton.html',
                     'url'       : 'api/directive/mdButton',
                     'label'     : 'mdButton',
@@ -87,6 +105,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdCard',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.card/directive/mdCard.html',
                     'url'       : 'api/directive/mdCard',
                     'label'     : 'mdCard',
@@ -109,6 +133,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdCheckbox',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.checkbox/directive/mdCheckbox.html',
                     'url'       : 'api/directive/mdCheckbox',
                     'label'     : 'mdCheckbox',
@@ -131,6 +161,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdChip',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': true,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.chips/directive/mdChip.html',
                     'url'       : 'api/directive/mdChip',
                     'label'     : 'mdChip',
@@ -141,6 +177,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdChipRemove',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': true,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.chips/directive/mdChipRemove.html',
                     'url'       : 'api/directive/mdChipRemove',
                     'label'     : 'mdChipRemove',
@@ -150,6 +192,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdChips',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': true,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.chips/directive/mdChips.html',
                     'url'       : 'api/directive/mdChips',
                     'label'     : 'mdChips',
@@ -159,6 +207,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdContactChips',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': true,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.chips/directive/mdContactChips.html',
                     'url'       : 'api/directive/mdContactChips',
                     'label'     : 'mdContactChips',
@@ -190,6 +244,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdColors',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : false,
+                        'attribute': true,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.colors/directive/mdColors.html',
                     'url'       : 'api/directive/mdColors',
                     'label'     : 'mdColors',
@@ -211,43 +271,18 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdContent',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.content/directive/mdContent.html',
                     'url'       : 'api/directive/mdContent',
                     'label'     : 'mdContent',
                     'module'    : 'material.components',
                     'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/content/content.js',
                     'hasDemo'   : true
-                }
-            ],
-            'hasDemo'   : false
-        },
-        {
-            'name'      : 'material.components.datepicker',
-            'type'      : 'module',
-            'outputPath': 'partials/api/material.components.datepicker/index.html',
-            'url'       : 'api/material.components.datepicker',
-            'label'     : 'material.components.datepicker',
-            'module'    : 'material.components',
-            'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/datepicker/calendar.js',
-            'docs'      : [
-                {
-                    'name'      : '$mdDateLocaleProvider',
-                    'type'      : 'service',
-                    'outputPath': 'partials/api/material.components.datepicker/service/$mdDateLocaleProvider.html',
-                    'url'       : 'api/service/$mdDateLocaleProvider',
-                    'label'     : '$mdDateLocaleProvider',
-                    'module'    : 'material.components',
-                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/datepicker/dateLocaleProvider.js',
-                    'hasDemo'   : false
-                },
-                {
-                    'name'      : 'mdDatepicker',
-                    'type'      : 'directive',
-                    'outputPath': 'partials/api/material.components.datepicker/directive/mdDatepicker.html',
-                    'url'       : 'api/directive/mdDatepicker',
-                    'label'     : 'mdDatepicker',
-                    'module'    : 'material.components',
-                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/datepicker/datePicker.js'
                 }
             ],
             'hasDemo'   : false
@@ -264,6 +299,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdDialog',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.dialog/directive/mdDialog.html',
                     'url'       : 'api/directive/mdDialog',
                     'label'     : 'mdDialog',
@@ -295,6 +336,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdDivider',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.divider/directive/mdDivider.html',
                     'url'       : 'api/directive/mdDivider',
                     'label'     : 'mdDivider',
@@ -317,6 +364,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdFabActions',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.fabActions/directive/mdFabActions.html',
                     'url'       : 'api/directive/mdFabActions',
                     'label'     : 'mdFabActions',
@@ -339,6 +392,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdFabSpeedDial',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.fabSpeedDial/directive/mdFabSpeedDial.html',
                     'url'       : 'api/directive/mdFabSpeedDial',
                     'label'     : 'mdFabSpeedDial',
@@ -349,6 +408,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdFabTrigger',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.fabSpeedDial/directive/mdFabTrigger.html',
                     'url'       : 'api/directive/mdFabTrigger',
                     'label'     : 'mdFabTrigger',
@@ -370,6 +435,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdFabToolbar',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.fabToolbar/directive/mdFabToolbar.html',
                     'url'       : 'api/directive/mdFabToolbar',
                     'label'     : 'mdFabToolbar',
@@ -392,6 +463,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdGridList',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.gridList/directive/mdGridList.html',
                     'url'       : 'api/directive/mdGridList',
                     'label'     : 'mdGridList',
@@ -402,6 +479,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdGridTile',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.gridList/directive/mdGridTile.html',
                     'url'       : 'api/directive/mdGridTile',
                     'label'     : 'mdGridTile',
@@ -423,6 +506,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdIcon',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.icon/directive/mdIcon.html',
                     'url'       : 'api/directive/mdIcon',
                     'label'     : 'mdIcon',
@@ -463,6 +552,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdInputContainer',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.input/directive/mdInputContainer.html',
                     'url'       : 'api/directive/mdInputContainer',
                     'label'     : 'mdInputContainer',
@@ -473,6 +568,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdInput',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.input/directive/mdInput.html',
                     'url'       : 'api/directive/mdInput',
                     'label'     : 'mdInput',
@@ -482,6 +583,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdSelectOnFocus',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : false,
+                        'attribute': true,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.input/directive/mdSelectOnFocus.html',
                     'url'       : 'api/directive/mdSelectOnFocus',
                     'label'     : 'mdSelectOnFocus',
@@ -503,6 +610,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdList',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.list/directive/mdList.html',
                     'url'       : 'api/directive/mdList',
                     'label'     : 'mdList',
@@ -513,6 +626,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdListItem',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.list/directive/mdListItem.html',
                     'url'       : 'api/directive/mdListItem',
                     'label'     : 'mdListItem',
@@ -534,6 +653,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdMenu',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.menu/directive/mdMenu.html',
                     'url'       : 'api/directive/mdMenu',
                     'label'     : 'mdMenu',
@@ -556,6 +681,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdMenuBar',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.menu-bar/directive/mdMenuBar.html',
                     'url'       : 'api/directive/mdMenuBar',
                     'label'     : 'mdMenuBar',
@@ -578,6 +709,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdNavBar',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.navBar/directive/mdNavBar.html',
                     'url'       : 'api/directive/mdNavBar',
                     'label'     : 'mdNavBar',
@@ -588,6 +725,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdNavItem',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.navBar/directive/mdNavItem.html',
                     'url'       : 'api/directive/mdNavItem',
                     'label'     : 'mdNavItem',
@@ -649,6 +792,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdProgressCircular',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.progressCircular/directive/mdProgressCircular.html',
                     'url'       : 'api/directive/mdProgressCircular',
                     'label'     : 'mdProgressCircular',
@@ -680,6 +829,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdProgressLinear',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.progressLinear/directive/mdProgressLinear.html',
                     'url'       : 'api/directive/mdProgressLinear',
                     'label'     : 'mdProgressLinear',
@@ -702,6 +857,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdRadioGroup',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.radioButton/directive/mdRadioGroup.html',
                     'url'       : 'api/directive/mdRadioGroup',
                     'label'     : 'mdRadioGroup',
@@ -712,6 +873,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdRadioButton',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.radioButton/directive/mdRadioButton.html',
                     'url'       : 'api/directive/mdRadioButton',
                     'label'     : 'mdRadioButton',
@@ -733,6 +900,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdSelect',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.select/directive/mdSelect.html',
                     'url'       : 'api/directive/mdSelect',
                     'label'     : 'mdSelect',
@@ -765,6 +938,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdSidenavFocus',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : false,
+                        'attribute': true,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.sidenav/directive/mdSidenavFocus.html',
                     'url'       : 'api/directive/mdSidenavFocus',
                     'label'     : 'mdSidenavFocus',
@@ -774,6 +953,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdSidenav',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.sidenav/directive/mdSidenav.html',
                     'url'       : 'api/directive/mdSidenav',
                     'label'     : 'mdSidenav',
@@ -792,19 +977,31 @@ angular.module('app.components.material-docs')
             'module'    : 'material.components',
             'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/slider/slider.js',
             'docs'      : [
-             /*   {
+                {
                     'name'      : 'mdSliderContainer',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.slider/directive/mdSliderContainer.html',
                     'url'       : 'api/directive/mdSliderContainer',
                     'label'     : 'mdSliderContainer',
                     'module'    : 'material.components',
                     'githubUrl' : 'https://github.com/angular/material/blob/master/src/components/slider/slider.js',
                     'hasDemo'   : true
-                },*/
+                },
                 {
                     'name'      : 'mdSlider',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.slider/directive/mdSlider.html',
                     'url'       : 'api/directive/mdSlider',
                     'label'     : 'mdSlider',
@@ -848,6 +1045,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdSubheader',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.subheader/directive/mdSubheader.html',
                     'url'       : 'api/directive/mdSubheader',
                     'label'     : 'mdSubheader',
@@ -870,6 +1073,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdSwipeLeft',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : false,
+                        'attribute': true,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.swipe/directive/mdSwipeLeft.html',
                     'url'       : 'api/directive/mdSwipeLeft',
                     'label'     : 'mdSwipeLeft',
@@ -880,6 +1089,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdSwipeRight',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : false,
+                        'attribute': true,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.swipe/directive/mdSwipeRight.html',
                     'url'       : 'api/directive/mdSwipeRight',
                     'label'     : 'mdSwipeRight',
@@ -889,6 +1104,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdSwipeUp',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : false,
+                        'attribute': true,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.swipe/directive/mdSwipeUp.html',
                     'url'       : 'api/directive/mdSwipeUp',
                     'label'     : 'mdSwipeUp',
@@ -898,6 +1119,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdSwipeDown',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : false,
+                        'attribute': true,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.swipe/directive/mdSwipeDown.html',
                     'url'       : 'api/directive/mdSwipeDown',
                     'label'     : 'mdSwipeDown',
@@ -919,6 +1146,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdSwitch',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': true,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.switch/directive/mdSwitch.html',
                     'url'       : 'api/directive/mdSwitch',
                     'label'     : 'mdSwitch',
@@ -941,6 +1174,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdTab',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.tabs/directive/mdTab.html',
                     'url'       : 'api/directive/mdTab',
                     'label'     : 'mdTab',
@@ -951,6 +1190,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdTabs',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.tabs/directive/mdTabs.html',
                     'url'       : 'api/directive/mdTabs',
                     'label'     : 'mdTabs',
@@ -994,6 +1239,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdToolbar',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.toolbar/directive/mdToolbar.html',
                     'url'       : 'api/directive/mdToolbar',
                     'label'     : 'mdToolbar',
@@ -1016,6 +1267,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdTooltip',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': true,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.tooltip/directive/mdTooltip.html',
                     'url'       : 'api/directive/mdTooltip',
                     'label'     : 'mdTooltip',
@@ -1038,6 +1295,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdVirtualRepeatContainer',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': false,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.virtualRepeat/directive/mdVirtualRepeatContainer.html',
                     'url'       : 'api/directive/mdVirtualRepeatContainer',
                     'label'     : 'mdVirtualRepeatContainer',
@@ -1048,6 +1311,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdVirtualRepeat',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : false,
+                        'attribute': true,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.virtualRepeat/directive/mdVirtualRepeat.html',
                     'url'       : 'api/directive/mdVirtualRepeat',
                     'label'     : 'mdVirtualRepeat',
@@ -1069,6 +1338,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdWhiteframe',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': true,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.components.whiteframe/directive/mdWhiteframe.html',
                     'url'       : 'api/directive/mdWhiteframe',
                     'label'     : 'mdWhiteframe',
@@ -1091,6 +1366,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdInkRipple',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': true,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.core.ripple/directive/mdInkRipple.html',
                     'url'       : 'api/directive/mdInkRipple',
                     'label'     : 'mdInkRipple',
@@ -1111,6 +1392,28 @@ angular.module('app.components.material-docs')
             'hasDemo'   : false
         },
         {
+            'name'      : 'material.core.theming',
+            'type'      : 'module',
+            'outputPath': 'partials/api/material.core.theming/index.html',
+            'url'       : 'api/material.core.theming',
+            'label'     : 'material.core.theming',
+            'module'    : 'material.core',
+            'githubUrl' : 'https://github.com/angular/material/blob/master/src/core/services/theming/theming.js',
+            'docs'      : [
+                {
+                    'name'      : '$mdThemingProvider',
+                    'type'      : 'service',
+                    'outputPath': 'partials/api/material.core.theming/service/$mdThemingProvider.html',
+                    'url'       : 'api/service/$mdThemingProvider',
+                    'label'     : '$mdThemingProvider',
+                    'module'    : 'material.core',
+                    'githubUrl' : 'https://github.com/angular/material/blob/master/src/core/services/theming/theming.js',
+                    'hasDemo'   : false
+                }
+            ],
+            'hasDemo'   : false
+        },
+        {
             'name'      : 'material.core.util',
             'type'      : 'module',
             'outputPath': 'partials/api/material.core.util/index.html',
@@ -1122,6 +1425,12 @@ angular.module('app.components.material-docs')
                 {
                     'name'      : 'mdAutofocus',
                     'type'      : 'directive',
+                    'restrict'  : {
+                        'element'  : true,
+                        'attribute': true,
+                        'cssClass' : false,
+                        'comment'  : false
+                    },
                     'outputPath': 'partials/api/material.core.util/directive/mdAutofocus.html',
                     'url'       : 'api/directive/mdAutofocus',
                     'label'     : 'mdAutofocus',

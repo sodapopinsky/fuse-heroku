@@ -3,7 +3,6 @@
     .left-sidenav {
 
         .chats-view {
-            border-right: 1px solid rgba(0, 0, 0, .08);
 
             md-toolbar {
                 background-color: #F3F4F5;
@@ -19,13 +18,11 @@
                     .avatar-wrapper {
                         cursor: pointer;
                     }
-
                 }
 
                 .md-toolbar-tools-bottom {
                     background-color: #FAFAFA;
                 }
-
             }
 
             md-content {
@@ -51,7 +48,6 @@
                             .name, .last-message, .last-message-time {
                                 font-weight: 500;
                             }
-
                         }
 
                         .unread-message-count {
@@ -61,15 +57,12 @@
                             height: 24px;
                             line-height: 24px;
                         }
-
                     }
-
                 }
 
                 md-list-item:last-child {
                     margin-bottom: 72px;
                 }
-
             }
 
             .contacts-button {
@@ -77,7 +70,6 @@
                 bottom: 4px;
                 right: 4px;
             }
-
         }
     }
 }

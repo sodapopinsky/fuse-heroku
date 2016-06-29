@@ -39,15 +39,15 @@
                         {
                             if ( parseInt(data) <= 5 )
                             {
-                                return '<div layout="row" layout-align="start center"><div class="quantity-indicator md-red-500-bg"></div><div>' + data + '</div></div>';
+                                return '<div class="quantity-indicator md-red-500-bg"></div><div>' + data + '</div>';
                             }
                             else if ( parseInt(data) > 5 && parseInt(data) <= 25 )
                             {
-                                return '<div layout="row" layout-align="start center"><div class="quantity-indicator md-amber-500-bg"></div><div>' + data + '</div></div>';
+                                return '<div class="quantity-indicator md-amber-500-bg"></div><div>' + data + '</div>';
                             }
                             else
                             {
-                                return '<div layout="row" layout-align="start center"><div class="quantity-indicator md-green-600-bg"></div><div>' + data + '</div></div>';
+                                return '<div class="quantity-indicator md-green-600-bg"></div><div>' + data + '</div>';
                             }
                         }
 

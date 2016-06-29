@@ -41,6 +41,7 @@
         vm.updateCheckedCount = updateCheckedCount;
         vm.addCheckItem = addCheckItem;
         vm.removeChecklist = removeChecklist;
+        vm.removeChecklistItem = removeChecklistItem;
         vm.createCheckList = createCheckList;
         /* Comment */
         vm.addNewComment = addNewComment;
@@ -285,6 +286,21 @@
         function removeChecklist(item)
         {
             vm.card.checklists.splice(vm.card.checklists.indexOf(item), 1);
+
+            angular.forEach(vm.card.checklists, function (list)
+            {
+                updateCheckedCount(list);
+            });
+        }
+
+        /**
+         * Remove checklist Item
+         *
+         * @param item
+         */
+        function removeChecklistItem(item, list)
+        {
+            list.splice(list.indexOf(item), 1);
 
             angular.forEach(vm.card.checklists, function (list)
             {

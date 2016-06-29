@@ -700,7 +700,7 @@ angular.module('app.components.material-docs')
                         'outputPath': 'demo-partials/colors/demoBasicUsage/index.html'
                     }
                 },
-                {
+              /*  {
                     'ngModule'  : {
                         'name'        : 'colorsThemePickerDemo',
                         'module'      : 'colorsThemePickerDemo',
@@ -742,7 +742,7 @@ angular.module('app.components.material-docs')
                         'fileType'  : 'html',
                         'outputPath': 'demo-partials/colors/demoThemePicker/index.html'
                     }
-                }
+                }*/
             ],
             'url'       : 'demo/colors'
         },
@@ -1161,8 +1161,8 @@ angular.module('app.components.material-docs')
                 },
                 {
                     'ngModule'  : {
-                        'name'        : 'gridListDemo2',
-                        'module'      : 'gridListDemo2',
+                        'name'        : 'gridListdemoResponsiveUsage',
+                        'module'      : 'gridListdemoResponsiveUsage',
                         'dependencies': [
                             'ngMaterial'
                         ]
@@ -2175,6 +2175,35 @@ angular.module('app.components.material-docs')
                 },
                 {
                     'ngModule'  : {
+                        'name'        : 'selectDemoSelectedText',
+                        'module'      : 'selectDemoSelectedText',
+                        'dependencies': [
+                            'ngMaterial'
+                        ]
+                    },
+                    'id'        : 'selectdemoSelectedText',
+                    'css'       : [],
+                    'html'      : [],
+                    'js'        : [
+                        {
+                            'name'      : 'script.js',
+                            'label'     : 'script.js',
+                            'fileType'  : 'js',
+                            'outputPath': 'demo-partials/select/demoSelectedText/script.js'
+                        }
+                    ],
+                    'moduleName': 'material.components.select',
+                    'name'      : 'demoSelectedText',
+                    'label'     : 'Selected Text',
+                    'index'     : {
+                        'name'      : 'index.html',
+                        'label'     : 'index.html',
+                        'fileType'  : 'html',
+                        'outputPath': 'demo-partials/select/demoSelectedText/index.html'
+                    }
+                },
+                {
+                    'ngModule'  : {
                         'name'        : 'selectDemoSelectHeader',
                         'module'      : 'selectDemoSelectHeader',
                         'dependencies': [
@@ -2207,35 +2236,6 @@ angular.module('app.components.material-docs')
                         'label'     : 'index.html',
                         'fileType'  : 'html',
                         'outputPath': 'demo-partials/select/demoSelectHeader/index.html'
-                    }
-                },
-                {
-                    'ngModule'  : {
-                        'name'        : 'selectDemoSelectedText',
-                        'module'      : 'selectDemoSelectedText',
-                        'dependencies': [
-                            'ngMaterial'
-                        ]
-                    },
-                    'id'        : 'selectdemoSelectedText',
-                    'css'       : [],
-                    'html'      : [],
-                    'js'        : [
-                        {
-                            'name'      : 'script.js',
-                            'label'     : 'script.js',
-                            'fileType'  : 'js',
-                            'outputPath': 'demo-partials/select/demoSelectedText/script.js'
-                        }
-                    ],
-                    'moduleName': 'material.components.select',
-                    'name'      : 'demoSelectedText',
-                    'label'     : 'Selected Text',
-                    'index'     : {
-                        'name'      : 'index.html',
-                        'label'     : 'index.html',
-                        'fileType'  : 'html',
-                        'outputPath': 'demo-partials/select/demoSelectedText/index.html'
                     }
                 },
                 {
@@ -3110,6 +3110,42 @@ angular.module('app.components.material-docs')
                         'label'     : 'index.html',
                         'fileType'  : 'html',
                         'outputPath': 'demo-partials/whiteframe/demoDirectiveAttributeUsage/index.html'
+                    }
+                },
+                {
+                    'ngModule'  : {
+                        'name'        : 'whiteframedemoDirectiveInterpolationUsage',
+                        'module'      : 'whiteframedemoDirectiveInterpolationUsage',
+                        'dependencies': [
+                            'ngMaterial'
+                        ]
+                    },
+                    'id'        : 'whiteframedemoDirectiveInterpolation',
+                    'css'       : [
+                        {
+                            'name'      : 'style.css',
+                            'label'     : 'style.css',
+                            'fileType'  : 'css',
+                            'outputPath': 'demo-partials/whiteframe/demoDirectiveInterpolation/style.css'
+                        }
+                    ],
+                    'html'      : [],
+                    'js'        : [
+                        {
+                            'name'      : 'script.js',
+                            'label'     : 'script.js',
+                            'fileType'  : 'js',
+                            'outputPath': 'demo-partials/whiteframe/demoDirectiveInterpolation/script.js'
+                        }
+                    ],
+                    'moduleName': 'material.components.whiteframe',
+                    'name'      : 'demoDirectiveInterpolation',
+                    'label'     : 'Directive Interpolation',
+                    'index'     : {
+                        'name'      : 'index.html',
+                        'label'     : 'index.html',
+                        'fileType'  : 'html',
+                        'outputPath': 'demo-partials/whiteframe/demoDirectiveInterpolation/index.html'
                     }
                 }
             ],

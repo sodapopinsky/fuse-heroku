@@ -17,31 +17,31 @@
         switch ( currentState )
         {
             case 'app.components_maps':
-                vm.selectedIndex = 0;
+                vm.selectedNavItem = 'simpleMap';
                 break;
 
             case 'app.components_maps.satellite':
-                vm.selectedIndex = 1;
+                vm.selectedNavItem = 'satelliteMap';
                 break;
 
             case 'app.components_maps.terrain':
-                vm.selectedIndex = 2;
+                vm.selectedNavItem = 'terrainMap';
                 break;
 
             case 'app.components_maps.simple-marker':
-                vm.selectedIndex = 3;
+                vm.selectedNavItem = 'simpleMarkerMap';
                 break;
 
             case 'app.components_maps.custom-marker':
-                vm.selectedIndex = 4;
+                vm.selectedNavItem = 'customMarkerMap';
                 break;
 
             case 'app.components_maps.info-window':
-                vm.selectedIndex = 5;
+                vm.selectedNavItem = 'infoWindowMap';
                 break;
 
             default:
-                vm.selectedIndex = 0;
+                vm.selectedNavItem = 'simpleMap';
         }
 
         // Methods
