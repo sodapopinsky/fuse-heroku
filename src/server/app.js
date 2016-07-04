@@ -11,9 +11,9 @@ var path = require('path');
 switch (environment) {
     case 'production':
         console.log('production');
-        app.set('baseDir',path.join(__dirname, '../../../dist'));
-        app.use('/', express.static(path.join(__dirname, '../../../dist')));
-        console.log(path.join(__dirname, '../../../dist'));
+        app.set('baseDir',path.join(__dirname, '../../../dist/'));
+        app.use('/', express.static(path.join(__dirname, '../../../dist/')));
+        console.log(path.join(__dirname, '../../../dist/'));
         break;
     default:
         console.log('dev');
