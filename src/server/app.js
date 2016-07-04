@@ -12,8 +12,8 @@ switch (environment) {
     case 'production':
         console.log('production');
         console.log(__dirname);
-        app.set('baseDir',path.join(__dirname, '../../dist/'));
-        app.use('/', express.static(path.join(__dirname, '../../dist/')));
+        app.set('baseDir','dist/');
+        app.use('/', express.static('dist/'));
         console.log(path.join(__dirname, '../../dist/'));
         break;
     default:
