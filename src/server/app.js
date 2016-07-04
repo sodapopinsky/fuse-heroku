@@ -12,9 +12,10 @@ switch (environment) {
     case 'production':
         console.log('productionxxx');
         console.log(__dirname);
+        console.log(path.join(__dirname, '../../dist/'));
         app.set('baseDir',path.join(__dirname, '../../dist/'));
         app.use('/', express.static(app.get('baseDir')));
-        console.log(app.get('baseDir'));
+
         break;
     default:
         console.log('dev');
