@@ -13,7 +13,7 @@ switch (environment) {
         console.log('productionxxx');
         console.log(__dirname);
         console.log(path.join(__dirname, '../../dist/'));
-        app.set('baseDir',path.join(__dirname, '../../dist/'));
+        app.set('baseDir','../../dist/');
         app.use('/', express.static(app.get('baseDir')));
 
         break;
