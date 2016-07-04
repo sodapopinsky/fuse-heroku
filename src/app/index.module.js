@@ -22,7 +22,6 @@
 
             // Apps
             'app.dashboards',
-            'app.calendar',
             'app.e-commerce',
             'app.mail',
             'app.chat',
