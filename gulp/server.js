@@ -3,13 +3,48 @@
 var path = require('path');
 var gulp = require('gulp');
 var conf = require('./conf');
-
+var plug = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 var browserSyncSpa = require('browser-sync-spa');
-
+var paths = require('../gulp.config.json');
 var util = require('util');
-
+var port = process.env.PORT || 7203;
+var log = plug.util.log;
 var proxyMiddleware = require('http-proxy-middleware');
+
+
+/**
+ * Start the node server using nodemon.
+ * Optionally start the node debugging.
+ * @param  {Object} args - debugging arguments
+ * @return {Stream}
+ */
+function serve(args) {
+    var options = {
+        script: paths.server + 'app.js',
+        delayTime: 1,
+        env: {
+            'NODE_ENV': args.mode,
+            'PORT': port
+        },
+        watch: [paths.server]
+    };
+
+    var exec;
+
+    if (args.debug) {
+        log('Running node-inspector. Browse to http://localhost:8080/debug?port=5858');
+        exec = require('child_process').exec;
+        exec('node-inspector');
+        options.nodeArgs = [args.debug + '=5858'];
+    }
+
+    return plug.nodemon(options)
+        .on('restart', function () {
+            log('restarted!');
+        });
+}
+
 
 function browserSyncInit(baseDir, browser)
 {
@@ -50,8 +85,16 @@ browserSync.use(browserSyncSpa({
 
 gulp.task('serve', ['watch'], function ()
 {
-    browserSyncInit([path.join(conf.paths.tmp, '/serve'), conf.paths.src]);
+
+
+    serve({
+        mode: 'dev',
+        debug: '--debug'
+    });
+
+//    browserSyncInit([path.join(conf.paths.tmp, '/serve'), conf.paths.src]);
 });
+
 
 gulp.task('serve:dist', ['build'], function ()
 {
